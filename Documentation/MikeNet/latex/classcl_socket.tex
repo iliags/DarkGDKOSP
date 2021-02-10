@@ -1,0 +1,570 @@
+\hypertarget{classcl_socket}{
+\section{clSocket Class Reference}
+\label{classcl_socket}\index{clSocket@{clSocket}}
+}
+
+
+Socket class providing more advanced functionality common to all protocols.  
+
+
+
+
+{\ttfamily \#include $<$clSocket.h$>$}
+
+Inheritance diagram for clSocket:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_socket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_socket_aea097250d267f081b56c0bcda48e210f}{clSocket} (size\_\-t bufferLength)
+\item 
+\hyperlink{classcl_socket_a331fae974dc5e685d4814e2f2254208d}{clSocket} (size\_\-t bufferLength, \hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$instance)
+\item 
+virtual \hyperlink{classcl_socket_a9872767d3f8a21f6568b4a79c3bddee4}{$\sim$clSocket} ()
+\item 
+\hyperlink{classcl_socket_ad5702fb888ecb38b07eb536273aa5414}{clSocket} (const \hyperlink{classcl_socket}{clSocket} \&)
+\item 
+\hyperlink{classcl_socket}{clSocket} \& \hyperlink{classcl_socket_a04028c4342b924ffc1a6749c35d57c32}{operator=} (const \hyperlink{classcl_socket}{clSocket} \&)
+\item 
+void \hyperlink{classcl_socket_a63910e1657650a9ff3e8c8cb6045e689}{\_\-DefaultVars} ()
+\item 
+bool \hyperlink{classcl_socket_a87f0f9dfc4b26d21efc45a3551ab988b}{RemoveSend} (const OVERLAPPED $\ast$operation)
+\item 
+void \hyperlink{classcl_socket_ae28db191f5750e83f187e37939b596ad}{RemoveSend} (size\_\-t element)
+\item 
+void \hyperlink{classcl_socket_aacb725d66067230ade23633e34a0d02d}{AddSend} (\hyperlink{classcl_shared_send}{clSharedSend} $\ast$send)
+\item 
+void \hyperlink{classcl_socket_a2398b25d1c446b27f55f2e12632a0f17}{ClearSend} ()
+\item 
+bool \hyperlink{classcl_socket_adfe8b1383f71d3569be05859ba1d55bd}{FindSend} (const OVERLAPPED $\ast$operation) const 
+\item 
+bool \hyperlink{classcl_socket_abdf3ff3b62ae2401576e5ae294ef53e3}{SendEmpty} () const 
+\item 
+virtual void \hyperlink{classcl_socket_a5ff0b79fb0cb1c43019e726ea085ec36}{Close} ()
+\item 
+void \hyperlink{classcl_socket_a68a48be55c5638db5fbf61d652318de4}{AssociateSocketCompletionPort} ()
+\item 
+virtual void \hyperlink{classcl_socket_a45284c4d4679469dd9cf11cf08faa86c}{ClearRecv} ()
+\item 
+\hypertarget{classcl_socket_abf64bc817795c6fcd5dd5f28c8ab6abb}{
+virtual bool {\bfseries Recv} ()=0}
+\label{classcl_socket_abf64bc817795c6fcd5dd5f28c8ab6abb}
+
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_socket_a6645de6f69b91fdf30b0195c221e4e7c}{Send} (\hyperlink{classcl_shared_send}{clSharedSend} \&sendObject, const \hyperlink{classcl_single_addr}{clSingleAddr} $\ast$sendToAddr, unsigned int timeout)
+\item 
+\hypertarget{classcl_socket_ac24c3eed54aabf41a4447b7d63b2f39f}{
+virtual \hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} {\bfseries Send} (const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, const \hyperlink{classcl_single_addr}{clSingleAddr} $\ast$sendToAddr, unsigned int timeout)=0}
+\label{classcl_socket_ac24c3eed54aabf41a4447b7d63b2f39f}
+
+\item 
+size\_\-t \hyperlink{classcl_socket_a1652cf24e9f2a5d83a463da184903f4f}{GetRecvBufferLength} () const 
+\item 
+bool \hyperlink{classcl_socket_a46bfeb517dceec7b2dfb72f77e1a6c99}{IsOurOverlapped} (const WSAOVERLAPPED $\ast$overlapped) const 
+\item 
+virtual \hyperlink{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}{Protocol} \hyperlink{classcl_socket_a8ce9d2d6fa68c1d70fa757122093f7ca}{GetProtocol} () const =0
+\item 
+virtual void \hyperlink{classcl_socket_a4ddfb1b3168816c667e1193d1df42535}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFunc)=0
+\item 
+bool \hyperlink{classcl_socket_ab024e22508a2490cc4e41ca285adc55f}{GetCompletionPortCloseRequest} () const 
+\item 
+void \hyperlink{classcl_socket_a2ab21e84af02b22496fcc2e60549e9ce}{CompletionPortRequestClose} ()
+\item 
+void \hyperlink{classcl_socket_aadcd5e50e5dd9495e433a3be3ff69c31}{SetCompletionPortFinishRecvNotification} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_completion_key}{clCompletionKey} \hyperlink{classcl_socket_a13f7fb8c9c146df5b8b63a861b1d9b05}{completionKey}
+\item 
+WSAOVERLAPPED \hyperlink{classcl_socket_aec458d824ec2454b0db2869fc8f87623}{recvOverlapped}
+\item 
+WSABUF \hyperlink{classcl_socket_aa33f69522e06a1ddaaf589cb21f0f60d}{recvBuffer}
+\item 
+DWORD \hyperlink{classcl_socket_a3d6b17db1b4743a14efcf02205113ae8}{flags}
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_socket_a8088a2405e76acca3b41175552bc0f6c}{SetOverlappedEvent} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_status}{clStatus}$<$ bool $>$ \hyperlink{classcl_socket_a119bea012ab04183f3a796a295438bd2}{dealingWithData}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_socket_a00eb42e7e8c38331ef4ff6f16b3c9faa}{AllocateBuffer} (size\_\-t bufferLength)
+\item 
+void \hyperlink{classcl_socket_afe1d9f526b5ec117cec258fccd3dc50b}{BaseInit} (size\_\-t bufferLength)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_status}{clStatus}$<$ bool $>$ \hyperlink{classcl_socket_ae17183becacd182ade36644e561c1aca}{completionPortCloseNotification}
+\item 
+\hyperlink{classcl_status}{clStatus}$<$ vector$<$ \hyperlink{classcl_shared_send}{clSharedSend} $\ast$ $>$ $>$ \hyperlink{classcl_socket_a9e241858d57abe94c6e600040882091e}{sendCleanup}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket class providing more advanced functionality common to all protocols. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class provides functionality for interacting with the completion port and for sending data.\par
+\par
+
+
+This class is not inherently thread safe. Send is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_socket_aea097250d267f081b56c0bcda48e210f}{
+\index{clSocket@{clSocket}!clSocket@{clSocket}}
+\index{clSocket@{clSocket}!clSocket@{clSocket}}
+\subsubsection[{clSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSocket::clSocket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_aea097250d267f081b56c0bcda48e210f}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation \end{DoxyParams}
+\hypertarget{classcl_socket_a331fae974dc5e685d4814e2f2254208d}{
+\index{clSocket@{clSocket}!clSocket@{clSocket}}
+\index{clSocket@{clSocket}!clSocket@{clSocket}}
+\subsubsection[{clSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSocket::clSocket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{{\bf clInstanceContainer} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a331fae974dc5e685d4814e2f2254208d}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation \item[{\em instance}]pointer to instance that owns this object, use other constructor if no instance does \end{DoxyParams}
+\hypertarget{classcl_socket_a9872767d3f8a21f6568b4a79c3bddee4}{
+\index{clSocket@{clSocket}!$\sim$clSocket@{$\sim$clSocket}}
+\index{$\sim$clSocket@{$\sim$clSocket}!clSocket@{clSocket}}
+\subsubsection[{$\sim$clSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSocket::$\sim$clSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_a9872767d3f8a21f6568b4a79c3bddee4}
+Destructor \par
+ Closes socket and cleans up object \hypertarget{classcl_socket_ad5702fb888ecb38b07eb536273aa5414}{
+\index{clSocket@{clSocket}!clSocket@{clSocket}}
+\index{clSocket@{clSocket}!clSocket@{clSocket}}
+\subsubsection[{clSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSocket::clSocket (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_ad5702fb888ecb38b07eb536273aa5414}
+Copy constructor (deep) \begin{DoxyNote}{Note}
+only copies recvBuffer (but not its contents, just its size), all other variables are newly initialized
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_socket_a63910e1657650a9ff3e8c8cb6045e689}{
+\index{clSocket@{clSocket}!\_\-DefaultVars@{\_\-DefaultVars}}
+\index{\_\-DefaultVars@{\_\-DefaultVars}!clSocket@{clSocket}}
+\subsubsection[{\_\-DefaultVars}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::\_\-DefaultVars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a63910e1657650a9ff3e8c8cb6045e689}
+Sets variables to default 
+
+Reimplemented from \hyperlink{classcl_simple_socket_ad535ecb38b4ceb63a98d2ed3106ac792}{clSimpleSocket}.
+
+\hypertarget{classcl_socket_aacb725d66067230ade23633e34a0d02d}{
+\index{clSocket@{clSocket}!AddSend@{AddSend}}
+\index{AddSend@{AddSend}!clSocket@{clSocket}}
+\subsubsection[{AddSend}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::AddSend (
+\begin{DoxyParamCaption}
+\item[{{\bf clSharedSend} $\ast$}]{ send}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_aacb725d66067230ade23633e34a0d02d}
+Adds a send operation to the cleanup vector 
+\begin{DoxyParams}{Parameters}
+\item[{\em send}]send operation to add to cleanup vector \end{DoxyParams}
+\hypertarget{classcl_socket_a00eb42e7e8c38331ef4ff6f16b3c9faa}{
+\index{clSocket@{clSocket}!AllocateBuffer@{AllocateBuffer}}
+\index{AllocateBuffer@{AllocateBuffer}!clSocket@{clSocket}}
+\subsubsection[{AllocateBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::AllocateBuffer (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_a00eb42e7e8c38331ef4ff6f16b3c9faa}
+Sets up WSABUF, allocating memory to it
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation \end{DoxyParams}
+\hypertarget{classcl_socket_a68a48be55c5638db5fbf61d652318de4}{
+\index{clSocket@{clSocket}!AssociateSocketCompletionPort@{AssociateSocketCompletionPort}}
+\index{AssociateSocketCompletionPort@{AssociateSocketCompletionPort}!clSocket@{clSocket}}
+\subsubsection[{AssociateSocketCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::AssociateSocketCompletionPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a68a48be55c5638db5fbf61d652318de4}
+Associates {\ttfamily winsockSocket} with completion port, the completion port takes over the following jobs:
+\begin{DoxyItemize}
+\item Cleaning up send operations
+\item Receiving data and dealing with it 
+\end{DoxyItemize}\hypertarget{classcl_socket_afe1d9f526b5ec117cec258fccd3dc50b}{
+\index{clSocket@{clSocket}!BaseInit@{BaseInit}}
+\index{BaseInit@{BaseInit}!clSocket@{clSocket}}
+\subsubsection[{BaseInit}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::BaseInit (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_afe1d9f526b5ec117cec258fccd3dc50b}
+Initialize objects \par
+ Does initialization shared between objects
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation \end{DoxyParams}
+\hypertarget{classcl_socket_a45284c4d4679469dd9cf11cf08faa86c}{
+\index{clSocket@{clSocket}!ClearRecv@{ClearRecv}}
+\index{ClearRecv@{ClearRecv}!clSocket@{clSocket}}
+\subsubsection[{ClearRecv}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::ClearRecv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_a45284c4d4679469dd9cf11cf08faa86c}
+Clears receive overlapped object ready for next receive \par
+ Must be done before every receive operation \par
+ 
+
+Reimplemented in \hyperlink{classcl_socket_u_d_p_a6c7f4b4f575e0c466f6b59d18717bd2a}{clSocketUDP}.
+
+\hypertarget{classcl_socket_a2398b25d1c446b27f55f2e12632a0f17}{
+\index{clSocket@{clSocket}!ClearSend@{ClearSend}}
+\index{ClearSend@{ClearSend}!clSocket@{clSocket}}
+\subsubsection[{ClearSend}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::ClearSend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a2398b25d1c446b27f55f2e12632a0f17}
+Empties send cleanup vector, cleaning up all send operations \hypertarget{classcl_socket_a5ff0b79fb0cb1c43019e726ea085ec36}{
+\index{clSocket@{clSocket}!Close@{Close}}
+\index{Close@{Close}!clSocket@{clSocket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_a5ff0b79fb0cb1c43019e726ea085ec36}
+Closes {\ttfamily winsockSocket} \par
+ Process is multithread safe where method is used outside of completion port! \par
+ -\/winsockSocket is closed so all pending operations fail -\/this method waits for all send operations to be cleaned up, once \hyperlink{classcl_socket_abdf3ff3b62ae2401576e5ae294ef53e3}{SendEmpty()} returns true the entire cleanup process is finished so any send cleanup objects can safely be cleaned up -\/this method waits for all winsock receive operations to finish -\/this method waits for finished receive operations to be dealt with -\/at this point the completion port is no longer using the socket 
+
+Reimplemented from \hyperlink{classcl_simple_socket_a755206da4d4b36d15353949c9a248398}{clSimpleSocket}.
+
+
+
+Reimplemented in \hyperlink{classcl_socket_t_c_p_a8f1031669c4093bf2aacb788f97c1adf}{clSocketTCP}, and \hyperlink{classcl_socket_u_d_p_aa4f23e02e1c4803535e94fcfa97698ea}{clSocketUDP}.
+
+\hypertarget{classcl_socket_a2ab21e84af02b22496fcc2e60549e9ce}{
+\index{clSocket@{clSocket}!CompletionPortRequestClose@{CompletionPortRequestClose}}
+\index{CompletionPortRequestClose@{CompletionPortRequestClose}!clSocket@{clSocket}}
+\subsubsection[{CompletionPortRequestClose}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::CompletionPortRequestClose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a2ab21e84af02b22496fcc2e60549e9ce}
+Indicate that socket should be closed \begin{DoxyWarning}{Warning}
+should only be used by completion port 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+only used on stand alone sockets (sockets not associated with an instance) 
+\end{DoxyNote}
+\hypertarget{classcl_socket_a4ddfb1b3168816c667e1193d1df42535}{
+\index{clSocket@{clSocket}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clSocket@{clSocket}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clSocket::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ recvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_socket_a4ddfb1b3168816c667e1193d1df42535}
+Deals with newly received data 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that packet was received on \item[{\em completionBytes}]size of packet stored in {\itshape buffer\/} \item[{\em buffer}]where newly received packet is stored \item[{\em clientID}]ID of client that packet was received from, 0 in client state \item[{\em instanceID}]instance that packet was received on \item[{\em recvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_socket_t_c_p_a1b168f8a28b7100d6b837201b766e05a}{clSocketTCP}, and \hyperlink{classcl_socket_u_d_p_a5dbfc8b8689613b2def26ed5a322ba5f}{clSocketUDP}.
+
+\hypertarget{classcl_socket_adfe8b1383f71d3569be05859ba1d55bd}{
+\index{clSocket@{clSocket}!FindSend@{FindSend}}
+\index{FindSend@{FindSend}!clSocket@{clSocket}}
+\subsubsection[{FindSend}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocket::FindSend (
+\begin{DoxyParamCaption}
+\item[{const OVERLAPPED $\ast$}]{ operation}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_adfe8b1383f71d3569be05859ba1d55bd}
+Searches for the send operation that is using the specified overlapped object in the send cleanup list
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operation}]pointer to overlapped object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the send operation that is using the specified overlapped object was found in the send cleanup list 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_ab024e22508a2490cc4e41ca285adc55f}{
+\index{clSocket@{clSocket}!GetCompletionPortCloseRequest@{GetCompletionPortCloseRequest}}
+\index{GetCompletionPortCloseRequest@{GetCompletionPortCloseRequest}!clSocket@{clSocket}}
+\subsubsection[{GetCompletionPortCloseRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocket::GetCompletionPortCloseRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_ab024e22508a2490cc4e41ca285adc55f}
+\begin{DoxyReturn}{Returns}
+true if completion port wants this socket to be closed 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+only used on stand alone sockets (sockets not associated with an instance) 
+\end{DoxyNote}
+\hypertarget{classcl_socket_a8ce9d2d6fa68c1d70fa757122093f7ca}{
+\index{clSocket@{clSocket}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!clSocket@{clSocket}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Protocol} clSocket::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_socket_a8ce9d2d6fa68c1d70fa757122093f7ca}
+\begin{DoxyReturn}{Returns}
+Protocol type that socket represents 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_socket_t_c_p_ad465fce0e99ce328cafe5c77cbc8cef9}{clSocketTCP}, and \hyperlink{classcl_socket_u_d_p_a4016f07d693331c87be1649aa69df9f6}{clSocketUDP}.
+
+\hypertarget{classcl_socket_a1652cf24e9f2a5d83a463da184903f4f}{
+\index{clSocket@{clSocket}!GetRecvBufferLength@{GetRecvBufferLength}}
+\index{GetRecvBufferLength@{GetRecvBufferLength}!clSocket@{clSocket}}
+\subsubsection[{GetRecvBufferLength}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSocket::GetRecvBufferLength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_a1652cf24e9f2a5d83a463da184903f4f}
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF. \par
+ This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_a46bfeb517dceec7b2dfb72f77e1a6c99}{
+\index{clSocket@{clSocket}!IsOurOverlapped@{IsOurOverlapped}}
+\index{IsOurOverlapped@{IsOurOverlapped}!clSocket@{clSocket}}
+\subsubsection[{IsOurOverlapped}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocket::IsOurOverlapped (
+\begin{DoxyParamCaption}
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_a46bfeb517dceec7b2dfb72f77e1a6c99}
+\begin{DoxyReturn}{Returns}
+true if {\itshape overlapped\/} pointer points to the overlapped object stored by this object 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em overlapped}]overlapped pointer to compare \end{DoxyParams}
+\hypertarget{classcl_socket_a04028c4342b924ffc1a6749c35d57c32}{
+\index{clSocket@{clSocket}!operator=@{operator=}}
+\index{operator=@{operator=}!clSocket@{clSocket}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocket} \& clSocket::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a04028c4342b924ffc1a6749c35d57c32}
+Assignment operator (deep) \begin{DoxyNote}{Note}
+only copies recvBuffer (but not its contents, just its size), all other variables are ignored
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_a87f0f9dfc4b26d21efc45a3551ab988b}{
+\index{clSocket@{clSocket}!RemoveSend@{RemoveSend}}
+\index{RemoveSend@{RemoveSend}!clSocket@{clSocket}}
+\subsubsection[{RemoveSend}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocket::RemoveSend (
+\begin{DoxyParamCaption}
+\item[{const OVERLAPPED $\ast$}]{ operation}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a87f0f9dfc4b26d21efc45a3551ab988b}
+Cleans up the send operation that is using the specified overlapped object 
+\begin{DoxyParams}{Parameters}
+\item[{\em operation}]pointer to overlapped operation of send operation we wish to cleanup \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an operation was cleaned up, false if not 
+\end{DoxyReturn}
+
+
+Check that object is not in use The object will only be in use at this point if it is still executing the internal function it was doing when it added itself to the cleanup queue. It may still need to use some internal variables e.g. if it is blocking for completion and so we must wait before we clean it up. We must release the critical section BEFORE cleaning it up.
+
+\hypertarget{classcl_socket_ae28db191f5750e83f187e37939b596ad}{
+\index{clSocket@{clSocket}!RemoveSend@{RemoveSend}}
+\index{RemoveSend@{RemoveSend}!clSocket@{clSocket}}
+\subsubsection[{RemoveSend}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::RemoveSend (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_ae28db191f5750e83f187e37939b596ad}
+Cleans up the send operation at the specified element 
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]element to cleanup \end{DoxyParams}
+\hypertarget{classcl_socket_a6645de6f69b91fdf30b0195c221e4e7c}{
+\index{clSocket@{clSocket}!Send@{Send}}
+\index{Send@{Send}!clSocket@{clSocket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clSocket::Send (
+\begin{DoxyParamCaption}
+\item[{{\bf clSharedSend} \&}]{ sendObject, }
+\item[{const {\bf clSingleAddr} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_a6645de6f69b91fdf30b0195c221e4e7c}
+Sends a send object
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em sendObject}]object to send \item[{\em sendToAddr}]address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]length of time in milliseconds to wait before canceling send operation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_abdf3ff3b62ae2401576e5ae294ef53e3}{
+\index{clSocket@{clSocket}!SendEmpty@{SendEmpty}}
+\index{SendEmpty@{SendEmpty}!clSocket@{clSocket}}
+\subsubsection[{SendEmpty}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocket::SendEmpty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_abdf3ff3b62ae2401576e5ae294ef53e3}
+\begin{DoxyReturn}{Returns}
+true if the send cleanup vector is empty 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_aadcd5e50e5dd9495e433a3be3ff69c31}{
+\index{clSocket@{clSocket}!SetCompletionPortFinishRecvNotification@{SetCompletionPortFinishRecvNotification}}
+\index{SetCompletionPortFinishRecvNotification@{SetCompletionPortFinishRecvNotification}!clSocket@{clSocket}}
+\subsubsection[{SetCompletionPortFinishRecvNotification}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::SetCompletionPortFinishRecvNotification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_aadcd5e50e5dd9495e433a3be3ff69c31}
+Indicate that the entire receiving process has finished \begin{DoxyWarning}{Warning}
+should only be used by completion port 
+\end{DoxyWarning}
+\hypertarget{classcl_socket_a8088a2405e76acca3b41175552bc0f6c}{
+\index{clSocket@{clSocket}!SetOverlappedEvent@{SetOverlappedEvent}}
+\index{SetOverlappedEvent@{SetOverlappedEvent}!clSocket@{clSocket}}
+\subsubsection[{SetOverlappedEvent}]{\setlength{\rightskip}{0pt plus 5cm}void clSocket::SetOverlappedEvent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_socket_a8088a2405e76acca3b41175552bc0f6c}
+Manually set overlapped event \par
+ This is necassary when an overlapped recv operation fails before pending as in this case the overlapped event object is not automatically signalled 
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_socket_a13f7fb8c9c146df5b8b63a861b1d9b05}{
+\index{clSocket@{clSocket}!completionKey@{completionKey}}
+\index{completionKey@{completionKey}!clSocket@{clSocket}}
+\subsubsection[{completionKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCompletionKey} {\bf clSocket::completionKey}}}
+\label{classcl_socket_a13f7fb8c9c146df5b8b63a861b1d9b05}
+Unique completion key used by completion port to identify this object \hypertarget{classcl_socket_ae17183becacd182ade36644e561c1aca}{
+\index{clSocket@{clSocket}!completionPortCloseNotification@{completionPortCloseNotification}}
+\index{completionPortCloseNotification@{completionPortCloseNotification}!clSocket@{clSocket}}
+\subsubsection[{completionPortCloseNotification}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStatus}$<$bool$>$ {\bf clSocket::completionPortCloseNotification}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{classcl_socket_ae17183becacd182ade36644e561c1aca}
+true if completion port wants this socket to be closed \begin{DoxyNote}{Note}
+must take control of object's critical section when using this object 
+
+completion port does not close socket directly in order to simplify multithreaded architecture 
+\end{DoxyNote}
+\hypertarget{classcl_socket_a119bea012ab04183f3a796a295438bd2}{
+\index{clSocket@{clSocket}!dealingWithData@{dealingWithData}}
+\index{dealingWithData@{dealingWithData}!clSocket@{clSocket}}
+\subsubsection[{dealingWithData}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStatus}$<$bool$>$ {\bf clSocket::dealingWithData}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_socket_a119bea012ab04183f3a796a295438bd2}
+true after a receive operation has been initiated, only false when the operation has finished AND all data has been dealt with. This is important during the socket closure process so that resources being used are not cleaned up \hypertarget{classcl_socket_a3d6b17db1b4743a14efcf02205113ae8}{
+\index{clSocket@{clSocket}!flags@{flags}}
+\index{flags@{flags}!clSocket@{clSocket}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}DWORD {\bf clSocket::flags}}}
+\label{classcl_socket_a3d6b17db1b4743a14efcf02205113ae8}
+Filled when TCP receive operation completes, is ignored by me but required by winsock \hypertarget{classcl_socket_aa33f69522e06a1ddaaf589cb21f0f60d}{
+\index{clSocket@{clSocket}!recvBuffer@{recvBuffer}}
+\index{recvBuffer@{recvBuffer}!clSocket@{clSocket}}
+\subsubsection[{recvBuffer}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF {\bf clSocket::recvBuffer}}}
+\label{classcl_socket_aa33f69522e06a1ddaaf589cb21f0f60d}
+Winsock buffer that is filled with newly received data \hypertarget{classcl_socket_aec458d824ec2454b0db2869fc8f87623}{
+\index{clSocket@{clSocket}!recvOverlapped@{recvOverlapped}}
+\index{recvOverlapped@{recvOverlapped}!clSocket@{clSocket}}
+\subsubsection[{recvOverlapped}]{\setlength{\rightskip}{0pt plus 5cm}WSAOVERLAPPED {\bf clSocket::recvOverlapped}}}
+\label{classcl_socket_aec458d824ec2454b0db2869fc8f87623}
+Winsock overlapped operation used to identify when a receive operation has completed \par
+ The overlapped event object goes through the following stages: \par
+ 1. Starts signaled \par
+ 2. Begins operation, becomes unsignaled \par
+ 3. Finishes operation successfully and becomes signaled \par
+ 4. OR fails to complete operation and is manually signaled (to prevent deadlock) \hypertarget{classcl_socket_a9e241858d57abe94c6e600040882091e}{
+\index{clSocket@{clSocket}!sendCleanup@{sendCleanup}}
+\index{sendCleanup@{sendCleanup}!clSocket@{clSocket}}
+\subsubsection[{sendCleanup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStatus}$<$vector$<${\bf clSharedSend}$\ast$$>$ $>$ {\bf clSocket::sendCleanup}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{classcl_socket_a9e241858d57abe94c6e600040882091e}
+This vector is filled with send operations that are in progress \par
+ Upon completion, a completion thread compares the overlapped pointer to determine which send operation should be cleaned up. \par
+ When cleaned up the send operation is removed from this vector. \begin{DoxyNote}{Note}
+vector should not be used if socket is not associated with completion port 
+
+made mutable because vector CPP class is not const correct 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocket.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocket.cpp\end{DoxyCompactItemize}

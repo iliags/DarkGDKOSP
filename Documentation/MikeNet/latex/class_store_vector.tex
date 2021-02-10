@@ -1,0 +1,533 @@
+\hypertarget{class_store_vector}{
+\section{StoreVector$<$ T $>$ Class Template Reference}
+\label{class_store_vector}\index{StoreVector@{StoreVector}}
+}
+
+
+Manages a vector of objects efficiently and safely.  
+
+
+
+
+{\ttfamily \#include $<$StoreVector.h$>$}
+
+Inheritance diagram for StoreVector$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_store_vector}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_store_vector_ad9b7abbc4e1dc4b1107ca08427a58a08}{
+\hyperlink{class_store_vector_ad9b7abbc4e1dc4b1107ca08427a58a08}{StoreVector} ()}
+\label{class_store_vector_ad9b7abbc4e1dc4b1107ca08427a58a08}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_vector_a0e2187ce207205c0815e3419b31e2ac6}{StoreVector} (const \hyperlink{class_store_vector}{StoreVector} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_vector}{StoreVector} \& \hyperlink{class_store_vector_a13901ff5acda2503b3e28b4b5512b97a}{operator=} (const \hyperlink{class_store_vector}{StoreVector} \&copyMe)
+\item 
+\hypertarget{class_store_vector_a63f709aa54ffd7a991a2c0367adb8ca2}{
+virtual \hyperlink{class_store_vector_a63f709aa54ffd7a991a2c0367adb8ca2}{$\sim$StoreVector} ()}
+\label{class_store_vector_a63f709aa54ffd7a991a2c0367adb8ca2}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+T $\ast$$\ast$ \hyperlink{class_store_vector_aeec5fd589a16e7a45a948af2379db827}{GetPtr} (size\_\-t element)
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to an internal pointer to an element of data. \item\end{DoxyCompactList}\item 
+const T \& \hyperlink{class_store_vector_a796742994f7986fdd32690e5c8bf9764}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t element) const 
+\begin{DoxyCompactList}\small\item\em \mbox{[}\mbox{]} Operator, returns constant pointer to element in vector. \item\end{DoxyCompactList}\item 
+T \& \hyperlink{class_store_vector_afaf386a296ca40706ead91846b309fc5}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t element)
+\begin{DoxyCompactList}\small\item\em \mbox{[}\mbox{]} Operator, returns mutable pointer to element in vector. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a754d17030ea9000df2fe8cd6157fd428}{Erase} (size\_\-t element)
+\begin{DoxyCompactList}\small\item\em Remove element from vector, decreasing vector size by 1. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a0793ae4989a4b0e91f8b472b97f09e1f}{Allocate} (size\_\-t element)
+\begin{DoxyCompactList}\small\item\em Allocate memory to specified element, overwriting anything currently stored. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_ae2630e9cae56ede6a70ad9c194fde987}{Allocate} (size\_\-t element, const T \&newElement)
+\begin{DoxyCompactList}\small\item\em Allocate memory to specified element, overwriting anything currently stored. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a47f950d08ebdc43f8595cee5dd12b8e7}{Allocate} (size\_\-t element, T $\ast$newElement)
+\begin{DoxyCompactList}\small\item\em Allocate memory to specified element, overwriting anything currently stored. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a751630e7121d73d21a1edad60b6a20fa}{Deallocate} (size\_\-t element)
+\begin{DoxyCompactList}\small\item\em Deallocate element from vector setting it to NULL, without decreasing size of vector. \item\end{DoxyCompactList}\item 
+\hypertarget{class_store_vector_af8d4e0f9a234f66dcb47ea6d3fc8b79e}{
+void \hyperlink{class_store_vector_af8d4e0f9a234f66dcb47ea6d3fc8b79e}{Clear} ()}
+\label{class_store_vector_af8d4e0f9a234f66dcb47ea6d3fc8b79e}
+
+\begin{DoxyCompactList}\small\item\em Empty the contents of the vector. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{Get} (T $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Get object from front of queue and remove it from vector. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{Add} (T $\ast$object)
+\begin{DoxyCompactList}\small\item\em Add object to back of vector. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{Size} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the number of objects in the vector. \item\end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{Front} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the object at the front of the vector (without removing it). \item\end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{Back} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the object at the back of the vector (without removing it). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a1543ced25b1b5f154462d3f274434bad}{ResizeAllocate} (size\_\-t newSize)
+\begin{DoxyCompactList}\small\item\em Resizes vector, allocating memory to new elements. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a92f207ccfa2e3f44124a3c5956bbfc63}{ResizeAllocate} (size\_\-t newSize, const T \&copyMe)
+\begin{DoxyCompactList}\small\item\em Resizes vector, allocating memory to new elements. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_store_vector_ad74fc4edf8bd17c91c208943a5a820b8}{IsAllocated} (size\_\-t element) const 
+\begin{DoxyCompactList}\small\item\em Determines whether the specified element has memory allocated to it. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_vector_a039923aa715a648daa4115fd110c54d5}{Resize} (size\_\-t newSize)
+\begin{DoxyCompactList}\small\item\em Resizes array without allocating memory (setting new elements to NULL). \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_store_vector_ac5c17dbab69c51ba929dfc93fec34119}{Find} (const T \&findMe, size\_\-t $\ast$position)
+\begin{DoxyCompactList}\small\item\em Finds an identical object in the vector. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_store_vector_aee22089cb9baa53326117fb708438a2a}{
+vector$<$ T $\ast$ $>$ \hyperlink{class_store_vector_aee22089cb9baa53326117fb708438a2a}{data}}
+\label{class_store_vector_aee22089cb9baa53326117fb708438a2a}
+
+\begin{DoxyCompactList}\small\item\em Vector, storing pointers to elements. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class StoreVector$<$ T $>$}
+
+Manages a vector of objects efficiently and safely. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+The vector manages the objects using pointers, making it very efficient.\par
+\par
+
+
+Only the vector itself is thread safe, not the use of the objects in the vector.\par
+\par
+ 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_store_vector_a0e2187ce207205c0815e3419b31e2ac6}{
+\index{StoreVector@{StoreVector}!StoreVector@{StoreVector}}
+\index{StoreVector@{StoreVector}!StoreVector@{StoreVector}}
+\subsubsection[{StoreVector}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf StoreVector}$<$ T $>$::{\bf StoreVector} (
+\begin{DoxyParamCaption}
+\item[{const {\bf StoreVector}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a0e2187ce207205c0815e3419b31e2ac6}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{
+\index{StoreVector@{StoreVector}!Add@{Add}}
+\index{Add@{Add}!StoreVector@{StoreVector}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Add (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}
+
+
+Add object to back of vector. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em object}]Object to add to collection. {\itshape object\/} is now owned by this object and should not be referenced elsewhere. \end{DoxyParams}
+
+
+Implements \hyperlink{class_store_a18a77de2e4fce1e80413c2d122fa3906}{Store$<$ T $>$}.
+
+\hypertarget{class_store_vector_a47f950d08ebdc43f8595cee5dd12b8e7}{
+\index{StoreVector@{StoreVector}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!StoreVector@{StoreVector}}
+\subsubsection[{Allocate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Allocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element, }
+\item[{T $\ast$}]{ newElement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a47f950d08ebdc43f8595cee5dd12b8e7}
+
+
+Allocate memory to specified element, overwriting anything currently stored. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to overwrite. \item[\mbox{\tt[in]} {\em newElement}]Pointer that is now owned by this object and should not be referenced elsewhere. \end{DoxyParams}
+\hypertarget{class_store_vector_a0793ae4989a4b0e91f8b472b97f09e1f}{
+\index{StoreVector@{StoreVector}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!StoreVector@{StoreVector}}
+\subsubsection[{Allocate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Allocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a0793ae4989a4b0e91f8b472b97f09e1f}
+
+
+Allocate memory to specified element, overwriting anything currently stored. 
+
+New memory is allocated using default constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to allocate to. \end{DoxyParams}
+\hypertarget{class_store_vector_ae2630e9cae56ede6a70ad9c194fde987}{
+\index{StoreVector@{StoreVector}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!StoreVector@{StoreVector}}
+\subsubsection[{Allocate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Allocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element, }
+\item[{const T \&}]{ newElement}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_ae2630e9cae56ede6a70ad9c194fde987}
+
+
+Allocate memory to specified element, overwriting anything currently stored. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to overwrite. \item[\mbox{\tt[in]} {\em newElement}]Reference to object to copy from. \end{DoxyParams}
+\hypertarget{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{
+\index{StoreVector@{StoreVector}!Back@{Back}}
+\index{Back@{Back}!StoreVector@{StoreVector}}
+\subsubsection[{Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf StoreVector}$<$ T $>$::Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}
+
+
+Retrieve the object at the back of the vector (without removing it). 
+
+\begin{DoxyReturn}{Returns}
+element at back. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_ae00374bb6e2216fc02e84016b8980f75}{Store$<$ T $>$}.
+
+\hypertarget{class_store_vector_a751630e7121d73d21a1edad60b6a20fa}{
+\index{StoreVector@{StoreVector}!Deallocate@{Deallocate}}
+\index{Deallocate@{Deallocate}!StoreVector@{StoreVector}}
+\subsubsection[{Deallocate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Deallocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a751630e7121d73d21a1edad60b6a20fa}
+
+
+Deallocate element from vector setting it to NULL, without decreasing size of vector. 
+
+Use \hyperlink{class_store_vector_a754d17030ea9000df2fe8cd6157fd428}{Erase()} to completely remove an element from the vector, decreasing the size of the vector.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]To deallocate. \end{DoxyParams}
+\hypertarget{class_store_vector_a754d17030ea9000df2fe8cd6157fd428}{
+\index{StoreVector@{StoreVector}!Erase@{Erase}}
+\index{Erase@{Erase}!StoreVector@{StoreVector}}
+\subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Erase (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a754d17030ea9000df2fe8cd6157fd428}
+
+
+Remove element from vector, decreasing vector size by 1. 
+
+Use \hyperlink{class_store_vector_a751630e7121d73d21a1edad60b6a20fa}{Deallocate()} to erase the contents of the element but not remove it from the vector.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to remove.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape element\/} is out of bounds. \end{DoxyExceptions}
+\hypertarget{class_store_vector_ac5c17dbab69c51ba929dfc93fec34119}{
+\index{StoreVector@{StoreVector}!Find@{Find}}
+\index{Find@{Find}!StoreVector@{StoreVector}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf StoreVector}$<$ T $>$::Find (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{ findMe, }
+\item[{size\_\-t $\ast$}]{ position}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_ac5c17dbab69c51ba929dfc93fec34119}
+
+
+Finds an identical object in the vector. 
+
+This has a worst and average case complexity of O(n) and should be replaced with a merge sort equivalent when time allows.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em findMe}]Object to find. \item[\mbox{\tt[out]} {\em position}]Pointer to location to store element that object was found at.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an identical object was found. 
+
+false if not. 
+\end{DoxyReturn}
+\hypertarget{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{
+\index{StoreVector@{StoreVector}!Front@{Front}}
+\index{Front@{Front}!StoreVector@{StoreVector}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf StoreVector}$<$ T $>$::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}
+
+
+Retrieve the object at the front of the vector (without removing it). 
+
+\begin{DoxyReturn}{Returns}
+element at front. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_ac176e1bb63ac3b34a574cf3cc5d4d1a1}{Store$<$ T $>$}.
+
+\hypertarget{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{
+\index{StoreVector@{StoreVector}!Get@{Get}}
+\index{Get@{Get}!StoreVector@{StoreVector}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ size\_\-t {\bf StoreVector}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}
+
+
+Get object from front of queue and remove it from vector. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Location to copy retrieved object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of objects in collection before this method was called. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_abbe385f839e6bd682d84a7a3b2374774}{Store$<$ T $>$}.
+
+\hypertarget{class_store_vector_aeec5fd589a16e7a45a948af2379db827}{
+\index{StoreVector@{StoreVector}!GetPtr@{GetPtr}}
+\index{GetPtr@{GetPtr}!StoreVector@{StoreVector}}
+\subsubsection[{GetPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$$\ast$ {\bf StoreVector}$<$ T $>$::GetPtr (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_aeec5fd589a16e7a45a948af2379db827}
+
+
+Retrieves a pointer to an internal pointer to an element of data. 
+
+This is used where the pointer itself needs to be directly modified. Use with caution as the retrieved pointer may become invalid if the vector changes in size.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]The element.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a pointer to an internal pointer to an element of data. 
+\end{DoxyReturn}
+\hypertarget{class_store_vector_ad74fc4edf8bd17c91c208943a5a820b8}{
+\index{StoreVector@{StoreVector}!IsAllocated@{IsAllocated}}
+\index{IsAllocated@{IsAllocated}!StoreVector@{StoreVector}}
+\subsubsection[{IsAllocated}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf StoreVector}$<$ T $>$::IsAllocated (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_ad74fc4edf8bd17c91c208943a5a820b8}
+
+
+Determines whether the specified element has memory allocated to it. 
+
+\begin{DoxyReturn}{Returns}
+true if specified element has memory allocated to it (is not NULL). 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to check. \end{DoxyParams}
+\hypertarget{class_store_vector_a13901ff5acda2503b3e28b4b5512b97a}{
+\index{StoreVector@{StoreVector}!operator=@{operator=}}
+\index{operator=@{operator=}!StoreVector@{StoreVector}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf StoreVector}\& {\bf StoreVector}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf StoreVector}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a13901ff5acda2503b3e28b4b5512b97a}
+Deep assignment operator.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_store_vector_afaf386a296ca40706ead91846b309fc5}{
+\index{StoreVector@{StoreVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!StoreVector@{StoreVector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T\& {\bf StoreVector}$<$ T $>$::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_afaf386a296ca40706ead91846b309fc5}
+
+
+\mbox{[}\mbox{]} Operator, returns mutable pointer to element in vector. 
+
+\begin{DoxyNote}{Note}
+MUST return reference for multidimensional elements so that subsequent dimensions can be accessed in this fashion: Vec\mbox{[}\mbox{]}\mbox{[}\mbox{]}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to access. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object at {\itshape element\/}.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If element is out of bounds. \end{DoxyExceptions}
+\hypertarget{class_store_vector_a796742994f7986fdd32690e5c8bf9764}{
+\index{StoreVector@{StoreVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!StoreVector@{StoreVector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T\& {\bf StoreVector}$<$ T $>$::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a796742994f7986fdd32690e5c8bf9764}
+
+
+\mbox{[}\mbox{]} Operator, returns constant pointer to element in vector. 
+
+\begin{DoxyNote}{Note}
+MUST return reference for multidimensional elements so that subsequent dimensions can be accessed in this fashion: Vec\mbox{[}\mbox{]}\mbox{[}\mbox{]}.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to access. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object at {\itshape element\/}.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If element is out of bounds. \end{DoxyExceptions}
+\hypertarget{class_store_vector_a039923aa715a648daa4115fd110c54d5}{
+\index{StoreVector@{StoreVector}!Resize@{Resize}}
+\index{Resize@{Resize}!StoreVector@{StoreVector}}
+\subsubsection[{Resize}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::Resize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a039923aa715a648daa4115fd110c54d5}
+
+
+Resizes array without allocating memory (setting new elements to NULL). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]New size of vector. \end{DoxyParams}
+\hypertarget{class_store_vector_a92f207ccfa2e3f44124a3c5956bbfc63}{
+\index{StoreVector@{StoreVector}!ResizeAllocate@{ResizeAllocate}}
+\index{ResizeAllocate@{ResizeAllocate}!StoreVector@{StoreVector}}
+\subsubsection[{ResizeAllocate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::ResizeAllocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize, }
+\item[{const T \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a92f207ccfa2e3f44124a3c5956bbfc63}
+
+
+Resizes vector, allocating memory to new elements. 
+
+Memory is allocated using the copy constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]New size of vector. \item[{\em copyMe}]Object to pass to copy constructor of T when allocating new objects. \end{DoxyParams}
+\hypertarget{class_store_vector_a1543ced25b1b5f154462d3f274434bad}{
+\index{StoreVector@{StoreVector}!ResizeAllocate@{ResizeAllocate}}
+\index{ResizeAllocate@{ResizeAllocate}!StoreVector@{StoreVector}}
+\subsubsection[{ResizeAllocate}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreVector}$<$ T $>$::ResizeAllocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_vector_a1543ced25b1b5f154462d3f274434bad}
+
+
+Resizes vector, allocating memory to new elements. 
+
+Memory is allocated using default constructor.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]New size of vector. \end{DoxyParams}
+\hypertarget{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{
+\index{StoreVector@{StoreVector}!Size@{Size}}
+\index{Size@{Size}!StoreVector@{StoreVector}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ size\_\-t {\bf StoreVector}$<$ T $>$::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}
+
+
+Retrieve the number of objects in the vector. 
+
+\begin{DoxyReturn}{Returns}
+number of objects in vector. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_a24ce67007b2c9c65eb0542415a8d0cac}{Store$<$ T $>$}.
+
+\hypertarget{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{
+\index{StoreVector@{StoreVector}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!StoreVector@{StoreVector}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ static bool {\bf StoreVector}$<$ T $>$::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+
+
+Reimplemented in \hyperlink{class_completion_port_a4e6534add3fe77949094d7d273a5b9f6}{CompletionPort}, and \hyperlink{class_thread_single_group_a26f35ba9c432a49de2ca2e446add6888}{ThreadSingleGroup}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/StoreVector.h\end{DoxyCompactItemize}

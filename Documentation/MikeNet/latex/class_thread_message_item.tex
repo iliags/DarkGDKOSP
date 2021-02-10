@@ -1,0 +1,295 @@
+\hypertarget{class_thread_message_item}{
+\section{ThreadMessageItem Class Reference}
+\label{class_thread_message_item}\index{ThreadMessageItem@{ThreadMessageItem}}
+}
+
+
+Represents an individual message that can be sent to a thread via \hyperlink{class_thread_single_message}{ThreadSingleMessage}.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItem.h$>$}
+
+Inheritance diagram for ThreadMessageItem:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=12.000000cm]{class_thread_message_item}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item_a0dbc83765bcc4879ed400495ff075cba}{ThreadMessageItem} ()
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_thread_message_item_ad4b29c737018a58d94df07ff4d145852}{$\sim$ThreadMessageItem} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_ad630f0afd5fe2d027415d04f35375f33}{SetMessageInUseByThread} (bool option)
+\begin{DoxyCompactList}\small\item\em Specifies whether this message object is in use by a thread. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_message_item_a610fc0b5d136db7232b094969f1425bf}{IsMessageInUseByThread} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the message object is in use by a thread. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_a7e837827ca1935946f536c65d73b56a0}{WaitUntilNotInUseByThread} (DWORD timeout) const 
+\begin{DoxyCompactList}\small\item\em Does not return until this message object is not in use by a thread, or timeout has expired. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_ac29b7d0e5fdd4e53bfbc00da7e2461a2}{
+void \hyperlink{class_thread_message_item_ac29b7d0e5fdd4e53bfbc00da7e2461a2}{WaitUntilNotInUseByThread} () const }
+\label{class_thread_message_item_ac29b7d0e5fdd4e53bfbc00da7e2461a2}
+
+\begin{DoxyCompactList}\small\item\em Does not return until this message object is not in use by a thread. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_ab47019a21f41cebd7506de6835ad1cb9}{SetMessageInUseBySender} (bool option)
+\begin{DoxyCompactList}\small\item\em Specifies whether this message object is in use by a sender. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_message_item_a8648192ebbace8ff8e8f3a16b919b42f}{IsMessageInUseBySender} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the message object is in use by a sender. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_adbfd865abb806bc305380e4da8836902}{WaitUntilNotInUseBySender} (DWORD timeout) const 
+\begin{DoxyCompactList}\small\item\em Does not return until this message object is not in use by a sender, or timeout has expired. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_adceab2b1a3e76d13d277f48b92066d66}{
+void \hyperlink{class_thread_message_item_adceab2b1a3e76d13d277f48b92066d66}{WaitUntilNotInUseBySender} () const }
+\label{class_thread_message_item_adceab2b1a3e76d13d277f48b92066d66}
+
+\begin{DoxyCompactList}\small\item\em Does not return until this message object is not in use by a sender. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_message_item_a1e1b939947f56a56e47b4e31f009ed5e}{ShouldThreadCleanup} ()
+\begin{DoxyCompactList}\small\item\em Called by the receiving thread to decide whether to cleanup this send object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_message_item_a8835cc0249caaaa291ef75b2dc653b3f}{ShouldSenderCleanup} ()
+\begin{DoxyCompactList}\small\item\em Called by the sending thread to decide whether to cleanup this send object. \item\end{DoxyCompactList}\item 
+virtual void $\ast$ \hyperlink{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{TakeAction} ()=0
+\begin{DoxyCompactList}\small\item\em Performs an action of any type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_thread_message_item_a9cf19e411c1f07bd18849a9668d810b1}{messageNotInUseByThread}
+\begin{DoxyCompactList}\small\item\em False when this message object is in use by the thread. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_thread_message_item_a2a8ec880575ef64e499454fd94967d05}{messageNotInUseBySender}
+\begin{DoxyCompactList}\small\item\em False when the message object is not in use by the sender and so should be cleaned up by the thread. \item\end{DoxyCompactList}\item 
+\hyperlink{class_critical_section}{CriticalSection} \hyperlink{class_thread_message_item_a8904b4b9c74de4de6eee493b8dd92801}{mtEventObjects}
+\begin{DoxyCompactList}\small\item\em Synchronizes messageNotInUseByThread and messageNotInUseBySender so that actions can be taken based on both without worrying about their status changing independently. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents an individual message that can be sent to a thread via \hyperlink{class_thread_single_message}{ThreadSingleMessage}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/16/2010.
+\end{DoxyRemark}
+Before a message is sent \hyperlink{class_thread_single_message}{ThreadSingleMessage} will call \hyperlink{class_thread_message_item_ad630f0afd5fe2d027415d04f35375f33}{ThreadMessageItem::SetMessageInUseByThread} with a parameter of true. After the thread has finished using the message it must call SetMessageInUseByThread with a parameter of false. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_message_item_a0dbc83765bcc4879ed400495ff075cba}{
+\index{ThreadMessageItem@{ThreadMessageItem}!ThreadMessageItem@{ThreadMessageItem}}
+\index{ThreadMessageItem@{ThreadMessageItem}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{ThreadMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItem::ThreadMessageItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_a0dbc83765bcc4879ed400495ff075cba}
+
+
+Default constructor. 
+
+\hyperlink{class_thread_message_item_a9cf19e411c1f07bd18849a9668d810b1}{ThreadMessageItem::messageNotInUseByThread} begins true and should be unsignaled just before the message is sent to a thread. \hypertarget{class_thread_message_item_ad4b29c737018a58d94df07ff4d145852}{
+\index{ThreadMessageItem@{ThreadMessageItem}!$\sim$ThreadMessageItem@{$\sim$ThreadMessageItem}}
+\index{$\sim$ThreadMessageItem@{$\sim$ThreadMessageItem}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{$\sim$ThreadMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItem::$\sim$ThreadMessageItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_message_item_ad4b29c737018a58d94df07ff4d145852}
+
+
+Destructor. 
+
+Will not return until \hyperlink{class_thread_message_item_a9cf19e411c1f07bd18849a9668d810b1}{ThreadMessageItem::messageNotInUseByThread} and. \hyperlink{class_thread_message_item_a2a8ec880575ef64e499454fd94967d05}{ThreadMessageItem::messageNotInUseBySender} are signaled. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_message_item_a8648192ebbace8ff8e8f3a16b919b42f}{
+\index{ThreadMessageItem@{ThreadMessageItem}!IsMessageInUseBySender@{IsMessageInUseBySender}}
+\index{IsMessageInUseBySender@{IsMessageInUseBySender}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{IsMessageInUseBySender}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadMessageItem::IsMessageInUseBySender (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_message_item_a8648192ebbace8ff8e8f3a16b919b42f}
+
+
+Determines whether the message object is in use by a sender. 
+
+\begin{DoxyReturn}{Returns}
+true if the message object is in use, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_message_item_a610fc0b5d136db7232b094969f1425bf}{
+\index{ThreadMessageItem@{ThreadMessageItem}!IsMessageInUseByThread@{IsMessageInUseByThread}}
+\index{IsMessageInUseByThread@{IsMessageInUseByThread}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{IsMessageInUseByThread}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadMessageItem::IsMessageInUseByThread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_message_item_a610fc0b5d136db7232b094969f1425bf}
+
+
+Determines whether the message object is in use by a thread. 
+
+\begin{DoxyReturn}{Returns}
+true if the message object is in use, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_message_item_ab47019a21f41cebd7506de6835ad1cb9}{
+\index{ThreadMessageItem@{ThreadMessageItem}!SetMessageInUseBySender@{SetMessageInUseBySender}}
+\index{SetMessageInUseBySender@{SetMessageInUseBySender}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{SetMessageInUseBySender}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItem::SetMessageInUseBySender (
+\begin{DoxyParamCaption}
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_ab47019a21f41cebd7506de6835ad1cb9}
+
+
+Specifies whether this message object is in use by a sender. 
+
+Once set to false the sender must not use the object as it may be cleaned up by the sender.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em option}]True if the object is in use, false if not. \end{DoxyParams}
+\hypertarget{class_thread_message_item_ad630f0afd5fe2d027415d04f35375f33}{
+\index{ThreadMessageItem@{ThreadMessageItem}!SetMessageInUseByThread@{SetMessageInUseByThread}}
+\index{SetMessageInUseByThread@{SetMessageInUseByThread}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{SetMessageInUseByThread}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItem::SetMessageInUseByThread (
+\begin{DoxyParamCaption}
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_ad630f0afd5fe2d027415d04f35375f33}
+
+
+Specifies whether this message object is in use by a thread. 
+
+Once set to false the thread must not use the object as it may be cleaned up by the sender.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em option}]True if the object is in use, false if not. \end{DoxyParams}
+\hypertarget{class_thread_message_item_a8835cc0249caaaa291ef75b2dc653b3f}{
+\index{ThreadMessageItem@{ThreadMessageItem}!ShouldSenderCleanup@{ShouldSenderCleanup}}
+\index{ShouldSenderCleanup@{ShouldSenderCleanup}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{ShouldSenderCleanup}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadMessageItem::ShouldSenderCleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_a8835cc0249caaaa291ef75b2dc653b3f}
+
+
+Called by the sending thread to decide whether to cleanup this send object. 
+
+This method, used in conjunction with \hyperlink{class_thread_message_item_a8835cc0249caaaa291ef75b2dc653b3f}{ThreadMessageItem::ShouldSenderCleanup} ensures that the object is cleaned up by either the thread or the sender, but is only cleaned up once.
+
+\begin{DoxyReturn}{Returns}
+true if this object should be cleaned up. 
+\end{DoxyReturn}
+\hypertarget{class_thread_message_item_a1e1b939947f56a56e47b4e31f009ed5e}{
+\index{ThreadMessageItem@{ThreadMessageItem}!ShouldThreadCleanup@{ShouldThreadCleanup}}
+\index{ShouldThreadCleanup@{ShouldThreadCleanup}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{ShouldThreadCleanup}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadMessageItem::ShouldThreadCleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_a1e1b939947f56a56e47b4e31f009ed5e}
+
+
+Called by the receiving thread to decide whether to cleanup this send object. 
+
+This method, used in conjunction with \hyperlink{class_thread_message_item_a8835cc0249caaaa291ef75b2dc653b3f}{ThreadMessageItem::ShouldSenderCleanup} ensures that the object is cleaned up by either the thread or the sender, but is only cleaned up once.
+
+\begin{DoxyReturn}{Returns}
+true if the object should be cleaned up. 
+\end{DoxyReturn}
+\hypertarget{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{
+\index{ThreadMessageItem@{ThreadMessageItem}!TakeAction@{TakeAction}}
+\index{TakeAction@{TakeAction}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{TakeAction}]{\setlength{\rightskip}{0pt plus 5cm}virtual void$\ast$ ThreadMessageItem::TakeAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}
+
+
+Performs an action of any type. 
+
+This provides a way to tell a thread what to do.
+
+\begin{DoxyReturn}{Returns}
+some actions may require further activity by the thread which cannot take place within the method call. This return value can be used by the thread to determine what to do. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_thread_message_item_add_port_map_aa1a2e06742183c7fdf839e43fe761a36}{ThreadMessageItemAddPortMap}, \hyperlink{class_thread_message_item_delete_port_map_ad1de6d42bb481e4e9c8f22e9cb3aedbc}{ThreadMessageItemDeletePortMap}, \hyperlink{class_thread_message_item_encrypt_aaffd6c727e69eadac8efb947337e358d}{ThreadMessageItemEncrypt}, \hyperlink{class_thread_message_item_set_port_map_description_a96c1ac0e7436f3251f3433155f911104}{ThreadMessageItemSetPortMapDescription}, \hyperlink{class_thread_message_item_set_port_map_enabled_a73dd0cb3388b0844db57a7de83172ecb}{ThreadMessageItemSetPortMapEnabled}, \hyperlink{class_thread_message_item_set_port_map_internal_i_p_ae6f401b5688f877b518626a49ad8935e}{ThreadMessageItemSetPortMapInternalIP}, \hyperlink{class_thread_message_item_set_port_map_internal_port_a2a0d8bd1275cc8597343416694cc1fc4}{ThreadMessageItemSetPortMapInternalPort}, \hyperlink{class_thread_message_item_shutdown_ad81d60e93aba967c7f21f285d0a3df5b}{ThreadMessageItemShutdown}, \hyperlink{class_thread_message_item_sound_callback_a2e38028aad4a3c7482efd0f3788e00b9}{ThreadMessageItemSoundCallback}, \hyperlink{class_thread_message_item_update_nat_a654050fb6a6cd09ef8c9e99a992c488f}{ThreadMessageItemUpdateNat}, \hyperlink{class_thread_message_item_test_a8470d74447b104221782d379b4fd83a0}{ThreadMessageItemTest}, and \hyperlink{class_thread_message_item_test_two_a9f459b59bec0e9a02918c9e2e335ae9f}{ThreadMessageItemTestTwo}.
+
+\hypertarget{class_thread_message_item_adbfd865abb806bc305380e4da8836902}{
+\index{ThreadMessageItem@{ThreadMessageItem}!WaitUntilNotInUseBySender@{WaitUntilNotInUseBySender}}
+\index{WaitUntilNotInUseBySender@{WaitUntilNotInUseBySender}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{WaitUntilNotInUseBySender}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItem::WaitUntilNotInUseBySender (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ timeout}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_message_item_adbfd865abb806bc305380e4da8836902}
+
+
+Does not return until this message object is not in use by a sender, or timeout has expired. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]Length of time to wait before returning regardless of outcome. \end{DoxyParams}
+\hypertarget{class_thread_message_item_a7e837827ca1935946f536c65d73b56a0}{
+\index{ThreadMessageItem@{ThreadMessageItem}!WaitUntilNotInUseByThread@{WaitUntilNotInUseByThread}}
+\index{WaitUntilNotInUseByThread@{WaitUntilNotInUseByThread}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{WaitUntilNotInUseByThread}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItem::WaitUntilNotInUseByThread (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ timeout}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_message_item_a7e837827ca1935946f536c65d73b56a0}
+
+
+Does not return until this message object is not in use by a thread, or timeout has expired. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]Length of time to wait before returning regardless of outcome. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_message_item_a2a8ec880575ef64e499454fd94967d05}{
+\index{ThreadMessageItem@{ThreadMessageItem}!messageNotInUseBySender@{messageNotInUseBySender}}
+\index{messageNotInUseBySender@{messageNotInUseBySender}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{messageNotInUseBySender}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} {\bf ThreadMessageItem::messageNotInUseBySender}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_a2a8ec880575ef64e499454fd94967d05}
+
+
+False when the message object is not in use by the sender and so should be cleaned up by the thread. 
+
+Must use mtEventObjects when changing or checking state in order to synchronize with messageNotInUseByThread. \hypertarget{class_thread_message_item_a9cf19e411c1f07bd18849a9668d810b1}{
+\index{ThreadMessageItem@{ThreadMessageItem}!messageNotInUseByThread@{messageNotInUseByThread}}
+\index{messageNotInUseByThread@{messageNotInUseByThread}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{messageNotInUseByThread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} {\bf ThreadMessageItem::messageNotInUseByThread}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_a9cf19e411c1f07bd18849a9668d810b1}
+
+
+False when this message object is in use by the thread. 
+
+Must use mtEventObjects when changing or checking state in order to synchronize with messageNotInUseBySender. \hypertarget{class_thread_message_item_a8904b4b9c74de4de6eee493b8dd92801}{
+\index{ThreadMessageItem@{ThreadMessageItem}!mtEventObjects@{mtEventObjects}}
+\index{mtEventObjects@{mtEventObjects}!ThreadMessageItem@{ThreadMessageItem}}
+\subsubsection[{mtEventObjects}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CriticalSection} {\bf ThreadMessageItem::mtEventObjects}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_a8904b4b9c74de4de6eee493b8dd92801}
+
+
+Synchronizes messageNotInUseByThread and messageNotInUseBySender so that actions can be taken based on both without worrying about their status changing independently. 
+
+This is used only during the cleanup phase. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItem.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItem.cpp\end{DoxyCompactItemize}

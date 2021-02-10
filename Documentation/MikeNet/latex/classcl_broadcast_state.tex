@@ -1,0 +1,272 @@
+\hypertarget{classcl_broadcast_state}{
+\section{clBroadcastState Class Reference}
+\label{classcl_broadcast_state}\index{clBroadcastState@{clBroadcastState}}
+}
+
+
+Broadcast instance designed to communicate with entities on a common local area network.  
+
+
+
+
+{\ttfamily \#include $<$clBroadcastState.h$>$}
+
+Inheritance diagram for clBroadcastState:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_broadcast_state}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_broadcast_state_ae636f0e8b364fb0b24eba7c03aa307de}{clBroadcastState} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&broadcastAddress, \hyperlink{classcl_socket_u_d_p}{clSocketUDP} $\ast$\hyperlink{classcl_instance_u_d_p_adabf31cb357eb5dada6ad5c8e57c611e}{socketUDP}, size\_\-t \hyperlink{classcl_instance_core_a05be31d3ac12930f23fb1a06c25b225c}{sendTimeout}=INFINITE, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_u_d_p_a71fd288aaec92fa83f45060bc15d1f1e}{recvFuncUDP}=NULL, size\_\-t \hyperlink{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{instanceID}=0)
+\item 
+\hyperlink{classcl_broadcast_state_a4368da68216919a50063224a5f6566b6}{clBroadcastState} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&broadcastAddress, const \hyperlink{classcl_instance_profile}{clInstanceProfile} \&profile, size\_\-t \hyperlink{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{instanceID}=0)
+\item 
+void \hyperlink{classcl_broadcast_state_a4f5e91ef70339629c71fbaa1f87b2f39}{ErrorOccurred} (size\_\-t threadID, size\_\-t clientID)
+\item 
+void \hyperlink{classcl_broadcast_state_a4878d6ca8f78741539f7d7d8ce3c47b8}{DoRecvUDP} (size\_\-t threadID)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_broadcast_state_ac86581b6b63cc9a587e663abeb2dcbfe}{SendUDP} (size\_\-t threadID, size\_\-t clientID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_broadcast_state_ad57cd2f1b520b292de409e5bf064d92b}{SendToUDP} (size\_\-t threadID, const \hyperlink{classcl_single_addr}{clSingleAddr} \&address, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)
+\item 
+void \hyperlink{classcl_broadcast_state_ac63a0685d30154d928d37d3f09561ac8}{DealCompletion} (size\_\-t threadID, \hyperlink{classcl_completion_key}{clCompletionKey} \&completionKey, DWORD bytes, const WSAOVERLAPPED $\ast$overlapped, BOOL success)
+\item 
+void \hyperlink{classcl_broadcast_state_a0daeea87a7c2ffbcb062f254db68041a}{SetContainer} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$container)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{classcl_broadcast_state_a68d5adfa849a922c8ae63ec25e884b37}{recvSizeMinUDP} = 0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{classcl_broadcast_state_a70bfa8a41680d5d12babc9d35bd21097}{GetRecvSizeMinUDP} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_counter}{clCounter} \hyperlink{classcl_broadcast_state_ae1a39353704b20addef1fc686557bc80}{recvFailCounterUDP}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Broadcast instance designed to communicate with entities on a common local area network. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This instance is capable of communicating with entities on a common local area network without first forming a direct connection. Messages sent to the router are broadcasted to all other entities connected to that router using this instance. Due to the simplicity of this instance, it is possible to use it with non DarkNet based applications. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_broadcast_state_ae636f0e8b364fb0b24eba7c03aa307de}{
+\index{clBroadcastState@{clBroadcastState}!clBroadcastState@{clBroadcastState}}
+\index{clBroadcastState@{clBroadcastState}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{clBroadcastState}]{\setlength{\rightskip}{0pt plus 5cm}clBroadcastState::clBroadcastState (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ p\_\-broadcastAddress, }
+\item[{{\bf clSocketUDP} $\ast$}]{ p\_\-socketUDP, }
+\item[{size\_\-t}]{ p\_\-sendTimeout = {\ttfamily INFINITE}, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ p\_\-recvFuncUDP = {\ttfamily NULL}, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_broadcast_state_ae636f0e8b364fb0b24eba7c03aa307de}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-broadcastAddress}]address to broadcast to, IP should be either local subnet or global broadcast address (255.255.255.255) \item[\mbox{\tt[in]} {\em p\_\-socketUDP}]socket to use to send and receive UDP data, should be constructed for broadcasting. This pointer and its data is now owned by this object and should not be used elsewhere \item[{\em p\_\-sendTimeout}]length of time in milliseconds to wait for a send operation to complete before disconnecting client (optional, default INFINITE) \item[\mbox{\tt[in]} {\em p\_\-recvFuncUDP}]method to be executed when new UDP packets are received, if NULL then no method is loaded (optional, default NULL) \item[{\em p\_\-instanceID}]unique identifier for instance (optional, default 0) \end{DoxyParams}
+\hypertarget{classcl_broadcast_state_a4368da68216919a50063224a5f6566b6}{
+\index{clBroadcastState@{clBroadcastState}!clBroadcastState@{clBroadcastState}}
+\index{clBroadcastState@{clBroadcastState}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{clBroadcastState}]{\setlength{\rightskip}{0pt plus 5cm}clBroadcastState::clBroadcastState (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ p\_\-broadcastAddress, }
+\item[{const {\bf clInstanceProfile} \&}]{ p\_\-profile, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_broadcast_state_a4368da68216919a50063224a5f6566b6}
+Constructor, using profile instead of individual parameters 
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-broadcastAddress}]address to broadcast to, IP should be either local subnet or global broadcast address (255.255.255.255) \item[{\em p\_\-profile}]instance profile containing parameters \item[{\em p\_\-instanceID}]unique identifier for instance (optional, default 0) \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_broadcast_state_ac63a0685d30154d928d37d3f09561ac8}{
+\index{clBroadcastState@{clBroadcastState}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}void clBroadcastState::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clCompletionKey} \&}]{ completionKey, }
+\item[{DWORD}]{ bytes, }
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped, }
+\item[{BOOL}]{ success}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_broadcast_state_ac63a0685d30154d928d37d3f09561ac8}
+When send and receive operations are completed on this instance, this method is called
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em completionKey}]reference to completion key which provides information about the completed operation \item[{\em bytes}]number of bytes of data transferred in operation \item[{\em overlapped}]pointer to overlapped operation associated with event \item[{\em success}]TRUE if no error occurred \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_core_afb72728b46b08c2928845cd67acc238d}{clInstanceCore}.
+
+\hypertarget{classcl_broadcast_state_a4878d6ca8f78741539f7d7d8ce3c47b8}{
+\index{clBroadcastState@{clBroadcastState}!DoRecvUDP@{DoRecvUDP}}
+\index{DoRecvUDP@{DoRecvUDP}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{DoRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clBroadcastState::DoRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_broadcast_state_a4878d6ca8f78741539f7d7d8ce3c47b8}
+Starts a receive operation via UDP and deals with errors appropriately
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \end{DoxyParams}
+
+
+Calls socketUDP-\/$>$Recv \par
+ Use this INSTEAD OF socketUDP-\/$>$Recv, never use socketUDP-\/$>$Recv directly
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_u_d_p_ac481cdb9cb825fd303acf8a16da332a2}{clInstanceUDP}.
+
+\hypertarget{classcl_broadcast_state_a4f5e91ef70339629c71fbaa1f87b2f39}{
+\index{clBroadcastState@{clBroadcastState}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}void clBroadcastState::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_broadcast_state_a4f5e91ef70339629c71fbaa1f87b2f39}
+Deals with error 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ignored \item[{\em threadID}]ignored \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]always \end{DoxyExceptions}
+
+
+Implements \hyperlink{classcl_instance_core_ad5359146ac131598d7f6b86e10577738}{clInstanceCore}.
+
+\hypertarget{classcl_broadcast_state_a70bfa8a41680d5d12babc9d35bd21097}{
+\index{clBroadcastState@{clBroadcastState}!GetRecvSizeMinUDP@{GetRecvSizeMinUDP}}
+\index{GetRecvSizeMinUDP@{GetRecvSizeMinUDP}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{GetRecvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clBroadcastState::GetRecvSizeMinUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{classcl_broadcast_state_a70bfa8a41680d5d12babc9d35bd21097}
+\begin{DoxyReturn}{Returns}
+the smallest acceptable packet size that can be received 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_u_d_p_a180b09957ac5b22a7a298f2615f1d656}{clInstanceUDP}.
+
+\hypertarget{classcl_broadcast_state_ad57cd2f1b520b292de409e5bf064d92b}{
+\index{clBroadcastState@{clBroadcastState}!SendToUDP@{SendToUDP}}
+\index{SendToUDP@{SendToUDP}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{SendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clBroadcastState::SendToUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clSingleAddr} \&}]{ address, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_broadcast_state_ad57cd2f1b520b292de409e5bf064d92b}
+Sends {\itshape packet\/} via UDP to specified address 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ignored \item[{\em address}]remote address to send to \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_u_d_p_a2a429c537132c699c920b3deb2b96a43}{clInstanceUDP}.
+
+\hypertarget{classcl_broadcast_state_ac86581b6b63cc9a587e663abeb2dcbfe}{
+\index{clBroadcastState@{clBroadcastState}!SendUDP@{SendUDP}}
+\index{SendUDP@{SendUDP}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{SendUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clBroadcastState::SendUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_broadcast_state_ac86581b6b63cc9a587e663abeb2dcbfe}
+Sends a broadcast packet 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ignored \item[{\em clientID}]ignored \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_u_d_p_af56fb711b4bf6d5152c68912a3f10f13}{clInstanceUDP}.
+
+\hypertarget{classcl_broadcast_state_a0daeea87a7c2ffbcb062f254db68041a}{
+\index{clBroadcastState@{clBroadcastState}!SetContainer@{SetContainer}}
+\index{SetContainer@{SetContainer}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{SetContainer}]{\setlength{\rightskip}{0pt plus 5cm}void clBroadcastState::SetContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ container}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_broadcast_state_a0daeea87a7c2ffbcb062f254db68041a}
+Sets the \hyperlink{classcl_instance_container}{clInstanceContainer} object containing this instance, \hyperlink{classcl_instance_container}{clInstanceContainer} should pass pointer to itself 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em container}]instance container that owns this instance \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classcl_instance_u_d_p_a2b1ca50c2b076e37fecbff3269083c67}{clInstanceUDP}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_broadcast_state_ae1a39353704b20addef1fc686557bc80}{
+\index{clBroadcastState@{clBroadcastState}!recvFailCounterUDP@{recvFailCounterUDP}}
+\index{recvFailCounterUDP@{recvFailCounterUDP}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{recvFailCounterUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCounter} {\bf clBroadcastState::recvFailCounterUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_broadcast_state_ae1a39353704b20addef1fc686557bc80}
+Counter that keeps track of UDP receive failures, WSARecv can sometimes fail for reasons that should not result in catastrophic failure of the instance e.g. a WSASendTo operation to a remote address failed. For this reason we retry receive operations a number of times, when to give up is managed by this object. \hypertarget{classcl_broadcast_state_a68d5adfa849a922c8ae63ec25e884b37}{
+\index{clBroadcastState@{clBroadcastState}!recvSizeMinUDP@{recvSizeMinUDP}}
+\index{recvSizeMinUDP@{recvSizeMinUDP}!clBroadcastState@{clBroadcastState}}
+\subsubsection[{recvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clBroadcastState::recvSizeMinUDP} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_broadcast_state_a68d5adfa849a922c8ae63ec25e884b37}
+Minimum UDP buffer size necessary to maintain normal operations 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clBroadcastState.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clBroadcastState.cpp\end{DoxyCompactItemize}

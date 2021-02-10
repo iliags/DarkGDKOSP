@@ -1,0 +1,1422 @@
+\hypertarget{namespacemn_sound}{
+\section{mnSound Namespace Reference}
+\label{namespacemn_sound}\index{mnSound@{mnSound}}
+}
+
+
+Commands for procedural programming, that wrap around internal classes.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_ab5dbce73cd96c949c772e267048aaebc}{GetNumInputDevices} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of input devices available. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a20d9da8488c3004ebaed3a0b6ea1b43b}{GetNumOutputDevices} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of output devices available. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{namespacemn_sound_a64f1bbb2a178dfc7830b9d053c16fe94}{GetDeviceManuID} (unsigned int deviceID, bool output)
+\begin{DoxyCompactList}\small\item\em Retrieves the manufacturer ID of the device. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{namespacemn_sound_afad4600d4c3416dde18e305fff85a764}{GetDeviceProductID} (unsigned int deviceID, bool output)
+\begin{DoxyCompactList}\small\item\em Retrieves the product ID of the device. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned char \hyperlink{namespacemn_sound_a5edb517f5ed56a38290a5a0f75166e61}{GetDeviceDriverMinorVersion} (unsigned int deviceID, bool output)
+\begin{DoxyCompactList}\small\item\em Gets the minor version of the device's driver e.g. if the version if 4.5 then 5 will be returned. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned char \hyperlink{namespacemn_sound_a344981464c4ba19f43a4c2310a1369d5}{GetDeviceDriverMajorVersion} (unsigned int deviceID, bool output)
+\begin{DoxyCompactList}\small\item\em Retrieves the major version of the device's driver e.g. if the version is 4.5 then 4 will be returned. \item\end{DoxyCompactList}\item 
+CPP\_\-DLL char $\ast$ \hyperlink{namespacemn_sound_aaa57b089a6e0a2fabce97803657feda8}{GetDeviceName} (unsigned int deviceID, bool output)
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the device. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_ab3bf413b5a6ab630ca7e381e7b3d8bbc}{GetDeviceFormatSupport} (unsigned int deviceID, bool output, DWORD khz, WORD bits, WORD channels)
+\begin{DoxyCompactList}\small\item\em Determine if a format with the specified settings is supported by the device. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{namespacemn_sound_aaec6223600498262bb5e416ea3085857}{GetDeviceMaxChannels} (unsigned int deviceID, bool output)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of channels supported by the device. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a601c73ad6a788881c1a7e599053db16a}{GetIndependentVolumeControlSupported} (unsigned int outputDeviceID)
+\begin{DoxyCompactList}\small\item\em Determine whether left and right volume levels can be changed independently of each other. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a2efcdd9f3ed0e6806606a63b43a723b4}{GetVolumeControlSupported} (unsigned int outputDeviceID)
+\begin{DoxyCompactList}\small\item\em Determine whether volume change is supported by this device. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_ab5a3cb8258f43c727338aef5ebd11f02}{GetSampleAccurate} (unsigned int outputDeviceID)
+\begin{DoxyCompactList}\small\item\em Determine whether sample accurate position information can be retrieved. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a3a038d4d7819d4fce909a46e0df90088}{GetPlaybackRateControlSupported} (unsigned int outputDeviceID)
+\begin{DoxyCompactList}\small\item\em Determine if playback rate control is supported. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_af993040e427438184c7038d6b72929c5}{GetPitchControlSupported} (unsigned int outputDeviceID)
+\begin{DoxyCompactList}\small\item\em Determine whether pitch control is supported. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}{StartSound} (size\_\-t numInputInstances, size\_\-t numOutputInstances)
+\begin{DoxyCompactList}\small\item\em Starts the input/output module. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_ac9b7c27495dddb81c37a40840ab201b3}{FinishSound} ()
+\begin{DoxyCompactList}\small\item\em Cleans up the sound input/output module. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a2fa79bfe96c3fbd8e35f87b3252bccbb}{GetNumInputInstances} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of input instances created using \hyperlink{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}{mnSound::StartSound}. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a9aaa075dc47b75022c3153780dfd2f06}{GetNumOutputInstances} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of output instances created using \hyperlink{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}{mnSound::StartSound}. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL \_\-\_\-int64 \hyperlink{namespacemn_sound_aa4d8320727776b4fc6ba743246ac0da3}{CreateSoundProfile} ()
+\begin{DoxyCompactList}\small\item\em Creates a sound profile which describes the quality of sound input and output. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a13ead4204e8aac216c6ce7fbd527a760}{DeleteSoundProfile} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Deletes the specified sound profile which was created using \hyperlink{namespacemn_sound_aa4d8320727776b4fc6ba743246ac0da3}{mnSound::CreateSoundProfile}. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_acd691f2743b6916bae1167a0d0039a2f}{SetSoundProfile} (\_\-\_\-int64 profile, DWORD khz, WORD bitsPerSample, WORD channels)
+\begin{DoxyCompactList}\small\item\em Changes the settings stored by the sound profile. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a69d99c45fccdd7cf314ee3ad3b1680a4}{SetSoundProfileHighQuality} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Sets the format to the default high quality. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a3551bc3ffd8d9b55fd7e2edbfc83652a}{SetSoundProfileMediumQuality} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Sets the format to the default medium quality. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a5da025d9b5b6b76b0b2c2d4db16d3825}{SetSoundProfileLowQuality} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Sets the format to the default low quality. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL WORD \hyperlink{namespacemn_sound_af3eb9a729f081bdeb8e5d47159eedd7e}{GetSoundProfileChannels} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of channels option. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL DWORD \hyperlink{namespacemn_sound_a93520b3cb286768fccbd7ba83d41447d}{GetSoundProfileSamplesPerSecond} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Retrieves the samples per second option. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL WORD \hyperlink{namespacemn_sound_aebdf926e327e83fdeff4b0eb2993059a}{GetSoundProfileBitsPerSample} (\_\-\_\-int64 profile)
+\begin{DoxyCompactList}\small\item\em Retrieves the bits per sample option. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_aaf9dc82f488af0bab8d2bd73f252756d}{StartOutput} (size\_\-t instanceID, unsigned int outputDeviceID, size\_\-t msStoredDataCap, size\_\-t timeGapCap, \_\-\_\-int64 soundFormat)
+\begin{DoxyCompactList}\small\item\em Starts an output instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_aca0eaf06306a5523bb15d7bb5787fb70}{FinishOutput} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Cleans up an output instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_aab142da544befb73ad95ecebaad53ee5}{PlayData} (size\_\-t instanceID, \_\-\_\-int64 packet)
+\begin{DoxyCompactList}\small\item\em Outputs the specified packet. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_afe40d7ee00b58513c992e79f11bab4ae}{SetOutputSmoothValues} (size\_\-t instanceID, size\_\-t MillisecondsOfStoredDataCap, size\_\-t TimeSinceLastAddedCap)
+\begin{DoxyCompactList}\small\item\em Changes values which may effect how smooth playback is. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a3238359791aa5c4e673f34a33c78f77b}{SetDataVolume} (WORD bitsPerSample, \_\-\_\-int64 dataPacket, double percentageChange)
+\begin{DoxyCompactList}\small\item\em Changes the volume of sound data stored in a packet. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_ab78e930fc31f2c31b41582efcdbcfc92}{GetDataVolume} (WORD bitsPerSample, \_\-\_\-int64 dataPacket)
+\begin{DoxyCompactList}\small\item\em Calculates the volume of sound data stored in a packet. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL WORD \hyperlink{namespacemn_sound_ad071cba851fd76ecd0672761511d6b2f}{GetOutputChannels} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of output channels in use by the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL DWORD \hyperlink{namespacemn_sound_a220cb803f0b02b9b30c4dacf728d2971}{GetOutputSamplesPerSec} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the samples rate in use by the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL WORD \hyperlink{namespacemn_sound_ad1c20b2f6eee23460deebba18c960f6c}{GetOutputBitsPerSample} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the bits per sample of the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a63c6c26666fcc777b392142bef99a4e4}{GetOutputStoredDataCap} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the amount of data (in milliseconds) that needs to be stored for playback to commence. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a46ed2d03831f3a72a6fa717612173cd0}{GetOutputLastAddedCap} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL double \hyperlink{namespacemn_sound_ac09ccc78d0e9e878962be45eb1f8c532}{GetHardwarePlaybackRate} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the playback rate of sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL double \hyperlink{namespacemn_sound_a1e07da28da135a926c8dee4fb0b9192a}{GetHardwarePitch} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the pitch change in action by accessing the device driver. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{namespacemn_sound_ad182e4402ae1e9ea2364a6e7700d8749}{GetHardwareVolumeLeft} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the volume of the left channel. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{namespacemn_sound_aaf9d548648cf89ecd842e2cc7cf101a1}{GetHardwareVolumeRight} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the volume of the right channel. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a446f7cc649730458178a1b14a776ffda}{SetHardwarePlaybackRate} (size\_\-t instanceID, double rate)
+\begin{DoxyCompactList}\small\item\em Changes the playback rate of sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_accb207d924c1fe844d439a58cc05bd0f}{SetHardwarePitch} (size\_\-t instanceID, double pitch)
+\begin{DoxyCompactList}\small\item\em Changes the pitch of sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a139b13922a75680cdf435d3c4fc1d15c}{SetHardwareVolume} (size\_\-t instanceID, WORD left, WORD right)
+\begin{DoxyCompactList}\small\item\em Changes the volume sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a9e382bedc6fd0b60dee29b6740753fa5}{StartInput} (size\_\-t instanceID, unsigned int inputDeviceID, size\_\-t numBuffers, size\_\-t buffTimeLength, \_\-\_\-int64 soundFormat)
+\begin{DoxyCompactList}\small\item\em Starts an input instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a4e68d6163bfc0c74269169e2b8ffa9b4}{FinishInput} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Cleans up the specified input instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a7d2ecf983638b8ddfd46f37bd92065fc}{PauseInput} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Pauses input. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_afc29d53b1d4120de1c7465f788524683}{UnpauseInput} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Unpauses input. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a64a0d145d366a853a8e102fe190ee68a}{GetInputData} (size\_\-t instanceID, \_\-\_\-int64 destination)
+\begin{DoxyCompactList}\small\item\em Retrieves input data that has been received. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a6d3720f66a652c770c47e95f418b2e5c}{GetInputUnpaused} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Determines whether input is unpaused. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_sound_a2a68fc13b004d220247bb1f60d31b538}{GetInputPaused} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Determines whether input is paused. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL WORD \hyperlink{namespacemn_sound_a455f5c24b242a1e125b435a9ac94b600}{GetInputChannels} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of input channels in use by the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL DWORD \hyperlink{namespacemn_sound_a22e8862bb6f27d63cdf0d6672cb98698}{GetInputSamplesPerSec} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the samples rate in use by the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL WORD \hyperlink{namespacemn_sound_a9c048e63cba1dbc161254174c7d01f83}{GetInputBitsPerSample} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the bits per sample of the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a1cc7ad0b3b3e4922e043d44d8080b639}{GetInputNoBuffers} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of buffers in use by the instance. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_sound_a6c336c93f373f5164ce3f8f14acda4fd}{GetInputTimePerBuffer} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves the number of milliseconds worth of data that each buffer can store. \item\end{DoxyCompactList}\item 
+int \hyperlink{namespacemn_sound_a3cb5bc255f34cecb9d8601577d15d678}{StartOutput} (size\_\-t instanceID, unsigned int outputDeviceID, size\_\-t msStoredDataCap, size\_\-t timeGapCap, const \hyperlink{class_sound_format}{SoundFormat} \&soundFormat)
+\begin{DoxyCompactList}\small\item\em Starts an output instance. \item\end{DoxyCompactList}\item 
+int \hyperlink{namespacemn_sound_ae340906f8e3f2b9f286f43a374612131}{PlayData} (size\_\-t instanceID, const \hyperlink{class_packet}{Packet} \&packet)
+\begin{DoxyCompactList}\small\item\em Outputs the specified packet. \item\end{DoxyCompactList}\item 
+\hypertarget{namespacemn_sound_a8161025e25d4bb7d63cd8b62f6fcf68a}{
+int {\bfseries SetDataVolume} (WORD bitsPerSample, \hyperlink{class_packet}{Packet} $\ast$packet, double percentageChange)}
+\label{namespacemn_sound_a8161025e25d4bb7d63cd8b62f6fcf68a}
+
+\item 
+int \hyperlink{namespacemn_sound_a33c88580558f5848590bc3a2ff47d95b}{GetDataVolume} (WORD bitsPerSample, const \hyperlink{class_packet}{Packet} $\ast$packet)
+\begin{DoxyCompactList}\small\item\em Calculates the volume of sound data stored in a packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{namespacemn_sound_a09be6f3b1e652f77432a9f00435f76fd}{StartInput} (size\_\-t instanceID, unsigned int inputDeviceID, size\_\-t numBuffers, size\_\-t buffTimeLength, const \hyperlink{class_sound_format}{SoundFormat} \&soundFormat)
+\begin{DoxyCompactList}\small\item\em Starts an input instance. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{namespacemn_sound_a538ba23d3e2666f282f45dc33861a4fc}{GetInputData} (size\_\-t instanceID, \hyperlink{class_packet}{Packet} \&destination)
+\begin{DoxyCompactList}\small\item\em Retrieves input data that has been received. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Commands for procedural programming, that wrap around internal classes. These commands exist for those who prefer procedural programming over object orientated. They wrap around the classes of the sound input/output module and deal with errors differently dependent on the error mode we are in. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacemn_sound_aa4d8320727776b4fc6ba743246ac0da3}{
+\index{mnSound@{mnSound}!CreateSoundProfile@{CreateSoundProfile}}
+\index{CreateSoundProfile@{CreateSoundProfile}!mnSound@{mnSound}}
+\subsubsection[{CreateSoundProfile}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL \_\-\_\-int64 mnSound::CreateSoundProfile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aa4d8320727776b4fc6ba743246ac0da3}
+
+
+Creates a sound profile which describes the quality of sound input and output. 
+
+\hyperlink{namespacemn_sound_a13ead4204e8aac216c6ce7fbd527a760}{mnSound::DeleteSoundProfile} should be used to clean this up.
+
+\begin{DoxyReturn}{Returns}
+a pointer (cast to an \_\-\_\-int64) to a \hyperlink{class_sound_format}{SoundFormat} object. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a13ead4204e8aac216c6ce7fbd527a760}{
+\index{mnSound@{mnSound}!DeleteSoundProfile@{DeleteSoundProfile}}
+\index{DeleteSoundProfile@{DeleteSoundProfile}!mnSound@{mnSound}}
+\subsubsection[{DeleteSoundProfile}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::DeleteSoundProfile (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a13ead4204e8aac216c6ce7fbd527a760}
+
+
+Deletes the specified sound profile which was created using \hyperlink{namespacemn_sound_aa4d8320727776b4fc6ba743246ac0da3}{mnSound::CreateSoundProfile}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to delete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a4e68d6163bfc0c74269169e2b8ffa9b4}{
+\index{mnSound@{mnSound}!FinishInput@{FinishInput}}
+\index{FinishInput@{FinishInput}!mnSound@{mnSound}}
+\subsubsection[{FinishInput}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::FinishInput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a4e68d6163bfc0c74269169e2b8ffa9b4}
+
+
+Cleans up the specified input instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aca0eaf06306a5523bb15d7bb5787fb70}{
+\index{mnSound@{mnSound}!FinishOutput@{FinishOutput}}
+\index{FinishOutput@{FinishOutput}!mnSound@{mnSound}}
+\subsubsection[{FinishOutput}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::FinishOutput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aca0eaf06306a5523bb15d7bb5787fb70}
+
+
+Cleans up an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ac9b7c27495dddb81c37a40840ab201b3}{
+\index{mnSound@{mnSound}!FinishSound@{FinishSound}}
+\index{FinishSound@{FinishSound}!mnSound@{mnSound}}
+\subsubsection[{FinishSound}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::FinishSound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ac9b7c27495dddb81c37a40840ab201b3}
+
+
+Cleans up the sound input/output module. 
+
+\begin{DoxyReturn}{Returns}
+0 if no error. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ab78e930fc31f2c31b41582efcdbcfc92}{
+\index{mnSound@{mnSound}!GetDataVolume@{GetDataVolume}}
+\index{GetDataVolume@{GetDataVolume}!mnSound@{mnSound}}
+\subsubsection[{GetDataVolume}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetDataVolume (
+\begin{DoxyParamCaption}
+\item[{WORD}]{ bitsPerSample, }
+\item[{\_\-\_\-int64}]{ dataPacket}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ab78e930fc31f2c31b41582efcdbcfc92}
+
+
+Calculates the volume of sound data stored in a packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitsPerSample}]The bits per sample of the sound data stored in the specified packet. \item[{\em dataPacket}]The packet to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the volume of the data. If 16 bit then the range is 0 to 65535. If 8 bit then the range is 0 to 255. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a33c88580558f5848590bc3a2ff47d95b}{
+\index{mnSound@{mnSound}!GetDataVolume@{GetDataVolume}}
+\index{GetDataVolume@{GetDataVolume}!mnSound@{mnSound}}
+\subsubsection[{GetDataVolume}]{\setlength{\rightskip}{0pt plus 5cm}int mnSound::GetDataVolume (
+\begin{DoxyParamCaption}
+\item[{WORD}]{ bitsPerSample, }
+\item[{const {\bf Packet} $\ast$}]{ dataPacket}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a33c88580558f5848590bc3a2ff47d95b}
+
+
+Calculates the volume of sound data stored in a packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitsPerSample}]The bits per sample of the sound data stored in the specified packet. \item[{\em dataPacket}]The packet to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the volume of the data. If 16 bit then the range is 0 to 65535. If 8 bit then the range is 0 to 255. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a344981464c4ba19f43a4c2310a1369d5}{
+\index{mnSound@{mnSound}!GetDeviceDriverMajorVersion@{GetDeviceDriverMajorVersion}}
+\index{GetDeviceDriverMajorVersion@{GetDeviceDriverMajorVersion}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceDriverMajorVersion}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned char mnSound::GetDeviceDriverMajorVersion (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a344981464c4ba19f43a4c2310a1369d5}
+
+
+Retrieves the major version of the device's driver e.g. if the version is 4.5 then 4 will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the driver major version. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a5edb517f5ed56a38290a5a0f75166e61}{
+\index{mnSound@{mnSound}!GetDeviceDriverMinorVersion@{GetDeviceDriverMinorVersion}}
+\index{GetDeviceDriverMinorVersion@{GetDeviceDriverMinorVersion}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceDriverMinorVersion}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned char mnSound::GetDeviceDriverMinorVersion (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a5edb517f5ed56a38290a5a0f75166e61}
+
+
+Gets the minor version of the device's driver e.g. if the version if 4.5 then 5 will be returned. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the driver minor version. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ab3bf413b5a6ab630ca7e381e7b3d8bbc}{
+\index{mnSound@{mnSound}!GetDeviceFormatSupport@{GetDeviceFormatSupport}}
+\index{GetDeviceFormatSupport@{GetDeviceFormatSupport}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceFormatSupport}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetDeviceFormatSupport (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output, }
+\item[{DWORD}]{ khz, }
+\item[{WORD}]{ bits, }
+\item[{WORD}]{ channels}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ab3bf413b5a6ab630ca7e381e7b3d8bbc}
+
+
+Determine if a format with the specified settings is supported by the device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device. \item[{\em khz}]Samples per second: 11025 (11.025 kHz), 22050 (22.05 kHz), 44100 (44.1 kHz), 48000 (48 kHz) or 96000 (96kHz). \item[{\em bits}]Bits (8 or 16). \item[{\em channels}]Number of channels channels (1 or 2).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if format supported, 0 if not. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a64f1bbb2a178dfc7830b9d053c16fe94}{
+\index{mnSound@{mnSound}!GetDeviceManuID@{GetDeviceManuID}}
+\index{GetDeviceManuID@{GetDeviceManuID}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceManuID}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnSound::GetDeviceManuID (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a64f1bbb2a178dfc7830b9d053c16fe94}
+
+
+Retrieves the manufacturer ID of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the manufacturer identifier. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aaec6223600498262bb5e416ea3085857}{
+\index{mnSound@{mnSound}!GetDeviceMaxChannels@{GetDeviceMaxChannels}}
+\index{GetDeviceMaxChannels@{GetDeviceMaxChannels}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceMaxChannels}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnSound::GetDeviceMaxChannels (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aaec6223600498262bb5e416ea3085857}
+
+
+Retrieves the number of channels supported by the device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of channels supported. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aaa57b089a6e0a2fabce97803657feda8}{
+\index{mnSound@{mnSound}!GetDeviceName@{GetDeviceName}}
+\index{GetDeviceName@{GetDeviceName}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceName}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL char $\ast$ mnSound::GetDeviceName (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aaa57b089a6e0a2fabce97803657feda8}
+
+
+Retrieves the name of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the name of the device. This should be deallocated using delete\mbox{[}\mbox{]}. 
+
+NULL if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_afad4600d4c3416dde18e305fff85a764}{
+\index{mnSound@{mnSound}!GetDeviceProductID@{GetDeviceProductID}}
+\index{GetDeviceProductID@{GetDeviceProductID}!mnSound@{mnSound}}
+\subsubsection[{GetDeviceProductID}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnSound::GetDeviceProductID (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID, }
+\item[{bool}]{ output}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_afad4600d4c3416dde18e305fff85a764}
+
+
+Retrieves the product ID of the device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \item[{\em output}]True if it is an output device, false if it is an input device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the product identifier. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a1e07da28da135a926c8dee4fb0b9192a}{
+\index{mnSound@{mnSound}!GetHardwarePitch@{GetHardwarePitch}}
+\index{GetHardwarePitch@{GetHardwarePitch}!mnSound@{mnSound}}
+\subsubsection[{GetHardwarePitch}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL double mnSound::GetHardwarePitch (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a1e07da28da135a926c8dee4fb0b9192a}
+
+
+Retrieves the pitch change in action by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_af993040e427438184c7038d6b72929c5}{mnSound::GetPitchControlSupported}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pitch change. This is as a percentage where 100 is no pitch change, 200 doubles the pitch, 50 halves the pitch. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ac09ccc78d0e9e878962be45eb1f8c532}{
+\index{mnSound@{mnSound}!GetHardwarePlaybackRate@{GetHardwarePlaybackRate}}
+\index{GetHardwarePlaybackRate@{GetHardwarePlaybackRate}!mnSound@{mnSound}}
+\subsubsection[{GetHardwarePlaybackRate}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL double mnSound::GetHardwarePlaybackRate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ac09ccc78d0e9e878962be45eb1f8c532}
+
+
+Retrieves the playback rate of sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_a3a038d4d7819d4fce909a46e0df90088}{mnSound::GetPlaybackRateControlSupported}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+playback rate. This is as a percentage where 100 is no rate change, 200 doubles the rate, 50 halves the rate. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ad182e4402ae1e9ea2364a6e7700d8749}{
+\index{mnSound@{mnSound}!GetHardwareVolumeLeft@{GetHardwareVolumeLeft}}
+\index{GetHardwareVolumeLeft@{GetHardwareVolumeLeft}!mnSound@{mnSound}}
+\subsubsection[{GetHardwareVolumeLeft}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnSound::GetHardwareVolumeLeft (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ad182e4402ae1e9ea2364a6e7700d8749}
+
+
+Retrieves the volume of the left channel. 
+
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_a2efcdd9f3ed0e6806606a63b43a723b4}{mnSound::GetVolumeControlSupported}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+If the driver does not support independent left/right volume change, this will return the volume of both channels.
+
+\begin{DoxyReturn}{Returns}
+the volume of the left channel. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aaf9d548648cf89ecd842e2cc7cf101a1}{
+\index{mnSound@{mnSound}!GetHardwareVolumeRight@{GetHardwareVolumeRight}}
+\index{GetHardwareVolumeRight@{GetHardwareVolumeRight}!mnSound@{mnSound}}
+\subsubsection[{GetHardwareVolumeRight}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnSound::GetHardwareVolumeRight (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aaf9d548648cf89ecd842e2cc7cf101a1}
+
+
+Retrieves the volume of the right channel. 
+
+If only one channel exists then this will return the same as \hyperlink{class_sound_instance_output_a8592b296bc22bcf29d1761e21cada3ac}{SoundInstanceOutput::GetHardwareVolumeLeft()}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_a2efcdd9f3ed0e6806606a63b43a723b4}{mnSound::GetVolumeControlSupported}.
+
+\begin{DoxyReturn}{Returns}
+the volume of the right channel. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a601c73ad6a788881c1a7e599053db16a}{
+\index{mnSound@{mnSound}!GetIndependentVolumeControlSupported@{GetIndependentVolumeControlSupported}}
+\index{GetIndependentVolumeControlSupported@{GetIndependentVolumeControlSupported}!mnSound@{mnSound}}
+\subsubsection[{GetIndependentVolumeControlSupported}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetIndependentVolumeControlSupported (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ outputDeviceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a601c73ad6a788881c1a7e599053db16a}
+
+
+Determine whether left and right volume levels can be changed independently of each other. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em outputDeviceID}]Identifier for the device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if independent volume change supported, 0 if not. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a9c048e63cba1dbc161254174c7d01f83}{
+\index{mnSound@{mnSound}!GetInputBitsPerSample@{GetInputBitsPerSample}}
+\index{GetInputBitsPerSample@{GetInputBitsPerSample}!mnSound@{mnSound}}
+\subsubsection[{GetInputBitsPerSample}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL WORD mnSound::GetInputBitsPerSample (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a9c048e63cba1dbc161254174c7d01f83}
+
+
+Retrieves the bits per sample of the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bits per sample. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a455f5c24b242a1e125b435a9ac94b600}{
+\index{mnSound@{mnSound}!GetInputChannels@{GetInputChannels}}
+\index{GetInputChannels@{GetInputChannels}!mnSound@{mnSound}}
+\subsubsection[{GetInputChannels}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL WORD mnSound::GetInputChannels (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a455f5c24b242a1e125b435a9ac94b600}
+
+
+Retrieves the number of input channels in use by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of input channels in use. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a64a0d145d366a853a8e102fe190ee68a}{
+\index{mnSound@{mnSound}!GetInputData@{GetInputData}}
+\index{GetInputData@{GetInputData}!mnSound@{mnSound}}
+\subsubsection[{GetInputData}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetInputData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{\_\-\_\-int64}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a64a0d145d366a853a8e102fe190ee68a}
+
+
+Retrieves input data that has been received. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[\mbox{\tt[out]} {\em destination}]Destination packet to copy data to.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the input data. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a538ba23d3e2666f282f45dc33861a4fc}{
+\index{mnSound@{mnSound}!GetInputData@{GetInputData}}
+\index{GetInputData@{GetInputData}!mnSound@{mnSound}}
+\subsubsection[{GetInputData}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t mnSound::GetInputData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf Packet} \&}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a538ba23d3e2666f282f45dc33861a4fc}
+
+
+Retrieves input data that has been received. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[\mbox{\tt[out]} {\em destination}]Destination packet to copy data to.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in the retrieved input data queue before this call. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a1cc7ad0b3b3e4922e043d44d8080b639}{
+\index{mnSound@{mnSound}!GetInputNoBuffers@{GetInputNoBuffers}}
+\index{GetInputNoBuffers@{GetInputNoBuffers}!mnSound@{mnSound}}
+\subsubsection[{GetInputNoBuffers}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetInputNoBuffers (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a1cc7ad0b3b3e4922e043d44d8080b639}
+
+
+Retrieves the number of buffers in use by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of buffers in use. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a2a68fc13b004d220247bb1f60d31b538}{
+\index{mnSound@{mnSound}!GetInputPaused@{GetInputPaused}}
+\index{GetInputPaused@{GetInputPaused}!mnSound@{mnSound}}
+\subsubsection[{GetInputPaused}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetInputPaused (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a2a68fc13b004d220247bb1f60d31b538}
+
+
+Determines whether input is paused. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if input is paused. 
+
+0 if input is unpaused. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a22e8862bb6f27d63cdf0d6672cb98698}{
+\index{mnSound@{mnSound}!GetInputSamplesPerSec@{GetInputSamplesPerSec}}
+\index{GetInputSamplesPerSec@{GetInputSamplesPerSec}!mnSound@{mnSound}}
+\subsubsection[{GetInputSamplesPerSec}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL DWORD mnSound::GetInputSamplesPerSec (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a22e8862bb6f27d63cdf0d6672cb98698}
+
+
+Retrieves the samples rate in use by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample rate. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a6c336c93f373f5164ce3f8f14acda4fd}{
+\index{mnSound@{mnSound}!GetInputTimePerBuffer@{GetInputTimePerBuffer}}
+\index{GetInputTimePerBuffer@{GetInputTimePerBuffer}!mnSound@{mnSound}}
+\subsubsection[{GetInputTimePerBuffer}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetInputTimePerBuffer (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a6c336c93f373f5164ce3f8f14acda4fd}
+
+
+Retrieves the number of milliseconds worth of data that each buffer can store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+milliseconds per buffer. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a6d3720f66a652c770c47e95f418b2e5c}{
+\index{mnSound@{mnSound}!GetInputUnpaused@{GetInputUnpaused}}
+\index{GetInputUnpaused@{GetInputUnpaused}!mnSound@{mnSound}}
+\subsubsection[{GetInputUnpaused}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetInputUnpaused (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a6d3720f66a652c770c47e95f418b2e5c}
+
+
+Determines whether input is unpaused. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if input is unpaused. 
+
+0 if input is paused. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ab5dbce73cd96c949c772e267048aaebc}{
+\index{mnSound@{mnSound}!GetNumInputDevices@{GetNumInputDevices}}
+\index{GetNumInputDevices@{GetNumInputDevices}!mnSound@{mnSound}}
+\subsubsection[{GetNumInputDevices}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetNumInputDevices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ab5dbce73cd96c949c772e267048aaebc}
+
+
+Retrieves the number of input devices available. 
+
+\begin{DoxyReturn}{Returns}
+the number of input devices available. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a2fa79bfe96c3fbd8e35f87b3252bccbb}{
+\index{mnSound@{mnSound}!GetNumInputInstances@{GetNumInputInstances}}
+\index{GetNumInputInstances@{GetNumInputInstances}!mnSound@{mnSound}}
+\subsubsection[{GetNumInputInstances}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetNumInputInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a2fa79bfe96c3fbd8e35f87b3252bccbb}
+
+
+Retrieves the number of input instances created using \hyperlink{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}{mnSound::StartSound}. 
+
+\begin{DoxyReturn}{Returns}
+the number input instances. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a20d9da8488c3004ebaed3a0b6ea1b43b}{
+\index{mnSound@{mnSound}!GetNumOutputDevices@{GetNumOutputDevices}}
+\index{GetNumOutputDevices@{GetNumOutputDevices}!mnSound@{mnSound}}
+\subsubsection[{GetNumOutputDevices}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetNumOutputDevices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a20d9da8488c3004ebaed3a0b6ea1b43b}
+
+
+Retrieves the number of output devices available. 
+
+\begin{DoxyReturn}{Returns}
+the number of output devices available. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a9aaa075dc47b75022c3153780dfd2f06}{
+\index{mnSound@{mnSound}!GetNumOutputInstances@{GetNumOutputInstances}}
+\index{GetNumOutputInstances@{GetNumOutputInstances}!mnSound@{mnSound}}
+\subsubsection[{GetNumOutputInstances}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetNumOutputInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a9aaa075dc47b75022c3153780dfd2f06}
+
+
+Retrieves the number of output instances created using \hyperlink{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}{mnSound::StartSound}. 
+
+\begin{DoxyReturn}{Returns}
+the number output instances. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ad1c20b2f6eee23460deebba18c960f6c}{
+\index{mnSound@{mnSound}!GetOutputBitsPerSample@{GetOutputBitsPerSample}}
+\index{GetOutputBitsPerSample@{GetOutputBitsPerSample}!mnSound@{mnSound}}
+\subsubsection[{GetOutputBitsPerSample}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL WORD mnSound::GetOutputBitsPerSample (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ad1c20b2f6eee23460deebba18c960f6c}
+
+
+Retrieves the bits per sample of the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bits per sample. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ad071cba851fd76ecd0672761511d6b2f}{
+\index{mnSound@{mnSound}!GetOutputChannels@{GetOutputChannels}}
+\index{GetOutputChannels@{GetOutputChannels}!mnSound@{mnSound}}
+\subsubsection[{GetOutputChannels}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL WORD mnSound::GetOutputChannels (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ad071cba851fd76ecd0672761511d6b2f}
+
+
+Retrieves the number of output channels in use by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of output channels in use. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a46ed2d03831f3a72a6fa717612173cd0}{
+\index{mnSound@{mnSound}!GetOutputLastAddedCap@{GetOutputLastAddedCap}}
+\index{GetOutputLastAddedCap@{GetOutputLastAddedCap}!mnSound@{mnSound}}
+\subsubsection[{GetOutputLastAddedCap}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetOutputLastAddedCap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a46ed2d03831f3a72a6fa717612173cd0}
+
+
+Retrieves the length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a220cb803f0b02b9b30c4dacf728d2971}{
+\index{mnSound@{mnSound}!GetOutputSamplesPerSec@{GetOutputSamplesPerSec}}
+\index{GetOutputSamplesPerSec@{GetOutputSamplesPerSec}!mnSound@{mnSound}}
+\subsubsection[{GetOutputSamplesPerSec}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL DWORD mnSound::GetOutputSamplesPerSec (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a220cb803f0b02b9b30c4dacf728d2971}
+
+
+Retrieves the samples rate in use by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the sample rate. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a63c6c26666fcc777b392142bef99a4e4}{
+\index{mnSound@{mnSound}!GetOutputStoredDataCap@{GetOutputStoredDataCap}}
+\index{GetOutputStoredDataCap@{GetOutputStoredDataCap}!mnSound@{mnSound}}
+\subsubsection[{GetOutputStoredDataCap}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnSound::GetOutputStoredDataCap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a63c6c26666fcc777b392142bef99a4e4}
+
+
+Retrieves the amount of data (in milliseconds) that needs to be stored for playback to commence. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the stored data cap. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_af993040e427438184c7038d6b72929c5}{
+\index{mnSound@{mnSound}!GetPitchControlSupported@{GetPitchControlSupported}}
+\index{GetPitchControlSupported@{GetPitchControlSupported}!mnSound@{mnSound}}
+\subsubsection[{GetPitchControlSupported}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetPitchControlSupported (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ outputDeviceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_af993040e427438184c7038d6b72929c5}
+
+
+Determine whether pitch control is supported. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em outputDeviceID}]Identifier for the device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if pitch control supported, 0 if not. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a3a038d4d7819d4fce909a46e0df90088}{
+\index{mnSound@{mnSound}!GetPlaybackRateControlSupported@{GetPlaybackRateControlSupported}}
+\index{GetPlaybackRateControlSupported@{GetPlaybackRateControlSupported}!mnSound@{mnSound}}
+\subsubsection[{GetPlaybackRateControlSupported}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetPlaybackRateControlSupported (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ outputDeviceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a3a038d4d7819d4fce909a46e0df90088}
+
+
+Determine if playback rate control is supported. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em outputDeviceID}]Identifier for the device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if playback rate control supported, 0 if not. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ab5a3cb8258f43c727338aef5ebd11f02}{
+\index{mnSound@{mnSound}!GetSampleAccurate@{GetSampleAccurate}}
+\index{GetSampleAccurate@{GetSampleAccurate}!mnSound@{mnSound}}
+\subsubsection[{GetSampleAccurate}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetSampleAccurate (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ outputDeviceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ab5a3cb8258f43c727338aef5ebd11f02}
+
+
+Determine whether sample accurate position information can be retrieved. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em outputDeviceID}]Identifier for the device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if sample accurate, 0 if not. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aebdf926e327e83fdeff4b0eb2993059a}{
+\index{mnSound@{mnSound}!GetSoundProfileBitsPerSample@{GetSoundProfileBitsPerSample}}
+\index{GetSoundProfileBitsPerSample@{GetSoundProfileBitsPerSample}!mnSound@{mnSound}}
+\subsubsection[{GetSoundProfileBitsPerSample}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL WORD mnSound::GetSoundProfileBitsPerSample (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aebdf926e327e83fdeff4b0eb2993059a}
+
+
+Retrieves the bits per sample option. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bits per sample. See \hyperlink{namespacemn_sound_acd691f2743b6916bae1167a0d0039a2f}{mnSound::SetSoundProfile} for more information. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_af3eb9a729f081bdeb8e5d47159eedd7e}{
+\index{mnSound@{mnSound}!GetSoundProfileChannels@{GetSoundProfileChannels}}
+\index{GetSoundProfileChannels@{GetSoundProfileChannels}!mnSound@{mnSound}}
+\subsubsection[{GetSoundProfileChannels}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL WORD mnSound::GetSoundProfileChannels (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_af3eb9a729f081bdeb8e5d47159eedd7e}
+
+
+Retrieves the number of channels option. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of channels. See \hyperlink{namespacemn_sound_acd691f2743b6916bae1167a0d0039a2f}{mnSound::SetSoundProfile} for more information. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a93520b3cb286768fccbd7ba83d41447d}{
+\index{mnSound@{mnSound}!GetSoundProfileSamplesPerSecond@{GetSoundProfileSamplesPerSecond}}
+\index{GetSoundProfileSamplesPerSecond@{GetSoundProfileSamplesPerSecond}!mnSound@{mnSound}}
+\subsubsection[{GetSoundProfileSamplesPerSecond}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL DWORD mnSound::GetSoundProfileSamplesPerSecond (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a93520b3cb286768fccbd7ba83d41447d}
+
+
+Retrieves the samples per second option. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+samples per second. See \hyperlink{namespacemn_sound_acd691f2743b6916bae1167a0d0039a2f}{mnSound::SetSoundProfile} for more information. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a2efcdd9f3ed0e6806606a63b43a723b4}{
+\index{mnSound@{mnSound}!GetVolumeControlSupported@{GetVolumeControlSupported}}
+\index{GetVolumeControlSupported@{GetVolumeControlSupported}!mnSound@{mnSound}}
+\subsubsection[{GetVolumeControlSupported}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::GetVolumeControlSupported (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ outputDeviceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a2efcdd9f3ed0e6806606a63b43a723b4}
+
+
+Determine whether volume change is supported by this device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em outputDeviceID}]Identifier for the device.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if volume change supported, 0 if not. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a7d2ecf983638b8ddfd46f37bd92065fc}{
+\index{mnSound@{mnSound}!PauseInput@{PauseInput}}
+\index{PauseInput@{PauseInput}!mnSound@{mnSound}}
+\subsubsection[{PauseInput}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::PauseInput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a7d2ecf983638b8ddfd46f37bd92065fc}
+
+
+Pauses input. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_ae340906f8e3f2b9f286f43a374612131}{
+\index{mnSound@{mnSound}!PlayData@{PlayData}}
+\index{PlayData@{PlayData}!mnSound@{mnSound}}
+\subsubsection[{PlayData}]{\setlength{\rightskip}{0pt plus 5cm}int mnSound::PlayData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const {\bf Packet} \&}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_ae340906f8e3f2b9f286f43a374612131}
+
+
+Outputs the specified packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em packet}]The packet to output.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aab142da544befb73ad95ecebaad53ee5}{
+\index{mnSound@{mnSound}!PlayData@{PlayData}}
+\index{PlayData@{PlayData}!mnSound@{mnSound}}
+\subsubsection[{PlayData}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::PlayData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{\_\-\_\-int64}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aab142da544befb73ad95ecebaad53ee5}
+
+
+Outputs the specified packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em packet}]The packet to output.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a3238359791aa5c4e673f34a33c78f77b}{
+\index{mnSound@{mnSound}!SetDataVolume@{SetDataVolume}}
+\index{SetDataVolume@{SetDataVolume}!mnSound@{mnSound}}
+\subsubsection[{SetDataVolume}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetDataVolume (
+\begin{DoxyParamCaption}
+\item[{WORD}]{ bitsPerSample, }
+\item[{\_\-\_\-int64}]{ dataPacket, }
+\item[{double}]{ percentageChange}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a3238359791aa5c4e673f34a33c78f77b}
+
+
+Changes the volume of sound data stored in a packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitsPerSample}]The bits per sample of the stored data in the packet. \item[\mbox{\tt[in,out]} {\em dataPacket}]The packet to manipulate. \item[{\em percentageChange}]The percentage to change the volume e.g. 200 doubles the volume. \end{DoxyParams}
+\hypertarget{namespacemn_sound_accb207d924c1fe844d439a58cc05bd0f}{
+\index{mnSound@{mnSound}!SetHardwarePitch@{SetHardwarePitch}}
+\index{SetHardwarePitch@{SetHardwarePitch}!mnSound@{mnSound}}
+\subsubsection[{SetHardwarePitch}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetHardwarePitch (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{double}]{ pitch}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_accb207d924c1fe844d439a58cc05bd0f}
+
+
+Changes the pitch of sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_af993040e427438184c7038d6b72929c5}{mnSound::GetPitchControlSupported}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em pitch}]Pitch change. This is as a percentage where 100 is no pitch change, 200 doubles the pitch, 50 halves the pitch. \end{DoxyParams}
+\hypertarget{namespacemn_sound_a446f7cc649730458178a1b14a776ffda}{
+\index{mnSound@{mnSound}!SetHardwarePlaybackRate@{SetHardwarePlaybackRate}}
+\index{SetHardwarePlaybackRate@{SetHardwarePlaybackRate}!mnSound@{mnSound}}
+\subsubsection[{SetHardwarePlaybackRate}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetHardwarePlaybackRate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{double}]{ rate}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a446f7cc649730458178a1b14a776ffda}
+
+
+Changes the playback rate of sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_a3a038d4d7819d4fce909a46e0df90088}{mnSound::GetPlaybackRateControlSupported}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em rate}]New playback rate. This is as a percentage where 100 is no rate change, 200 doubles the rate, 50 halves the rate. \end{DoxyParams}
+\hypertarget{namespacemn_sound_a139b13922a75680cdf435d3c4fc1d15c}{
+\index{mnSound@{mnSound}!SetHardwareVolume@{SetHardwareVolume}}
+\index{SetHardwareVolume@{SetHardwareVolume}!mnSound@{mnSound}}
+\subsubsection[{SetHardwareVolume}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetHardwareVolume (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{WORD}]{ left, }
+\item[{WORD}]{ right}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a139b13922a75680cdf435d3c4fc1d15c}
+
+
+Changes the volume sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using \hyperlink{namespacemn_sound_a2efcdd9f3ed0e6806606a63b43a723b4}{mnSound::GetVolumeControlSupported}.
+
+If the driver does not support independent left/right volume change, only the left value will be taken into account and this will be the value used by both channels.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em left}]New volume for the left channel. \item[{\em right}]New volume for the right channel. \end{DoxyParams}
+\hypertarget{namespacemn_sound_afe40d7ee00b58513c992e79f11bab4ae}{
+\index{mnSound@{mnSound}!SetOutputSmoothValues@{SetOutputSmoothValues}}
+\index{SetOutputSmoothValues@{SetOutputSmoothValues}!mnSound@{mnSound}}
+\subsubsection[{SetOutputSmoothValues}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetOutputSmoothValues (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ msStoredDataCap, }
+\item[{size\_\-t}]{ timeGapCap}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_afe40d7ee00b58513c992e79f11bab4ae}
+
+
+Changes values which may effect how smooth playback is. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em msStoredDataCap}]The amount of data (in milliseconds) that needs to be stored for playback to commence. \item[{\em timeGapCap}]The length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \end{DoxyParams}
+\hypertarget{namespacemn_sound_acd691f2743b6916bae1167a0d0039a2f}{
+\index{mnSound@{mnSound}!SetSoundProfile@{SetSoundProfile}}
+\index{SetSoundProfile@{SetSoundProfile}!mnSound@{mnSound}}
+\subsubsection[{SetSoundProfile}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetSoundProfile (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile, }
+\item[{DWORD}]{ khz, }
+\item[{WORD}]{ bitsPerSample, }
+\item[{WORD}]{ channels}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_acd691f2743b6916bae1167a0d0039a2f}
+
+
+Changes the settings stored by the sound profile. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to change. \item[{\em khz}]Samples per second: 11025 (11.025 kHz), 22050 (22.05 kHz), 44100 (44.1 kHz), 48000 (48 kHz) or 96000 (96 kHz). If 0 then no change is made. \item[{\em bitsPerSample}]Bits per sample: 8 or 16. If 0 then no change is made. \item[{\em channels}]Number of channels. If 0 then no change is made.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a69d99c45fccdd7cf314ee3ad3b1680a4}{
+\index{mnSound@{mnSound}!SetSoundProfileHighQuality@{SetSoundProfileHighQuality}}
+\index{SetSoundProfileHighQuality@{SetSoundProfileHighQuality}!mnSound@{mnSound}}
+\subsubsection[{SetSoundProfileHighQuality}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetSoundProfileHighQuality (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a69d99c45fccdd7cf314ee3ad3b1680a4}
+
+
+Sets the format to the default high quality. 
+
+The format will be set with the following values: \hyperlink{class_sound_format_ae134c16bf6c4ee5ff2bba8ea0afccfb2}{SoundFormat::HIGH\_\-SAMPLES\_\-PER\_\-SEC}, \hyperlink{class_sound_format_a8636cf529abffbcec2d2225ebd0fd168}{SoundFormat::HIGH\_\-BITS\_\-PER\_\-SAMPLE}, \hyperlink{class_sound_format_ae6e169cc7c4e4718cf87d1a6bb4c5941}{SoundFormat::HIGH\_\-CHANNELS}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a5da025d9b5b6b76b0b2c2d4db16d3825}{
+\index{mnSound@{mnSound}!SetSoundProfileLowQuality@{SetSoundProfileLowQuality}}
+\index{SetSoundProfileLowQuality@{SetSoundProfileLowQuality}!mnSound@{mnSound}}
+\subsubsection[{SetSoundProfileLowQuality}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetSoundProfileLowQuality (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a5da025d9b5b6b76b0b2c2d4db16d3825}
+
+
+Sets the format to the default low quality. 
+
+The format will be set with the following values: \hyperlink{class_sound_format_a472e7ee028938594c9f726f5a83f60b0}{SoundFormat::LOW\_\-SAMPLES\_\-PER\_\-SEC}, \hyperlink{class_sound_format_ad8da01592ca00c7f77e9774f418b7117}{SoundFormat::LOW\_\-BITS\_\-PER\_\-SAMPLE}, \hyperlink{class_sound_format_a378d26a25d7ce8ac8c15e2ff4ba1a38a}{SoundFormat::LOW\_\-CHANNELS}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a3551bc3ffd8d9b55fd7e2edbfc83652a}{
+\index{mnSound@{mnSound}!SetSoundProfileMediumQuality@{SetSoundProfileMediumQuality}}
+\index{SetSoundProfileMediumQuality@{SetSoundProfileMediumQuality}!mnSound@{mnSound}}
+\subsubsection[{SetSoundProfileMediumQuality}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::SetSoundProfileMediumQuality (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a3551bc3ffd8d9b55fd7e2edbfc83652a}
+
+
+Sets the format to the default medium quality. 
+
+The format will be set with the following values: \hyperlink{class_sound_format_ac51cd6a45429cbdbaff48dd3560c8afb}{SoundFormat::MED\_\-SAMPLES\_\-PER\_\-SEC}, \hyperlink{class_sound_format_a9f09a258b73854f6477286e7c0460b4e}{SoundFormat::MED\_\-BITS\_\-PER\_\-SAMPLE}, \hyperlink{class_sound_format_aac4f90a611cf4b4a54b5996c006e0828}{SoundFormat::MED\_\-CHANNELS}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]The profile to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a9e382bedc6fd0b60dee29b6740753fa5}{
+\index{mnSound@{mnSound}!StartInput@{StartInput}}
+\index{StartInput@{StartInput}!mnSound@{mnSound}}
+\subsubsection[{StartInput}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::StartInput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{unsigned int}]{ inputDeviceID, }
+\item[{size\_\-t}]{ numBuffers, }
+\item[{size\_\-t}]{ buffTimeLength, }
+\item[{\_\-\_\-int64}]{ soundFormat}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a9e382bedc6fd0b60dee29b6740753fa5}
+
+
+Starts an input instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance slot to use. \item[{\em inputDeviceID}]ID of device that instance should use to retrieve input data. Set to -\/1 and the device will be chosen automatically. \item[{\em numBuffers}]Number of buffers. \item[{\em buffTimeLength}]Length of a buffer in milliseconds. \item[{\em soundFormat}]The sound format that device should use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a09be6f3b1e652f77432a9f00435f76fd}{
+\index{mnSound@{mnSound}!StartInput@{StartInput}}
+\index{StartInput@{StartInput}!mnSound@{mnSound}}
+\subsubsection[{StartInput}]{\setlength{\rightskip}{0pt plus 5cm}int mnSound::StartInput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{unsigned int}]{ inputDeviceID, }
+\item[{size\_\-t}]{ numBuffers, }
+\item[{size\_\-t}]{ buffTimeLength, }
+\item[{const {\bf SoundFormat} \&}]{ soundFormat}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a09be6f3b1e652f77432a9f00435f76fd}
+
+
+Starts an input instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance slot to use. \item[{\em inputDeviceID}]ID of device that instance should use to retrieve input data. Set to -\/1 and the device will be chosen automatically. \item[{\em numBuffers}]Number of buffers. \item[{\em buffTimeLength}]Length of a buffer in milliseconds. \item[{\em soundFormat}]The sound format that device should use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_a3cb5bc255f34cecb9d8601577d15d678}{
+\index{mnSound@{mnSound}!StartOutput@{StartOutput}}
+\index{StartOutput@{StartOutput}!mnSound@{mnSound}}
+\subsubsection[{StartOutput}]{\setlength{\rightskip}{0pt plus 5cm}int mnSound::StartOutput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{unsigned int}]{ outputDeviceID, }
+\item[{size\_\-t}]{ msStoredDataCap, }
+\item[{size\_\-t}]{ timeGapCap, }
+\item[{const {\bf SoundFormat} \&}]{ soundFormat}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_a3cb5bc255f34cecb9d8601577d15d678}
+
+
+Starts an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em outputDeviceID}]ID of device that instance should use to post output data. \item[{\em msStoredDataCap}]The length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \item[{\em timeGapCap}]The amount of data that needs to be stored for playback to commence. \item[{\em soundFormat}]Sound format that device should use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aaf9dc82f488af0bab8d2bd73f252756d}{
+\index{mnSound@{mnSound}!StartOutput@{StartOutput}}
+\index{StartOutput@{StartOutput}!mnSound@{mnSound}}
+\subsubsection[{StartOutput}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::StartOutput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{unsigned int}]{ outputDeviceID, }
+\item[{size\_\-t}]{ msStoredDataCap, }
+\item[{size\_\-t}]{ timeGapCap, }
+\item[{\_\-\_\-int64}]{ soundFormat}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aaf9dc82f488af0bab8d2bd73f252756d}
+
+
+Starts an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance. \item[{\em outputDeviceID}]ID of device that instance should use to post output data. \item[{\em msStoredDataCap}]The length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \item[{\em timeGapCap}]The amount of data that needs to be stored for playback to commence. \item[{\em soundFormat}]Sound format that device should use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}{
+\index{mnSound@{mnSound}!StartSound@{StartSound}}
+\index{StartSound@{StartSound}!mnSound@{mnSound}}
+\subsubsection[{StartSound}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::StartSound (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInputInstances, }
+\item[{size\_\-t}]{ numOutputInstances}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_aca60b744a68a7f44ef38232112c992e4}
+
+
+Starts the input/output module. 
+
+If the module is already started, it will be restarted.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numInputInstances}]Number of input instances. \item[{\em numOutputInstances}]Number of output instances.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_sound_afc29d53b1d4120de1c7465f788524683}{
+\index{mnSound@{mnSound}!UnpauseInput@{UnpauseInput}}
+\index{UnpauseInput@{UnpauseInput}!mnSound@{mnSound}}
+\subsubsection[{UnpauseInput}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSound::UnpauseInput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_sound_afc29d53b1d4120de1c7465f788524683}
+
+
+Unpauses input. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred. 
+
+-\/1 if an error occurred. 
+\end{DoxyReturn}

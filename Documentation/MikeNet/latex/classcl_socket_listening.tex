@@ -1,0 +1,141 @@
+\hypertarget{classcl_socket_listening}{
+\section{clSocketListening Class Reference}
+\label{classcl_socket_listening}\index{clSocketListening@{clSocketListening}}
+}
+
+
+Listening socket used to listen and accept new TCP connections.  
+
+
+
+
+{\ttfamily \#include $<$clSocketListening.h$>$}
+
+Inheritance diagram for clSocketListening:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_socket_listening}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_socket_listening_a0c88e836c8ec320b513d21f962e62f23}{clSocketListening} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&localAddr, bool hardShutdown, bool nagleDisabled, \hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$socketTCP)
+\item 
+const \hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$ \hyperlink{classcl_socket_listening_a6e234847294989cfedd8fb44c626688b}{GetSocket} () const 
+\item 
+\hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$ \hyperlink{classcl_socket_listening_a912ccb81bf37beb7265ce360afe457b7}{GetCopySocket} () const 
+\item 
+SOCKET \hyperlink{classcl_socket_listening_a677d44d9ad6162368179aeb5d8eb9d91}{AcceptConnection} (int testValue, \hyperlink{classcl_single_addr}{clSingleAddr} $\ast$addr)
+\item 
+void \hyperlink{classcl_socket_listening_a060b530ee10d0b050f64d4c125801696}{SetContainer} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$container)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_socket_listening_afa1cad14858725577fe135e5238f399f}{
+\hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$ {\bfseries clientSocketTemplate}}
+\label{classcl_socket_listening_afa1cad14858725577fe135e5238f399f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Listening socket used to listen and accept new TCP connections. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Accepts or rejects incoming TCP connection attempts. Also stores a template socket object to be used with new clients. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_socket_listening_a0c88e836c8ec320b513d21f962e62f23}{
+\index{clSocketListening@{clSocketListening}!clSocketListening@{clSocketListening}}
+\index{clSocketListening@{clSocketListening}!clSocketListening@{clSocketListening}}
+\subsubsection[{clSocketListening}]{\setlength{\rightskip}{0pt plus 5cm}clSocketListening::clSocketListening (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ localAddr, }
+\item[{bool}]{ hardShutdown, }
+\item[{bool}]{ nagleDisabled, }
+\item[{{\bf clSocketTCP} $\ast$}]{ clientSocketTemplate}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_listening_a0c88e836c8ec320b513d21f962e62f23}
+Constructor Sets up socket ready to accept TCP connections
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em localAddr}]local address to bind to, if IP/port is set to 0 then winsock will automatically find one \item[{\em hardShutdown}]if true then upon socket closure clients will be disconnected straight away without waiting for data transfer to finish \item[{\em nagleDisabled}]if true then the nagle algorithm will be disabled \item[\mbox{\tt[in]} {\em clientSocketTemplate}]client socket template which describes how clients (who's connections are accepted by this listening socket) should deal with data received and how big their receive buffers should be. \par
+ A copy of this object is passed to each client during server instance setup. \par
+ The object is not directly used by \hyperlink{classcl_socket_listening}{clSocketListening} and so this class will not clean it up. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_socket_listening_a677d44d9ad6162368179aeb5d8eb9d91}{
+\index{clSocketListening@{clSocketListening}!AcceptConnection@{AcceptConnection}}
+\index{AcceptConnection@{AcceptConnection}!clSocketListening@{clSocketListening}}
+\subsubsection[{AcceptConnection}]{\setlength{\rightskip}{0pt plus 5cm}SOCKET clSocketListening::AcceptConnection (
+\begin{DoxyParamCaption}
+\item[{int}]{ testValue, }
+\item[{{\bf clSingleAddr} $\ast$}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_listening_a677d44d9ad6162368179aeb5d8eb9d91}
+Deals with any pending connection attempts on the socket \par
+ \_\-AcceptDenyClient is called by WSAAccept and its return value determines whether a client is accepted or rejected \par
+ \par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em testValue}]if testValue is 0 the connection is rejected, otherwise it is accepted \item[{\em addr}]\mbox{[}out\mbox{]} address of newly connected client will be stored here\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]iff an error occurs in WSAAccept, but not if a connection attempt fails or no connection attempts were found on this call.\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+new winsock socket object capable of transferring TCP data with newly connected client 
+
+INVALID\_\-SOCKET if no TCP connection was successfully accepted on this call 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_listening_a912ccb81bf37beb7265ce360afe457b7}{
+\index{clSocketListening@{clSocketListening}!GetCopySocket@{GetCopySocket}}
+\index{GetCopySocket@{GetCopySocket}!clSocketListening@{clSocketListening}}
+\subsubsection[{GetCopySocket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketTCP} $\ast$ clSocketListening::GetCopySocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_listening_a912ccb81bf37beb7265ce360afe457b7}
+\begin{DoxyReturn}{Returns}
+a deep copy of client socket template 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_listening_a6e234847294989cfedd8fb44c626688b}{
+\index{clSocketListening@{clSocketListening}!GetSocket@{GetSocket}}
+\index{GetSocket@{GetSocket}!clSocketListening@{clSocketListening}}
+\subsubsection[{GetSocket}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSocketTCP} $\ast$ clSocketListening::GetSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_listening_a6e234847294989cfedd8fb44c626688b}
+\begin{DoxyReturn}{Returns}
+client socket template which describes how clients (whose connections are accepted by this listening socket) should deal with data received and how big their receive buffers should be. \par
+ A copy of this object is passed to each client during server instance setup. \par
+ The object is not directly used by \hyperlink{classcl_socket_listening}{clSocketListening}. 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_listening_a060b530ee10d0b050f64d4c125801696}{
+\index{clSocketListening@{clSocketListening}!SetContainer@{SetContainer}}
+\index{SetContainer@{SetContainer}!clSocketListening@{clSocketListening}}
+\subsubsection[{SetContainer}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketListening::SetContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ container}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_listening_a060b530ee10d0b050f64d4c125801696}
+Sets \hyperlink{classcl_instance_container}{clInstanceContainer} containing this instance, must be called by class using this object if a container exists 
+\begin{DoxyParams}{Parameters}
+\item[{\em \hyperlink{classcl_instance_container}{clInstanceContainer}}]pointer to instance container that contains this instance \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocketListening.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocketListening.cpp\end{DoxyCompactItemize}

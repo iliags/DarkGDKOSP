@@ -1,0 +1,88 @@
+\hypertarget{class_upnp_nat_utility}{
+\section{UpnpNatUtility Class Reference}
+\label{class_upnp_nat_utility}\index{UpnpNatUtility@{UpnpNatUtility}}
+}
+
+
+Global UPnP NAT methods and variables.  
+
+
+
+
+{\ttfamily \#include $<$UpnpNatUtility.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_utility_af5316f831b786fa889040d14143b257a}{
+static void \hyperlink{class_upnp_nat_utility_af5316f831b786fa889040d14143b257a}{Start} ()}
+\label{class_upnp_nat_utility_af5316f831b786fa889040d14143b257a}
+
+\begin{DoxyCompactList}\small\item\em Initializes module. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_utility_a2a2b1f01742de357837ccb020789a1e6}{
+static void \hyperlink{class_upnp_nat_utility_a2a2b1f01742de357837ccb020789a1e6}{Finish} ()}
+\label{class_upnp_nat_utility_a2a2b1f01742de357837ccb020789a1e6}
+
+\begin{DoxyCompactList}\small\item\em Cleans up module. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_upnp_nat_utility_ae9012a08fced54432da46aea98e78546}{IsRunning} ()
+\begin{DoxyCompactList}\small\item\em Determine whether the module is running. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_upnp_nat_communication}{UpnpNatCommunication} $\ast$ \hyperlink{class_upnp_nat_utility_ad8d771493e18e4e021d34300017e1a61}{GetControl} ()
+\begin{DoxyCompactList}\small\item\em Retrieves NAT object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_utility_a00094935adc5a2f1806c52f03ff5ca66}{
+static \hyperlink{class_upnp_nat_communication}{UpnpNatCommunication} $\ast$ \hyperlink{class_upnp_nat_utility_a00094935adc5a2f1806c52f03ff5ca66}{control}}
+\label{class_upnp_nat_utility_a00094935adc5a2f1806c52f03ff5ca66}
+
+\begin{DoxyCompactList}\small\item\em Controls UPnP NAT. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global UPnP NAT methods and variables. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_upnp_nat_utility_ad8d771493e18e4e021d34300017e1a61}{
+\index{UpnpNatUtility@{UpnpNatUtility}!GetControl@{GetControl}}
+\index{GetControl@{GetControl}!UpnpNatUtility@{UpnpNatUtility}}
+\subsubsection[{GetControl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UpnpNatCommunication} $\ast$ UpnpNatUtility::GetControl (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_upnp_nat_utility_ad8d771493e18e4e021d34300017e1a61}
+
+
+Retrieves NAT object. 
+
+\begin{DoxyReturn}{Returns}
+NAT object. 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If NAT is not active. \end{DoxyExceptions}
+\hypertarget{class_upnp_nat_utility_ae9012a08fced54432da46aea98e78546}{
+\index{UpnpNatUtility@{UpnpNatUtility}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!UpnpNatUtility@{UpnpNatUtility}}
+\subsubsection[{IsRunning}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatUtility::IsRunning (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_upnp_nat_utility_ae9012a08fced54432da46aea98e78546}
+
+
+Determine whether the module is running. 
+
+\begin{DoxyReturn}{Returns}
+true if the module is running, false if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNatUtility.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNatUtility.cpp\end{DoxyCompactItemize}

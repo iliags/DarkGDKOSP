@@ -1,0 +1,309 @@
+\hypertarget{class_net_mode_udp_catch_all_no}{
+\section{NetModeUdpCatchAllNo Class Reference}
+\label{class_net_mode_udp_catch_all_no}\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+}
+
+
+UDP mode where all ordered packets are received, out of order packets are discarded.  
+
+
+
+
+{\ttfamily \#include $<$NetModeUdpCatchAllNo.h$>$}
+
+Inheritance diagram for NetModeUdpCatchAllNo:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_net_mode_udp_catch_all_no}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_mode_udp_catch_all_no_afcadd181f5d775d00c9a43ebe93e9382}{
+\hyperlink{class_net_mode_udp_catch_all_no_afcadd181f5d775d00c9a43ebe93e9382}{NetModeUdpCatchAllNo} (size\_\-t numClients)}
+\label{class_net_mode_udp_catch_all_no_afcadd181f5d775d00c9a43ebe93e9382}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_catch_all_no_a07fdb63785a26a76973fb10b73b63fc9}{NetModeUdpCatchAllNo} (const \hyperlink{class_net_mode_udp_catch_all_no}{NetModeUdpCatchAllNo} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_catch_all_no}{NetModeUdpCatchAllNo} \& \hyperlink{class_net_mode_udp_catch_all_no_a5b9ad1157451cc04ca8fb46b77a96b1e}{operator=} (const \hyperlink{class_net_mode_udp_catch_all_no}{NetModeUdpCatchAllNo} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_catch_all_no}{NetModeUdpCatchAllNo} $\ast$ \hyperlink{class_net_mode_udp_catch_all_no_aec441e93f9eb158bf09fd0013aca12a5}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a deep copy of this object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_catch_all_no_abb09001562a985298f208ffd4f45825e}{Reset} (size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Resets data of specified client. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_catch_all_no_adc5141cecbc925ac1d20779a599888bb}{
+void \hyperlink{class_net_mode_udp_catch_all_no_adc5141cecbc925ac1d20779a599888bb}{Reset} ()}
+\label{class_net_mode_udp_catch_all_no_adc5141cecbc925ac1d20779a599888bb}
+
+\begin{DoxyCompactList}\small\item\em Reset data of all clients. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_catch_all_no_a9a7e511a9c813ae4889ee4afa1e840ba}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} udpRecvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Deals with newly received data. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_send}{NetSend} $\ast$ \hyperlink{class_net_mode_udp_catch_all_no_a32447c9f1e407a509e3b0179f50fab5c}{GetSendObject} (const \hyperlink{class_packet}{Packet} $\ast$packet, bool block)
+\begin{DoxyCompactList}\small\item\em Generates a \hyperlink{class_net_send}{NetSend} object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{ProtocolMode} \hyperlink{class_net_mode_udp_catch_all_no_a29a144e8ac3263b8ea2d8efb3ca6d657}{GetProtocolMode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol mode in use. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_mode_udp_catch_all_no_a479484b12ab0700640a8caaefb13f33f}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{class_net_mode_udp_catch_all_no_a619f25540ba35059da5ee9c4ff607b67}{INITIAL\_\-COUNTER\_\-VALUE} = 1
+\begin{DoxyCompactList}\small\item\em Initial value that counters should be set to. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_mode_udp_catch_all_no_aff06d1f5186a2d91e059e70c9c4ec273}{Copy} (const \hyperlink{class_net_mode_udp_catch_all_no}{NetModeUdpCatchAllNo} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ $>$ \hyperlink{class_net_mode_udp_catch_all_no_a69712e7ab73688db35d386613174e325}{sendCounter}
+\begin{DoxyCompactList}\small\item\em Stores a counter for each client which is incremented by 1 with every send operation (by that client). \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ $>$ \hyperlink{class_net_mode_udp_catch_all_no_a09585b76e3e50cebc9ad0fa795810228}{recvCounter}
+\begin{DoxyCompactList}\small\item\em Stores the largest counter received from each client. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP mode where all ordered packets are received, out of order packets are discarded. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+A prefix of size\_\-t is added to the start of all packets being sent. The prefix is a counter which increments by 1 with every send operation. Therefore the higher the prefix the newer the packet. A record is kept of the newest packet received and any packets with a prefix lower than that are discarded as they are deemed out of order. Packets being received are expected to have this prefix and problems will occur if they don't.\par
+\par
+
+
+The prefix is not included as part of received packets that are passed to the user. This means that data sent will be received in exactly the same form; the prefix is dealt with behind the scenes.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_mode_udp_catch_all_no_a07fdb63785a26a76973fb10b73b63fc9}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{NetModeUdpCatchAllNo}]{\setlength{\rightskip}{0pt plus 5cm}NetModeUdpCatchAllNo::NetModeUdpCatchAllNo (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpCatchAllNo} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_catch_all_no_a07fdb63785a26a76973fb10b73b63fc9}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_mode_udp_catch_all_no_aec441e93f9eb158bf09fd0013aca12a5}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!Clone@{Clone}}
+\index{Clone@{Clone}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdpCatchAllNo} $\ast$ NetModeUdpCatchAllNo::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_aec441e93f9eb158bf09fd0013aca12a5}
+
+
+Retrieves a deep copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_catch_all_a6ab3fa975dd909cc49ce378436343d8b}{NetModeUdpCatchAll}.
+
+\hypertarget{class_net_mode_udp_catch_all_no_aff06d1f5186a2d91e059e70c9c4ec273}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!Copy@{Copy}}
+\index{Copy@{Copy}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAllNo::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpCatchAllNo} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_aff06d1f5186a2d91e059e70c9c4ec273}
+
+
+Copy constructor / assignment operator helper method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_mode_udp_catch_all_no_a9a7e511a9c813ae4889ee4afa1e840ba}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAllNo::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ udpRecvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a9a7e511a9c813ae4889ee4afa1e840ba}
+
+
+Deals with newly received data. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em udpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Deal with packet if it is new. \hyperlink{class_counter}{Counter} increases by one every time sender sends. So, only out of order packets will have a counter lower or equal to the counter of the last received packet.
+
+If the current counter value is vastly different to the last counter value, then it is likely that the maximum for the counter value was reached, and so it looped back round to 0.
+
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_catch_all_adc52011adf841020e996d6c50f6fb7c1}{NetModeUdpCatchAll}.
+
+\hypertarget{class_net_mode_udp_catch_all_no_a29a144e8ac3263b8ea2d8efb3ca6d657}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetModeUdpCatchAllNo::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a29a144e8ac3263b8ea2d8efb3ca6d657}
+
+
+Retrieves the protocol mode in use. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964ad4582c7d9e25f9fbd2cec99e4455386f}{NetMode::UDP\_\-CATCH\_\-ALL\_\-NO}. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_catch_all_a84cd8b30de444fa8dbd699fdae416a84}{NetModeUdpCatchAll}.
+
+\hypertarget{class_net_mode_udp_catch_all_no_a32447c9f1e407a509e3b0179f50fab5c}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSend} $\ast$ NetModeUdpCatchAllNo::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a32447c9f1e407a509e3b0179f50fab5c}
+
+
+Generates a \hyperlink{class_net_send}{NetSend} object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]True if sending should be synchronous, false if sending should be asynchronous.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a send object. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_catch_all_a31fc998bff9b19d93f7437ae7f03d7ef}{NetModeUdpCatchAll}.
+
+\hypertarget{class_net_mode_udp_catch_all_no_a5b9ad1157451cc04ca8fb46b77a96b1e}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!operator=@{operator=}}
+\index{operator=@{operator=}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdpCatchAllNo} \& NetModeUdpCatchAllNo::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpCatchAllNo} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_catch_all_no_a5b9ad1157451cc04ca8fb46b77a96b1e}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_udp_catch_all_no_abb09001562a985298f208ffd4f45825e}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!Reset@{Reset}}
+\index{Reset@{Reset}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAllNo::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_abb09001562a985298f208ffd4f45825e}
+
+
+Resets data of specified client. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_catch_all_a00d7aca63598b6e3c270fd157627885f}{NetModeUdpCatchAll}.
+
+\hypertarget{class_net_mode_udp_catch_all_no_a479484b12ab0700640a8caaefb13f33f}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeUdpCatchAllNo::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a479484b12ab0700640a8caaefb13f33f}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_catch_all_abf7feda18651d7fc4638da1a75841ad9}{NetModeUdpCatchAll}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_mode_udp_catch_all_no_a619f25540ba35059da5ee9c4ff607b67}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!INITIAL\_\-COUNTER\_\-VALUE@{INITIAL\_\-COUNTER\_\-VALUE}}
+\index{INITIAL\_\-COUNTER\_\-VALUE@{INITIAL\_\-COUNTER\_\-VALUE}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{INITIAL\_\-COUNTER\_\-VALUE}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf NetModeUdpCatchAllNo::INITIAL\_\-COUNTER\_\-VALUE} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a619f25540ba35059da5ee9c4ff607b67}
+
+
+Initial value that counters should be set to. 
+
+A counter value of 0 indicates a connection packet so we cannot use this value. \hypertarget{class_net_mode_udp_catch_all_no_a09585b76e3e50cebc9ad0fa795810228}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!recvCounter@{recvCounter}}
+\index{recvCounter@{recvCounter}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{recvCounter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StoreVector}$<${\bf ConcurrentObject}$<$size\_\-t$>$ $>$ {\bf NetModeUdpCatchAllNo::recvCounter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a09585b76e3e50cebc9ad0fa795810228}
+
+
+Stores the largest counter received from each client. 
+
+Packets received with lower counters are discarded as they are deemed out of order. \hypertarget{class_net_mode_udp_catch_all_no_a69712e7ab73688db35d386613174e325}{
+\index{NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}!sendCounter@{sendCounter}}
+\index{sendCounter@{sendCounter}!NetModeUdpCatchAllNo@{NetModeUdpCatchAllNo}}
+\subsubsection[{sendCounter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StoreVector}$<${\bf ConcurrentObject}$<$size\_\-t$>$ $>$ {\bf NetModeUdpCatchAllNo::sendCounter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_no_a69712e7ab73688db35d386613174e325}
+
+
+Stores a counter for each client which is incremented by 1 with every send operation (by that client). 
+
+The counter is inserted at the start of each packet and is used by the recipient to determine the age of the packet, where newer packets have a higher counter (see class description: \hyperlink{class_net_mode_udp_catch_all_no}{NetModeUdpCatchAllNo}). 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdpCatchAllNo.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdpCatchAllNo.cpp\end{DoxyCompactItemize}

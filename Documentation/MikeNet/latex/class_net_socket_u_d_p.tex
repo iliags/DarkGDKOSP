@@ -1,0 +1,514 @@
+\hypertarget{class_net_socket_u_d_p}{
+\section{NetSocketUDP Class Reference}
+\label{class_net_socket_u_d_p}\index{NetSocketUDP@{NetSocketUDP}}
+}
+
+
+Socket used for UDP data transfer.  
+
+
+
+
+{\ttfamily \#include $<$NetSocketUDP.h$>$}
+
+Inheritance diagram for NetSocketUDP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_socket_u_d_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_socket_u_d_p_a8b8748e118b785882116dc19a84254b3}{NetSocketUDP} (size\_\-t bufferLength, const \hyperlink{class_net_address}{NetAddress} \&localAddr, bool \hyperlink{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{reusable}, \hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$udpMode, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc=NULL)
+\begin{DoxyCompactList}\small\item\em Constructor, sets up socket to be a normal UDP socket. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_u_d_p_a670282569a94faca7a4467de127dbc68}{NetSocketUDP} (size\_\-t bufferLength, const \hyperlink{class_net_address}{NetAddress} \&localAddr, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc=NULL)
+\begin{DoxyCompactList}\small\item\em Constructor, sets up socket to be a broadcasting socket. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_u_d_p_a37a342442ddd2ae164aa143e827a0dcd}{
+\hyperlink{class_net_socket_u_d_p_a37a342442ddd2ae164aa143e827a0dcd}{$\sim$NetSocketUDP} ()}
+\label{class_net_socket_u_d_p_a37a342442ddd2ae164aa143e827a0dcd}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_u_d_p_ac755e915b27452ce2e820e2401f4fa70}{NetSocketUDP} (const \hyperlink{class_net_socket_u_d_p}{NetSocketUDP} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_u_d_p}{NetSocketUDP} \& \hyperlink{class_net_socket_u_d_p_a9ddb31922eea639eb1ef495b777b45d2}{operator=} (const \hyperlink{class_net_socket_u_d_p}{NetSocketUDP} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_u_d_p_ad6c506ea179efce7d353b9f0735e2706}{ClearRecv} ()
+\begin{DoxyCompactList}\small\item\em Clears \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{NetSocket::recvOverlapped} and \hyperlink{class_net_socket_u_d_p_ab0fe52f5f72fdceb442d4a06e3944c45}{NetSocketUDP::recvAddr} ready for next receive. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_u_d_p_a5b7438968a34510997e9db862e00139b}{Recv} ()
+\begin{DoxyCompactList}\small\item\em Starts a receive operation via TCP. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_socket_u_d_p_ab9f7c46f5aab7fb043a40f831132f213}{Send} (const \hyperlink{class_packet}{Packet} \&packet, bool block, const \hyperlink{class_net_address}{NetAddress} $\ast$sendToAddr, unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Sends a packet using this socket. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_socket_u_d_p_ad05b84f0d746d2f8cdd33b36109f541b}{RawSend} (const \hyperlink{class_packet}{Packet} \&packet, bool block, const \hyperlink{class_net_address}{NetAddress} $\ast$sendToAddr, unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Sends an unmodified packet, ignoring the UDP mode. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_u_d_p_a2363fe21c1fa15e7781766c952c72e95}{
+virtual void \hyperlink{class_net_socket_u_d_p_a2363fe21c1fa15e7781766c952c72e95}{Close} ()}
+\label{class_net_socket_u_d_p_a2363fe21c1fa15e7781766c952c72e95}
+
+\begin{DoxyCompactList}\small\item\em Closes socket and resets NetSocketTCP::modeUDP to unused state. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_u_d_p_ad45e27b7de414da2146e76dd328c91a3}{Reset} (size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Resets client data store. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$ \hyperlink{class_net_socket_u_d_p_a22f09fe0a87137338204d30fdbe902b8}{GetMode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves constant pointer to UDP mode object. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_socket_u_d_p_ac7eee38cc64fca5c2144ca8e86497a3d}{GetPacketFromStore} (\hyperlink{class_packet}{Packet} $\ast$destination, size\_\-t clientID, size\_\-t operationID)
+\begin{DoxyCompactList}\small\item\em Retrieves a packet from the specified packet store. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_u_d_p_a499d202ab574a2b4eee0bb74affb7803}{GetModeLoaded} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether a UDP mode has been loaded. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_u_d_p_af077cea62da3567d90f68c2ddeecb023}{LoadMode} (\hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$mode)
+\begin{DoxyCompactList}\small\item\em Loads a UDP mode. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{NetSocket::Protocol} \hyperlink{class_net_socket_u_d_p_a38f2d51c45a6205aa8209edf8d954dbf}{GetProtocol} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol type that the socket represents as an enum. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_socket_u_d_p_afd1821663f6a220158afd74079787c8f}{GetRecvAddress} () const 
+\begin{DoxyCompactList}\small\item\em Determines where the packet that was last received from came from. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_u_d_p_a433c0374fee477952c0b89b128cd2df6}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Deals with newly received data using the socket's UDP mode. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_socket_u_d_p_a68728f4e9718f3f730a8f28c94a91968}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_socket_u_d_p_a26c009b5e9d6c50715a46e368b36dc2f}{ValidateModeLoaded} (size\_\-t line, const char $\ast$file) const 
+\begin{DoxyCompactList}\small\item\em Throws an exception if a UDP mode is not loaded. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_u_d_p_a34b0dc8953b74caaaded5c3cea22f334}{Copy} (const \hyperlink{class_net_socket_u_d_p}{NetSocketUDP} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_u_d_p_ab0fe52f5f72fdceb442d4a06e3944c45}{
+\hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_socket_u_d_p_ab0fe52f5f72fdceb442d4a06e3944c45}{recvAddr}}
+\label{class_net_socket_u_d_p_ab0fe52f5f72fdceb442d4a06e3944c45}
+
+\begin{DoxyCompactList}\small\item\em Filled with address that the last received packet has come from. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ \hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$ $>$ \hyperlink{class_net_socket_u_d_p_a7b3a3c5ab9bb5b78f66fe5fe50164df1}{modeUDP}
+\begin{DoxyCompactList}\small\item\em Describes how received data should be dealt with and how sent data should be modified. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket used for UDP data transfer. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 3/28/2010.
+\end{DoxyRemark}
+This class provides functionality specific to the UDP protocol.\par
+\par
+
+
+This class is not thread safe. Send and RawSend are thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_socket_u_d_p_a8b8748e118b785882116dc19a84254b3}{
+\index{NetSocketUDP@{NetSocketUDP}!NetSocketUDP@{NetSocketUDP}}
+\index{NetSocketUDP@{NetSocketUDP}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{NetSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketUDP::NetSocketUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{const {\bf NetAddress} \&}]{ localAddr, }
+\item[{bool}]{ reusable, }
+\item[{{\bf NetModeUdp} $\ast$}]{ udpMode, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_a8b8748e118b785882116dc19a84254b3}
+
+
+Constructor, sets up socket to be a normal UDP socket. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[{\em localAddr}]Local address to bind to, if IP or port is set to 0 then winsock will automatically find one. \item[{\em reusable}]If true socket local address can be reused. See. \hyperlink{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{NetSocketSimple::reusable} for more information. \item[\mbox{\tt[in]} {\em udpMode}]Describes how received data should be dealt with and how sent data should be modified. If NULL, \hyperlink{class_net_socket_u_d_p_af077cea62da3567d90f68c2ddeecb023}{LoadMode()} must later be used. \item[\mbox{\tt[in]} {\em recvFunc}]Function that any received packets will be passed to. (optional, default NULL). Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}. If NULL then packets will not be passed to a function, and instead will be put into a queue. \end{DoxyParams}
+\hypertarget{class_net_socket_u_d_p_a670282569a94faca7a4467de127dbc68}{
+\index{NetSocketUDP@{NetSocketUDP}!NetSocketUDP@{NetSocketUDP}}
+\index{NetSocketUDP@{NetSocketUDP}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{NetSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketUDP::NetSocketUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{const {\bf NetAddress} \&}]{ localAddr, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_a670282569a94faca7a4467de127dbc68}
+
+
+Constructor, sets up socket to be a broadcasting socket. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[{\em localAddr}]Local address to bind to, if IP or port is set to 0 then winsock will automatically find one. \item[\mbox{\tt[in]} {\em recvFunc}]Function that any received packets will be passed to. (optional, default NULL). Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}. If NULL then packets will not be passed to a function, and instead will be put into a queue. \end{DoxyParams}
+\hypertarget{class_net_socket_u_d_p_ac755e915b27452ce2e820e2401f4fa70}{
+\index{NetSocketUDP@{NetSocketUDP}!NetSocketUDP@{NetSocketUDP}}
+\index{NetSocketUDP@{NetSocketUDP}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{NetSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketUDP::NetSocketUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_ac755e915b27452ce2e820e2401f4fa70}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_socket_u_d_p_ad6c506ea179efce7d353b9f0735e2706}{
+\index{NetSocketUDP@{NetSocketUDP}!ClearRecv@{ClearRecv}}
+\index{ClearRecv@{ClearRecv}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{ClearRecv}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketUDP::ClearRecv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_u_d_p_ad6c506ea179efce7d353b9f0735e2706}
+
+
+Clears \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{NetSocket::recvOverlapped} and \hyperlink{class_net_socket_u_d_p_ab0fe52f5f72fdceb442d4a06e3944c45}{NetSocketUDP::recvAddr} ready for next receive. 
+
+This must be done after every receive operation. 
+
+Reimplemented from \hyperlink{class_net_socket_ad085ef45c567752aae4457f7945b46aa}{NetSocket}.
+
+\hypertarget{class_net_socket_u_d_p_a34b0dc8953b74caaaded5c3cea22f334}{
+\index{NetSocketUDP@{NetSocketUDP}!Copy@{Copy}}
+\index{Copy@{Copy}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketUDP::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_u_d_p_a34b0dc8953b74caaaded5c3cea22f334}
+
+
+Copy constructor / assignment operator helper method. 
+
+\begin{DoxyNote}{Note}
+Does not copy modeUDP, do this elsewhere.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_socket_u_d_p_a433c0374fee477952c0b89b128cd2df6}{
+\index{NetSocketUDP@{NetSocketUDP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketUDP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_u_d_p_a433c0374fee477952c0b89b128cd2df6}
+
+
+Deals with newly received data using the socket's UDP mode. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em recvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_socket_a99a69ab706122acc2bbe63c64b279b8e}{NetSocket}.
+
+\hypertarget{class_net_socket_u_d_p_a22f09fe0a87137338204d30fdbe902b8}{
+\index{NetSocketUDP@{NetSocketUDP}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{GetMode}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetModeUdp} $\ast$ NetSocketUDP::GetMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_u_d_p_a22f09fe0a87137338204d30fdbe902b8}
+
+
+Retrieves constant pointer to UDP mode object. 
+
+\begin{DoxyReturn}{Returns}
+returns pointer to object (which cannot be modified) representing UDP mode specific options. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_u_d_p_a499d202ab574a2b4eee0bb74affb7803}{
+\index{NetSocketUDP@{NetSocketUDP}!GetModeLoaded@{GetModeLoaded}}
+\index{GetModeLoaded@{GetModeLoaded}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{GetModeLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketUDP::GetModeLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_u_d_p_a499d202ab574a2b4eee0bb74affb7803}
+
+
+Determines whether a UDP mode has been loaded. 
+
+\begin{DoxyReturn}{Returns}
+true if UDP mode is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_u_d_p_ac7eee38cc64fca5c2144ca8e86497a3d}{
+\index{NetSocketUDP@{NetSocketUDP}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetSocketUDP::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ destination, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_ac7eee38cc64fca5c2144ca8e86497a3d}
+
+
+Retrieves a packet from the specified packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy packet into. \item[{\em clientID}]ID of client to use, may be ignored. \item[{\em operationID}]ID of operation to use, may be ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in packet queue before this method was called. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_u_d_p_a38f2d51c45a6205aa8209edf8d954dbf}{
+\index{NetSocketUDP@{NetSocketUDP}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::Protocol} NetSocketUDP::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_u_d_p_a38f2d51c45a6205aa8209edf8d954dbf}
+
+
+Retrieves the protocol type that the socket represents as an enum. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0a01b7e644d632a43bbec04dbd373a1b34}{NetSocketSimple::UDP}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_a2c62a6815ffb8b17aabd4963f63c1afc}{NetSocket}.
+
+\hypertarget{class_net_socket_u_d_p_afd1821663f6a220158afd74079787c8f}{
+\index{NetSocketUDP@{NetSocketUDP}!GetRecvAddress@{GetRecvAddress}}
+\index{GetRecvAddress@{GetRecvAddress}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{GetRecvAddress}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetSocketUDP::GetRecvAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_u_d_p_afd1821663f6a220158afd74079787c8f}
+
+
+Determines where the packet that was last received from came from. 
+
+\begin{DoxyReturn}{Returns}
+the remote address that the last received packet was sent from. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_u_d_p_af077cea62da3567d90f68c2ddeecb023}{
+\index{NetSocketUDP@{NetSocketUDP}!LoadMode@{LoadMode}}
+\index{LoadMode@{LoadMode}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{LoadMode}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketUDP::LoadMode (
+\begin{DoxyParamCaption}
+\item[{{\bf NetModeUdp} $\ast$}]{ mode}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_af077cea62da3567d90f68c2ddeecb023}
+
+
+Loads a UDP mode. 
+
+Once loaded, the mode cannot be overwritten by another mode.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]Mode to load, must not be NULL. This is now owned by this object and should not be referenced elsewhere.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If a mode is already loaded. \end{DoxyExceptions}
+\hypertarget{class_net_socket_u_d_p_a9ddb31922eea639eb1ef495b777b45d2}{
+\index{NetSocketUDP@{NetSocketUDP}!operator=@{operator=}}
+\index{operator=@{operator=}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketUDP} \& NetSocketUDP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_a9ddb31922eea639eb1ef495b777b45d2}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_u_d_p_ad05b84f0d746d2f8cdd33b36109f541b}{
+\index{NetSocketUDP@{NetSocketUDP}!RawSend@{RawSend}}
+\index{RawSend@{RawSend}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{RawSend}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetSocketUDP::RawSend (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf NetAddress} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_ad05b84f0d746d2f8cdd33b36109f541b}
+
+
+Sends an unmodified packet, ignoring the UDP mode. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em sendToAddr}]Address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]Length of time in milliseconds to wait before canceling send operation.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_u_d_p_a5b7438968a34510997e9db862e00139b}{
+\index{NetSocketUDP@{NetSocketUDP}!Recv@{Recv}}
+\index{Recv@{Recv}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{Recv}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketUDP::Recv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_u_d_p_a5b7438968a34510997e9db862e00139b}
+
+
+Starts a receive operation via TCP. 
+
+This method calls the winsock method {\ttfamily WSARecvFrom}.\par
+\par
+
+
+If {\ttfamily WSARecvFrom} is successful the result of the operation (which will probably not complete instantly) will be passed to the completion port. Upon completion \hyperlink{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}{NetSocket::recvBuffer} will be filled with received data and NetSocket::recvAddr will be filled with the address that the packet came from, which can be different to the address we are connected to.\par
+\par
+
+
+If {\ttfamily WSARecvFrom} is unsuccessful the operation will not complete so the completion port will receive no notification. This means that we must manually set the overlapped event in the case of initial failure.
+
+\begin{DoxyWarning}{Warning}
+Receive operations will fail when the thread exits, so if you start a receive operation and the thread that started it completes then the operation will fail and no data will be received.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+true if an error occurred and data was not properly received, false if no error occurred. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_ad6ef9866517f7aad01a69b70467375d5}{NetSocket}.
+
+\hypertarget{class_net_socket_u_d_p_ad45e27b7de414da2146e76dd328c91a3}{
+\index{NetSocketUDP@{NetSocketUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketUDP::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_u_d_p_ad45e27b7de414da2146e76dd328c91a3}
+
+
+Resets client data store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to reset. \end{DoxyParams}
+\hypertarget{class_net_socket_u_d_p_ab9f7c46f5aab7fb043a40f831132f213}{
+\index{NetSocketUDP@{NetSocketUDP}!Send@{Send}}
+\index{Send@{Send}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetSocketUDP::Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf NetAddress} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_u_d_p_ab9f7c46f5aab7fb043a40f831132f213}
+
+
+Sends a packet using this socket. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em sendToAddr}]Address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]Length of time in milliseconds to wait before canceling send operation.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_a808894184a1eed1a647e1cdf3c015f3a}{NetSocket}.
+
+\hypertarget{class_net_socket_u_d_p_a68728f4e9718f3f730a8f28c94a91968}{
+\index{NetSocketUDP@{NetSocketUDP}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketUDP::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_socket_u_d_p_a68728f4e9718f3f730a8f28c94a91968}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_socket_ae2233dd5a751f07101b1347df5dfc308}{NetSocket}.
+
+\hypertarget{class_net_socket_u_d_p_a26c009b5e9d6c50715a46e368b36dc2f}{
+\index{NetSocketUDP@{NetSocketUDP}!ValidateModeLoaded@{ValidateModeLoaded}}
+\index{ValidateModeLoaded@{ValidateModeLoaded}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{ValidateModeLoaded}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketUDP::ValidateModeLoaded (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_u_d_p_a26c009b5e9d6c50715a46e368b36dc2f}
+
+
+Throws an exception if a UDP mode is not loaded. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If mode is not loaded. \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em line}]Line at which method was called. \item[{\em file}]File in which method was called. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_socket_u_d_p_a7b3a3c5ab9bb5b78f66fe5fe50164df1}{
+\index{NetSocketUDP@{NetSocketUDP}!modeUDP@{modeUDP}}
+\index{modeUDP@{modeUDP}!NetSocketUDP@{NetSocketUDP}}
+\subsubsection[{modeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<${\bf NetModeUdp}$\ast$$>$ {\bf NetSocketUDP::modeUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_u_d_p_a7b3a3c5ab9bb5b78f66fe5fe50164df1}
+
+
+Describes how received data should be dealt with and how sent data should be modified. 
+
+ConcurretObject protects only the pointer, in case it changes when \hyperlink{class_net_socket_u_d_p_af077cea62da3567d90f68c2ddeecb023}{LoadMode()} is used. The contents of the dereferenced pointer is not protected and does not need to be. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketUDP.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketUDP.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,417 @@
+\hypertarget{class_sound_instance_input}{
+\section{SoundInstanceInput Class Reference}
+\label{class_sound_instance_input}\index{SoundInstanceInput@{SoundInstanceInput}}
+}
+
+
+Input instance which accesses an input device and retrieves input from it.  
+
+
+
+
+{\ttfamily \#include $<$SoundInstanceInput.h$>$}
+
+Inheritance diagram for SoundInstanceInput:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sound_instance_input}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sound_instance_input_a5549f461326cbca077a19122e6eca26b}{SoundInstanceInput} (size\_\-t numberOfBuffers, size\_\-t \hyperlink{class_sound_instance_input_a137354d9a5e6153530b2627dbc402268}{buffTimeLength}, const \hyperlink{class_sound_format}{SoundFormat} \&\hyperlink{class_sound_instance_input_ab28bbe2734e18d0a3f6d9f65362efd78}{format}, unsigned int deviceID)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_a635280ec3adf535c5f52cbae3972fcbf}{
+\hyperlink{class_sound_instance_input_a635280ec3adf535c5f52cbae3972fcbf}{$\sim$SoundInstanceInput} ()}
+\label{class_sound_instance_input_a635280ec3adf535c5f52cbae3972fcbf}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_input_af416714d51906b3cf661ef5b851dff26}{UnprepareBuffer} (LPWAVEHDR wavehdr)
+\begin{DoxyCompactList}\small\item\em Unprepares buffer. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_input_a82324daf23733f5bb89352e20eb6c330}{QueueBuffer} (LPWAVEHDR wavehdr)
+\begin{DoxyCompactList}\small\item\em Queues a buffer ready to receive input data. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_input_a4d96b12701ad12fbe19e259c23d69ef8}{DealWithData} (WAVEHDR $\ast$\hyperlink{class_sound_instance_input_a07337eba668678c1483c679b8a702ab6}{buffer})
+\begin{DoxyCompactList}\small\item\em Called indirectly by callback thread to deal with a completed buffer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_abd6b98866629cd3f3d2aca9e329e7f5d}{
+void \hyperlink{class_sound_instance_input_abd6b98866629cd3f3d2aca9e329e7f5d}{UnpauseInput} ()}
+\label{class_sound_instance_input_abd6b98866629cd3f3d2aca9e329e7f5d}
+
+\begin{DoxyCompactList}\small\item\em Unpauses input. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_input_a0ef43dc02cff3fd817bc80130ecd858f}{PauseInput} ()
+\begin{DoxyCompactList}\small\item\em Pauses input. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_sound_instance_input_aaf3a176a4e3dce0dd712db929eeddce6}{IsPaused} ()
+\begin{DoxyCompactList}\small\item\em Determine whether input is paused. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_sound_format}{SoundFormat} \& \hyperlink{class_sound_instance_input_afde14be7892beff1e99eadebbfc07156}{GetFormat} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the sound format in use. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_input_ada348e92cccafa0712400787f4d494d5}{GetBufferTimeLength} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the length of time that each buffer records for in milliseconds. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_input_a69f991f3dd98769e961f73e4d7a9b212}{GetBufferSizeSamples} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of samples that can be stored in a single full buffer. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_input_af6907fbfe5d0c614b9da58bad7f2504f}{GetBufferSizeBytes} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of bytes allocated to a single buffer. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_input_af5f73fe0e1cff2537a1128f6c0589125}{GetNumBuffers} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of buffers allocated. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_input_a47be3b5c0bb69c7a93b09961a9b0b06a}{AddRetrievedPacket} (\hyperlink{class_packet}{Packet} $\ast$packet)
+\begin{DoxyCompactList}\small\item\em Adds a packet to the retrieved packet queue. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_input_aed86fa630f2535e41f959740110f94f9}{GetRetrievedPacket} (\hyperlink{class_packet}{Packet} $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Retrieves a packet from retrieved packet queue. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_sound_instance_input_a3328664cd2f5e835d7ec1d25bfbfcd22}{SetDataVolume} (WORD BitsPerSample, \hyperlink{class_packet}{Packet} $\ast$dataPacket, double percentageChange)
+\begin{DoxyCompactList}\small\item\em Changes the volume of sound data stored in a packet. \item\end{DoxyCompactList}\item 
+static int \hyperlink{class_sound_instance_input_a8fda6be24c9f827a99a88e426126a49b}{GetDataVolume} (WORD bitsPerSample, const \hyperlink{class_packet}{Packet} $\ast$dataPacket)
+\begin{DoxyCompactList}\small\item\em Calculates the volume of sound data stored in a packet. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_instance_input_a54050bf057224ecd80fcfd496af22811}{
+static const size\_\-t \hyperlink{class_sound_instance_input_a54050bf057224ecd80fcfd496af22811}{DEFAULT\_\-BUFF\_\-COUNT} = 2}
+\label{class_sound_instance_input_a54050bf057224ecd80fcfd496af22811}
+
+\begin{DoxyCompactList}\small\item\em Default value for SoundInstanceInput::buffer.Size(). \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_a4450bef5de3e1ac4cba2fa5773deea85}{
+static const size\_\-t \hyperlink{class_sound_instance_input_a4450bef5de3e1ac4cba2fa5773deea85}{DEFAULT\_\-BUFF\_\-TIME\_\-LENGTH} = 250}
+\label{class_sound_instance_input_a4450bef5de3e1ac4cba2fa5773deea85}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_sound_instance_input_a137354d9a5e6153530b2627dbc402268}{SoundInstanceInput::buffTimeLength}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_instance_input_a137354d9a5e6153530b2627dbc402268}{
+size\_\-t \hyperlink{class_sound_instance_input_a137354d9a5e6153530b2627dbc402268}{buffTimeLength}}
+\label{class_sound_instance_input_a137354d9a5e6153530b2627dbc402268}
+
+\begin{DoxyCompactList}\small\item\em Length of time that each buffer records for in milliseconds. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_a16ecc024c1ac3351bae7f960c6735517}{
+size\_\-t \hyperlink{class_sound_instance_input_a16ecc024c1ac3351bae7f960c6735517}{buffSizeSamples}}
+\label{class_sound_instance_input_a16ecc024c1ac3351bae7f960c6735517}
+
+\begin{DoxyCompactList}\small\item\em Number of samples that can be stored in a single full buffer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_af4341c28c55c8cf07ddbfa46ee105ce2}{
+size\_\-t \hyperlink{class_sound_instance_input_af4341c28c55c8cf07ddbfa46ee105ce2}{buffSizeBytes}}
+\label{class_sound_instance_input_af4341c28c55c8cf07ddbfa46ee105ce2}
+
+\begin{DoxyCompactList}\small\item\em Number of bytes allocated to a single buffer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_adadb8ef3b78f6d4fc12364d9995d18d7}{
+HWAVEIN \hyperlink{class_sound_instance_input_adadb8ef3b78f6d4fc12364d9995d18d7}{deviceHandle}}
+\label{class_sound_instance_input_adadb8ef3b78f6d4fc12364d9995d18d7}
+
+\begin{DoxyCompactList}\small\item\em Controls device. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_a19cd80335b30e8eb06278725d10aa316}{
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_packet}{Packet} $>$ \hyperlink{class_sound_instance_input_a19cd80335b30e8eb06278725d10aa316}{bufferData}}
+\label{class_sound_instance_input_a19cd80335b30e8eb06278725d10aa316}
+
+\begin{DoxyCompactList}\small\item\em Stores input data, is used by \hyperlink{class_sound_instance_input_a07337eba668678c1483c679b8a702ab6}{SoundInstanceInput::buffer}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_a07337eba668678c1483c679b8a702ab6}{
+\hyperlink{class_store_vector}{StoreVector}$<$ WAVEHDR $>$ \hyperlink{class_sound_instance_input_a07337eba668678c1483c679b8a702ab6}{buffer}}
+\label{class_sound_instance_input_a07337eba668678c1483c679b8a702ab6}
+
+\begin{DoxyCompactList}\small\item\em Stores input data, uses \hyperlink{class_sound_instance_input_a19cd80335b30e8eb06278725d10aa316}{SoundInstanceInput::bufferData}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_sound_instance_input_a6941c252472e5f25c8761d6850a95658}{bufferInUseCount}
+\begin{DoxyCompactList}\small\item\em Records the number of buffers in use. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_ab28bbe2734e18d0a3f6d9f65362efd78}{
+\hyperlink{class_sound_format}{SoundFormat} \hyperlink{class_sound_instance_input_ab28bbe2734e18d0a3f6d9f65362efd78}{format}}
+\label{class_sound_instance_input_ab28bbe2734e18d0a3f6d9f65362efd78}
+
+\begin{DoxyCompactList}\small\item\em Sound format in use. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_ae3aaba9fa3a2dfdfed79bd068bb2217a}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ \hyperlink{class_sound_instance_input_ae3aaba9fa3a2dfdfed79bd068bb2217a}{unpaused}}
+\label{class_sound_instance_input_ae3aaba9fa3a2dfdfed79bd068bb2217a}
+
+\begin{DoxyCompactList}\small\item\em Signaled when input is unpaused. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_input_aaacbd273b8daafdd78b85ecefd7dff0b}{
+\hyperlink{class_store_queue}{StoreQueue}$<$ \hyperlink{class_packet}{Packet} $>$ \hyperlink{class_sound_instance_input_aaacbd273b8daafdd78b85ecefd7dff0b}{retrievedInput}}
+\label{class_sound_instance_input_aaacbd273b8daafdd78b85ecefd7dff0b}
+
+\begin{DoxyCompactList}\small\item\em Stores retrieved input data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Input instance which accesses an input device and retrieves input from it. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sound_instance_input_a5549f461326cbca077a19122e6eca26b}{
+\index{SoundInstanceInput@{SoundInstanceInput}!SoundInstanceInput@{SoundInstanceInput}}
+\index{SoundInstanceInput@{SoundInstanceInput}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{SoundInstanceInput}]{\setlength{\rightskip}{0pt plus 5cm}SoundInstanceInput::SoundInstanceInput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numberOfBuffers, }
+\item[{size\_\-t}]{ buffTimeLength, }
+\item[{const {\bf SoundFormat} \&}]{ format, }
+\item[{unsigned int}]{ deviceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_a5549f461326cbca077a19122e6eca26b}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numberOfBuffers}]Number of buffers. \item[{\em buffTimeLength}]Length of a buffer in milliseconds. \item[{\em format}]Sound format that device should use. \item[{\em deviceID}]ID of device that instance should use to retrieve input data. Set to -\/1 and the device will be chosen automatically. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_instance_input_a47be3b5c0bb69c7a93b09961a9b0b06a}{
+\index{SoundInstanceInput@{SoundInstanceInput}!AddRetrievedPacket@{AddRetrievedPacket}}
+\index{AddRetrievedPacket@{AddRetrievedPacket}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{AddRetrievedPacket}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceInput::AddRetrievedPacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_a47be3b5c0bb69c7a93b09961a9b0b06a}
+
+
+Adds a packet to the retrieved packet queue. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em packet}]The packet to add. This packet is now owned by this object and should not be referenced elsewhere. \end{DoxyParams}
+\hypertarget{class_sound_instance_input_a4d96b12701ad12fbe19e259c23d69ef8}{
+\index{SoundInstanceInput@{SoundInstanceInput}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceInput::DealWithData (
+\begin{DoxyParamCaption}
+\item[{WAVEHDR $\ast$}]{ buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_instance_input_a4d96b12701ad12fbe19e259c23d69ef8}
+
+
+Called indirectly by callback thread to deal with a completed buffer. 
+
+The callback thread must not directly call this method, but instead posts a message to a thread initiated by this API. This restriction is mentioned in the waveform documentation on MSDN.\par
+\par
+
+
+If unpaused the buffer will be re-\/queued to receive more data.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em buffer}]Pointer to the completed buffer. \end{DoxyParams}
+
+
+Implements \hyperlink{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}{SoundInstance}.
+
+\hypertarget{class_sound_instance_input_af6907fbfe5d0c614b9da58bad7f2504f}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetBufferSizeBytes@{GetBufferSizeBytes}}
+\index{GetBufferSizeBytes@{GetBufferSizeBytes}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetBufferSizeBytes}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceInput::GetBufferSizeBytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_input_af6907fbfe5d0c614b9da58bad7f2504f}
+
+
+Retrieves the number of bytes allocated to a single buffer. 
+
+\begin{DoxyReturn}{Returns}
+number of bytes allocated to a single buffer. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_a69f991f3dd98769e961f73e4d7a9b212}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetBufferSizeSamples@{GetBufferSizeSamples}}
+\index{GetBufferSizeSamples@{GetBufferSizeSamples}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetBufferSizeSamples}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceInput::GetBufferSizeSamples (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_input_a69f991f3dd98769e961f73e4d7a9b212}
+
+
+Retrieves the number of samples that can be stored in a single full buffer. 
+
+\begin{DoxyReturn}{Returns}
+number of samples that can be stored in a single full buffer. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_ada348e92cccafa0712400787f4d494d5}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetBufferTimeLength@{GetBufferTimeLength}}
+\index{GetBufferTimeLength@{GetBufferTimeLength}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetBufferTimeLength}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceInput::GetBufferTimeLength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_input_ada348e92cccafa0712400787f4d494d5}
+
+
+Retrieves the length of time that each buffer records for in milliseconds. 
+
+\begin{DoxyReturn}{Returns}
+length of time that each buffer records for in milliseconds. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_a8fda6be24c9f827a99a88e426126a49b}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetDataVolume@{GetDataVolume}}
+\index{GetDataVolume@{GetDataVolume}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetDataVolume}]{\setlength{\rightskip}{0pt plus 5cm}int SoundInstanceInput::GetDataVolume (
+\begin{DoxyParamCaption}
+\item[{WORD}]{ bitsPerSample, }
+\item[{const {\bf Packet} $\ast$}]{ dataPacket}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_instance_input_a8fda6be24c9f827a99a88e426126a49b}
+
+
+Calculates the volume of sound data stored in a packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitsPerSample}]The bits per sample of the sound data stored in the specified packet. \item[{\em dataPacket}]The packet to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the volume of the data. If 16 bit then the range is 0 to 65535. If 8 bit then the range is 0 to 255. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_afde14be7892beff1e99eadebbfc07156}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetFormat@{GetFormat}}
+\index{GetFormat@{GetFormat}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetFormat}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SoundFormat} \& SoundInstanceInput::GetFormat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_input_afde14be7892beff1e99eadebbfc07156}
+
+
+Retrieves the sound format in use. 
+
+\begin{DoxyReturn}{Returns}
+the sound format in use. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_af5f73fe0e1cff2537a1128f6c0589125}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetNumBuffers@{GetNumBuffers}}
+\index{GetNumBuffers@{GetNumBuffers}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetNumBuffers}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceInput::GetNumBuffers (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_input_af5f73fe0e1cff2537a1128f6c0589125}
+
+
+Retrieves the number of buffers allocated. 
+
+\begin{DoxyReturn}{Returns}
+the number of buffers. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_aed86fa630f2535e41f959740110f94f9}{
+\index{SoundInstanceInput@{SoundInstanceInput}!GetRetrievedPacket@{GetRetrievedPacket}}
+\index{GetRetrievedPacket@{GetRetrievedPacket}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{GetRetrievedPacket}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceInput::GetRetrievedPacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_aed86fa630f2535e41f959740110f94f9}
+
+
+Retrieves a packet from retrieved packet queue. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy packet to.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet queue. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_aaf3a176a4e3dce0dd712db929eeddce6}{
+\index{SoundInstanceInput@{SoundInstanceInput}!IsPaused@{IsPaused}}
+\index{IsPaused@{IsPaused}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{IsPaused}]{\setlength{\rightskip}{0pt plus 5cm}bool SoundInstanceInput::IsPaused (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_aaf3a176a4e3dce0dd712db929eeddce6}
+
+
+Determine whether input is paused. 
+
+\begin{DoxyReturn}{Returns}
+true if paused, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_input_a0ef43dc02cff3fd817bc80130ecd858f}{
+\index{SoundInstanceInput@{SoundInstanceInput}!PauseInput@{PauseInput}}
+\index{PauseInput@{PauseInput}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{PauseInput}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceInput::PauseInput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_a0ef43dc02cff3fd817bc80130ecd858f}
+
+
+Pauses input. 
+
+Any buffers receiving data stop receiving data immediately. \hypertarget{class_sound_instance_input_a82324daf23733f5bb89352e20eb6c330}{
+\index{SoundInstanceInput@{SoundInstanceInput}!QueueBuffer@{QueueBuffer}}
+\index{QueueBuffer@{QueueBuffer}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{QueueBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceInput::QueueBuffer (
+\begin{DoxyParamCaption}
+\item[{LPWAVEHDR}]{ buffer}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_a82324daf23733f5bb89352e20eb6c330}
+
+
+Queues a buffer ready to receive input data. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The buffer to queue. \end{DoxyParams}
+\hypertarget{class_sound_instance_input_a3328664cd2f5e835d7ec1d25bfbfcd22}{
+\index{SoundInstanceInput@{SoundInstanceInput}!SetDataVolume@{SetDataVolume}}
+\index{SetDataVolume@{SetDataVolume}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{SetDataVolume}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceInput::SetDataVolume (
+\begin{DoxyParamCaption}
+\item[{WORD}]{ BitsPerSample, }
+\item[{{\bf Packet} $\ast$}]{ dataPacket, }
+\item[{double}]{ percentageChange}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_instance_input_a3328664cd2f5e835d7ec1d25bfbfcd22}
+
+
+Changes the volume of sound data stored in a packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em BitsPerSample}]The bits per sample of the stored data in the packet. \item[\mbox{\tt[out]} {\em dataPacket}]The packet to manipulate. \item[{\em percentageChange}]The percentage to change the volume e.g. 200 doubles the volume. \end{DoxyParams}
+\hypertarget{class_sound_instance_input_af416714d51906b3cf661ef5b851dff26}{
+\index{SoundInstanceInput@{SoundInstanceInput}!UnprepareBuffer@{UnprepareBuffer}}
+\index{UnprepareBuffer@{UnprepareBuffer}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{UnprepareBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceInput::UnprepareBuffer (
+\begin{DoxyParamCaption}
+\item[{LPWAVEHDR}]{ buffer}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_input_af416714d51906b3cf661ef5b851dff26}
+
+
+Unprepares buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The buffer to use. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_sound_instance_input_a6941c252472e5f25c8761d6850a95658}{
+\index{SoundInstanceInput@{SoundInstanceInput}!bufferInUseCount@{bufferInUseCount}}
+\index{bufferInUseCount@{bufferInUseCount}!SoundInstanceInput@{SoundInstanceInput}}
+\subsubsection[{bufferInUseCount}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<$size\_\-t$>$ {\bf SoundInstanceInput::bufferInUseCount}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_input_a6941c252472e5f25c8761d6850a95658}
+
+
+Records the number of buffers in use. 
+
+Buffers must not be deallocated until this is 0. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundInstanceInput.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundInstanceInput.cpp\end{DoxyCompactItemize}

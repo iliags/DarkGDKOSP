@@ -1,0 +1,286 @@
+\hypertarget{class_com_string}{
+\section{ComString Class Reference}
+\label{class_com_string}\index{ComString@{ComString}}
+}
+
+
+Manages a COM string (BSTR).  
+
+
+
+
+{\ttfamily \#include $<$ComString.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_com_string_a49bebe8e55ea89985c8425bda7ff1018}{
+void \hyperlink{class_com_string_a49bebe8e55ea89985c8425bda7ff1018}{Cleanup} ()}
+\label{class_com_string_a49bebe8e55ea89985c8425bda7ff1018}
+
+\begin{DoxyCompactList}\small\item\em Cleans up the COM string. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_com_string_a5fe2049a372789ec73c9916448ac0e57}{IsLoaded} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the com string is loaded with anything (i.e. is not NULL). \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_com_string_a560fca713d6fa9a6e1231889b54672e8}{GetLength} () const 
+\begin{DoxyCompactList}\small\item\em Determines the length of the string. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_com_string_ae5aacdd617df0f7685dd46257dd7767d}{CopyIntoPacket} (\hyperlink{class_packet}{Packet} \&packet) const 
+\begin{DoxyCompactList}\small\item\em Copies the string into the specified packet, overwriting any existing contents. \item\end{DoxyCompactList}\item 
+\hypertarget{class_com_string_a230d0c147d15849387228c5338dc86e3}{
+\hyperlink{class_com_string_a230d0c147d15849387228c5338dc86e3}{ComString} ()}
+\label{class_com_string_a230d0c147d15849387228c5338dc86e3}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_com_string_af5db5737c393d0451b8eac4068d589d3}{ComString} (const \hyperlink{class_com_string}{ComString} \&comStr)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_com_string}{ComString} \& \hyperlink{class_com_string_acca04f610cdc5d076e780778a3f2a782}{operator=} (const \hyperlink{class_com_string}{ComString} \&comStr)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_com_string_a693a5815ef9e5b0edb664c60c75eba7d}{ComString} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_com_string}{ComString} \& \hyperlink{class_com_string_ab8d24de6675f8032e0cba16cf71706e7}{operator=} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+BSTR \hyperlink{class_com_string_a1e6912aa7c93ba2ab8beee0f88c933bc}{GetBSTR} ()
+\begin{DoxyCompactList}\small\item\em Returns the BSTR that this object is managing. \item\end{DoxyCompactList}\item 
+BSTR $\ast$ \hyperlink{class_com_string_a230136a99d7eb46de96477739aca5710}{GetPtrBSTR} ()
+\begin{DoxyCompactList}\small\item\em Returns a pointer to the BSTR that this object is managing. \item\end{DoxyCompactList}\item 
+\hypertarget{class_com_string_af6c7f8dbef903c089c62096f80335c34}{
+virtual \hyperlink{class_com_string_af6c7f8dbef903c089c62096f80335c34}{$\sim$ComString} ()}
+\label{class_com_string_af6c7f8dbef903c089c62096f80335c34}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_com_string_a38137b4f26fb6609f7d348066576c0aa}{Allocate} (size\_\-t length)
+\begin{DoxyCompactList}\small\item\em Allocates memory to COM string. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_com_string_a198f3d4bdb627d75a2f802b5a84b2ab4}{Allocate} (BSTR copyString)
+\begin{DoxyCompactList}\small\item\em Copies a BSTR. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_com_string_a13d02797fb190c69e34fcb3e2a80dd3f}{Allocate} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Copies a C string. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_com_string_abb5366fea86915d7718f59e24af31103}{
+BSTR \hyperlink{class_com_string_abb5366fea86915d7718f59e24af31103}{comString}}
+\label{class_com_string_abb5366fea86915d7718f59e24af31103}
+
+\begin{DoxyCompactList}\small\item\em COM string to manage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a COM string (BSTR). \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/16/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_com_string_af5db5737c393d0451b8eac4068d589d3}{
+\index{ComString@{ComString}!ComString@{ComString}}
+\index{ComString@{ComString}!ComString@{ComString}}
+\subsubsection[{ComString}]{\setlength{\rightskip}{0pt plus 5cm}ComString::ComString (
+\begin{DoxyParamCaption}
+\item[{const {\bf ComString} \&}]{ comStr}
+\end{DoxyParamCaption}
+)}}
+\label{class_com_string_af5db5737c393d0451b8eac4068d589d3}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comStr}]COM string to copy. \end{DoxyParams}
+\hypertarget{class_com_string_a693a5815ef9e5b0edb664c60c75eba7d}{
+\index{ComString@{ComString}!ComString@{ComString}}
+\index{ComString@{ComString}!ComString@{ComString}}
+\subsubsection[{ComString}]{\setlength{\rightskip}{0pt plus 5cm}ComString::ComString (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ str}
+\end{DoxyParamCaption}
+)}}
+\label{class_com_string_a693a5815ef9e5b0edb664c60c75eba7d}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]NULL terminated string to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_com_string_a38137b4f26fb6609f7d348066576c0aa}{
+\index{ComString@{ComString}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!ComString@{ComString}}
+\subsubsection[{Allocate}]{\setlength{\rightskip}{0pt plus 5cm}void ComString::Allocate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ length}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_com_string_a38137b4f26fb6609f7d348066576c0aa}
+
+
+Allocates memory to COM string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em length}]The amount of memory to allocate. \end{DoxyParams}
+\hypertarget{class_com_string_a198f3d4bdb627d75a2f802b5a84b2ab4}{
+\index{ComString@{ComString}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!ComString@{ComString}}
+\subsubsection[{Allocate}]{\setlength{\rightskip}{0pt plus 5cm}void ComString::Allocate (
+\begin{DoxyParamCaption}
+\item[{BSTR}]{ copyString}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_com_string_a198f3d4bdb627d75a2f802b5a84b2ab4}
+
+
+Copies a BSTR. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyString}]The string to copy. \end{DoxyParams}
+\hypertarget{class_com_string_a13d02797fb190c69e34fcb3e2a80dd3f}{
+\index{ComString@{ComString}!Allocate@{Allocate}}
+\index{Allocate@{Allocate}!ComString@{ComString}}
+\subsubsection[{Allocate}]{\setlength{\rightskip}{0pt plus 5cm}void ComString::Allocate (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ str}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_com_string_a13d02797fb190c69e34fcb3e2a80dd3f}
+
+
+Copies a C string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]The NULL terminated C string. \end{DoxyParams}
+\hypertarget{class_com_string_ae5aacdd617df0f7685dd46257dd7767d}{
+\index{ComString@{ComString}!CopyIntoPacket@{CopyIntoPacket}}
+\index{CopyIntoPacket@{CopyIntoPacket}!ComString@{ComString}}
+\subsubsection[{CopyIntoPacket}]{\setlength{\rightskip}{0pt plus 5cm}void ComString::CopyIntoPacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} \&}]{ packet}
+\end{DoxyParamCaption}
+) const}}
+\label{class_com_string_ae5aacdd617df0f7685dd46257dd7767d}
+
+
+Copies the string into the specified packet, overwriting any existing contents. 
+
+A null terminator is appended to the string stored within the packet.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em packet}]\hyperlink{class_packet}{Packet} to copy into. \end{DoxyParams}
+\hypertarget{class_com_string_a1e6912aa7c93ba2ab8beee0f88c933bc}{
+\index{ComString@{ComString}!GetBSTR@{GetBSTR}}
+\index{GetBSTR@{GetBSTR}!ComString@{ComString}}
+\subsubsection[{GetBSTR}]{\setlength{\rightskip}{0pt plus 5cm}BSTR ComString::GetBSTR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_com_string_a1e6912aa7c93ba2ab8beee0f88c933bc}
+
+
+Returns the BSTR that this object is managing. 
+
+\begin{DoxyReturn}{Returns}
+string. 
+\end{DoxyReturn}
+\hypertarget{class_com_string_a560fca713d6fa9a6e1231889b54672e8}{
+\index{ComString@{ComString}!GetLength@{GetLength}}
+\index{GetLength@{GetLength}!ComString@{ComString}}
+\subsubsection[{GetLength}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ComString::GetLength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_com_string_a560fca713d6fa9a6e1231889b54672e8}
+
+
+Determines the length of the string. 
+
+\begin{DoxyReturn}{Returns}
+the length of the string. 
+\end{DoxyReturn}
+\hypertarget{class_com_string_a230136a99d7eb46de96477739aca5710}{
+\index{ComString@{ComString}!GetPtrBSTR@{GetPtrBSTR}}
+\index{GetPtrBSTR@{GetPtrBSTR}!ComString@{ComString}}
+\subsubsection[{GetPtrBSTR}]{\setlength{\rightskip}{0pt plus 5cm}BSTR $\ast$ ComString::GetPtrBSTR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_com_string_a230136a99d7eb46de96477739aca5710}
+
+
+Returns a pointer to the BSTR that this object is managing. 
+
+\begin{DoxyReturn}{Returns}
+pointer to string. 
+\end{DoxyReturn}
+\hypertarget{class_com_string_a5fe2049a372789ec73c9916448ac0e57}{
+\index{ComString@{ComString}!IsLoaded@{IsLoaded}}
+\index{IsLoaded@{IsLoaded}!ComString@{ComString}}
+\subsubsection[{IsLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool ComString::IsLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_com_string_a5fe2049a372789ec73c9916448ac0e57}
+
+
+Determines whether the com string is loaded with anything (i.e. is not NULL). 
+
+Note that IsLoaded may return true even if the string length is 0, since a BSTR can be non NULL but empty.
+
+\begin{DoxyReturn}{Returns}
+true if loaded, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_com_string_acca04f610cdc5d076e780778a3f2a782}{
+\index{ComString@{ComString}!operator=@{operator=}}
+\index{operator=@{operator=}!ComString@{ComString}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ComString} \& ComString::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ComString} \&}]{ comStr}
+\end{DoxyParamCaption}
+)}}
+\label{class_com_string_acca04f610cdc5d076e780778a3f2a782}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em comStr}]COM string to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_com_string_ab8d24de6675f8032e0cba16cf71706e7}{
+\index{ComString@{ComString}!operator=@{operator=}}
+\index{operator=@{operator=}!ComString@{ComString}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ComString} \& ComString::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ str}
+\end{DoxyParamCaption}
+)}}
+\label{class_com_string_ab8d24de6675f8032e0cba16cf71706e7}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em str}]NULL terminated C string to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to this object. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ComString.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ComString.cpp\end{DoxyCompactItemize}

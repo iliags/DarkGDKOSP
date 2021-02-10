@@ -1,0 +1,557 @@
+\hypertarget{class_net_server_client}{
+\section{NetServerClient Class Reference}
+\label{class_net_server_client}\index{NetServerClient@{NetServerClient}}
+}
+
+
+Object stores and manages individual clients.  
+
+
+
+
+{\ttfamily \#include $<$NetServerClient.h$>$}
+
+Inheritance diagram for NetServerClient:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_net_server_client}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_server_client_a957dbcb8667f54554d959803bccdf068}{NetServerClient} (size\_\-t clientID, \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$\hyperlink{class_net_instance_implemented_t_c_p_adb7cac7d6ca26729e2eb83ae7f6ad984}{socketTCP}, unsigned int \hyperlink{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}{sendTimeout}=INFINITE)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_server_client}{NetServerClient} \& \hyperlink{class_net_server_client_a7ad5475101f493b1dff7762b612edbdf}{operator=} (\hyperlink{class_net_server_client}{NetServerClient} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_server_client_a9115b592671ba479cc019c34951e900a}{
+\hyperlink{class_net_server_client_a9115b592671ba479cc019c34951e900a}{$\sim$NetServerClient} ()}
+\label{class_net_server_client_a9115b592671ba479cc019c34951e900a}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_server_client_a6b78eff8935cdef03e891f90013a1561}{GetClientID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the ID assigned to this client during construction. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_server_client_afc9d5fb12ec4ac1f41d0760777793260}{GetConnectionState} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the state that the connection is currently in. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_ac4a6c279bed8a1cd45de0d2856bd18c6}{SetConnectionState} (\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_a8eda1eb1e030ca5edfc292d97b8efbed}{state})
+\begin{DoxyCompactList}\small\item\em Changes the connection state that the client is in. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_net_server_client_a42cf42f1a870f32cc9020c3a522b2f0c}{GetClockStarted} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the clock() value stored at the time that the client first began communicating with the server. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_adff1d2eea3825b0c85b4a390b38ce75e}{SetClockStarted} ()
+\begin{DoxyCompactList}\small\item\em Stores clock() value, indicating when the client first began communicating with the server. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_a06ac27a1dd3986da9c1d90a91680a6d0}{SetConnectCode} (size\_\-t element, int code)
+\begin{DoxyCompactList}\small\item\em Sets a connection code, later to be used to authenticate the client's UDP connection. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_net_server_client_ade7775b0802e69c6d9581a8347c652f7}{GetConnectCode} (size\_\-t element) const 
+\begin{DoxyCompactList}\small\item\em Retrieves a stored connection code, to be used to authenticate the client's UDP connection. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}{Authenticate} (vector$<$ int $>$ codes) const 
+\begin{DoxyCompactList}\small\item\em Authenticates the client's UDP connection by comparing received (via UDP) authentication codes with those sent to the client (via TCP). \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_server_client_a383613334f3431bdf36221a1d123d860}{
+void \hyperlink{class_net_server_client_a383613334f3431bdf36221a1d123d860}{Disconnect} ()}
+\label{class_net_server_client_a383613334f3431bdf36221a1d123d860}
+
+\begin{DoxyCompactList}\small\item\em Disconnects client from server forcefully and prepares this object so that it can store another client. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$ \hyperlink{class_net_server_client_a5a2146b933f1dd06937ac33e3cc9df56}{GetSocketTCP} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable pointer that is not thread safe to the stored TCP socket. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$ \hyperlink{class_net_server_client_abd708f991967944a42a120af05b10693}{GetSocketTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a constant pointer that is not thread safe to the stored TCP socket. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_a8e4e998ff810c522f54cd92a25a7bfe6}{LoadTCP} (SOCKET socket, const \hyperlink{class_net_address}{NetAddress} \&addr, bool enabledUDP)
+\begin{DoxyCompactList}\small\item\em Loads a new TCP socket and address of socket end point into this object and updates connection status. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_aa8ed5a905dcba6c9bf260e96ccedd969}{LoadUDP} (const \hyperlink{class_net_address}{NetAddress} \&addr)
+\begin{DoxyCompactList}\small\item\em Loads client's UDP remote address and updates connection status. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_server_client_a8775cd76292b26ee36962bec02f4591f}{SendHandshakingPacket} (const \hyperlink{class_packet}{Packet} \&serverInfo, bool enabledUDP)
+\begin{DoxyCompactList}\small\item\em Sends a packet via TCP which contains information about the server, the client, and authentication codes to authenticate the UDP connection. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_server_client_a27060047dc420d033f6814142a9174e8}{GetConnectedAddressUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the UDP remote address of the client. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_server_client_adc4b17c01ac55ae92f6d5336f8150aa5}{GetRecvSizeMinTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the minimum TCP receive buffer size. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_a61dfce726fc6edcc2afc72f4a6b1e95a}{DoRecv} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Calls \hyperlink{class_net_socket_t_c_p_a11891910910477cf1eba5fffef8bda52}{NetSocketTCP::Recv} and deals with errors in a server specific way. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_a71698dcdd0c469dbe93079b67a0c0afd}{CompletionError} (\hyperlink{class_net_socket}{NetSocket} $\ast$completionSocket, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Method should never be called, required by base class. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_ae84c13e2793afcdd4ede5111abbac887}{ErrorOccurred} (size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Deals with errors. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_server_client_a1326ff79039cc29bafe26a1c8839a215}{DealCompletion} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, DWORD bytes, size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Method should never be called, required by base class. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_server_client_a1fa9d1ffada167f2f22771a421c62843}{
+void \hyperlink{class_net_server_client_a1fa9d1ffada167f2f22771a421c62843}{Enter} ()}
+\label{class_net_server_client_a1fa9d1ffada167f2f22771a421c62843}
+
+\begin{DoxyCompactList}\small\item\em Takes control of \hyperlink{class_net_server_client_a7cf5767e011097703711ca704caba13d}{NetServerClient::connectionState} critical section. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_server_client_a260109d41706644e3925922d1745b2b8}{
+void \hyperlink{class_net_server_client_a260109d41706644e3925922d1745b2b8}{Leave} ()}
+\label{class_net_server_client_a260109d41706644e3925922d1745b2b8}
+
+\begin{DoxyCompactList}\small\item\em Releases control of \hyperlink{class_net_server_client_a7cf5767e011097703711ca704caba13d}{NetServerClient::connectionState} critical section. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_server_client_a1bde2a0e9fd43f581b65434ec12c3c6e}{
+\hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_server_client_a1bde2a0e9fd43f581b65434ec12c3c6e}{remoteAddrUDP}}
+\label{class_net_server_client_a1bde2a0e9fd43f581b65434ec12c3c6e}
+
+\begin{DoxyCompactList}\small\item\em UDP remote address that client is connecting from. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_server_client_a7cf5767e011097703711ca704caba13d}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} $>$ \hyperlink{class_net_server_client_a7cf5767e011097703711ca704caba13d}{connectionState}}
+\label{class_net_server_client_a7cf5767e011097703711ca704caba13d}
+
+\begin{DoxyCompactList}\small\item\em Connection state of client. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_net_server_client_af7cf5f0a7c11223afb74fde89b9d0424}{clockStarted}
+\begin{DoxyCompactList}\small\item\em clock() that handshaking process began. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_net_server_client_a8a0157c321e8659bf67047824ee35202}{connectCode} \mbox{[}\hyperlink{class_net_utility_a0cd69698eb7cf26f31f71848699e7fd7}{NetUtility::authenticationStrength}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Stores the unique authentication code sent to client during handshaking process. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Object stores and manages individual clients. Class is used by \hyperlink{class_net_instance_server}{NetInstanceServer} and is never used independently. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_server_client_a957dbcb8667f54554d959803bccdf068}{
+\index{NetServerClient@{NetServerClient}!NetServerClient@{NetServerClient}}
+\index{NetServerClient@{NetServerClient}!NetServerClient@{NetServerClient}}
+\subsubsection[{NetServerClient}]{\setlength{\rightskip}{0pt plus 5cm}NetServerClient::NetServerClient (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf NetSocketTCP} $\ast$}]{ socketTCP, }
+\item[{unsigned int}]{ sendTimeout = {\ttfamily INFINITE}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_a957dbcb8667f54554d959803bccdf068}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID assigned to client. \item[\mbox{\tt[in]} {\em socketTCP}]Socket to use to send and receive TCP data. This pointer and its data is now owned by this object and should not be used elsewhere. \item[{\em sendTimeout}]Length of time in milliseconds that send operations will be allowed to complete before giving up and disconnecting the client. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}{
+\index{NetServerClient@{NetServerClient}!Authenticate@{Authenticate}}
+\index{Authenticate@{Authenticate}!NetServerClient@{NetServerClient}}
+\subsubsection[{Authenticate}]{\setlength{\rightskip}{0pt plus 5cm}bool NetServerClient::Authenticate (
+\begin{DoxyParamCaption}
+\item[{vector$<$ int $>$}]{ codes}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}
+
+
+Authenticates the client's UDP connection by comparing received (via UDP) authentication codes with those sent to the client (via TCP). 
+
+This is necessary because a client's UDP connection can originate from a different IP and port, giving no way of confirming that the unknown UDP connection does indeed belong to the client it claims to belong to.\par
+\par
+
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em codes}]Vector containing \hyperlink{class_net_utility_a0cd69698eb7cf26f31f71848699e7fd7}{NetUtility::authenticationStrength} number of connection codes received from the client via UDP. \end{DoxyParams}
+\hypertarget{class_net_server_client_a71698dcdd0c469dbe93079b67a0c0afd}{
+\index{NetServerClient@{NetServerClient}!CompletionError@{CompletionError}}
+\index{CompletionError@{CompletionError}!NetServerClient@{NetServerClient}}
+\subsubsection[{CompletionError}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::CompletionError (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ completionSocket, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_server_client_a71698dcdd0c469dbe93079b67a0c0afd}
+
+
+Method should never be called, required by base class. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em completionSocket}]Ignored. \item[{\em clientID}]Ignored. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a6f1377ef6caee467d27288cf53619b37}{NetInstance}.
+
+\hypertarget{class_net_server_client_a1326ff79039cc29bafe26a1c8839a215}{
+\index{NetServerClient@{NetServerClient}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!NetServerClient@{NetServerClient}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{DWORD}]{ bytes, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_server_client_a1326ff79039cc29bafe26a1c8839a215}
+
+
+Method should never be called, required by base class. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]Ignored. \item[{\em bytes}]Ignored. \item[{\em clientID}]Ignored. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a77a9c992d7ab0b023de51470a3392c49}{NetInstance}.
+
+\hypertarget{class_net_server_client_a61dfce726fc6edcc2afc72f4a6b1e95a}{
+\index{NetServerClient@{NetServerClient}!DoRecv@{DoRecv}}
+\index{DoRecv@{DoRecv}!NetServerClient@{NetServerClient}}
+\subsubsection[{DoRecv}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::DoRecv (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_server_client_a61dfce726fc6edcc2afc72f4a6b1e95a}
+
+
+Calls \hyperlink{class_net_socket_t_c_p_a11891910910477cf1eba5fffef8bda52}{NetSocketTCP::Recv} and deals with errors in a server specific way. 
+
+Use this INSTEAD OF socketTCP-\/$>$Recv, never use socketTCP-\/$>$Recv directly.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Pointer to socket that receive operation should be started on. \item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a3c3e7a1dfd8e6c54c25f2a61aa86f183}{NetInstance}.
+
+\hypertarget{class_net_server_client_ae84c13e2793afcdd4ede5111abbac887}{
+\index{NetServerClient@{NetServerClient}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!NetServerClient@{NetServerClient}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_server_client_ae84c13e2793afcdd4ede5111abbac887}
+
+
+Deals with errors. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_ab3369f37337a9de2cbefe92f0bf1d087}{NetInstance}.
+
+\hypertarget{class_net_server_client_a6b78eff8935cdef03e891f90013a1561}{
+\index{NetServerClient@{NetServerClient}!GetClientID@{GetClientID}}
+\index{GetClientID@{GetClientID}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetClientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetServerClient::GetClientID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_a6b78eff8935cdef03e891f90013a1561}
+
+
+Retrieves the ID assigned to this client during construction. 
+
+\begin{DoxyReturn}{Returns}
+client ID of this client. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_a42cf42f1a870f32cc9020c3a522b2f0c}{
+\index{NetServerClient@{NetServerClient}!GetClockStarted@{GetClockStarted}}
+\index{GetClockStarted@{GetClockStarted}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetClockStarted}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t NetServerClient::GetClockStarted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_a42cf42f1a870f32cc9020c3a522b2f0c}
+
+
+Retrieves the clock() value stored at the time that the client first began communicating with the server. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+\begin{DoxyReturn}{Returns}
+clock value at which client began connecting. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_ade7775b0802e69c6d9581a8347c652f7}{
+\index{NetServerClient@{NetServerClient}!GetConnectCode@{GetConnectCode}}
+\index{GetConnectCode@{GetConnectCode}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetConnectCode}]{\setlength{\rightskip}{0pt plus 5cm}int NetServerClient::GetConnectCode (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_ade7775b0802e69c6d9581a8347c652f7}
+
+
+Retrieves a stored connection code, to be used to authenticate the client's UDP connection. 
+
+See \hyperlink{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}{Authenticate()} for details on how the connection is authenticated.\par
+\par
+
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Connection code to retrieve. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+connection code at element {\itshape element\/}. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_a27060047dc420d033f6814142a9174e8}{
+\index{NetServerClient@{NetServerClient}!GetConnectedAddressUDP@{GetConnectedAddressUDP}}
+\index{GetConnectedAddressUDP@{GetConnectedAddressUDP}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetConnectedAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetServerClient::GetConnectedAddressUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_a27060047dc420d033f6814142a9174e8}
+
+
+Retrieves the UDP remote address of the client. 
+
+\begin{DoxyNote}{Note}
+Is okay to return reference because \hyperlink{class_net_address}{NetAddress} is thread safe. 
+\end{DoxyNote}
+\hypertarget{class_net_server_client_afc9d5fb12ec4ac1f41d0760777793260}{
+\index{NetServerClient@{NetServerClient}!GetConnectionState@{GetConnectionState}}
+\index{GetConnectionState@{GetConnectionState}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetConnectionState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetServerClient::GetConnectionState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_afc9d5fb12ec4ac1f41d0760777793260}
+
+
+Retrieves the state that the connection is currently in. 
+
+\begin{DoxyReturn}{Returns}
+connection state of client. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_adc4b17c01ac55ae92f6d5336f8150aa5}{
+\index{NetServerClient@{NetServerClient}!GetRecvSizeMinTCP@{GetRecvSizeMinTCP}}
+\index{GetRecvSizeMinTCP@{GetRecvSizeMinTCP}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetRecvSizeMinTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetServerClient::GetRecvSizeMinTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_server_client_adc4b17c01ac55ae92f6d5336f8150aa5}
+
+
+Retrieves the minimum TCP receive buffer size. 
+
+\begin{DoxyReturn}{Returns}
+the minimum TCP receive buffer size. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a75e1024a7352c83b7691bd3268e24136}{NetInstanceTCP}.
+
+\hypertarget{class_net_server_client_a5a2146b933f1dd06937ac33e3cc9df56}{
+\index{NetServerClient@{NetServerClient}!GetSocketTCP@{GetSocketTCP}}
+\index{GetSocketTCP@{GetSocketTCP}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketTCP} $\ast$ NetServerClient::GetSocketTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_a5a2146b933f1dd06937ac33e3cc9df56}
+
+
+Retrieves a mutable pointer that is not thread safe to the stored TCP socket. 
+
+\begin{DoxyWarning}{Warning}
+Returned pointer must be accessed with at least read control. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to TCP socket. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_abd708f991967944a42a120af05b10693}{
+\index{NetServerClient@{NetServerClient}!GetSocketTCP@{GetSocketTCP}}
+\index{GetSocketTCP@{GetSocketTCP}!NetServerClient@{NetServerClient}}
+\subsubsection[{GetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetSocketTCP} $\ast$ NetServerClient::GetSocketTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_server_client_abd708f991967944a42a120af05b10693}
+
+
+Retrieves a constant pointer that is not thread safe to the stored TCP socket. 
+
+\begin{DoxyWarning}{Warning}
+Returned pointer must be accessed with at least read control. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to TCP socket. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_a8e4e998ff810c522f54cd92a25a7bfe6}{
+\index{NetServerClient@{NetServerClient}!LoadTCP@{LoadTCP}}
+\index{LoadTCP@{LoadTCP}!NetServerClient@{NetServerClient}}
+\subsubsection[{LoadTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::LoadTCP (
+\begin{DoxyParamCaption}
+\item[{SOCKET}]{ socket, }
+\item[{const {\bf NetAddress} \&}]{ addr, }
+\item[{bool}]{ enabledUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_a8e4e998ff810c522f54cd92a25a7bfe6}
+
+
+Loads a new TCP socket and address of socket end point into this object and updates connection status. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]TCP winsock socket to load. \item[{\em addr}]TCP address of client. \item[{\em enabledUDP}]True if UDP is enabled for this client (we need to know this so that we know how to change the connection status). \end{DoxyParams}
+\hypertarget{class_net_server_client_aa8ed5a905dcba6c9bf260e96ccedd969}{
+\index{NetServerClient@{NetServerClient}!LoadUDP@{LoadUDP}}
+\index{LoadUDP@{LoadUDP}!NetServerClient@{NetServerClient}}
+\subsubsection[{LoadUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::LoadUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_aa8ed5a905dcba6c9bf260e96ccedd969}
+
+
+Loads client's UDP remote address and updates connection status. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]Remote UDP address of client. \end{DoxyParams}
+\hypertarget{class_net_server_client_a7ad5475101f493b1dff7762b612edbdf}{
+\index{NetServerClient@{NetServerClient}!operator=@{operator=}}
+\index{operator=@{operator=}!NetServerClient@{NetServerClient}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetServerClient} \& NetServerClient::operator= (
+\begin{DoxyParamCaption}
+\item[{{\bf NetServerClient} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_a7ad5475101f493b1dff7762b612edbdf}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_server_client_a8775cd76292b26ee36962bec02f4591f}{
+\index{NetServerClient@{NetServerClient}!SendHandshakingPacket@{SendHandshakingPacket}}
+\index{SendHandshakingPacket@{SendHandshakingPacket}!NetServerClient@{NetServerClient}}
+\subsubsection[{SendHandshakingPacket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetServerClient::SendHandshakingPacket (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ serverInfo, }
+\item[{bool}]{ enabledUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_a8775cd76292b26ee36962bec02f4591f}
+
+
+Sends a packet via TCP which contains information about the server, the client, and authentication codes to authenticate the UDP connection. 
+
+See \hyperlink{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}{Authenticate()} for more information on the authentication process.
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em serverInfo}]Information about the server. \item[{\em enabledUDP}]True if UDP is enabled for this client.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Create packet containing: 1: Server info. 2: Client number. 3-\/6: Authentication codes (UDP only).
+
+To send to client.
+
+\hypertarget{class_net_server_client_adff1d2eea3825b0c85b4a390b38ce75e}{
+\index{NetServerClient@{NetServerClient}!SetClockStarted@{SetClockStarted}}
+\index{SetClockStarted@{SetClockStarted}!NetServerClient@{NetServerClient}}
+\subsubsection[{SetClockStarted}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::SetClockStarted (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_adff1d2eea3825b0c85b4a390b38ce75e}
+
+
+Stores clock() value, indicating when the client first began communicating with the server. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. \hypertarget{class_net_server_client_a06ac27a1dd3986da9c1d90a91680a6d0}{
+\index{NetServerClient@{NetServerClient}!SetConnectCode@{SetConnectCode}}
+\index{SetConnectCode@{SetConnectCode}!NetServerClient@{NetServerClient}}
+\subsubsection[{SetConnectCode}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::SetConnectCode (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element, }
+\item[{int}]{ code}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_a06ac27a1dd3986da9c1d90a91680a6d0}
+
+
+Sets a connection code, later to be used to authenticate the client's UDP connection. 
+
+See \hyperlink{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}{Authenticate()} for details on how the connection is authenticated.\par
+\par
+
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Connection code to set. \item[{\em code}]Code to set it to. \end{DoxyParams}
+\hypertarget{class_net_server_client_ac4a6c279bed8a1cd45de0d2856bd18c6}{
+\index{NetServerClient@{NetServerClient}!SetConnectionState@{SetConnectionState}}
+\index{SetConnectionState@{SetConnectionState}!NetServerClient@{NetServerClient}}
+\subsubsection[{SetConnectionState}]{\setlength{\rightskip}{0pt plus 5cm}void NetServerClient::SetConnectionState (
+\begin{DoxyParamCaption}
+\item[{{\bf NetUtility::ConnectionStatus}}]{ state}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_server_client_ac4a6c279bed8a1cd45de0d2856bd18c6}
+
+
+Changes the connection state that the client is in. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em state}]New connection state. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_server_client_af7cf5f0a7c11223afb74fde89b9d0424}{
+\index{NetServerClient@{NetServerClient}!clockStarted@{clockStarted}}
+\index{clockStarted@{clockStarted}!NetServerClient@{NetServerClient}}
+\subsubsection[{clockStarted}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t {\bf NetServerClient::clockStarted}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_server_client_af7cf5f0a7c11223afb74fde89b9d0424}
+
+
+clock() that handshaking process began. 
+
+This allows us to determine how long a client has been handshaking for, and drop clients that take too long. \hypertarget{class_net_server_client_a8a0157c321e8659bf67047824ee35202}{
+\index{NetServerClient@{NetServerClient}!connectCode@{connectCode}}
+\index{connectCode@{connectCode}!NetServerClient@{NetServerClient}}
+\subsubsection[{connectCode}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf NetServerClient::connectCode}\mbox{[}{\bf NetUtility::authenticationStrength}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_server_client_a8a0157c321e8659bf67047824ee35202}
+
+
+Stores the unique authentication code sent to client during handshaking process. 
+
+This allows the UDP connection to be authenticated, see \hyperlink{class_net_server_client_ab161769baaf09d648e3646c82d92ebce}{Authenticate()} for more information. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetServerClient.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetServerClient.cpp\end{DoxyCompactItemize}

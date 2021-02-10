@@ -1,0 +1,62 @@
+<s3ge version="1.0">
+  
+ <script language="darklua" type="1"><![CDATA[ uiOutput("Loading Quark")	]]></script>
+
+  <behavior name="Quark" description="Quark Behavior">
+		<event state="IDLE">
+			<script language="darklua" type="1">
+				<![CDATA[
+        for loop = 0,fxFuzzFragmentCount() do
+	        fxfuzzfragment = fxFuzzFragmentGet(loop)
+	        fxFuzzFragmentActionSpin(fxfuzzfragment, 1)
+        end
+				]]>
+			</script>
+		</event>
+	</behavior>
+
+  <transition name="Quarky" description="Quark Transition">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+				]]>
+      </script>
+    </event>
+  </transition>
+  
+  <style name="Quark" description="Quark Style">
+    <event state="IDLE">
+      <font name="arial0"/>
+    </event>
+  </style>
+
+  <theme name="Quark" description="Quark Theme" ref="confetti">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="255" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="255" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="95" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="255" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="255" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+
+	<scheme name="Quark" description="Quark Scheme">
+		<event state="IDLE">
+		</event>
+	</scheme>
+
+  <wizmo name="Quark" description="Quark Particle" collision="0" operate="1" transit="0" active="0" audio="0" visible="1" debug="1">
+    <orientate type="3d" width="16" height="16" anglex="0" angley="-180" anglez="0">
+      <physics type="box" noresponse="true"/>
+    </orientate>
+    <!--object name="Quark" src="3D/LocoLogo_v0.2.x" type="mesh"/-->
+    <event state="IDLE" behavior="Quark" transition="Quarky" style="Quark" theme="Quark" scheme="Quark" src="2D/maui.bmp"/>
+  </wizmo>
+
+  <reactor name="Quarkreactor" description="Quark Reactor">
+    <wizmo name="Quark" count="16"/>
+  </reactor>  
+  
+</s3ge>

@@ -1,0 +1,172 @@
+\hypertarget{class_test_class_net_mode_tcp}{
+\section{TestClassNetModeTcp Class Reference}
+\label{class_test_class_net_mode_tcp}\index{TestClassNetModeTcp@{TestClassNetModeTcp}}
+}
+
+
+Class that implements \hyperlink{class_net_mode_tcp}{NetModeTcp} so that it can be tested.  
+
+
+Inheritance diagram for TestClassNetModeTcp:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_test_class_net_mode_tcp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_test_class_net_mode_tcp_a670405e5cedb9dff7d58169c81400cac}{TestClassNetModeTcp} (size\_\-t partialPacketSize, bool \hyperlink{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}{autoResize})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+double \hyperlink{class_test_class_net_mode_tcp_a21ce248a37883cc5503dc5d1383b3075}{GetPartialPacketPercentage} () const 
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+\hyperlink{class_test_class_net_mode_tcp}{TestClassNetModeTcp} $\ast$ \hyperlink{class_test_class_net_mode_tcp_a749f5c4ff447ea11f20576827e973e8c}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_send}{NetSend} $\ast$ \hyperlink{class_test_class_net_mode_tcp_af8de69cfdd1b8ff8f88857b5f43c035a}{GetSendObject} (const \hyperlink{class_packet}{Packet} $\ast$packet, bool block)
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_test_class_net_mode_tcp_ad51dc21b38ba3446a76929ab35233076}{GetProtocolMode} () const 
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_test_class_net_mode_tcp_aaf6e498b154805343b3206f7b4f61edf}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that implements \hyperlink{class_net_mode_tcp}{NetModeTcp} so that it can be tested. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_test_class_net_mode_tcp_a670405e5cedb9dff7d58169c81400cac}{
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\subsubsection[{TestClassNetModeTcp}]{\setlength{\rightskip}{0pt plus 5cm}TestClassNetModeTcp::TestClassNetModeTcp (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ partialPacketSize, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_test_class_net_mode_tcp_a670405e5cedb9dff7d58169c81400cac}
+
+
+Constructor. 
+
+Adds an integer to partial packet for testing purposes.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em partialPacketSize}]Maximum amount of partial data (data that does not make up a full packet) that can be stored (in bytes). Packets larger than this size cannot be received without memory reallocation. \item[{\em autoResize}]If true then if a packet larger than {\itshape partialPacketSize\/} is received then more memory will be automatically allocated so that it can be received. \par
+ If false then an error will be thrown if a packet larger than {\itshape partialPacketSize\/} is received. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_test_class_net_mode_tcp_a749f5c4ff447ea11f20576827e973e8c}{
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!Clone@{Clone}}
+\index{Clone@{Clone}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TestClassNetModeTcp}$\ast$ TestClassNetModeTcp::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_class_net_mode_tcp_a749f5c4ff447ea11f20576827e973e8c}
+
+
+Implements virtual method. 
+
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_tcp_a00d88706d67bfb42eeab24fe9dd0d563}{NetModeTcp}.
+
+\hypertarget{class_test_class_net_mode_tcp_aaf6e498b154805343b3206f7b4f61edf}{
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void TestClassNetModeTcp::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_class_net_mode_tcp_aaf6e498b154805343b3206f7b4f61edf}
+
+
+Implements virtual method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em recvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a075020ac61bedee59eb7b0dcb6754847}{NetMode}.
+
+\hypertarget{class_test_class_net_mode_tcp_a21ce248a37883cc5503dc5d1383b3075}{
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!GetPartialPacketPercentage@{GetPartialPacketPercentage}}
+\index{GetPartialPacketPercentage@{GetPartialPacketPercentage}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\subsubsection[{GetPartialPacketPercentage}]{\setlength{\rightskip}{0pt plus 5cm}double TestClassNetModeTcp::GetPartialPacketPercentage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_class_net_mode_tcp_a21ce248a37883cc5503dc5d1383b3075}
+
+
+Implements virtual method. 
+
+\begin{DoxyReturn}{Returns}
+0.0. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_tcp_a837a9e13611bf2158aa07df5b21d55d0}{NetModeTcp}.
+
+\hypertarget{class_test_class_net_mode_tcp_ad51dc21b38ba3446a76929ab35233076}{
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} TestClassNetModeTcp::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_class_net_mode_tcp_ad51dc21b38ba3446a76929ab35233076}
+
+
+Implements virtual method. 
+
+\begin{DoxyReturn}{Returns}
+ProtocolMode::TCP\_\-POSTFIX. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a955c73991a8f13465e509f3841071455}{NetMode}.
+
+\hypertarget{class_test_class_net_mode_tcp_af8de69cfdd1b8ff8f88857b5f43c035a}{
+\index{TestClassNetModeTcp@{TestClassNetModeTcp}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!TestClassNetModeTcp@{TestClassNetModeTcp}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSend}$\ast$ TestClassNetModeTcp::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_class_net_mode_tcp_af8de69cfdd1b8ff8f88857b5f43c035a}
+
+
+Implements virtual method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]True if sending should be synchronous, false if sending should be asynchronous.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a2a44f68cb6dccbeff90cabbdede0b54e}{NetMode}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeTcp.cpp\end{DoxyCompactItemize}

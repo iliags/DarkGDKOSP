@@ -1,0 +1,525 @@
+<s3ge version="1.0">
+  
+  <!-- S3GEd Main Menu-->
+  
+  <script language="darklua" type="1"><![CDATA[uiOutput("Loading S3GEditor Suite Components...")]]></script>
+
+  <!-- Setup 2D World Physics Collision Bounds -->
+
+  <gadget name="worldbounds">
+  
+    <gizmo name="worldboundtop" description="Defines 2D boundary" visible="1" >
+      <orientate x="0" y="0" z="0" width="darklua: xmlAttributeValue = dbScreenWidthGet() - 1" height="1">
+        <physics friction="0.0" density="0.0" restitution="0.0"/>
+      </orientate>
+      <event state="IDLE" theme="graybox"/>
+    </gizmo>
+    
+    <gizmo name="worldboundbottom" audio="1" visible="1">
+      <orientate x="0" y="darklua: xmlAttributeValue = dbScreenHeightGet() - 1" z="0" width="darklua: xmlAttributeValue = dbScreenWidthGet() - 1" height="1">
+        <physics friction="0.0" density="0.0" restitution="0.0"/>
+      </orientate>
+      <event state="IDLE" theme="graybox" scheme="ambience"/>
+    </gizmo>
+    
+    <gizmo name="worldboundleft" visible="1">
+      <orientate x="0" y="2" z="0" width="1" height="darklua: xmlAttributeValue = dbScreenHeightGet() - 2">
+        <physics friction="0.0" density="0.0" restitution="0.0"/>
+      </orientate>
+      <event state="IDLE" theme="graybox"/>
+    </gizmo>
+    
+    <gizmo name="worldboundright" visible="1">
+      <orientate x="darklua: xmlAttributeValue = dbScreenWidthGet() - 1" y="2" z="0" width="1" height="darklua: xmlAttributeValue = dbScreenHeightGet() - 2">
+        <physics friction="0.0" density="0.0" restitution="0.0"/>
+      </orientate>
+      <event state="IDLE" theme="graybox"/>
+    </gizmo>
+
+  </gadget>
+  
+  <!-- TechLord's MAUI TOY: The very first gizmo ever created -->  
+  <gizmo name="mauitoy" description="MAUI TOY - Play with Me">
+    <variable name="toggle" value="0"/>
+    <orientate ref="worldboundleft" y="21" width="64" height="64" xalign="right">
+      <physics friction="0.1" density="1.0" restitution="0.1"/>
+    </orientate>
+    <event state="IDLE" behavior="pushbox" transition="ghostly" theme="confetti" style="standard" caption="TOY" xalign="darklua: xmlAttributeValue='center'" yalign="bottom" src="2D/maui.bmp"/>
+    <event state="ENTER" />
+    <event state="HOVER" />
+    <event state="DOWN" />
+    <event state="HOLD" />
+    <event state="DRAG" />
+    <event state="UP" />
+    <event state="EXIT" />
+  </gizmo>
+
+  <!-- Top Bar Menu -->
+  
+  <gadget name="TopBar">
+  
+    <gizmo name="TopBarMaster" description="Show/Hide Top Bar" collision="1" operate="1" transit="1" active="1" audio="1" visible="1">
+      <variable name="spritex" value="0"/> 
+      <variable name="spritey" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="worldboundright" width="28" height="48" xalign="left">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="yshift" theme="graybox" style="standard" scheme="pointingFX" caption="{" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+              uiGizmoToggle = 1 - uiGizmoVariableGet(this, 'toggle')
+              uiGizmoVariableSet(this, 'toggle', uiGizmoToggle)
+              msg = uiGizmoMessageCreate()
+              uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE + uiGizmoToggle, 0)
+              uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'toggle', '0')
+					    uiGizmoMessageSend(msg, 'TopBarMaster', MAUI_MSG_TO_CHILDREN, 1 - uiGizmoToggle)
+              uiGizmoMessageDestroy(msg)
+				     ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="S3GEEdit" parent="TopBarMaster" description="S3GEd V1">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>    
+      <orientate ref="worldboundleft" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="graybox" style="standard" scheme="pointingFX" caption="S3GEd" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('S3GEEditFile') == 0 then uiLoad('Data/UI/S3GEEdit.s3ge',1,3000) end
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="ImageEdit" parent="TopBarMaster" description="Image Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>    
+      <orientate ref="S3GEEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"  behavior="menubox" transition="ghostly" theme="magicbox" style="standard" scheme="pointingFX" caption="Image" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('ImageEditFile') == 0 then uiLoad('Data/UI/ImageEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="MECEdit" parent="TopBarMaster" description="Game Entity Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="ImageEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="cherrybox" style="standard" scheme="pointingFX" caption="Entity" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('MECEditFile') == 0 then uiLoad('Data/UI/MECEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="FXEdit" parent="TopBarMaster" description="Effects Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>    
+      <orientate ref="MECEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="goldbox" style="standard" scheme="pointingFX" caption="Effects" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('FXEditFile') == 0 then uiLoad('Data/UI/FXEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="SFXEdit" parent="TopBarMaster" description="Audio Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>    
+      <orientate ref="FXEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="waterbox" style="standard" scheme="pointingFX" caption="Audio" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('SFXEditFile') == 0 then uiLoad('Data/UI/SFXEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="UIEdit" parent="TopBarMaster" description="User Interface Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>    
+      <orientate ref="SFXEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="cyanbox" style="standard" scheme="pointingFX" caption="User" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"  />
+      <event state="HOLD"  />
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('UIEditFile') == 0 then uiLoad('Data/UI/UIEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="AIEdit" parent="TopBarMaster" description="Artificial Intelligence Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="UIEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX"  caption="Logic" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('AIEditFile') == 0 then uiLoad('Data/UI/AIEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="NetEdit" parent="TopBarMaster" description="Network Editor">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>    
+      <orientate ref="AIEdit" width="96" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="earthbox" style="standard" scheme="pointingFX"  caption="Network" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoExist('NetEditFile') == 0 then uiLoad('Data/UI/NetEdit.s3ge',1,3000) end  
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT"/>
+    </gizmo>
+        
+    <gizmo name="TopBarBlank" parent="TopBarMaster">
+      <orientate ref="NetEdit" width="darklua: xmlAttributeValue = dbScreenWidthGet() - ((96 * 8) + 28) " height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" theme="graybox"/>
+    </gizmo>
+    
+  </gadget>
+
+  <!-- Engine Console -->
+  
+  <gadget name="console">
+    
+    <gizmo name="consolemaster" description="Show/Hide Console" collision="1" operate="1" transit="1" active="1" audio="1" visible="1">
+      <variable name="spritex" value="0"/>    
+      <variable name="toggle" value="0"/>
+      <orientate ref="worldboundbottom" width="16" height="48" yalign="top">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="xshift" scheme="pointingFX" theme="graybox" style="standard" caption=">" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP" >
+        <script language="darklua" type="1">
+          <![CDATA[
+            uiGizmoToggle = 1 - uiGizmoVariableGet(this, 'toggle')
+            uiGizmoVariableSet(this, 'toggle', uiGizmoToggle)
+            msg = uiGizmoMessageCreate()
+            uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE + uiGizmoToggle, 0)
+					  uiGizmoMessageSend(msg,'consolemaster',MAUI_MSG_TO_CHILDREN,0)
+            uiGizmoMessageDestroy(msg)
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT" start="false"/>
+    </gizmo>
+    
+    <gizmo name="consolescript" parent="consolemaster" description="S3GE Console: Type in DarkLUA Commands here.">
+      <orientate ref="consolemaster" width="480" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <variable name="linecount" value="2"/>
+      <variable name="1" value="testobjectID = 1000"/>
+      <variable name="2" value="dbObjectSphereMake(testobjectID,10)"/>
+      <event state="IDLE" behavior="textbox" transition="ghostly" theme="notepadder" style="textboxtypeset" scheme="pointingFX" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </gizmo>
+    
+    <gizmo name="consoleenter" parent="consolemaster" description="Press to Execute Console Commands.">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="consolescript" width="92" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" scheme="pointingFX" theme="graybox" style="standard" caption="Enter" xalign="center" yalign="middle"/>
+      <event state="ENTER" />
+      <event state="HOVER" theme="goldbox" scheme="pointingFX" caption="Apply"/>
+      <event state="DOWN" theme="earthbox" caption="Confirm"/>
+      <event state="HOLD" theme="earthbox" caption="Confirm"/>
+      <event state="DRAG" theme="cherrybox"  caption="Cancel"/>
+      <event state="UP" theme="earthbox" caption="Commit">
+        <script language="darklua" type="1">
+          <![CDATA[
+            luaScriptExecute('consolescript' ,uiGizmoLinesGet(uiGizmoGet('consolescript')), '')
+				   ]]>
+        </script>      
+      </event>
+      <event state="EXIT" start="false"/>
+    </gizmo>
+    
+    <gizmo name="consoleclear" parent="consolemaster" description="Press to Clear Console Commands.">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="consoleenter" width="16" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" scheme="pointingFX" theme="graybox" style="standard" caption="X" xalign="center" yalign="middle"/>
+      <event state="ENTER" />
+      <event state="HOVER" theme="cherrybox" scheme="pointingFX"/>
+      <event state="DOWN" theme="cherrybox"/>
+      <event state="HOLD" theme="cherrybox"/>
+      <event state="DRAG" theme="cherrybox"/>
+      <event state="UP"  theme="cherrybox">
+        <script language="darklua" type="1">
+          <![CDATA[
+            uiGizmoVariableSet(uiGizmoGet('consolescript'),'linecount','1')
+            uiGizmoVariableSet(uiGizmoGet('consolescript'),'1','')          
+            uiGizmoLinesCapture(uiGizmoGet('consolescript'),IDLE)
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT" start="false"/>
+    </gizmo>
+    
+    <gizmo name="consoledebug" parent="consolemaster" description="BugLog Enabled">
+      <variable name="spritex" value="0"/>
+      <variable name="toggle" value="1"/>
+      <orientate ref="consoleclear" width="16" height="48" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" scheme="pointingFX" theme="graybox" style="standard" caption="1" xalign="center" yalign="middle"/>
+      <event state="ENTER" />
+      <event state="HOVER" theme="magicbox" scheme="pointingFX"/>
+      <event state="DOWN" theme="magicbox"/>
+      <event state="HOLD" theme="magicbox"/>
+      <event state="DRAG" theme="magicbox"/>
+      <event state="UP"  theme="magicbox">
+        <script language="darklua" type="1">
+          <![CDATA[
+            uiGizmoToggle = 1 - uiGizmoVariableGet(this, 'toggle')
+            uiGizmoVariableSet(this, 'toggle', uiGizmoToggle)
+            uiGizmoPropertySetByEventstate(this,'Caption', uiGizmoToggle, HOVER)
+            if uiGizmoToggle == 1 then 
+              bugLogEnable() 
+              uiGizmoPropertySet(this,'Description', 'BugLog Enabled') 
+            else 
+              bugLogDisable()
+              uiGizmoPropertySet(this,'Description', 'BugLog Disabled')
+             end
+            uiGizmoCapture(this,HOVER)
+            ]]>
+        </script>
+      </event>
+      <event state="EXIT" start="false"/>
+    </gizmo>
+    
+  </gadget>
+ 
+  <!-- Camera Controls -->
+  
+  <gadget name="cameracontroller">
+    
+    <widget name="cameradirection" description="Mouse Look" inputdevice="pointerdevice" value="2" collision="1" operate="1" transit="1" active="1">
+      <variable name="axisx" value="0"/>
+      <variable name="axisy" value="0"/>    
+      <event state="IDLE">
+        <script language="darklua" type="1">
+          <![CDATA[
+            if uiGizmoContact == 2 then
+					    dbCameraRotateXSet(0,uiGizmoAxisY)
+              dbCameraRotateYSet(0,uiGizmoAxisX)
+            end
+				   ]]>
+        </script>
+      </event>
+    </widget>
+    
+    <widget name="cameraforward" inputdevice="kbdevice" value="w" collision="1" operate="1" transit="1" active="1">
+      <variable name="keyfilter" value="2"/>
+      <event state="IDLE" behavior="singlekey"/>
+      <event state="ENTER"/>
+      <event state="HOVER"/>
+      <event state="DOWN"/>
+      <event state="HOLD" >
+        <script language="darklua" type="1">
+          <![CDATA[
+					  dbCameraMove(0,1.0)
+				   ]]>
+        </script>
+      </event>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </widget>
+    
+    <widget name="camerabackward" inputdevice="kbdevice" value="s" collision="1" operate="1" transit="1" active="1">
+      <variable name="keyfilter" value="0"/>
+      <event state="IDLE" behavior="singlekey"/>
+      <event state="ENTER"/>
+      <event state="HOVER"/>
+      <event state="DOWN"/>
+      <event state="HOLD" >
+        <script language="darklua" type="1">
+          <![CDATA[
+					  dbCameraMove(0,-1.0)
+				   ]]>
+        </script>
+      </event>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </widget>
+    
+    <widget name="cameraforwardfast" inputdevice="kbdevice" value="2" collision="1" operate="1" transit="1" active="1">
+      <variable name="keyfilter" value="0"/>
+      <event state="IDLE" behavior="singlekey"/>
+      <event state="ENTER"/>
+      <event state="HOVER"/>
+      <event state="DOWN"/>
+      <event state="HOLD" >
+        <script language="darklua" type="1">
+          <![CDATA[
+					  dbCameraMove(0,10.0)
+				   ]]>
+        </script>
+      </event>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </widget>
+    
+    <widget name="camerabackwardfast" inputdevice="kbdevice" value="x" collision="1" operate="1" transit="1" active="1">
+      <variable name="keyfilter" value="0"/>
+      <event state="IDLE" behavior="singlekey"/>
+      <event state="ENTER"/>
+      <event state="HOVER"/>
+      <event state="DOWN"/>
+      <event state="HOLD" >
+        <script language="darklua" type="1">
+          <![CDATA[
+					  dbCameraMove(0,-10.0)
+				   ]]>
+        </script>
+      </event>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </widget>
+   
+  </gadget>
+
+  <wizmo name="Loco" description="S3GE Loco Logo" value="Loco" >
+    <variable name="automove" value="0"/>    
+    <orientate width="100" height="100" depth="100" anglex="90" angley="90" anglez="0" z="32">
+      <physics type="box" dynamic="1" density="10" />
+    </orientate>
+    <object name="Loco" src="3D/LocoLogo_v0.2.x" type="mesh"/>
+    <event state="IDLE" object="Loco"/>
+  </wizmo>
+  
+  <script language="darklua" type="1">
+    <![CDATA[
+		-- Disable Splash & Credits
+    msg = uiGizmoMessageCreate()
+    uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_DISABLE, 0)
+    uiGizmoMessageSend(msg,'credits',MAUI_MSG_TO_SELF,0)
+    uiGizmoMessageDestroy(msg)
+    
+    msg = uiGizmoMessageCreate()
+    uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'fadeout', '1' )
+    uiGizmoMessageSend(msg,'splashscreen',MAUI_MSG_TO_SELF,0)
+    uiGizmoMessageDestroy(msg)
+    
+    msg = uiGizmoMessageCreate()
+    uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_OPEN, 0)
+    uiGizmoMessageSend(msg,'mauitoy',MAUI_MSG_TO_SELF,0)   
+    uiGizmoMessageDestroy(msg)
+    
+    dbMouseHide()
+    
+    uiOutput("Done. Create FUN!!!")
+    ]]>
+  </script>
+  
+</s3ge>

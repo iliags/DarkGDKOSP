@@ -1,0 +1,513 @@
+\hypertarget{class_net_mode_udp_per_client}{
+\section{NetModeUdpPerClient Class Reference}
+\label{class_net_mode_udp_per_client}\index{NetModeUdpPerClient@{NetModeUdpPerClient}}
+}
+
+
+UDP mode where only in order packets are received, some in order packets may be discarded however.  
+
+
+
+
+{\ttfamily \#include $<$NetModeUdpPerClient.h$>$}
+
+Inheritance diagram for NetModeUdpPerClient:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_mode_udp_per_client}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_mode_udp_per_client_aa3313f3ac3e65b4807d0ebe122ac3b40}{NetModeUdpPerClient} (size\_\-t recvSize, size\_\-t numClients, size\_\-t numOperations, bool \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{perOperation}, const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$\hyperlink{class_net_mode_udp_per_client_a6526b99fd75abe001e6e92e1e8bcd1e3}{decryptKey})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_per_client_a2002c87f02fb59e232dea6889cb06308}{
+\hyperlink{class_net_mode_udp_per_client_a2002c87f02fb59e232dea6889cb06308}{$\sim$NetModeUdpPerClient} ()}
+\label{class_net_mode_udp_per_client_a2002c87f02fb59e232dea6889cb06308}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_per_client_ad2a548a659865d79e946c38b1a32c6f9}{NetModeUdpPerClient} (const \hyperlink{class_net_mode_udp_per_client}{NetModeUdpPerClient} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_per_client}{NetModeUdpPerClient} \& \hyperlink{class_net_mode_udp_per_client_a5597847c3bea6af583c3b72eaa722cc8}{operator=} (const \hyperlink{class_net_mode_udp_per_client}{NetModeUdpPerClient} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_per_client}{NetModeUdpPerClient} $\ast$ \hyperlink{class_net_mode_udp_per_client_a41f1ee8314171e36a91e17d9e24420ae}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a deep copy of this object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_per_client_aa036644d4e71e779032f6cef6959f826}{Reset} (size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Resets data of specified client. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_per_client_a503ba4e03ba1766070561a27fd59c628}{
+void \hyperlink{class_net_mode_udp_per_client_a503ba4e03ba1766070561a27fd59c628}{Reset} ()}
+\label{class_net_mode_udp_per_client_a503ba4e03ba1766070561a27fd59c628}
+
+\begin{DoxyCompactList}\small\item\em Reset data of all clients. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_per_client_a0d7d2c68e11b088b743069d3848a13f0}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} udpRecvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Deals with newly received data. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_per_client_ac4e6ad2bcfa272cabb43a13d7baef626}{GetPacketAmount} (size\_\-t clientID, size\_\-t operationID) const 
+\begin{DoxyCompactList}\small\item\em Determines the number of packets in the specified packet store. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_per_client_a37e093c98724f8a8e652360664a6c9e4}{GetPacketFromStore} (\hyperlink{class_packet}{Packet} $\ast$destination, size\_\-t clientID, size\_\-t operationID)
+\begin{DoxyCompactList}\small\item\em Retrieves a packet from the specified packet store. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_net_mode_udp_per_client_a73732a27744817cdccebfef4d7b53aa7}{GetRecvCounter} (size\_\-t clientID, size\_\-t operationID)
+\begin{DoxyCompactList}\small\item\em Retrieves the clock() value for the currently stored packet for the specified client and operation. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_per_client_a6f4bc37fafcb1affa58c4b9820189d81}{SetRecvCounter} (size\_\-t clientID, size\_\-t operationID, clock\_\-t newCounter)
+\begin{DoxyCompactList}\small\item\em Manually changes the stored counter value for the specified client and operation. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_send}{NetSend} $\ast$ \hyperlink{class_net_mode_udp_per_client_a6a6a8cd7ebf9d72760b2f328a64e5a0e}{GetSendObject} (const \hyperlink{class_packet}{Packet} $\ast$packet, bool block)
+\begin{DoxyCompactList}\small\item\em Generates a \hyperlink{class_net_send}{NetSend} object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{ProtocolMode} \hyperlink{class_net_mode_udp_per_client_ad179a96106a20668f1dd1fe5c37e5034}{GetProtocolMode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol mode in use. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_per_client_a4756d963af49213282ebfe90c63cd1ba}{GetNumOperations} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of operations that this object can manage. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_per_client_a7c53b77684eb18b997182f7c8c861b8f}{GetNumClients} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of clients that this object can manage. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_per_client_a1c3fb35fb139bb8aeeedb79db890fa28}{PacketDone} (\hyperlink{class_packet}{Packet} $\ast$completePacket, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} udpRecvFunc)
+\begin{DoxyCompactList}\small\item\em Deals with a complete packet. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_mode_udp_per_client_a490edbb5bd9886e5a308e8d7333c7b54}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_mode_udp_per_client_aba1429095bd80cb401f15c9400b119bd}{Copy} (const \hyperlink{class_net_mode_udp_per_client}{NetModeUdpPerClient} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_mode_udp_per_client_ae4ba9cc15c6cf4fe6bd00bd3396a8251}{
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_packet}{Packet} $>$ $>$ \hyperlink{class_net_mode_udp_per_client_ae4ba9cc15c6cf4fe6bd00bd3396a8251}{packetStore}}
+\label{class_net_mode_udp_per_client_ae4ba9cc15c6cf4fe6bd00bd3396a8251}
+
+\begin{DoxyCompactList}\small\item\em 2D vector that stores received packets by client and operation. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{
+bool \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{perOperation}}
+\label{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}
+
+\begin{DoxyCompactList}\small\item\em True if object is used in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} UDP mode, false if object is used in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abb3d396c14fdec8b8e5fd8a785dfba45}{NetMode::UDP\_\-PER\_\-CLIENT} UDP mode. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_per_client_a6526b99fd75abe001e6e92e1e8bcd1e3}{
+const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$ \hyperlink{class_net_mode_udp_per_client_a6526b99fd75abe001e6e92e1e8bcd1e3}{decryptKey}}
+\label{class_net_mode_udp_per_client_a6526b99fd75abe001e6e92e1e8bcd1e3}
+
+\begin{DoxyCompactList}\small\item\em Pointer to decryption key used to decrypt incoming packets before reading them. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP mode where only in order packets are received, some in order packets may be discarded however. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+A prefix of clock() is automatically added to the start of all packets being sent. Packets being received are expected to have this prefix and problems will occur if they don't. The prefix is used to determine the age of the packet. clock() increments every millisecond and therefore the higher the prefix the newer the packet. A record is kept of the newest packet received and any packets with a prefix lower than that are discarded as they are deemed out of order.\par
+\par
+
+
+The prefix is not included as part of received packets that are passed to the user; the prefix is dealt with behind the scenes.\par
+\par
+
+
+In addition to this, the server (and only the server) must manually add the following prefix to the start of each packet:
+\begin{DoxyItemize}
+\item size\_\-t: Indicates the client that the packet is referring to. On the receiving end, the packet will then appear in that client's packet store without this prefix.\par
+\par
+
+\end{DoxyItemize}
+
+If perOperation is set to true in the constructor, then on both the server and client side an additional prefix should be added (after the client prefix):
+\begin{DoxyItemize}
+\item size\_\-t: Indicates the operation that the packet is referring to. On the receiving end, the packet will then appear in that operation IDs store without this prefix.\par
+\par
+
+\end{DoxyItemize}
+
+For details on how to implement this system in a custom instance see \hyperlink{class_net_mode_udp_per_client_a0d7d2c68e11b088b743069d3848a13f0}{DealWithData()}.\par
+\par
+
+
+On the client and server side there is a packet store for each client which stores the newest packet received from that client (in the case of server state) or referring to that client (in the case of client state). Each store contains only one packet, reducing the overhead of a queue.\par
+\par
+
+
+This UDP mode is good where data can be organized into a per client basis and can be more efficient than \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a158ce5f833cde150d209f480936b2b0a}{NetMode::UDP\_\-CATCH\_\-ALL} and \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964ad4582c7d9e25f9fbd2cec99e4455386f}{NetMode::UDP\_\-CATCH\_\-ALL\_\-NO} due to there being no queue. Note that some in order packets may be discarded since there is no queue.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_mode_udp_per_client_aa3313f3ac3e65b4807d0ebe122ac3b40}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{NetModeUdpPerClient}]{\setlength{\rightskip}{0pt plus 5cm}NetModeUdpPerClient::NetModeUdpPerClient (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ recvSize, }
+\item[{size\_\-t}]{ numClients, }
+\item[{size\_\-t}]{ numOperations, }
+\item[{bool}]{ perOperation, }
+\item[{const {\bf EncryptKey} $\ast$}]{ decryptKey}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_per_client_aa3313f3ac3e65b4807d0ebe122ac3b40}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em recvSize}]Maximum size of UDP packet that can be received. \item[{\em numClients}]Number of clients that object needs to store received packets for. \item[{\em numOperations}]Number of operations per client that object needs to store received packets for, ignored if {\itshape perOperation\/} is true. \item[{\em perOperation}]If true operation ID will be extracted from packet and object is used in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} UDP mode. \item[{\em decryptKey}]Ignored if NULL, otherwise represents memory address of \hyperlink{class_encrypt_key}{EncryptKey} object used to decrypt incoming packets before reading them. Contents of {\itshape decryptKey\/} is copied. \end{DoxyParams}
+\hypertarget{class_net_mode_udp_per_client_ad2a548a659865d79e946c38b1a32c6f9}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{NetModeUdpPerClient}]{\setlength{\rightskip}{0pt plus 5cm}NetModeUdpPerClient::NetModeUdpPerClient (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpPerClient} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_per_client_ad2a548a659865d79e946c38b1a32c6f9}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_mode_udp_per_client_a41f1ee8314171e36a91e17d9e24420ae}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!Clone@{Clone}}
+\index{Clone@{Clone}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdpPerClient} $\ast$ NetModeUdpPerClient::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a41f1ee8314171e36a91e17d9e24420ae}
+
+
+Retrieves a deep copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_udp_ae0160135a69173309701952b9bdf7488}{NetModeUdp}.
+
+\hypertarget{class_net_mode_udp_per_client_aba1429095bd80cb401f15c9400b119bd}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!Copy@{Copy}}
+\index{Copy@{Copy}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpPerClient::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpPerClient} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_udp_per_client_aba1429095bd80cb401f15c9400b119bd}
+
+
+Copy constructor / assignment operator helper method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy into this object. \end{DoxyParams}
+\hypertarget{class_net_mode_udp_per_client_a0d7d2c68e11b088b743069d3848a13f0}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpPerClient::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ udpRecvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a0d7d2c68e11b088b743069d3848a13f0}
+
+
+Deals with newly received data. 
+
+If {\itshape clientID\/} is 0 then an integer of size\_\-t type will be extracted from the data and that will be used to determine what client ID this packet refers to.\par
+\par
+
+
+Afterwards, if 'per operation' is enabled then a further integer of size\_\-t type will be extracted and its data will indicate the operation ID that the packet refers to.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em udpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. If 0 then the client ID will be extracted from the packet directly. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a075020ac61bedee59eb7b0dcb6754847}{NetMode}.
+
+\hypertarget{class_net_mode_udp_per_client_a7c53b77684eb18b997182f7c8c861b8f}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetNumClients@{GetNumClients}}
+\index{GetNumClients@{GetNumClients}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetNumClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpPerClient::GetNumClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a7c53b77684eb18b997182f7c8c861b8f}
+
+
+Retrieves the number of clients that this object can manage. 
+
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_udp_a2ec3aa4ddf8d531d1754f8be2a1d87ba}{NetModeUdp}.
+
+\hypertarget{class_net_mode_udp_per_client_a4756d963af49213282ebfe90c63cd1ba}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpPerClient::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a4756d963af49213282ebfe90c63cd1ba}
+
+
+Retrieves the number of operations that this object can manage. 
+
+\begin{DoxyReturn}{Returns}
+if \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{NetModeUdpPerClient::perOperation} is true then the number of operations that this object can manage. 
+
+if \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{NetModeUdpPerClient::perOperation} is false then 1. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_udp_a36a62c7bf9df7c7d7f2a3ad5cfb79b42}{NetModeUdp}.
+
+\hypertarget{class_net_mode_udp_per_client_ac4e6ad2bcfa272cabb43a13d7baef626}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpPerClient::GetPacketAmount (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_ac4e6ad2bcfa272cabb43a13d7baef626}
+
+
+Determines the number of packets in the specified packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \item[{\em operationID}]Ignored (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if a newly received packet exists in the packet queue. 
+
+0 if no new packet exists. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a5e5d20657ffc037022adc4b81fe2df6d}{NetMode}.
+
+\hypertarget{class_net_mode_udp_per_client_a37e093c98724f8a8e652360664a6c9e4}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpPerClient::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ destination, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a37e093c98724f8a8e652360664a6c9e4}
+
+
+Retrieves a packet from the specified packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy packet into. \item[{\em clientID}]ID of client to use. \item[{\em operationID}]ID of operation to use, may be ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 because there will always be only one packet in the store. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a7231dcd15fc1896f61d7ac80c3e9b4ba}{NetMode}.
+
+\hypertarget{class_net_mode_udp_per_client_ad179a96106a20668f1dd1fe5c37e5034}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetModeUdpPerClient::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_ad179a96106a20668f1dd1fe5c37e5034}
+
+
+Retrieves the protocol mode in use. 
+
+\begin{DoxyReturn}{Returns}
+if \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{NetModeUdpPerClient::perOperation} is true then \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}. 
+
+if \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{NetModeUdpPerClient::perOperation} is false then \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abb3d396c14fdec8b8e5fd8a785dfba45}{NetMode::UDP\_\-PER\_\-CLIENT}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a955c73991a8f13465e509f3841071455}{NetMode}.
+
+\hypertarget{class_net_mode_udp_per_client_a73732a27744817cdccebfef4d7b53aa7}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetRecvCounter@{GetRecvCounter}}
+\index{GetRecvCounter@{GetRecvCounter}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetRecvCounter}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t NetModeUdpPerClient::GetRecvCounter (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_per_client_a73732a27744817cdccebfef4d7b53aa7}
+
+
+Retrieves the clock() value for the currently stored packet for the specified client and operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \item[{\em operationID}]Operation ID of operation to use, ignored if \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{NetModeUdpPerClient::perOperation} is true.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+age of specified packet. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_udp_per_client_a6a6a8cd7ebf9d72760b2f328a64e5a0e}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSend} $\ast$ NetModeUdpPerClient::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a6a6a8cd7ebf9d72760b2f328a64e5a0e}
+
+
+Generates a \hyperlink{class_net_send}{NetSend} object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]True if sending should be synchronous, false if sending should be asynchronous.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a send object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a2a44f68cb6dccbeff90cabbdede0b54e}{NetMode}.
+
+\hypertarget{class_net_mode_udp_per_client_a5597847c3bea6af583c3b72eaa722cc8}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!operator=@{operator=}}
+\index{operator=@{operator=}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdpPerClient} \& NetModeUdpPerClient::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpPerClient} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_per_client_a5597847c3bea6af583c3b72eaa722cc8}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_udp_per_client_a1c3fb35fb139bb8aeeedb79db890fa28}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!PacketDone@{PacketDone}}
+\index{PacketDone@{PacketDone}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{PacketDone}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpPerClient::PacketDone (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ completePacket, }
+\item[{{\bf NetSocket::RecvFunc}}]{ udpRecvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a1c3fb35fb139bb8aeeedb79db890fa28}
+
+
+Deals with a complete packet. 
+
+The class deals with it in one of two ways:
+\begin{DoxyItemize}
+\item Passes it to a user function specified by {\itshape udpRecvFunc\/} parameter.
+\item If no user function is defined then it is put into a queue to be retrieved using \hyperlink{class_net_mode_udp_per_client_a37e093c98724f8a8e652360664a6c9e4}{GetPacketFromStore()}.
+\end{DoxyItemize}
+
+\begin{DoxyNote}{Note}
+This method is not called by \hyperlink{class_net_mode_udp_per_client_a0d7d2c68e11b088b743069d3848a13f0}{DealWithData()} but is included for completion.
+\end{DoxyNote}
+\begin{DoxyWarning}{Warning}
+If the packet is passed to a user function this is done synchronously, so this method will not return until the user function returns.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em completePacket}]The complete packet that should be dealt with. The packet is now owned by this object and should not be referenced elsewhere. \item[\mbox{\tt[in]} {\em udpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a6dfa7ab2954246efda52867ef345a6bb}{NetMode}.
+
+\hypertarget{class_net_mode_udp_per_client_aa036644d4e71e779032f6cef6959f826}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!Reset@{Reset}}
+\index{Reset@{Reset}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpPerClient::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_per_client_aa036644d4e71e779032f6cef6959f826}
+
+
+Resets data of specified client. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_udp_af5895c1120cdc8d0d04bd3e1bb34bdd7}{NetModeUdp}.
+
+\hypertarget{class_net_mode_udp_per_client_a6f4bc37fafcb1affa58c4b9820189d81}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!SetRecvCounter@{SetRecvCounter}}
+\index{SetRecvCounter@{SetRecvCounter}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{SetRecvCounter}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpPerClient::SetRecvCounter (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{clock\_\-t}]{ newCounter}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_per_client_a6f4bc37fafcb1affa58c4b9820189d81}
+
+
+Manually changes the stored counter value for the specified client and operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \item[{\em operationID}]Operation ID of operation to use, ignored if \hyperlink{class_net_mode_udp_per_client_a08a0bc34d06354add6d22f504ccfdaf7}{NetModeUdpPerClient::perOperation} is true. \item[{\em newCounter}]New counter value. \end{DoxyParams}
+\hypertarget{class_net_mode_udp_per_client_a490edbb5bd9886e5a308e8d7333c7b54}{
+\index{NetModeUdpPerClient@{NetModeUdpPerClient}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetModeUdpPerClient@{NetModeUdpPerClient}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeUdpPerClient::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_per_client_a490edbb5bd9886e5a308e8d7333c7b54}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_a2d4e3b8aede50899cb756392c48a8bcd}{NetModeUdp}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdpPerClient.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdpPerClient.cpp\end{DoxyCompactItemize}

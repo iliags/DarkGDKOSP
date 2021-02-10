@@ -1,0 +1,170 @@
+<s3ge version="1.0">
+
+  <!-- MECEdit Sub Menu-->
+
+  <gizmo name="MECEditFile" parent="MECEdit" description="Entity File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  behavior="menubox" transition="ghostly" theme="cherrybox" style="standard" scheme="pointingFX" caption="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+  <gizmo name="MECEditFileNew" parent="MECEditFile" ref="previous" description="Create Entity File">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditFileOpen" parent="MECEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Particle Format(*.s3ge) | Import">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="MECEditFileOpenMap" parent="MECEditFileOpen" description="Open Game Level">
+      <variable name="toggle" value="0"/>
+      <variable name="linecount" value="1"/>
+      <variable name="1" value="Data/Map/level1.s3ge"/>
+      <orientate ref="previous" width="256" height="24" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"  behavior="textbox" transition="ghostly" theme="cherrybox" style="standard" scheme="pointingFX" x="24" xalign="left" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" theme="notepadder" style="textboxtypeset" scheme="pointingFX"/>
+      <event state="DOWN" theme="notepadder" style="textboxtypeset"/>
+      <event state="HOLD" theme="notepadder" style="textboxtypeset"/>
+      <event state="DRAG" theme="notepadder" style="textboxtypeset"/>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </gizmo>
+
+    <gizmo name="MECEditFileOpenMapGo" parent="MECEditFileOpen" ref="previous" description="Open Game">
+      <variable name="toggle" value="0"/>
+      <orientate ref="previous" width="48" height="24" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"  behavior="pushbox" transition="ghostly" theme="cherrybox" style="standard" scheme="pointingFX" label="Go" x="24" xalign="left" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP">
+        <script language="darklua" type="1">
+          <![CDATA[
+                 uiLoad(uiGizmoPropertyGet(uiGizmoGet('MECEditFileOpenMap'),'Caption'),1,3000)
+				       ]]>
+        </script>
+      </event>
+    <event state="EXIT"/>
+  </gizmo>  
+  
+  <gizmo name="MECEditFileSave" parent="MECEditFile" ref="previous" description="Save|SaveAs Particle Format(*.s3ge)">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditFileClose" parent="MECEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEdit" parent="MECEdit" ref="previous" description="Entity Edit">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEditUndo" parent="MECEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Undo" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEditRedo" parent="MECEditEdit" ref="previous" description="Redo">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEditCut" parent="MECEditEdit" ref="previous" description="Cut">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEditCopy" parent="MECEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEditPaste" parent="MECEditEdit" ref="previous" description="Paste">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditEditDelete" parent="MECEditEdit" ref="previous" description="Delete|Clear">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditObject" parent="MECEdit" ref="previous" description="Entity Objects">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditTools" parent="MECEdit" ref="previous" description="Entity Tools">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditView" parent="MECEdit" ref="previous" description="Entity Views">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditHelp" parent="MECEdit" ref="previous" description="Entity Help">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="MECEditBlank" parent="MECEdit" description="Blank">
+    <orientate ref="previous" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="cherrybox"/>
+  </gizmo>
+  
+</s3ge>

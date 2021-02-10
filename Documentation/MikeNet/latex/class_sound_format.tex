@@ -1,0 +1,297 @@
+\hypertarget{class_sound_format}{
+\section{SoundFormat Class Reference}
+\label{class_sound_format}\index{SoundFormat@{SoundFormat}}
+}
+
+
+Format of sound, describing samples per second, bits per sample and number of channels.  
+
+
+
+
+{\ttfamily \#include $<$SoundFormat.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_format_a0f7932e8739b7f3e655323e6966a2a30}{
+\hyperlink{class_sound_format_a0f7932e8739b7f3e655323e6966a2a30}{SoundFormat} ()}
+\label{class_sound_format_a0f7932e8739b7f3e655323e6966a2a30}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_sound_format_a02ff51fc93ebc1d1040e190add734648}{SoundFormat} (const \hyperlink{class_sound_format}{SoundFormat} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_sound_format}{SoundFormat} \& \hyperlink{class_sound_format_a39d0818ec97f02381264cca56a5ebc9c}{operator=} (const \hyperlink{class_sound_format}{SoundFormat} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+DWORD \hyperlink{class_sound_format_a17d2e194156dd85e09c50936e9007d31}{GetSamplesPerSecond} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of samples per second. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_format_af88dbb10b2e23b0af59a81749bfb6f53}{GetBitsPerSample} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of bits per sample on a single channel. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_format_a9d7036ee215ffe0f645fb6aceb635f3d}{GetNumChannels} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of channels. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_format_a8472536ea648d1204495ab5ada1d8329}{GetBytesPerSample} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of bytes per sample across multiple channels. \item\end{DoxyCompactList}\item 
+WAVEFORMATEX $\ast$ \hyperlink{class_sound_format_a2f06c480219386d0653247594192d60d}{GetFormat} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the WAVEFORMATEX structure managed by this object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_format_ab131528d609da25a0dd530969c95964e}{Set} (DWORD samplesPerSecond, WORD bits, WORD channels)
+\begin{DoxyCompactList}\small\item\em Sets sound format settings. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_format_aba32775cb719e317ea16ed70763ae3e8}{SetLowQuality} ()
+\begin{DoxyCompactList}\small\item\em Sets the format to the default low quality. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_format_a1bd0ed3f9958518deed72ddc22d778a7}{SetMediumQuality} ()
+\begin{DoxyCompactList}\small\item\em Sets the format to the default medium quality. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_format_a744fca810c40d91c50fed4ab8353a26f}{SetHighQuality} ()
+\begin{DoxyCompactList}\small\item\em Sets the format to the default high quality. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_format_a472e7ee028938594c9f726f5a83f60b0}{
+static const DWORD \hyperlink{class_sound_format_a472e7ee028938594c9f726f5a83f60b0}{LOW\_\-SAMPLES\_\-PER\_\-SEC} = 8000}
+\label{class_sound_format_a472e7ee028938594c9f726f5a83f60b0}
+
+\begin{DoxyCompactList}\small\item\em Samples per second for low quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_ac51cd6a45429cbdbaff48dd3560c8afb}{
+static const DWORD \hyperlink{class_sound_format_ac51cd6a45429cbdbaff48dd3560c8afb}{MED\_\-SAMPLES\_\-PER\_\-SEC} = 44100}
+\label{class_sound_format_ac51cd6a45429cbdbaff48dd3560c8afb}
+
+\begin{DoxyCompactList}\small\item\em Samples per second for medium quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_ae134c16bf6c4ee5ff2bba8ea0afccfb2}{
+static const DWORD \hyperlink{class_sound_format_ae134c16bf6c4ee5ff2bba8ea0afccfb2}{HIGH\_\-SAMPLES\_\-PER\_\-SEC} = 96000}
+\label{class_sound_format_ae134c16bf6c4ee5ff2bba8ea0afccfb2}
+
+\begin{DoxyCompactList}\small\item\em Samples per second for high quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_ad8da01592ca00c7f77e9774f418b7117}{
+static const WORD \hyperlink{class_sound_format_ad8da01592ca00c7f77e9774f418b7117}{LOW\_\-BITS\_\-PER\_\-SAMPLE} = 8}
+\label{class_sound_format_ad8da01592ca00c7f77e9774f418b7117}
+
+\begin{DoxyCompactList}\small\item\em Bits per sample for low quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_a9f09a258b73854f6477286e7c0460b4e}{
+static const WORD \hyperlink{class_sound_format_a9f09a258b73854f6477286e7c0460b4e}{MED\_\-BITS\_\-PER\_\-SAMPLE} = 8}
+\label{class_sound_format_a9f09a258b73854f6477286e7c0460b4e}
+
+\begin{DoxyCompactList}\small\item\em Bits per sample for medium quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_a8636cf529abffbcec2d2225ebd0fd168}{
+static const WORD \hyperlink{class_sound_format_a8636cf529abffbcec2d2225ebd0fd168}{HIGH\_\-BITS\_\-PER\_\-SAMPLE} = 16}
+\label{class_sound_format_a8636cf529abffbcec2d2225ebd0fd168}
+
+\begin{DoxyCompactList}\small\item\em Bits per sample for high quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_a378d26a25d7ce8ac8c15e2ff4ba1a38a}{
+static const WORD \hyperlink{class_sound_format_a378d26a25d7ce8ac8c15e2ff4ba1a38a}{LOW\_\-CHANNELS} = 1}
+\label{class_sound_format_a378d26a25d7ce8ac8c15e2ff4ba1a38a}
+
+\begin{DoxyCompactList}\small\item\em Number of channels for low quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_aac4f90a611cf4b4a54b5996c006e0828}{
+static const WORD \hyperlink{class_sound_format_aac4f90a611cf4b4a54b5996c006e0828}{MED\_\-CHANNELS} = 1}
+\label{class_sound_format_aac4f90a611cf4b4a54b5996c006e0828}
+
+\begin{DoxyCompactList}\small\item\em Number of channels for medium quality. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_format_ae6e169cc7c4e4718cf87d1a6bb4c5941}{
+static const WORD \hyperlink{class_sound_format_ae6e169cc7c4e4718cf87d1a6bb4c5941}{HIGH\_\-CHANNELS} = 2}
+\label{class_sound_format_ae6e169cc7c4e4718cf87d1a6bb4c5941}
+
+\begin{DoxyCompactList}\small\item\em Number of channels for high quality. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_format_a859b609ba14a191b1b697782336689e6}{
+void \hyperlink{class_sound_format_a859b609ba14a191b1b697782336689e6}{DefaultVariables} ()}
+\label{class_sound_format_a859b609ba14a191b1b697782336689e6}
+
+\begin{DoxyCompactList}\small\item\em Sets variables to default. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_format_a0bea98bc761b4ca40cad7e22798eb925}{
+WAVEFORMATEX \hyperlink{class_sound_format_a0bea98bc761b4ca40cad7e22798eb925}{format}}
+\label{class_sound_format_a0bea98bc761b4ca40cad7e22798eb925}
+
+\begin{DoxyCompactList}\small\item\em Structure that stores information about sound format. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Format of sound, describing samples per second, bits per sample and number of channels. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sound_format_a02ff51fc93ebc1d1040e190add734648}{
+\index{SoundFormat@{SoundFormat}!SoundFormat@{SoundFormat}}
+\index{SoundFormat@{SoundFormat}!SoundFormat@{SoundFormat}}
+\subsubsection[{SoundFormat}]{\setlength{\rightskip}{0pt plus 5cm}SoundFormat::SoundFormat (
+\begin{DoxyParamCaption}
+\item[{const {\bf SoundFormat} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_a02ff51fc93ebc1d1040e190add734648}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_format_af88dbb10b2e23b0af59a81749bfb6f53}{
+\index{SoundFormat@{SoundFormat}!GetBitsPerSample@{GetBitsPerSample}}
+\index{GetBitsPerSample@{GetBitsPerSample}!SoundFormat@{SoundFormat}}
+\subsubsection[{GetBitsPerSample}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundFormat::GetBitsPerSample (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_format_af88dbb10b2e23b0af59a81749bfb6f53}
+
+
+Retrieves the number of bits per sample on a single channel. 
+
+\begin{DoxyReturn}{Returns}
+the number of bits per sample. 
+\end{DoxyReturn}
+\hypertarget{class_sound_format_a8472536ea648d1204495ab5ada1d8329}{
+\index{SoundFormat@{SoundFormat}!GetBytesPerSample@{GetBytesPerSample}}
+\index{GetBytesPerSample@{GetBytesPerSample}!SoundFormat@{SoundFormat}}
+\subsubsection[{GetBytesPerSample}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundFormat::GetBytesPerSample (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_format_a8472536ea648d1204495ab5ada1d8329}
+
+
+Retrieves the number of bytes per sample across multiple channels. 
+
+\begin{DoxyReturn}{Returns}
+the number of bytes per sample. 
+\end{DoxyReturn}
+\hypertarget{class_sound_format_a2f06c480219386d0653247594192d60d}{
+\index{SoundFormat@{SoundFormat}!GetFormat@{GetFormat}}
+\index{GetFormat@{GetFormat}!SoundFormat@{SoundFormat}}
+\subsubsection[{GetFormat}]{\setlength{\rightskip}{0pt plus 5cm}WAVEFORMATEX $\ast$ SoundFormat::GetFormat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_a2f06c480219386d0653247594192d60d}
+
+
+Retrieves the WAVEFORMATEX structure managed by this object. 
+
+\begin{DoxyReturn}{Returns}
+structure. 
+\end{DoxyReturn}
+\hypertarget{class_sound_format_a9d7036ee215ffe0f645fb6aceb635f3d}{
+\index{SoundFormat@{SoundFormat}!GetNumChannels@{GetNumChannels}}
+\index{GetNumChannels@{GetNumChannels}!SoundFormat@{SoundFormat}}
+\subsubsection[{GetNumChannels}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundFormat::GetNumChannels (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_format_a9d7036ee215ffe0f645fb6aceb635f3d}
+
+
+Retrieves the number of channels. 
+
+\begin{DoxyReturn}{Returns}
+the number of channels. 
+\end{DoxyReturn}
+\hypertarget{class_sound_format_a17d2e194156dd85e09c50936e9007d31}{
+\index{SoundFormat@{SoundFormat}!GetSamplesPerSecond@{GetSamplesPerSecond}}
+\index{GetSamplesPerSecond@{GetSamplesPerSecond}!SoundFormat@{SoundFormat}}
+\subsubsection[{GetSamplesPerSecond}]{\setlength{\rightskip}{0pt plus 5cm}DWORD SoundFormat::GetSamplesPerSecond (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_format_a17d2e194156dd85e09c50936e9007d31}
+
+
+Retrieves the number of samples per second. 
+
+\begin{DoxyReturn}{Returns}
+number of samples per second. 
+\end{DoxyReturn}
+\hypertarget{class_sound_format_a39d0818ec97f02381264cca56a5ebc9c}{
+\index{SoundFormat@{SoundFormat}!operator=@{operator=}}
+\index{operator=@{operator=}!SoundFormat@{SoundFormat}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SoundFormat} \& SoundFormat::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf SoundFormat} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_a39d0818ec97f02381264cca56a5ebc9c}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_sound_format_ab131528d609da25a0dd530969c95964e}{
+\index{SoundFormat@{SoundFormat}!Set@{Set}}
+\index{Set@{Set}!SoundFormat@{SoundFormat}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void SoundFormat::Set (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ samplesPerSecond, }
+\item[{WORD}]{ bits, }
+\item[{WORD}]{ channels}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_ab131528d609da25a0dd530969c95964e}
+
+
+Sets sound format settings. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em samplesPerSecond}]Samples per second: 11025 (11.025 kHz), 22050 (22.05 kHz), 44100 (44.1 kHz) or 48000 (48 kHz). If 0 then no change is made. \item[{\em bits}]Bits per sample: 8 or 16. If 0 then no change is made. \item[{\em channels}]Number of channels. If 0 then no change is made. \end{DoxyParams}
+\hypertarget{class_sound_format_a744fca810c40d91c50fed4ab8353a26f}{
+\index{SoundFormat@{SoundFormat}!SetHighQuality@{SetHighQuality}}
+\index{SetHighQuality@{SetHighQuality}!SoundFormat@{SoundFormat}}
+\subsubsection[{SetHighQuality}]{\setlength{\rightskip}{0pt plus 5cm}void SoundFormat::SetHighQuality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_a744fca810c40d91c50fed4ab8353a26f}
+
+
+Sets the format to the default high quality. 
+
+The format will be set with the following values: \hyperlink{class_sound_format_ae134c16bf6c4ee5ff2bba8ea0afccfb2}{SoundFormat::HIGH\_\-SAMPLES\_\-PER\_\-SEC}, \hyperlink{class_sound_format_a8636cf529abffbcec2d2225ebd0fd168}{SoundFormat::HIGH\_\-BITS\_\-PER\_\-SAMPLE}, \hyperlink{class_sound_format_ae6e169cc7c4e4718cf87d1a6bb4c5941}{SoundFormat::HIGH\_\-CHANNELS}. \hypertarget{class_sound_format_aba32775cb719e317ea16ed70763ae3e8}{
+\index{SoundFormat@{SoundFormat}!SetLowQuality@{SetLowQuality}}
+\index{SetLowQuality@{SetLowQuality}!SoundFormat@{SoundFormat}}
+\subsubsection[{SetLowQuality}]{\setlength{\rightskip}{0pt plus 5cm}void SoundFormat::SetLowQuality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_aba32775cb719e317ea16ed70763ae3e8}
+
+
+Sets the format to the default low quality. 
+
+The format will be set with the following values: \hyperlink{class_sound_format_a472e7ee028938594c9f726f5a83f60b0}{SoundFormat::LOW\_\-SAMPLES\_\-PER\_\-SEC}, \hyperlink{class_sound_format_ad8da01592ca00c7f77e9774f418b7117}{SoundFormat::LOW\_\-BITS\_\-PER\_\-SAMPLE}, \hyperlink{class_sound_format_a378d26a25d7ce8ac8c15e2ff4ba1a38a}{SoundFormat::LOW\_\-CHANNELS}. \hypertarget{class_sound_format_a1bd0ed3f9958518deed72ddc22d778a7}{
+\index{SoundFormat@{SoundFormat}!SetMediumQuality@{SetMediumQuality}}
+\index{SetMediumQuality@{SetMediumQuality}!SoundFormat@{SoundFormat}}
+\subsubsection[{SetMediumQuality}]{\setlength{\rightskip}{0pt plus 5cm}void SoundFormat::SetMediumQuality (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_format_a1bd0ed3f9958518deed72ddc22d778a7}
+
+
+Sets the format to the default medium quality. 
+
+The format will be set with the following values: \hyperlink{class_sound_format_ac51cd6a45429cbdbaff48dd3560c8afb}{SoundFormat::MED\_\-SAMPLES\_\-PER\_\-SEC}, \hyperlink{class_sound_format_a9f09a258b73854f6477286e7c0460b4e}{SoundFormat::MED\_\-BITS\_\-PER\_\-SAMPLE}, \hyperlink{class_sound_format_aac4f90a611cf4b4a54b5996c006e0828}{SoundFormat::MED\_\-CHANNELS}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundFormat.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundFormat.cpp\end{DoxyCompactItemize}

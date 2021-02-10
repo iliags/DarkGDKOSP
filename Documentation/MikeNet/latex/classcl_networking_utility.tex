@@ -1,0 +1,788 @@
+\hypertarget{classcl_networking_utility}{
+\section{clNetworkingUtility Class Reference}
+\label{classcl_networking_utility}\index{clNetworkingUtility@{clNetworkingUtility}}
+}
+
+
+Global static networking methods and variables.  
+
+
+
+
+{\ttfamily \#include $<$clNetworkingUtility.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3}{Error} \{ \hyperlink{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3af2155f40db817b2899720ebec3e0a463}{NET\_\-ERROR} =  -\/1, 
+\hyperlink{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3ac914d42470ea7c5a72273f0992eaa09d}{UNSIGNED\_\-NET\_\-ERROR} =  0
+ \}
+\item 
+enum \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{ConnectionStatus} \{ \par
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da1a0333d6bbf1103cfcdfa4621133e3a4}{REFUSED} =  -\/2, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dafafd46790b41dc51910c2cc598024480}{CONNECTION\_\-ERROR} =  -\/1, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da4ab4eb1108087cf8c17bff8585cf8270}{TIMED\_\-OUT} =  0, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da7ea7f5aa34e94ec65b905c2a37610583}{NOT\_\-CONNECTED} =  0, 
+\par
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da91a3fd8751354e5c4f32181268627d9f}{CONNECTED} =  1, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da8ffcc0a72b9ea4ec527c5bc89c2c890e}{STILL\_\-CONNECTING} =  2, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}{NO\_\-SEND} =  2, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}{NO\_\-RECV} =  3, 
+\par
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{NO\_\-SEND\_\-RECV} =  4, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dabf4d0d3d12524780c743ee1262fbc278}{CONNECTING} =  5, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dae6a68187523a21d25bdd2eaa92efc79d}{CONNECTED\_\-AC} =  6, 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dafad5daa966b363b76ea786a199121a28}{DISCONNECTING} =  7
+ \}
+\item 
+enum \hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{SendStatus} \{ \hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{SEND\_\-COMPLETED} =  0, 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{SEND\_\-IN\_\-PROGRESS} =  1, 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{SEND\_\-FAILED} =  -\/1, 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{SEND\_\-FAILED\_\-KILL} =  -\/2
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int $\ast$ \hyperlink{classcl_networking_utility_a355129677d3e58b290597f3988ceda8d}{GetSizeSOCKADDR} ()
+\item 
+static void \hyperlink{classcl_networking_utility_a7d5ae3406c401acd827caae8119e94e5}{StartWinsock} ()
+\item 
+static void \hyperlink{classcl_networking_utility_a61e79d1b69edccb69a03fc6837766571}{FinishWinsock} ()
+\item 
+static bool \hyperlink{classcl_networking_utility_aec5ada18202ac3876a006abbf165eaf8}{GetWinsockActive} ()
+\item 
+static \hyperlink{classcl_instance_group}{clInstanceGroup} \& \hyperlink{classcl_networking_utility_a386cafe64680bc6237ec6fa4f2c9411c}{GetInstanceGroup} ()
+\item 
+static void \hyperlink{classcl_networking_utility_a70199957950e7a9e01dc9a41a8375cbe}{CreateInstanceGroup} (size\_\-t numInstances)
+\item 
+static void \hyperlink{classcl_networking_utility_ad4bf8197e1f617f02b464a4553a7b65b}{DestroyInstanceGroup} ()
+\item 
+static bool \hyperlink{classcl_networking_utility_a68e9baab5e2dbec15241fe3c8b676300}{GetInstanceGroupLoaded} ()
+\item 
+static size\_\-t \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{GetMainProcessThreadID} ()
+\item 
+static size\_\-t \hyperlink{classcl_networking_utility_a070960e0d88aa8a5313c1d09c57fed1b}{GetNumThreads} ()
+\item 
+static size\_\-t \hyperlink{classcl_networking_utility_a19cbaaea7a9595185cb9c01bb1b438b5}{GetNumThreadedParticipants} ()
+\item 
+static HANDLE \hyperlink{classcl_networking_utility_aabad1cb545d70de2ef1a4eb32b09a648}{GetThreadHandle} (size\_\-t ele)
+\item 
+static HANDLE \hyperlink{classcl_networking_utility_a670abdc0d4f68ea2250342230a5e9e06}{GetCompletionPort} ()
+\item 
+static void \hyperlink{classcl_networking_utility_a335aaa6c74fae074217678368e10dbda}{SetupCompletionPort} (size\_\-t \hyperlink{classcl_networking_utility_a7f033e0caca77ee312fad6b54c224dad}{numThreads})
+\item 
+static void \hyperlink{classcl_networking_utility_adf862e88969c0a67a4c797e2ba7781f5}{DestroyCompletionPort} ()
+\item 
+static bool \hyperlink{classcl_networking_utility_a427355d520c94801991e4a99e70cc766}{GetCompletionPortSetup} ()
+\item 
+static const char $\ast$ \hyperlink{classcl_networking_utility_a691b171a9374e81ff3bab468f29b5420}{GetHostName} ()
+\item 
+static const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_networking_utility_a8600ac52b9988fa567fe2c098cf4b2f5}{GetLocalInterface} (size\_\-t ele)
+\item 
+static size\_\-t \hyperlink{classcl_networking_utility_abaed0dfdad0f06cdf5a92fc2832d4471}{GetNumLocalInterface} ()
+\item 
+static void \hyperlink{classcl_networking_utility_ad6fcd956b0311f0cfa6750fa26d4822c}{LoadLocalInfo} ()
+\item 
+static void \hyperlink{classcl_networking_utility_acdc7e675cebdca790279a7ba79f28aae}{UnloadLocalInfo} ()
+\item 
+static bool \hyperlink{classcl_networking_utility_adfe14a3e01045dba16bffe1e78145907}{GetLocalInfoLoaded} ()
+\item 
+static void \hyperlink{classcl_networking_utility_a2ee6a20532489b67b0ed53407af24765}{LoadEverything} (size\_\-t \hyperlink{classcl_networking_utility_a7f033e0caca77ee312fad6b54c224dad}{numThreads}, size\_\-t numInstances)
+\item 
+static void \hyperlink{classcl_networking_utility_afab7e0022682f7912e84ad6e51b739d1}{UnloadEverything} ()
+\item 
+static bool \hyperlink{classcl_networking_utility_a162f48b7558541ace8dfc3817b587904}{GetEverythingLoaded} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classcl_networking_utility_a770140d003b41cb571e83988a96c9c50}{sizeSOCKADDR} = sizeof(SOCKADDR)
+\item 
+static const unsigned int \hyperlink{classcl_networking_utility_a7b9a1b2da15e1d1174070a2aca194940}{maxComputerNameSize} = 1024
+\item 
+static const unsigned int \hyperlink{classcl_networking_utility_aa48d05605a3161f1b99b1dac14e05774}{authenticationStrength} = 4
+\item 
+static const unsigned char \hyperlink{classcl_networking_utility_af84431055c223f65227359514898c157}{sBox} \mbox{[}256\mbox{]}
+\item 
+static const unsigned char \hyperlink{classcl_networking_utility_a73955d828bc2ad72bb1a98fff2de244c}{InvsBox} \mbox{[}256\mbox{]}
+\item 
+static const unsigned char \hyperlink{classcl_networking_utility_af4c64288219ccb6c22d3ea07ec19b291}{Rcon} \mbox{[}255\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classcl_networking_utility_a7679c07c1af0b4efa9de51b2b52f263a}{\_\-CheckThreadID} (size\_\-t threadID, size\_\-t line, const char $\ast$file)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static size\_\-t \hyperlink{classcl_networking_utility_a7f033e0caca77ee312fad6b54c224dad}{numThreads} = 0
+\item 
+static vector$<$ HANDLE $>$ \hyperlink{classcl_networking_utility_ad039e5b653267dc859efd3bc227038e9}{thread}
+\item 
+static DWORD\_\-PTR \hyperlink{classcl_networking_utility_a282c5753f6f2ca19c16274e16851ba0c}{threadAffinity} = 0
+\item 
+static char $\ast$ \hyperlink{classcl_networking_utility_a9b72f62c150bd20204762c3570eb8285}{hostName} = NULL
+\item 
+static \hyperlink{classcl_store_vector}{clStoreVector}$<$ \hyperlink{classcl_single_addr}{clSingleAddr} $>$ \hyperlink{classcl_networking_utility_a13b355810ffbc409a87fe6c208ecaa3b}{localInterface}
+\item 
+static HANDLE \hyperlink{classcl_networking_utility_a0c6d125c3ce6d61803f1ae71d1f5a84d}{completionPort} = NULL
+\item 
+static \hyperlink{classcl_instance_group}{clInstanceGroup} $\ast$ \hyperlink{classcl_networking_utility_adb843095706e79d22e1797f869f5bf8b}{instanceGroup} = NULL
+\item 
+static bool \hyperlink{classcl_networking_utility_a8af49cca32d17b16891952a7ec3d7fa2}{completionPortSetup} = false
+\item 
+static bool \hyperlink{classcl_networking_utility_a6d1bd1ea9a0533307f0a1cb034d94980}{winsockActive} = false
+\item 
+static bool \hyperlink{classcl_networking_utility_a766d28dd514254451214cb339c6d009b}{localInfoLoaded} = false
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global static networking methods and variables. \begin{DoxyAuthor}{Author}
+Michael Pryor, 4/19/2010.
+\end{DoxyAuthor}
+Used throughout the networking module 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{
+\index{clNetworkingUtility@{clNetworkingUtility}!ConnectionStatus@{ConnectionStatus}}
+\index{ConnectionStatus@{ConnectionStatus}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{ConnectionStatus}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clNetworkingUtility::ConnectionStatus}}}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}
+Describes the stage that a connection is in \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{REFUSED@{REFUSED}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!REFUSED@{REFUSED}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da1a0333d6bbf1103cfcdfa4621133e3a4}{
+REFUSED}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da1a0333d6bbf1103cfcdfa4621133e3a4}
+}]Connection was refused. \par
+ Value of -\/2. \index{CONNECTION\_\-ERROR@{CONNECTION\_\-ERROR}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!CONNECTION\_\-ERROR@{CONNECTION\_\-ERROR}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dafafd46790b41dc51910c2cc598024480}{
+CONNECTION\_\-ERROR}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dafafd46790b41dc51910c2cc598024480}
+}]Error occurred whilst connecting. \par
+ Value of -\/1. \index{TIMED\_\-OUT@{TIMED\_\-OUT}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!TIMED\_\-OUT@{TIMED\_\-OUT}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da4ab4eb1108087cf8c17bff8585cf8270}{
+TIMED\_\-OUT}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da4ab4eb1108087cf8c17bff8585cf8270}
+}]Connection timed out, i.e. did not complete within required amount of time. \par
+ Value of 0. \index{NOT\_\-CONNECTED@{NOT\_\-CONNECTED}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!NOT\_\-CONNECTED@{NOT\_\-CONNECTED}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da7ea7f5aa34e94ec65b905c2a37610583}{
+NOT\_\-CONNECTED}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da7ea7f5aa34e94ec65b905c2a37610583}
+}]Not connected at all i.e. inactive.\par
+ Value of 0. \index{CONNECTED@{CONNECTED}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!CONNECTED@{CONNECTED}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da91a3fd8751354e5c4f32181268627d9f}{
+CONNECTED}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da91a3fd8751354e5c4f32181268627d9f}
+}]Fully connected i.e. active. \par
+ Value of 1. \index{STILL\_\-CONNECTING@{STILL\_\-CONNECTING}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!STILL\_\-CONNECTING@{STILL\_\-CONNECTING}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da8ffcc0a72b9ea4ec527c5bc89c2c890e}{
+STILL\_\-CONNECTING}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da8ffcc0a72b9ea4ec527c5bc89c2c890e}
+}]Connection attempt is still in progress. \par
+ Value of 2. \index{NO\_\-SEND@{NO\_\-SEND}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!NO\_\-SEND@{NO\_\-SEND}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}{
+NO\_\-SEND}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}
+}]The graceful disconnection process is in progress and data may no longer be sent via TCP but may still be received. Other protocols are unaffected. This status is received when the connection has been shut down; see \hyperlink{graceful_disconnect_page}{graceful disconnecting} for more information. \par
+ Value of 2. \index{NO\_\-RECV@{NO\_\-RECV}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!NO\_\-RECV@{NO\_\-RECV}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}{
+NO\_\-RECV}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}
+}]The graceful disconnection process is in progress and data may no longer be received via TCP but may still be sent. Other protocols are unaffected. This status is received when the connection has been shut down by the other participant; see \hyperlink{graceful_disconnect_page}{graceful disconnecting} for more information. \par
+ Value of 3. \index{NO\_\-SEND\_\-RECV@{NO\_\-SEND\_\-RECV}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!NO\_\-SEND\_\-RECV@{NO\_\-SEND\_\-RECV}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{
+NO\_\-SEND\_\-RECV}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}
+}]The graceful disconnection process is in progress and data may no longer be sent or received via TCP Other protocols are unaffected. This status is received when the connection has been shut down by both participants but there are packets left in the receive queue; see \hyperlink{graceful_disconnect_page}{graceful disconnecting} for more information. \par
+ Value of 4. \index{CONNECTING@{CONNECTING}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!CONNECTING@{CONNECTING}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dabf4d0d3d12524780c743ee1262fbc278}{
+CONNECTING}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dabf4d0d3d12524780c743ee1262fbc278}
+}]The connection process is in progress Value of 5. \index{CONNECTED\_\-AC@{CONNECTED\_\-AC}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!CONNECTED\_\-AC@{CONNECTED\_\-AC}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dae6a68187523a21d25bdd2eaa92efc79d}{
+CONNECTED\_\-AC}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dae6a68187523a21d25bdd2eaa92efc79d}
+}]The connection has completed but confirmation is needed before the connection becomes fully active. \par
+ Value of 6. \index{DISCONNECTING@{DISCONNECTING}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!DISCONNECTING@{DISCONNECTING}}\item[{\em 
+\hypertarget{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dafad5daa966b363b76ea786a199121a28}{
+DISCONNECTING}
+\label{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dafad5daa966b363b76ea786a199121a28}
+}]The connection is still active but a request has been made for it to be terminated. \par
+ Value of 7. \end{description}
+\end{Desc}
+
+\hypertarget{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3}{
+\index{clNetworkingUtility@{clNetworkingUtility}!Error@{Error}}
+\index{Error@{Error}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clNetworkingUtility::Error}}}
+\label{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3}
+Values used to indicate error \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NET\_\-ERROR@{NET\_\-ERROR}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!NET\_\-ERROR@{NET\_\-ERROR}}\item[{\em 
+\hypertarget{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3af2155f40db817b2899720ebec3e0a463}{
+NET\_\-ERROR}
+\label{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3af2155f40db817b2899720ebec3e0a463}
+}]Attempted a networking operation but failed, used where the return value indicates error and is signed. This is the most common error return value. \par
+ Value of -\/1. \index{UNSIGNED\_\-NET\_\-ERROR@{UNSIGNED\_\-NET\_\-ERROR}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!UNSIGNED\_\-NET\_\-ERROR@{UNSIGNED\_\-NET\_\-ERROR}}\item[{\em 
+\hypertarget{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3ac914d42470ea7c5a72273f0992eaa09d}{
+UNSIGNED\_\-NET\_\-ERROR}
+\label{classcl_networking_utility_abd62983eb0ed56370b14bd8fe26ff6d3ac914d42470ea7c5a72273f0992eaa09d}
+}]Attempted a networking operation but failed, used where the return value indicates error and is unsigned.\par
+ Value of 0. \end{description}
+\end{Desc}
+
+\hypertarget{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{
+\index{clNetworkingUtility@{clNetworkingUtility}!SendStatus@{SendStatus}}
+\index{SendStatus@{SendStatus}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{SendStatus}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clNetworkingUtility::SendStatus}}}
+\label{classcl_networking_utility_a19389cda12603396e03caa9d82073803}
+Describes the result of a send operation. \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SEND\_\-COMPLETED@{SEND\_\-COMPLETED}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!SEND\_\-COMPLETED@{SEND\_\-COMPLETED}}\item[{\em 
+\hypertarget{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{
+SEND\_\-COMPLETED}
+\label{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}
+}]The send operation completed successfully and the data has now been sent. \par
+ Value of 0. \index{SEND\_\-IN\_\-PROGRESS@{SEND\_\-IN\_\-PROGRESS}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!SEND\_\-IN\_\-PROGRESS@{SEND\_\-IN\_\-PROGRESS}}\item[{\em 
+\hypertarget{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{
+SEND\_\-IN\_\-PROGRESS}
+\label{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}
+}]The send operation was started, but has not yet completed.\par
+ Value of 1. \index{SEND\_\-FAILED@{SEND\_\-FAILED}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!SEND\_\-FAILED@{SEND\_\-FAILED}}\item[{\em 
+\hypertarget{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{
+SEND\_\-FAILED}
+\label{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}
+}]The send operation failed, but not catastrophically, so the entity does not need to be killed.\par
+ Value of -\/1. \index{SEND\_\-FAILED\_\-KILL@{SEND\_\-FAILED\_\-KILL}!clNetworkingUtility@{clNetworkingUtility}}\index{clNetworkingUtility@{clNetworkingUtility}!SEND\_\-FAILED\_\-KILL@{SEND\_\-FAILED\_\-KILL}}\item[{\em 
+\hypertarget{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{
+SEND\_\-FAILED\_\-KILL}
+\label{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}
+}]The send operation failed catastrophically, so the entity should be killed. Value of -\/2. \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_networking_utility_a7679c07c1af0b4efa9de51b2b52f263a}{
+\index{clNetworkingUtility@{clNetworkingUtility}!\_\-CheckThreadID@{\_\-CheckThreadID}}
+\index{\_\-CheckThreadID@{\_\-CheckThreadID}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{\_\-CheckThreadID}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::\_\-CheckThreadID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a7679c07c1af0b4efa9de51b2b52f263a}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if threadID is invalid, must be between 0 (inclusive) and the number of threads (exclusive) \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID to check \item[{\em line}]line number of method call \item[{\em file}]of method call \end{DoxyParams}
+\hypertarget{classcl_networking_utility_a70199957950e7a9e01dc9a41a8375cbe}{
+\index{clNetworkingUtility@{clNetworkingUtility}!CreateInstanceGroup@{CreateInstanceGroup}}
+\index{CreateInstanceGroup@{CreateInstanceGroup}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{CreateInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::CreateInstanceGroup (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInstances}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a70199957950e7a9e01dc9a41a8375cbe}
+Create instance group which contains instances that are controlled by global mn commands \par
+ Any existing group will be overwritten 
+\begin{DoxyParams}{Parameters}
+\item[{\em numInstances}]number of instances to be created but not setup \end{DoxyParams}
+\hypertarget{classcl_networking_utility_adf862e88969c0a67a4c797e2ba7781f5}{
+\index{clNetworkingUtility@{clNetworkingUtility}!DestroyCompletionPort@{DestroyCompletionPort}}
+\index{DestroyCompletionPort@{DestroyCompletionPort}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{DestroyCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::DestroyCompletionPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_adf862e88969c0a67a4c797e2ba7781f5}
+Shutdown completion port and its threads, deallocating resources \hypertarget{classcl_networking_utility_ad4bf8197e1f617f02b464a4553a7b65b}{
+\index{clNetworkingUtility@{clNetworkingUtility}!DestroyInstanceGroup@{DestroyInstanceGroup}}
+\index{DestroyInstanceGroup@{DestroyInstanceGroup}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{DestroyInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::DestroyInstanceGroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_ad4bf8197e1f617f02b464a4553a7b65b}
+Shutdown all instances in group and destroy group \par
+ If no group is loaded this method will do nothing \hypertarget{classcl_networking_utility_a61e79d1b69edccb69a03fc6837766571}{
+\index{clNetworkingUtility@{clNetworkingUtility}!FinishWinsock@{FinishWinsock}}
+\index{FinishWinsock@{FinishWinsock}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{FinishWinsock}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::FinishWinsock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a61e79d1b69edccb69a03fc6837766571}
+Shutdown winsock, this method will fail if winsock was not initialized using StartWinsock previously \hypertarget{classcl_networking_utility_a670abdc0d4f68ea2250342230a5e9e06}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetCompletionPort@{GetCompletionPort}}
+\index{GetCompletionPort@{GetCompletionPort}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}HANDLE clNetworkingUtility::GetCompletionPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a670abdc0d4f68ea2250342230a5e9e06}
+\begin{DoxyReturn}{Returns}
+handle to completion port 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a427355d520c94801991e4a99e70cc766}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetCompletionPortSetup@{GetCompletionPortSetup}}
+\index{GetCompletionPortSetup@{GetCompletionPortSetup}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetCompletionPortSetup}]{\setlength{\rightskip}{0pt plus 5cm}bool clNetworkingUtility::GetCompletionPortSetup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a427355d520c94801991e4a99e70cc766}
+\begin{DoxyReturn}{Returns}
+true if the completion port is setup using \hyperlink{classcl_networking_utility_a335aaa6c74fae074217678368e10dbda}{SetupCompletionPort()} 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a162f48b7558541ace8dfc3817b587904}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetEverythingLoaded@{GetEverythingLoaded}}
+\index{GetEverythingLoaded@{GetEverythingLoaded}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetEverythingLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool clNetworkingUtility::GetEverythingLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a162f48b7558541ace8dfc3817b587904}
+\begin{DoxyReturn}{Returns}
+true if module is networking module is fully loaded and ready for use 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a691b171a9374e81ff3bab468f29b5420}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetHostName@{GetHostName}}
+\index{GetHostName@{GetHostName}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetHostName}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ clNetworkingUtility::GetHostName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a691b171a9374e81ff3bab468f29b5420}
+\begin{DoxyReturn}{Returns}
+name of computer 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a386cafe64680bc6237ec6fa4f2c9411c}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetInstanceGroup@{GetInstanceGroup}}
+\index{GetInstanceGroup@{GetInstanceGroup}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceGroup} \& clNetworkingUtility::GetInstanceGroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a386cafe64680bc6237ec6fa4f2c9411c}
+Return reference to instance group 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if no instance group is loaded \end{DoxyExceptions}
+\hypertarget{classcl_networking_utility_a68e9baab5e2dbec15241fe3c8b676300}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetInstanceGroupLoaded@{GetInstanceGroupLoaded}}
+\index{GetInstanceGroupLoaded@{GetInstanceGroupLoaded}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetInstanceGroupLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool clNetworkingUtility::GetInstanceGroupLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a68e9baab5e2dbec15241fe3c8b676300}
+\begin{DoxyReturn}{Returns}
+true if a winsock group is currently loaded, a group is loaded using \hyperlink{classcl_networking_utility_a70199957950e7a9e01dc9a41a8375cbe}{CreateInstanceGroup()} 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_adfe14a3e01045dba16bffe1e78145907}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetLocalInfoLoaded@{GetLocalInfoLoaded}}
+\index{GetLocalInfoLoaded@{GetLocalInfoLoaded}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetLocalInfoLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool clNetworkingUtility::GetLocalInfoLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_adfe14a3e01045dba16bffe1e78145907}
+\begin{DoxyReturn}{Returns}
+true if local information is currently loaded, local info is loaded using \hyperlink{classcl_networking_utility_ad6fcd956b0311f0cfa6750fa26d4822c}{LoadLocalInfo()} 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a8600ac52b9988fa567fe2c098cf4b2f5}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetLocalInterface@{GetLocalInterface}}
+\index{GetLocalInterface@{GetLocalInterface}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetLocalInterface}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clNetworkingUtility::GetLocalInterface (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ele}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a8600ac52b9988fa567fe2c098cf4b2f5}
+\begin{DoxyReturn}{Returns}
+a local interface IP address 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetMainProcessThreadID@{GetMainProcessThreadID}}
+\index{GetMainProcessThreadID@{GetMainProcessThreadID}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetMainProcessThreadID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clNetworkingUtility::GetMainProcessThreadID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}
+\begin{DoxyReturn}{Returns}
+the main process' thread ID 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_abaed0dfdad0f06cdf5a92fc2832d4471}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetNumLocalInterface@{GetNumLocalInterface}}
+\index{GetNumLocalInterface@{GetNumLocalInterface}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetNumLocalInterface}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clNetworkingUtility::GetNumLocalInterface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_abaed0dfdad0f06cdf5a92fc2832d4471}
+\begin{DoxyReturn}{Returns}
+get number of available local interface 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a19cbaaea7a9595185cb9c01bb1b438b5}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetNumThreadedParticipants@{GetNumThreadedParticipants}}
+\index{GetNumThreadedParticipants@{GetNumThreadedParticipants}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetNumThreadedParticipants}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clNetworkingUtility::GetNumThreadedParticipants (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a19cbaaea7a9595185cb9c01bb1b438b5}
+\begin{DoxyReturn}{Returns}
+the number of multithreaded participants i.e. number of threads + one main process 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a070960e0d88aa8a5313c1d09c57fed1b}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetNumThreads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clNetworkingUtility::GetNumThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a070960e0d88aa8a5313c1d09c57fed1b}
+\begin{DoxyReturn}{Returns}
+number of completion port threads in operation 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a355129677d3e58b290597f3988ceda8d}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetSizeSOCKADDR@{GetSizeSOCKADDR}}
+\index{GetSizeSOCKADDR@{GetSizeSOCKADDR}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetSizeSOCKADDR}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ clNetworkingUtility::GetSizeSOCKADDR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a355129677d3e58b290597f3988ceda8d}
+\begin{DoxyReturn}{Returns}
+non constant pointer to sizeSOCKADDR as some winsock methods require this 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+DO NOT MODIFY RETURNED POINTER! The only reason it is non constant is to please winsock! 
+\end{DoxyWarning}
+\hypertarget{classcl_networking_utility_aabad1cb545d70de2ef1a4eb32b09a648}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetThreadHandle@{GetThreadHandle}}
+\index{GetThreadHandle@{GetThreadHandle}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetThreadHandle}]{\setlength{\rightskip}{0pt plus 5cm}HANDLE clNetworkingUtility::GetThreadHandle (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ele}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_aabad1cb545d70de2ef1a4eb32b09a648}
+\begin{DoxyReturn}{Returns}
+handle of completion port thread 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_aec5ada18202ac3876a006abbf165eaf8}{
+\index{clNetworkingUtility@{clNetworkingUtility}!GetWinsockActive@{GetWinsockActive}}
+\index{GetWinsockActive@{GetWinsockActive}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{GetWinsockActive}]{\setlength{\rightskip}{0pt plus 5cm}bool clNetworkingUtility::GetWinsockActive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_aec5ada18202ac3876a006abbf165eaf8}
+\begin{DoxyReturn}{Returns}
+true if winsock is active, i.e. has been started using \hyperlink{classcl_networking_utility_a7d5ae3406c401acd827caae8119e94e5}{StartWinsock()} 
+\end{DoxyReturn}
+\hypertarget{classcl_networking_utility_a2ee6a20532489b67b0ed53407af24765}{
+\index{clNetworkingUtility@{clNetworkingUtility}!LoadEverything@{LoadEverything}}
+\index{LoadEverything@{LoadEverything}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{LoadEverything}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::LoadEverything (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads, }
+\item[{size\_\-t}]{ numInstances}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a2ee6a20532489b67b0ed53407af24765}
+Performs all possible setup operations, making the networking module fully operational \par
+ Any previously loaded data will be overwritten 
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]number of threads to be created to manage completion port \item[{\em numInstances}]number of instances to be created but not setup \end{DoxyParams}
+\hypertarget{classcl_networking_utility_ad6fcd956b0311f0cfa6750fa26d4822c}{
+\index{clNetworkingUtility@{clNetworkingUtility}!LoadLocalInfo@{LoadLocalInfo}}
+\index{LoadLocalInfo@{LoadLocalInfo}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{LoadLocalInfo}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::LoadLocalInfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_ad6fcd956b0311f0cfa6750fa26d4822c}
+Retrieves information about local interface and computer name \par
+ Existing local information is overwritten \hypertarget{classcl_networking_utility_a335aaa6c74fae074217678368e10dbda}{
+\index{clNetworkingUtility@{clNetworkingUtility}!SetupCompletionPort@{SetupCompletionPort}}
+\index{SetupCompletionPort@{SetupCompletionPort}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{SetupCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::SetupCompletionPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a335aaa6c74fae074217678368e10dbda}
+Sets up completion port and creates threads to manage completion port 
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]number of threads to be created to manage completion port \end{DoxyParams}
+\hypertarget{classcl_networking_utility_a7d5ae3406c401acd827caae8119e94e5}{
+\index{clNetworkingUtility@{clNetworkingUtility}!StartWinsock@{StartWinsock}}
+\index{StartWinsock@{StartWinsock}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{StartWinsock}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::StartWinsock (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a7d5ae3406c401acd827caae8119e94e5}
+Initialize winsock, winsock is at the heart of the networking module \hypertarget{classcl_networking_utility_afab7e0022682f7912e84ad6e51b739d1}{
+\index{clNetworkingUtility@{clNetworkingUtility}!UnloadEverything@{UnloadEverything}}
+\index{UnloadEverything@{UnloadEverything}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{UnloadEverything}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::UnloadEverything (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_afab7e0022682f7912e84ad6e51b739d1}
+Performs all possible shutdown operations, fully unloading the networking module \par
+ Anything not loaded will be skipped and if nothing is loaded this method will do nothing \hypertarget{classcl_networking_utility_acdc7e675cebdca790279a7ba79f28aae}{
+\index{clNetworkingUtility@{clNetworkingUtility}!UnloadLocalInfo@{UnloadLocalInfo}}
+\index{UnloadLocalInfo@{UnloadLocalInfo}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{UnloadLocalInfo}]{\setlength{\rightskip}{0pt plus 5cm}void clNetworkingUtility::UnloadLocalInfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_acdc7e675cebdca790279a7ba79f28aae}
+\begin{DoxyReturn}{Returns}
+unload local information previously loaded with LoadInfo \par
+ If no information is loaded this method does nothing 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_networking_utility_aa48d05605a3161f1b99b1dac14e05774}{
+\index{clNetworkingUtility@{clNetworkingUtility}!authenticationStrength@{authenticationStrength}}
+\index{authenticationStrength@{authenticationStrength}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{authenticationStrength}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf clNetworkingUtility::authenticationStrength} = 4\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_aa48d05605a3161f1b99b1dac14e05774}
+level of UDP authentication used by instances \hypertarget{classcl_networking_utility_a0c6d125c3ce6d61803f1ae71d1f5a84d}{
+\index{clNetworkingUtility@{clNetworkingUtility}!completionPort@{completionPort}}
+\index{completionPort@{completionPort}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{completionPort}]{\setlength{\rightskip}{0pt plus 5cm}HANDLE {\bf clNetworkingUtility::completionPort} = NULL\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a0c6d125c3ce6d61803f1ae71d1f5a84d}
+Handle to completion port \hypertarget{classcl_networking_utility_a8af49cca32d17b16891952a7ec3d7fa2}{
+\index{clNetworkingUtility@{clNetworkingUtility}!completionPortSetup@{completionPortSetup}}
+\index{completionPortSetup@{completionPortSetup}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{completionPortSetup}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clNetworkingUtility::completionPortSetup} = false\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a8af49cca32d17b16891952a7ec3d7fa2}
+true if the completion port has been setup using \hyperlink{classcl_networking_utility_a335aaa6c74fae074217678368e10dbda}{SetupCompletionPort()} \hypertarget{classcl_networking_utility_a9b72f62c150bd20204762c3570eb8285}{
+\index{clNetworkingUtility@{clNetworkingUtility}!hostName@{hostName}}
+\index{hostName@{hostName}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{hostName}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ {\bf clNetworkingUtility::hostName} = NULL\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a9b72f62c150bd20204762c3570eb8285}
+name of computer \hypertarget{classcl_networking_utility_adb843095706e79d22e1797f869f5bf8b}{
+\index{clNetworkingUtility@{clNetworkingUtility}!instanceGroup@{instanceGroup}}
+\index{instanceGroup@{instanceGroup}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{instanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceGroup} $\ast$ {\bf clNetworkingUtility::instanceGroup} = NULL\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_adb843095706e79d22e1797f869f5bf8b}
+Group of instances controlled by global mn commands \hypertarget{classcl_networking_utility_a73955d828bc2ad72bb1a98fff2de244c}{
+\index{clNetworkingUtility@{clNetworkingUtility}!InvsBox@{InvsBox}}
+\index{InvsBox@{InvsBox}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{InvsBox}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf clNetworkingUtility::InvsBox}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a73955d828bc2ad72bb1a98fff2de244c}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3,
+       0x9e, 0x81, 0xf3, 0xd7, 0xfb,
+                0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87, 0x34, 0x8e, 0x43,
+       0x44, 0xc4, 0xde, 0xe9, 0xcb,
+                0x54, 0x7b, 0x94, 0x32, 0xa6, 0xc2, 0x23, 0x3d, 0xee, 0x4c, 0x95,
+       0x0b, 0x42, 0xfa, 0xc3, 0x4e,
+                0x08, 0x2e, 0xa1, 0x66, 0x28, 0xd9, 0x24, 0xb2, 0x76, 0x5b, 0xa2,
+       0x49, 0x6d, 0x8b, 0xd1, 0x25,
+                0x72, 0xf8, 0xf6, 0x64, 0x86, 0x68, 0x98, 0x16, 0xd4, 0xa4, 0x5c,
+       0xcc, 0x5d, 0x65, 0xb6, 0x92,
+                0x6c, 0x70, 0x48, 0x50, 0xfd, 0xed, 0xb9, 0xda, 0x5e, 0x15, 0x46,
+       0x57, 0xa7, 0x8d, 0x9d, 0x84,
+                0x90, 0xd8, 0xab, 0x00, 0x8c, 0xbc, 0xd3, 0x0a, 0xf7, 0xe4, 0x58,
+       0x05, 0xb8, 0xb3, 0x45, 0x06,
+                0xd0, 0x2c, 0x1e, 0x8f, 0xca, 0x3f, 0x0f, 0x02, 0xc1, 0xaf, 0xbd,
+       0x03, 0x01, 0x13, 0x8a, 0x6b,
+                0x3a, 0x91, 0x11, 0x41, 0x4f, 0x67, 0xdc, 0xea, 0x97, 0xf2, 0xcf,
+       0xce, 0xf0, 0xb4, 0xe6, 0x73,
+                0x96, 0xac, 0x74, 0x22, 0xe7, 0xad, 0x35, 0x85, 0xe2, 0xf9, 0x37,
+       0xe8, 0x1c, 0x75, 0xdf, 0x6e,
+                0x47, 0xf1, 0x1a, 0x71, 0x1d, 0x29, 0xc5, 0x89, 0x6f, 0xb7, 0x62,
+       0x0e, 0xaa, 0x18, 0xbe, 0x1b,
+                0xfc, 0x56, 0x3e, 0x4b, 0xc6, 0xd2, 0x79, 0x20, 0x9a, 0xdb, 0xc0,
+       0xfe, 0x78, 0xcd, 0x5a, 0xf4,
+                0x1f, 0xdd, 0xa8, 0x33, 0x88, 0x07, 0xc7, 0x31, 0xb1, 0x12, 0x10,
+       0x59, 0x27, 0x80, 0xec, 0x5f,
+                0x60, 0x51, 0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0x0d, 0x2d, 0xe5, 0x7a,
+       0x9f, 0x93, 0xc9, 0x9c, 0xef,
+                0xa0, 0xe0, 0x3b, 0x4d, 0xae, 0x2a, 0xf5, 0xb0, 0xc8, 0xeb, 0xbb,
+       0x3c, 0x83, 0x53, 0x99, 0x61,
+                0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14,
+       0x63, 0x55, 0x21, 0x0c, 0x7d
+        }
+\end{DoxyCode}
+Used during encryption/decryption \par
+ Used with \_\-InvSubBytes which replaces each byte with one from this table \hypertarget{classcl_networking_utility_a766d28dd514254451214cb339c6d009b}{
+\index{clNetworkingUtility@{clNetworkingUtility}!localInfoLoaded@{localInfoLoaded}}
+\index{localInfoLoaded@{localInfoLoaded}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{localInfoLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clNetworkingUtility::localInfoLoaded} = false\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a766d28dd514254451214cb339c6d009b}
+true if local information has been loaded using \hyperlink{classcl_networking_utility_ad6fcd956b0311f0cfa6750fa26d4822c}{LoadLocalInfo()} \hypertarget{classcl_networking_utility_a13b355810ffbc409a87fe6c208ecaa3b}{
+\index{clNetworkingUtility@{clNetworkingUtility}!localInterface@{localInterface}}
+\index{localInterface@{localInterface}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{localInterface}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStoreVector}$<${\bf clSingleAddr}$>$ {\bf clNetworkingUtility::localInterface}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a13b355810ffbc409a87fe6c208ecaa3b}
+2D array of local interface (IP addresses) \hypertarget{classcl_networking_utility_a7b9a1b2da15e1d1174070a2aca194940}{
+\index{clNetworkingUtility@{clNetworkingUtility}!maxComputerNameSize@{maxComputerNameSize}}
+\index{maxComputerNameSize@{maxComputerNameSize}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{maxComputerNameSize}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf clNetworkingUtility::maxComputerNameSize} = 1024\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a7b9a1b2da15e1d1174070a2aca194940}
+Max length that computer name can be, longer computer names will probably be truncated \hypertarget{classcl_networking_utility_a7f033e0caca77ee312fad6b54c224dad}{
+\index{clNetworkingUtility@{clNetworkingUtility}!numThreads@{numThreads}}
+\index{numThreads@{numThreads}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{numThreads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clNetworkingUtility::numThreads} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a7f033e0caca77ee312fad6b54c224dad}
+number of completion port threads in operation \hypertarget{classcl_networking_utility_af4c64288219ccb6c22d3ea07ec19b291}{
+\index{clNetworkingUtility@{clNetworkingUtility}!Rcon@{Rcon}}
+\index{Rcon@{Rcon}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{Rcon}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf clNetworkingUtility::Rcon}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_af4c64288219ccb6c22d3ea07ec19b291}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36,
+       0x6c, 0xd8, 0xab, 0x4d, 0x9a, 
+                0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d,
+       0xfa, 0xef, 0xc5, 0x91, 0x39, 
+                0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33,
+       0x66, 0xcc, 0x83, 0x1d, 0x3a, 
+                0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40,
+       0x80, 0x1b, 0x36, 0x6c, 0xd8, 
+                0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a,
+       0xd4, 0xb3, 0x7d, 0xfa, 0xef, 
+                0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25,
+       0x4a, 0x94, 0x33, 0x66, 0xcc, 
+                0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08,
+       0x10, 0x20, 0x40, 0x80, 0x1b, 
+                0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6,
+       0x97, 0x35, 0x6a, 0xd4, 0xb3, 
+                0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61,
+       0xc2, 0x9f, 0x25, 0x4a, 0x94, 
+                0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01,
+       0x02, 0x04, 0x08, 0x10, 0x20, 
+                0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e,
+       0xbc, 0x63, 0xc6, 0x97, 0x35, 
+                0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4,
+       0xd3, 0xbd, 0x61, 0xc2, 0x9f, 
+                0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8,
+       0xcb, 0x8d, 0x01, 0x02, 0x04, 
+                0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d,
+       0x9a, 0x2f, 0x5e, 0xbc, 0x63, 
+                0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91,
+       0x39, 0x72, 0xe4, 0xd3, 0xbd, 
+                0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d,
+       0x3a, 0x74, 0xe8, 0xcb
+        }
+\end{DoxyCode}
+Used during encryption/decryption \par
+ The round constant word array, Rcon\mbox{[}i\mbox{]}, contains the values given by x to th e power (i-\/1) being powers of x (x is denoted as \{02\}) in the field GF(28). \par
+ Note that i starts at 1, not 0. \hypertarget{classcl_networking_utility_af84431055c223f65227359514898c157}{
+\index{clNetworkingUtility@{clNetworkingUtility}!sBox@{sBox}}
+\index{sBox@{sBox}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{sBox}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf clNetworkingUtility::sBox}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_af84431055c223f65227359514898c157}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                        0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x0
+      1, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
+                        0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd
+      4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0,
+                        0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa
+      5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,
+                        0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x1
+      2, 0x80, 0xe2, 0xeb, 0x27, 0xb2, 0x75,
+                        0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3
+      b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84,
+                        0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xc
+      b, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,
+                        0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf
+      9, 0x02, 0x7f, 0x50, 0x3c, 0x9f, 0xa8,
+                        0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb
+      6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2,
+                        0xcd, 0x0c, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa
+      7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,
+                        0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xe
+      e, 0xb8, 0x14, 0xde, 0x5e, 0x0b, 0xdb,
+                        0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd
+      3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79,
+                        0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x5
+      6, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,
+                        0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xd
+      d, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a,
+                        0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61, 0x3
+      5, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e,
+                        0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1
+      e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
+                        0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x9
+      9, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16
+        }
+\end{DoxyCode}
+Used during encryption/decryption \par
+ Used with \_\-SubBytes which replaces each byte with one from this table \hypertarget{classcl_networking_utility_a770140d003b41cb571e83988a96c9c50}{
+\index{clNetworkingUtility@{clNetworkingUtility}!sizeSOCKADDR@{sizeSOCKADDR}}
+\index{sizeSOCKADDR@{sizeSOCKADDR}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{sizeSOCKADDR}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf clNetworkingUtility::sizeSOCKADDR} = sizeof(SOCKADDR)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_networking_utility_a770140d003b41cb571e83988a96c9c50}
+sizeof(SOCKADDR) some winsock methods require a pointer to this \hypertarget{classcl_networking_utility_ad039e5b653267dc859efd3bc227038e9}{
+\index{clNetworkingUtility@{clNetworkingUtility}!thread@{thread}}
+\index{thread@{thread}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{thread}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$HANDLE$>$ {\bf clNetworkingUtility::thread}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_ad039e5b653267dc859efd3bc227038e9}
+2D array of thread HANDLEs \hypertarget{classcl_networking_utility_a282c5753f6f2ca19c16274e16851ba0c}{
+\index{clNetworkingUtility@{clNetworkingUtility}!threadAffinity@{threadAffinity}}
+\index{threadAffinity@{threadAffinity}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{threadAffinity}]{\setlength{\rightskip}{0pt plus 5cm}DWORD\_\-PTR {\bf clNetworkingUtility::threadAffinity} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a282c5753f6f2ca19c16274e16851ba0c}
+Each bit represents the affinity of a thread where bit 0 is thread 0 \hypertarget{classcl_networking_utility_a6d1bd1ea9a0533307f0a1cb034d94980}{
+\index{clNetworkingUtility@{clNetworkingUtility}!winsockActive@{winsockActive}}
+\index{winsockActive@{winsockActive}!clNetworkingUtility@{clNetworkingUtility}}
+\subsubsection[{winsockActive}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clNetworkingUtility::winsockActive} = false\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_networking_utility_a6d1bd1ea9a0533307f0a1cb034d94980}
+true if winsock has been started using \hyperlink{classcl_networking_utility_a7d5ae3406c401acd827caae8119e94e5}{StartWinsock()} 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clNetworkingUtility.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clNetworkingUtility.cpp\end{DoxyCompactItemize}

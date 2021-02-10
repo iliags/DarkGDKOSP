@@ -1,0 +1,280 @@
+\hypertarget{class_sound_utility}{
+\section{SoundUtility Class Reference}
+\label{class_sound_utility}\index{SoundUtility@{SoundUtility}}
+}
+
+
+Global sound input/output methods and variables.  
+
+
+
+
+{\ttfamily \#include $<$SoundUtility.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}{Start} (size\_\-t numInputInstance, size\_\-t numOutputInstances)
+\begin{DoxyCompactList}\small\item\em Starts up the sound input / output module. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_utility_a975bb68ee825fc0f23d59b76c43fafa8}{
+static void \hyperlink{class_sound_utility_a975bb68ee825fc0f23d59b76c43fafa8}{Finish} ()}
+\label{class_sound_utility_a975bb68ee825fc0f23d59b76c43fafa8}
+
+\begin{DoxyCompactList}\small\item\em Shuts down the sound input / output module. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_sound_utility_a6a9d5c1aa5d0f0f982ce3de3d76404da}{AddInputInstance} (size\_\-t ID, \hyperlink{class_sound_instance_input}{SoundInstanceInput} $\ast$instance)
+\begin{DoxyCompactList}\small\item\em Adds an input instance. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_sound_utility_ac12d97e77c28cbbd95df243965dc8c4d}{AddOutputInstance} (size\_\-t ID, \hyperlink{class_sound_instance_output}{SoundInstanceOutput} $\ast$output)
+\begin{DoxyCompactList}\small\item\em Adds an output instance. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_sound_instance_input}{SoundInstanceInput} $\ast$ \hyperlink{class_sound_utility_a12dd33f6aaa1ac063c707c806aa39573}{GetInputInstance} (size\_\-t ID)
+\begin{DoxyCompactList}\small\item\em Retrieves an input instance. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_sound_instance_output}{SoundInstanceOutput} $\ast$ \hyperlink{class_sound_utility_a9c7d16f70ad0eaa3bb5df014b55ea8e1}{GetOutputInstance} (size\_\-t ID)
+\begin{DoxyCompactList}\small\item\em Retrieves an output instance. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_sound_utility_a91bf5ab4d9ddfba89f75972db260ac7e}{CleanupInputInstance} (size\_\-t ID)
+\begin{DoxyCompactList}\small\item\em Cleans up an input instance. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_sound_utility_a68ce68bd9b5c206ed2b70252b4e9b976}{CleanupOutputInstance} (size\_\-t ID)
+\begin{DoxyCompactList}\small\item\em Cleans up an output instance. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_sound_utility_af740d16e8f9e50fe848c00882287ddbe}{GetNumInputInstances} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of input instances created using \hyperlink{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}{SoundUtility::Start}. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_sound_utility_ab42f09f062637d879046c2bb851a773f}{GetNumOutputInstances} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of input instances created using \hyperlink{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}{SoundUtility::Start}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_sound_utility_ae5191b4343c8d8a536c76ad47730c1e3}{ValidateInputInstanceID} (size\_\-t ID)
+\begin{DoxyCompactList}\small\item\em Validates the specified input instance ID. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_sound_utility_ac6afa82aa1f2fd63c4140c1911845737}{ValidateOutputInstanceID} (size\_\-t ID)
+\begin{DoxyCompactList}\small\item\em Validates the specified output instance ID. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static vector$<$ \hyperlink{class_sound_instance_input}{SoundInstanceInput} $\ast$ $>$ \hyperlink{class_sound_utility_a5fdc769a20a9a49c1c185cb2f7f90c45}{inputInstances}
+\begin{DoxyCompactList}\small\item\em Vector of input instances. \item\end{DoxyCompactList}\item 
+static vector$<$ \hyperlink{class_sound_instance_output}{SoundInstanceOutput} $\ast$ $>$ \hyperlink{class_sound_utility_a015e225d655b6e9607ecc7ec52fa7b39}{outputInstances}
+\begin{DoxyCompactList}\small\item\em Vector of output instances. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global sound input/output methods and variables. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_utility_a6a9d5c1aa5d0f0f982ce3de3d76404da}{
+\index{SoundUtility@{SoundUtility}!AddInputInstance@{AddInputInstance}}
+\index{AddInputInstance@{AddInputInstance}!SoundUtility@{SoundUtility}}
+\subsubsection[{AddInputInstance}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::AddInputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID, }
+\item[{{\bf SoundInstanceInput} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_a6a9d5c1aa5d0f0f982ce3de3d76404da}
+
+
+Adds an input instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier to assign to the instance. \item[\mbox{\tt[in]} {\em instance}]The instance to use. This object is now owned by this class and should not be referenced elsewhere. \end{DoxyParams}
+\hypertarget{class_sound_utility_ac12d97e77c28cbbd95df243965dc8c4d}{
+\index{SoundUtility@{SoundUtility}!AddOutputInstance@{AddOutputInstance}}
+\index{AddOutputInstance@{AddOutputInstance}!SoundUtility@{SoundUtility}}
+\subsubsection[{AddOutputInstance}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::AddOutputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID, }
+\item[{{\bf SoundInstanceOutput} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_ac12d97e77c28cbbd95df243965dc8c4d}
+
+
+Adds an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier to assign to the instance. \item[\mbox{\tt[in]} {\em instance}]The instance to use. This object is now owned by this class and should not be referenced elsewhere. \end{DoxyParams}
+\hypertarget{class_sound_utility_a91bf5ab4d9ddfba89f75972db260ac7e}{
+\index{SoundUtility@{SoundUtility}!CleanupInputInstance@{CleanupInputInstance}}
+\index{CleanupInputInstance@{CleanupInputInstance}!SoundUtility@{SoundUtility}}
+\subsubsection[{CleanupInputInstance}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::CleanupInputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_a91bf5ab4d9ddfba89f75972db260ac7e}
+
+
+Cleans up an input instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier. \end{DoxyParams}
+\hypertarget{class_sound_utility_a68ce68bd9b5c206ed2b70252b4e9b976}{
+\index{SoundUtility@{SoundUtility}!CleanupOutputInstance@{CleanupOutputInstance}}
+\index{CleanupOutputInstance@{CleanupOutputInstance}!SoundUtility@{SoundUtility}}
+\subsubsection[{CleanupOutputInstance}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::CleanupOutputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_a68ce68bd9b5c206ed2b70252b4e9b976}
+
+
+Cleans up an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier. \end{DoxyParams}
+\hypertarget{class_sound_utility_a12dd33f6aaa1ac063c707c806aa39573}{
+\index{SoundUtility@{SoundUtility}!GetInputInstance@{GetInputInstance}}
+\index{GetInputInstance@{GetInputInstance}!SoundUtility@{SoundUtility}}
+\subsubsection[{GetInputInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SoundInstanceInput} $\ast$ SoundUtility::GetInputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_a12dd33f6aaa1ac063c707c806aa39573}
+
+
+Retrieves an input instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+input instance. 
+\end{DoxyReturn}
+\hypertarget{class_sound_utility_af740d16e8f9e50fe848c00882287ddbe}{
+\index{SoundUtility@{SoundUtility}!GetNumInputInstances@{GetNumInputInstances}}
+\index{GetNumInputInstances@{GetNumInputInstances}!SoundUtility@{SoundUtility}}
+\subsubsection[{GetNumInputInstances}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundUtility::GetNumInputInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_af740d16e8f9e50fe848c00882287ddbe}
+
+
+Retrieves the number of input instances created using \hyperlink{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}{SoundUtility::Start}. 
+
+\begin{DoxyReturn}{Returns}
+the number of input instances created. 
+\end{DoxyReturn}
+\hypertarget{class_sound_utility_ab42f09f062637d879046c2bb851a773f}{
+\index{SoundUtility@{SoundUtility}!GetNumOutputInstances@{GetNumOutputInstances}}
+\index{GetNumOutputInstances@{GetNumOutputInstances}!SoundUtility@{SoundUtility}}
+\subsubsection[{GetNumOutputInstances}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundUtility::GetNumOutputInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_ab42f09f062637d879046c2bb851a773f}
+
+
+Retrieves the number of input instances created using \hyperlink{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}{SoundUtility::Start}. 
+
+\begin{DoxyReturn}{Returns}
+the number of output instances created. 
+\end{DoxyReturn}
+\hypertarget{class_sound_utility_a9c7d16f70ad0eaa3bb5df014b55ea8e1}{
+\index{SoundUtility@{SoundUtility}!GetOutputInstance@{GetOutputInstance}}
+\index{GetOutputInstance@{GetOutputInstance}!SoundUtility@{SoundUtility}}
+\subsubsection[{GetOutputInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SoundInstanceOutput} $\ast$ SoundUtility::GetOutputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_a9c7d16f70ad0eaa3bb5df014b55ea8e1}
+
+
+Retrieves an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output instance. 
+\end{DoxyReturn}
+\hypertarget{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}{
+\index{SoundUtility@{SoundUtility}!Start@{Start}}
+\index{Start@{Start}!SoundUtility@{SoundUtility}}
+\subsubsection[{Start}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::Start (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInputInstances, }
+\item[{size\_\-t}]{ numOutputInstances}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_utility_a0d97dbcba90c9e50e4987c80d63a1c17}
+
+
+Starts up the sound input / output module. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numInputInstances}]Number of input instances. \item[{\em numOutputInstances}]Number of output instances. \end{DoxyParams}
+\hypertarget{class_sound_utility_ae5191b4343c8d8a536c76ad47730c1e3}{
+\index{SoundUtility@{SoundUtility}!ValidateInputInstanceID@{ValidateInputInstanceID}}
+\index{ValidateInputInstanceID@{ValidateInputInstanceID}!SoundUtility@{SoundUtility}}
+\subsubsection[{ValidateInputInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::ValidateInputInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_sound_utility_ae5191b4343c8d8a536c76ad47730c1e3}
+
+
+Validates the specified input instance ID. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier to check.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em clError}]If the ID is invalid. \end{DoxyExceptions}
+\hypertarget{class_sound_utility_ac6afa82aa1f2fd63c4140c1911845737}{
+\index{SoundUtility@{SoundUtility}!ValidateOutputInstanceID@{ValidateOutputInstanceID}}
+\index{ValidateOutputInstanceID@{ValidateOutputInstanceID}!SoundUtility@{SoundUtility}}
+\subsubsection[{ValidateOutputInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void SoundUtility::ValidateOutputInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_sound_utility_ac6afa82aa1f2fd63c4140c1911845737}
+
+
+Validates the specified output instance ID. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]The identifier to check.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em clError}]If the ID is invalid. \end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_sound_utility_a5fdc769a20a9a49c1c185cb2f7f90c45}{
+\index{SoundUtility@{SoundUtility}!inputInstances@{inputInstances}}
+\index{inputInstances@{inputInstances}!SoundUtility@{SoundUtility}}
+\subsubsection[{inputInstances}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf SoundInstanceInput} $\ast$ $>$ {\bf SoundUtility::inputInstances}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_sound_utility_a5fdc769a20a9a49c1c185cb2f7f90c45}
+
+
+Vector of input instances. 
+
+Could not use \hyperlink{class_store_vector}{StoreVector} due to possible compiler bug. \hypertarget{class_sound_utility_a015e225d655b6e9607ecc7ec52fa7b39}{
+\index{SoundUtility@{SoundUtility}!outputInstances@{outputInstances}}
+\index{outputInstances@{outputInstances}!SoundUtility@{SoundUtility}}
+\subsubsection[{outputInstances}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ {\bf SoundInstanceOutput} $\ast$ $>$ {\bf SoundUtility::outputInstances}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_sound_utility_a015e225d655b6e9607ecc7ec52fa7b39}
+
+
+Vector of output instances. 
+
+Could not use \hyperlink{class_store_vector}{StoreVector} due to possible compiler bug. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundUtility.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundUtility.cpp\end{DoxyCompactItemize}

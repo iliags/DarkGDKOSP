@@ -1,0 +1,333 @@
+\hypertarget{class_thread_message_item_encrypt}{
+\section{ThreadMessageItemEncrypt Class Reference}
+\label{class_thread_message_item_encrypt}\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+}
+
+
+Message which encrypts or decrypts part of a packet, sent to a \hyperlink{class_thread_single_message}{ThreadSingleMessage} thread.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItemEncrypt.h$>$}
+
+Inheritance diagram for ThreadMessageItemEncrypt:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thread_message_item_encrypt}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item_encrypt_abde8dfa6989926bf3af1a3e9b837cb71}{ThreadMessageItemEncrypt} (bool \hyperlink{class_thread_message_item_encrypt_ae46648288267f23d50fe2507f5bf4718}{encrypt}, \hyperlink{class_packet}{Packet} $\ast$\hyperlink{class_thread_message_item_encrypt_a7982d9c0673a2a733c5ce3fc5851bbda}{packet}, const \hyperlink{class_encrypt_key}{EncryptKey} \&encryptKey, size\_\-t \hyperlink{class_thread_message_item_encrypt_aeef5e81db47fca6a9acb7d57c6fc920b}{threadID}, size\_\-t \hyperlink{class_thread_message_item_encrypt_a3fe9fdadc77fa538812e831bd348696b}{numThreads})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_a1dc76b72e64ff7fe2f2b6183ea2a7586}{
+virtual \hyperlink{class_thread_message_item_encrypt_a1dc76b72e64ff7fe2f2b6183ea2a7586}{$\sim$ThreadMessageItemEncrypt} ()}
+\label{class_thread_message_item_encrypt_a1dc76b72e64ff7fe2f2b6183ea2a7586}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_message_item_encrypt_aaffd6c727e69eadac8efb947337e358d}{TakeAction} ()
+\begin{DoxyCompactList}\small\item\em Encrypts or decrypts parts of a packet. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_encrypt_af5fccc1a171cde8fae18ecbef65c3bb0}{
+static const size\_\-t \hyperlink{class_thread_message_item_encrypt_af5fccc1a171cde8fae18ecbef65c3bb0}{ENCRYPTION\_\-CHUNK\_\-SIZE} = 16}
+\label{class_thread_message_item_encrypt_af5fccc1a171cde8fae18ecbef65c3bb0}
+
+\begin{DoxyCompactList}\small\item\em Amount of data that is encrypted in one \hyperlink{class_thread_message_item_encrypt_aabb242569b59c0d95e6f84f047e0ea3c}{ThreadMessageItemEncrypt::Cipher} or decrypted in one \hyperlink{class_thread_message_item_encrypt_a8e9f169278706177a7d1aa900935535f}{ThreadMessageItemEncrypt::InverseCipher} operation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_thread_message_item_encrypt_a8e9f169278706177a7d1aa900935535f}{InverseCipher} (unsigned char $\ast$dataToEncrypt, unsigned char $\ast$result, unsigned char numRounds, unsigned char $\ast$roundKey)
+\begin{DoxyCompactList}\small\item\em Decrypts 16 bytes of data. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_aabb242569b59c0d95e6f84f047e0ea3c}{Cipher} (unsigned char $\ast$dataToEncrypt, unsigned char $\ast$result, unsigned char numRounds, unsigned char $\ast$roundKey)
+\begin{DoxyCompactList}\small\item\em Encrypts 16 bytes of data. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_a1c573e353ab806cd149056c4456a4a99}{XorRoundKey} (size\_\-t round, unsigned char $\ast$roundKey)
+\begin{DoxyCompactList}\small\item\em Applies XOR. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_a5981d494cc033003edd92f43e4e1efe8}{InverseMixColumns} ()
+\begin{DoxyCompactList}\small\item\em Unmixes columns. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_a37f4c99d84fe7ad1bc8ff97904ebebbd}{MixColumns} ()
+\begin{DoxyCompactList}\small\item\em Mixes columns up. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_a5fd561501e4c55671a5ffba397b62009}{ShiftRowsRight} ()
+\begin{DoxyCompactList}\small\item\em Shifts each row columns right. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_aebea56624861f0e8e05a66ddfa7016fb}{ShiftRowsLeft} ()
+\begin{DoxyCompactList}\small\item\em Shifts each row columns left. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_ae66d87ce29ad59e32a6d514c80b40c56}{InverseSubBytes} ()
+\begin{DoxyCompactList}\small\item\em Substitutes each byte of state with one from the InverseEncryptionBox table. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_message_item_encrypt_adc3e2a7317c107264cd543d368f1846c}{SubBytes} ()
+\begin{DoxyCompactList}\small\item\em Substitutes each byte of state with one from the EncryptionBox table. \item\end{DoxyCompactList}\item 
+unsigned char \hyperlink{class_thread_message_item_encrypt_a5cc560f8529b6fc713501981d89f3ba1}{\_\-gMul} (unsigned char a, unsigned char b)
+\begin{DoxyCompactList}\small\item\em Performs galois field multiplication ({\itshape a\/} $\ast$ {\itshape b\/}). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_encrypt_ae46648288267f23d50fe2507f5bf4718}{
+bool \hyperlink{class_thread_message_item_encrypt_ae46648288267f23d50fe2507f5bf4718}{encrypt}}
+\label{class_thread_message_item_encrypt_ae46648288267f23d50fe2507f5bf4718}
+
+\begin{DoxyCompactList}\small\item\em If true \hyperlink{class_thread_message_item_encrypt_aaffd6c727e69eadac8efb947337e358d}{ThreadMessageItemEncrypt::TakeAction()} will perform encryption, if false if will perform decryption. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_a7982d9c0673a2a733c5ce3fc5851bbda}{
+unsigned char $\ast$ \hyperlink{class_thread_message_item_encrypt_a7982d9c0673a2a733c5ce3fc5851bbda}{packet}}
+\label{class_thread_message_item_encrypt_a7982d9c0673a2a733c5ce3fc5851bbda}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_packet}{Packet} data to encrypt. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_a4b01e980e0151bf7eb85fe5c9358a0a1}{
+size\_\-t \hyperlink{class_thread_message_item_encrypt_a4b01e980e0151bf7eb85fe5c9358a0a1}{packetSize}}
+\label{class_thread_message_item_encrypt_a4b01e980e0151bf7eb85fe5c9358a0a1}
+
+\begin{DoxyCompactList}\small\item\em Number of bytes of data in \hyperlink{class_thread_message_item_encrypt_a7982d9c0673a2a733c5ce3fc5851bbda}{ThreadMessageItemEncrypt::packet}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_a88374511c45fddc43e4d200df35b7ac4}{
+const \hyperlink{class_encrypt_key}{EncryptKey} \& \hyperlink{class_thread_message_item_encrypt_a88374511c45fddc43e4d200df35b7ac4}{key}}
+\label{class_thread_message_item_encrypt_a88374511c45fddc43e4d200df35b7ac4}
+
+\begin{DoxyCompactList}\small\item\em Key used to encrypt or decrypt data. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_aeef5e81db47fca6a9acb7d57c6fc920b}{
+size\_\-t \hyperlink{class_thread_message_item_encrypt_aeef5e81db47fca6a9acb7d57c6fc920b}{threadID}}
+\label{class_thread_message_item_encrypt_aeef5e81db47fca6a9acb7d57c6fc920b}
+
+\begin{DoxyCompactList}\small\item\em ID of thread that this message will be sent to. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_a3fe9fdadc77fa538812e831bd348696b}{
+size\_\-t \hyperlink{class_thread_message_item_encrypt_a3fe9fdadc77fa538812e831bd348696b}{numThreads}}
+\label{class_thread_message_item_encrypt_a3fe9fdadc77fa538812e831bd348696b}
+
+\begin{DoxyCompactList}\small\item\em Number of threads participating in the encryption of this packet. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_encrypt_a0c448c58cf4a1a49c27c1e55c7cbb281}{
+unsigned char \hyperlink{class_thread_message_item_encrypt_a0c448c58cf4a1a49c27c1e55c7cbb281}{state} \mbox{[}4\mbox{]}\mbox{[}4\mbox{]}}
+\label{class_thread_message_item_encrypt_a0c448c58cf4a1a49c27c1e55c7cbb281}
+
+\begin{DoxyCompactList}\small\item\em Stores intermediate encryption result. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message which encrypts or decrypts part of a packet, sent to a \hyperlink{class_thread_single_message}{ThreadSingleMessage} thread. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_message_item_encrypt_abde8dfa6989926bf3af1a3e9b837cb71}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{ThreadMessageItemEncrypt}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItemEncrypt::ThreadMessageItemEncrypt (
+\begin{DoxyParamCaption}
+\item[{bool}]{ encrypt, }
+\item[{{\bf Packet} $\ast$}]{ packet, }
+\item[{const {\bf EncryptKey} \&}]{ p\_\-key, }
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ numThreads}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_encrypt_abde8dfa6989926bf3af1a3e9b837cb71}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encrypt}]If true \hyperlink{class_thread_message_item_encrypt_aaffd6c727e69eadac8efb947337e358d}{ThreadMessageItemEncrypt::TakeAction()} will perform encryption, if false if will perform decryption. \item[\mbox{\tt[in,out]} {\em packet}]\hyperlink{class_packet}{Packet} to encrypt. \item[{\em p\_\-key}]Key used to encrypt or decrypt data. Must have its round keys already generated. \item[{\em threadID}]Identifier for the thread that this message will be sent to. Thread IDs must start at 0. \item[{\em numThreads}]Number of threads participating in the encryption of this packet. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_message_item_encrypt_a5cc560f8529b6fc713501981d89f3ba1}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!\_\-gMul@{\_\-gMul}}
+\index{\_\-gMul@{\_\-gMul}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{\_\-gMul}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char ThreadMessageItemEncrypt::\_\-gMul (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{ a, }
+\item[{unsigned char}]{ b}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_a5cc560f8529b6fc713501981d89f3ba1}
+
+
+Performs galois field multiplication ({\itshape a\/} $\ast$ {\itshape b\/}). 
+
+Rijndael (what AES based on) uses what is known as a galois field which requires a special set of non standard operators to perform its maths.\par
+\par
+
+
+Based on Advanced Encryption Standard specification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]A number to be multiplied with {\itshape b\/}. \item[{\em b}]A number to be multiplied with {\itshape a\/}. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape a\/} multiplied with {\itshape b\/} (galois field). 
+\end{DoxyReturn}
+\hypertarget{class_thread_message_item_encrypt_aabb242569b59c0d95e6f84f047e0ea3c}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!Cipher@{Cipher}}
+\index{Cipher@{Cipher}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{Cipher}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::Cipher (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ dataToEncrypt, }
+\item[{unsigned char $\ast$}]{ result, }
+\item[{unsigned char}]{ numRounds, }
+\item[{unsigned char $\ast$}]{ roundKey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_aabb242569b59c0d95e6f84f047e0ea3c}
+
+
+Encrypts 16 bytes of data. 
+
+Based on Advanced Encryption Standard specification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dataToEncrypt}]Data to encrypt, must be at least 16 bytes in size. \item[{\em result}]Destination to store encrypted data, must be at least 16 bytes in size. \item[{\em numRounds}]Number of rounds. \item[{\em roundKey}]Round key. \end{DoxyParams}
+\hypertarget{class_thread_message_item_encrypt_a8e9f169278706177a7d1aa900935535f}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!InverseCipher@{InverseCipher}}
+\index{InverseCipher@{InverseCipher}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{InverseCipher}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::InverseCipher (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ dataToEncrypt, }
+\item[{unsigned char $\ast$}]{ result, }
+\item[{unsigned char}]{ numRounds, }
+\item[{unsigned char $\ast$}]{ roundKey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_a8e9f169278706177a7d1aa900935535f}
+
+
+Decrypts 16 bytes of data. 
+
+Based on Advanced Encryption Standard specification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dataToEncrypt}]Data to encrypt, must be at least 16 bytes in size. \item[{\em result}]Destination to store encrypted data, must be at least 16 bytes in size. \item[{\em numRounds}]Number of rounds. \item[{\em roundKey}]Round key. \end{DoxyParams}
+\hypertarget{class_thread_message_item_encrypt_a5981d494cc033003edd92f43e4e1efe8}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!InverseMixColumns@{InverseMixColumns}}
+\index{InverseMixColumns@{InverseMixColumns}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{InverseMixColumns}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::InverseMixColumns (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_a5981d494cc033003edd92f43e4e1efe8}
+
+
+Unmixes columns. 
+
+Based on Advanced Encryption Standard specification. \hypertarget{class_thread_message_item_encrypt_ae66d87ce29ad59e32a6d514c80b40c56}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!InverseSubBytes@{InverseSubBytes}}
+\index{InverseSubBytes@{InverseSubBytes}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{InverseSubBytes}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::InverseSubBytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_ae66d87ce29ad59e32a6d514c80b40c56}
+
+
+Substitutes each byte of state with one from the InverseEncryptionBox table. 
+
+Based on Advanced Encryption Standard specification. \hypertarget{class_thread_message_item_encrypt_a37f4c99d84fe7ad1bc8ff97904ebebbd}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!MixColumns@{MixColumns}}
+\index{MixColumns@{MixColumns}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{MixColumns}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::MixColumns (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_a37f4c99d84fe7ad1bc8ff97904ebebbd}
+
+
+Mixes columns up. 
+
+Based on Advanced Encryption Standard specification. \hypertarget{class_thread_message_item_encrypt_aebea56624861f0e8e05a66ddfa7016fb}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!ShiftRowsLeft@{ShiftRowsLeft}}
+\index{ShiftRowsLeft@{ShiftRowsLeft}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{ShiftRowsLeft}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::ShiftRowsLeft (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_aebea56624861f0e8e05a66ddfa7016fb}
+
+
+Shifts each row columns left. 
+
+The number of columns = row number. Row 0 is not shifted because it has 0 offset.\par
+\par
+
+
+Based on Advanced Encryption Standard specification. \hypertarget{class_thread_message_item_encrypt_a5fd561501e4c55671a5ffba397b62009}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!ShiftRowsRight@{ShiftRowsRight}}
+\index{ShiftRowsRight@{ShiftRowsRight}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{ShiftRowsRight}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::ShiftRowsRight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_a5fd561501e4c55671a5ffba397b62009}
+
+
+Shifts each row columns right. 
+
+The number of columns = row number. Row 0 is not shifted because it has 0 offset.\par
+\par
+
+
+Based on Advanced Encryption Standard specification. \hypertarget{class_thread_message_item_encrypt_adc3e2a7317c107264cd543d368f1846c}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!SubBytes@{SubBytes}}
+\index{SubBytes@{SubBytes}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{SubBytes}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::SubBytes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_adc3e2a7317c107264cd543d368f1846c}
+
+
+Substitutes each byte of state with one from the EncryptionBox table. 
+
+Based on Advanced Encryption Standard specification. \hypertarget{class_thread_message_item_encrypt_aaffd6c727e69eadac8efb947337e358d}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!TakeAction@{TakeAction}}
+\index{TakeAction@{TakeAction}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{TakeAction}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadMessageItemEncrypt::TakeAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_message_item_encrypt_aaffd6c727e69eadac8efb947337e358d}
+
+
+Encrypts or decrypts parts of a packet. 
+
+This method is designed for parallel encryption and decryption of packets. Where a packet is split up into chunks and the thread acts upon.
+
+\begin{DoxyReturn}{Returns}
+some actions may require further activity by the thread which cannot take place within the method call. This return value can be used by the thread to determine what to do. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{ThreadMessageItem}.
+
+\hypertarget{class_thread_message_item_encrypt_a1c573e353ab806cd149056c4456a4a99}{
+\index{ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}!XorRoundKey@{XorRoundKey}}
+\index{XorRoundKey@{XorRoundKey}!ThreadMessageItemEncrypt@{ThreadMessageItemEncrypt}}
+\subsubsection[{XorRoundKey}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadMessageItemEncrypt::XorRoundKey (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ round, }
+\item[{unsigned char $\ast$}]{ roundKey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_encrypt_a1c573e353ab806cd149056c4456a4a99}
+
+
+Applies XOR. 
+
+Based on Advanced Encryption Standard specification.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em round}]Current round. \item[{\em roundKey}]Round key. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemEncrypt.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemEncrypt.cpp\end{DoxyCompactItemize}

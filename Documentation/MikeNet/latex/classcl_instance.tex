@@ -1,0 +1,383 @@
+\hypertarget{classcl_instance}{
+\section{clInstance Class Reference}
+\label{classcl_instance}\index{clInstance@{clInstance}}
+}
+Inheritance diagram for clInstance::\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2cm]{classcl_instance}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_a0f7c36b88b2fc0cc5d44447cc76c43a3}{clInstance} ()
+\item 
+\hyperlink{classcl_instance_aaef41aa3d1383c182de828eea83c2b4f}{$\sim$clInstance} ()
+\item 
+void \hyperlink{classcl_instance_a1ab07f3683546a1bc64d14042336baaf}{SetFunction} (void($\ast$pTCPRecvFunc)(int ThreadID, \hyperlink{classcl_packet}{clPacket} \&Packet), void($\ast$pUDPRecvFunc)(int ThreadID, \hyperlink{classcl_packet}{clPacket} \&Packet))
+\item 
+void \hyperlink{classcl_instance_a4f908b49d9b10bad89d1349bf7e202ed}{DisableUDP} ()
+\item 
+\hypertarget{classcl_instance_aae33868b5384d6e3c25a28818a264699}{
+int {\bfseries PollConnect} ()}
+\label{classcl_instance_aae33868b5384d6e3c25a28818a264699}
+
+\item 
+\hypertarget{classcl_instance_a2c1112a5f5a3cc97ad1bcbf8773b9180}{
+void {\bfseries StopConnect} ()}
+\label{classcl_instance_a2c1112a5f5a3cc97ad1bcbf8773b9180}
+
+\item 
+\hypertarget{classcl_instance_ad92179fe9a33c1dc5573bc9adb3adb6e}{
+int {\bfseries Connect} (const char $\ast$pIPConTCP, u\_\-short pPortConTCP, const char $\ast$pIPConUDP, u\_\-short pPortConUDP, int pTimeout, bool bBlock)}
+\label{classcl_instance_ad92179fe9a33c1dc5573bc9adb3adb6e}
+
+\item 
+\hypertarget{classcl_instance_a498a3a77413b7dfcd4869f8c077dbd98}{
+void {\bfseries StartServer} (int pMaxClients, int pMaxOperations, char pUDPMode)}
+\label{classcl_instance_a498a3a77413b7dfcd4869f8c077dbd98}
+
+\item 
+\hypertarget{classcl_instance_a99d7ca89d5e439b79c9cecb8c7e0acb4}{
+void {\bfseries StartBroadcast} (unsigned short pConnectPort, bool bSendEnabled, bool bRecvEnabled)}
+\label{classcl_instance_a99d7ca89d5e439b79c9cecb8c7e0acb4}
+
+\item 
+\hypertarget{classcl_instance_a13445cabb473ec84876486b49880ea42}{
+void {\bfseries SetServerTimeout} (unsigned int iSeconds)}
+\label{classcl_instance_a13445cabb473ec84876486b49880ea42}
+
+\item 
+\hypertarget{classcl_instance_a0d8333344042cfebf7847a1b81ec62ac}{
+unsigned int {\bfseries GetServerTimeout} ()}
+\label{classcl_instance_a0d8333344042cfebf7847a1b81ec62ac}
+
+\item 
+\hypertarget{classcl_instance_a62380e8c956dcfe5c6e7ccfa0894bd83}{
+void {\bfseries Finish} ()}
+\label{classcl_instance_a62380e8c956dcfe5c6e7ccfa0894bd83}
+
+\item 
+\hypertarget{classcl_instance_a46d3a8064bc52e081eeaeb1b2cf96bd8}{
+void {\bfseries DisconnectClient} (int iThreadID, int iClient)}
+\label{classcl_instance_a46d3a8064bc52e081eeaeb1b2cf96bd8}
+
+\item 
+\hypertarget{classcl_instance_a8922886dfa6fc10b7e53651280c073ae}{
+int {\bfseries ClientConnected} (int iClient, bool bInternalUse)}
+\label{classcl_instance_a8922886dfa6fc10b7e53651280c073ae}
+
+\item 
+\hypertarget{classcl_instance_a79e565311fa22e05b380128562b30f96}{
+double {\bfseries GetTCPPercent} (int ClientID)}
+\label{classcl_instance_a79e565311fa22e05b380128562b30f96}
+
+\item 
+\hypertarget{classcl_instance_af9fe228c52cac3a611aa32963d155546}{
+unsigned short {\bfseries GetClientPortTCP} (int iClientID)}
+\label{classcl_instance_af9fe228c52cac3a611aa32963d155546}
+
+\item 
+\hypertarget{classcl_instance_a4c56902b7b32c495b46850bf0733949b}{
+char $\ast$ {\bfseries GetClientIPTCP} (int iClientID)}
+\label{classcl_instance_a4c56902b7b32c495b46850bf0733949b}
+
+\item 
+\hypertarget{classcl_instance_ac0e6a1b21d643f554cec394d9a193723}{
+unsigned short {\bfseries GetClientPortUDP} (int iClientID)}
+\label{classcl_instance_ac0e6a1b21d643f554cec394d9a193723}
+
+\item 
+\hypertarget{classcl_instance_a705c0add96195253625e23c2cd6bbdbc}{
+char $\ast$ {\bfseries GetClientIPUDP} (int iClientID)}
+\label{classcl_instance_a705c0add96195253625e23c2cd6bbdbc}
+
+\item 
+\hypertarget{classcl_instance_a5d376a4f04909abc5ce4989a6ff63523}{
+unsigned short {\bfseries GetLocalPortTCP} ()}
+\label{classcl_instance_a5d376a4f04909abc5ce4989a6ff63523}
+
+\item 
+\hypertarget{classcl_instance_add81d69bb6860d4ee118793f06a7236b}{
+char $\ast$ {\bfseries GetLocalIPTCP} ()}
+\label{classcl_instance_add81d69bb6860d4ee118793f06a7236b}
+
+\item 
+\hypertarget{classcl_instance_a696669cb35e75be553df94b7593476bf}{
+unsigned short {\bfseries GetLocalPortUDP} ()}
+\label{classcl_instance_a696669cb35e75be553df94b7593476bf}
+
+\item 
+\hypertarget{classcl_instance_a43e412a4c0e23932fee3fb3b03f2c371}{
+char $\ast$ {\bfseries GetLocalIPUDP} ()}
+\label{classcl_instance_a43e412a4c0e23932fee3fb3b03f2c371}
+
+\item 
+\hypertarget{classcl_instance_a89e5a85c9993efcdd22b3fdb344acfbb}{
+char $\ast$ {\bfseries GetConnectIPTCP} ()}
+\label{classcl_instance_a89e5a85c9993efcdd22b3fdb344acfbb}
+
+\item 
+\hypertarget{classcl_instance_a80366833606567b205ad741937342138}{
+char $\ast$ {\bfseries GetConnectIPUDP} ()}
+\label{classcl_instance_a80366833606567b205ad741937342138}
+
+\item 
+\hypertarget{classcl_instance_a6c2458e67f576cdc066ad6611fabf6ce}{
+unsigned short {\bfseries GetConnectPortTCP} ()}
+\label{classcl_instance_a6c2458e67f576cdc066ad6611fabf6ce}
+
+\item 
+\hypertarget{classcl_instance_abbb7a8d945bf4d1ae7a15fed95c2b702}{
+unsigned short {\bfseries GetConnectPortUDP} ()}
+\label{classcl_instance_abbb7a8d945bf4d1ae7a15fed95c2b702}
+
+\item 
+\hypertarget{classcl_instance_aec9afd785b997a78f582e228990d9276}{
+int {\bfseries ClientJoined} ()}
+\label{classcl_instance_aec9afd785b997a78f582e228990d9276}
+
+\item 
+\hypertarget{classcl_instance_a92d8ed96f8b0b9af0816700be9e35622}{
+int {\bfseries ClientLeft} ()}
+\label{classcl_instance_a92d8ed96f8b0b9af0816700be9e35622}
+
+\item 
+\hypertarget{classcl_instance_a0119006ea9ac46d424f05c2950881b7f}{
+virtual int {\bfseries GetMaxClients} () const =0}
+\label{classcl_instance_a0119006ea9ac46d424f05c2950881b7f}
+
+\item 
+\hypertarget{classcl_instance_a975ae2c35964b2049280c706871e0edf}{
+int {\bfseries GetMaxOperations} ()}
+\label{classcl_instance_a975ae2c35964b2049280c706871e0edf}
+
+\item 
+\hypertarget{classcl_instance_a4e7856a0fd071aa2484390fa29dc9604}{
+unsigned int {\bfseries GetTCPRecvSize} ()}
+\label{classcl_instance_a4e7856a0fd071aa2484390fa29dc9604}
+
+\item 
+\hypertarget{classcl_instance_a9c6366f90442c8fb31d4bd07905173e8}{
+unsigned int {\bfseries GetUDPRecvSize} ()}
+\label{classcl_instance_a9c6366f90442c8fb31d4bd07905173e8}
+
+\item 
+\hypertarget{classcl_instance_a8337df65a4606731f3cba78361915c3d}{
+char {\bfseries GetState} ()}
+\label{classcl_instance_a8337df65a4606731f3cba78361915c3d}
+
+\item 
+\hypertarget{classcl_instance_aee76e9b9909beda7b13aead4a6412293}{
+char {\bfseries GetUDPMode} ()}
+\label{classcl_instance_aee76e9b9909beda7b13aead4a6412293}
+
+\item 
+\hypertarget{classcl_instance_a755c8e6e4bee1e1c47533606e8bb9623}{
+bool {\bfseries GetUDPEnabled} ()}
+\label{classcl_instance_a755c8e6e4bee1e1c47533606e8bb9623}
+
+\item 
+\hypertarget{classcl_instance_a8518cc75493dce11afcb8fcaeaaf5521}{
+int {\bfseries SendUDP} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, int ClientID, bool Keep\_\-packet, bool Block\_\-until\_\-sent)}
+\label{classcl_instance_a8518cc75493dce11afcb8fcaeaaf5521}
+
+\item 
+\hypertarget{classcl_instance_a08e22e27e461bbce7d0043cdfafac1c2}{
+int {\bfseries SendTCP} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, int ClientID, bool Keep\_\-packet, bool Block\_\-until\_\-sent)}
+\label{classcl_instance_a08e22e27e461bbce7d0043cdfafac1c2}
+
+\item 
+\hypertarget{classcl_instance_ae8c46345b656ecba3e0a77f4ef0fc603}{
+int {\bfseries SendTCPAll} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, bool Keep\_\-packet, bool Block\_\-until\_\-sent, int Client\_\-exclude)}
+\label{classcl_instance_ae8c46345b656ecba3e0a77f4ef0fc603}
+
+\item 
+\hypertarget{classcl_instance_a045d6329f1986744ce1770503c69c728}{
+int {\bfseries SendUDPAll} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, bool Keep\_\-packet, bool Block\_\-until\_\-sent, int Client\_\-exclude)}
+\label{classcl_instance_a045d6329f1986744ce1770503c69c728}
+
+\item 
+\hypertarget{classcl_instance_ad89dd5760482eee5af918e889a974471}{
+int {\bfseries RecvTCP} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, int ClientID)}
+\label{classcl_instance_ad89dd5760482eee5af918e889a974471}
+
+\item 
+\hypertarget{classcl_instance_a0ff09a588f7eef63546832f789f14cc8}{
+int {\bfseries RecvUDP} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, int ClientID, int OperationID)}
+\label{classcl_instance_a0ff09a588f7eef63546832f789f14cc8}
+
+\item 
+\hypertarget{classcl_instance_abc5f7e5ecde3470623e117a3d5e1e8c7}{
+void {\bfseries SetLocal} (const char $\ast$TCP\_\-local\_\-IP, unsigned short TCP\_\-local\_\-port, const char $\ast$UDP\_\-local\_\-IP, unsigned short UDP\_\-local\_\-port)}
+\label{classcl_instance_abc5f7e5ecde3470623e117a3d5e1e8c7}
+
+\item 
+\hypertarget{classcl_instance_ae5ea59580ac29d0fe0a51652be2980ee}{
+void {\bfseries SetBufferSizes} (unsigned int UDP\_\-receive\_\-buffer\_\-size, unsigned int TCP\_\-receive\_\-buffer\_\-size, char State)}
+\label{classcl_instance_ae5ea59580ac29d0fe0a51652be2980ee}
+
+\item 
+\hypertarget{classcl_instance_aaec031ba7dc1303fb19e495e712e3d49}{
+void {\bfseries FlushRecvTCP} (int iClient)}
+\label{classcl_instance_aaec031ba7dc1303fb19e495e712e3d49}
+
+\item 
+\hypertarget{classcl_instance_acf524e5af0541f1209f6f83c57e6cdbd}{
+void {\bfseries FlushRecvUDP} (int iClient)}
+\label{classcl_instance_acf524e5af0541f1209f6f83c57e6cdbd}
+
+\item 
+\hypertarget{classcl_instance_ad893d55f0d3bb7e2586b9d39ed3d1c6f}{
+void {\bfseries ChangeBufferSizeTCP} (int iClient, unsigned int iSize)}
+\label{classcl_instance_ad893d55f0d3bb7e2586b9d39ed3d1c6f}
+
+\item 
+\hypertarget{classcl_instance_a084e22f30f7a7219369e8191b9ce0725}{
+void {\bfseries SetAutoResizeTCP} (int iClient, bool bAutoResize)}
+\label{classcl_instance_a084e22f30f7a7219369e8191b9ce0725}
+
+\item 
+\hypertarget{classcl_instance_aa506c6584dc08c34fc651f1c508e30f2}{
+bool {\bfseries GetAutoResizeTCP} (int iClient)}
+\label{classcl_instance_aa506c6584dc08c34fc651f1c508e30f2}
+
+\item 
+\hypertarget{classcl_instance_a398265020ebe9a8b38c21c4e0e405822}{
+unsigned int {\bfseries GetTCPRecvSize} (int iClient)}
+\label{classcl_instance_a398265020ebe9a8b38c21c4e0e405822}
+
+\item 
+\hypertarget{classcl_instance_a15925e19fac54e5c0a40e7d7ff1f8aff}{
+unsigned int {\bfseries GetTCPBytes} (int iClient)}
+\label{classcl_instance_a15925e19fac54e5c0a40e7d7ff1f8aff}
+
+\item 
+\hypertarget{classcl_instance_a472d397eae38b86fbab930e12fb5e183}{
+bool {\bfseries GetTCPHandshakeEnabled} ()}
+\label{classcl_instance_a472d397eae38b86fbab930e12fb5e183}
+
+\item 
+\hypertarget{classcl_instance_aec361e5eda924347ae47532b89fe4206}{
+void {\bfseries DisableTCPHandshake} ()}
+\label{classcl_instance_aec361e5eda924347ae47532b89fe4206}
+
+\item 
+\hypertarget{classcl_instance_a8506e6ce9a4e4847d171d8d6f4a1a8e9}{
+void {\bfseries SetTCPMode} (char TCPMode)}
+\label{classcl_instance_a8506e6ce9a4e4847d171d8d6f4a1a8e9}
+
+\item 
+\hypertarget{classcl_instance_a746910151540b11652ab2ca9a71efc25}{
+char {\bfseries GetTCPMode} ()}
+\label{classcl_instance_a746910151540b11652ab2ca9a71efc25}
+
+\item 
+\hypertarget{classcl_instance_acff16f3211dfc774bd142dc867f25162}{
+void {\bfseries SetSendTimeout} (unsigned int iSeconds)}
+\label{classcl_instance_acff16f3211dfc774bd142dc867f25162}
+
+\item 
+\hypertarget{classcl_instance_ae3bef314dac215cba668894c2b59c81e}{
+unsigned int {\bfseries GetSendTimeout} ()}
+\label{classcl_instance_ae3bef314dac215cba668894c2b59c81e}
+
+\item 
+\hypertarget{classcl_instance_aa28e7201fb080c33f5ddd7793ece3f62}{
+void {\bfseries ShutdownClient} (int iClient)}
+\label{classcl_instance_aa28e7201fb080c33f5ddd7793ece3f62}
+
+\item 
+\hypertarget{classcl_instance_a606a19447645e4ddb128dd32142acffb}{
+void {\bfseries EnableGracefulDisconnect} ()}
+\label{classcl_instance_a606a19447645e4ddb128dd32142acffb}
+
+\item 
+\hypertarget{classcl_instance_aec8cbfbcbf56099bd479198785de2ee9}{
+bool {\bfseries GetGracefulDisconnect} ()}
+\label{classcl_instance_aec8cbfbcbf56099bd479198785de2ee9}
+
+\item 
+\hypertarget{classcl_instance_ab1b3ac5a7e5b5fdd2ee85d8d02bb0ceb}{
+unsigned int {\bfseries GetUDPStoreAmount} (int iClient)}
+\label{classcl_instance_ab1b3ac5a7e5b5fdd2ee85d8d02bb0ceb}
+
+\item 
+\hypertarget{classcl_instance_a06cd38119a7a640254fbca3baa0c6927}{
+unsigned int {\bfseries GetTCPStoreAmount} (int iClient)}
+\label{classcl_instance_a06cd38119a7a640254fbca3baa0c6927}
+
+\item 
+\hypertarget{classcl_instance_af260a00fd44bb49cc60dde8aaacfe479}{
+void {\bfseries SetTCPPostfix} (const \hyperlink{classcl_packet}{clPacket} \&Postfix)}
+\label{classcl_instance_af260a00fd44bb49cc60dde8aaacfe479}
+
+\item 
+\hypertarget{classcl_instance_a08f036e59197de275d5d1910ea219ea5}{
+void {\bfseries GetTCPPostfix} (\hyperlink{classcl_packet}{clPacket} $\ast$FillMe)}
+\label{classcl_instance_a08f036e59197de275d5d1910ea219ea5}
+
+\item 
+\hypertarget{classcl_instance_aa3e103defe3a1d901edfefc16c52bda5}{
+void {\bfseries DisableNagle} ()}
+\label{classcl_instance_aa3e103defe3a1d901edfefc16c52bda5}
+
+\item 
+\hypertarget{classcl_instance_aaeeeb6b79cf04bdb3700157cdb34de8f}{
+bool {\bfseries GetNagleEnabled} ()}
+\label{classcl_instance_aaeeeb6b79cf04bdb3700157cdb34de8f}
+
+\item 
+\hypertarget{classcl_instance_a77fc796f9ee47fef7145b196e5e5e60b}{
+void {\bfseries Finish} (int iThreadID, bool defaultVars)}
+\label{classcl_instance_a77fc796f9ee47fef7145b196e5e5e60b}
+
+\item 
+\hypertarget{classcl_instance_a42d330a0224cb5007dbbbea8b1abc0f5}{
+int {\bfseries SendToUDP} (\hyperlink{classcl_packet}{clPacket} $\ast$Packet, const char $\ast$IP, unsigned short Port, bool bKeep, bool bBlock)}
+\label{classcl_instance_a42d330a0224cb5007dbbbea8b1abc0f5}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_instance_a747b51442108bac2e3d62fa718d8037b}{\_\-DefaultVar} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_a0f7c36b88b2fc0cc5d44447cc76c43a3}{
+\index{clInstance@{clInstance}!clInstance@{clInstance}}
+\index{clInstance@{clInstance}!clInstance@{clInstance}}
+\subsubsection[{clInstance}]{\setlength{\rightskip}{0pt plus 5cm}clInstance::clInstance ()}}
+\label{classcl_instance_a0f7c36b88b2fc0cc5d44447cc76c43a3}
+Constructor \hypertarget{classcl_instance_aaef41aa3d1383c182de828eea83c2b4f}{
+\index{clInstance@{clInstance}!$\sim$clInstance@{$\sim$clInstance}}
+\index{$\sim$clInstance@{$\sim$clInstance}!clInstance@{clInstance}}
+\subsubsection[{$\sim$clInstance}]{\setlength{\rightskip}{0pt plus 5cm}clInstance::$\sim$clInstance ()}}
+\label{classcl_instance_aaef41aa3d1383c182de828eea83c2b4f}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_a747b51442108bac2e3d62fa718d8037b}{
+\index{clInstance@{clInstance}!\_\-DefaultVar@{\_\-DefaultVar}}
+\index{\_\-DefaultVar@{\_\-DefaultVar}!clInstance@{clInstance}}
+\subsubsection[{\_\-DefaultVar}]{\setlength{\rightskip}{0pt plus 5cm}void clInstance::\_\-DefaultVar ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_a747b51442108bac2e3d62fa718d8037b}
+Set all variables to default \hypertarget{classcl_instance_a4f908b49d9b10bad89d1349bf7e202ed}{
+\index{clInstance@{clInstance}!DisableUDP@{DisableUDP}}
+\index{DisableUDP@{DisableUDP}!clInstance@{clInstance}}
+\subsubsection[{DisableUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstance::DisableUDP ()}}
+\label{classcl_instance_a4f908b49d9b10bad89d1349bf7e202ed}
+Disables UDP data transfer, all UDP methods will fail \hypertarget{classcl_instance_a1ab07f3683546a1bc64d14042336baaf}{
+\index{clInstance@{clInstance}!SetFunction@{SetFunction}}
+\index{SetFunction@{SetFunction}!clInstance@{clInstance}}
+\subsubsection[{SetFunction}]{\setlength{\rightskip}{0pt plus 5cm}void clInstance::SetFunction (void($\ast$)(int ThreadID, {\bf clPacket} \&Packet) {\em paraTCPRecvFunc}, \/  void($\ast$)(int ThreadID, {\bf clPacket} \&Packet) {\em paraUDPRecvFunc})}}
+\label{classcl_instance_a1ab07f3683546a1bc64d14042336baaf}
+paraTCPRecvFunc TCP function to be called every time a TCP packet is received paraUDPRecvFunc UDP function to be called every time a UDP packet is received 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstance\_\-old.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstance\_\-old.cpp\end{DoxyCompactItemize}

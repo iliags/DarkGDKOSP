@@ -1,0 +1,263 @@
+\hypertarget{class_thread_single_message_keep_last_user}{
+\section{ThreadSingleMessageKeepLastUser Class Reference}
+\label{class_thread_single_message_keep_last_user}\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+}
+
+
+Used by objects where all instances of that object share a group of threads.  
+
+
+
+
+{\ttfamily \#include $<$ThreadSingleMessageKeepLastUser.h$>$}
+
+Inheritance diagram for ThreadSingleMessageKeepLastUser:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.500000cm]{class_thread_single_message_keep_last_user}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_single_message_keep_last_user_aa425df435f95c738e8dfd4ff23b378d5}{
+\hyperlink{class_thread_single_message_keep_last_user_aa425df435f95c738e8dfd4ff23b378d5}{ThreadSingleMessageKeepLastUser} ()}
+\label{class_thread_single_message_keep_last_user_aa425df435f95c738e8dfd4ff23b378d5}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_thread_single_message_keep_last_user_a81db1c2dcf167c58121d9349014ba38f}{ThreadSingleMessageKeepLastUser} (size\_\-t numThreads, LPTHREAD\_\-START\_\-ROUTINE function, void $\ast$parameter)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_message_keep_last_user_a5095a7f86643a4eacee9121dfe125bc4}{
+virtual \hyperlink{class_thread_single_message_keep_last_user_a5095a7f86643a4eacee9121dfe125bc4}{$\sim$ThreadSingleMessageKeepLastUser} ()}
+\label{class_thread_single_message_keep_last_user_a5095a7f86643a4eacee9121dfe125bc4}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_thread_single_message_keep_last_user_aa4d9f58bd0327a21bb90aa21b243948e}{SetupThreadsLocal} (size\_\-t numThreads, LPTHREAD\_\-START\_\-ROUTINE function, void $\ast$parameter)
+\begin{DoxyCompactList}\small\item\em Sets up the threads for a single object (this object). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_message_keep_last_user_af26597b6768fdf49e6e0855c81374347}{CleanupThreadsLocal} ()
+\begin{DoxyCompactList}\small\item\em Cleans up threads for a single object (this object). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_message_keep_last_user_a113bd51bdd18a80c6d84b53c36684065}{PostMessageItem} (size\_\-t threadID, \hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$message)
+\begin{DoxyCompactList}\small\item\em Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{ThreadSingleMessage::GetMessageItem()}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_thread_single_message_keep_last_user_a0171ec3a499bf8a716eeb29ef72e3d63}{GetNumThreads} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of threads that are operational. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_message_keep_last_user_ab537565a4d28d5e4433a855ba637988c}{
+void \hyperlink{class_thread_single_message_keep_last_user_ab537565a4d28d5e4433a855ba637988c}{WaitUntilLastThreadOperationFinished} ()}
+\label{class_thread_single_message_keep_last_user_ab537565a4d28d5e4433a855ba637988c}
+
+\begin{DoxyCompactList}\small\item\em Does not return until the last operation has finished. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_message_keep_last_user_ab4d9a5aa8c1c5e97972b78b43b7efc9e}{IsLastThreadOperationFinished} ()
+\begin{DoxyCompactList}\small\item\em Determines whether the last operation has finished. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_thread_single_message_keep_last_user_ae80d14a5236cc0465e26558808969849}{SetupThreads} (size\_\-t numThreads, LPTHREAD\_\-START\_\-ROUTINE function, void $\ast$parameter)
+\begin{DoxyCompactList}\small\item\em Sets up threads for all objects, loading them into \hyperlink{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}{ThreadSingleMessageKeepLastUser::threads}. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_thread_single_message_keep_last_user_a7cf594df8a6a9da94bdbeb709e906238}{CleanupThreads} ()
+\begin{DoxyCompactList}\small\item\em Cleans up threads for all objects. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_single_message_keep_last_user_aa335a9224dec88435de543a0777eb7b2}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ \hyperlink{class_thread_single_message_keep_last_user_aa335a9224dec88435de543a0777eb7b2}{usingThreads}}
+\label{class_thread_single_message_keep_last_user_aa335a9224dec88435de543a0777eb7b2}
+
+\begin{DoxyCompactList}\small\item\em True if the packet is using \hyperlink{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}{Packet::threads}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_thread_message_item}{ThreadMessageItem} $>$ \hyperlink{class_thread_single_message_keep_last_user_af278a99dd5a8994473021886b7ebf963}{lastMessage}
+\begin{DoxyCompactList}\small\item\em Local store of the last message that was sent to the encryption thread. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static size\_\-t \hyperlink{class_thread_single_message_keep_last_user_a04ab8e3b67f4a9b995e2432e1462ce12}{threadsUsageCount}
+\begin{DoxyCompactList}\small\item\em Number of packets using the encryption threads. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}{
+static \hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_thread_single_message_keep_last}{ThreadSingleMessageKeepLast} $>$ \hyperlink{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}{threads}}
+\label{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}
+
+\begin{DoxyCompactList}\small\item\em Threads used for encryption and decryption. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Used by objects where all instances of that object share a group of threads. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/21/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_single_message_keep_last_user_a81db1c2dcf167c58121d9349014ba38f}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{ThreadSingleMessageKeepLastUser}]{\setlength{\rightskip}{0pt plus 5cm}ThreadSingleMessageKeepLastUser::ThreadSingleMessageKeepLastUser (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads, }
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function, }
+\item[{void $\ast$}]{ parameter}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_message_keep_last_user_a81db1c2dcf167c58121d9349014ba38f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]Number of threads to setup. \item[{\em function}]Entry point for thread. A pointer to this object will be passed as a parameter. \item[{\em parameter}]Parameter to be passed to thread. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_single_message_keep_last_user_a7cf594df8a6a9da94bdbeb709e906238}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!CleanupThreads@{CleanupThreads}}
+\index{CleanupThreads@{CleanupThreads}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{CleanupThreads}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLastUser::CleanupThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_a7cf594df8a6a9da94bdbeb709e906238}
+
+
+Cleans up threads for all objects. 
+
+Does nothing if threads are not already setup. \hypertarget{class_thread_single_message_keep_last_user_af26597b6768fdf49e6e0855c81374347}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!CleanupThreadsLocal@{CleanupThreadsLocal}}
+\index{CleanupThreadsLocal@{CleanupThreadsLocal}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{CleanupThreadsLocal}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLastUser::CleanupThreadsLocal (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_af26597b6768fdf49e6e0855c81374347}
+
+
+Cleans up threads for a single object (this object). 
+
+Calls \hyperlink{class_thread_single_message_keep_last_user_a7cf594df8a6a9da94bdbeb709e906238}{ThreadSingleMessageKeepLastUser::CleanupThreads} if this is the last object using the threads that has not been destroyed.\par
+\par
+
+
+Does nothing if object never used threads. \hypertarget{class_thread_single_message_keep_last_user_a0171ec3a499bf8a716eeb29ef72e3d63}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{GetNumThreads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ThreadSingleMessageKeepLastUser::GetNumThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_a0171ec3a499bf8a716eeb29ef72e3d63}
+
+
+Retrieves the number of threads that are operational. 
+
+\begin{DoxyReturn}{Returns}
+the number of threads. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_keep_last_user_ab4d9a5aa8c1c5e97972b78b43b7efc9e}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!IsLastThreadOperationFinished@{IsLastThreadOperationFinished}}
+\index{IsLastThreadOperationFinished@{IsLastThreadOperationFinished}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{IsLastThreadOperationFinished}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleMessageKeepLastUser::IsLastThreadOperationFinished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_ab4d9a5aa8c1c5e97972b78b43b7efc9e}
+
+
+Determines whether the last operation has finished. 
+
+\begin{DoxyReturn}{Returns}
+true if the last operation has finished, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_keep_last_user_a113bd51bdd18a80c6d84b53c36684065}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!PostMessageItem@{PostMessageItem}}
+\index{PostMessageItem@{PostMessageItem}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{PostMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLastUser::PostMessageItem (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf ThreadMessageItem} $\ast$}]{ message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_a113bd51bdd18a80c6d84b53c36684065}
+
+
+Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{ThreadSingleMessage::GetMessageItem()}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread to post message to. \item[{\em message}]The message to post. \end{DoxyParams}
+\hypertarget{class_thread_single_message_keep_last_user_ae80d14a5236cc0465e26558808969849}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!SetupThreads@{SetupThreads}}
+\index{SetupThreads@{SetupThreads}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{SetupThreads}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLastUser::SetupThreads (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads, }
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function, }
+\item[{void $\ast$}]{ parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_ae80d14a5236cc0465e26558808969849}
+
+
+Sets up threads for all objects, loading them into \hyperlink{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}{ThreadSingleMessageKeepLastUser::threads}. 
+
+If threads are already setup then does nothing except increase \hyperlink{class_thread_single_message_keep_last_user_a04ab8e3b67f4a9b995e2432e1462ce12}{ThreadSingleMessageKeepLastUser::threadsUsageCount}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]Number of threads to setup. \item[{\em function}]Entry point for thread. A pointer to this object will be passed as a parameter. \item[{\em parameter}]Parameter to be passed to thread. \end{DoxyParams}
+\hypertarget{class_thread_single_message_keep_last_user_aa4d9f58bd0327a21bb90aa21b243948e}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!SetupThreadsLocal@{SetupThreadsLocal}}
+\index{SetupThreadsLocal@{SetupThreadsLocal}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{SetupThreadsLocal}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLastUser::SetupThreadsLocal (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads, }
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function, }
+\item[{void $\ast$}]{ parameter}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_aa4d9f58bd0327a21bb90aa21b243948e}
+
+
+Sets up the threads for a single object (this object). 
+
+Calls \hyperlink{class_thread_single_message_keep_last_user_ae80d14a5236cc0465e26558808969849}{ThreadSingleMessageKeepLastUser::SetupThreads}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]Number of threads to setup. \item[{\em function}]Entry point for thread. A pointer to this object will be passed as a parameter. \item[{\em parameter}]Parameter to be passed to thread. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_single_message_keep_last_user_af278a99dd5a8994473021886b7ebf963}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!lastMessage@{lastMessage}}
+\index{lastMessage@{lastMessage}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{lastMessage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StoreVector}$<${\bf ThreadMessageItem}$>$ {\bf ThreadSingleMessageKeepLastUser::lastMessage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_af278a99dd5a8994473021886b7ebf963}
+
+
+Local store of the last message that was sent to the encryption thread. 
+
+We use a local store, instead of a global store stored by \hyperlink{class_thread_single_message_keep_last}{ThreadSingleMessageKeepLast} so that each individual packet can poll on its own last encryption message, rather than polling on the last encryption message sent by any packet. \par
+\par
+
+
+A vector is needed because there must be one message per thread. \hypertarget{class_thread_single_message_keep_last_user_a04ab8e3b67f4a9b995e2432e1462ce12}{
+\index{ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}!threadsUsageCount@{threadsUsageCount}}
+\index{threadsUsageCount@{threadsUsageCount}!ThreadSingleMessageKeepLastUser@{ThreadSingleMessageKeepLastUser}}
+\subsubsection[{threadsUsageCount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf ThreadSingleMessageKeepLastUser::threadsUsageCount}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_thread_single_message_keep_last_user_a04ab8e3b67f4a9b995e2432e1462ce12}
+
+
+Number of packets using the encryption threads. 
+
+Usage begins when Encrypt or Decrypt is first used, and ends when the packet is destroyed. \par
+\par
+
+
+Access is controlled using \hyperlink{class_thread_single_message_keep_last_user_a63c547a8951cede4c6a9bbd69688980d}{Packet::threads} critical section. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleMessageKeepLastUser.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleMessageKeepLastUser.cpp\end{DoxyCompactItemize}

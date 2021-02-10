@@ -1,0 +1,153 @@
+\hypertarget{classcl_send_prefix}{
+\section{clSendPrefix Class Reference}
+\label{classcl_send_prefix}\index{clSendPrefix@{clSendPrefix}}
+}
+
+
+Send class where packets sent have a prefix.  
+
+
+
+
+{\ttfamily \#include $<$clSendPrefix.h$>$}
+
+Inheritance diagram for clSendPrefix:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_send_prefix}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_send_prefix_a3b781cd71fefd4015f209f766a1ca5a0}{clSendPrefix} (const \hyperlink{classcl_packet}{clPacket} $\ast$\hyperlink{classcl_send_prefix_ab888e85e50e8e1418ab8d74928c963da}{packet}, bool \hyperlink{classcl_shared_send_aaaf411d2405cc3447a3bc11fe2ab2678}{block}, const \hyperlink{classcl_packet}{clPacket} \&\hyperlink{classcl_send_prefix_af5e8144995301e9887ffcd23348d8c7e}{prefix})
+\item 
+\hyperlink{classcl_send_prefix_ac3f41ae82ff48144fcef35b53d3b5e3c}{$\sim$clSendPrefix} ()
+\item 
+WSABUF $\ast$ \hyperlink{classcl_send_prefix_ad9fe2326102e9c43e87e577698580267}{GetSendBuffer} ()
+\item 
+size\_\-t \hyperlink{classcl_send_prefix_ab70ca2f9224334f80a84fb96b22c0cfe}{GetSendBufferAmount} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_packet}{clPacket} \hyperlink{classcl_send_prefix_af5e8144995301e9887ffcd23348d8c7e}{prefix}
+\item 
+const \hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_send_prefix_ab888e85e50e8e1418ab8d74928c963da}{packet}
+\item 
+WSABUF \hyperlink{classcl_send_prefix_ae96577f7b0648d25bd11b447c7678210}{buffers} \mbox{[}\hyperlink{classcl_send_prefix_a37563065ef429279830e8d7f59fdcfbe}{NUM\_\-BUFFERS}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{classcl_send_prefix_a37563065ef429279830e8d7f59fdcfbe}{NUM\_\-BUFFERS} = 2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Send class where packets sent have a prefix. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is used for sending data with a prefix. \par
+ This class makes use of scatter/gather I/O to maximize efficiency. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_send_prefix_a3b781cd71fefd4015f209f766a1ca5a0}{
+\index{clSendPrefix@{clSendPrefix}!clSendPrefix@{clSendPrefix}}
+\index{clSendPrefix@{clSendPrefix}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{clSendPrefix}]{\setlength{\rightskip}{0pt plus 5cm}clSendPrefix::clSendPrefix (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf clPacket} \&}]{ prefix}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_send_prefix_a3b781cd71fefd4015f209f766a1ca5a0}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]if true packet will be sent synchronously, if false packet will be sent asynchronously \item[{\em prefix}]prefix to place at start of packet \end{DoxyParams}
+
+
+this-\/$>$prefix will remain valid until this object is destroyed This object won't be destroyed until send operation is completed
+
+If the send operation blocks until completion then the send operation does not need its own buffer because the send operation will be completed before further usage of the packet buffer takes place. The destructor MUST NOT deallocate the buffer memory since this will be done automatically by the destructors of the objects that the buffer points to (we are not doing any copying).
+
+If the send operation does not block until completion then it needs its own buffer, which is allocated from the heap and MUST be deallocated by the destructor. This is necessary because the packet buffer may be used by another thread during sending.
+
+\hypertarget{classcl_send_prefix_ac3f41ae82ff48144fcef35b53d3b5e3c}{
+\index{clSendPrefix@{clSendPrefix}!$\sim$clSendPrefix@{$\sim$clSendPrefix}}
+\index{$\sim$clSendPrefix@{$\sim$clSendPrefix}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{$\sim$clSendPrefix}]{\setlength{\rightskip}{0pt plus 5cm}clSendPrefix::$\sim$clSendPrefix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_send_prefix_ac3f41ae82ff48144fcef35b53d3b5e3c}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_send_prefix_ad9fe2326102e9c43e87e577698580267}{
+\index{clSendPrefix@{clSendPrefix}!GetSendBuffer@{GetSendBuffer}}
+\index{GetSendBuffer@{GetSendBuffer}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{GetSendBuffer}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF $\ast$ clSendPrefix::GetSendBuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_send_prefix_ad9fe2326102e9c43e87e577698580267}
+\begin{DoxyReturn}{Returns}
+An array of WSABUF containing data to be sent, by passing to WSASend. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_send_a14aee968543a692af33c5d170b2cc1fe}{clSharedSend}.
+
+\hypertarget{classcl_send_prefix_ab70ca2f9224334f80a84fb96b22c0cfe}{
+\index{clSendPrefix@{clSendPrefix}!GetSendBufferAmount@{GetSendBufferAmount}}
+\index{GetSendBufferAmount@{GetSendBufferAmount}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{GetSendBufferAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSendPrefix::GetSendBufferAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_send_prefix_ab70ca2f9224334f80a84fb96b22c0cfe}
+\begin{DoxyReturn}{Returns}
+The number of elements in the array returned by GetSendBuffer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_send_afb9437432c75b81100927297961413a3}{clSharedSend}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_send_prefix_ae96577f7b0648d25bd11b447c7678210}{
+\index{clSendPrefix@{clSendPrefix}!buffers@{buffers}}
+\index{buffers@{buffers}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{buffers}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF {\bf clSendPrefix::buffers}\mbox{[}{\bf NUM\_\-BUFFERS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_prefix_ae96577f7b0648d25bd11b447c7678210}
+Array of buffers to be sent
+\begin{DoxyItemize}
+\item e0 is packet prefix
+\item e1 is packet data 
+\end{DoxyItemize}\hypertarget{classcl_send_prefix_a37563065ef429279830e8d7f59fdcfbe}{
+\index{clSendPrefix@{clSendPrefix}!NUM\_\-BUFFERS@{NUM\_\-BUFFERS}}
+\index{NUM\_\-BUFFERS@{NUM\_\-BUFFERS}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{NUM\_\-BUFFERS}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clSendPrefix::NUM\_\-BUFFERS} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_send_prefix_a37563065ef429279830e8d7f59fdcfbe}
+Number of elements in buffers array \hypertarget{classcl_send_prefix_ab888e85e50e8e1418ab8d74928c963da}{
+\index{clSendPrefix@{clSendPrefix}!packet@{packet}}
+\index{packet@{packet}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clPacket}$\ast$ {\bf clSendPrefix::packet}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_prefix_ab888e85e50e8e1418ab8d74928c963da}
+Pointer to packet containing data to be sent \hypertarget{classcl_send_prefix_af5e8144995301e9887ffcd23348d8c7e}{
+\index{clSendPrefix@{clSendPrefix}!prefix@{prefix}}
+\index{prefix@{prefix}!clSendPrefix@{clSendPrefix}}
+\subsubsection[{prefix}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} {\bf clSendPrefix::prefix}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_prefix_af5e8144995301e9887ffcd23348d8c7e}
+Stores prefix 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSendPrefix.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSendPrefix.cpp\end{DoxyCompactItemize}

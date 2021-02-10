@@ -1,0 +1,2533 @@
+<s3ge version="1.0">
+  
+  <!-- GUI (Window-ish Pre-Fabs for MAUI) by Techlord - Contains MAUI Definitions for BASIC Common GUI functionality.  -->
+  
+  <script language="darklua" type="1"><![CDATA[ uiOutput("Loading GUI Prefab Components...")	]]></script>
+  
+  <!-- STATES -->
+  <state name="ENTER"/>
+  <state name="HOVER"/>
+  <state name="DOWN"/>
+  <state name="HOLD"/>
+  <state name="DRAG"/>
+  <state name="UP"/>
+  <state name="EXIT"/>
+  <state name="WORK"/>
+  <state name="SCROLLUP"/>
+  <state name="SCROLLDOWN"/>
+  <state name="SCROLLLOCKUP"/>
+  <state name="SCROLLLOCKDOWN"/>
+  <state name="MOVE"/>
+  <state name="LOAD"/>
+  <state name="UNLOAD"/>
+  <state name="HIDE"/>
+  <state name="SHOW"/>
+  <state name="SELECT"/>
+  <state name="UNSELECT"/>
+  
+	<!-- GADGET-LIKE BEHAVIORS -->
+	
+	<behavior name="pushbox" description="Pre-Fab Button">
+		<event state="IDLE">
+			<script language="darklua" type="1">
+				<![CDATA[
+				if uiPointerBound == 1 then
+					uiGizmoNextEventState = ENTER
+				else
+					uiGizmoNextEventState = IDLE
+				end
+				]]>
+			</script>
+		</event>
+		<event state="ENTER">
+			<script language="darklua" type="1">
+				<![CDATA[
+				if uiPointerBound == 1 then
+					uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+					uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+					if uigizmoeventstatecounter > 3 then
+						uiGizmoPropertySet(this,'EventStateCounter',0)
+						uiGizmoNextEventState = HOVER
+					else
+						uiGizmoNextEventState = ENTER
+					end
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+			</script>
+		</event>
+		<event state="HOVER">
+			<script language="darklua" type="1">
+				<![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DOWN
+					else
+            uiOutput(uiGizmoPropertyGet(this,'Description'))
+						uiGizmoNextEventState = HOVER
+					end
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+			</script>
+		</event>
+		<event state="DOWN">
+			<script language="darklua" type="1">
+				<![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 8 then
+							uiGizmoPropertySet(this,'EventStateCounter',0)
+							uiGizmoNextEventState = HOLD
+						else
+							uiGizmoNextEventState = DOWN
+						end
+					end	
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+			</script>
+		</event>
+		<event state="HOLD">
+			<script language="darklua" type="1">
+				<![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = HOLD
+					else
+						uiGizmoNextEventState = UP
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DRAG
+					end
+				end
+				]]>
+			</script>
+		</event>
+		<event state="DRAG">
+			<script language="darklua" type="1">
+				<![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = HOLD
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DRAG
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end					
+					end
+				end
+				]]>
+			</script>
+		</event>
+		<event state="UP">
+			<script language="darklua" type="1">
+				<![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = DOWN
+					else
+						uiGizmoNextEventState = HOVER
+					end
+				else
+					uiGizmoNextEventState = DRAG
+				end
+				]]>
+			</script>
+		</event>
+		<event state="EXIT">
+			<script language="darklua" type="1">
+				<![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				uiGizmoNextEventState = IDLE
+				]]>
+			</script>
+		</event>
+	</behavior>
+  
+  <behavior name="menubox" description="Pre-Fab Menu">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					uiGizmoNextEventState = ENTER
+				else
+					uiGizmoNextEventState = IDLE
+				end
+				]]>
+      </script>
+    </event>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+        
+        msg = uiGizmoMessageCreate()
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE, 0)
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'toggle', '0')        
+        uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SIBLINGS, 1)
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_OPEN, 0)
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'toggle', '1')        
+        uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SIBLINGS, 0)
+        uiGizmoMessageDestroy(msg)
+        
+				if uiPointerBound == 1 then
+					uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+					uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+					if uigizmoeventstatecounter > 3 then
+						uiGizmoPropertySet(this,'EventStateCounter',0)
+						uiGizmoNextEventState = HOVER
+					else
+						uiGizmoNextEventState = ENTER
+					end
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOVER">
+      <script language="darklua" type="1">
+        <![CDATA[
+        
+        if uiGizmoVariableGet(this, 'toggle') == '1' then
+          msg = uiGizmoMessageCreate()
+          uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_OPEN, 0)
+          uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_CHILDREN, 0)
+          uiGizmoMessageDestroy(msg)        
+        end
+        
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DOWN
+					else
+            uiOutput(uiGizmoPropertyGet(this,'Description'))
+						uiGizmoNextEventState = HOVER
+					end
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+        uiGizmoVariableSet(this, 'toggle', '1')
+        msg = uiGizmoMessageCreate()
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_OPEN, 0);
+        uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_CHILDREN, 0)
+        uiGizmoMessageDestroy(msg)       
+        
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 8 then
+							uiGizmoPropertySet(this,'EventStateCounter',0)
+							uiGizmoNextEventState = HOLD
+						else
+							uiGizmoNextEventState = DOWN
+						end
+					end	
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = HOLD
+					else
+						uiGizmoNextEventState = UP
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DRAG
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DRAG">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = HOLD
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DRAG
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end					
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+        
+        uiGizmoToggle = 1 - uiGizmoVariableGet(this, 'toggle')
+        uiGizmoVariableSet(this, 'toggle', uiGizmoToggle)
+        msg = uiGizmoMessageCreate()
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE + uiGizmoToggle, 0);
+        uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_CHILDREN, 0)
+        uiGizmoMessageDestroy(msg)
+          
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = DOWN
+					else
+						uiGizmoNextEventState = HOVER
+					end
+				else
+					uiGizmoNextEventState = DRAG
+				end
+				]]>
+      </script>
+    </event>
+    <event state="EXIT">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				uiGizmoNextEventState = IDLE
+				]]>
+      </script>
+    </event>
+  </behavior>
+  
+  <behavior name="checkbox" description="Pre-Fab Checkbox" ref="pushbox">
+    <event state="HOVER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DOWN
+					else
+						uiGizmoNextEventState = HOVER
+					end
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>    
+    
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+            uiOutput('Check Box Down')
+        		uiGizmoNextEventState = DOWN
+					else
+						uiGizmoNextEventState = UP
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = MOVE
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 and uiPointerContact == 1 then
+						uiGizmoNextEventState = DOWN
+				else
+					uiGizmoNextEventState = HOLD
+				end
+				]]>
+      </script>
+    </event>    
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = DOWN
+					else
+            uigizmochecked = 1 - uiGizmoVariableGet(this, 'checked')
+            uiGizmoVariableSet(this, 'checked', uigizmochecked)
+            uiOutput('Check Box ['..uigizmochecked..']')
+						if uigizmochecked == 1 then 
+              uiGizmoNextEventState = HOLD
+            else
+              uiGizmoNextEventState = HOVER
+            end
+					end
+				else
+					uiGizmoNextEventState = MOVE
+				end
+				]]>
+      </script>
+    </event>
+  </behavior>
+  
+  <behavior name="radiobox" description="Pre-Fab Radio" ref="checkbox">
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = DOWN
+					else
+            uigizmochecked = 1 - uiGizmoVariableGet(this, 'checked')
+            uiGizmoVariableSet(this, 'checked', uigizmochecked)
+            uiOutput('Check Box ['..uigizmochecked..']')
+						if uigizmochecked == 1 then 
+              uiGizmoNextEventState = HOLD
+              msg = uiGizmoMessageCreate()
+              uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'checked', '0')
+              uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_PROPERTY, 'EventState', EXIT)
+              uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SIBLINGS, 0)
+              uiGizmoMessageDestroy(msg)
+            else
+              uiGizmoNextEventState = HOVER
+            end
+					end
+				else
+					uiGizmoNextEventState = MOVE
+				end
+				]]>
+      </script>
+    </event>    
+  </behavior>
+  
+  <behavior name="movebox" ref="pushbox" description="Pre-Fab Mover">
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 1 then
+							uiGizmoPropertySet(this,'EventStateCounter',0)
+              
+              msg = uiGizmoMessageCreate()
+              uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_SCRIPT, 'moverbox_DOWN', "uiGizmoVariableSet(this,'pointeroffsetx', uiGizmoPropertyGet(this,'BoundX') - uiGizmoPropertyGet(uiGizmoGet('point'),'BoundX') );uiGizmoVariableSet(this,'pointeroffsety', uiGizmoPropertyGet(this,'BoundY') - uiGizmoPropertyGet(uiGizmoGet('point'),'BoundY') );uiGizmoVariableSet(this,'pointeroffsetz', uiGizmoPropertyGet(this,'BoundZ') - uiGizmoPropertyGet(uiGizmoGet('point'),'BoundZ') )")
+              uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SELF, 1)
+              uiGizmoMessageDestroy(msg)
+            
+							uiGizmoNextEventState = HOLD
+						else
+							uiGizmoNextEventState = DOWN
+						end
+					end	
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>   
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+          
+            msg = uiGizmoMessageCreate()
+            uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_SCRIPT, 'moverbox_HOLD', "if uiGizmoVariableGet(this, 'pointerlockx') ~= '1' then uiGizmoPropertySet(this, 'BoundX', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundX') + uiGizmoVariableGet(this,'pointeroffsetx') ) end;if uiGizmoVariableGet(this, 'pointerlocky') ~= '1' then uiGizmoPropertySet(this, 'BoundY', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundY') + uiGizmoVariableGet(this,'pointeroffsety') ) end;if uiGizmoVariableGet(this, 'pointerlockz') ~= '1' then uiGizmoPropertySet(this, 'BoundZ', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundZ') + uiGizmoVariableGet(this,'pointeroffsetz') ) end;uiGizmoPropertySet(this,'BoundOrientation',1)" )
+            uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SELF, 1)
+            uiGizmoMessageDestroy(msg)
+        
+						uiGizmoNextEventState = HOLD
+					else
+						uiGizmoNextEventState = UP
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DRAG
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DRAG">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = HOLD
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end
+					end
+				else
+					if uiPointerContact == 1 then
+          
+            msg = uiGizmoMessageCreate()
+            uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_SCRIPT, 'moverbox_HOLD', "if uiGizmoVariableGet(this, 'pointerlockx') ~= '1' then uiGizmoPropertySet(this, 'BoundX', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundX') + uiGizmoVariableGet(this,'pointeroffsetx') ) end;if uiGizmoVariableGet(this, 'pointerlocky') ~= '1' then uiGizmoPropertySet(this, 'BoundY', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundY') + uiGizmoVariableGet(this,'pointeroffsety') ) end;if uiGizmoVariableGet(this, 'pointerlockz') ~= '1' then uiGizmoPropertySet(this, 'BoundZ', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundZ') + uiGizmoVariableGet(this,'pointeroffsetz') ) end;uiGizmoPropertySet(this,'BoundOrientation',1)" )
+            uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SELF, 1)
+            uiGizmoMessageDestroy(msg)
+            
+						uiGizmoNextEventState = DRAG
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end					
+					end
+				end
+				]]>
+      </script>
+    </event>
+  </behavior>
+  
+  <behavior name="textbox" description="Pre-Fab Textbox">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+          msg = uiGizmoMessageCreate()
+          uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_OPEN, 0)
+          uiGizmoMessageSend(msg, 'caret', MAUI_MSG_TO_SELF, 1)
+          uiGizmoMessageDestroy(msg)
+ 
+          msg = uiGizmoMessageCreate()
+          uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_COLLISION_ENABLE, 0)
+          uiGizmoMessageSend(msg, 'textboxkeyboard', MAUI_MSG_TO_CHILDREN, 1)
+          uiGizmoMessageDestroy(msg)
+          
+          dbEntryBufferClear()
+          
+					uiGizmoNextEventState = ENTER
+          
+				else
+        
+          if uiGizmoVariableGet(this,'capturedonstart') ~= '1' then   
+            uiGizmoVariableSet(this,'capturedonstart', '1')
+            uiGizmoLinesCapture(this,IDLE)
+          end
+          
+					uiGizmoNextEventState = IDLE
+				
+        end
+				]]>
+      </script>
+    </event>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+       
+					uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+					uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+					if uigizmoeventstatecounter > 3 then
+						uiGizmoPropertySet(this,'EventStateCounter',0)
+            uiGizmoLineDisplay(this,255,255,255)
+						uiGizmoNextEventState = HOVER
+					else
+            uiGizmoLineDisplay(this,191,191,191)          
+						uiGizmoNextEventState = ENTER
+					end
+				else
+          uiGizmoLineDisplay(this,255,0,0)
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOVER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+            uiGizmoLineDisplay(this,255,255,255)
+						uiGizmoNextEventState = DOWN
+					else
+            uiOutput(uiGizmoPropertyGet(this,'Description'))
+            uiGizmoLineDisplay(this,255,255,255)
+					  uiCaretLocate(this,0)          
+						uiGizmoNextEventState = HOVER
+					end
+				else
+          uiGizmoLineDisplay(this,255,0,0)
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 16 then
+							uiGizmoPropertySet(this,'EventStateCounter',0)
+              uiGizmoLineDisplay(this,255,255,255)
+							uiGizmoNextEventState = HOLD
+						else
+              uiCaretLocate(this,1)
+              uiGizmoLineDisplay(this,255,255,255)
+							uiGizmoNextEventState = DOWN
+						end
+					end	
+				else
+          uiGizmoLineDisplay(this,255,0,0)
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+            uiCaretLocate(this,2)
+            uiGizmoLineDisplay(this,255,255,255)
+ 						uiGizmoNextEventState = HOLD
+					else
+          uiGizmoLineDisplay(this,255,255,255)
+						uiGizmoNextEventState = UP
+					end
+				else
+					if uiPointerContact == 1 then
+            uiGizmoLineDisplay(this,255,255,0)
+						uiGizmoNextEventState = DRAG
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DRAG">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+            uiGizmoLineDisplay(this,255,255,0)
+						uiGizmoNextEventState = HOLD
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 10 then
+              uiGizmoLineDisplay(this,255,255,255)
+							uiGizmoNextEventState = UP
+						end
+					end
+				else
+					if uiPointerContact == 1 then
+            uiGizmoLineDisplay(this,255,255,0)
+            uiGizmoNextEventState = DRAG
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 10 then
+              uiGizmoLineDisplay(this,255,255,255)
+							uiGizmoNextEventState = UP
+						end					
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+            uiGizmoLineDisplay(this,255,255,255)
+						uiGizmoNextEventState = DOWN
+					else
+            uiCaretLocate(this,2)
+            uiGizmoLineSelectionEdit(this,1)
+            uiGizmoLineDisplay(this,255,255,255)
+						uiGizmoNextEventState = HOVER
+					end
+				else
+            uiGizmoLineDisplay(this,255,255,0)
+        		uiGizmoNextEventState = DRAG
+				end
+				]]>
+      </script>
+    </event>
+    <event state="EXIT">
+      <script language="darklua" type="1">
+        <![CDATA[
+        
+        msg = uiGizmoMessageCreate()
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE, 0)
+        uiGizmoMessageSend(msg, 'caret', MAUI_MSG_TO_SELF, 1)
+        uiGizmoMessageDestroy(msg)
+        
+        msg = uiGizmoMessageCreate()
+        uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_COLLISION_DISABLE, 0)
+        uiGizmoMessageSend(msg, 'textboxkeyboard', MAUI_MSG_TO_CHILDREN, 1)
+        uiGizmoMessageDestroy(msg)        
+          
+        uiGizmoLinesCapture(this,IDLE)
+        
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				uiGizmoNextEventState = IDLE
+				]]>
+      </script>
+    </event>
+  </behavior>
+
+  <behavior name="scrollbox" ref="pushbox" description="Adjust Value by Pointer Movement">
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 1 then
+							uiGizmoPropertySet(this,'EventStateCounter',0)
+              
+              --Adjust Value by Pointer Movement
+              --msg = uiGizmoMessageCreate()
+              --uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_SCRIPT, 'moverbox_DOWN', "uiGizmoVariableSet(this,'pointeroffsetx', uiGizmoPropertyGet(this,'BoundX') - uiGizmoPropertyGet(uiGizmoGet('point'),'BoundX') );uiGizmoVariableSet(this,'pointeroffsety', uiGizmoPropertyGet(this,'BoundY') - uiGizmoPropertyGet(uiGizmoGet('point'),'BoundY') );uiGizmoVariableSet(this,'pointeroffsetz', uiGizmoPropertyGet(this,'BoundZ') - uiGizmoPropertyGet(uiGizmoGet('point'),'BoundZ') )")
+              --uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SELF, 1)
+              --uiGizmoMessageDestroy(msg)
+            
+							uiGizmoNextEventState = HOLD
+						else
+							uiGizmoNextEventState = DOWN
+						end
+					end	
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>   
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+          
+            --Adjust Value by Pointer Movement
+            --msg = uiGizmoMessageCreate()
+            --uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_SCRIPT, 'moverbox_HOLD', "if uiGizmoVariableGet(this, 'pointerlockx') ~= '1' then uiGizmoPropertySet(this, 'BoundX', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundX') + uiGizmoVariableGet(this,'pointeroffsetx') ) end;if uiGizmoVariableGet(this, 'pointerlocky') ~= '1' then uiGizmoPropertySet(this, 'BoundY', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundY') + uiGizmoVariableGet(this,'pointeroffsety') ) end;if uiGizmoVariableGet(this, 'pointerlockz') ~= '1' then uiGizmoPropertySet(this, 'BoundZ', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundZ') + uiGizmoVariableGet(this,'pointeroffsetz') ) end;uiGizmoPropertySet(this,'BoundOrientation',1)" )
+            --uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SELF, 1)
+            --uiGizmoMessageDestroy(msg)
+        
+						uiGizmoNextEventState = HOLD
+					else
+						uiGizmoNextEventState = UP
+					end
+				else
+					if uiPointerContact == 1 then 
+						uiGizmoNextEventState = DRAG
+					end
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DRAG">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiPointerBound == 1 then
+					if uiPointerContact == 1 then
+						uiGizmoNextEventState = HOLD
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end
+					end
+				else
+					if uiPointerContact == 1 then
+          
+            msg = uiGizmoMessageCreate()
+            uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_SCRIPT, 'moverbox_HOLD', "if uiGizmoVariableGet(this, 'pointerlockx') ~= '1' then uiGizmoPropertySet(this, 'BoundX', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundX') + uiGizmoVariableGet(this,'pointeroffsetx') ) end;if uiGizmoVariableGet(this, 'pointerlocky') ~= '1' then uiGizmoPropertySet(this, 'BoundY', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundY') + uiGizmoVariableGet(this,'pointeroffsety') ) end;if uiGizmoVariableGet(this, 'pointerlockz') ~= '1' then uiGizmoPropertySet(this, 'BoundZ', uiGizmoPropertyGet(uiGizmoGet('point'),'BoundZ') + uiGizmoVariableGet(this,'pointeroffsetz') ) end;uiGizmoPropertySet(this,'BoundOrientation',1)" )
+            uiGizmoMessageSend(msg, uiGizmoPropertyGet(this,'Name'), MAUI_MSG_TO_SELF, 1)
+            uiGizmoMessageDestroy(msg)
+            
+						uiGizmoNextEventState = DRAG
+					else
+						uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 4 then
+							uiGizmoNextEventState = UP
+						end					
+					end
+				end
+				]]>
+      </script>
+    </event>
+  </behavior>
+
+  <!-- WIDGET BEHAVIORS -->
+  
+  <behavior name="textboxkey" description="Single Keyboard Behavior for Textbox Widgets">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0 then
+					uiGizmoNextEventState = ENTER
+				else
+					uiGizmoNextEventState = IDLE
+				end
+				]]>
+      </script>
+    </event>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0 then
+          uiGizmoPropertySet(this,'EventStateCounter',0)
+					uiGizmoNextEventState = DOWN
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0 then
+            
+            uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+						uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+						if uigizmoeventstatecounter == 16 then
+              uiGizmoPropertySet(this,'EventStateCounter',0)
+              uiGizmoNextEventState = HOLD
+            else
+              uiGizmoNextEventState = DOWN
+            end
+            
+				else
+					uiGizmoNextEventState = UP
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0  then
+					uiGizmoNextEventState = HOLD
+				else
+					uiGizmoNextEventState = UP
+				end
+				]]>
+      </script>
+    </event>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0  then
+					uiGizmoNextEventState = DOWN
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="EXIT">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoNextEventState = IDLE
+				]]>
+      </script>
+    </event>
+  </behavior>
+  
+  <behavior name="singlekey" description="Single Keyboard Input">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0 then
+					uiGizmoNextEventState = ENTER
+				else
+					uiGizmoNextEventState = IDLE
+				end
+				]]>
+      </script>
+    </event>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0 then
+					uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+					uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+					if uigizmoeventstatecounter > 1 then
+						uiGizmoPropertySet(this,'EventStateCounter',0)
+						uiGizmoNextEventState = DOWN
+					else
+						uiGizmoNextEventState = ENTER
+					end
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="DOWN">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0 then
+					uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+					uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+					if uigizmoeventstatecounter == 10 then
+						uiGizmoPropertySet(this,'EventStateCounter',0)
+						uiGizmoNextEventState = HOLD
+					else
+						uiGizmoNextEventState = DOWN
+					end
+				else
+					uiGizmoNextEventState = UP
+				end
+				]]>
+      </script>
+    </event>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+				if uiGizmoContact > 0  then
+					uiGizmoNextEventState = HOLD
+				else
+					uiGizmoNextEventState = UP
+				end
+				]]>
+      </script>
+    </event>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				if uiGizmoContact > 0  then
+					uiGizmoNextEventState = DOWN
+				else
+					uiGizmoNextEventState = EXIT
+				end
+				]]>
+      </script>
+    </event>
+    <event state="EXIT">
+      <script language="darklua" type="1">
+        <![CDATA[
+				uiGizmoPropertySet(this,'EventStateCounter',0)
+				uiGizmoNextEventState = IDLE
+				]]>
+      </script>
+    </event>
+  </behavior>
+  
+  <!-- TRANSITIONS -->
+  
+  <transition name="ghostly" description="Sprite Display Fade In & Out">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+				 if uiGizmoPreviousEventState ~= IDLE then
+				 	uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+					uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+					if uiGizmoSpriteObjectAlpha > 150 then
+						dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha - 5)
+					else
+						dbSpriteAlphaSet(uiGizmoSpriteObject, 150)
+						uiGizmoPreviousEventState = IDLE
+					end
+				 end
+				 ]]>
+      </script>
+    </event>
+    <event state="ENTER"/>
+    <event state="HOVER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				 if uiGizmoPreviousEventState == ENTER then
+				 	uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+					uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+					if uiGizmoSpriteObjectAlpha < 255 then
+						dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha + 15)
+					else
+						dbSpriteAlphaSet(uiGizmoSpriteObject, 255)
+						uiGizmoPreviousEventState = HOVER
+					end
+				 end
+				 ]]>
+      </script>
+    </event>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </transition>
+  
+  <transition name="xshift" description="Move Along X from left to position">
+    
+		<event state="IDLE">
+			<script language="darklua" type="1">
+				<![CDATA[
+         --hide gizmo; Current Bound X set by controller physics        
+				 if uiGizmoPreviousEventState ~= IDLE then
+			 	  uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+				  uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+          uiGizmoSpriteX = uiGizmoVariableGet(this,'spritex') + 0
+					if uiGizmoSpriteX > 0 then
+					  if uiGizmoSpriteObjectAlpha > 0 then dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha - 5) end 
+            uiGizmoSpriteX = uiGizmoSpriteX - 1
+            uiGizmoVariableSet(this,'spritex',uiGizmoSpriteX)
+            uiGizmoPropertySet(this,'BoundX',uiGizmoSpriteX)
+          else
+            dbSpriteAlphaSet(uiGizmoSpriteObject, 0)
+            uiGizmoVariableSet(this,'spritex',0)
+        		uiGizmoPreviousEventState = IDLE
+					end
+				 end
+				 ]]>
+			</script>
+		</event>
+    <event state="ENTER"/>
+		
+		<event state="HOVER">
+			<script language="darklua" type="1">
+				<![CDATA[
+				 if uiGizmoPreviousEventState == ENTER then
+				 	uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+					uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+          uiGizmoSpriteX = uiGizmoVariableGet(this,'spritex')
+          uiGizmoBoundX = uiGizmoPropertyGet(this,'BoundX')
+          if uiGizmoSpriteX < uiGizmoBoundX then
+   					if uiGizmoSpriteObjectAlpha < 255 then dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha + 5) end         
+            uiGizmoSpriteX = uiGizmoSpriteX + 15
+            uiGizmoVariableSet(this,'spritex',uiGizmoSpriteX)
+            uiGizmoPropertySet(this,'BoundX',uiGizmoSpriteX)
+          else
+ 						dbSpriteAlphaSet(uiGizmoSpriteObject, 255)         
+            uiGizmoVariableSet(this,'spritex',uiGizmoBoundX)
+        		uiGizmoPreviousEventState = HOVER
+					end
+				 end
+				 ]]>
+			</script>
+		</event>
+    <event state="DOWN"/>
+		<event state="HOLD"/>
+		<event state="DRAG"/>
+		<event state="UP"/>
+		<event state="EXIT"/>
+	</transition>
+  
+  <transition name="yshift" description="Move Along Y from top to position">
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+         --hide gizmo; Current Bound Y set by controller physics        
+				 if uiGizmoPreviousEventState ~= IDLE then
+			 	  uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+				  uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+          uiGizmoSpriteY = uiGizmoVariableGet(this,'spritey') + 0
+					if uiGizmoSpriteY > 0 then
+					  if uiGizmoSpriteObjectAlpha > 0 then dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha - 15) end 
+            uiGizmoSpriteY = uiGizmoSpriteY - 1
+            uiGizmoVariableSet(this,'spritey',uiGizmoSpriteY)
+            uiGizmoPropertySet(this,'BoundY',uiGizmoSpriteY)
+          else
+            dbSpriteAlphaSet(uiGizmoSpriteObject, 0)
+            uiGizmoVariableSet(this,'spritey',0)
+        		uiGizmoPreviousEventState = IDLE
+					end
+				 end
+				 ]]>
+      </script>
+    </event>
+    <event state="ENTER"/>
+    <event state="HOVER">
+      <script language="darklua" type="1">
+        <![CDATA[
+				 if uiGizmoPreviousEventState == ENTER then
+				 	uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+					uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+          uiGizmoSpriteY = uiGizmoVariableGet(this,'spritey')
+          uiGizmoBoundY = uiGizmoPropertyGet(this,'BoundY')
+          if uiGizmoSpriteY < uiGizmoBoundY then
+   					if uiGizmoSpriteObjectAlpha < 255 then dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha + 15) end         
+            uiGizmoSpriteY = uiGizmoSpriteY + 15
+            uiGizmoVariableSet(this,'spritey',uiGizmoSpriteY)
+            uiGizmoPropertySet(this,'BoundY',uiGizmoSpriteY)
+          else
+ 						dbSpriteAlphaSet(uiGizmoSpriteObject, 255)         
+            uiGizmoVariableSet(this,'spritey',uiGizmoBoundY)
+        		uiGizmoPreviousEventState = HOVER
+					end
+				 end
+				 ]]>
+      </script>
+    </event>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </transition>
+  
+  <!-- STYLES -->
+  <font name="Blood" src="2D/FontArt/BloodBath2.png"/>
+  <font name="coward" src="2D/FontArt/yella.png" kern="0"/>
+  <font name="cnn0" face="Courier New" size="12" red="0" green="255" blue="255" alpha="255"/>
+  <font name="cnnn" face="Courier New" size="12" red="0" green="15" blue="15" alpha="255"/>
+  <font name="cnn1" face="Courier New" size="12" red="0" green="255" blue="255" alpha="255"/>
+  <font name="cnn2" face="Courier New" size="12" red="0" green="31" blue="31" alpha="255"/>
+  <font name="cnn3" face="Courier New" size="12" red="255" green="255" blue="0" italic="1" alpha="255"/>
+  <font name="arial1" face="Arial" size="12" bold="1" red="255" green="255" blue="255" alpha="255"/>
+  <font name="arial2" face="Arial" size="12" bold="1" italic="1" red="255" green="255" blue="255" alpha="255"/>
+  <font name="arial3" face="Arial" size="12" red="255" green="255" blue="255" alpha="192"/>
+  <font name="timesroman" face="Times New Roman" size="12" red="0" green="0" blue="0" alpha="255"/>
+  
+  <style name="standard" description="Default Style">
+    <event state="IDLE">
+      <font name="arial0"/>
+    </event>
+    <event state="ENTER">
+      <font name="arial0"/>
+    </event>
+    <event state="HOVER">
+      <font name="arial0"/>
+    </event>
+    <event state="DOWN">
+      <font name="arial0"/>
+    </event>
+    <event state="HOLD">
+      <font name="arial0"/>
+    </event>
+    <event state="DRAG">
+      <font name="arial0"/>
+    </event>
+    <event state="UP">
+      <font name="arial0"/>
+    </event>
+    <event state="EXIT">
+      <font name="arial0"/>
+    </event>
+    <event state="MOVE">
+      <font name="arial0"/>
+    </event>
+  </style>
+
+  <style name="cyantext" description="Cyan Text">
+		<event state="IDLE">
+			<font name="cnn0"/>
+		</event>
+		<event state="ENTER">
+			<font name="cnn1"/>
+		</event>
+		<event state="HOVER">
+			<font name="cnnn"/>
+		</event>		
+		<event state="DOWN">
+			<font name="cnn2"/>
+		</event>		
+		<event state="HOLD">
+      <font name="cnn2"/>
+    </event>     
+		<event state="DRAG">
+      <font name="cnn3"/>
+		</event>
+		<event state="UP">
+      <font name="cnn3"/>
+		</event>
+		<event state="EXIT">
+			<font name="cnn0"/>
+		</event>
+	</style>
+  
+  <style name="textboxtypeset" description="Textbox Type Set">
+    <event state="IDLE">
+      <font name="timesroman"/>
+    </event>
+    <event state="ENTER">
+      <font name="timesroman"/>
+    </event>
+    <event state="HOVER">
+      <font name="timesroman"/>
+    </event>
+    <event state="DOWN">
+      <font name="timesroman"/>
+    </event>
+    <event state="HOLD">
+      <font name="timesroman"/>
+    </event>
+    <event state="DRAG">
+      <font name="timesroman"/>
+    </event>
+    <event state="UP">
+      <font name="timesroman"/>
+    </event>
+    <event state="EXIT">
+      <font name="timesroman"/>
+    </event>
+  </style>
+  
+  <style name="vile" description="BMP Font Testing">
+    <event state="IDLE">
+      <font name="coward"/>
+    </event>
+    <event state="ENTER">
+      <font name="coward"/>
+    </event>
+    <event state="HOVER">
+      <font name="Blood"/>
+    </event>
+    <event state="DOWN">
+      <font name="Blood"/>
+    </event>
+    <event state="HOLD">
+      <font name="Blood"/>
+    </event>
+    <event state="DRAG">
+      <font name="Blood"/>
+    </event>
+    <event state="UP">
+      <font name="coward"/>
+    </event>
+    <event state="EXIT">
+      <font name="coward"/>
+    </event>
+    <event state="MOVE">
+      <font name="coward"/>
+    </event>    
+  </style> 
+  
+	<!-- THEMES -->
+  
+  <theme name="graybox" description="Nice Gray Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="95" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="95" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="159" topcentergreen="159" topcenterblue="159" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="159" middleleftgreen="159" middleleftblue="159" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="127" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="95" middlerightgreen="95" middlerightblue="95" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="95" bottomcentergreen="95" bottomcenterblue="95" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="95" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="95" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="127" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="159" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="159" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="95" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="95" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="127" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="159" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="159" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="159" middlecentergreen="159" middlecenterblue="159" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="191" middlerightgreen="191" middlerightblue="191" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="191" bottomcentergreen="191" bottomcenterblue="191" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="223" topcentergreen="223" topcenterblue="223" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="223" middleleftgreen="223" middleleftblue="223" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="191" middlecentergreen="191" middlecenterblue="191" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="159" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="159" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="223" middlecentergreen="223" middlecenterblue="233" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="MOVE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="16" middlecentergreen="16" middlecenterblue="16" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>   
+    
+  </theme>
+  
+  <theme name="darkbox" description="The DarkBox" ref="graybox">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="255" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="255" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="95" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="255" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="255" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>  
+  </theme>
+  
+  <theme name="cyanbox" description="Nice Cyan Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="95" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="95" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="159" topcenterblue="159" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="159" middleleftblue="159" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="127" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="95" middlerightblue="95" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="95" bottomcenterblue="95" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="95" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="95" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="127" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="159" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="159" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="95" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="95" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="127" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="159" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="159" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="159" middlecenterblue="159" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="191" middlerightblue="191" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="191" bottomcenterblue="191" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="223" topcenterblue="223" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="223" middleleftblue="223" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="191" middlecenterblue="191" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="159" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="159" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="255" middlecenterblue="255" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+  
+  <theme name="cherrybox" description="Nice Red Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="159" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="159" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="95" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="95" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="159" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="191" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="191" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="223" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="223" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="191" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+  
+  <theme name="citrusbox" description="Tangy Orangy Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="63" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="63" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="47" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="31" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="31" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="63" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="63" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="47" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="31" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="31" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="159" topcentergreen="79" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="159" middleleftgreen="79" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="63" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="95" middlerightgreen="47" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="95" bottomcentergreen="47" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="47" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="47" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="63" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="79" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="79" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="47" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="47" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="63" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="79" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="79" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="63" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="63" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="159" middlecentergreen="79" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="191" middlerightgreen="95" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="191" bottomcentergreen="95" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="223" topcentergreen="223" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="223" middleleftgreen="223" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="191" middlecentergreen="95" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="79" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="79" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="63" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="63" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="31" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="31" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+  
+  <theme name="earthbox" description="Nice Green Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="95" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="63" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="63" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="95" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="63" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="63" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="159" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="159" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="95" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="95" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="95" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="95" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="159" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="159" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="95" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="95" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="159" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="159" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="159" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="191" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="191" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="223" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="223" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="191" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="159" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="159" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="255" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="63" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="63" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+  
+  <theme name="goldbox" description="Nice Yellow Gold Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="95" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="95" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="159" topcentergreen="159" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="159" middleleftgreen="159" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="95" middlerightgreen="95" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="95" bottomcentergreen="95" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="95" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="95" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="159" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="159" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="95" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="95" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="127" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="159" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="159" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="159" middlecentergreen="159" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="191" middlerightgreen="191" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="191" bottomcentergreen="191" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="223" topcentergreen="223" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="223" middleleftgreen="223" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="191" middlecentergreen="191" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="159" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="159" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="255" middlecenterblue="0" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+  
+  <theme name="magicbox" description="Nice Magenta Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="0" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="0" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="0" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="95" middlecentergreen="0" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="0" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="0" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="159" topcentergreen="0" topcenterblue="159" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="159" middleleftgreen="0" middleleftblue="159" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="95" middlerightgreen="0" middlerightblue="95" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="95" bottomcentergreen="0" bottomcenterblue="95" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="0" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="0" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="0" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="0" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="95" topcentergreen="0" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="95" middleleftgreen="0" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="127" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="0" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="0" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="159" middlecentergreen="0" middlecenterblue="159" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="191" middlerightgreen="0" middlerightblue="191" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="191" bottomcentergreen="0" bottomcenterblue="191" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="223" topcentergreen="0" topcenterblue="223" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="223" middleleftgreen="0" middleleftblue="223" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="191" middlecentergreen="0" middlecenterblue="191" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="159" middlerightgreen="0" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="159" bottomcentergreen="0" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="0" middlecenterblue="255" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="0" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="0" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+
+  <theme name="waterbox" description="Nice Blue Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="95" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOVER">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="159" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="159" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="95" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="95" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DOWN">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="HOLD">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="95" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="95" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="159" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="191" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="191" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="UP">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="223" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="223" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="191" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="159" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="159" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="EXIT">
+      <border
+			topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="0" middlecentergreen="0" middlecenterblue="255" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+  </theme>
+  
+  <theme name="xray" description="Xray Theme">
+		<event state="IDLE">
+			<border 
+			topcentersize="2" topcenterred="224" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middleleftred="162" middleleftgreen="162" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="193" middlecenterblue="0" middlecenteralpha="255" 
+			middlerightsize="2" middlerightred="31" middlerightgreen="31" middlerightblue="31" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" bottomcenterred="31" bottomcentergreen="31" bottomcenterblue="31" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>
+		</event>
+		<event state="ENTER">
+			<border 
+			topcentersize="2" topcenterred="224" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middleleftred="162" middleleftgreen="162" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="193" middlecenterblue="0" middlecenteralpha="255" 
+			middlerightsize="2" middlerightred="31" middlerightgreen="31" middlerightblue="31" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" bottomcenterred="31" bottomcentergreen="31" bottomcenterblue="31" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>
+		</event>
+		<event state="HOVER">
+			<border 
+			topcentersize="2" topcenterred="255" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middleleftred="193" middleleftgreen="193" middleleftblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="193" middlecenterblue="0" middlecenteralpha="255" 
+			middlerightsize="2" middlerightred="62" middlerightgreen="62" middlerightblue="62" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" bottomcenterred="62" bottomcentergreen="62" bottomcenterblue="62" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>		
+		</event>
+		<event state="DOWN">
+			<border 
+			topcentersize="2"  bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middlerightred="193" middlerightgreen="193" middlerightblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="193" middlecenterblue="0" middlecenteralpha="255" 
+			middlerightsize="2" middleleftred="62" middleleftgreen="62" middleleftblue="62" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" topcenterred="62" topcentergreen="62" topcenterblue="62" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>		
+		</event>
+		<event state="HOLD">
+			<border 
+			topcentersize="2"  bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middlerightred="193" middlerightgreen="193" middlerightblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="255" middlecenterblue="0" middlecenteralpha="255" 
+			middlerightsize="2" middleleftred="62" middleleftgreen="62" middleleftblue="62" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" topcenterred="62" topcentergreen="62" topcenterblue="62" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>
+		</event>
+		<event state="DRAG">
+			<border 
+			topcentersize="2"  bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middlerightred="193" middlerightgreen="193" middlerightblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="255" middlecenterblue="255" middlecenteralpha="255" 
+			middlerightsize="2" middleleftred="62" middleleftgreen="62" middleleftblue="62" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" topcenterred="62" topcentergreen="62" topcenterblue="62" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>
+		</event>	
+		<event state="UP">
+			<border 
+			topcentersize="2"  bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" 
+			middleleftsize="2" middlerightred="255" middlerightgreen="255" middlerightblue="0" middleleftalpha="255" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="255" middlecenterblue="255" middlecenteralpha="255" 
+			middlerightsize="2" middleleftred="255" middleleftgreen="255" middleleftblue="255" middlerightalpha="255" middlerightlinestyle="0" 
+			bottomcentersize="2" topcenterred="255" topcentergreen="255" topcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" 
+			/>		
+		</event>
+		<event state="EXIT">
+			<border 
+			topcentersize="2" topcenterred="193" topcentergreen="0" topcenterblue="0" topcenteralpha="193" topcenterlinestyle="0" 
+			middleleftsize="2" middleleftred="131" middleleftgreen="131" middleleftblue="0" middleleftalpha="193" middleleftlinestyle="0" 
+			middlecentersize="2" middlecenterred="0" middlecentergreen="193" middlecenterblue="0" middlecenteralpha="193" 
+			middlerightsize="2" middlerightred="1" middlerightgreen="1" middlerightblue="1" middlerightalpha="193" middlerightlinestyle="0" 
+			bottomcentersize="2" bottomcenterred="1" bottomcentergreen="1" bottomcenterblue="1" bottomcenteralpha="193" bottomcenterlinestyle="0" 
+			/>
+		</event>
+	</theme>
+  
+  <theme name="notepadder" description="Textbox Theme">
+    <event state="IDLE">
+      <border
+			topcentersize="1" topcenterred="127" topcentergreen="127" topcenterblue="127" topcenteralpha="255" topcenterlinestyle="0"
+			middleleftsize="1" middleleftred="127" middleleftgreen="127" middleleftblue="127" middleleftalpha="255" middleleftlinestyle="0"
+			middlecentersize="1" middlecenterred="255" middlecentergreen="255" middlecenterblue="255" middlecenteralpha="255"
+			middlerightsize="1" middlerightred="63" middlerightgreen="63" middlerightblue="63" middlerightalpha="255" middlerightlinestyle="0"
+			bottomcentersize="1" bottomcenterred="63" bottomcentergreen="63" bottomcenterblue="63" bottomcenteralpha="255" bottomcenterlinestyle="0"
+			/>
+    </event>
+    <event state="ENTER">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="HOVER">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="DOWN">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="HOLD">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="DRAG">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="UP">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="EXIT">
+      <border topcentersize="1" topcenterred="255" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="0"/>
+    </event>
+  </theme>
+  
+  <theme name="confetti" description="The Confetti Box">
+    <event state="IDLE">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="ENTER">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="HOVER">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="DOWN">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="HOLD">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="DRAG">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="UP">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="EXIT">
+      <border topcentersize="1" topcenterred="255" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="0"/>
+    </event>
+  </theme>
+  
+  <theme name="fade1" description="Image Based Theme Border">
+		<event state="IDLE">
+			<border
+			topleftsrc="darklua:xmlAttributeValue = '2D/BorderArt/border_ie_topleft.png'" 
+			topcentersrc="2D/BorderArt/border_ie_topcenter.png" 
+			toprightsrc="2D/BorderArt/border_ie_topright.png"
+			middleleftsrc="2D/BorderArt/border_ie_middleleft.png" 
+			middlecentersrc="2D/BorderArt/border_ie_middlecenter.png" 
+			middlerightsrc="2D/BorderArt/border_ie_middleright.png" 
+			bottomrightsrc="2D/BorderArt/border_ie_bottomright.png" 
+			bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png" 
+			bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+		</event>
+    <event state="ENTER">
+    <border
+    topleftsrc="2D/BorderArt/border_ie_topleft.png"
+    topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+    toprightsrc="2D/BorderArt/border_ie_topright.png"
+    middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+    middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+    middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+    bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+    bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+    bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>
+    
+    <event state="HOVER">
+    <border
+    topleftsrc="2D/BorderArt/border_ie_topleft.png"
+    topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+    toprightsrc="2D/BorderArt/border_ie_topright.png"
+    middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+    middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+    middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+    bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+    bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+    bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>    
+    <event state="DOWN">
+      <border
+			topleftsrc="2D/BorderArt/border_ie_topleft.png"
+			topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+			toprightsrc="2D/BorderArt/border_ie_topright.png"
+			middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+			middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+			middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+			bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+			bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+			bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>      
+    <event state="HOLD">
+      <border
+			topleftsrc="2D/BorderArt/border_ie_topleft.png"
+			topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+			toprightsrc="2D/BorderArt/border_ie_topright.png"
+			middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+			middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+			middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+			bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+			bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+			bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>
+    <event state="DRAG">
+      <border
+			topleftsrc="2D/BorderArt/border_ie_topleft.png"
+			topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+			toprightsrc="2D/BorderArt/border_ie_topright.png"
+			middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+			middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+			middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+			bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+			bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+			bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>      
+    <event state="UP">
+      <border
+			topleftsrc="2D/BorderArt/border_ie_topleft.png"
+			topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+			toprightsrc="2D/BorderArt/border_ie_topright.png"
+			middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+			middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+			middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+			bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+			bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+			bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>
+    <event state="EXIT">
+    <border
+    topleftsrc="2D/BorderArt/border_ie_topleft.png"
+    topcentersrc="2D/BorderArt/border_ie_topcenter.png"
+    toprightsrc="2D/BorderArt/border_ie_topright.png"
+    middleleftsrc="2D/BorderArt/border_ie_middleleft.png"
+    middlecentersrc="2D/BorderArt/border_ie_middlecenter.png"
+    middlerightsrc="2D/BorderArt/border_ie_middleright.png"
+    bottomrightsrc="2D/BorderArt/border_ie_bottomright.png"
+    bottomcentersrc="2D/BorderArt/border_ie_bottomcenter.png"
+    bottomleftsrc="2D/BorderArt/border_ie_bottomleft.png"
+			/>
+    </event>    
+	</theme>
+  
+  <theme name="checkboxer" description="The CHECK Box">
+    <event state="IDLE">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="ENTER">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="HOVER">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="DOWN">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="HOLD">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="DRAG">
+      <border topcentersize="1" topcenterred="255" topcentergreen="255" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="255" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="255" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="255" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="255" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="255"/>
+    </event>
+    <event state="UP">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="255" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="255" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="255" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+    <event state="EXIT">
+      <border topcentersize="1" topcenterred="255" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="255" middleleftgreen="0" middleleftblue="2" middleleftalpha="255" middleleftlinestyle="0" middlecentersize="0" middlecenterred="255" middlecentergreen="0" middlecenterblue="127" middlecenteralpha="255" middlerightsize="1" middlerightred="255" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="255" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="255" colorkeygreen="0"/>
+    </event>
+  </theme>
+
+  <!-- ICON THEMES-->
+
+  <theme name="icon_nil" description="First Icon Theme">
+    <event state="IDLE" >
+      <border/>
+    </event>
+    <event state="ENTER">
+      <border/>
+    </event>
+    <event state="HOVER">
+      <border />
+    </event>
+    <event state="DOWN">
+      <border/>
+    </event>
+    <event state="HOLD">
+      <border/>
+    </event>
+    <event state="DRAG">
+      <border/>
+    </event>
+    <event state="UP">
+      <border/>
+    </event>
+    <event state="EXIT">
+      <border/>
+    </event>
+    <event state="MOVE">
+      <border/>
+    </event>
+  </theme>
+
+  <theme name="icon_menu" description="First Icon Theme">
+    <event state="IDLE" >
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="ENTER">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="HOVER">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="DOWN">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="HOLD">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="DRAG">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="UP">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="EXIT">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="MOVE">
+      <border middlecentersrc="2D/Icon/icon_menu_arrow.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+  </theme>
+
+  <!-- SCHEMES -->
+  
+	<scheme name="ambience" description="First Audio Implementation">
+		<event state="IDLE">
+			<audio system="dgdk" type="music" loop="0" src="Audio/Music/intro.mp3"/>
+		</event>
+	</scheme>
+  
+	<scheme name="pointingFX" description="Pointer Sound FX">
+		<event state="IDLE"/>
+		<event state="ENTER">
+			<audio system="dgdk" type="sound" loop="0" src="Audio/Sound/mouseover.wav"/>
+		</event>
+		<event state="HOVER"/>
+		<event state="DOWN"/>
+		<event state="HOLD"/>
+		<event state="DRAG"/>
+		<event state="UP"/>
+		<event state="EXIT">
+			<audio system="dgdk" type="sound" loop="0" src="Audio/Sound/mouseout.wav"/>
+		</event>
+	</scheme>
+  
+	<!-- GIZMOS & DEVICES -->
+  
+  <inputdevice name="textkbdevice" type="keyboard"/>
+  
+  <!-- textkb widgets -->
+  
+  <widget name="textboxkeyboard" inputdevice="textkbdevice" value="escape" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxalphanumeric" parent="textboxkeyboard" inputdevice="textkbdevice" value="etaoinshrdlcumwfgypbvkjxqz1234567890-=[]\;',./" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="2"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					    uiGizmoLineEdit(this,0)
+				     ]]>
+      </script>
+    </event>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+    <event state="EXIT">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+  </widget>
+  
+  <widget name="textboxspace" parent="textboxkeyboard" inputdevice="textkbdevice" value="space" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+    <event state="EXIT">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,0)
+				   ]]>
+      </script>
+    </event>
+  </widget>
+  
+  <widget name="textboxenter" parent="textboxkeyboard" inputdevice="textkbdevice" value="enter" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,2)
+				 ]]>
+      </script>
+    </event>      
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxdelete" parent="textboxkeyboard" inputdevice="textkbdevice" value="delete" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+          uiGizmoLineSelectionEdit(this,3)
+				 ]]>
+      </script>
+    </event>      
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+          uiGizmoLineSelectionEdit(this,3)
+				 ]]>
+      </script>
+    </event>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxbackspace" parent="textboxkeyboard" inputdevice="textkbdevice" value="backspace" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,4)
+				 ]]>
+      </script>
+    </event>      
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineEdit(this,4)
+				 ]]>
+      </script>
+    </event>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxinsert" parent="textboxkeyboard" inputdevice="textkbdevice" value="insert" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiGizmoLineSelectionEdit(this,0)
+				 ]]>
+      </script>
+    </event>      
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxhome" parent="textboxkeyboard" inputdevice="textkbdevice" value="home" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+       <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,7)
+				 ]]>
+      </script>
+    </event>     
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxend" parent="textboxkeyboard" inputdevice="textkbdevice" value="end" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+       <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,8)
+				 ]]>
+      </script>
+    </event>     
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxpgup" parent="textboxkeyboard" inputdevice="textkbdevice" value="pageup" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,5)
+				 ]]>
+      </script>
+    </event>      
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxpgdown" parent="textboxkeyboard" inputdevice="textkbdevice" value="pagedown" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+       <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,6)
+				 ]]>
+      </script>
+    </event>     
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxup" parent="textboxkeyboard" inputdevice="textkbdevice" value="up" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+       <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,1)
+				 ]]>
+      </script>
+    </event>     
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,1)
+				 ]]>
+      </script>
+    </event>      
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxdown" parent="textboxkeyboard"  inputdevice="textkbdevice" value="down" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,2)
+				 ]]>
+      </script>
+    </event>      
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,2)
+				 ]]>
+      </script>
+    </event>      
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxleft" parent="textboxkeyboard"  inputdevice="textkbdevice" value="left" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+       <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,3)
+				 ]]>
+      </script>
+    </event>     
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,3)
+				 ]]>
+      </script>
+    </event>      
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <widget name="textboxright" parent="textboxkeyboard"  inputdevice="textkbdevice" value="right" collision="1" operate="1" transit="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <event state="IDLE" behavior="textboxkey"/>
+    <event state="ENTER">
+       <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,4)
+				 ]]>
+      </script>
+    </event>     
+    <event state="DOWN"/>
+    <event state="HOLD">
+      <script language="darklua" type="1">
+        <![CDATA[
+					  uiCaretEdit(this,4)
+				 ]]>
+      </script>
+    </event>      
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </widget>
+  
+  <!-- LOAD Application UI Components -->
+  
+  <include src="Data/UI/S3GEdui.s3ge" all="true"/>
+  
+</s3ge>

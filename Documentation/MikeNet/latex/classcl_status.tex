@@ -1,0 +1,589 @@
+\hypertarget{classcl_status}{
+\section{clStatus$<$ T $>$ Class Template Reference}
+\label{classcl_status}\index{clStatus@{clStatus}}
+}
+
+
+Uses \hyperlink{classcl_multithread}{clMultithread} to safely control access to an object.  
+
+
+
+
+{\ttfamily \#include $<$clStatus.h$>$}
+
+Inheritance diagram for clStatus$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_status}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_status_afcb4f21b2d2c87c0aace3aa7c17e3d89}{clStatus} ()
+\item 
+\hyperlink{classcl_status_ac9d45c567036928afef3a2c3a6ee4c8f}{clStatus} (size\_\-t paraThreads)
+\item 
+\hyperlink{classcl_status_a26a56deeb87c20c37b8c430bd479cf90}{clStatus} (size\_\-t paraThreads, T paraObject)
+\item 
+\hyperlink{classcl_status_a0fb3a309114ccd500d2fbacfa0e38611}{clStatus} (size\_\-t paraThreads, T $\ast$paraObject)
+\item 
+\hyperlink{classcl_status_a63ce60e9c51e81341fba83579cbe4f43}{clStatus} (const \hyperlink{classcl_status}{clStatus} \&copyMe)
+\item 
+\hyperlink{classcl_status}{clStatus} \& \hyperlink{classcl_status_aa423efa5e3d8f00fe19899c9f78d3569}{operator=} (const \hyperlink{classcl_status}{clStatus} \&copyMe)
+\item 
+void \hyperlink{classcl_status_aa0a30d0e9b2f5afeba58589ee34f22b9}{Construct} (size\_\-t paraThreads, T paraObject)
+\item 
+void \hyperlink{classcl_status_a82a13eb465683325977cf2a7e33cedd4}{Construct} (size\_\-t paraThreads, T $\ast$paraObject)
+\item 
+void \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{Construct} (size\_\-t paraThreads)
+\item 
+void \hyperlink{classcl_status_aac5f254382c3699eade1051af4bc2e1f}{SetPtr} (size\_\-t threadId, T $\ast$paraObject)
+\item 
+void \hyperlink{classcl_status_a59901ad303000699269f05efc1536295}{Set} (size\_\-t threadId, T paraObject)
+\item 
+void \hyperlink{classcl_status_adedcdb2ba1fdaea96b899b2690a6db86}{Decrease} (size\_\-t threadId, int amount)
+\item 
+void \hyperlink{classcl_status_a5ecfb11e33a1a1be6fdeb2543c95575b}{Increase} (size\_\-t threadId, int amount)
+\item 
+T \hyperlink{classcl_status_aa036ebed047d80f83aecf9e2fb9dbbef}{Get} (size\_\-t threadId) const 
+\item 
+T $\ast$ \hyperlink{classcl_status_a13318f83afd66349e81adf9400c6ff78}{GetPtr} ()
+\item 
+const T $\ast$ \hyperlink{classcl_status_aa7afb6750c10435d9775e0955b5c143b}{GetPtrConst} ()
+\item 
+void \hyperlink{classcl_status_a2a83f70a7b38d591da6208b2075ec045}{BitOn} (size\_\-t threadId, size\_\-t bitNumber)
+\item 
+void \hyperlink{classcl_status_a151e63b93eed074dd78c358b19f99572}{BitOff} (size\_\-t threadId, size\_\-t bitNumber)
+\item 
+void \hyperlink{classcl_status_a6f7c5fdd9673ab82b336bf7a8379d4c6}{BitToggle} (size\_\-t threadId, size\_\-t bitNumber)
+\item 
+bool \hyperlink{classcl_status_afa919594c191a64b127bffd8bd5a657d}{BitGet} (size\_\-t threadId, size\_\-t bitNumber) const 
+\item 
+void \hyperlink{classcl_status_ada7352893eb088c75012944f6cd4a93c}{SetPtr1} (T $\ast$paraObject)
+\item 
+void \hyperlink{classcl_status_aec084c9695f3a2cd639c3f1ea76fefa0}{Set1} (T paraObject)
+\item 
+void \hyperlink{classcl_status_ab3902e569d571f62584859fa4c6a6357}{Decrease1} (int amount)
+\item 
+void \hyperlink{classcl_status_a038c3011a81235dc9c591df2212338dc}{Increase1} (int amount)
+\item 
+T \hyperlink{classcl_status_a68195ea79d9fe8d0e8570f88d6a8bfab}{Get1} () const 
+\item 
+void \hyperlink{classcl_status_a60e366ad2efbb7ed5c1d9096787fdfac}{BitOn1} (size\_\-t bitNumber)
+\item 
+void \hyperlink{classcl_status_abd2824d601519e3cb9f8e57f0064a130}{BitOff1} (size\_\-t bitNumber)
+\item 
+void \hyperlink{classcl_status_a71bdba0c662557aaddc7df731eabdc2d}{BitToggle1} (size\_\-t bitNumber)
+\item 
+bool \hyperlink{classcl_status_aad7982377f79bf78192a8deade72f784}{BitGet1} (size\_\-t bitNumber) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_status_a522cc8b4793fffe358c6c0f3a72eed77}{
+T {\bfseries object}}
+\label{classcl_status_a522cc8b4793fffe358c6c0f3a72eed77}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class clStatus$<$ T $>$}
+
+Uses \hyperlink{classcl_multithread}{clMultithread} to safely control access to an object. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_status_afcb4f21b2d2c87c0aace3aa7c17e3d89}{
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\subsubsection[{clStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStatus}$<$ T $>$::{\bf clStatus} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_afcb4f21b2d2c87c0aace3aa7c17e3d89}
+Constructor Calls \hyperlink{classcl_multithread}{clMultithread} constructor \hypertarget{classcl_status_ac9d45c567036928afef3a2c3a6ee4c8f}{
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\subsubsection[{clStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStatus}$<$ T $>$::{\bf clStatus} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_ac9d45c567036928afef3a2c3a6ee4c8f}
+Constructor Calls \hyperlink{classcl_multithread}{clMultithread} constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \end{DoxyParams}
+\hypertarget{classcl_status_a26a56deeb87c20c37b8c430bd479cf90}{
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\subsubsection[{clStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStatus}$<$ T $>$::{\bf clStatus} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads, }
+\item[{T}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a26a56deeb87c20c37b8c430bd479cf90}
+Constructor Calls \hyperlink{classcl_multithread}{clMultithread} constructor and initializes object from reference
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \item[{\em paraObject}]reference to object to be protected by \hyperlink{classcl_status}{clStatus} \end{DoxyParams}
+\hypertarget{classcl_status_a0fb3a309114ccd500d2fbacfa0e38611}{
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\subsubsection[{clStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStatus}$<$ T $>$::{\bf clStatus} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads, }
+\item[{T $\ast$}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a0fb3a309114ccd500d2fbacfa0e38611}
+Constructor Calls \hyperlink{classcl_multithread}{clMultithread} constructor and initializes object from pointer
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \item[\mbox{\tt[in]} {\em paraObject}]pointer to object to be protected by \hyperlink{classcl_status}{clStatus}, object contents is copied \end{DoxyParams}
+\hypertarget{classcl_status_a63ce60e9c51e81341fba83579cbe4f43}{
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\index{clStatus@{clStatus}!clStatus@{clStatus}}
+\subsubsection[{clStatus}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStatus}$<$ T $>$::{\bf clStatus} (
+\begin{DoxyParamCaption}
+\item[{const {\bf clStatus}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a63ce60e9c51e81341fba83579cbe4f43}
+Copy constructor \par
+ Copies \hyperlink{classcl_status}{clStatus} object into this recently created object Calls \hyperlink{classcl_multithread}{clMultithread} copy constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_status_afa919594c191a64b127bffd8bd5a657d}{
+\index{clStatus@{clStatus}!BitGet@{BitGet}}
+\index{BitGet@{BitGet}!clStatus@{clStatus}}
+\subsubsection[{BitGet}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf clStatus}$<$ T $>$::BitGet (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_afa919594c191a64b127bffd8bd5a657d}
+Manipulate bits of object
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em bitNumber}]bit number to retrieve the value of \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if specified bit is signaled 
+\end{DoxyReturn}
+\hypertarget{classcl_status_aad7982377f79bf78192a8deade72f784}{
+\index{clStatus@{clStatus}!BitGet1@{BitGet1}}
+\index{BitGet1@{BitGet1}!clStatus@{clStatus}}
+\subsubsection[{BitGet1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf clStatus}$<$ T $>$::BitGet1 (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aad7982377f79bf78192a8deade72f784}
+Manipulate bits of object where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]bit number to retrieve the value of \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if specified bit is signaled 
+\end{DoxyReturn}
+\hypertarget{classcl_status_a151e63b93eed074dd78c358b19f99572}{
+\index{clStatus@{clStatus}!BitOff@{BitOff}}
+\index{BitOff@{BitOff}!clStatus@{clStatus}}
+\subsubsection[{BitOff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::BitOff (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a151e63b93eed074dd78c358b19f99572}
+Manipulate bits of object
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em bitNumber}]bit number to toggle off \end{DoxyParams}
+\hypertarget{classcl_status_abd2824d601519e3cb9f8e57f0064a130}{
+\index{clStatus@{clStatus}!BitOff1@{BitOff1}}
+\index{BitOff1@{BitOff1}!clStatus@{clStatus}}
+\subsubsection[{BitOff1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::BitOff1 (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_abd2824d601519e3cb9f8e57f0064a130}
+Manipulate bits of object where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]bit number to toggle off \end{DoxyParams}
+\hypertarget{classcl_status_a2a83f70a7b38d591da6208b2075ec045}{
+\index{clStatus@{clStatus}!BitOn@{BitOn}}
+\index{BitOn@{BitOn}!clStatus@{clStatus}}
+\subsubsection[{BitOn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::BitOn (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a2a83f70a7b38d591da6208b2075ec045}
+Manipulate bits of object
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em bitNumber}]bit number to toggle on \end{DoxyParams}
+\hypertarget{classcl_status_a60e366ad2efbb7ed5c1d9096787fdfac}{
+\index{clStatus@{clStatus}!BitOn1@{BitOn1}}
+\index{BitOn1@{BitOn1}!clStatus@{clStatus}}
+\subsubsection[{BitOn1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::BitOn1 (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a60e366ad2efbb7ed5c1d9096787fdfac}
+Manipulate bits of object where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]bit number to toggle on \end{DoxyParams}
+\hypertarget{classcl_status_a6f7c5fdd9673ab82b336bf7a8379d4c6}{
+\index{clStatus@{clStatus}!BitToggle@{BitToggle}}
+\index{BitToggle@{BitToggle}!clStatus@{clStatus}}
+\subsubsection[{BitToggle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::BitToggle (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a6f7c5fdd9673ab82b336bf7a8379d4c6}
+Manipulate bits of object
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em bitNumber}]bit number to flip \end{DoxyParams}
+\hypertarget{classcl_status_a71bdba0c662557aaddc7df731eabdc2d}{
+\index{clStatus@{clStatus}!BitToggle1@{BitToggle1}}
+\index{BitToggle1@{BitToggle1}!clStatus@{clStatus}}
+\subsubsection[{BitToggle1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::BitToggle1 (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a71bdba0c662557aaddc7df731eabdc2d}
+Manipulate bits of object where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if bitNumber $>$ sizeof(object) \item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]bit number to flip \end{DoxyParams}
+\hypertarget{classcl_status_aa0a30d0e9b2f5afeba58589ee34f22b9}{
+\index{clStatus@{clStatus}!Construct@{Construct}}
+\index{Construct@{Construct}!clStatus@{clStatus}}
+\subsubsection[{Construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Construct (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads, }
+\item[{T}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aa0a30d0e9b2f5afeba58589ee34f22b9}
+Constructs object ready for use \par
+ Exists in case a constructor cannot be called Calls \hyperlink{classcl_multithread}{clMultithread} Construct
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \item[{\em paraObject}]object to copy \end{DoxyParams}
+\hypertarget{classcl_status_a82a13eb465683325977cf2a7e33cedd4}{
+\index{clStatus@{clStatus}!Construct@{Construct}}
+\index{Construct@{Construct}!clStatus@{clStatus}}
+\subsubsection[{Construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Construct (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads, }
+\item[{T $\ast$}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a82a13eb465683325977cf2a7e33cedd4}
+Constructs object ready for use \par
+ Exists in case a constructor cannot be called Calls \hyperlink{classcl_multithread}{clMultithread} Construct
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \item[\mbox{\tt[in]} {\em paraObject}]pointer to object to copy, object contents is copied \end{DoxyParams}
+\hypertarget{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{
+\index{clStatus@{clStatus}!Construct@{Construct}}
+\index{Construct@{Construct}!clStatus@{clStatus}}
+\subsubsection[{Construct}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Construct (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}
+Constructs object ready for use \par
+ Calls \hyperlink{classcl_multithread}{clMultithread} Construct
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classcl_multithread_a802145078ef91eb1c59adb652989a1fd}{clMultithread}.
+
+\hypertarget{classcl_status_adedcdb2ba1fdaea96b899b2690a6db86}{
+\index{clStatus@{clStatus}!Decrease@{Decrease}}
+\index{Decrease@{Decrease}!clStatus@{clStatus}}
+\subsubsection[{Decrease}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Decrease (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{int}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_adedcdb2ba1fdaea96b899b2690a6db86}
+Safely decrease object variable by {\itshape amount\/} 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em amount}]amount to decrease object by \end{DoxyParams}
+\hypertarget{classcl_status_ab3902e569d571f62584859fa4c6a6357}{
+\index{clStatus@{clStatus}!Decrease1@{Decrease1}}
+\index{Decrease1@{Decrease1}!clStatus@{clStatus}}
+\subsubsection[{Decrease1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Decrease1 (
+\begin{DoxyParamCaption}
+\item[{int}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_ab3902e569d571f62584859fa4c6a6357}
+Safely decrease object variable by {\itshape amount\/} where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]amount to decrease object by \end{DoxyParams}
+\hypertarget{classcl_status_aa036ebed047d80f83aecf9e2fb9dbbef}{
+\index{clStatus@{clStatus}!Get@{Get}}
+\index{Get@{Get}!clStatus@{clStatus}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf clStatus}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aa036ebed047d80f83aecf9e2fb9dbbef}
+Retrieve copy of object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of object 
+\end{DoxyReturn}
+\hypertarget{classcl_status_a68195ea79d9fe8d0e8570f88d6a8bfab}{
+\index{clStatus@{clStatus}!Get1@{Get1}}
+\index{Get1@{Get1}!clStatus@{clStatus}}
+\subsubsection[{Get1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf clStatus}$<$ T $>$::Get1 (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a68195ea79d9fe8d0e8570f88d6a8bfab}
+Retrieve copy of object where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+copy of object 
+\end{DoxyReturn}
+\hypertarget{classcl_status_a13318f83afd66349e81adf9400c6ff78}{
+\index{clStatus@{clStatus}!GetPtr@{GetPtr}}
+\index{GetPtr@{GetPtr}!clStatus@{clStatus}}
+\subsubsection[{GetPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf clStatus}$<$ T $>$::GetPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a13318f83afd66349e81adf9400c6ff78}
+Retrieve pointer to object
+
+\begin{DoxyWarning}{Warning}
+object can be used unsafely if this command is used! Take care to ensure that appropriate read and write protection is used 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to object 
+\end{DoxyReturn}
+\hypertarget{classcl_status_aa7afb6750c10435d9775e0955b5c143b}{
+\index{clStatus@{clStatus}!GetPtrConst@{GetPtrConst}}
+\index{GetPtrConst@{GetPtrConst}!clStatus@{clStatus}}
+\subsubsection[{GetPtrConst}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T$\ast$ {\bf clStatus}$<$ T $>$::GetPtrConst (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aa7afb6750c10435d9775e0955b5c143b}
+Retrieve pointer to object
+
+\begin{DoxyWarning}{Warning}
+object can be used unsafely if this command is used! Take care to ensure that appropriate read and write protection is used 
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+did not overload GetPtr because visual studio compiler crashes in this case 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+pointer to object 
+\end{DoxyReturn}
+\hypertarget{classcl_status_a5ecfb11e33a1a1be6fdeb2543c95575b}{
+\index{clStatus@{clStatus}!Increase@{Increase}}
+\index{Increase@{Increase}!clStatus@{clStatus}}
+\subsubsection[{Increase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Increase (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{int}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a5ecfb11e33a1a1be6fdeb2543c95575b}
+Safely increase object variable by {\itshape amount\/} 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em amount}]amount to increase object by \end{DoxyParams}
+\hypertarget{classcl_status_a038c3011a81235dc9c591df2212338dc}{
+\index{clStatus@{clStatus}!Increase1@{Increase1}}
+\index{Increase1@{Increase1}!clStatus@{clStatus}}
+\subsubsection[{Increase1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Increase1 (
+\begin{DoxyParamCaption}
+\item[{int}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a038c3011a81235dc9c591df2212338dc}
+Safely increase object variable by {\itshape amount\/} where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]amount to increase object by \end{DoxyParams}
+\hypertarget{classcl_status_aa423efa5e3d8f00fe19899c9f78d3569}{
+\index{clStatus@{clStatus}!operator=@{operator=}}
+\index{operator=@{operator=}!clStatus@{clStatus}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStatus}\& {\bf clStatus}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clStatus}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aa423efa5e3d8f00fe19899c9f78d3569}
+Assignment operator \par
+ Copies \hyperlink{classcl_status}{clStatus} object into this object Calls \hyperlink{classcl_multithread}{clMultithread} assignment operator
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_status_a59901ad303000699269f05efc1536295}{
+\index{clStatus@{clStatus}!Set@{Set}}
+\index{Set@{Set}!clStatus@{clStatus}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Set (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{T}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_a59901ad303000699269f05efc1536295}
+Safely change object variable
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[{\em paraObject}]reference who's data will be copied into object \end{DoxyParams}
+\hypertarget{classcl_status_aec084c9695f3a2cd639c3f1ea76fefa0}{
+\index{clStatus@{clStatus}!Set1@{Set1}}
+\index{Set1@{Set1}!clStatus@{clStatus}}
+\subsubsection[{Set1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::Set1 (
+\begin{DoxyParamCaption}
+\item[{T}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aec084c9695f3a2cd639c3f1ea76fefa0}
+Safely change object variable where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraObject}]reference who's data will be copied into object \end{DoxyParams}
+\hypertarget{classcl_status_aac5f254382c3699eade1051af4bc2e1f}{
+\index{clStatus@{clStatus}!SetPtr@{SetPtr}}
+\index{SetPtr@{SetPtr}!clStatus@{clStatus}}
+\subsubsection[{SetPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::SetPtr (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId, }
+\item[{T $\ast$}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_aac5f254382c3699eade1051af4bc2e1f}
+Safely change object variable
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using this object \item[\mbox{\tt[in]} {\em paraObject}]pointer who's data will be copied into object \end{DoxyParams}
+\hypertarget{classcl_status_ada7352893eb088c75012944f6cd4a93c}{
+\index{clStatus@{clStatus}!SetPtr1@{SetPtr1}}
+\index{SetPtr1@{SetPtr1}!clStatus@{clStatus}}
+\subsubsection[{SetPtr1}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStatus}$<$ T $>$::SetPtr1 (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_status_ada7352893eb088c75012944f6cd4a93c}
+Safely change object variable where only one thread can use it
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if threads != 1 \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em paraObject}]pointer who's data will be copied into object \end{DoxyParams}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clStatus.h\end{DoxyCompactItemize}

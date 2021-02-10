@@ -1,0 +1,195 @@
+\hypertarget{classcl_input_device}{
+\section{clInputDevice Class Reference}
+\label{classcl_input_device}\index{clInputDevice@{clInputDevice}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_input_device_a24e587770b2869c0873d43b64b3b40fb}{
+void {\bfseries \_\-UnloadBuffer} (LPWAVEHDR wavehdr)}
+\label{classcl_input_device_a24e587770b2869c0873d43b64b3b40fb}
+
+\item 
+\hypertarget{classcl_input_device_a89b69a228e31b0c849996e676a87b388}{
+void {\bfseries \_\-LoadBuffer} (LPWAVEHDR wavehdr)}
+\label{classcl_input_device_a89b69a228e31b0c849996e676a87b388}
+
+\item 
+\hypertarget{classcl_input_device_a5424b7cb24221473fc624a1a29e7a7ea}{
+void {\bfseries StartInput} (size\_\-t InputDeviceID)}
+\label{classcl_input_device_a5424b7cb24221473fc624a1a29e7a7ea}
+
+\item 
+\hypertarget{classcl_input_device_a9811518b91a7002930d9f094b7ad8f29}{
+void {\bfseries FinishInput} ()}
+\label{classcl_input_device_a9811518b91a7002930d9f094b7ad8f29}
+
+\item 
+\hypertarget{classcl_input_device_a457d424c3c6d37c9bd7da1faa8ab16b2}{
+void {\bfseries UnpauseInput} ()}
+\label{classcl_input_device_a457d424c3c6d37c9bd7da1faa8ab16b2}
+
+\item 
+\hypertarget{classcl_input_device_ad74cda56965f79e4c44ca5afd1f0023f}{
+void {\bfseries PauseInput} (bool InternalUse)}
+\label{classcl_input_device_ad74cda56965f79e4c44ca5afd1f0023f}
+
+\item 
+\hypertarget{classcl_input_device_a932ef66e1ce2edcc515bb739628fcb56}{
+int {\bfseries GetUnpaused} ()}
+\label{classcl_input_device_a932ef66e1ce2edcc515bb739628fcb56}
+
+\item 
+\hypertarget{classcl_input_device_abdfc3e8273358f5e56d5597ed1034aa6}{
+int {\bfseries GetPaused} ()}
+\label{classcl_input_device_abdfc3e8273358f5e56d5597ed1034aa6}
+
+\item 
+\hypertarget{classcl_input_device_a5fc9c8758d42638ac542a470f6f8f990}{
+void {\bfseries AddPacket} (\hyperlink{class_packet}{Packet} $\ast$\hyperlink{class_packet}{Packet})}
+\label{classcl_input_device_a5fc9c8758d42638ac542a470f6f8f990}
+
+\item 
+\hypertarget{classcl_input_device_a57d074ac4d4145db43b7e49b0ba8d6f7}{
+int {\bfseries GetPacket} (\hyperlink{class_packet}{Packet} $\ast$Destination)}
+\label{classcl_input_device_a57d074ac4d4145db43b7e49b0ba8d6f7}
+
+\item 
+\hypertarget{classcl_input_device_aa72ddce4bfef1405e7a4ec7e27e47397}{
+void {\bfseries SetSmoothValues} (size\_\-t NoBuffers, size\_\-t TimePerBuffer)}
+\label{classcl_input_device_aa72ddce4bfef1405e7a4ec7e27e47397}
+
+\item 
+\hypertarget{classcl_input_device_a85bb9dac793e6dbbffd8fe8d9f18c2c2}{
+void {\bfseries SetSoundFormat} (unsigned short Channels, size\_\-t SamplesPerSec, unsigned short BitsPerSample)}
+\label{classcl_input_device_a85bb9dac793e6dbbffd8fe8d9f18c2c2}
+
+\item 
+\hypertarget{classcl_input_device_afd45228e27ed0f791ffea19536f88a3b}{
+void {\bfseries SetHighQuality} ()}
+\label{classcl_input_device_afd45228e27ed0f791ffea19536f88a3b}
+
+\item 
+\hypertarget{classcl_input_device_a1f2075861ff1d0692553977053200042}{
+void {\bfseries SetMediumQuality} ()}
+\label{classcl_input_device_a1f2075861ff1d0692553977053200042}
+
+\item 
+\hypertarget{classcl_input_device_a451a8c70f9c620a1ca737214db6fc557}{
+void {\bfseries SetLowQuality} ()}
+\label{classcl_input_device_a451a8c70f9c620a1ca737214db6fc557}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_input_device_a32b4df3ca9feddfa3af306ca7a0b6810}{
+size\_\-t {\bfseries iToBeBuffCount}}
+\label{classcl_input_device_a32b4df3ca9feddfa3af306ca7a0b6810}
+
+\item 
+\hypertarget{classcl_input_device_af6819904a482f55538b67724a858b2a3}{
+size\_\-t {\bfseries iToBeTimeLength}}
+\label{classcl_input_device_af6819904a482f55538b67724a858b2a3}
+
+\item 
+\hypertarget{classcl_input_device_a5ed2989a31fa67e0891642d125fa88ae}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ int $>$ {\bfseries iInputCount}}
+\label{classcl_input_device_a5ed2989a31fa67e0891642d125fa88ae}
+
+\item 
+\hypertarget{classcl_input_device_a22c7ad34995b25275a8a18ec65a9b926}{
+\hyperlink{structcl_sound_format}{clSoundFormat} {\bfseries Format}}
+\label{classcl_input_device_a22c7ad34995b25275a8a18ec65a9b926}
+
+\item 
+\hypertarget{classcl_input_device_a7dcd9ee21df8ca40dd7f08528ddb2ca5}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ {\bfseries Unpaused}}
+\label{classcl_input_device_a7dcd9ee21df8ca40dd7f08528ddb2ca5}
+
+\item 
+\hypertarget{classcl_input_device_afad8f967fb492306c3d10c723abe9695}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ {\bfseries Setup}}
+\label{classcl_input_device_afad8f967fb492306c3d10c723abe9695}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_input_device_a5c975a25cce552a704a3472c4b3fd3a0}{
+void {\bfseries \_\-CleanupBuff} ()}
+\label{classcl_input_device_a5c975a25cce552a704a3472c4b3fd3a0}
+
+\item 
+\hypertarget{classcl_input_device_aff7d78e76b333c7d24315b5d12f7b996}{
+void {\bfseries DefaultVariables} (bool bFirstTime)}
+\label{classcl_input_device_aff7d78e76b333c7d24315b5d12f7b996}
+
+\item 
+\hypertarget{classcl_input_device_a4bc8078608b962edbb8463533210297e}{
+void {\bfseries \_\-UpdateVars} (size\_\-t iBuffCount, size\_\-t iBuffTimeLength)}
+\label{classcl_input_device_a4bc8078608b962edbb8463533210297e}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_input_device_a184971b97547e1a6119f4af44f996393}{
+size\_\-t {\bfseries iBuffCount}}
+\label{classcl_input_device_a184971b97547e1a6119f4af44f996393}
+
+\item 
+\hypertarget{classcl_input_device_a73b47dded10fc1b9f18f9ba18de04e3e}{
+size\_\-t {\bfseries iBuffTimeLength}}
+\label{classcl_input_device_a73b47dded10fc1b9f18f9ba18de04e3e}
+
+\item 
+\hypertarget{classcl_input_device_ae5aa7e803422c5feef7f5676b64cdc6e}{
+size\_\-t {\bfseries iBuffBlocks}}
+\label{classcl_input_device_ae5aa7e803422c5feef7f5676b64cdc6e}
+
+\item 
+\hypertarget{classcl_input_device_ac01d21b959bb3a1cff21335aa8d8ebbb}{
+size\_\-t {\bfseries iBuffBytes}}
+\label{classcl_input_device_ac01d21b959bb3a1cff21335aa8d8ebbb}
+
+\item 
+\hypertarget{classcl_input_device_a503a9990e2b95596229ff531c0f19c5e}{
+HWAVEIN {\bfseries Device}}
+\label{classcl_input_device_a503a9990e2b95596229ff531c0f19c5e}
+
+\item 
+\hypertarget{classcl_input_device_aaa3a63bab8770841a28b6d9077985c67}{
+WAVEHDR $\ast$ {\bfseries Buff}}
+\label{classcl_input_device_aaa3a63bab8770841a28b6d9077985c67}
+
+\item 
+\hypertarget{classcl_input_device_ad7bbebe13d7c4f8fb9c4f690cc1c3675}{
+unsigned char $\ast$$\ast$ {\bfseries Data}}
+\label{classcl_input_device_ad7bbebe13d7c4f8fb9c4f690cc1c3675}
+
+\item 
+\hypertarget{classcl_input_device_a6d38d7387614333603e84258cc052d7f}{
+\hyperlink{class_store_queue}{StoreQueue}$<$ \hyperlink{class_packet}{Packet} $>$ {\bfseries DataStore}}
+\label{classcl_input_device_a6d38d7387614333603e84258cc052d7f}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_input_device_af4080d46cfd1b9c59f01a49068eb0c3b}{
+static const size\_\-t {\bfseries DefBuffCount} = 2}
+\label{classcl_input_device_af4080d46cfd1b9c59f01a49068eb0c3b}
+
+\item 
+\hypertarget{classcl_input_device_a13abe37b83c9d59110f00b91185c00aa}{
+static const size\_\-t {\bfseries DefBuffTimeLength} = 250}
+\label{classcl_input_device_a13abe37b83c9d59110f00b91185c00aa}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clInputDevice.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clInputDevice.cpp\end{DoxyCompactItemize}

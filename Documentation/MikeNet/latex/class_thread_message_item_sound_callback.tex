@@ -1,0 +1,62 @@
+\hypertarget{class_thread_message_item_sound_callback}{
+\section{ThreadMessageItemSoundCallback Class Reference}
+\label{class_thread_message_item_sound_callback}\index{ThreadMessageItemSoundCallback@{ThreadMessageItemSoundCallback}}
+}
+
+
+Message which deals with a completed sound operation, sent to a \hyperlink{class_thread_single_message}{ThreadSingleMessage} thread.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItemSoundCallback.h$>$}
+
+Inheritance diagram for ThreadMessageItemSoundCallback:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thread_message_item_sound_callback}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_sound_callback_a42c3368a106e6b98441277f9480e3bc8}{
+\hyperlink{class_thread_message_item_sound_callback_a42c3368a106e6b98441277f9480e3bc8}{ThreadMessageItemSoundCallback} (\hyperlink{class_sound_instance}{SoundInstance} $\ast$\hyperlink{class_thread_message_item_sound_callback_a2f14d3ff4bf20d65df2bf31678c5098e}{instance}, WAVEHDR $\ast$\hyperlink{class_thread_message_item_sound_callback_a56d59788abd5580fd7fa646d50d95d97}{buffer})}
+\label{class_thread_message_item_sound_callback_a42c3368a106e6b98441277f9480e3bc8}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_sound_callback_a9ccca7c9a0d97b471c63567ab5b3b27e}{
+virtual \hyperlink{class_thread_message_item_sound_callback_a9ccca7c9a0d97b471c63567ab5b3b27e}{$\sim$ThreadMessageItemSoundCallback} ()}
+\label{class_thread_message_item_sound_callback_a9ccca7c9a0d97b471c63567ab5b3b27e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_sound_callback_a2e38028aad4a3c7482efd0f3788e00b9}{
+void $\ast$ \hyperlink{class_thread_message_item_sound_callback_a2e38028aad4a3c7482efd0f3788e00b9}{TakeAction} ()}
+\label{class_thread_message_item_sound_callback_a2e38028aad4a3c7482efd0f3788e00b9}
+
+\begin{DoxyCompactList}\small\item\em Passes buffer to \hyperlink{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}{SoundInstance::DealWithData}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_sound_callback_a2f14d3ff4bf20d65df2bf31678c5098e}{
+\hyperlink{class_sound_instance}{SoundInstance} $\ast$ \hyperlink{class_thread_message_item_sound_callback_a2f14d3ff4bf20d65df2bf31678c5098e}{instance}}
+\label{class_thread_message_item_sound_callback_a2f14d3ff4bf20d65df2bf31678c5098e}
+
+\begin{DoxyCompactList}\small\item\em Sound instance to pass {\itshape buffer\/} to when calling \hyperlink{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}{SoundInstance::DealWithData}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_sound_callback_a56d59788abd5580fd7fa646d50d95d97}{
+WAVEHDR $\ast$ \hyperlink{class_thread_message_item_sound_callback_a56d59788abd5580fd7fa646d50d95d97}{buffer}}
+\label{class_thread_message_item_sound_callback_a56d59788abd5580fd7fa646d50d95d97}
+
+\begin{DoxyCompactList}\small\item\em Completed buffer to deal with. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message which deals with a completed sound operation, sent to a \hyperlink{class_thread_single_message}{ThreadSingleMessage} thread. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemSoundCallback.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemSoundCallback.cpp\end{DoxyCompactItemize}

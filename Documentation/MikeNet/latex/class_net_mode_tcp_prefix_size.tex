@@ -1,0 +1,251 @@
+\hypertarget{class_net_mode_tcp_prefix_size}{
+\section{NetModeTcpPrefixSize Class Reference}
+\label{class_net_mode_tcp_prefix_size}\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+}
+
+
+TCP mode where each packet has a prefix indicating the size of the remaining data.  
+
+
+
+
+{\ttfamily \#include $<$NetModeTcpPrefixSize.h$>$}
+
+Inheritance diagram for NetModeTcpPrefixSize:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_mode_tcp_prefix_size}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_mode_tcp_prefix_size_ae3b7be4877c44df177bc771ea5cae4df}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} tcpRecvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Deals with newly received data. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp_prefix_size_a110d235c719f95b3549b80ee4b91999a}{NetModeTcpPrefixSize} (size\_\-t partialPacketSize, bool \hyperlink{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}{autoResize})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_send}{NetSend} $\ast$ \hyperlink{class_net_mode_tcp_prefix_size_ab1c734f295e365dce076f68a162d169a}{GetSendObject} (const \hyperlink{class_packet}{Packet} $\ast$packet, bool block)
+\begin{DoxyCompactList}\small\item\em Generates a \hyperlink{class_net_send}{NetSend} object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp_prefix_size_ad1699c4b162ac5e0830d21a6182cf348}{NetModeTcpPrefixSize} (const \hyperlink{class_net_mode_tcp_prefix_size}{NetModeTcpPrefixSize} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp_prefix_size}{NetModeTcpPrefixSize} \& \hyperlink{class_net_mode_tcp_prefix_size_a7b77632e19baac0b859d17d67c16abf1}{operator=} (const \hyperlink{class_net_mode_tcp_prefix_size}{NetModeTcpPrefixSize} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp_prefix_size}{NetModeTcpPrefixSize} $\ast$ \hyperlink{class_net_mode_tcp_prefix_size_a9ee4ff58d9f3d88f626fc0e65025b1e3}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a deep copy of this object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{ProtocolMode} \hyperlink{class_net_mode_tcp_prefix_size_a632cf5d27fd0c77f3f9db74c2b4e2415}{GetProtocolMode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol mode in use. \item\end{DoxyCompactList}\item 
+double \hyperlink{class_net_mode_tcp_prefix_size_a9cef3f55fdd4fd5db6f6a2570c9178a5}{GetPartialPacketPercentage} () const 
+\begin{DoxyCompactList}\small\item\em Determines the amount of the oldest partial packet that has been received as a percentage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_mode_tcp_prefix_size_a9fc90706e6690880307714fbc917108f}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+TCP mode where each packet has a prefix indicating the size of the remaining data. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+A prefix of type size\_\-t is automatically added to the start of all packets being sent. Packets being received are expected to have this prefix and problems will occur if they don't. The prefix indicates the amount of additional data (not including the prefix) that is in the packet. e.g. If the prefix of size\_\-t is of value 10, then the actual packet's size is 10 + 8 which is 18.\par
+\par
+
+
+The prefix is not included as part of received packets that are passed to the user. This means that data sent will be received in exactly the same form; the prefix is dealt with behind the scenes.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_mode_tcp_prefix_size_a110d235c719f95b3549b80ee4b91999a}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{NetModeTcpPrefixSize}]{\setlength{\rightskip}{0pt plus 5cm}NetModeTcpPrefixSize::NetModeTcpPrefixSize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ partialPacketSize, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_prefix_size_a110d235c719f95b3549b80ee4b91999a}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em partialPacketSize}]Maximum amount of partial data (data that does not make up a full packet) that can be stored (in bytes). \par
+ Packets larger than this size cannot be received without memory reallocation. \item[{\em autoResize}]If true then if a packet larger than {\itshape partialPacketSize\/} is received then more memory will be allocated so that it can be received. \par
+ If false then an error will be thrown if a packet larger than {\itshape partialPacketSize\/} is received. \end{DoxyParams}
+\hypertarget{class_net_mode_tcp_prefix_size_ad1699c4b162ac5e0830d21a6182cf348}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{NetModeTcpPrefixSize}]{\setlength{\rightskip}{0pt plus 5cm}NetModeTcpPrefixSize::NetModeTcpPrefixSize (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeTcpPrefixSize} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_prefix_size_ad1699c4b162ac5e0830d21a6182cf348}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_mode_tcp_prefix_size_a9ee4ff58d9f3d88f626fc0e65025b1e3}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!Clone@{Clone}}
+\index{Clone@{Clone}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeTcpPrefixSize} $\ast$ NetModeTcpPrefixSize::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_prefix_size_a9ee4ff58d9f3d88f626fc0e65025b1e3}
+
+
+Retrieves a deep copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_tcp_a00d88706d67bfb42eeab24fe9dd0d563}{NetModeTcp}.
+
+\hypertarget{class_net_mode_tcp_prefix_size_ae3b7be4877c44df177bc771ea5cae4df}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeTcpPrefixSize::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ tcpRecvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_prefix_size_ae3b7be4877c44df177bc771ea5cae4df}
+
+
+Deals with newly received data. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em tcpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a075020ac61bedee59eb7b0dcb6754847}{NetMode}.
+
+\hypertarget{class_net_mode_tcp_prefix_size_a9cef3f55fdd4fd5db6f6a2570c9178a5}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!GetPartialPacketPercentage@{GetPartialPacketPercentage}}
+\index{GetPartialPacketPercentage@{GetPartialPacketPercentage}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{GetPartialPacketPercentage}]{\setlength{\rightskip}{0pt plus 5cm}double NetModeTcpPrefixSize::GetPartialPacketPercentage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_prefix_size_a9cef3f55fdd4fd5db6f6a2570c9178a5}
+
+
+Determines the amount of the oldest partial packet that has been received as a percentage. 
+
+\begin{DoxyReturn}{Returns}
+the percentage of the partial packet that has been received i.e. Between 0 and 100 where 50 indicates that half the packet has been received and we are now waiting for the second half to be received. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_tcp_a837a9e13611bf2158aa07df5b21d55d0}{NetModeTcp}.
+
+\hypertarget{class_net_mode_tcp_prefix_size_a632cf5d27fd0c77f3f9db74c2b4e2415}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetModeTcpPrefixSize::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_prefix_size_a632cf5d27fd0c77f3f9db74c2b4e2415}
+
+
+Retrieves the protocol mode in use. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a5fc5653d3c2a1e1b5a4306e7060b41c9}{NetMode::TCP\_\-PREFIX\_\-SIZE}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a955c73991a8f13465e509f3841071455}{NetMode}.
+
+\hypertarget{class_net_mode_tcp_prefix_size_ab1c734f295e365dce076f68a162d169a}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSend} $\ast$ NetModeTcpPrefixSize::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_prefix_size_ab1c734f295e365dce076f68a162d169a}
+
+
+Generates a \hyperlink{class_net_send}{NetSend} object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]True if sending should be synchronous, false if sending should be asynchronous.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a send object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a2a44f68cb6dccbeff90cabbdede0b54e}{NetMode}.
+
+\hypertarget{class_net_mode_tcp_prefix_size_a7b77632e19baac0b859d17d67c16abf1}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!operator=@{operator=}}
+\index{operator=@{operator=}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeTcpPrefixSize} \& NetModeTcpPrefixSize::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeTcpPrefixSize} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_prefix_size_a7b77632e19baac0b859d17d67c16abf1}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_tcp_prefix_size_a9fc90706e6690880307714fbc917108f}{
+\index{NetModeTcpPrefixSize@{NetModeTcpPrefixSize}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetModeTcpPrefixSize@{NetModeTcpPrefixSize}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeTcpPrefixSize::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_tcp_prefix_size_a9fc90706e6690880307714fbc917108f}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_tcp_ad3f11796c2db6af88ff4fc3f4e820323}{NetModeTcp}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeTcpPrefixSize.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeTcpPrefixSize.cpp\end{DoxyCompactItemize}

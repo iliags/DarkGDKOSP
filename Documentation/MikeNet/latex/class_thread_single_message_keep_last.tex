@@ -1,0 +1,270 @@
+\hypertarget{class_thread_single_message_keep_last}{
+\section{ThreadSingleMessageKeepLast Class Reference}
+\label{class_thread_single_message_keep_last}\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+}
+
+
+Message based thread where only the last message is stored and others are cleaned up.  
+
+
+
+
+{\ttfamily \#include $<$ThreadSingleMessageKeepLast.h$>$}
+
+Inheritance diagram for ThreadSingleMessageKeepLast:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_thread_single_message_keep_last}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_single_message_keep_last_ac5e6299f170af6aaf0e3e581304e9314}{ThreadSingleMessageKeepLast} (LPTHREAD\_\-START\_\-ROUTINE function, void $\ast$\hyperlink{class_thread_single_ad0aa14d604bca6bb1ba5ec5721cd859c}{parameter}, bool \hyperlink{class_thread_single_a710b7388ce616e858f776efab32fbe61}{suspended}, size\_\-t \hyperlink{class_thread_single_a43cc2e11c57294cfcf6f61ef9754f70b}{manualThreadID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_message_keep_last_a3bf4e0ee774e4fec20f3fa94d7769fcd}{
+virtual \hyperlink{class_thread_single_message_keep_last_a3bf4e0ee774e4fec20f3fa94d7769fcd}{$\sim$ThreadSingleMessageKeepLast} ()}
+\label{class_thread_single_message_keep_last_a3bf4e0ee774e4fec20f3fa94d7769fcd}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_message_keep_last_a27f81a79a325c68fb5257875e074924c}{PostMessageItem} (\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$message, \hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$$\ast$\hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{lastMessage})
+\begin{DoxyCompactList}\small\item\em Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{ThreadSingleMessage::GetMessageItem()}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_message_keep_last_a75fcc872de92fedf3dc60719d2d44761}{PostMessageItem} (\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$message)
+\begin{DoxyCompactList}\small\item\em Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{ThreadSingleMessage::GetMessageItem()}. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$ \hyperlink{class_thread_single_message_keep_last_a84eda7c55772bdba5344de44b7ae1f1f}{GetLastMessage} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the last message that was sent to the thread. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$ \hyperlink{class_thread_single_message_keep_last_a33163bff070c44bd1d7bcaa68e678698}{ExtractLastMessage} ()
+\begin{DoxyCompactList}\small\item\em Extracts the last message that was sent to the controller thread, so that it will not be automatically cleaned up. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_message_keep_last_a408f2a12f684c32cb640c3b17f74f933}{TerminateFriendly} (bool block)
+\begin{DoxyCompactList}\small\item\em Requests that the thread exits. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_thread_single_message_keep_last_adbab8972129d51d509f20d5d575a393b}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$$\ast$ \hyperlink{class_thread_single_message_keep_last_a464796f2eb757053e4c3befc9022ab48}{GetLastMessageToActOn} (\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$$\ast$customLastMessage)
+\begin{DoxyCompactList}\small\item\em Retrieves the last message that should be acted on. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_message_keep_last_a91d926ec436b2d29678d0da6bc37fef7}{CleanupLastMessage} (\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$$\ast$lastMessageToActOn)
+\begin{DoxyCompactList}\small\item\em Cleans up the message that was last sent. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$ \hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{lastMessage}
+\begin{DoxyCompactList}\small\item\em Last message that was sent to thread. \item\end{DoxyCompactList}\item 
+\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$$\ast$ \hyperlink{class_thread_single_message_keep_last_a5a6db5f1ddd6002413c1424d87ff2152}{ptrLastMessage}
+\begin{DoxyCompactList}\small\item\em Points to \hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{ThreadSingleMessageKeepLast::lastMessage} or a custom last message. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message based thread where only the last message is stored and others are cleaned up. The system that ensures messages are cleaned up correctly is rather complex. Either the thread (receiver) or the sender may clean up a message. A message is deemed to be still in use by the sender (and therefore not cleaned up by the receiver) if it is stored in \hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{ThreadSingleMessageKeepLast::lastMessage}. A message is stored here if it is the last message to be sent using \hyperlink{class_thread_single_message_keep_last_a27f81a79a325c68fb5257875e074924c}{ThreadSingleMessageKeepLast::PostMessageItem}. If two messages are sent simultaneously then the sender will attempt to cleanup the first message that was sent, but if the receiver has not finished using it then the sender will not clean it up. When the receiver finishes using the message, it will see that the sender has finished using the message, and so it will clean up the message itself. However, if the sender has not finished using the message then the receiver will not clean it up, and will let the sender do this at a later time. Note that in the event that the last message sent does not change (i.e. New messages are not sent), then it will always be deemed to be in use by the sender, so that users can poll on its status and determine whether its operation has completed. In this case the destructor of this object will clean it up.
+
+\begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_single_message_keep_last_ac5e6299f170af6aaf0e3e581304e9314}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{ThreadSingleMessageKeepLast}]{\setlength{\rightskip}{0pt plus 5cm}ThreadSingleMessageKeepLast::ThreadSingleMessageKeepLast (
+\begin{DoxyParamCaption}
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function, }
+\item[{void $\ast$}]{ parameter, }
+\item[{bool}]{ suspended, }
+\item[{size\_\-t}]{ manualThreadID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_message_keep_last_ac5e6299f170af6aaf0e3e581304e9314}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em function}]Entry point for thread. A pointer to this object will be passed as a parameter. \item[{\em parameter}]Parameter to be passed to thread. \item[{\em suspended}]If true the thread will not begin execution until \hyperlink{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}{Resume()} is used. \item[{\em manualThreadID}]Custom thread ID that can be retrieved by thread (optional, default = 0). \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_single_message_keep_last_a91d926ec436b2d29678d0da6bc37fef7}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!CleanupLastMessage@{CleanupLastMessage}}
+\index{CleanupLastMessage@{CleanupLastMessage}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{CleanupLastMessage}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLast::CleanupLastMessage (
+\begin{DoxyParamCaption}
+\item[{{\bf ThreadMessageItem} $\ast$$\ast$}]{ lastMessageToActOn}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_message_keep_last_a91d926ec436b2d29678d0da6bc37fef7}
+
+
+Cleans up the message that was last sent. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em lastMessageToActOn}]Last message to cleanup. \end{DoxyParams}
+\hypertarget{class_thread_single_message_keep_last_a33163bff070c44bd1d7bcaa68e678698}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!ExtractLastMessage@{ExtractLastMessage}}
+\index{ExtractLastMessage@{ExtractLastMessage}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{ExtractLastMessage}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ThreadMessageItem} $\ast$ ThreadSingleMessageKeepLast::ExtractLastMessage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_message_keep_last_a33163bff070c44bd1d7bcaa68e678698}
+
+
+Extracts the last message that was sent to the controller thread, so that it will not be automatically cleaned up. 
+
+\begin{DoxyReturn}{Returns}
+the last message sent. This pointer should be cleaned up using delete. Make sure to set in use by sender to false before attempting to cleanup. 
+
+NULL if no message has been sent yet. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_keep_last_a84eda7c55772bdba5344de44b7ae1f1f}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!GetLastMessage@{GetLastMessage}}
+\index{GetLastMessage@{GetLastMessage}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{GetLastMessage}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ThreadMessageItem} $\ast$ ThreadSingleMessageKeepLast::GetLastMessage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_message_keep_last_a84eda7c55772bdba5344de44b7ae1f1f}
+
+
+Retrieves the last message that was sent to the thread. 
+
+\begin{DoxyReturn}{Returns}
+the last message sent. This pointer will become invalid when the next message is sent. 
+
+NULL if no message has been sent yet. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_keep_last_a464796f2eb757053e4c3befc9022ab48}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!GetLastMessageToActOn@{GetLastMessageToActOn}}
+\index{GetLastMessageToActOn@{GetLastMessageToActOn}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{GetLastMessageToActOn}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ThreadMessageItem} $\ast$$\ast$ ThreadSingleMessageKeepLast::GetLastMessageToActOn (
+\begin{DoxyParamCaption}
+\item[{{\bf ThreadMessageItem} $\ast$$\ast$}]{ customLastMessage}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_message_keep_last_a464796f2eb757053e4c3befc9022ab48}
+
+
+Retrieves the last message that should be acted on. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em customLastMessage}]Non NULL if this local last message should be used, NULL if the global last message should be used.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the last message that should be acted on. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_keep_last_a75fcc872de92fedf3dc60719d2d44761}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!PostMessageItem@{PostMessageItem}}
+\index{PostMessageItem@{PostMessageItem}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{PostMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLast::PostMessageItem (
+\begin{DoxyParamCaption}
+\item[{{\bf ThreadMessageItem} $\ast$}]{ message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_message_keep_last_a75fcc872de92fedf3dc60719d2d44761}
+
+
+Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{ThreadSingleMessage::GetMessageItem()}. 
+
+We must have this method in order to override base class.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em message}]The message to post. \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_thread_single_message_af5816a537c68ced255d2d8331a1ab641}{ThreadSingleMessage}.
+
+\hypertarget{class_thread_single_message_keep_last_a27f81a79a325c68fb5257875e074924c}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!PostMessageItem@{PostMessageItem}}
+\index{PostMessageItem@{PostMessageItem}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{PostMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLast::PostMessageItem (
+\begin{DoxyParamCaption}
+\item[{{\bf ThreadMessageItem} $\ast$}]{ message, }
+\item[{{\bf ThreadMessageItem} $\ast$$\ast$}]{ customLastMessage}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_message_keep_last_a27f81a79a325c68fb5257875e074924c}
+
+
+Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{ThreadSingleMessage::GetMessageItem()}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em message}]The message to post. \item[\mbox{\tt[in]} {\em customLastMessage}]Non NULL if this local last message should be used, NULL if the global last message should be used. \end{DoxyParams}
+\hypertarget{class_thread_single_message_keep_last_a408f2a12f684c32cb640c3b17f74f933}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!TerminateFriendly@{TerminateFriendly}}
+\index{TerminateFriendly@{TerminateFriendly}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{TerminateFriendly}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessageKeepLast::TerminateFriendly (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_message_keep_last_a408f2a12f684c32cb640c3b17f74f933}
+
+
+Requests that the thread exits. 
+
+The thread is not guaranteed to exit as it may not be checking \hyperlink{class_thread_single_message_a44b112ebedfba5e48ca8384a2db24061}{GetTerminateRequest()}. If it is performing an operation it may also not exit straight away. Use TerminateForce to guarantee quick thread exit.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]Ignored, will always block. \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_thread_single_message_a070c58a93f28c1a2514506c55e1810fb}{ThreadSingleMessage}.
+
+\hypertarget{class_thread_single_message_keep_last_adbab8972129d51d509f20d5d575a393b}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleMessageKeepLast::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_message_keep_last_adbab8972129d51d509f20d5d575a393b}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_thread_single_message_a1bd833e3ffcd36b3cfe26648a7e74625}{ThreadSingleMessage}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!lastMessage@{lastMessage}}
+\index{lastMessage@{lastMessage}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{lastMessage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ThreadMessageItem}$\ast$ {\bf ThreadSingleMessageKeepLast::lastMessage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}
+
+
+Last message that was sent to thread. 
+
+Only the last message is stored since you would only ever need to poll on the last message. Messages are dealt with in order so by waiting for the last message to complete, you are also waiting for any previous messages to complete. \hypertarget{class_thread_single_message_keep_last_a5a6db5f1ddd6002413c1424d87ff2152}{
+\index{ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}!ptrLastMessage@{ptrLastMessage}}
+\index{ptrLastMessage@{ptrLastMessage}!ThreadSingleMessageKeepLast@{ThreadSingleMessageKeepLast}}
+\subsubsection[{ptrLastMessage}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ThreadMessageItem}$\ast$$\ast$ {\bf ThreadSingleMessageKeepLast::ptrLastMessage}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_message_keep_last_a5a6db5f1ddd6002413c1424d87ff2152}
+
+
+Points to \hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{ThreadSingleMessageKeepLast::lastMessage} or a custom last message. 
+
+Points to \hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{ThreadSingleMessageKeepLast::lastMessage} if \hyperlink{class_thread_single_message_keep_last_a27f81a79a325c68fb5257875e074924c}{ThreadSingleMessageKeepLast::PostMessageItem} is to be used by one thread only. If multiple threads may post messages simultaneously then a local last message should be stored and \hyperlink{class_thread_single_message_keep_last_ae36c3229c8538b56a7fc4740a5d58d4f}{ThreadSingleMessageKeepLast::lastMessage} should be NULL. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleMessageKeepLast.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleMessageKeepLast.cpp\end{DoxyCompactItemize}

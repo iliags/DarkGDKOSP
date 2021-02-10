@@ -1,0 +1,173 @@
+\hypertarget{class_critical_section}{
+\section{CriticalSection Class Reference}
+\label{class_critical_section}\index{CriticalSection@{CriticalSection}}
+}
+
+
+Critical section class with Enter and Leave methods.  
+
+
+
+
+{\ttfamily \#include $<$CriticalSection.h$>$}
+
+Inheritance diagram for CriticalSection:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=10.000000cm]{class_critical_section}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_critical_section_a7749425577cdeee2d32815e63d96e9ff}{
+\hyperlink{class_critical_section_a7749425577cdeee2d32815e63d96e9ff}{CriticalSection} ()}
+\label{class_critical_section_a7749425577cdeee2d32815e63d96e9ff}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_critical_section_a8f10b99e9550811be81a0ca409171bcc}{
+\hyperlink{class_critical_section_a8f10b99e9550811be81a0ca409171bcc}{$\sim$CriticalSection} ()}
+\label{class_critical_section_a8f10b99e9550811be81a0ca409171bcc}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_critical_section_a509be5342b2f07ae06e1af5d9e08b871}{Enter} () const 
+\begin{DoxyCompactList}\small\item\em Take control of critical section. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_critical_section_a6fa0931385f066492f31fc98e3fca657}{Leave} () const 
+\begin{DoxyCompactList}\small\item\em Release control of critical section. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeReadValueType $>$ }\\safeReadValueType \hyperlink{class_critical_section_a42d10fa49e137fb32555953626c2967e}{\_\-safeReadValue} (const safeReadValueType \&readMe) const 
+\begin{DoxyCompactList}\small\item\em Safely reads a value using critical section. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_critical_section_ad2e98b159232005f4fa8c8f71e3de3a5}{\_\-safeWriteValue} (safeWriteValueType \&updateMe, const safeWriteValueType \&newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical section. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_critical_section_a87e07ea1f0ba0f46ffc905516777fe64}{
+static const DWORD \hyperlink{class_critical_section_a87e07ea1f0ba0f46ffc905516777fe64}{SPIN\_\-COUNT} = 50}
+\label{class_critical_section_a87e07ea1f0ba0f46ffc905516777fe64}
+
+\begin{DoxyCompactList}\small\item\em Spin count. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_critical_section_aa5e93e9884cfa8d5304827338362c0f3}{
+CRITICAL\_\-SECTION \hyperlink{class_critical_section_aa5e93e9884cfa8d5304827338362c0f3}{CT}}
+\label{class_critical_section_aa5e93e9884cfa8d5304827338362c0f3}
+
+\begin{DoxyCompactList}\small\item\em Critical section, at the core this API's multithreaded architecture. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Critical section class with Enter and Leave methods. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Wraps around the CRITICAL\_\-SECTION object. \par
+\par
+
+
+When reading or writing to protected section, use \hyperlink{class_critical_section_a509be5342b2f07ae06e1af5d9e08b871}{Enter()} and when done use \hyperlink{class_critical_section_a6fa0931385f066492f31fc98e3fca657}{Leave()}. \par
+\par
+
+
+Remember to use \hyperlink{class_critical_section_a6fa0931385f066492f31fc98e3fca657}{Leave()} or deadlock will occur.\par
+\par
+
+
+When debug is enabled (\_\-DEBUG is defined, done automatically by visual studio) additional checks will be performed to help identify when:
+\begin{DoxyItemize}
+\item A thread uses \hyperlink{class_critical_section_a6fa0931385f066492f31fc98e3fca657}{Leave()} without first taking control using \hyperlink{class_critical_section_a509be5342b2f07ae06e1af5d9e08b871}{Enter()}.
+\item A CriticalSeciton object is cleaned up while in use by another thread. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\hypertarget{class_critical_section_a42d10fa49e137fb32555953626c2967e}{
+\index{CriticalSection@{CriticalSection}!\_\-safeReadValue@{\_\-safeReadValue}}
+\index{\_\-safeReadValue@{\_\-safeReadValue}!CriticalSection@{CriticalSection}}
+\subsubsection[{\_\-safeReadValue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeReadValueType $>$ safeReadValueType CriticalSection::\_\-safeReadValue (
+\begin{DoxyParamCaption}
+\item[{const safeReadValueType \&}]{ readMe}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_critical_section_a42d10fa49e137fb32555953626c2967e}
+
+
+Safely reads a value using critical section. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em readMe}]Reference to value to read. \end{DoxyParams}
+\hypertarget{class_critical_section_ad2e98b159232005f4fa8c8f71e3de3a5}{
+\index{CriticalSection@{CriticalSection}!\_\-safeWriteValue@{\_\-safeWriteValue}}
+\index{\_\-safeWriteValue@{\_\-safeWriteValue}!CriticalSection@{CriticalSection}}
+\subsubsection[{\_\-safeWriteValue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void CriticalSection::\_\-safeWriteValue (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType \&}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_critical_section_ad2e98b159232005f4fa8c8f71e3de3a5}
+
+
+Safely writes a value using critical section. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em updateMe}]Reference to object to write to. \item[{\em newValue}]Reference to value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_critical_section_a509be5342b2f07ae06e1af5d9e08b871}{
+\index{CriticalSection@{CriticalSection}!Enter@{Enter}}
+\index{Enter@{Enter}!CriticalSection@{CriticalSection}}
+\subsubsection[{Enter}]{\setlength{\rightskip}{0pt plus 5cm}void CriticalSection::Enter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_critical_section_a509be5342b2f07ae06e1af5d9e08b871}
+
+
+Take control of critical section. 
+
+Other threads attempting to take control must wait for any controlling thread to release control. \hypertarget{class_critical_section_a6fa0931385f066492f31fc98e3fca657}{
+\index{CriticalSection@{CriticalSection}!Leave@{Leave}}
+\index{Leave@{Leave}!CriticalSection@{CriticalSection}}
+\subsubsection[{Leave}]{\setlength{\rightskip}{0pt plus 5cm}void CriticalSection::Leave (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_critical_section_a6fa0931385f066492f31fc98e3fca657}
+
+
+Release control of critical section. 
+
+Other threads attempting to take control must wait for any controlling thread to release control. \hypertarget{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{
+\index{CriticalSection@{CriticalSection}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!CriticalSection@{CriticalSection}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool CriticalSection::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}
+
+
+Tests class. 
+
+Primarily intended for performance comparisons.
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_completion_port_a4e6534add3fe77949094d7d273a5b9f6}{CompletionPort}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ T $>$}, \hyperlink{class_counter_aed38c57480625c16c668fdb4e3021ef4}{Counter}, \hyperlink{class_net_address_a573167584833614dda3422f3e5b19767}{NetAddress}, \hyperlink{class_net_send_ab93dd370f3117ed82eec3993ba0be71d}{NetSend}, \hyperlink{class_net_send_postfix_ab2b63c00d16b830341d94a82a07c60f9}{NetSendPostfix}, \hyperlink{class_net_send_prefix_affd38aa5e686b11b8dc172500068cbd0}{NetSendPrefix}, \hyperlink{class_net_send_raw_a642a07ea5d7f20e9f67e3cf16018742e}{NetSendRaw}, \hyperlink{class_store_queue_a5d0a9920f0587c359767e449aa580916}{StoreQueue$<$ T $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ T $>$}, \hyperlink{class_thread_single_group_a26f35ba9c432a49de2ca2e446add6888}{ThreadSingleGroup}, \hyperlink{class_timer_ace0d8b39951732f96327cc3e06711c38}{Timer}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ NetModeUdp $\ast$ $>$}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ NetSocket::RecvFunc $>$}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ size\_\-t $>$}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ NetUtility::ConnectionStatus $>$}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ ErrorReport $\ast$ $>$}, \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{ConcurrentObject$<$ bool $>$}, \hyperlink{class_store_queue_a5d0a9920f0587c359767e449aa580916}{StoreQueue$<$ size\_\-t $>$}, \hyperlink{class_store_queue_a5d0a9920f0587c359767e449aa580916}{StoreQueue$<$ Packet $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ ThreadSingleMessageKeepLast $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ StoreVector$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ NetSend $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ UpnpNatPortMapAction $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ NetAddress $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ Packet $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ ThreadSingle $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ ThreadMessageItem $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ SoundInstanceOutput $\ast$ $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ NetServerClient $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ StoreQueue$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ NetInstanceContainer $>$}, \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ WAVEHDR $>$}, and \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ ConcurrentObject$<$ size\_\-t $>$ $>$}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/CriticalSection.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/CriticalSection.cpp\end{DoxyCompactItemize}

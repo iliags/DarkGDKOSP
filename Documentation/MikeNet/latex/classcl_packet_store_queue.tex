@@ -1,0 +1,99 @@
+\hypertarget{classcl_packet_store_queue}{
+\section{clPacketStoreQueue Class Reference}
+\label{classcl_packet_store_queue}\index{clPacketStoreQueue@{clPacketStoreQueue}}
+}
+
+
+{\ttfamily \#include $<$clPacketStoreQueue.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_packet_store_queue_a06aa8e6dacc2183cb37f163f7f1a8a31}{Clear} ()
+\item 
+\hyperlink{classcl_packet_store_queue_a4616668741a61b8c334c27abdea4fb15}{clPacketStoreQueue} ()
+\item 
+\hyperlink{classcl_packet_store_queue_a5508ed725e4d75b8c4292d30eccd00b8}{$\sim$clPacketStoreQueue} ()
+\item 
+size\_\-t \hyperlink{classcl_packet_store_queue_ac5758eef3544e8c4b8d4b4344cce5f2d}{Get} (\hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+void \hyperlink{classcl_packet_store_queue_afb416bfa29b0cc2f85beb068480d74ea}{Add} (\hyperlink{classcl_packet}{clPacket} $\ast$packet)
+\item 
+size\_\-t \hyperlink{classcl_packet_store_queue_a022743398c3c8ad4bf4f48c7ce5e0261}{Size} () const 
+\item 
+\hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_packet_store_queue_aa108b947f9a6016c1034cb2b9a5ba27a}{Front} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_packet_store_queue_acc70b6a2b972203c992a4523050e7ab3}{
+queue$<$ \hyperlink{classcl_packet}{clPacket} $\ast$ $>$ {\bfseries data}}
+\label{classcl_packet_store_queue_acc70b6a2b972203c992a4523050e7ab3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class manages access to a queue of \hyperlink{classcl_packet}{clPacket} objects, all access is controlled by a single critical section making it multithread safe 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_packet_store_queue_a4616668741a61b8c334c27abdea4fb15}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!clPacketStoreQueue@{clPacketStoreQueue}}
+\index{clPacketStoreQueue@{clPacketStoreQueue}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{clPacketStoreQueue}]{\setlength{\rightskip}{0pt plus 5cm}clPacketStoreQueue::clPacketStoreQueue ()}}
+\label{classcl_packet_store_queue_a4616668741a61b8c334c27abdea4fb15}
+Constructor Does nothing \hypertarget{classcl_packet_store_queue_a5508ed725e4d75b8c4292d30eccd00b8}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!$\sim$clPacketStoreQueue@{$\sim$clPacketStoreQueue}}
+\index{$\sim$clPacketStoreQueue@{$\sim$clPacketStoreQueue}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{$\sim$clPacketStoreQueue}]{\setlength{\rightskip}{0pt plus 5cm}clPacketStoreQueue::$\sim$clPacketStoreQueue ()}}
+\label{classcl_packet_store_queue_a5508ed725e4d75b8c4292d30eccd00b8}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_packet_store_queue_afb416bfa29b0cc2f85beb068480d74ea}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!Add@{Add}}
+\index{Add@{Add}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void clPacketStoreQueue::Add ({\bf clPacket} $\ast$ {\em packet})}}
+\label{classcl_packet_store_queue_afb416bfa29b0cc2f85beb068480d74ea}
+Adds a packet to the queue 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to add to queue \end{DoxyParams}
+\hypertarget{classcl_packet_store_queue_a06aa8e6dacc2183cb37f163f7f1a8a31}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!Clear@{Clear}}
+\index{Clear@{Clear}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void clPacketStoreQueue::Clear ()}}
+\label{classcl_packet_store_queue_a06aa8e6dacc2183cb37f163f7f1a8a31}
+Clear the contents of the queue \hypertarget{classcl_packet_store_queue_aa108b947f9a6016c1034cb2b9a5ba27a}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!Front@{Front}}
+\index{Front@{Front}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} $\ast$ clPacketStoreQueue::Front () const}}
+\label{classcl_packet_store_queue_aa108b947f9a6016c1034cb2b9a5ba27a}
+Gets a packet from the queue without removing it \begin{DoxyReturn}{Returns}
+pointer to first packet in queue 
+\end{DoxyReturn}
+\hypertarget{classcl_packet_store_queue_ac5758eef3544e8c4b8d4b4344cce5f2d}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!Get@{Get}}
+\index{Get@{Get}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPacketStoreQueue::Get ({\bf clPacket} $\ast$ {\em destination})}}
+\label{classcl_packet_store_queue_ac5758eef3544e8c4b8d4b4344cce5f2d}
+Remove a packet from the queue and copy it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]pointer to packet which data should be copied into \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\itshape destination\/} must be a \hyperlink{classcl_packet}{clPacket} object 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+number of objects in queue before method was called 
+\end{DoxyReturn}
+\hypertarget{classcl_packet_store_queue_a022743398c3c8ad4bf4f48c7ce5e0261}{
+\index{clPacketStoreQueue@{clPacketStoreQueue}!Size@{Size}}
+\index{Size@{Size}!clPacketStoreQueue@{clPacketStoreQueue}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPacketStoreQueue::Size () const}}
+\label{classcl_packet_store_queue_a022743398c3c8ad4bf4f48c7ce5e0261}
+\begin{DoxyReturn}{Returns}
+number of objects in the queue 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPacketStoreQueue.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPacketStoreQueue.cpp\end{DoxyCompactItemize}

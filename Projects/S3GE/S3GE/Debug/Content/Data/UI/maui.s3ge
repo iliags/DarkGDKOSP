@@ -1,0 +1,269 @@
+<s3ge version="1.0">
+  
+  <!-- The MAUI Main File by TechLord - First S3GE data file required to set up S3GE.  -->
+  
+  <script language="darklua" type="1">
+    <![CDATA[
+      uiOutput("Powered by "..sysConfigPropertyGet('Title'))
+		-- MAUI MESSAGES SEE maui.h for #defines
+      -- Message Parameter Types
+      MAUI_MSG_TYPE_VALUE= 0
+      MAUI_MSG_TYPE_PROPERTY= 1
+      MAUI_MSG_TYPE_VARIABLE= 2
+      MAUI_MSG_TYPE_SCRIPT= 3    
+    
+      -- Message Receiver Types
+      MAUI_MSG_TO_PARENT= 2
+      MAUI_MSG_TO_SELF= 1
+      MAUI_MSG_TO_SIBLINGS= 4
+      MAUI_MSG_TO_CHILDREN= 8
+      MAUI_MSG_TO_ALL= 10
+      
+      --Message Values
+      MAUI_MSG_QUIT= -1
+      MAUI_MSG_GIZMO_CLOSE= 1 
+      MAUI_MSG_GIZMO_OPEN= 2
+      MAUI_MSG_GIZMO_HIDE= 3
+      MAUI_MSG_GIZMO_SHOW= 4
+      MAUI_MSG_GIZMO_MOVE= 5
+      MAUI_MSG_GIZMO_SIZE= 6
+      MAUI_MSG_GIZMO_ROTATE= 7
+      MAUI_MSG_GIZMO_DISABLE= 8
+      MAUI_MSG_GIZMO_ENABLE= 9
+      MAUI_MSG_GIZMO_TRASH= 10
+      MAUI_MSG_GIZMO_EXECUTE= 11
+      MAUI_MSG_GIZMO_COLLISION_DISABLE= 12
+      MAUI_MSG_GIZMO_COLLISION_ENABLE= 13
+      MAUI_MSG_GIZMO_MUTE= 14
+      MAUI_MSG_GIZMO_AUDIBLE= 15
+      MAUI_MSG_GIZMO_MOVE_X=	16
+      MAUI_MSG_GIZMO_MOVE_Y=	17
+      MAUI_MSG_GIZMO_MOVE_Z=	18
+      
+      --TournamentBlitz
+      TBEMS_TABLE_GAME= 1
+      TBEMS_TABLE_EVENT=  2
+      TBEMS_TABLE_PLAYER= 3
+    ]]>
+  </script>
+ 
+	<!-- STATES -->
+	<state name="IDLE"/> <!-- default state (required first) -->
+  
+	<!-- BEHAVIORS -->
+	<behavior description="label">
+		<event state="IDLE">
+			<script language="darklua" type="1">
+				<![CDATA[
+				uiGizmoNextEventState = IDLE
+				]]>
+			</script>
+		</event>
+	</behavior>
+    
+  <!-- TRANSITIONS -->
+	<transition description="Default Transition"/>
+	
+	<!-- STYLES -->
+  <font name="arial0" face="Arial" size="12" red="255" green="255" blue="255" alpha="255"/>
+  
+  <style description="Default Style">
+		<event state="IDLE">
+			<font name="arial0"/>
+		</event>
+	</style>
+  
+	<!-- THEMES -->
+  <theme description="Default">
+    <event state="IDLE">
+      <border topcentersize="1" topcenterred="0" topcentergreen="0" topcenterblue="0" topcenteralpha="255" topcenterlinestyle="0" middleleftsize="1" middleleftred="0" middleleftgreen="0" middleleftblue="2" middleleftalpha="0" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="0" middlerightsize="1" middlerightred="0" middlerightgreen="0" middlerightblue="0" middlerightalpha="255" middlerightlinestyle="0" bottomcentersize="1" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="255" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="255"/>
+    </event>
+  </theme>
+  
+  <theme name="nil" description="nothingness">
+    <event state="IDLE">
+      <border topcentersize="0" topcenterred="0" topcentergreen="0" topcenterblue="0" topcenteralpha="0" topcenterlinestyle="0" middleleftsize="0" middleleftred="0" middleleftgreen="0" middleleftblue="0" middleleftalpha="0" middleleftlinestyle="0" middlecentersize="0" middlecenterred="0" middlecentergreen="0" middlecenterblue="0" middlecenteralpha="0" middlerightsize="0" middlerightred="0" middlerightgreen="0" middlerightblue="0" middlerightalpha="0" middlerightlinestyle="0" bottomcentersize="0" bottomcenterred="0" bottomcentergreen="0" bottomcenterblue="0" bottomcenteralpha="0" bottomcenterlinestyle="0" colorkeyred="0" colorkeygreen="0"/>
+    </event>
+  </theme>
+  
+  <!-- SCHEMES -->
+	<scheme description="Default Scheme"/>
+  
+  <!-- GIZMOS & DEVICES -->
+  <inputdevice name="pointerdevice" type="mouse"/>
+  <inputdevice name="kbdevice" type="keyboard"/>
+  
+  <!-- Base Canvas, Base Gizmo, Pointer, Caret (Required First) -->
+  <canvas description="Base Canvas" camera="0" fov="90" nearrange="1" farrange="3000" width="screen" height="screen" zoomfactorx="1.0" zoomfactory="1.0" backdrop="false" backdropcolorred="67" backdropcolorgreen="67" backdropcolorblue="69" base="true">
+    <orientate x="0" y="0" z="0" width="screen" height="screen">
+      <physics gravityx="0" gravityy="10" timestep="60" iterations="10" allowsleep="true"/>
+    </orientate>
+  </canvas>
+  
+  <gizmo description="Base Gizmo" visible="0" collision="1" base="true">
+    <orientate x="0" y="0" z="0" width="screen" height="screen">
+      <physics friction="0.0" density="0.0" restitution="0.0" noresponse="true"/>
+    </orientate>
+  </gizmo>
+  
+  <gizmo name="point" description="Mouse Controlled Gizmo" inputdevice="pointerdevice" pointer="true" collision="1" operate="1" transit="1" active="1" visible="1">
+    <orientate x="0" y="0" z="0" width="36" height="48">
+      <physics type="mousejoint"/>
+    </orientate>
+    <event state="IDLE" theme="nil" src="2D/Pointer/pointer_1_idle.png"/>
+  </gizmo>
+  
+  <gizmo name="caret" description="Textbox Caret" caret="true" collision="1" operate="1" transit="1" active="1" visible="1" >
+    <variable name="flashmode" value="0"/>
+    <orientate x="1020" y="750" width="2" height="18">
+      <physics friction="0.0" density="0.0" restitution="0.0" noresponse="true"/>
+    </orientate>
+    <event state="IDLE">
+      <script language="darklua" type="1">
+        <![CDATA[
+	  			 	uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+		  			uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+            uiCaretFlashmode = uiGizmoVariableGet(this,'flashmode')
+            
+            --fade in
+            if uiCaretFlashmode == '1' and uiGizmoSpriteObjectAlpha < 255 then
+              uiGizmoSpriteObjectAlpha = uiGizmoSpriteObjectAlpha + 15
+              if uiGizmoSpriteObjectAlpha >= 255 then 
+                uiGizmoSpriteObjectAlpha = 255
+                uiGizmoVariableSet(this,'flashmode','0')
+              end
+            
+            --fade out              
+            elseif uiCaretFlashmode == '0' and uiGizmoSpriteObjectAlpha > 0 then
+              uiGizmoSpriteObjectAlpha = uiGizmoSpriteObjectAlpha - 15
+              if uiGizmoSpriteObjectAlpha <= 0 then 
+                uiGizmoSpriteObjectAlpha = 0
+                uiGizmoVariableSet(this,'flashmode','1')
+              end
+             
+            end
+					  
+            dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha)
+   			   ]]>
+      </script>
+    </event>
+  </gizmo>
+  <!-- END Base Canvas & Gizmo, Pointer -->
+  
+  <gizmo name="splashscreen" description="Splash Screen" active="1" visible="1">
+    <variable name="fadeout" value="0"/>
+    <orientate x="0" y="0" z="0" width="screen" height="screen"><physics noresponse="true"/></orientate>
+    <event state="IDLE" halign="darklua: xmlAttributeValue=10" valign="2" src="darklua: xmlAttributeValue=splashscreenID">
+      <script language="darklua" type="1">
+        <![CDATA[
+            uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+		  			uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+            uiSplashScreenFadeOut = uiGizmoVariableGet(this,'fadeout')
+            
+            if uiSplashScreenFadeOut ~= '0' then
+              --fade out
+              if uiGizmoSpriteObjectAlpha > 0 then 
+  					    dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha - 5)
+              else
+                MSG = uiGizmoMessageCreate()
+                uiGizmoMessageInsert(MSG, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_DISABLE, 0)
+                uiGizmoMessageSend(MSG,'splashscreen',MAUI_MSG_TO_SELF,0)
+                uiGizmoMessageDestroy(MSG)
+              end
+            end
+            
+   			   ]]>
+      </script>
+    </event>
+  </gizmo>
+  
+  <gizmo name="credits" description="Credits" operate="1" transit="1" active="1" visible="1">
+    <variable name="showcount" value="125"/>
+    <variable name="showcounter" value="darklua: xmlAttributeValue = uiGizmoVariableGet(uiGizmoGet('credits'),'showcount')"/>
+    <variable name="credit" value="0"/>
+    <variable name="1"  value="Team: Techlord, Haliop, Matty Halewood, chunkschunks, Faker1089, M.Pryor"/>    
+    <variable name="2"  value="Media: S3GE Loco Logo - Haliop"/>
+    <variable name="3"  value="Media: S3GE Opening Logo - RedEye"/>
+    <variable name="4"  value="Engine DX Wrapper: DarkGDK - TheGameCreators.com"/>
+    <variable name="5"  value="Engine Scripting: DarkLUA - Techlord"/>
+    <variable name="6"  value="Engine Imaging: Trixie - haliop & Techlord"/>
+    <variable name="7"  value="Engine Particle Sys: Illudium - Techlord"/>
+    <variable name="8"  value="Engine Physics(3D): Fulcrum  - Matty Halewood"/>
+    <variable name="9"  value="Engine Physics(2D): DarkBox2D (Box2D) - Techlord"/>
+    <variable name="10" value="Engine AI: QuantumPath (Recaster Nav Mesh) - Marlow"/>
+    <variable name="11" value="Engine UI: MAUI GUI - TechLord"/>
+    <variable name="12" value="Engine Network: DarkNet - Mike Pryor, DarkNet Extension - Techlord"/>
+    <variable name="13" value="Engine Audio: oawgdk - chunkschunks"/>
+    <variable name="14" value="Engine UI: X360 Controller - Faker1089"/>
+    <variable name="15" value="Engine UI: Wii Controller - chunkschunks"/>
+    <variable name="16" value="Engine Diagnostics: Techlord"/>    
+    
+    <orientate x="1" y="darklua: xmlAttributeValue=dbScreenHeightGet() - 21" width="darklua: xmlAttributeValue=dbScreenWidthGet() / 1.5" height="20"><physics friction="0.0" density="0.0" restitution="0.0" noresponse="true"/></orientate>
+    <event state="IDLE" theme="nil" caption="Credits:" xalign="left" yalign="center">
+      <script language="darklua" type="1">
+        <![CDATA[
+            -- fade in/out Project Contributor Names
+            
+            uiGizmoSpriteObject = uiGizmoPropertyGet(this,'SpriteObject')
+		  			uiGizmoSpriteObjectAlpha = dbSpriteAlphaGet(uiGizmoSpriteObject)
+            uiSplashScreenShowCount = uiGizmoVariableGet(this,'showcount')
+            uiSplashScreenShowCounter = uiGizmoVariableGet(this,'showcounter') - 1
+            uiGizmoVariableSet(this,'showcounter',uiSplashScreenShowCounter)            
+             
+            if uiSplashScreenShowCounter > (uiSplashScreenShowCount * .75) then
+            
+               --fade in
+              uiGizmoSpriteObjectAlpha = uiGizmoSpriteObjectAlpha + 15
+              if uiGizmoSpriteObjectAlpha > 255 then uiGizmoSpriteObjectAlpha = 255 end                
+              dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha + 15)
+              
+            elseif uiSplashScreenShowCounter > (uiSplashScreenShowCount * .25) then 
+              
+              --display
+              
+            elseif uiSplashScreenShowCounter > (uiSplashScreenShowCount * .10) then 
+              
+              --fade out
+              uiGizmoSpriteObjectAlpha = uiGizmoSpriteObjectAlpha - 30
+              if uiGizmoSpriteObjectAlpha < 0 then uiGizmoSpriteObjectAlpha = 0 end 
+              dbSpriteAlphaSet(uiGizmoSpriteObject, uiGizmoSpriteObjectAlpha)
+              
+            elseif uiSplashScreenShowCounter == 0 then                
+              
+              --next credit
+              credit = uiGizmoVariableGet(this,'credit') + 1
+              if credit > 16 then credit = 1 end
+              uiGizmoVariableSet(this,'credit',credit)               
+              uiGizmoVariableSet(this,'showcounter',uiSplashScreenShowCount)
+              uiGizmoPropertySet(this,'Caption', uiGizmoVariableGet(this,credit))
+              uiGizmoCapture(this,IDLE)
+                
+            end            
+   			   ]]>
+      </script>
+    </event>      
+  </gizmo>
+  
+  <include src="Data/UI/gui.s3ge" all="true"/>
+   
+   <!-- 
+  <script language="darklua" type="1">
+    <![CDATA[	
+		-- keep all maui related function and tables under pseudo maui namespace
+    msg = uiGizmoMessageCreate()
+    uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_DISABLE, 0)
+    uiGizmoMessageSend(msg,'credits',MAUI_MSG_TO_SELF,0)
+    uiGizmoMessageDestroy(msg)
+    
+    msg = uiGizmoMessageCreate()
+    uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'fadeout', '1' )
+    uiGizmoMessageSend(msg,'splashscreen',MAUI_MSG_TO_SELF,0)
+    uiGizmoMessageDestroy(msg)
+    
+    dbMouseHide()
+    
+    uiOutput("Done. Create FUN!!!")
+    ]]>
+  </script>
+   -->
+</s3ge>

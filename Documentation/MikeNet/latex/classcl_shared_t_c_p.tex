@@ -1,0 +1,398 @@
+\hypertarget{classcl_shared_t_c_p}{
+\section{clSharedTCP Class Reference}
+\label{classcl_shared_t_c_p}\index{clSharedTCP@{clSharedTCP}}
+}
+
+
+TCP protocol class, provides a base for extensions to the protocol by TCP mode classes.  
+
+
+
+
+{\ttfamily \#include $<$clSharedTCP.h$>$}
+
+Inheritance diagram for clSharedTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_shared_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_shared_t_c_p_a04c910cf085fe90c1c068e4ab168a7e5}{SetAutoResize} (bool \hyperlink{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}{autoResize})
+\item 
+bool \hyperlink{classcl_shared_t_c_p_abf8a8bf5fce68d35e34dddec105c8da1}{GetAutoResize} () const 
+\item 
+\hyperlink{classcl_shared_t_c_p_a5f170f8a147323bb770e170db6789595}{clSharedTCP} (size\_\-t partialPacketSize, bool \hyperlink{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}{autoResize})
+\item 
+virtual \hyperlink{classcl_shared_t_c_p_a3ace87e7d786ba6cb34dad74f333f5b1}{$\sim$clSharedTCP} ()
+\item 
+\hyperlink{classcl_shared_t_c_p_adabdc1a14f20fcfca8624b63f4403b87}{clSharedTCP} (const \hyperlink{classcl_shared_t_c_p}{clSharedTCP} \&)
+\item 
+\hyperlink{classcl_shared_t_c_p}{clSharedTCP} \& \hyperlink{classcl_shared_t_c_p_a4371884780b5f99b014b94f273b54360}{operator=} (const \hyperlink{classcl_shared_t_c_p}{clSharedTCP} \&)
+\item 
+const \hyperlink{classcl_store_queue}{clStoreQueue}$<$ \hyperlink{classcl_packet}{clPacket} $>$ $\ast$ \hyperlink{classcl_shared_t_c_p_a3879fd59719106ee3b75fee47a0e289f}{GetPacketStore} () const 
+\item 
+size\_\-t \hyperlink{classcl_shared_t_c_p_abf78a0f2aec1c39029fb1535ed15feca}{GetPartialPacketCurrentSize} () const 
+\item 
+size\_\-t \hyperlink{classcl_shared_t_c_p_a4a2620ffef0e145c3200acf88c4732aa}{GetPacketAmount} () const 
+\item 
+virtual double \hyperlink{classcl_shared_t_c_p_ad0781613810b204660f212d37b8c1ce2}{GetPartialPacketPercentage} () const =0
+\item 
+virtual \hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$ \hyperlink{classcl_shared_t_c_p_a6fa0b7a67bec9b647a7318a093385c72}{Clone} () const =0
+\item 
+size\_\-t \hyperlink{classcl_shared_t_c_p_a6122b8fd7b395f2b02e96cace26c6857}{GetMaxPacketSize} () const 
+\item 
+void \hyperlink{classcl_shared_t_c_p_a481e6add10e776f8a6394001f0b7ec34}{ChangeMaxPacketSize} (size\_\-t newSize)
+\item 
+void \hyperlink{classcl_shared_t_c_p_a199283f27a898d233746b4db6f72d6c3}{SetMaxPacketSize} (size\_\-t newSize)
+\item 
+void \hyperlink{classcl_shared_t_c_p_a6ba0e18bedcdad6989b8b583cd1479c9}{ClearPacketStore} ()
+\item 
+void \hyperlink{classcl_shared_t_c_p_a2d035977f40d63299b84c5ce1fc0c5d7}{ClearData} ()
+\item 
+void \hyperlink{classcl_shared_t_c_p_aa8cbe170e5162d5047947bd7ef231838}{PacketDone} (size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} $\ast$completePacket, void($\ast$tcpRecvFunc)(size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} \&packet))
+\item 
+size\_\-t \hyperlink{classcl_shared_t_c_p_aaecebc7d2783bef4309d75aaa22ba8e0}{GetPacketFromStore} (\hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_packet}{clPacket} \hyperlink{classcl_shared_t_c_p_a5bff66a18a60aa4260c87d1e3dbf9658}{partialPacket}
+\item 
+\hyperlink{classcl_status}{clStatus}$<$ bool $>$ \hyperlink{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}{autoResize}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_shared_t_c_p_ae07aa43b5b0ca2ae3947bfc90f17c2e6}{\_\-Copy} (const \hyperlink{classcl_shared_t_c_p}{clSharedTCP} \&copyMe)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classcl_shared_t_c_p_a2f584a19a4ba7d93b3a2e3467840c674}{constructed}
+\item 
+\hyperlink{classcl_store_queue}{clStoreQueue}$<$ \hyperlink{classcl_packet}{clPacket} $>$ \hyperlink{classcl_shared_t_c_p_a4f9fa934fb8217556dde5f5da38d76af}{packetStore}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+TCP protocol class, provides a base for extensions to the protocol by TCP mode classes. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Should be inherited by TCP mode objects.\par
+\par
+
+
+This object describes how received packets should be stored. First any data received is put into {\ttfamily partialPacket}. Afterwards if any complete packets exist in {\ttfamily partialPacket}, they are moved to {\ttfamily packetStore}. Classes derived from this decide how exactly this process is implemented. \par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_shared_t_c_p_a5f170f8a147323bb770e170db6789595}{
+\index{clSharedTCP@{clSharedTCP}!clSharedTCP@{clSharedTCP}}
+\index{clSharedTCP@{clSharedTCP}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{clSharedTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSharedTCP::clSharedTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ partialPacketSize, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a5f170f8a147323bb770e170db6789595}
+Constructor Calls {\ttfamily Construct} which sets up the object ready for use
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em partialPacketSize}]maximum amount of partial data (data that does not make up a full packet) that can be stored (in bytes). \par
+ Packets larger than this size cannot be received without memory reallocation. \item[{\em autoResize}]if true then if a packet larger than {\itshape partialPacketSize\/} is received then more memory will be allocated so that it can be received. \par
+ If false then an error will be thrown if a packet larger than {\itshape partialPacketSize\/} is received. \end{DoxyParams}
+\hypertarget{classcl_shared_t_c_p_a3ace87e7d786ba6cb34dad74f333f5b1}{
+\index{clSharedTCP@{clSharedTCP}!$\sim$clSharedTCP@{$\sim$clSharedTCP}}
+\index{$\sim$clSharedTCP@{$\sim$clSharedTCP}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{$\sim$clSharedTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSharedTCP::$\sim$clSharedTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_shared_t_c_p_a3ace87e7d786ba6cb34dad74f333f5b1}
+Destructor \par
+ Does nothing (which is okay because the destructors of other classes do the work) \hypertarget{classcl_shared_t_c_p_adabdc1a14f20fcfca8624b63f4403b87}{
+\index{clSharedTCP@{clSharedTCP}!clSharedTCP@{clSharedTCP}}
+\index{clSharedTCP@{clSharedTCP}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{clSharedTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSharedTCP::clSharedTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSharedTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_adabdc1a14f20fcfca8624b63f4403b87}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_shared_t_c_p_ae07aa43b5b0ca2ae3947bfc90f17c2e6}{
+\index{clSharedTCP@{clSharedTCP}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSharedTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_shared_t_c_p_ae07aa43b5b0ca2ae3947bfc90f17c2e6}
+Copies {\itshape copyMe\/} into this object (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_shared_t_c_p_a481e6add10e776f8a6394001f0b7ec34}{
+\index{clSharedTCP@{clSharedTCP}!ChangeMaxPacketSize@{ChangeMaxPacketSize}}
+\index{ChangeMaxPacketSize@{ChangeMaxPacketSize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{ChangeMaxPacketSize}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::ChangeMaxPacketSize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a481e6add10e776f8a6394001f0b7ec34}
+Changes the the size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown. \par
+ \begin{DoxyNote}{Note}
+attempting to decrease the size may not be effective. If data exists in the buffer this will not be discarded. The buffer will decrease as much as possible without discarding data
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]new size \end{DoxyParams}
+\hypertarget{classcl_shared_t_c_p_a2d035977f40d63299b84c5ce1fc0c5d7}{
+\index{clSharedTCP@{clSharedTCP}!ClearData@{ClearData}}
+\index{ClearData@{ClearData}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{ClearData}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::ClearData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a2d035977f40d63299b84c5ce1fc0c5d7}
+Clears all stored TCP data (packet store and partial packet) \par
+ The class will be in the same state it was just after {\ttfamily Construct} was initially used \hypertarget{classcl_shared_t_c_p_a6ba0e18bedcdad6989b8b583cd1479c9}{
+\index{clSharedTCP@{clSharedTCP}!ClearPacketStore@{ClearPacketStore}}
+\index{ClearPacketStore@{ClearPacketStore}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{ClearPacketStore}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::ClearPacketStore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a6ba0e18bedcdad6989b8b583cd1479c9}
+Clears only the packet store, completely emptying it \hypertarget{classcl_shared_t_c_p_a6fa0b7a67bec9b647a7318a093385c72}{
+\index{clSharedTCP@{clSharedTCP}!Clone@{Clone}}
+\index{Clone@{Clone}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clSharedTCP}$\ast$ clSharedTCP::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_t_c_p_a6fa0b7a67bec9b647a7318a093385c72}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_int_prefix_t_c_p_ae81f0dcab68dff359b1cdf5d03974350}{clIntPrefixTCP}, and \hyperlink{classcl_postfix_t_c_p_ac4d43cd023dd185e2bd3be28b50a6d79}{clPostfixTCP}.
+
+\hypertarget{classcl_shared_t_c_p_abf8a8bf5fce68d35e34dddec105c8da1}{
+\index{clSharedTCP@{clSharedTCP}!GetAutoResize@{GetAutoResize}}
+\index{GetAutoResize@{GetAutoResize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetAutoResize}]{\setlength{\rightskip}{0pt plus 5cm}bool clSharedTCP::GetAutoResize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_shared_t_c_p_abf8a8bf5fce68d35e34dddec105c8da1}
+Retrieves autoResize variable \par
+
+
+\begin{DoxyReturn}{Returns}
+When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_a6122b8fd7b395f2b02e96cace26c6857}{
+\index{clSharedTCP@{clSharedTCP}!GetMaxPacketSize@{GetMaxPacketSize}}
+\index{GetMaxPacketSize@{GetMaxPacketSize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetMaxPacketSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSharedTCP::GetMaxPacketSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_shared_t_c_p_a6122b8fd7b395f2b02e96cace26c6857}
+\begin{DoxyReturn}{Returns}
+The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_a4a2620ffef0e145c3200acf88c4732aa}{
+\index{clSharedTCP@{clSharedTCP}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSharedTCP::GetPacketAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_shared_t_c_p_a4a2620ffef0e145c3200acf88c4732aa}
+\begin{DoxyReturn}{Returns}
+the number of fully received packets in the packet store 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_aaecebc7d2783bef4309d75aaa22ba8e0}{
+\index{clSharedTCP@{clSharedTCP}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSharedTCP::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_aaecebc7d2783bef4309d75aaa22ba8e0}
+Retrieves a complete packet from the packet store and copies it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]destination to copy into \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_a3879fd59719106ee3b75fee47a0e289f}{
+\index{clSharedTCP@{clSharedTCP}!GetPacketStore@{GetPacketStore}}
+\index{GetPacketStore@{GetPacketStore}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetPacketStore}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clStoreQueue}$<$ {\bf clPacket} $>$ $\ast$ clSharedTCP::GetPacketStore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_shared_t_c_p_a3879fd59719106ee3b75fee47a0e289f}
+Retrieves a pointer to the packet store used by this object \par
+ This pointer will be invalid when this object is destroyed \par
+ The retrieved object is thread safe
+
+\begin{DoxyReturn}{Returns}
+pointer to the packet store in use by this object 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_abf78a0f2aec1c39029fb1535ed15feca}{
+\index{clSharedTCP@{clSharedTCP}!GetPartialPacketCurrentSize@{GetPartialPacketCurrentSize}}
+\index{GetPartialPacketCurrentSize@{GetPartialPacketCurrentSize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetPartialPacketCurrentSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSharedTCP::GetPartialPacketCurrentSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_shared_t_c_p_abf78a0f2aec1c39029fb1535ed15feca}
+\begin{DoxyReturn}{Returns}
+The current size of the partial packet being received \par
+ i.e. the number of bytes of the packet that have been received 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_ad0781613810b204660f212d37b8c1ce2}{
+\index{clSharedTCP@{clSharedTCP}!GetPartialPacketPercentage@{GetPartialPacketPercentage}}
+\index{GetPartialPacketPercentage@{GetPartialPacketPercentage}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{GetPartialPacketPercentage}]{\setlength{\rightskip}{0pt plus 5cm}virtual double clSharedTCP::GetPartialPacketPercentage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_t_c_p_ad0781613810b204660f212d37b8c1ce2}
+\begin{DoxyReturn}{Returns}
+the percentage of the partial packet that has been received i.e. between 0 and 100 where 50 indicates that half the packet has been received and we are now waiting for the second half to be received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_int_prefix_t_c_p_a0579e1738807207877c316b7423e25d9}{clIntPrefixTCP}, and \hyperlink{classcl_postfix_t_c_p_a98bc079655197fb16bd0babd6c077cb3}{clPostfixTCP}.
+
+\hypertarget{classcl_shared_t_c_p_a4371884780b5f99b014b94f273b54360}{
+\index{clSharedTCP@{clSharedTCP}!operator=@{operator=}}
+\index{operator=@{operator=}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedTCP} \& clSharedTCP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSharedTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a4371884780b5f99b014b94f273b54360}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_t_c_p_aa8cbe170e5162d5047947bd7ef231838}{
+\index{clSharedTCP@{clSharedTCP}!PacketDone@{PacketDone}}
+\index{PacketDone@{PacketDone}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{PacketDone}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::PacketDone (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clPacket} $\ast$}]{ completePacket, }
+\item[{void($\ast$)(size\_\-t threadID, {\bf clPacket} \&packet)}]{ tcpRecvFunc}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_aa8cbe170e5162d5047947bd7ef231838}
+Takes a complete packet and deals with it in one of two ways:
+\begin{DoxyItemize}
+\item Passes it to user function specified by {\itshape tcpRecvFunc\/} parameter
+\item If no user function is defined then it is put into a queue to be retrieved using {\ttfamily mnRecv} commands
+\end{DoxyItemize}
+
+A special case exists for an instance in client state and handshaking. In this case the packet is always added to the packet queue. This is necassary because the handshaking thread needs to receive TCP data.
+
+\begin{DoxyWarning}{Warning}
+if the packet is passed to a user function this is done synchronously, so the method will not return until the user function returns.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \item[{\em completePacket}]the complete packet that should be dealt with \item[{\em tcpRecvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+\hypertarget{classcl_shared_t_c_p_a04c910cf085fe90c1c068e4ab168a7e5}{
+\index{clSharedTCP@{clSharedTCP}!SetAutoResize@{SetAutoResize}}
+\index{SetAutoResize@{SetAutoResize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{SetAutoResize}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::SetAutoResize (
+\begin{DoxyParamCaption}
+\item[{bool}]{ paraAutoResize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a04c910cf085fe90c1c068e4ab168a7e5}
+Sets autoResize value \par
+ When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraAutoResize}]value to set autoResize to \end{DoxyParams}
+\hypertarget{classcl_shared_t_c_p_a199283f27a898d233746b4db6f72d6c3}{
+\index{clSharedTCP@{clSharedTCP}!SetMaxPacketSize@{SetMaxPacketSize}}
+\index{SetMaxPacketSize@{SetMaxPacketSize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{SetMaxPacketSize}]{\setlength{\rightskip}{0pt plus 5cm}void clSharedTCP::SetMaxPacketSize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_shared_t_c_p_a199283f27a898d233746b4db6f72d6c3}
+Manually changes the maximum packet size that can be received 
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}{
+\index{clSharedTCP@{clSharedTCP}!autoResize@{autoResize}}
+\index{autoResize@{autoResize}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{autoResize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStatus}$<$bool$>$ {\bf clSharedTCP::autoResize}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}
+If true, partialPacket will automatically increase memory size as needed Protected by critical section so that it can be changed during runtime \hypertarget{classcl_shared_t_c_p_a2f584a19a4ba7d93b3a2e3467840c674}{
+\index{clSharedTCP@{clSharedTCP}!constructed@{constructed}}
+\index{constructed@{constructed}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{constructed}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clSharedTCP::constructed}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_shared_t_c_p_a2f584a19a4ba7d93b3a2e3467840c674}
+true when {\ttfamily Construct} has been used \par
+ false when {\ttfamily Construct} has not been used \par
+ Is used by destructor to decide what to cleanup \par
+ \hypertarget{classcl_shared_t_c_p_a4f9fa934fb8217556dde5f5da38d76af}{
+\index{clSharedTCP@{clSharedTCP}!packetStore@{packetStore}}
+\index{packetStore@{packetStore}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{packetStore}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStoreQueue}$<${\bf clPacket}$>$ {\bf clSharedTCP::packetStore}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_shared_t_c_p_a4f9fa934fb8217556dde5f5da38d76af}
+Stores complete packets \hypertarget{classcl_shared_t_c_p_a5bff66a18a60aa4260c87d1e3dbf9658}{
+\index{clSharedTCP@{clSharedTCP}!partialPacket@{partialPacket}}
+\index{partialPacket@{partialPacket}!clSharedTCP@{clSharedTCP}}
+\subsubsection[{partialPacket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} {\bf clSharedTCP::partialPacket}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_shared_t_c_p_a5bff66a18a60aa4260c87d1e3dbf9658}
+Stores partial packets that are not yet complete \par
+ These are passed to packetStore when completed 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSharedTCP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSharedTCP.cpp\end{DoxyCompactItemize}

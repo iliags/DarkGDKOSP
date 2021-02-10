@@ -1,0 +1,442 @@
+\hypertarget{classcl_socket_u_d_p}{
+\section{clSocketUDP Class Reference}
+\label{classcl_socket_u_d_p}\index{clSocketUDP@{clSocketUDP}}
+}
+
+
+Socket used for UDP data transfer.  
+
+
+
+
+{\ttfamily \#include $<$clSocketUDP.h$>$}
+
+Inheritance diagram for clSocketUDP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_socket_u_d_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_socket_u_d_p_a4a632316578eeb0ea1a1c2ac98040640}{clSocketUDP} (size\_\-t bufferLength, const \hyperlink{classcl_single_addr}{clSingleAddr} \&localAddr, bool reusable, \hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$udpMode)
+\item 
+\hyperlink{classcl_socket_u_d_p_a1bba83c348abf83908a19dcba3add5e1}{clSocketUDP} (size\_\-t bufferLength, const \hyperlink{classcl_single_addr}{clSingleAddr} \&localAddr, const \hyperlink{classcl_single_addr}{clSingleAddr} \&connectAddr)
+\item 
+\hyperlink{classcl_socket_u_d_p_a3f71836d4fb181524761d515070d2a72}{$\sim$clSocketUDP} ()
+\item 
+\hyperlink{classcl_socket_u_d_p_a7a6b0f94c67748950d1d4de0b70b29d3}{clSocketUDP} (const \hyperlink{classcl_socket_u_d_p}{clSocketUDP} \&)
+\item 
+\hyperlink{classcl_socket_u_d_p}{clSocketUDP} \& \hyperlink{classcl_socket_u_d_p_a5f60bc0ffddf52c3b37df07ef8ddd26f}{operator=} (const \hyperlink{classcl_socket_u_d_p}{clSocketUDP} \&)
+\item 
+void \hyperlink{classcl_socket_u_d_p_a6c7f4b4f575e0c466f6b59d18717bd2a}{ClearRecv} ()
+\item 
+bool \hyperlink{classcl_socket_u_d_p_a385dad6d067c955acc71c90873cf56d7}{Recv} ()
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_socket_u_d_p_ab1464373dcab1e39cc37bf3ee755cb92}{Send} (const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, const \hyperlink{classcl_single_addr}{clSingleAddr} $\ast$sendToAddr, unsigned int timeout)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_socket_u_d_p_a43b0d22e608dcab2e71d376d0bdb5c6a}{RawSend} (const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, const \hyperlink{classcl_single_addr}{clSingleAddr} $\ast$sendToAddr, unsigned int timeout)
+\item 
+void \hyperlink{classcl_socket_u_d_p_aa4f23e02e1c4803535e94fcfa97698ea}{Close} ()
+\item 
+void \hyperlink{classcl_socket_u_d_p_a9a55042801aeea2a7f50ab7efa71ac15}{Reset} (size\_\-t clientID)
+\item 
+const \hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$ \hyperlink{classcl_socket_u_d_p_ae2ac63727ddaf73c46964090736167a9}{GetMode} () const 
+\item 
+size\_\-t \hyperlink{classcl_socket_u_d_p_aa36a790d653788f2a2f4f52aaa0a7f86}{GetPacketFromStore} (size\_\-t clientID, size\_\-t operationID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+bool \hyperlink{classcl_socket_u_d_p_a8712ad9eb11883ce5d118fb84fb10399}{GetModeLoaded} () const 
+\item 
+void \hyperlink{classcl_socket_u_d_p_a7653fbe14806476dbba906ca3d79bc9d}{LoadMode} (\hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$mode)
+\item 
+\hyperlink{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}{clSocket::Protocol} \hyperlink{classcl_socket_u_d_p_a4016f07d693331c87be1649aa69df9f6}{GetProtocol} () const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_socket_u_d_p_aa4b27fd0a368cfe874a4a4cb534dac0d}{GetRecvAddress} () const 
+\item 
+void \hyperlink{classcl_socket_u_d_p_a5dbfc8b8689613b2def26ed5a322ba5f}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFunc)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_socket_u_d_p_a022574446b94cc601e51fd657defc266}{\_\-CheckModeLoaded} (size\_\-t line, const char $\ast$file) const 
+\item 
+void \hyperlink{classcl_socket_u_d_p_a34a5f52b8462ef4dce5a0e74aa185e63}{\_\-Copy} (const \hyperlink{classcl_socket_u_d_p}{clSocketUDP} \&copyMe)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \hyperlink{classcl_socket_u_d_p_a4011a7b3c5a811ac54e477a95c87a402}{recvAddr}
+\item 
+\hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$ \hyperlink{classcl_socket_u_d_p_a6291807aa55d5fe97be5b398d56f4fa7}{modeUDP}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket used for UDP data transfer. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 3/28/2010.
+\end{DoxyRemark}
+This class provides functionality specific to the UDP protocol.\par
+\par
+
+
+This class is not inherently thread safe. Send and RawSend are thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_socket_u_d_p_a4a632316578eeb0ea1a1c2ac98040640}{
+\index{clSocketUDP@{clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\index{clSocketUDP@{clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{clSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketUDP::clSocketUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{const {\bf clSingleAddr} \&}]{ localAddr, }
+\item[{bool}]{ reusable, }
+\item[{{\bf clSharedUDP} $\ast$}]{ udpMode}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a4a632316578eeb0ea1a1c2ac98040640}
+Constructor, sets up socket to be a normal UDP socket
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]length of receive buffer in bytes \item[{\em localAddr}]local address to bind to \item[{\em reusable}]if true socket local address can be reused which means that other sockets are able to bind to this same address and receive the same data that we do \item[{\em udpMode}]UDP mode object, if NULL mode object must be loaded later with LoadMode. \par
+ Until the mode object is loaded receiving and sending cannot operate. This intended for use in situations where information from a recipient e.g. server impacts on the UDP mode \end{DoxyParams}
+\hypertarget{classcl_socket_u_d_p_a1bba83c348abf83908a19dcba3add5e1}{
+\index{clSocketUDP@{clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\index{clSocketUDP@{clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{clSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketUDP::clSocketUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{const {\bf clSingleAddr} \&}]{ localAddr, }
+\item[{const {\bf clSingleAddr} \&}]{ connectAddr}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a1bba83c348abf83908a19dcba3add5e1}
+Constructor, sets up socket to be a broadcasting socket
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]length of receive buffer in bytes \item[{\em localAddr}]local address to bind to \item[{\em connectAddr}]address to which UDP packets will be broadcast to \end{DoxyParams}
+\hypertarget{classcl_socket_u_d_p_a3f71836d4fb181524761d515070d2a72}{
+\index{clSocketUDP@{clSocketUDP}!$\sim$clSocketUDP@{$\sim$clSocketUDP}}
+\index{$\sim$clSocketUDP@{$\sim$clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{$\sim$clSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketUDP::$\sim$clSocketUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a3f71836d4fb181524761d515070d2a72}
+Destructor \par
+ Cleans up object \hypertarget{classcl_socket_u_d_p_a7a6b0f94c67748950d1d4de0b70b29d3}{
+\index{clSocketUDP@{clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\index{clSocketUDP@{clSocketUDP}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{clSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketUDP::clSocketUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocketUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a7a6b0f94c67748950d1d4de0b70b29d3}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_socket_u_d_p_a022574446b94cc601e51fd657defc266}{
+\index{clSocketUDP@{clSocketUDP}!\_\-CheckModeLoaded@{\_\-CheckModeLoaded}}
+\index{\_\-CheckModeLoaded@{\_\-CheckModeLoaded}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{\_\-CheckModeLoaded}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::\_\-CheckModeLoaded (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_u_d_p_a022574446b94cc601e51fd657defc266}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if mode is not loaded \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em line}]line at which method was called \item[{\em file}]file in which method was called \end{DoxyParams}
+\hypertarget{classcl_socket_u_d_p_a34a5f52b8462ef4dce5a0e74aa185e63}{
+\index{clSocketUDP@{clSocketUDP}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocketUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_u_d_p_a34a5f52b8462ef4dce5a0e74aa185e63}
+Copies {\itshape copyMe\/} into this object (deep) \begin{DoxyNote}{Note}
+does not copy modeUDP, do this elsewhere 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_socket_u_d_p_a6c7f4b4f575e0c466f6b59d18717bd2a}{
+\index{clSocketUDP@{clSocketUDP}!ClearRecv@{ClearRecv}}
+\index{ClearRecv@{ClearRecv}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{ClearRecv}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::ClearRecv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_u_d_p_a6c7f4b4f575e0c466f6b59d18717bd2a}
+Clears receive overlapped object ready for next receive \par
+ Also clears UDP receive address \par
+ Must be done after every receive operation 
+
+Reimplemented from \hyperlink{classcl_socket_a45284c4d4679469dd9cf11cf08faa86c}{clSocket}.
+
+\hypertarget{classcl_socket_u_d_p_aa4f23e02e1c4803535e94fcfa97698ea}{
+\index{clSocketUDP@{clSocketUDP}!Close@{Close}}
+\index{Close@{Close}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_u_d_p_aa4f23e02e1c4803535e94fcfa97698ea}
+Closes socket and resets object to unused state 
+
+Reimplemented from \hyperlink{classcl_socket_a5ff0b79fb0cb1c43019e726ea085ec36}{clSocket}.
+
+\hypertarget{classcl_socket_u_d_p_a5dbfc8b8689613b2def26ed5a322ba5f}{
+\index{clSocketUDP@{clSocketUDP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ recvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_u_d_p_a5dbfc8b8689613b2def26ed5a322ba5f}
+Deals with newly received data 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that packet was received on \item[{\em completionBytes}]size of packet stored in {\itshape buffer\/} \item[{\em buffer}]where newly received packet is stored \item[{\em clientID}]ID of client that packet was received from, 0 in client state \item[{\em instanceID}]instance that packet was received on \item[{\em recvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_socket_a4ddfb1b3168816c667e1193d1df42535}{clSocket}.
+
+\hypertarget{classcl_socket_u_d_p_ae2ac63727ddaf73c46964090736167a9}{
+\index{clSocketUDP@{clSocketUDP}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{GetMode}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSharedUDP} $\ast$ clSocketUDP::GetMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_u_d_p_ae2ac63727ddaf73c46964090736167a9}
+\begin{DoxyReturn}{Returns}
+returns pointer to object (which cannot be modified) representing UDP mode specific options 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_u_d_p_a8712ad9eb11883ce5d118fb84fb10399}{
+\index{clSocketUDP@{clSocketUDP}!GetModeLoaded@{GetModeLoaded}}
+\index{GetModeLoaded@{GetModeLoaded}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{GetModeLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocketUDP::GetModeLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_u_d_p_a8712ad9eb11883ce5d118fb84fb10399}
+\begin{DoxyReturn}{Returns}
+true if UDP mode is loaded. Until the mode object is loaded receiving and sending cannot operate. 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_u_d_p_aa36a790d653788f2a2f4f52aaa0a7f86}{
+\index{clSocketUDP@{clSocketUDP}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSocketUDP::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_aa36a790d653788f2a2f4f52aaa0a7f86}
+Copies a packet from the packet store into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use, may be ignored \item[{\em operationID}]operation ID of operation to use, may be ignored \item[{\em destination}]pointer to a \hyperlink{classcl_packet}{clPacket} object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in packet queue before this method was called 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+destination must be a pointer to a \hyperlink{classcl_packet}{clPacket} object 
+\end{DoxyWarning}
+\hypertarget{classcl_socket_u_d_p_a4016f07d693331c87be1649aa69df9f6}{
+\index{clSocketUDP@{clSocketUDP}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocket::Protocol} clSocketUDP::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_u_d_p_a4016f07d693331c87be1649aa69df9f6}
+\begin{DoxyReturn}{Returns}
+clSimpleSocket::UDP indicating that this socket is for UDP data transfer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_socket_a8ce9d2d6fa68c1d70fa757122093f7ca}{clSocket}.
+
+\hypertarget{classcl_socket_u_d_p_aa4b27fd0a368cfe874a4a4cb534dac0d}{
+\index{clSocketUDP@{clSocketUDP}!GetRecvAddress@{GetRecvAddress}}
+\index{GetRecvAddress@{GetRecvAddress}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{GetRecvAddress}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clSocketUDP::GetRecvAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_u_d_p_aa4b27fd0a368cfe874a4a4cb534dac0d}
+\begin{DoxyReturn}{Returns}
+the remote address that the last received packet was sent from 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_u_d_p_a7653fbe14806476dbba906ca3d79bc9d}{
+\index{clSocketUDP@{clSocketUDP}!LoadMode@{LoadMode}}
+\index{LoadMode@{LoadMode}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{LoadMode}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::LoadMode (
+\begin{DoxyParamCaption}
+\item[{{\bf clSharedUDP} $\ast$}]{ mode}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a7653fbe14806476dbba906ca3d79bc9d}
+Loads a UDP mode 
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]mode to load \end{DoxyParams}
+\begin{DoxyNote}{Note}
+once loaded, the mode cannot be overwritten by another mode 
+\end{DoxyNote}
+\hypertarget{classcl_socket_u_d_p_a5f60bc0ffddf52c3b37df07ef8ddd26f}{
+\index{clSocketUDP@{clSocketUDP}!operator=@{operator=}}
+\index{operator=@{operator=}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketUDP} \& clSocketUDP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocketUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a5f60bc0ffddf52c3b37df07ef8ddd26f}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_u_d_p_a43b0d22e608dcab2e71d376d0bdb5c6a}{
+\index{clSocketUDP@{clSocketUDP}!RawSend@{RawSend}}
+\index{RawSend@{RawSend}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{RawSend}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clSocketUDP::RawSend (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf clSingleAddr} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a43b0d22e608dcab2e71d376d0bdb5c6a}
+Sends a packet using this socket with no prefix or postfix, ignoring the UDP mode 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent \item[{\em sendToAddr}]address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]length of time in milliseconds to wait before canceling send operation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_u_d_p_a385dad6d067c955acc71c90873cf56d7}{
+\index{clSocketUDP@{clSocketUDP}!Recv@{Recv}}
+\index{Recv@{Recv}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{Recv}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocketUDP::Recv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_u_d_p_a385dad6d067c955acc71c90873cf56d7}
+Starts a receive operation via UDP \par
+ If {\ttfamily WSARecvFrom} is successful the result of the operation (which will probably not complete instantly) will be passed to the completion port \par
+ Upon completion:
+\begin{DoxyItemize}
+\item {\ttfamily recvBuffer} will be filled with received data
+\item {\ttfamily bytes} will contain the number of bytes received
+\item {\ttfamily recvAddr} will contain the address that the packet was sent from \par
+ If {\ttfamily WSARecvFrom} is unsuccessful the operation will not complete so the completion port will receive no notification \par
+ Thus errors must be dealt with straight away by the {\ttfamily Recv} method
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if an error occurred, false if no error occurred 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_socket}{clSocket}.
+
+\hypertarget{classcl_socket_u_d_p_a9a55042801aeea2a7f50ab7efa71ac15}{
+\index{clSocketUDP@{clSocketUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketUDP::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_u_d_p_a9a55042801aeea2a7f50ab7efa71ac15}
+Reset client data store to unused state \par
+ Should be done when client disconnects
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to reset \end{DoxyParams}
+\hypertarget{classcl_socket_u_d_p_ab1464373dcab1e39cc37bf3ee755cb92}{
+\index{clSocketUDP@{clSocketUDP}!Send@{Send}}
+\index{Send@{Send}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clSocketUDP::Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf clSingleAddr} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_u_d_p_ab1464373dcab1e39cc37bf3ee755cb92}
+Sends a packet using this socket 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent \item[{\em sendToAddr}]address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]length of time in milliseconds to wait before canceling send operation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_socket}{clSocket}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_socket_u_d_p_a6291807aa55d5fe97be5b398d56f4fa7}{
+\index{clSocketUDP@{clSocketUDP}!modeUDP@{modeUDP}}
+\index{modeUDP@{modeUDP}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{modeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedUDP}$\ast$ {\bf clSocketUDP::modeUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_u_d_p_a6291807aa55d5fe97be5b398d56f4fa7}
+UDP mode object \par
+ Is initialized as \hyperlink{classcl_per_client_u_d_p}{clPerClientUDP}, \hyperlink{classcl_catch_all_u_d_p}{clCatchAllUDP} or \hyperlink{classcl_catch_all_no_u_d_p}{clCatchAllNoUDP} depending on UDP mode \hypertarget{classcl_socket_u_d_p_a4011a7b3c5a811ac54e477a95c87a402}{
+\index{clSocketUDP@{clSocketUDP}!recvAddr@{recvAddr}}
+\index{recvAddr@{recvAddr}!clSocketUDP@{clSocketUDP}}
+\subsubsection[{recvAddr}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} {\bf clSocketUDP::recvAddr}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_u_d_p_a4011a7b3c5a811ac54e477a95c87a402}
+Filled with address of newly received data's sender 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocketUDP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocketUDP.cpp\end{DoxyCompactItemize}

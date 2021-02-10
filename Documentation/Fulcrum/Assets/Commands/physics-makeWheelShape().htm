@@ -1,0 +1,74 @@
+<HTML>
+
+
+    <HEAD>
+        <title> FulcrumPhy::makeWheelShape() </title>
+		<link rel="stylesheet" type="text/css" href="style1.css"/>
+    </HEAD>
+
+   
+    <BODY id = "wrap">
+     
+        <span class="returns">
+	       bool
+        </span> 
+	   
+	    FulcrumPhy::makeWheelShape
+	  
+	    <span class="parameters">
+	      ( int vehicleID, int limbID, int wheelID, float radius )
+        </span> 
+	 
+	    <br>
+		<br>
+		
+        This will create a wheel inside the physics simulation for your vehicle, you must have already called
+        FulcrumPhy::makeVehicle(). You provide it with the limb id number of the wheel on your vehicle object
+        that it will then represent. Once you have added your wheels you then call FulcrumPhy::buildVehicle() to
+        finish creating your vehicle.
+        <br>
+<br>
+        Its worth noting that the wheel limb on your object must rotate about its local x-axis, putting it
+        another way, you can imagine that
+        the axel would come out in the direction of its local x-axis. The steering will rotate it about the y-axis,
+        if you get strange results it could be that the wheel limb is not set up this way in your vehicle object.
+        
+	  
+        <br>
+        <br>
+          
+        <span class="parameters">
+	        Parameters:
+	    </span>
+         <br>
+         int vehicleID - id of the vehicle actor/object
+         <br>
+         int limbID - id of the wheel limb in your vehicle object
+         <br>
+         int wheelID - This is an ID number you assign to the wheel so you may easily reference it 
+         afterwards. These ID's only need to be unique to its particular owning vehicle.
+         <br>
+         radius - This will determine the size of the wheel shape created in the physics simulation 
+         <br>
+<br>
+        <br>
+      
+        <span class="returns">
+	        Returns:
+	    </span>
+          
+        <br>
+        TRUE if succeeds, FALSE otherwise.
+              
+        <br>
+        <br>
+	    <br>
+		
+
+           
+		   
+    </BODY>
+
+   
+</HTML>
+   

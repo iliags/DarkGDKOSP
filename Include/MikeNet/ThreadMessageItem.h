@@ -1,0 +1,65 @@
+#pragma once
+
+/**
+ * @brief	Represents an individual message that can be sent to a thread via ThreadSingleMessage.
+ * @remarks	Michael Pryor, 9/16/2010. 
+ *
+ * Before a message is sent ThreadSingleMessage will call ThreadMessageItem::SetMessageInUseByThread with a
+ * parameter of true. After the thread has finished using the message it must call SetMessageInUseByThread
+ * with a parameter of false.
+ */
+class ThreadMessageItem
+{
+	/**
+	 * @brief False when this message object is in use by the thread.
+	 *
+	 * Must use mtEventObjects when changing or checking state in order
+	 * to synchronize with messageNotInUseBySender.
+	 */
+	ConcurrencyEvent messageNotInUseByThread;
+
+	/**
+	 * @brief False when the message object is not in use by the sender
+	 * and so should be cleaned up by the thread.
+	 *
+	 * Must use mtEventObjects when changing or checking state in order
+	 * to synchronize with messageNotInUseByThread.
+	 */
+	ConcurrencyEvent messageNotInUseBySender;
+
+	/**
+	 * @brief Synchronizes messageNotInUseByThread and messageNotInUseBySender so that
+	 * actions can be taken based on both without worrying about their status changing independently.
+	 *
+	 * This is used only during the cleanup phase.
+	 */
+	CriticalSection mtEventObjects;
+public:
+	ThreadMessageItem();
+	virtual ~ThreadMessageItem();
+
+	void SetMessageInUseByThread(bool option);
+	bool IsMessageInUseByThread() const;
+	void WaitUntilNotInUseByThread(DWORD timeout) const;
+	void WaitUntilNotInUseByThread() const;
+
+	void SetMessageInUseBySender(bool option);
+	bool IsMessageInUseBySender() const;
+	void WaitUntilNotInUseBySender(DWORD timeout) const;
+	void WaitUntilNotInUseBySender() const;
+
+	bool ShouldThreadCleanup();
+	bool ShouldSenderCleanup();
+
+	/**
+	 * @brief	Performs an action of any type.
+	 *
+	 * This provides a way to tell a thread what to do.
+	 *
+	 * @return some actions may require further activity by the thread which
+	 * cannot take place within the method call. This return value can be used
+	 * by the thread to determine what to do.
+	 */
+	virtual void * TakeAction()=0;
+};
+

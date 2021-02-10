@@ -1,0 +1,260 @@
+\hypertarget{classcl_u_pn_p_thread}{
+\section{clUPnPThread Class Reference}
+\label{classcl_u_pn_p_thread}\index{clUPnPThread@{clUPnPThread}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_u_pn_p_thread_a31748b062ab8337c8135330bb3e39d18}{
+{\bfseries clUPnPThread} (const char $\ast$cCommand)}
+\label{classcl_u_pn_p_thread_a31748b062ab8337c8135330bb3e39d18}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a79302a565a99c7440f7b4ef65689bbc0}{
+\hyperlink{structcl_n_a_t}{clNAT} $\ast$ {\bfseries \_\-GetObjNAT} ()}
+\label{classcl_u_pn_p_thread_a79302a565a99c7440f7b4ef65689bbc0}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a14eb4fa0f4d51e2891e8f82ebd82f468}{
+\hyperlink{structcl_port_map}{clPortMap} $\ast$ {\bfseries \_\-GetObjPortMap} ()}
+\label{classcl_u_pn_p_thread_a14eb4fa0f4d51e2891e8f82ebd82f468}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a8a6b0612728d26dcff952be9c6a9ae4e}{
+void {\bfseries \_\-SetObjNAT} (\hyperlink{structcl_n_a_t}{clNAT} $\ast$obj)}
+\label{classcl_u_pn_p_thread_a8a6b0612728d26dcff952be9c6a9ae4e}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_aebde7eb0f1175ca356b2c6185618c47f}{
+void {\bfseries \_\-SetObjPortMap} (\hyperlink{structcl_port_map}{clPortMap} $\ast$obj)}
+\label{classcl_u_pn_p_thread_aebde7eb0f1175ca356b2c6185618c47f}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a61e213c2f0edc90793d4f8c4e9118899}{
+int {\bfseries \_\-GetCompleted} ()}
+\label{classcl_u_pn_p_thread_a61e213c2f0edc90793d4f8c4e9118899}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ac64559e70691bb734cf53535ddc16bc8}{
+void {\bfseries \_\-SetCompleted} (int pCompleted)}
+\label{classcl_u_pn_p_thread_ac64559e70691bb734cf53535ddc16bc8}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_aaace681132552441aa204b459c6217d2}{
+int {\bfseries PollAction} ()}
+\label{classcl_u_pn_p_thread_aaace681132552441aa204b459c6217d2}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_aac887f1507d7d59f4f0bcc4f438b4a06}{
+\_\-\_\-int64 {\bfseries FinishUPNP} (bool bBlock)}
+\label{classcl_u_pn_p_thread_aac887f1507d7d59f4f0bcc4f438b4a06}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a49e2ba591828a86667cc9faf577bbd51}{
+\_\-\_\-int64 {\bfseries StartNAT} (bool bBlock)}
+\label{classcl_u_pn_p_thread_a49e2ba591828a86667cc9faf577bbd51}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a8755c082671f07752cb0533f0e654978}{
+\_\-\_\-int64 {\bfseries FinishNAT} (bool bBlock)}
+\label{classcl_u_pn_p_thread_a8755c082671f07752cb0533f0e654978}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a656620f96aa8e449f32a2e3100b688d8}{
+\_\-\_\-int64 {\bfseries UpdateNAT} (bool bBlock)}
+\label{classcl_u_pn_p_thread_a656620f96aa8e449f32a2e3100b688d8}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ac80f05a1ea6e9a4eafed0eb57b0b0d94}{
+\_\-\_\-int64 {\bfseries AddPortMap} (long ExternalPort, char $\ast$Protocol, long InternalPort, char $\ast$InternalIP, bool Enabled, char $\ast$Description, bool bBlock)}
+\label{classcl_u_pn_p_thread_ac80f05a1ea6e9a4eafed0eb57b0b0d94}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ad37827d165619f845c7ccfa92ce6e641}{
+\_\-\_\-int64 {\bfseries DeletePortMap1} (size\_\-t PortMapID, bool bBlock)}
+\label{classcl_u_pn_p_thread_ad37827d165619f845c7ccfa92ce6e641}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a4a29bba286b769f88db37c7d9a777c8c}{
+\_\-\_\-int64 {\bfseries DeletePortMap2} (char $\ast$Protocol, long ExternalPort, bool bBlock)}
+\label{classcl_u_pn_p_thread_a4a29bba286b769f88db37c7d9a777c8c}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a200471a57eac647f184da06291c4434f}{
+\_\-\_\-int64 {\bfseries SetPortMapDescription} (size\_\-t iPortMapID, char $\ast$Description, bool bBlock)}
+\label{classcl_u_pn_p_thread_a200471a57eac647f184da06291c4434f}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a9fdb23e8b1eded0f146e29f30480820b}{
+\_\-\_\-int64 {\bfseries EnablePortMap} (size\_\-t iPortMapID, bool bBlock)}
+\label{classcl_u_pn_p_thread_a9fdb23e8b1eded0f146e29f30480820b}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_acf3d6c37114baa249f73e2ea253f09fe}{
+\_\-\_\-int64 {\bfseries DisablePortMap} (size\_\-t iPortMapID, bool bBlock)}
+\label{classcl_u_pn_p_thread_acf3d6c37114baa249f73e2ea253f09fe}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_af58c82d833887ddffa654f9c337f6506}{
+\_\-\_\-int64 {\bfseries SetPortMapInternalIP} (size\_\-t iPortMapID, char $\ast$InternalIP, bool bBlock)}
+\label{classcl_u_pn_p_thread_af58c82d833887ddffa654f9c337f6506}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a633735df74dde68ce2b2b9a6dd7b2ef9}{
+\_\-\_\-int64 {\bfseries SetPortMapInternalPort} (size\_\-t iPortMapID, long InternalPort, bool bBlock)}
+\label{classcl_u_pn_p_thread_a633735df74dde68ce2b2b9a6dd7b2ef9}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_u_pn_p_thread_ac2764bd293446c6246d2eef5b0f5092c}{
+\hyperlink{class_error_report}{ErrorReport} {\bfseries ThreadError}}
+\label{classcl_u_pn_p_thread_ac2764bd293446c6246d2eef5b0f5092c}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a1174f5e949edd7eccdf1ffe20dfe10bb}{
+size\_\-t {\bfseries iAction}}
+\label{classcl_u_pn_p_thread_a1174f5e949edd7eccdf1ffe20dfe10bb}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a2bb179476e60900a1659ff5d1bad9ce1}{
+size\_\-t {\bfseries uInt} \mbox{[}5\mbox{]}}
+\label{classcl_u_pn_p_thread_a2bb179476e60900a1659ff5d1bad9ce1}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a1da3232b1340c813abe6293900b8fbbb}{
+char $\ast$ {\bfseries String} \mbox{[}5\mbox{]}}
+\label{classcl_u_pn_p_thread_a1da3232b1340c813abe6293900b8fbbb}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ac237d9c56a08652fcf10f39285ffb13e}{
+long {\bfseries Long} \mbox{[}5\mbox{]}}
+\label{classcl_u_pn_p_thread_ac237d9c56a08652fcf10f39285ffb13e}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a5a0ac9bac265d9b0f818bf4da481aa2b}{
+bool {\bfseries Bool} \mbox{[}5\mbox{]}}
+\label{classcl_u_pn_p_thread_a5a0ac9bac265d9b0f818bf4da481aa2b}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_u_pn_p_thread_acbebbcdd6440bc8a75312d27d56d1985}{
+static const size\_\-t {\bfseries CODE\_\-MIN} = 0}
+\label{classcl_u_pn_p_thread_acbebbcdd6440bc8a75312d27d56d1985}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a7f074ffd6f794fa6b37ea95bbeee129e}{
+static const size\_\-t {\bfseries UPNP\_\-FINISH} = 0}
+\label{classcl_u_pn_p_thread_a7f074ffd6f794fa6b37ea95bbeee129e}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a3254ae03e59702164258e82f88938ff0}{
+static const size\_\-t {\bfseries NAT\_\-START} = 1}
+\label{classcl_u_pn_p_thread_a3254ae03e59702164258e82f88938ff0}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a5b84953b0b9b4234a641ae00fa843f1e}{
+static const size\_\-t {\bfseries NAT\_\-FINISH} = 2}
+\label{classcl_u_pn_p_thread_a5b84953b0b9b4234a641ae00fa843f1e}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a1b7c5c0d48ebb74be7f8d5c5cf472c79}{
+static const size\_\-t {\bfseries NAT\_\-UPDATE} = 3}
+\label{classcl_u_pn_p_thread_a1b7c5c0d48ebb74be7f8d5c5cf472c79}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a351ed94d7142d4e3806c3a92349c39eb}{
+static const size\_\-t {\bfseries NAT\_\-ADD} = 4}
+\label{classcl_u_pn_p_thread_a351ed94d7142d4e3806c3a92349c39eb}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ae2997c67867ce3a5d86e2603f4741ec6}{
+static const size\_\-t {\bfseries NAT\_\-DELETE1} = 5}
+\label{classcl_u_pn_p_thread_ae2997c67867ce3a5d86e2603f4741ec6}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ab506bdd29dc508f4bd4a5adc7f0f4c79}{
+static const size\_\-t {\bfseries NAT\_\-DELETE2} = 6}
+\label{classcl_u_pn_p_thread_ab506bdd29dc508f4bd4a5adc7f0f4c79}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a5edbe701698fd5432942c56e1df0a79b}{
+static const size\_\-t {\bfseries PM\_\-SET\_\-DESCRIPTION} = 7}
+\label{classcl_u_pn_p_thread_a5edbe701698fd5432942c56e1df0a79b}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a6aec2bc672148dd903887b90ef25d440}{
+static const size\_\-t {\bfseries PM\_\-SET\_\-ENABLED} = 8}
+\label{classcl_u_pn_p_thread_a6aec2bc672148dd903887b90ef25d440}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a6291a1d16ace84f15249becc53b772e3}{
+static const size\_\-t {\bfseries PM\_\-SET\_\-DISABLED} = 9}
+\label{classcl_u_pn_p_thread_a6291a1d16ace84f15249becc53b772e3}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a341b3664c57fdf72cd88c790845e5848}{
+static const size\_\-t {\bfseries PM\_\-SET\_\-INTERNAL\_\-IP} = 10}
+\label{classcl_u_pn_p_thread_a341b3664c57fdf72cd88c790845e5848}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_afe68ba84a2d1b5139a35fb808163a858}{
+static const size\_\-t {\bfseries PM\_\-SET\_\-INTERNAL\_\-PORT} = 11}
+\label{classcl_u_pn_p_thread_afe68ba84a2d1b5139a35fb808163a858}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a8713f2bf0e493d60f239d0db9fb2b12a}{
+static const size\_\-t {\bfseries CODE\_\-MAX} = 11}
+\label{classcl_u_pn_p_thread_a8713f2bf0e493d60f239d0db9fb2b12a}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_u_pn_p_thread_a6a8cc538a98fec848061792ac1369bae}{
+void {\bfseries \_\-DoAction} ()}
+\label{classcl_u_pn_p_thread_a6a8cc538a98fec848061792ac1369bae}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ab432160d003a762c1ecc78004351da5d}{
+\_\-\_\-int64 {\bfseries \_\-DealThread} (bool bBlock)}
+\label{classcl_u_pn_p_thread_ab432160d003a762c1ecc78004351da5d}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_a46195fa44a19065b724e466602bf70ce}{
+void {\bfseries \_\-\_\-EnterCompleted} ()}
+\label{classcl_u_pn_p_thread_a46195fa44a19065b724e466602bf70ce}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_af3389759419f21131eb07899dfd4e7ea}{
+void {\bfseries \_\-\_\-LeaveCompleted} ()}
+\label{classcl_u_pn_p_thread_af3389759419f21131eb07899dfd4e7ea}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_u_pn_p_thread_aa934c5b21b7f7bcde49a4e710f906288}{
+void $\ast$ {\bfseries Object}}
+\label{classcl_u_pn_p_thread_aa934c5b21b7f7bcde49a4e710f906288}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_ab50b27c937c7f3c1f81c3c1a0b8b1aee}{
+\hyperlink{class_critical_section}{CriticalSection} {\bfseries ACCESSbCompleted}}
+\label{classcl_u_pn_p_thread_ab50b27c937c7f3c1f81c3c1a0b8b1aee}
+
+\item 
+\hypertarget{classcl_u_pn_p_thread_acfc2e59b9bde74e1d2363965e647091e}{
+int {\bfseries iCompleted}}
+\label{classcl_u_pn_p_thread_acfc2e59b9bde74e1d2363965e647091e}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clUPnPThread.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clUPnPThread.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,360 @@
+\hypertarget{class_net_instance_container}{
+\section{NetInstanceContainer Class Reference}
+\label{class_net_instance_container}\index{NetInstanceContainer@{NetInstanceContainer}}
+}
+
+
+Stores instances, allowing safe shutdown of instance.  
+
+
+
+
+{\ttfamily \#include $<$NetInstanceContainer.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_instance_container_a5e8789579afb8cf040214378c7eca82e}{NetInstanceContainer} (\hyperlink{class_net_instance}{NetInstance} $\ast$\hyperlink{class_net_instance_container_a2089189c13983395ff68d1bc5fa6a690}{instance})
+\begin{DoxyCompactList}\small\item\em Constructor, container is full with a loaded instance. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_container_a39dbba78298a80d44c62946f680482c4}{
+\hyperlink{class_net_instance_container_a39dbba78298a80d44c62946f680482c4}{NetInstanceContainer} ()}
+\label{class_net_instance_container_a39dbba78298a80d44c62946f680482c4}
+
+\begin{DoxyCompactList}\small\item\em Constructor, container is empty with no loaded instance. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_container_adf23fb84b078dbb6cd6b520cd19fc68a}{
+\hyperlink{class_net_instance_container_adf23fb84b078dbb6cd6b520cd19fc68a}{$\sim$NetInstanceContainer} ()}
+\label{class_net_instance_container_adf23fb84b078dbb6cd6b520cd19fc68a}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_container_a27d678196824a435618ad0ae2e82fbb0}{IsInstanceLoaded} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether an instance is loaded. Not thread safe. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_container_a0eddd90afff8d7b0671ffd9f75f81735}{KillInstance} ()
+\begin{DoxyCompactList}\small\item\em Destroy currently loaded instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_container_a5f68ff7a1f01c8799842b02c448c0b78}{LoadInstance} (\hyperlink{class_net_instance}{NetInstance} $\ast$\hyperlink{class_net_instance_container_a2089189c13983395ff68d1bc5fa6a690}{instance})
+\begin{DoxyCompactList}\small\item\em Loads an instance into this container. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_u_d_p}{NetInstanceUDP} $\ast$ \hyperlink{class_net_instance_container_a48d66882ffe7418640ba1bd063bd59b3}{GetInstanceUDP} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a \hyperlink{class_net_instance_u_d_p}{NetInstanceUDP} version of the stored instance. Not thread safe. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} $\ast$ \hyperlink{class_net_instance_container_a09d42a30172c46d5b966aea27e8c4a5b}{GetInstanceTCP} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} version of the stored instance. Not thread safe. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance}{NetInstance} $\ast$ \hyperlink{class_net_instance_container_aaa357af0fc69273afc0bc8acf3435196}{GetInstanceCore} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a the stored \hyperlink{class_net_instance}{NetInstance} object. Not thread safe. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_server}{NetInstanceServer} $\ast$ \hyperlink{class_net_instance_container_a6516b8eab4330744f3c486a9fb13dceb}{GetInstanceServer} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a \hyperlink{class_net_instance_server}{NetInstanceServer} version of the stored instance. Not thread safe. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_client}{NetInstanceClient} $\ast$ \hyperlink{class_net_instance_container_a9f12e1f36f4cac22aa953138d12ef8a3}{GetInstanceClient} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a \hyperlink{class_net_instance_client}{NetInstanceClient} version of the stored instance. Not thread safe. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_broadcast}{NetInstanceBroadcast} $\ast$ \hyperlink{class_net_instance_container_acd72db86d4c16964739ae00014b23251}{GetInstanceBroadcast} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a \hyperlink{class_net_instance_broadcast}{NetInstanceBroadcast} version of the stored instance. Not thread safe. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_container_a1be5404d0083670cd3e8d2877df842c8}{DealWithDestroyRequest} ()
+\begin{DoxyCompactList}\small\item\em Cleans up instance if instance requests this using \hyperlink{class_net_instance_a68147db634644849af174937e6706ded}{NetInstance::RequestDestroy}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_instance}{NetInstance} $\ast$ \hyperlink{class_net_instance_container_add999a784ede9aee774cb4853124830e}{\_\-AccessInstance} ()
+\begin{DoxyCompactList}\small\item\em Access currently loaded instance. Not thread safe. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_container_a6d80165ab3abb1fdbef2d0350b31cb95}{SetInstanceID} (size\_\-t newID)
+\begin{DoxyCompactList}\small\item\em For use only by \hyperlink{class_net_instance_group}{NetInstanceGroup} (via friendship) to set instanceID during initialization. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_container_a2089189c13983395ff68d1bc5fa6a690}{
+\hyperlink{class_net_instance}{NetInstance} $\ast$ \hyperlink{class_net_instance_container_a2089189c13983395ff68d1bc5fa6a690}{instance}}
+\label{class_net_instance_container_a2089189c13983395ff68d1bc5fa6a690}
+
+\begin{DoxyCompactList}\small\item\em Instance that container owns. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_net_instance_container_a549e2db5e7c563d88ffc32dacc8d5a5f}{NetInstanceGroup}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores instances, allowing safe shutdown of instance. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/15/2010.
+\end{DoxyRemark}
+The purposes of this instance are:
+\begin{DoxyItemize}
+\item To manage the life of a \hyperlink{class_net_instance}{NetInstance} object. An instance object can request it be destroyed. This object will then safely destroy the instance from the main process. Similarly the instance can be manually destroyed using KillInstance. IMPORTANT: Any thread must use \hyperlink{class_concurrency_control}{ConcurrencyControl} methods of this class when accessing any part of the instance e.g. A returned \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} object. The main thread does not need to do this however because it is the only thread that can shutdown the instance. The need to follow this rule is avoided so long as before shutting down the instance only one thread is using the instance (i.e. The thread that shuts down the instance).\par
+\par
+
+\item To access different types of instance safely. e.g. If you want to access UDP methods of an instance you can use GetInstanceUDP but if that instance has no UDP methods an exception will be thrown. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_container_a5e8789579afb8cf040214378c7eca82e}{
+\index{NetInstanceContainer@{NetInstanceContainer}!NetInstanceContainer@{NetInstanceContainer}}
+\index{NetInstanceContainer@{NetInstanceContainer}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{NetInstanceContainer}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceContainer::NetInstanceContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstance} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a5e8789579afb8cf040214378c7eca82e}
+
+
+Constructor, container is full with a loaded instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]Pointer to instance that this object should manage. This pointer and its data is now owned by this object and should not be used elsewhere. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_container_add999a784ede9aee774cb4853124830e}{
+\index{NetInstanceContainer@{NetInstanceContainer}!\_\-AccessInstance@{\_\-AccessInstance}}
+\index{\_\-AccessInstance@{\_\-AccessInstance}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{\_\-AccessInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstance} $\ast$ NetInstanceContainer::\_\-AccessInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_container_add999a784ede9aee774cb4853124830e}
+
+
+Access currently loaded instance. Not thread safe. 
+
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to currently loaded instance. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_container_a1be5404d0083670cd3e8d2877df842c8}{
+\index{NetInstanceContainer@{NetInstanceContainer}!DealWithDestroyRequest@{DealWithDestroyRequest}}
+\index{DealWithDestroyRequest@{DealWithDestroyRequest}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{DealWithDestroyRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceContainer::DealWithDestroyRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a1be5404d0083670cd3e8d2877df842c8}
+
+
+Cleans up instance if instance requests this using \hyperlink{class_net_instance_a68147db634644849af174937e6706ded}{NetInstance::RequestDestroy}. 
+
+\begin{DoxyReturn}{Returns}
+true if instance was cleaned up, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_container_acd72db86d4c16964739ae00014b23251}{
+\index{NetInstanceContainer@{NetInstanceContainer}!GetInstanceBroadcast@{GetInstanceBroadcast}}
+\index{GetInstanceBroadcast@{GetInstanceBroadcast}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{GetInstanceBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceBroadcast} $\ast$ NetInstanceContainer::GetInstanceBroadcast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_acd72db86d4c16964739ae00014b23251}
+
+
+Retrieves a \hyperlink{class_net_instance_broadcast}{NetInstanceBroadcast} version of the stored instance. Not thread safe. 
+
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{class_net_instance_broadcast}{NetInstanceBroadcast} object.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is not of this type. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_a9f12e1f36f4cac22aa953138d12ef8a3}{
+\index{NetInstanceContainer@{NetInstanceContainer}!GetInstanceClient@{GetInstanceClient}}
+\index{GetInstanceClient@{GetInstanceClient}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{GetInstanceClient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceClient} $\ast$ NetInstanceContainer::GetInstanceClient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a9f12e1f36f4cac22aa953138d12ef8a3}
+
+
+Retrieves a \hyperlink{class_net_instance_client}{NetInstanceClient} version of the stored instance. Not thread safe. 
+
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{class_net_instance_client}{NetInstanceClient} object.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is not of this type. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_aaa357af0fc69273afc0bc8acf3435196}{
+\index{NetInstanceContainer@{NetInstanceContainer}!GetInstanceCore@{GetInstanceCore}}
+\index{GetInstanceCore@{GetInstanceCore}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{GetInstanceCore}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstance} $\ast$ NetInstanceContainer::GetInstanceCore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_aaa357af0fc69273afc0bc8acf3435196}
+
+
+Retrieves a the stored \hyperlink{class_net_instance}{NetInstance} object. Not thread safe. 
+
+\begin{DoxyReturn}{Returns}
+stored instance.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is not of this type. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_a6516b8eab4330744f3c486a9fb13dceb}{
+\index{NetInstanceContainer@{NetInstanceContainer}!GetInstanceServer@{GetInstanceServer}}
+\index{GetInstanceServer@{GetInstanceServer}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{GetInstanceServer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceServer} $\ast$ NetInstanceContainer::GetInstanceServer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a6516b8eab4330744f3c486a9fb13dceb}
+
+
+Retrieves a \hyperlink{class_net_instance_server}{NetInstanceServer} version of the stored instance. Not thread safe. 
+
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{class_net_instance_server}{NetInstanceServer} object.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is not of this type. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_a09d42a30172c46d5b966aea27e8c4a5b}{
+\index{NetInstanceContainer@{NetInstanceContainer}!GetInstanceTCP@{GetInstanceTCP}}
+\index{GetInstanceTCP@{GetInstanceTCP}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{GetInstanceTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceTCP} $\ast$ NetInstanceContainer::GetInstanceTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a09d42a30172c46d5b966aea27e8c4a5b}
+
+
+Retrieves a \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} version of the stored instance. Not thread safe. 
+
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} object.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is not of this type. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_a48d66882ffe7418640ba1bd063bd59b3}{
+\index{NetInstanceContainer@{NetInstanceContainer}!GetInstanceUDP@{GetInstanceUDP}}
+\index{GetInstanceUDP@{GetInstanceUDP}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{GetInstanceUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceUDP} $\ast$ NetInstanceContainer::GetInstanceUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a48d66882ffe7418640ba1bd063bd59b3}
+
+
+Retrieves a \hyperlink{class_net_instance_u_d_p}{NetInstanceUDP} version of the stored instance. Not thread safe. 
+
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{class_net_instance_u_d_p}{NetInstanceUDP} object.
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read. or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is not of this type. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_a27d678196824a435618ad0ae2e82fbb0}{
+\index{NetInstanceContainer@{NetInstanceContainer}!IsInstanceLoaded@{IsInstanceLoaded}}
+\index{IsInstanceLoaded@{IsInstanceLoaded}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{IsInstanceLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceContainer::IsInstanceLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_container_a27d678196824a435618ad0ae2e82fbb0}
+
+
+Determines whether an instance is loaded. Not thread safe. 
+
+\begin{DoxyWarning}{Warning}
+This method is not thread safe, calling thread must have read or write control while using this method unless that thread is the main process.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+true if an instance is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_container_a0eddd90afff8d7b0671ffd9f75f81735}{
+\index{NetInstanceContainer@{NetInstanceContainer}!KillInstance@{KillInstance}}
+\index{KillInstance@{KillInstance}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{KillInstance}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceContainer::KillInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a0eddd90afff8d7b0671ffd9f75f81735}
+
+
+Destroy currently loaded instance. 
+
+Method has no impact unless called by main process.
+
+\begin{DoxyReturn}{Returns}
+true if instance was destroyed. 
+
+false if instance was not destroyed. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_container_a5f68ff7a1f01c8799842b02c448c0b78}{
+\index{NetInstanceContainer@{NetInstanceContainer}!LoadInstance@{LoadInstance}}
+\index{LoadInstance@{LoadInstance}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{LoadInstance}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceContainer::LoadInstance (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstance} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_container_a5f68ff7a1f01c8799842b02c448c0b78}
+
+
+Loads an instance into this container. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]Instance to load. This pointer and its data is now owned by this object and should not be used elsewhere.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If an instance is already loaded. \end{DoxyExceptions}
+\hypertarget{class_net_instance_container_a6d80165ab3abb1fdbef2d0350b31cb95}{
+\index{NetInstanceContainer@{NetInstanceContainer}!SetInstanceID@{SetInstanceID}}
+\index{SetInstanceID@{SetInstanceID}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{SetInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceContainer::SetInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_container_a6d80165ab3abb1fdbef2d0350b31cb95}
+
+
+For use only by \hyperlink{class_net_instance_group}{NetInstanceGroup} (via friendship) to set instanceID during initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newID}]New instance ID. \end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{class_net_instance_container_a549e2db5e7c563d88ffc32dacc8d5a5f}{
+\index{NetInstanceContainer@{NetInstanceContainer}!NetInstanceGroup@{NetInstanceGroup}}
+\index{NetInstanceGroup@{NetInstanceGroup}!NetInstanceContainer@{NetInstanceContainer}}
+\subsubsection[{NetInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf NetInstanceGroup}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{class_net_instance_container_a549e2db5e7c563d88ffc32dacc8d5a5f}
+\begin{DoxyWarning}{Warning}
+\hyperlink{class_net_instance_group}{NetInstanceGroup} should only use SetInstanceID and nothing else. 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceContainer.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceContainer.cpp\end{DoxyCompactItemize}

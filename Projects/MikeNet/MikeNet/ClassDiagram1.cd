@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="clUPnPThread" Collapsed="true">
+    <Position X="19.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AMBIiAMQAAQRCAEgSAIABAAiWAYEAIAhAACAiAAjAnA=</HashCode>
+      <FileName>clUPnPThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetUtility" Collapsed="true">
+    <Position X="19.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAIgCCQAAAAEEAAAAABAAAAAIEAIAQAAAAACQEAI=</HashCode>
+      <FileName>NetUtility.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeUdpCatchAllNo" Collapsed="true">
+    <Position X="7.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAAAAAgBAIAAAAAAQAAAAAAAAAgAIQAAAAQABA=</HashCode>
+      <FileName>NetModeUdpCatchAllNo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeUdpCatchAll" Collapsed="true">
+    <Position X="7.25" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAAAgBAIAAIAAAQAAAQAAAAAAAcQAQAAAABA=</HashCode>
+      <FileName>NetModeUdpCatchAll.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeTcpPrefixSize" Collapsed="true">
+    <Position X="0.5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAIEAAAQEAAAAAAAAAAIQAAAAAABA=</HashCode>
+      <FileName>NetModeTcpPrefixSize.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeUdpPerClient" Collapsed="true">
+    <Position X="5" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAAAgBgIAEAAAAQAAAwAAAAABAIQAQAAgABA=</HashCode>
+      <FileName>NetModeUdpPerClient.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeTcpPostfix" Collapsed="true">
+    <Position X="2.75" Y="15.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACIAIAAAAQAAAAAAAAAAAIQAAAAAIBA=</HashCode>
+      <FileName>NetModeTcpPostfix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeTcp" Collapsed="true">
+    <Position X="1.5" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>RAABAAABAAAgAAAAIAAAgTAABQADEAAAAIAAAAQUABA=</HashCode>
+      <FileName>NetModeTcp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetModeUdp" Collapsed="true">
+    <Position X="6" Y="13.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAAAQBAAAAAAAAAAAAQAAAAAAAAAAQAAAABA=</HashCode>
+      <FileName>NetModeUdp.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSocketSimple" Collapsed="true">
+    <Position X="12.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>iAAAEAAACADgDAgAAACCAYAjBAAAEACAAAACAAiQABA=</HashCode>
+      <FileName>NetSocketSimple.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetAddress" Collapsed="true">
+    <Position X="22.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABBABIIAACAQAAAQAAAAAAAAAAAABAAgA=</HashCode>
+      <FileName>NetAddress.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSocket" Collapsed="true">
+    <Position X="11.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEIABAADQABgAARAAkAjgZgAEMAAAgAAAJIAQACgABQ=</HashCode>
+      <FileName>NetSocket.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSocketListening" Collapsed="true">
+    <Position X="14.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAEAAAAAEEAAAAAAAgAAAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>NetSocketListening.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSocketTCP" Collapsed="true">
+    <Position X="10.5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQIKAQkAAAAIEAAAQBCAIAAAAAAAKQAQACUABA=</HashCode>
+      <FileName>NetSocketTCP.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSocketUDP" Collapsed="true">
+    <Position X="12.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAFABAAJBBgBAAAAEEIAQQAAIgAAAAAAIAAQACAABA=</HashCode>
+      <FileName>NetSocketUDP.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSendRaw" Collapsed="true">
+    <Position X="7.75" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YBAAQAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAIAgAAAA=</HashCode>
+      <FileName>NetSendRaw.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSendPostfix" Collapsed="true">
+    <Position X="10" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAAAAAAAAAAAAAAACAAAAACAAAAAAAAAAAAAIAgAIAg=</HashCode>
+      <FileName>NetSendPostfix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSendPrefix" Collapsed="true">
+    <Position X="12.25" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>YAAAAAAAAAAAAAAACAAAAAAAAAAAAgAEAAAAIAoAAAA=</HashCode>
+      <FileName>NetSendPrefix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetSend" Collapsed="true">
+    <Position X="10" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAIAAAAIAAACAAAAAAAgAAAAAgAAAAAAAAhBAA=</HashCode>
+      <FileName>NetSend.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clBroadcastState" Collapsed="true">
+    <Position X="3.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAFAAAAAAABEAAAAAAAACAQABAIAA=</HashCode>
+      <FileName>clBroadcastState.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetInstanceClient" Collapsed="true">
+    <Position X="2.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QhQMYQAgEACAAoAAhAAAIKEADYBBgAANBCSAQghCKEQ=</HashCode>
+      <FileName>NetInstanceClient.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clInstance" Collapsed="true">
+    <Position X="0.5" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBQAUBAC8A8QwBgYACGAIEECqFBIgEmFCWJRoAAJAw=</HashCode>
+      <FileName>clInstance_old.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetInstance" Collapsed="true">
+    <Position X="2.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAIAAAwAAAAAAAAAIJEAEAAAAQEAAADE=</HashCode>
+      <FileName>NetInstance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clInstanceSetup" Collapsed="true">
+    <Position X="17.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADhBIQIACAAUAABgiAFCAAAAAABMAMAEAAADSQgAhAg=</HashCode>
+      <FileName>clInstanceSettings.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetInstanceTCP" Collapsed="true">
+    <Position X="1.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EBwJAAAgCAGAAgAABAAAAAEAAABBgAAEAgQEAAACCEQ=</HashCode>
+      <FileName>NetInstanceTCP.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetInstanceUDP" Collapsed="true">
+    <Position X="3.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABCAgAAAAEAACACQAgEAAYAABgBAAAAAkCCAAABAIgA=</HashCode>
+      <FileName>NetInstanceUDP.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetServerClient" Collapsed="true">
+    <Position X="7.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQIACAhAACAAoAgIAAaAaIAgAhJKCAEAAAAAwBACEQ=</HashCode>
+      <FileName>NetServerClient.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetInstanceServer" Collapsed="true">
+    <Position X="0.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhQYAwAgAEiAAoAQvkAAAIEQBABBkEQGlECCTABiKGQ=</HashCode>
+      <FileName>NetInstanceServer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NetCompletionKey" Collapsed="true">
+    <Position X="17.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEACAAAAEAYAAAAAAQAABABBACFAAAEAAgAAAAQ=</HashCode>
+      <FileName>NetCompletionKey.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Counter" Collapsed="true">
+    <Position X="19.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAACAABAABAAAIBAABEAAAAAAAAEIQAACAEQQAAA=</HashCode>
+      <FileName>Counter.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EncryptKey" Collapsed="true">
+    <Position X="21" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAACAQACAAAAAAAAAAAAAAQAaAAAAAAAkA=</HashCode>
+      <FileName>EncryptKey.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Packet" Collapsed="true">
+    <Position X="5.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>qU8EmMMgAiIiSQJRcFn60TYMDBFRFCgMaiESgBbVIsA=</HashCode>
+      <FileName>Packet.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Store&lt;T&gt;" Collapsed="true">
+    <Position X="3.75" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAEAAAIAAAgABAAAAAAQAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Store.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreQueue&lt;T&gt;" Collapsed="true">
+    <Position X="5" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIAEAAAABAAgABAEAAAAQAAAAAAAAAAAAAQAABAAAA=</HashCode>
+      <FileName>StoreQueue.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StoreVector&lt;T&gt;" Collapsed="true">
+    <Position X="2.75" Y="11.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQIEFAAEAAAAgABAAAEAAQAAAAAAAAgAAAAQAAFAAAA=</HashCode>
+      <FileName>StoreVector.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Timer" Collapsed="true">
+    <Position X="17.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAGCAAAAAAAAAAAAAAAAAAAAAAAAIAIAAAEAAAAA=</HashCode>
+      <FileName>Timer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Utility" Collapsed="true">
+    <Position X="21" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAgAAAAAAAAAAAIAAAAAAAAAAAAAAAIACAA=</HashCode>
+      <FileName>GeneralFunctions.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CriticalSection" Collapsed="true">
+    <Position X="8.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAACAAAAAAAAAAAAAAAAAAAEEAAAAAAAAAABAAAA=</HashCode>
+      <FileName>CriticalSection.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ConcurrencyControl" Collapsed="true">
+    <Position X="3.75" Y="8.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAgiAQAEAgQAAAAAAAQAQBAEEAAEAwAAAAWyAAAA=</HashCode>
+      <FileName>ConcurrencyControl.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputInstance" Collapsed="true">
+    <Position X="24.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AFQCAYBACCEIgggCCAAyBQAggAggARIAUEAgAAQwAAA=</HashCode>
+      <FileName>InputInstance.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SoundInstanceOutput" Collapsed="true">
+    <Position X="21" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAhARBgCAEIAogAgAACFQAgAAgAABFA0IAEARggEAA=</HashCode>
+      <FileName>SoundInstanceOutput.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clSoundThread" Collapsed="true">
+    <Position X="24.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAACAABAAAAAkgACAAAgCACCASAAAAAIAAAACAAAgA=</HashCode>
+      <FileName>clSoundCallbackThread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clFwAuthorizedApplication" Collapsed="true">
+    <Position X="22.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAYAABAQAAgAAgASAAAAAAIAAACAAGACQEAAEIA=</HashCode>
+      <FileName>clFwAuthorizedApplication.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clFwManager" Collapsed="true">
+    <Position X="24.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAAAIAQAAAACAAAIAAAAEAEBAAAQCAAABAAAAA=</HashCode>
+      <FileName>clFwManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clFwOpenPort" Collapsed="true">
+    <Position X="17.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQIAAABAAAAAAgAWAAAACAoAgAGgACACQEAAEKA=</HashCode>
+      <FileName>clFwOpenPort.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clFwOpenPorts" Collapsed="true">
+    <Position X="19.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAEAAgEAQEAAAAACAAgAAAAgQgAAAAAAAEAAAAA=</HashCode>
+      <FileName>clFwOpenPorts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clFwProfile" Collapsed="true">
+    <Position X="21" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wRIYABPCAFQYAOIACQQiJAOIAIoEQICQgBACAUAAAIg=</HashCode>
+      <FileName>clFwProfile.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="clFwService" Collapsed="true">
+    <Position X="22.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAIAAAAAAAAAAgAyAAAAgAIAQACAAKACAEAAGIA=</HashCode>
+      <FileName>clFwService.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="clNAT" Collapsed="true">
+    <Position X="21" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAEAAAAABAAAQAAAQAIAICAAAAAAAgAAAAAU=</HashCode>
+      <FileName>clNAT.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="clPortMap" Collapsed="true">
+    <Position X="22.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAEAAAIAAIQgACAAAAAAQAQAAACAABQAEAAAY=</HashCode>
+      <FileName>clPortMap.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="NetMode" Collapsed="true">
+    <Position X="3.75" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAIQAAAAAAAA=</HashCode>
+      <FileName>NetMode.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="ErrorReport" Collapsed="true">
+    <Position X="19.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAEAABQgAIAkEAIAAQADASQIABAACAAAAAEAAEBACAg=</HashCode>
+      <FileName>ErrorReport.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="WSABUF_2" Collapsed="true">
+    <Position X="17.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>WSABUF_2.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="_clString" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAQAAAAEAABAAECAQAAAAAAAAAAAIAAAAQAAgA=</HashCode>
+      <FileName>clString.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="clSoundFormat" Collapsed="true">
+    <Position X="24.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEAAAAAAAAAIBAAAABAAAAAAAEAAAAAQEAAAAAAAAAA=</HashCode>
+      <FileName>clSoundFormat.h</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Typedef Name="LPFN_GLPI" Collapsed="true">
+    <Position X="17.5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>mnCPU.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="LPFN_ISWOW64PROCESS" Collapsed="true">
+    <Position X="19.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>mnCPU.cpp</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

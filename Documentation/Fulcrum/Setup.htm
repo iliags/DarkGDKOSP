@@ -1,0 +1,131 @@
+<html>
+
+
+   <head>
+      <title> setup  </title>
+      <link rel="stylesheet" type="text/css" href="Assets//Style Sheets//style1.css"/>
+   </head>      
+
+
+    
+
+
+
+
+   <body id = wrap>
+      <center>                
+  
+         <h1> SETUP </h1>  
+
+      </center>
+                  
+<br>
+<br>
+     
+
+Create a Visual Studio project using one of the DarkGDK templates provided when you installed the GDK,
+or you can use an existing project if you like.
+<BR>
+
+Go to: Project -> “project name” Properties -> Configuration properties-> C/C++ ->Code generation 
+Change the runtime library from “Multi-threaded Debug (/Mtd)” to Multi-threaded (/MT).
+<BR>
+<BR>
+<BR>
+
+   <H2>
+   <center>
+   Header Files
+   </center>
+   </H2>
+
+In the Physics plug-in (version) folder there should be an include file, this is all the include files in one folder for ease of use, you can include this into all your future projects by going to:
+Tools -> options… -> Projects and Solutions -> VC++ Directories
+Select “Include files”, click on the new line folder and copy the “Include” address into here, it is usually something like this: C:\Users\Matty\Documents\Fulcrum Physics plug-in (version)\ Include
+<BR>
+Alternatively you can empty all the contents of the Include file into one of the includes that are already in VC++ Directories, usually something like this:
+ C:\Program Files\The Game Creators\Dark GDK\Include.
+I prefer the first method to keep everything separate.
+<BR>
+<BR>
+   <H2>
+   <center>
+   Library Files
+   </center>
+   </H2>
+Library Files
+You need to do the same with the Lib folder that is included in the Fulcrum Physics plug-in (version) folder provided:
+Tools -> options… -> Projects and Solutions -> VC++ Directories
+Select “Library files”, click on the new line folder and copy the “Lib” address into here.
+<BR>
+Again, as an alternative you can empty all the contents of the lib folder into an existing VC++ Directory such as:
+ C:\Program Files\The Game Creators\Dark GDK\Lib\VS9
+<BR>
+<BR>
+
+   <H2>
+   <center>
+   Dll's
+   </center>
+   </H2>
+You will need to put the contents of the dlls folder Fulcrum Physics plug-in (version) into the root directory of your project, this will be the folder where your “main.cpp” file is located.
+<BR>
+<BR>
+
+   <H2>
+   <center>
+   Drivers
+   </center>
+   </H2>
+You may also need to update your drivers 
+<A HREF = "http://www.nvidia.com/object/physx_9.09.1112.html"> HERE, </A>
+
+you may not though, so you may want to leave this until you know if you need it. 
+
+<BR>
+<BR>
+<BR>
+<BR>
+O.K, you should be good to go, don’t forget to put: <br><B>  #include “FulcrumPhy.h” </B><br> at the top of your code.
+<BR>
+Good luck.
+<BR>
+
+
+              
+<BR>
+ 
+Matty.
+
+<BR>
+<BR>
+<BR>
+<BR>
+
+
+      <A HREF="Welcome.htm">  Welcome  </A> 
+
+
+
+   
+
+
+
+
+
+
+
+  </body>
+
+
+
+
+   
+
+
+
+
+
+
+
+</html>

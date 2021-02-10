@@ -1,0 +1,885 @@
+\hypertarget{class_net_utility}{
+\section{NetUtility Class Reference}
+\label{class_net_utility}\index{NetUtility@{NetUtility}}
+}
+
+
+Global networking methods and variables.  
+
+
+
+
+{\ttfamily \#include $<$NetUtility.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7}{Error} \{ \hyperlink{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7aa12331fede483c6bcfb76a0b46954028}{NET\_\-ERROR} =  -\/1, 
+\hyperlink{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7acca94351eff26d1297605eb211efc997}{UNSIGNED\_\-NET\_\-ERROR} =  0
+ \}
+\begin{DoxyCompactList}\small\item\em Values used to indicate error. \item\end{DoxyCompactList}\item 
+enum \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{ConnectionStatus} \{ \par
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{REFUSED} =  -\/2, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{CONNECTION\_\-ERROR} =  -\/1, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{TIMED\_\-OUT} =  0, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}{NOT\_\-CONNECTED} =  0, 
+\par
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{CONNECTED} =  1, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}{STILL\_\-CONNECTING} =  2, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}{NO\_\-SEND} =  2, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}{NO\_\-RECV} =  3, 
+\par
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}{NO\_\-SEND\_\-RECV} =  4, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9d19ff7a0b7766eb4176922a19ff44af}{CONNECTING} =  5, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7b6f70df4b1b357e16aee1e4ca169aa2}{CONNECTED\_\-AC} =  6, 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9a6a615b574b5d529729238b1d956ee6}{DISCONNECTING} =  7
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the stage that a connection is in. \item\end{DoxyCompactList}\item 
+enum \hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{SendStatus} \{ \hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{SEND\_\-COMPLETED} =  0, 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{SEND\_\-IN\_\-PROGRESS} =  1, 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{SEND\_\-FAILED} =  -\/1, 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{SEND\_\-FAILED\_\-KILL} =  -\/2
+ \}
+\begin{DoxyCompactList}\small\item\em Describes the result of a send operation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int $\ast$ \hyperlink{class_net_utility_a2509391f4fbcce2bfc8c77cb251fa53c}{GetSizeSOCKADDR} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to sizeof(SOCKADDR). \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a02950745d0116653291f28817b896386}{
+static void \hyperlink{class_net_utility_a02950745d0116653291f28817b896386}{StartWinsock} ()}
+\label{class_net_utility_a02950745d0116653291f28817b896386}
+
+\begin{DoxyCompactList}\small\item\em Initializes winsock, winsock is at the heart of the networking module. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a5363d3bf71a3ed70376e1eda0f02f47a}{
+static void \hyperlink{class_net_utility_a5363d3bf71a3ed70376e1eda0f02f47a}{FinishWinsock} ()}
+\label{class_net_utility_a5363d3bf71a3ed70376e1eda0f02f47a}
+
+\begin{DoxyCompactList}\small\item\em Unloads winsock, this method will fail if winsock was not initialized using StartWinsock previously. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_utility_a6fd358e07da83faaf8306171426e5362}{IsWinsockActive} ()
+\begin{DoxyCompactList}\small\item\em Determines whether winsock is loaded. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_net_instance_group}{NetInstanceGroup} \& \hyperlink{class_net_utility_ae66ffeb5d6e0092c8bedc44f73392200}{GetInstanceGroup} ()
+\begin{DoxyCompactList}\small\item\em Retrieves reference to instance group. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_a38666920bbd1d7dd972f5f9129e72be7}{CreateInstanceGroup} (size\_\-t numInstances)
+\begin{DoxyCompactList}\small\item\em Create instance group which contains instances that are controlled by global mn commands. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_a485f7c662aa0f79182939d918d588f54}{DestroyInstanceGroup} ()
+\begin{DoxyCompactList}\small\item\em Shuts down instance group. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_utility_a9fc6fa46016bc244ac943411a0c1e0f9}{IsInstanceGroupLoaded} ()
+\begin{DoxyCompactList}\small\item\em Determines whether an instance group is loaded and stored by \hyperlink{class_net_utility}{NetUtility}. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_net_utility_a0bfef73df16524b55ffb08aae84a1de3}{GetNumInstances} ()
+\begin{DoxyCompactList}\small\item\em Determines the number of instances in the instance group stored by \hyperlink{class_net_utility}{NetUtility}. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_net_utility_aca0bbea45a7bc232fdb88505f97cc016}{GetMainProcessThreadID} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the thread ID associated with the main process. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_net_utility_a9d121512c68efc81188462f1e0ed4a81}{GetNumThreads} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of completion port threads in operation. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_net_utility_a734842edc567a0fb88147c8bdc08e91a}{GetNumThreadedParticipants} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of multithreaded participants. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_aa6103c1b3d6f5b366c0903ba7b22a625}{SetupCompletionPort} (size\_\-t numThreads)
+\begin{DoxyCompactList}\small\item\em Sets up completion port and creates threads to manage completion port. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a1b2143157ad5b59658f8728cb05faa0c}{
+static void \hyperlink{class_net_utility_a1b2143157ad5b59658f8728cb05faa0c}{DestroyCompletionPort} ()}
+\label{class_net_utility_a1b2143157ad5b59658f8728cb05faa0c}
+
+\begin{DoxyCompactList}\small\item\em Shuts down completion port and its threads. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_utility_abb0a78cab44c3f605474b6de38308a37}{IsCompletionPortSetup} ()
+\begin{DoxyCompactList}\small\item\em Determines whether the completion port is setup. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_af33b8d32b789de4cdec378d442662096}{AssociateWithCompletionPort} (HANDLE object, const \hyperlink{class_completion_key}{CompletionKey} \&key)
+\begin{DoxyCompactList}\small\item\em Associates an object with the completion port, so that status indicators can be received by the completion port about that object. \item\end{DoxyCompactList}\item 
+static const char $\ast$ \hyperlink{class_net_utility_a2bcea9d3bdb880dde7870333fb7033f6}{GetHostName} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the computer. \item\end{DoxyCompactList}\item 
+static const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_utility_aa014d19c36866c5be2715dec110f09ee}{GetLocalInterface} (size\_\-t ele)
+\begin{DoxyCompactList}\small\item\em Retrieves a local interface. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_net_utility_a5b29758025dba92128f60a2240458552}{GetNumLocalInterface} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of local interface available. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a4a35e8694ff38e90f3b84c81ac108300}{
+static void \hyperlink{class_net_utility_a4a35e8694ff38e90f3b84c81ac108300}{LoadLocalInfo} ()}
+\label{class_net_utility_a4a35e8694ff38e90f3b84c81ac108300}
+
+\begin{DoxyCompactList}\small\item\em Retrieves and stores information about local interface and the computer name. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_aec9d16aa859066548409b9b692077b49}{UnloadLocalInfo} ()
+\begin{DoxyCompactList}\small\item\em Unloads local information stored about local interface and the computer name. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_utility_af8d183510e0ec6eb8019eb3955180485}{IsLocalInfoLoaded} ()
+\begin{DoxyCompactList}\small\item\em Determines whether information has been loaded and stored about local interface and the computer name. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_a0e67f2b38e5dd236c597eb6b1a51a39e}{LoadEverything} (size\_\-t numThreads, size\_\-t numInstances)
+\begin{DoxyCompactList}\small\item\em Performs all possible setup operations, making the networking module fully operational. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_net_utility_a9f81602db0e4c48e6d9110a32cdf9bdd}{UnloadEverything} ()
+\begin{DoxyCompactList}\small\item\em Performs all possible shutdown operations, fully unloading the networking module. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_utility_a612bb9b27e597c9855296cd466d2d66c}{IsEverythingLoaded} ()
+\begin{DoxyCompactList}\small\item\em Determines whether the networking module is fully operational. \item\end{DoxyCompactList}\item 
+static const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_utility_a9a0239fd2f2e3f92f3fd68049c61d82f}{ConvertDomainNameToIP} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Converts a domain name (e.g. www.google.com) to an IP address. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_utility_ae7a7c4737a2b25c8c856352b2052a9e1}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_utility_a23f4db25747a22a073fa597478e213e9}{
+static const unsigned int \hyperlink{class_net_utility_a23f4db25747a22a073fa597478e213e9}{maxComputerNameSize} = 1024}
+\label{class_net_utility_a23f4db25747a22a073fa597478e213e9}
+
+\begin{DoxyCompactList}\small\item\em Max length that computer name can be, longer computer names will probably be truncated. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a0cd69698eb7cf26f31f71848699e7fd7}{
+static const unsigned int \hyperlink{class_net_utility_a0cd69698eb7cf26f31f71848699e7fd7}{authenticationStrength} = 4}
+\label{class_net_utility_a0cd69698eb7cf26f31f71848699e7fd7}
+
+\begin{DoxyCompactList}\small\item\em Level of UDP authentication used by instances. \item\end{DoxyCompactList}\item 
+static const unsigned char \hyperlink{class_net_utility_a4c0093017521d888c4510cc940ffa335}{EncryptionBox} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Used during encryption/decryption. \item\end{DoxyCompactList}\item 
+static const unsigned char \hyperlink{class_net_utility_af110cf0b6c348c10e3ab60454df79a84}{InverseEncryptionBox} \mbox{[}256\mbox{]}
+\begin{DoxyCompactList}\small\item\em Used during encryption/decryption. \item\end{DoxyCompactList}\item 
+static const unsigned char \hyperlink{class_net_utility_ab7bcf3b3ff54908eb12a3592e2c529e9}{EncryptionRoundConstant} \mbox{[}255\mbox{]}
+\begin{DoxyCompactList}\small\item\em Used during encryption/decryption. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_net_utility_af890898fde583d84d73a4bbc8aee64b2}{ValidateThreadID} (size\_\-t threadID, size\_\-t line, const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Validates the specified thread ID, ensuring it is not out of bounds. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_utility_a3e4da37b0d11d4139eb5775fca3c60bb}{
+static \hyperlink{class_completion_port}{CompletionPort} $\ast$ \hyperlink{class_net_utility_a3e4da37b0d11d4139eb5775fca3c60bb}{completionPort} = NULL}
+\label{class_net_utility_a3e4da37b0d11d4139eb5775fca3c60bb}
+
+\begin{DoxyCompactList}\small\item\em Completion port object to manage the completion port and associated threads. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_ad9d1d141652dc99f04138bf151f627ab}{
+static DWORD\_\-PTR \hyperlink{class_net_utility_ad9d1d141652dc99f04138bf151f627ab}{threadAffinity} = 0}
+\label{class_net_utility_ad9d1d141652dc99f04138bf151f627ab}
+
+\begin{DoxyCompactList}\small\item\em Each bit represents the affinity of a thread where bit 0 is thread 0. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a320e6e50166990f3b464c20b74a00979}{
+static char $\ast$ \hyperlink{class_net_utility_a320e6e50166990f3b464c20b74a00979}{hostName} = NULL}
+\label{class_net_utility_a320e6e50166990f3b464c20b74a00979}
+
+\begin{DoxyCompactList}\small\item\em Name of computer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a866404414ea61d08df9a1e8c99bdd28a}{
+static \hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_net_address}{NetAddress} $>$ \hyperlink{class_net_utility_a866404414ea61d08df9a1e8c99bdd28a}{localInterface}}
+\label{class_net_utility_a866404414ea61d08df9a1e8c99bdd28a}
+
+\begin{DoxyCompactList}\small\item\em Available local interfaces. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_ae43bb23b8d8fb7d0150b50e01ed4d227}{
+static \hyperlink{class_net_instance_group}{NetInstanceGroup} $\ast$ \hyperlink{class_net_utility_ae43bb23b8d8fb7d0150b50e01ed4d227}{instanceGroup} = NULL}
+\label{class_net_utility_ae43bb23b8d8fb7d0150b50e01ed4d227}
+
+\begin{DoxyCompactList}\small\item\em Group of instances controlled by mn namespace. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_afb399170853b04afd3f71af66576cdd8}{
+static bool \hyperlink{class_net_utility_afb399170853b04afd3f71af66576cdd8}{winsockActive} = false}
+\label{class_net_utility_afb399170853b04afd3f71af66576cdd8}
+
+\begin{DoxyCompactList}\small\item\em True if winsock has been started using \hyperlink{class_net_utility_a02950745d0116653291f28817b896386}{StartWinsock()}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_a4a6ccbc32959a956ec43d9c4373821b0}{
+static bool \hyperlink{class_net_utility_a4a6ccbc32959a956ec43d9c4373821b0}{localInfoLoaded} = false}
+\label{class_net_utility_a4a6ccbc32959a956ec43d9c4373821b0}
+
+\begin{DoxyCompactList}\small\item\em True if local information has been loaded using \hyperlink{class_net_utility_a4a35e8694ff38e90f3b84c81ac108300}{LoadLocalInfo()}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_af693d73cef8fcec47e86e570431b3696}{
+static int \hyperlink{class_net_utility_af693d73cef8fcec47e86e570431b3696}{sizeSOCKADDR} = sizeof(SOCKADDR)}
+\label{class_net_utility_af693d73cef8fcec47e86e570431b3696}
+
+\begin{DoxyCompactList}\small\item\em Sizeof(SOCKADDR) some winsock methods require a pointer to this. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_utility_acf4e92ce27684eabb52d3258e654b853}{
+static \hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_utility_acf4e92ce27684eabb52d3258e654b853}{convertedDomainName}}
+\label{class_net_utility_acf4e92ce27684eabb52d3258e654b853}
+
+\begin{DoxyCompactList}\small\item\em Stores the result of \hyperlink{class_net_utility_a9a0239fd2f2e3f92f3fd68049c61d82f}{ConvertDomainNameToIP()}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Global networking methods and variables. \begin{DoxyAuthor}{Author}
+Michael Pryor, 4/19/2010.
+\end{DoxyAuthor}
+Used throughout the networking module. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{
+\index{NetUtility@{NetUtility}!ConnectionStatus@{ConnectionStatus}}
+\index{ConnectionStatus@{ConnectionStatus}!NetUtility@{NetUtility}}
+\subsubsection[{ConnectionStatus}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NetUtility::ConnectionStatus}}}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}
+
+
+Describes the stage that a connection is in. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{REFUSED@{REFUSED}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!REFUSED@{REFUSED}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{
+REFUSED}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}
+}]Connection was refused. \par
+ Value of -\/2. \index{CONNECTION\_\-ERROR@{CONNECTION\_\-ERROR}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!CONNECTION\_\-ERROR@{CONNECTION\_\-ERROR}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{
+CONNECTION\_\-ERROR}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}
+}]Error occurred whilst connecting. \par
+ Value of -\/1. \index{TIMED\_\-OUT@{TIMED\_\-OUT}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!TIMED\_\-OUT@{TIMED\_\-OUT}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{
+TIMED\_\-OUT}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}
+}]Connection timed out, i.e. Did not complete within required amount of time. \par
+ Value of 0. \index{NOT\_\-CONNECTED@{NOT\_\-CONNECTED}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!NOT\_\-CONNECTED@{NOT\_\-CONNECTED}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}{
+NOT\_\-CONNECTED}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}
+}]Not connected at all i.e. inactive.\par
+ Value of 0. \index{CONNECTED@{CONNECTED}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!CONNECTED@{CONNECTED}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{
+CONNECTED}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}
+}]Fully connected i.e. Active. \par
+ Value of 1. \index{STILL\_\-CONNECTING@{STILL\_\-CONNECTING}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!STILL\_\-CONNECTING@{STILL\_\-CONNECTING}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}{
+STILL\_\-CONNECTING}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}
+}]Connection attempt is still in progress. \par
+ Value of 2. \index{NO\_\-SEND@{NO\_\-SEND}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!NO\_\-SEND@{NO\_\-SEND}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}{
+NO\_\-SEND}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}
+}]The graceful disconnection process is in progress and data may no longer be sent via TCP but may still be received. Other protocols are unaffected. This status is received when the connection has been shut down; see \hyperlink{graceful_disconnect_page}{graceful disconnecting} for more information. \par
+ Value of 2. \index{NO\_\-RECV@{NO\_\-RECV}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!NO\_\-RECV@{NO\_\-RECV}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}{
+NO\_\-RECV}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}
+}]The graceful disconnection process is in progress and data may no longer be received via TCP but may still be sent. Other protocols are unaffected. This status is received when the connection has been shut down by the other participant; see \hyperlink{graceful_disconnect_page}{graceful disconnecting} for more information. \par
+ Value of 3. \index{NO\_\-SEND\_\-RECV@{NO\_\-SEND\_\-RECV}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!NO\_\-SEND\_\-RECV@{NO\_\-SEND\_\-RECV}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}{
+NO\_\-SEND\_\-RECV}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}
+}]The graceful disconnection process is in progress and data may no longer be sent or received via TCP. Other protocols are unaffected. This status is received when the connection has been shut down by both participants but there are packets left in the receive queue; see \hyperlink{graceful_disconnect_page}{graceful disconnecting} for more information. \par
+ Value of 4. \index{CONNECTING@{CONNECTING}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!CONNECTING@{CONNECTING}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9d19ff7a0b7766eb4176922a19ff44af}{
+CONNECTING}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9d19ff7a0b7766eb4176922a19ff44af}
+}]The connection process is in progress. Value of 5. \index{CONNECTED\_\-AC@{CONNECTED\_\-AC}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!CONNECTED\_\-AC@{CONNECTED\_\-AC}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7b6f70df4b1b357e16aee1e4ca169aa2}{
+CONNECTED\_\-AC}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7b6f70df4b1b357e16aee1e4ca169aa2}
+}]The connection has completed but confirmation is needed before the connection becomes fully active. \par
+ Value of 6. \index{DISCONNECTING@{DISCONNECTING}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!DISCONNECTING@{DISCONNECTING}}\item[{\em 
+\hypertarget{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9a6a615b574b5d529729238b1d956ee6}{
+DISCONNECTING}
+\label{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9a6a615b574b5d529729238b1d956ee6}
+}]The connection is still active but a request has been made for it to be terminated. \par
+ Value of 7. \end{description}
+\end{Desc}
+
+\hypertarget{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7}{
+\index{NetUtility@{NetUtility}!Error@{Error}}
+\index{Error@{Error}!NetUtility@{NetUtility}}
+\subsubsection[{Error}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NetUtility::Error}}}
+\label{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7}
+
+
+Values used to indicate error. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{NET\_\-ERROR@{NET\_\-ERROR}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!NET\_\-ERROR@{NET\_\-ERROR}}\item[{\em 
+\hypertarget{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7aa12331fede483c6bcfb76a0b46954028}{
+NET\_\-ERROR}
+\label{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7aa12331fede483c6bcfb76a0b46954028}
+}]Attempted a networking operation but failed, used where the return value indicates error and is signed. This is the most common error return value. \par
+ Value of -\/1. \index{UNSIGNED\_\-NET\_\-ERROR@{UNSIGNED\_\-NET\_\-ERROR}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!UNSIGNED\_\-NET\_\-ERROR@{UNSIGNED\_\-NET\_\-ERROR}}\item[{\em 
+\hypertarget{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7acca94351eff26d1297605eb211efc997}{
+UNSIGNED\_\-NET\_\-ERROR}
+\label{class_net_utility_ae331fb5c7488331b51a881f5e5435ce7acca94351eff26d1297605eb211efc997}
+}]Attempted a networking operation but failed, used where the return value indicates error and is unsigned.\par
+ Value of 0. \end{description}
+\end{Desc}
+
+\hypertarget{class_net_utility_a8051eca61204ffd818281419bbf44736}{
+\index{NetUtility@{NetUtility}!SendStatus@{SendStatus}}
+\index{SendStatus@{SendStatus}!NetUtility@{NetUtility}}
+\subsubsection[{SendStatus}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NetUtility::SendStatus}}}
+\label{class_net_utility_a8051eca61204ffd818281419bbf44736}
+
+
+Describes the result of a send operation. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SEND\_\-COMPLETED@{SEND\_\-COMPLETED}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!SEND\_\-COMPLETED@{SEND\_\-COMPLETED}}\item[{\em 
+\hypertarget{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{
+SEND\_\-COMPLETED}
+\label{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}
+}]The send operation completed successfully and the data has now been sent. \par
+ Value of 0. \index{SEND\_\-IN\_\-PROGRESS@{SEND\_\-IN\_\-PROGRESS}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!SEND\_\-IN\_\-PROGRESS@{SEND\_\-IN\_\-PROGRESS}}\item[{\em 
+\hypertarget{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{
+SEND\_\-IN\_\-PROGRESS}
+\label{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}
+}]The send operation was started, but has not yet completed.\par
+ Value of 1. \index{SEND\_\-FAILED@{SEND\_\-FAILED}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!SEND\_\-FAILED@{SEND\_\-FAILED}}\item[{\em 
+\hypertarget{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{
+SEND\_\-FAILED}
+\label{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}
+}]The send operation failed, but not catastrophically, so the entity does not need to be killed.\par
+ Value of -\/1. \index{SEND\_\-FAILED\_\-KILL@{SEND\_\-FAILED\_\-KILL}!NetUtility@{NetUtility}}\index{NetUtility@{NetUtility}!SEND\_\-FAILED\_\-KILL@{SEND\_\-FAILED\_\-KILL}}\item[{\em 
+\hypertarget{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{
+SEND\_\-FAILED\_\-KILL}
+\label{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}
+}]The send operation failed catastrophically, so the entity should be killed. Value of -\/2. \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_utility_af33b8d32b789de4cdec378d442662096}{
+\index{NetUtility@{NetUtility}!AssociateWithCompletionPort@{AssociateWithCompletionPort}}
+\index{AssociateWithCompletionPort@{AssociateWithCompletionPort}!NetUtility@{NetUtility}}
+\subsubsection[{AssociateWithCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::AssociateWithCompletionPort (
+\begin{DoxyParamCaption}
+\item[{HANDLE}]{ object, }
+\item[{const {\bf CompletionKey} \&}]{ key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_af33b8d32b789de4cdec378d442662096}
+
+
+Associates an object with the completion port, so that status indicators can be received by the completion port about that object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]Object to associate with completion port. \item[{\em key}]Key associated with object, to uniquely identify it. \end{DoxyParams}
+\hypertarget{class_net_utility_a9a0239fd2f2e3f92f3fd68049c61d82f}{
+\index{NetUtility@{NetUtility}!ConvertDomainNameToIP@{ConvertDomainNameToIP}}
+\index{ConvertDomainNameToIP@{ConvertDomainNameToIP}!NetUtility@{NetUtility}}
+\subsubsection[{ConvertDomainNameToIP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetUtility::ConvertDomainNameToIP (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ hostName}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a9a0239fd2f2e3f92f3fd68049c61d82f}
+
+
+Converts a domain name (e.g. www.google.com) to an IP address. 
+
+If {\itshape str\/} contains an IP address already then the return value will be that IP address unchanged.\par
+\par
+
+
+This method is thread safe. The return value will remain valid and unmodified until the next call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em hostName}]Domain name to convert. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IP address representation of {\itshape addr\/}. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a38666920bbd1d7dd972f5f9129e72be7}{
+\index{NetUtility@{NetUtility}!CreateInstanceGroup@{CreateInstanceGroup}}
+\index{CreateInstanceGroup@{CreateInstanceGroup}!NetUtility@{NetUtility}}
+\subsubsection[{CreateInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::CreateInstanceGroup (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInstances}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a38666920bbd1d7dd972f5f9129e72be7}
+
+
+Create instance group which contains instances that are controlled by global mn commands. 
+
+Any existing group will be overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numInstances}]Number of instances to be created but not setup. \end{DoxyParams}
+\hypertarget{class_net_utility_a485f7c662aa0f79182939d918d588f54}{
+\index{NetUtility@{NetUtility}!DestroyInstanceGroup@{DestroyInstanceGroup}}
+\index{DestroyInstanceGroup@{DestroyInstanceGroup}!NetUtility@{NetUtility}}
+\subsubsection[{DestroyInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::DestroyInstanceGroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a485f7c662aa0f79182939d918d588f54}
+
+
+Shuts down instance group. 
+
+If no group is loaded this method will do nothing. \hypertarget{class_net_utility_a2bcea9d3bdb880dde7870333fb7033f6}{
+\index{NetUtility@{NetUtility}!GetHostName@{GetHostName}}
+\index{GetHostName@{GetHostName}!NetUtility@{NetUtility}}
+\subsubsection[{GetHostName}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ NetUtility::GetHostName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a2bcea9d3bdb880dde7870333fb7033f6}
+
+
+Retrieves the name of the computer. 
+
+\begin{DoxyReturn}{Returns}
+name of computer. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_ae66ffeb5d6e0092c8bedc44f73392200}{
+\index{NetUtility@{NetUtility}!GetInstanceGroup@{GetInstanceGroup}}
+\index{GetInstanceGroup@{GetInstanceGroup}!NetUtility@{NetUtility}}
+\subsubsection[{GetInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceGroup} \& NetUtility::GetInstanceGroup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_ae66ffeb5d6e0092c8bedc44f73392200}
+
+
+Retrieves reference to instance group. 
+
+\begin{DoxyReturn}{Returns}
+reference to instance group.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If no instance group is loaded. \end{DoxyExceptions}
+\hypertarget{class_net_utility_aa014d19c36866c5be2715dec110f09ee}{
+\index{NetUtility@{NetUtility}!GetLocalInterface@{GetLocalInterface}}
+\index{GetLocalInterface@{GetLocalInterface}!NetUtility@{NetUtility}}
+\subsubsection[{GetLocalInterface}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetUtility::GetLocalInterface (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ ele}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_aa014d19c36866c5be2715dec110f09ee}
+
+
+Retrieves a local interface. 
+
+\begin{DoxyReturn}{Returns}
+a local interface IP address. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_aca0bbea45a7bc232fdb88505f97cc016}{
+\index{NetUtility@{NetUtility}!GetMainProcessThreadID@{GetMainProcessThreadID}}
+\index{GetMainProcessThreadID@{GetMainProcessThreadID}!NetUtility@{NetUtility}}
+\subsubsection[{GetMainProcessThreadID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetUtility::GetMainProcessThreadID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_aca0bbea45a7bc232fdb88505f97cc016}
+
+
+Retrieves the thread ID associated with the main process. 
+
+\begin{DoxyReturn}{Returns}
+the main process' thread ID. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a0bfef73df16524b55ffb08aae84a1de3}{
+\index{NetUtility@{NetUtility}!GetNumInstances@{GetNumInstances}}
+\index{GetNumInstances@{GetNumInstances}!NetUtility@{NetUtility}}
+\subsubsection[{GetNumInstances}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetUtility::GetNumInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a0bfef73df16524b55ffb08aae84a1de3}
+
+
+Determines the number of instances in the instance group stored by \hyperlink{class_net_utility}{NetUtility}. 
+
+\begin{DoxyReturn}{Returns}
+number of instances in instance group. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a5b29758025dba92128f60a2240458552}{
+\index{NetUtility@{NetUtility}!GetNumLocalInterface@{GetNumLocalInterface}}
+\index{GetNumLocalInterface@{GetNumLocalInterface}!NetUtility@{NetUtility}}
+\subsubsection[{GetNumLocalInterface}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetUtility::GetNumLocalInterface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a5b29758025dba92128f60a2240458552}
+
+
+Retrieves the number of local interface available. 
+
+\begin{DoxyReturn}{Returns}
+get number of available local interfaces. \par
+ interface IDs range from 0 inclusive to number of local interfaces exclusive. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a734842edc567a0fb88147c8bdc08e91a}{
+\index{NetUtility@{NetUtility}!GetNumThreadedParticipants@{GetNumThreadedParticipants}}
+\index{GetNumThreadedParticipants@{GetNumThreadedParticipants}!NetUtility@{NetUtility}}
+\subsubsection[{GetNumThreadedParticipants}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetUtility::GetNumThreadedParticipants (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a734842edc567a0fb88147c8bdc08e91a}
+
+
+Retrieves the number of multithreaded participants. 
+
+\begin{DoxyReturn}{Returns}
+the number of multithreaded participants i.e. number of threads + one main process. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a9d121512c68efc81188462f1e0ed4a81}{
+\index{NetUtility@{NetUtility}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!NetUtility@{NetUtility}}
+\subsubsection[{GetNumThreads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetUtility::GetNumThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a9d121512c68efc81188462f1e0ed4a81}
+
+
+Retrieves the number of completion port threads in operation. 
+
+\begin{DoxyReturn}{Returns}
+number of completion port threads in operation. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a2509391f4fbcce2bfc8c77cb251fa53c}{
+\index{NetUtility@{NetUtility}!GetSizeSOCKADDR@{GetSizeSOCKADDR}}
+\index{GetSizeSOCKADDR@{GetSizeSOCKADDR}!NetUtility@{NetUtility}}
+\subsubsection[{GetSizeSOCKADDR}]{\setlength{\rightskip}{0pt plus 5cm}int $\ast$ NetUtility::GetSizeSOCKADDR (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a2509391f4fbcce2bfc8c77cb251fa53c}
+
+
+Retrieves a pointer to sizeof(SOCKADDR). 
+
+\begin{DoxyReturn}{Returns}
+non constant pointer to sizeSOCKADDR as some winsock methods require this. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+DO NOT MODIFY RETURNED POINTER! The only reason it is non constant is to please winsock! 
+\end{DoxyWarning}
+\hypertarget{class_net_utility_abb0a78cab44c3f605474b6de38308a37}{
+\index{NetUtility@{NetUtility}!IsCompletionPortSetup@{IsCompletionPortSetup}}
+\index{IsCompletionPortSetup@{IsCompletionPortSetup}!NetUtility@{NetUtility}}
+\subsubsection[{IsCompletionPortSetup}]{\setlength{\rightskip}{0pt plus 5cm}bool NetUtility::IsCompletionPortSetup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_abb0a78cab44c3f605474b6de38308a37}
+
+
+Determines whether the completion port is setup. 
+
+\begin{DoxyReturn}{Returns}
+true if the completion port is setup using \hyperlink{class_net_utility_aa6103c1b3d6f5b366c0903ba7b22a625}{SetupCompletionPort()}. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a612bb9b27e597c9855296cd466d2d66c}{
+\index{NetUtility@{NetUtility}!IsEverythingLoaded@{IsEverythingLoaded}}
+\index{IsEverythingLoaded@{IsEverythingLoaded}!NetUtility@{NetUtility}}
+\subsubsection[{IsEverythingLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool NetUtility::IsEverythingLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a612bb9b27e597c9855296cd466d2d66c}
+
+
+Determines whether the networking module is fully operational. 
+
+\begin{DoxyReturn}{Returns}
+true if module is networking module is fully loaded and ready for use. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a9fc6fa46016bc244ac943411a0c1e0f9}{
+\index{NetUtility@{NetUtility}!IsInstanceGroupLoaded@{IsInstanceGroupLoaded}}
+\index{IsInstanceGroupLoaded@{IsInstanceGroupLoaded}!NetUtility@{NetUtility}}
+\subsubsection[{IsInstanceGroupLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool NetUtility::IsInstanceGroupLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a9fc6fa46016bc244ac943411a0c1e0f9}
+
+
+Determines whether an instance group is loaded and stored by \hyperlink{class_net_utility}{NetUtility}. 
+
+\begin{DoxyReturn}{Returns}
+true if a winsock group is currently loaded, a group is loaded using \hyperlink{class_net_utility_a38666920bbd1d7dd972f5f9129e72be7}{CreateInstanceGroup()}. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_af8d183510e0ec6eb8019eb3955180485}{
+\index{NetUtility@{NetUtility}!IsLocalInfoLoaded@{IsLocalInfoLoaded}}
+\index{IsLocalInfoLoaded@{IsLocalInfoLoaded}!NetUtility@{NetUtility}}
+\subsubsection[{IsLocalInfoLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool NetUtility::IsLocalInfoLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_af8d183510e0ec6eb8019eb3955180485}
+
+
+Determines whether information has been loaded and stored about local interface and the computer name. 
+
+\begin{DoxyReturn}{Returns}
+true if local information is currently loaded, local info is loaded using \hyperlink{class_net_utility_a4a35e8694ff38e90f3b84c81ac108300}{LoadLocalInfo()}. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a6fd358e07da83faaf8306171426e5362}{
+\index{NetUtility@{NetUtility}!IsWinsockActive@{IsWinsockActive}}
+\index{IsWinsockActive@{IsWinsockActive}!NetUtility@{NetUtility}}
+\subsubsection[{IsWinsockActive}]{\setlength{\rightskip}{0pt plus 5cm}bool NetUtility::IsWinsockActive (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a6fd358e07da83faaf8306171426e5362}
+
+
+Determines whether winsock is loaded. 
+
+\begin{DoxyReturn}{Returns}
+true if winsock is active, i.e. Has been started using \hyperlink{class_net_utility_a02950745d0116653291f28817b896386}{StartWinsock()}. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a0e67f2b38e5dd236c597eb6b1a51a39e}{
+\index{NetUtility@{NetUtility}!LoadEverything@{LoadEverything}}
+\index{LoadEverything@{LoadEverything}!NetUtility@{NetUtility}}
+\subsubsection[{LoadEverything}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::LoadEverything (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads, }
+\item[{size\_\-t}]{ numInstances}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a0e67f2b38e5dd236c597eb6b1a51a39e}
+
+
+Performs all possible setup operations, making the networking module fully operational. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]Number of threads to be created to manage completion port. \item[{\em numInstances}]Number of instances to be created but not setup. \end{DoxyParams}
+\hypertarget{class_net_utility_aa6103c1b3d6f5b366c0903ba7b22a625}{
+\index{NetUtility@{NetUtility}!SetupCompletionPort@{SetupCompletionPort}}
+\index{SetupCompletionPort@{SetupCompletionPort}!NetUtility@{NetUtility}}
+\subsubsection[{SetupCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::SetupCompletionPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_aa6103c1b3d6f5b366c0903ba7b22a625}
+
+
+Sets up completion port and creates threads to manage completion port. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]Number of threads to be created to manage completion port. Set to 0 and the return value of ThreadSingle::GetNumCores() will be used instead. \end{DoxyParams}
+\hypertarget{class_net_utility_ae7a7c4737a2b25c8c856352b2052a9e1}{
+\index{NetUtility@{NetUtility}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetUtility@{NetUtility}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetUtility::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_ae7a7c4737a2b25c8c856352b2052a9e1}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_a9f81602db0e4c48e6d9110a32cdf9bdd}{
+\index{NetUtility@{NetUtility}!UnloadEverything@{UnloadEverything}}
+\index{UnloadEverything@{UnloadEverything}!NetUtility@{NetUtility}}
+\subsubsection[{UnloadEverything}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::UnloadEverything (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a9f81602db0e4c48e6d9110a32cdf9bdd}
+
+
+Performs all possible shutdown operations, fully unloading the networking module. 
+
+Anything not loaded will be skipped. \hypertarget{class_net_utility_aec9d16aa859066548409b9b692077b49}{
+\index{NetUtility@{NetUtility}!UnloadLocalInfo@{UnloadLocalInfo}}
+\index{UnloadLocalInfo@{UnloadLocalInfo}!NetUtility@{NetUtility}}
+\subsubsection[{UnloadLocalInfo}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::UnloadLocalInfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_aec9d16aa859066548409b9b692077b49}
+
+
+Unloads local information stored about local interface and the computer name. 
+
+If no information is loaded this method does nothing.
+
+\begin{DoxyReturn}{Returns}
+unload local information previously loaded with LoadInfo. 
+\end{DoxyReturn}
+\hypertarget{class_net_utility_af890898fde583d84d73a4bbc8aee64b2}{
+\index{NetUtility@{NetUtility}!ValidateThreadID@{ValidateThreadID}}
+\index{ValidateThreadID@{ValidateThreadID}!NetUtility@{NetUtility}}
+\subsubsection[{ValidateThreadID}]{\setlength{\rightskip}{0pt plus 5cm}void NetUtility::ValidateThreadID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_net_utility_af890898fde583d84d73a4bbc8aee64b2}
+
+
+Validates the specified thread ID, ensuring it is not out of bounds. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If threadID is invalid, must be between 0 (inclusive) and the number of threads (exclusive). \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]Thread ID to check. \item[{\em line}]Line number of method call. \item[{\em file}]Of method call. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_utility_a4c0093017521d888c4510cc940ffa335}{
+\index{NetUtility@{NetUtility}!EncryptionBox@{EncryptionBox}}
+\index{EncryptionBox@{EncryptionBox}!NetUtility@{NetUtility}}
+\subsubsection[{EncryptionBox}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf NetUtility::EncryptionBox}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_a4c0093017521d888c4510cc940ffa335}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                        0x63, 0x7c, 0x77, 0x7b, 0xf2, 0x6b, 0x6f, 0xc5, 0x30, 0x0
+      1, 0x67, 0x2b, 0xfe, 0xd7, 0xab, 0x76,
+                        0xca, 0x82, 0xc9, 0x7d, 0xfa, 0x59, 0x47, 0xf0, 0xad, 0xd
+      4, 0xa2, 0xaf, 0x9c, 0xa4, 0x72, 0xc0,
+                        0xb7, 0xfd, 0x93, 0x26, 0x36, 0x3f, 0xf7, 0xcc, 0x34, 0xa
+      5, 0xe5, 0xf1, 0x71, 0xd8, 0x31, 0x15,
+                        0x04, 0xc7, 0x23, 0xc3, 0x18, 0x96, 0x05, 0x9a, 0x07, 0x1
+      2, 0x80, 0xe2, 0xeb, 0x27, 0xb2, 0x75,
+                        0x09, 0x83, 0x2c, 0x1a, 0x1b, 0x6e, 0x5a, 0xa0, 0x52, 0x3
+      b, 0xd6, 0xb3, 0x29, 0xe3, 0x2f, 0x84,
+                        0x53, 0xd1, 0x00, 0xed, 0x20, 0xfc, 0xb1, 0x5b, 0x6a, 0xc
+      b, 0xbe, 0x39, 0x4a, 0x4c, 0x58, 0xcf,
+                        0xd0, 0xef, 0xaa, 0xfb, 0x43, 0x4d, 0x33, 0x85, 0x45, 0xf
+      9, 0x02, 0x7f, 0x50, 0x3c, 0x9f, 0xa8,
+                        0x51, 0xa3, 0x40, 0x8f, 0x92, 0x9d, 0x38, 0xf5, 0xbc, 0xb
+      6, 0xda, 0x21, 0x10, 0xff, 0xf3, 0xd2,
+                        0xcd, 0x0c, 0x13, 0xec, 0x5f, 0x97, 0x44, 0x17, 0xc4, 0xa
+      7, 0x7e, 0x3d, 0x64, 0x5d, 0x19, 0x73,
+                        0x60, 0x81, 0x4f, 0xdc, 0x22, 0x2a, 0x90, 0x88, 0x46, 0xe
+      e, 0xb8, 0x14, 0xde, 0x5e, 0x0b, 0xdb,
+                        0xe0, 0x32, 0x3a, 0x0a, 0x49, 0x06, 0x24, 0x5c, 0xc2, 0xd
+      3, 0xac, 0x62, 0x91, 0x95, 0xe4, 0x79,
+                        0xe7, 0xc8, 0x37, 0x6d, 0x8d, 0xd5, 0x4e, 0xa9, 0x6c, 0x5
+      6, 0xf4, 0xea, 0x65, 0x7a, 0xae, 0x08,
+                        0xba, 0x78, 0x25, 0x2e, 0x1c, 0xa6, 0xb4, 0xc6, 0xe8, 0xd
+      d, 0x74, 0x1f, 0x4b, 0xbd, 0x8b, 0x8a,
+                        0x70, 0x3e, 0xb5, 0x66, 0x48, 0x03, 0xf6, 0x0e, 0x61, 0x3
+      5, 0x57, 0xb9, 0x86, 0xc1, 0x1d, 0x9e,
+                        0xe1, 0xf8, 0x98, 0x11, 0x69, 0xd9, 0x8e, 0x94, 0x9b, 0x1
+      e, 0x87, 0xe9, 0xce, 0x55, 0x28, 0xdf,
+                        0x8c, 0xa1, 0x89, 0x0d, 0xbf, 0xe6, 0x42, 0x68, 0x41, 0x9
+      9, 0x2d, 0x0f, 0xb0, 0x54, 0xbb, 0x16
+        }
+\end{DoxyCode}
+
+
+Used during encryption/decryption. 
+
+Used with Packet::\_\-SubBytes which replaces each byte with one from this table. \hypertarget{class_net_utility_ab7bcf3b3ff54908eb12a3592e2c529e9}{
+\index{NetUtility@{NetUtility}!EncryptionRoundConstant@{EncryptionRoundConstant}}
+\index{EncryptionRoundConstant@{EncryptionRoundConstant}!NetUtility@{NetUtility}}
+\subsubsection[{EncryptionRoundConstant}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf NetUtility::EncryptionRoundConstant}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_ab7bcf3b3ff54908eb12a3592e2c529e9}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36,
+       0x6c, 0xd8, 0xab, 0x4d, 0x9a, 
+                0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d,
+       0xfa, 0xef, 0xc5, 0x91, 0x39, 
+                0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33,
+       0x66, 0xcc, 0x83, 0x1d, 0x3a, 
+                0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08, 0x10, 0x20, 0x40,
+       0x80, 0x1b, 0x36, 0x6c, 0xd8, 
+                0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6, 0x97, 0x35, 0x6a,
+       0xd4, 0xb3, 0x7d, 0xfa, 0xef, 
+                0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61, 0xc2, 0x9f, 0x25,
+       0x4a, 0x94, 0x33, 0x66, 0xcc, 
+                0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01, 0x02, 0x04, 0x08,
+       0x10, 0x20, 0x40, 0x80, 0x1b, 
+                0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e, 0xbc, 0x63, 0xc6,
+       0x97, 0x35, 0x6a, 0xd4, 0xb3, 
+                0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4, 0xd3, 0xbd, 0x61,
+       0xc2, 0x9f, 0x25, 0x4a, 0x94, 
+                0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8, 0xcb, 0x8d, 0x01,
+       0x02, 0x04, 0x08, 0x10, 0x20, 
+                0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d, 0x9a, 0x2f, 0x5e,
+       0xbc, 0x63, 0xc6, 0x97, 0x35, 
+                0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91, 0x39, 0x72, 0xe4,
+       0xd3, 0xbd, 0x61, 0xc2, 0x9f, 
+                0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d, 0x3a, 0x74, 0xe8,
+       0xcb, 0x8d, 0x01, 0x02, 0x04, 
+                0x08, 0x10, 0x20, 0x40, 0x80, 0x1b, 0x36, 0x6c, 0xd8, 0xab, 0x4d,
+       0x9a, 0x2f, 0x5e, 0xbc, 0x63, 
+                0xc6, 0x97, 0x35, 0x6a, 0xd4, 0xb3, 0x7d, 0xfa, 0xef, 0xc5, 0x91,
+       0x39, 0x72, 0xe4, 0xd3, 0xbd, 
+                0x61, 0xc2, 0x9f, 0x25, 0x4a, 0x94, 0x33, 0x66, 0xcc, 0x83, 0x1d,
+       0x3a, 0x74, 0xe8, 0xcb
+        }
+\end{DoxyCode}
+
+
+Used during encryption/decryption. 
+
+The round constant word array, EncryptionRoundConstant\mbox{[}i\mbox{]}, contains the values given by x to th e power (i-\/1) being powers of x (x is denoted as \{02\}) in the field GF(28). \par
+ Note that i starts at 1, not 0. \hypertarget{class_net_utility_af110cf0b6c348c10e3ab60454df79a84}{
+\index{NetUtility@{NetUtility}!InverseEncryptionBox@{InverseEncryptionBox}}
+\index{InverseEncryptionBox@{InverseEncryptionBox}!NetUtility@{NetUtility}}
+\subsubsection[{InverseEncryptionBox}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned char {\bf NetUtility::InverseEncryptionBox}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_utility_af110cf0b6c348c10e3ab60454df79a84}
+{\bfseries Initial value:}
+\begin{DoxyCode}
+
+        {
+                0x52, 0x09, 0x6a, 0xd5, 0x30, 0x36, 0xa5, 0x38, 0xbf, 0x40, 0xa3,
+       0x9e, 0x81, 0xf3, 0xd7, 0xfb,
+                0x7c, 0xe3, 0x39, 0x82, 0x9b, 0x2f, 0xff, 0x87, 0x34, 0x8e, 0x43,
+       0x44, 0xc4, 0xde, 0xe9, 0xcb,
+                0x54, 0x7b, 0x94, 0x32, 0xa6, 0xc2, 0x23, 0x3d, 0xee, 0x4c, 0x95,
+       0x0b, 0x42, 0xfa, 0xc3, 0x4e,
+                0x08, 0x2e, 0xa1, 0x66, 0x28, 0xd9, 0x24, 0xb2, 0x76, 0x5b, 0xa2,
+       0x49, 0x6d, 0x8b, 0xd1, 0x25,
+                0x72, 0xf8, 0xf6, 0x64, 0x86, 0x68, 0x98, 0x16, 0xd4, 0xa4, 0x5c,
+       0xcc, 0x5d, 0x65, 0xb6, 0x92,
+                0x6c, 0x70, 0x48, 0x50, 0xfd, 0xed, 0xb9, 0xda, 0x5e, 0x15, 0x46,
+       0x57, 0xa7, 0x8d, 0x9d, 0x84,
+                0x90, 0xd8, 0xab, 0x00, 0x8c, 0xbc, 0xd3, 0x0a, 0xf7, 0xe4, 0x58,
+       0x05, 0xb8, 0xb3, 0x45, 0x06,
+                0xd0, 0x2c, 0x1e, 0x8f, 0xca, 0x3f, 0x0f, 0x02, 0xc1, 0xaf, 0xbd,
+       0x03, 0x01, 0x13, 0x8a, 0x6b,
+                0x3a, 0x91, 0x11, 0x41, 0x4f, 0x67, 0xdc, 0xea, 0x97, 0xf2, 0xcf,
+       0xce, 0xf0, 0xb4, 0xe6, 0x73,
+                0x96, 0xac, 0x74, 0x22, 0xe7, 0xad, 0x35, 0x85, 0xe2, 0xf9, 0x37,
+       0xe8, 0x1c, 0x75, 0xdf, 0x6e,
+                0x47, 0xf1, 0x1a, 0x71, 0x1d, 0x29, 0xc5, 0x89, 0x6f, 0xb7, 0x62,
+       0x0e, 0xaa, 0x18, 0xbe, 0x1b,
+                0xfc, 0x56, 0x3e, 0x4b, 0xc6, 0xd2, 0x79, 0x20, 0x9a, 0xdb, 0xc0,
+       0xfe, 0x78, 0xcd, 0x5a, 0xf4,
+                0x1f, 0xdd, 0xa8, 0x33, 0x88, 0x07, 0xc7, 0x31, 0xb1, 0x12, 0x10,
+       0x59, 0x27, 0x80, 0xec, 0x5f,
+                0x60, 0x51, 0x7f, 0xa9, 0x19, 0xb5, 0x4a, 0x0d, 0x2d, 0xe5, 0x7a,
+       0x9f, 0x93, 0xc9, 0x9c, 0xef,
+                0xa0, 0xe0, 0x3b, 0x4d, 0xae, 0x2a, 0xf5, 0xb0, 0xc8, 0xeb, 0xbb,
+       0x3c, 0x83, 0x53, 0x99, 0x61,
+                0x17, 0x2b, 0x04, 0x7e, 0xba, 0x77, 0xd6, 0x26, 0xe1, 0x69, 0x14,
+       0x63, 0x55, 0x21, 0x0c, 0x7d
+        }
+\end{DoxyCode}
+
+
+Used during encryption/decryption. 
+
+Used with Packet::\_\-InvSubBytes which replaces each byte with one from this table. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetUtility.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetUtility.cpp\end{DoxyCompactItemize}

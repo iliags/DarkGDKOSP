@@ -1,0 +1,1937 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>Super 3D Game XML/LUA(S3GXL) Scripting Reference [DRAFT]</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.2  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGED" CONTENT="20110113;11245000">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<STYLE TYPE="text/css">
+	<!--
+		TD P { font-family: "Arial" }
+		P { font-family: "Arial" }
+		H2.ctl { font-family: "Arial" }
+		H3.ctl { font-family: "Arial" }
+		H4.ctl { font-family: "Arial" }
+		PRE { color: #ff0000 }
+		TH P { font-family: "Arial" }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<H1>S3GXL Scripting Reference</H1>
+<P><EM>by Frankie 'TechLord' Taylor</EM></P>
+<UL>
+	<LI><P><A HREF="#S3GXL Scripting Reference">Super 3D Game XML/LUA
+	(S3GXL) Scripting Reference</A> 
+	</P>
+	<UL>
+		<LI><P><A HREF="#Introduction">Introduction</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#Purpose of this document">Purpose of this
+			document</A> 
+			</P>
+			<LI><P><A HREF="#Design goals of _S3GXL">Design goals of S3GXL</A></P>
+			<LI><P><A HREF="#Example program structure">Example Program
+			Structure</A> 
+			</P>
+			<LI><P><A HREF="#S3GE Platform">The S3GE Platform</A> 
+			</P>
+			<LI><P><A HREF="#S3GE Game Object Overview">The S3GE Game Objects
+			Overview</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#Variables">Variables</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#Simple Variables">Simple Variables</A> 
+			</P>
+			<UL>
+				<LI><P><A HREF="#Aggregate data types">Aggregate Data Types</A> 
+				</P>
+				<LI><P><A HREF="#S3GE types">S3GE Types</A> 
+				</P>
+				<LI><P><A HREF="#Variable specifiers">Variable Specifiers</A> 
+				</P>
+			</UL>
+			<LI><P><A HREF="#Tables">Tables</A> 
+			</P>
+			<LI><P><A HREF="#Editability">Editability</A> 
+			</P>
+			<LI><P><A HREF="#Object and actor reference variables">Object and
+			actor reference variables</A> 
+			</P>
+			<LI><P><A HREF="#Class Reference Variables">Class Reference
+			Variables</A> 
+			</P>
+			<LI><P><A HREF="#Enumerations">Enumerations</A> 
+			</P>
+			<LI><P><A HREF="#Structs">Structs</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#Expressions">Expressions</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#Constants">Constants</A> 
+			</P>
+			<LI><P><A HREF="#Expressions">Expressions</A> 
+			</P>
+			<LI><P><A HREF="#Converting object references among classes">Converting
+			object references among classes</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#Functions">Functions</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#Declaring Functions">Declaring Functions</A> 
+			</P>
+			<LI><P><A HREF="#Function parameter specifiers">Function parameter
+			specifiers</A> 
+			</P>
+			<LI><P><A HREF="#Function overriding">Function overriding</A> 
+			</P>
+			<LI><P><A HREF="#Advanced function specifiers">Advanced function
+			specifiers</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#Program Structure">Program Structure</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#For Loops">For Loops</A> 
+			</P>
+			<LI><P><A HREF="#Do-While Loops">Do-While Loops</A> 
+			</P>
+			<LI><P><A HREF="#While Loops">While Loops</A> 
+			</P>
+			<LI><P><A HREF="#Repeat-Until Loops">Repeat-Until Loops</A> 
+			</P>
+			<LI><P><A HREF="#Break">Break</A> 
+			</P>
+			<LI><P><A HREF="#Conditional Statements">Conditional Statements</A>
+						</P>
+		</UL>
+		<LI><P><A HREF="#States">States &amp; Behaviors</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#Overview of States">Overview of States &amp;
+			Behaviors</A> 
+			</P>
+			<LI><P><A HREF="#State Labels and Latent Functions">State Labels
+			and Latent Functions</A> 
+			</P>
+			<LI><P><A HREF="#State inheritance and scoping rules">State
+			inheritance and scoping rules</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#Language Functionality">Language Functionality</A>
+				</P>
+		<UL>
+			<LI><P><A HREF="#Built-in operators and their precedence">Built-in
+			operators and their precedence</A> 
+			</P>
+			<LI><P><A HREF="#General purpose functions">General purpose
+			functions</A> 
+			</P>
+			<UL>
+				<LI><P><A HREF="#Integer functions:">Integer functions: </A>
+				</P>
+				<LI><P><A HREF="#Floating point functions:">Floating point
+				functions: </A>
+				</P>
+				<LI><P><A HREF="#Vector functions:">Vector functions: </A>
+				</P>
+			</UL>
+		</UL>
+		<LI><P><A HREF="#Advanced Language Features">Advanced Language
+		Features</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#ForEach and iterator functions">ForEach and
+			iterator functions</A> 
+			</P>
+			<LI><P><A HREF="#Function Calling Specifiers">Function Calling
+			Specifiers</A> 
+			</P>
+			<LI><P><A HREF="#Default values of variables">Default values of
+			variables</A> 
+			</P>
+			<UL>
+				<LI><P><A HREF="#Accessing default values of variables">Accessing
+				default values of variables</A> 
+				</P>
+				<LI><P><A HREF="#Accessing default values of variables in a variable class">Accessing
+				default values of variables in a variable class</A> 
+				</P>
+			</UL>
+			<LI><P><A HREF="#Dynamic Arrays">Dynamic Tables</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#Advanced Technical Issues">Advanced Technical
+		Issues</A> 
+		</P>
+		<UL>
+			<LI><P><A HREF="#S3GXL Binary Compatibility Issues">S3GXL binary
+			compatibility issues</A> 
+			</P>
+			<LI><P><A HREF="#Technical Notes">Technical Notes</A> 
+			</P>
+			<LI><P><A HREF="#S3GXL Programming Strategy">S3GXL programming
+			strategy</A> 
+			</P>
+		</UL>
+		<LI><P><A HREF="#End">End</A> 
+		</P>
+	</UL>
+</UL>
+<H2 CLASS="western"><A NAME="Introduction"></A>Introduction</H2>
+<H3 CLASS="western"><A NAME="Purpose of this document"></A>Purpose of
+this document</H3>
+<P>This is a technical document describing the Super 3D Game XML/LUA
+(S3GXL) Scripting for the Super 3D Game Engine (S3GE). It's not a
+tutorial, nor does it provide detailed examples of useful S3GXL code.
+For examples of S3GXL, the reader is referred to the source code to
+the S3GE Scripts, which provides thousands of lines of working S3GXL
+code which solves many problems such as the User Interface, AI, and
+Inventory. A good way to get started is by copying, modifying, and
+testing existing scripts to see the results. 
+</P>
+<P>This document assumes that the reader has a working knowledge of
+XML and LUA. Information presented here are excerpts from existing
+documentation for these languages. Please visit www.w3.org/XML/ and
+www.lua.org for more detail. 
+</P>
+<H3 CLASS="western"><A NAME="Design goals of _S3GXL"></A>Design goals
+of S3GXL</H3>
+<P>S3GXL was designed to provide Game Developers with an powerful,
+easy Markup and Scripting language to customize Game Object
+properties, behavior, and logic within the Super 3D Game World.
+S3GE's Networking and A/V Interface is inspired by the Web Browser.
+Web Browser's use HTML/Javascript as a Client-Side Language to
+present Web Content, S3GXL uses XML/LUA as a Client-Side Language to
+present Application/Game Content. Server-Side Scripting Languages
+such as PHP can also be used to generate S3GXL dynamically from the
+WWW Host Server (See <A HREF="#S3GE Platform">The S3GE Platform</A>).
+</P>
+<P>The major design goals of S3GXL are:</P>
+<UL>
+	<LI><P>To provide a Markup Language (XML) to describe S3GE Game
+	Objects and Scripting Language (LUA) to program S3GE Game Object
+	Logic. With this combination, S3GXL provides the following benefits:
+		</P>
+	<UL>
+		<LI><P>XML 
+		</P>
+		<UL>
+			<LI><P>Simplicity &ndash; presents information in easy to read
+			form which can easily be processed by computers.</P>
+			<LI><P>Openness - XML is a W3C standard, endorsed by software
+			industry market leaders.</P>
+			<LI><P>Extensibility -There is no fixed set of Markup Tags. New
+			tags can be created as they are needed.</P>
+			<LI><P>Self-description - XML documents can be stored without such
+			schema definitions, because they contain meta data in the form of
+			tags and attributes.</P>
+			<LI><P>XML provides a basis for author identification and
+			versioning at the element level. Any XML tag can possess an
+			unlimited number of attributes such as author or version.</P>
+			<LI><P>Contains machine-readable context information - Tags,
+			attributes and element structure provide context information that
+			can be used to interpret the meaning of content, opening up new
+			possibilities for highly efficient search engines, intelligent
+			data mining, agents, etc.</P>
+			<LI><P>Supports multilingual documents and Unicode -This is
+			important for the internationalization of applications.</P>
+			<LI><P>Can contain any possible data type - from multimedia data
+			(image, sound, video) to Script.</P>
+			<LI><P>Can consist of nested elements that are distributed over
+			multiple remote Servers. XML is currently the most sophisticated
+			format for distributed data - the World Wide Web can be seen as
+			one huge XML database.</P>
+		</UL>
+		<LI><P>LUA 
+		</P>
+		<UL>
+			<LI><P>Easy-to-use with BASIC-like Syntax.</P>
+			<LI><P>Dynamic Types: variables do not have types; only values do.</P>
+			<LI><P>Supports functional programming with first class functions
+			and closures.</P>
+			<LI><P>TABLES! - One of the most elegant data structures I have
+			seen in any language</P>
+			<LI><P>Easier and faster to express behaviour of game entities in
+			Lua than in C++</P>
+			<LI><P>Lua is interpreted, so you can simply change the script
+			while the game is running and see if the new changes work.</P>
+			<LI><P>Lua allows level designers to work on creating new levels /
+			missions etc without being able to wreak havok to the with the
+			core game engine.</P>
+		</UL>
+	</UL>
+	<LI><P>To provide <I>external </I>programming capabilities to
+	specific <I>internal</I> Game Object properties, behaviors, timing,
+	networking; maximizing S3GE performance and S3GXL ease-of-use. 
+	</P>
+	<LI><P>To provide a uniform set of procedural commands at the
+	Application Layer.</P>
+</UL>
+<H3 CLASS="western"><A NAME="Example program structure"></A>Example
+program structure</H3>
+<P>This example illustrates a typical, simple S3GXL, and it
+highlights the syntax and features of S3GXL. Note that this code may
+differ from that which appears in the current S3GE source, as this
+documentation is not synced with the code. 
+</P>
+<PRE>&lt;gizmo name=&quot;TopBarMaster&quot; description=&quot;Show/Hide Top Bar&quot; collision=&quot;1&quot; operate=&quot;1&quot; transit=&quot;1&quot; active=&quot;1&quot; audio=&quot;1&quot; visible=&quot;1&quot;&gt;
+    &lt;variable name=&quot;spritex&quot; value=&quot;0&quot;/&gt; 
+    &lt;variable name=&quot;spritey&quot; value=&quot;0&quot;/&gt;
+    &lt;variable name=&quot;toggle&quot; value=&quot;0&quot;/&gt;
+    &lt;orientate ref=&quot;worldboundright&quot; width=&quot;28&quot; height=&quot;48&quot; xalign=&quot;left&quot;&gt;
+        &lt;physics noresponse=&quot;true&quot;/&gt;
+    &lt;/orientate&gt;
+    &lt;event state=&quot;IDLE&quot; behavior=&quot;pushbox&quot; transition=&quot;yshift&quot; theme=&quot;graybox&quot; style=&quot;standard&quot; scheme=&quot;pointingFX&quot; caption=&quot;&quot; xalign=&quot;center&quot; yalign=&quot;middle&quot;/&gt;
+    &lt;event state=&quot;ENTER&quot;/&gt;
+    &lt;event state=&quot;HOVER&quot; scheme=&quot;pointingFX&quot;/&gt;
+    &lt;event state=&quot;DOWN&quot;/&gt;
+    &lt;event state=&quot;HOLD&quot;/&gt;
+    &lt;event state=&quot;DRAG&quot;/&gt;
+    &lt;event state=&quot;UP&quot;&gt;
+        &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+            &lt;![CDATA[
+                uiGizmoToggle = 1 - uiGizmoVariableGet(this, 'toggle')
+                uiGizmoVariableSet(this, 'toggle', uiGizmoToggle)
+                msg = uiGizmoMessageCreate()
+                uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE + uiGizmoToggle, 0)
+                uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VARIABLE, 'toggle', '0')
+                uiGizmoMessageSend(msg, 'TopBarMaster', MAUI_MSG_TO_CHILDREN, 1 - uiGizmoToggle)
+                uiGizmoMessageDestroy(msg)
+            ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+    &lt;event state=&quot;EXIT&quot;/&gt;
+&lt;/gizmo&gt;</PRE><P>
+The key elements to look at in this script are: 
+</P>
+<UL>
+	<LI><P>The Game Object declaration Tag.</P>
+	<LI><P>The Variable declarations Tag.</P>
+	<LI><P>The functions. Functions can take a list of parameters, and
+	they optionally return a value. Functions can have local variables.
+	Some functions are called by the S3GE engine itself (such as
+	BeginPlay), and some functions are called from other script code
+	elsewhere (such as Trigger). <A HREF="#FunctionDeclarations">More
+	Details</A> 
+	</P>
+	<LI><P>The code. All of the standard C and Java keywords are
+	supported, like <CODE>for</CODE>, <CODE>while</CODE>, <CODE>break</CODE>,
+	<CODE>switch</CODE>, <CODE>if</CODE>, and so on. Braces and
+	semicolons are used in S3GXL as in C, C++, and Java. 
+	</P>
+	<LI><P>Actor and object references. Here you see several cases where
+	a function is called within another object, using an object
+	reference. <A HREF="#ObjectRefs">More Details</A> 
+	</P>
+	<LI><P>The &quot;state&quot; keyword. This script defines several
+	&quot;states&quot;, which are groupings of functions, variables, and
+	code that are executed only when the actor is in that state. <A HREF="#StateDeclaration">More
+	Details</A> 
+	</P>
+	<LI><P>Note that all keywords, variable names, functions, and object
+	names in S3GXL are case-insensitive. To S3GXL, <CODE>Demon</CODE>,
+	<CODE>demON</CODE>, and <CODE>demon</CODE> are the same thing. 
+	</P>
+</UL>
+<H3 CLASS="western"><A NAME="S3GE Platform"></A>The S3GE Platform</H3>
+<P>The S3GE Platform consists of the following components: The
+Network Entity (WWW Host Server and Game Server/Host/Client),
+Audio/Visual Engine, and the Application/Game Content (Media/Script).
+</P>
+<P ALIGN=CENTER><IMG SRC="http://www.hpquest.com/DOSP/images/design/Slide4.png" NAME="S3GE PLATFORM NETWORK TOPOLOGY" ALIGN=BOTTOM WIDTH=640 HEIGHT=359 BORDER=0>
+</P>
+<P>S3GE's Networking and A/V Interface is inspired by the Web
+Browser. Communications with a WWW Host Server is included within its
+Network Topology.</P>
+<P>The S3GE Server controls all gameplay and interaction between
+players and actors. In a single-player game, both the S3GE Client and
+the S3GE Server are run on the same machine; in an Internet game,
+there is a dedicated Server running on one machine; all players
+connect to this machine and are Clients. 
+</P>
+<P>All gameplay takes place inside a &quot;level&quot;, a
+self-contained environment containing interactives. Though S3GEServer
+may be capable of running more than one level simultaneously, each
+level operates independently, and are shielded from each other:
+actors cannot travel between levels, and actors on one level cannot
+communicate with actors on another level. 
+</P>
+<P>Each actor in a map can either be under player control (there can
+be many players in a network game) or under script control. When an
+actor is under script control, its script completely defines how the
+actor moves and interacts with other actors. 
+</P>
+<P>With all of those actors running around, scripts executing, and
+events occuring in the world, you're probably asking how one can
+understand the flow of execution in an S3GXL. The answer is as
+follows: 
+</P>
+<P>To manage time, S3GE divides each second of gameplay into &quot;Ticks&quot;.
+A tick is the smallest unit of time in which all actors in a level
+are updated. A tick typically takes between 1/100th to 1/10th of a
+second. The tick time is limited only by CPU power; the faster
+machine, the lower the tick duration is. 
+</P>
+<P>Some commands in S3GXL take zero ticks to execute (i.e. they
+execute without any game-time passing), and others take many ticks.
+Functions that require game-time to pass are called &quot;latent
+functions&quot;. Some examples of latent functions include <EM>Sleep</EM>,
+<EM>FinishAnim</EM>, and <EM>MoveTo</EM>. Latent functions in S3GXL
+may only be called from code within a state (the so called &quot;state
+code&quot;), not from code within a function (that includes functions
+define within a state). 
+</P>
+<P>While an actor is executing a latent function, that actor's state
+execution doesn't continue until the latent function completes.
+However, other actors, or the VM, may call functions within the
+actor. The net result is that all S3GXL functions can be called at
+any time, even while latent functions are pending. 
+</P>
+<P>In traditional programming terms, S3GXL acts as if each actor in a
+level has its own &quot;thread&quot; of execution. Internally, S3GE
+does not use Windows threads, because that would be very inefficient
+(Windows 95 and Windows NT do not handle thousands of simultaneous
+threads efficiently). Instead, S3GXL simulates threads. This fact is
+transparent to S3GXL code, but becomes very apparent when you write
+C++ code that interacts with S3GXL. 
+</P>
+<P>All S3GXLs execute in parallel. If there are 100 monsters walking
+around in a level, all 100 of those monsters' scripts are executing
+simultaneously and independently. 
+</P>
+<H3 CLASS="western"><A NAME="S3GE Game Object Overview"></A>The S3GE
+Game Object Overview</H3>
+<P>Before beginning work with S3GXL, it's important to understand the
+high-level relationships of Game Objects within S3GE. <BR><BR>In
+S3GE, all Game Objects that <I>physically</I> interact within the
+Game World are based on the User Interface System's <I>Gizmo Object</I>.
+The Gizmo was originally intended to be used for only creating GUI
+Gadgets, however, I expanded on its purpose and functionality after I
+realized that all interactive Game Objects could take advantage of
+the UI's Interactive Mechanisms, State-based Behavior, and Messaging.
+With S3GXL, most Game Objects are defined with Tags using an alias
+for Gizmo to improve readability such as: Doodad, Jigger, Actor,
+Terrain. 
+</P>
+<H2 CLASS="western">Variables</H2>
+<H3 CLASS="western"><A NAME="Simple Variables"></A>Simple Variables</H3>
+<P>Variables can appear in two kinds of places in S3GXL: Gizmo
+Variables, applied to the individual object. Gizmo variables are
+declared with the &lt;<CODE>variable&gt;</CODE> Tag. <BR>Global and
+Local variables appear within a Script chunk. Local variables are
+declared with the script <CODE>local</CODE> keyword and are only
+active while that chunk executes, such as: 
+</P>
+<PRE>&lt;actor name=&quot;Player&quot; description=&quot;Player&quot; collision=&quot;1&quot; operate=&quot;1&quot; transit=&quot;1&quot; active=&quot;1&quot; audio=&quot;1&quot; visible=&quot;1&quot;&gt;
+    &lt;variable name=&quot;health&quot; value=&quot;1000&quot;/&gt; 
+    &lt;event state=&quot;HIT&quot;&gt;
+        &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+            &lt;![CDATA[
+                local actorhealth = uiGizmoVariableGet(this, 'health') - 1
+                uiGizmoVariableSet(this, 'health', actorhealth)
+            ]]&gt;
+         &lt;/script&gt;
+     &lt;/event&gt;
+&lt;/actor&gt;</PRE><P>
+Note: LUA is a lexically scoped language. The scope of variables
+begins at the first statement after their declaration and lasts until
+the end of the innermost block that includes the declaration.
+Consider the following example:</P>
+<PRE>x = 10                -- global variable
+do                    -- new block
+  local x = x         -- new 'x', with value 10
+  print(x)            --&gt; 10
+  x = x+1
+  do                  -- another block
+    local x = x+1     -- another 'x'
+    print(x)          --&gt; 12
+  end
+  print(x)            --&gt; 11
+end
+print(x)              --&gt; 10  (the global one)</PRE><P>
+Here are the basic Value data types supported in S3GXL: 
+</P>
+<UL>
+	<LI><P><STRONG>int</STRONG>: A 32-bit integer value. 
+	</P>
+	<LI><P><STRONG>float</STRONG>: A 32-bit floating point number. 
+	</P>
+	<LI><P><STRONG>string</STRONG>: A string of characters.</P>
+	<LI><P><STRONG>void pointer</STRONG>:</P>
+</UL>
+<H4 CLASS="western"><A NAME="Variable specifiers"></A>Variable
+Specifiers</H4>
+<P>Variables may also contain additional specifiers such as <CODE>lock</CODE>
+that further describe the variable. Actually, there are quite a lot
+of specifiers which you wouldn't expect to see in a general-purpose
+programming language, mainly as a result of wanting S3GXL to natively
+support many game- and environment- specific concepts: 
+</P>
+<DL>
+	<DT><B>lock</B></DT><DD STYLE="margin-bottom: 0.2in">
+	The variable can be seen in S3GEd but not edited. 
+	</DD></DL>
+<H3 CLASS="western">
+<A NAME="Tables"></A>Tables</H3>
+<P>S3GXL (LUA) supports a very flexible datatype called Tables.
+Tables can be used for single/multi-dimensional Sequential Arrays and
+Non-Sequential Dictionaries.</P>
+<P>Tables are declared using the following syntax:</P>
+<PRE>--Declare an Empty Table
+t = {}
+
+--Declare Table List
+t = {1,1,2,3,5,8,13}
+t = {&quot;apple&quot;, &quot;pear&quot;, &quot;banana&quot;}
+
+--Declare Table Dictionary
+t = { apple=&quot;green&quot;, orange=&quot;orange&quot;, banana=&quot;yellow&quot; }
+
+--Mixed Table
+t = { 2,4,6, engine=&quot;S3GE&quot;, version=&quot;1.1&quot; }
+
+-- We can find the size of a table using the standard table library function # operator (i.e. get number of elements)
+&gt; = # t</PRE><H3 CLASS="western">
+<A NAME="Editability"></A>Editability</H3>
+<P>In S3GXL, you can make an instance variable &quot;editable&quot;,
+so that users can edit the variable's value in S3GEd. This mechanism
+is responsible for the entire contents of the &quot;Actor Properties&quot;
+dialog in S3GEd: everything you see there is simply an S3GXL
+variable, which has been declared editable. 
+</P>
+<P>The syntax for declaring an editable variable is as follows: 
+</P>
+<PRE>var() int MyInteger; -- Declare an editable integer in the default
+                     -- category.
+
+var(MyCategory) bool MyBool; -- Declare an editable integer in
+                             -- &quot;MyCategory&quot;.</PRE><P>
+You can also declare a variable as <CODE>editconst</CODE>, which
+means that the variable should be visible but <EM>not</EM> editable
+S3GEd. Note that this only prevents the variable from being changed
+in the editor, not in script. If you want a variable that is truly
+<CODE>const</CODE> but still visible in the editor, you must declare
+it <CODE>const editconst</CODE>: 
+</P>
+<PRE>-- MyBool is visible but not editable in S3GEd
+var(MyCategory) editconst bool MyBool; 
+
+-- MyBool is visible but not editable in S3GEd and 
+-- not changeable in script
+var(MyCategory) const editconst bool MyBool; 
+
+-- MyBool is visible and can be set in S3GEd but
+-- not changeable in script
+var(MyCategory) const bool MyBool; </PRE><H3 CLASS="western">
+<A NAME="ObjectRefs"></A><A NAME="Object and actor reference variables"></A>
+Object and actor reference variables</H3>
+<P>You can declare a variable that refers to an actor or object like
+this: 
+</P>
+<PRE>var actor A; -- An actor reference.
+var pawn P; -- A reference to an actor in the Pawn class.
+var texture T; -- A reference to a texture object.</PRE><P>
+The variable &quot;P&quot; above is a reference to an actor in the
+Pawn class. Such a variable can refer to any actor that belongs to a
+subclass of Pawn. For example, P might refer to a Brute, or a Skaarj,
+or a Manta. It can be any kind of Pawn. However, P can never refer to
+a Trigger actor (because Trigger is not a subclass of Pawn). 
+</P>
+<P>One example of where it's handy to have a variable referring to an
+actor is the Enemy variable in the Pawn class, which refers to the
+actor that the Pawn is trying to attack. 
+</P>
+<P>When you have a variable that refers to an actor, you can access
+that actor's variables, and call its functions. For example: 
+</P>
+<PRE>-- Declare two variables that refer to a pawns.
+var pawn P, Q;
+ 
+-- Here is a function that makes use of P.
+-- It displays some information about P.
+function MyFunction()
+
+   -- Set P's enemy to Q.
+   P.Enemy = Q;
+ 
+   -- Tell P to play his running animation.
+   P.PlayRunning();
+end</PRE><P>
+Variables that refer to actors always either refer to a valid actor
+(any actor that actually exists in the level), or they contain the
+value <CODE>None</CODE>. None is equivalent to the C/C++ <CODE>NULL</CODE>
+pointer. However, in S3GXL, it is safe to access variables and call
+functions with a <CODE>None</CODE> reference; the result is always
+zero. 
+</P>
+<P>Note that an object or actor reference &quot;points to&quot;
+another actor or object, it doesn't &quot;contain&quot; an actor or
+object. The C equivalent of an actor reference is a pointer to an
+object in the AActor class (in C, you'd say an AActor*). For example,
+you could have two monsters in the world, Bob and Fred, who are
+fighting each other. Bob's &quot;Enemy&quot; variable would &quot;point
+to&quot; Fred, and Fred's &quot;Enemy&quot; variable would &quot;point
+to&quot; Bob. 
+</P>
+<P>Unlike C pointers, S3GXL object references are always safe and
+infallible. It is impossible for an object reference to refer to an
+object that doesn't exist or is invalid (other than the special-case
+<CODE>None</CODE> value). In S3GXL, when an actor is destroyed, all
+references to it are automatically set to <CODE>None</CODE>. 
+</P>
+<H3 CLASS="western"><A NAME="Class Reference Variables"></A>Class
+Reference Variables</H3>
+<P>In S3GE, classes are objects just like actors, textures, and
+sounds are objects. Class objects belong to the class named &quot;class&quot;.
+Now, there will often be cases where you'll want to store a reference
+to a class object, so that you can spawn an actor belonging to that
+class (without knowing what the class is at compile-time). For
+example: 
+</P>
+<PRE>var() class C;
+var actor A;
+A = Spawn( C ); -- Spawn an actor belonging to some arbitrary class C.</PRE><P>
+Now, be sure not to confuse the roles of a class C, and an object O
+belonging to class C (referred to as an &quot;instance&quot; of class
+C). To give a really shaky analogy, a class is like a pepper grinder,
+and an instance of that class is like pepper. You can use the pepper
+grinder (the class) to create pepper (objects of that class) by
+turning the crank (calling the Spawn function)...BUT, a pepper
+grinder (a class) is not pepper (an object belonging to the class),
+so you MUST NOT TRY TO EAT IT! 
+</P>
+<P>When declaring variables that reference class objects, you can
+optionally use the syntax <STRONG>class&lt;metaclass&gt;</STRONG> to
+limit the classes that can be referenced by the varible to classes of
+type <EM>metaclass</EM> (and its child classes). For example, in the
+declaration: 
+</P>
+<PRE STYLE="margin-bottom: 0.2in">var class&lt;actor&gt; ActorClass;</PRE><P>
+The variable ActorClass may only reference a class that extends the
+&quot;actor&quot; class. This is useful for improving compile-time
+type checking. For example, the Spawn function takes a class as a
+parameter, but only makes sense when the given class is a subclass of
+Actor, and the class&lt;classlimitor&gt; syntax causes the compiler
+to enforce that requirement. 
+</P>
+<P>As with dynamic object casting, you can dynamically cast classes
+like this: 
+</P>
+<PRE>-- casts the result of SomeFunctionCall() a class of type Actor (or subclasses of Actor)
+class&lt;actor&gt;( SomeFunctionCall() )</PRE><H3 CLASS="western">
+<A NAME="Enumerations"></A>Enumerations</H3>
+<P>Enumerations exist in S3GXL as a convenient way to declare
+variables that can contain &quot;one of&quot; a bunch of keywords.
+For example, the actor class contains the enumeration <CODE>EPhysics</CODE>,
+which describes the physics which S3GE should apply to the actor.
+This can be set to one of the predefined values like <CODE>PHYS_None</CODE>,
+<CODE>PHYS_Walking</CODE>, <CODE>PHYS_Falling</CODE>, and so on. 
+</P>
+<P>Internally, enumerations are stored as byte variables. In
+designing S3GXL, enumerations were not seen as a necessity, but it
+makes code so much easier to read to see that an actor's physics mode
+is being set to <CODE>PHYS_Swimming</CODE> than (for example) <CODE>3</CODE>.
+</P>
+<P>Here is sample code that declares enumerations. 
+</P>
+<PRE>-- Declare the EColor enumeration, with three values.
+enum EColor
+
+   CO_Red,
+   CO_Green,
+   CO_Blue
+end;
+ 
+-- Now, declare two variables of type EColor.
+var EColor ShirtColor, HatColor;
+ 
+-- Alternatively, you can declare variables and
+-- enumerations together like this:
+var enum EFruit
+
+   FRUIT_Apple,
+   FRUIT_Orange,
+   FRUIT_Bannana
+end FirstFruit, SecondFruit;</PRE><P>
+In the S3GE source, we always declare enumeration values like
+<CODE>LT_Steady</CODE>, <CODE>PHYS_Falling</CODE>, and so on, rather
+than as simply &quot;Steady&quot; or &quot;Falling&quot;. This is
+just a matter of programming style, and is not a requirement of the
+language. 
+</P>
+<P>S3GXL only recognizes unqualified enum tags (like <CODE>FRUIT_Apple</CODE>)
+in classes where the enumeration was defined, and in its subclasses.
+If you need to refer to an enumeration tag defined somewhere else in
+the class hierarchy, you must &quot;qualify it&quot;: 
+</P>
+<PRE>FRUIT_Apple         -- If S3GE can't find this enum tag...
+EFruit.FRUIT_Apple  -- Then qualify it like this.</PRE><H3 CLASS="western">
+<A NAME="Structs"></A>Structs</H3>
+<P>An S3GXL struct is a way of cramming a bunch of variables together
+into a new kind of super-variable called a struct. S3GXL structs are
+much like C structs, in that they can contain variables, Tables, and
+other structs, but S3GXL structs cannot contain functions. 
+</P>
+<P>You can declare a struct as follows: 
+</P>
+<PRE>-- A point or direction vector in 3D space.
+struct Vector
+
+   var float X;
+   var float Y;
+   var float Z;
+end;</PRE><P>
+Once you declare a struct, you are ready to start declaring specific
+variables of that struct type: 
+</P>
+<PRE>-- Declare a bunch of variables of type Vector.
+var Vector Position;
+var Vector Destination;</PRE><P>
+To access a component of a struct, use code like the following. 
+</P>
+<PRE>function MyFunction()
+
+   Local Vector A, B, C;
+    
+   -- Add some vectors.
+   C = A + B;
+ 
+   -- Add just the x components of the vectors.
+   C.X = A.X + B.X;
+ 
+   -- Pass vector C to a function.
+   SomeFunction( C );
+ 
+   -- Pass certain vector components to a function.
+   OtherFunction( A.X, C.Z );
+end </PRE><P>
+You can do anything with Struct variables that you can do with other
+variables: you can assign variables to them, you can pass them to
+functions, and you can access their components. 
+</P>
+<P>There are several Structs defined in the Object class, which are
+used throughout S3GE. You should become familiar with their
+operation, as they are fundamental building blocks of scripts: 
+</P>
+<DL>
+	<DT><B>Vector</B></DT><DD>
+	A unique 3D point or vector in space, with an X, Y, and Z component.
+		</DD><DT>
+	<B>Plane</B></DT><DD>
+	Defines a unique plane in 3D space. A plane is defined by its X, Y,
+	and Z components (which are assumed to be normalized) plus its W
+	component, which represents the distance of the plane from the
+	origin, along the plane's normal (which is the shortest line from
+	the plane to the origin). 
+	</DD><DT>
+	<B>Rotation</B></DT><DD>
+	A rotation defining a unique orthogonal coordinate system. A
+	rotation contains Pitch, Yaw, and Roll components. 
+	</DD><DT>
+	<B>Coords</B></DT><DD>
+	An arbitrary coordinate system in 3D space. 
+	</DD><DT>
+	<B>Color</B></DT><DD>
+	An RGB color value. 
+	</DD><DT>
+	<B>Region</B></DT><DD STYLE="margin-bottom: 0.2in">
+	Defines a unique convex region within a level. 
+	</DD></DL>
+<H2 CLASS="western">
+<A NAME="Expressions"></A>Expressions</H2>
+<H3 CLASS="western"><A NAME="Constants"></A>Constants</H3>
+<P>In S3GXL, you can specify constant literal values for nearly all
+data types: 
+</P>
+<UL>
+	<LI><P>Integer and byte constants are specified with simple numbers,
+	for example: <CODE>123</CODE>. If you must specify an integer or
+	byte constant in hexadecimal format, use i.e.: <CODE>0x123</CODE> 
+	</P>
+	<LI><P>Floating point constants are specified with decimal numbers
+	like: <CODE>456.789</CODE> 
+	</P>
+	<LI><P>String constants must be enclosed in double quotes, for
+	example: <CODE>&quot;MyString&quot;</CODE> 
+	</P>
+	<LI><P>Name constants must be enclosed in single quotes, for example
+	<CODE>'MyName'</CODE> 
+	</P>
+	<LI><P>Vector constants contain X, Y, and Z values like this:
+	<CODE>ect(1.0,2.0,4.0)</CODE> 
+	</P>
+	<LI><P>Rotation constants contain Pitch, Yaw, and Roll values like
+	this: <CODE>Rot(0x8000,0x4000,0)</CODE> 
+	</P>
+	<LI><P>The <CODE>None</CODE> constant refers to &quot;no object&quot;
+	(or equivalently, &quot;no actor&quot;). 
+	</P>
+	<LI><P>The <CODE>Self</CODE> constant refers to &quot;this object&quot;
+	(or equivalently, &quot;this actor&quot;), i.e. the object whose
+	script is executing. 
+	</P>
+	<LI><P>General object constants are specified by the object type
+	followed by the object name in single quotes, for example:
+	<CODE>texture'Default'</CODE> 
+	</P>
+	<LI><P><CODE>EnumCount</CODE> gives you the number of elements in an
+	enumeration, for example: <CODE>EnumCount(ELightType</CODE><CODE><SUP>?</SUP></CODE><CODE>)</CODE>
+		</P>
+	<LI><P><CODE>TableCount</CODE> gives you the number of elements in
+	an static Table, for example: <CODE>TableCount(Touching)</CODE> 
+	</P>
+</UL>
+<P>You can use the &quot;const&quot; keyword to declare constants
+that you can later refer to by name. For example: 
+</P>
+<PRE>const LargeNumber=123456;
+const PI=3.14159;
+const MyName=&quot;Tim&quot;
+const Northeast=Vect(1.0,1.0,0.0);</PRE><P>
+Constants can be defined within classes or within structs. 
+</P>
+<P>To access a constant which was declared in another class, use the
+&quot;classname.constname&quot; syntax, for example: 
+</P>
+<PRE STYLE="margin-bottom: 0.2in">Pawn.LargeNumber</PRE><H3 CLASS="western">
+<A NAME="Expressions1"></A>Expressions</H3>
+<P>To assign a value to a variable, use &quot;=&quot; like this: 
+</P>
+<PRE>function Test()
+
+   local int i;
+   local string s;
+   local vector v, q;
+ 
+   i = 10;       -- Assign a value to integer variable i.
+   s = &quot;Hello!&quot; -- Assign a value to string variable s.
+   v = q;        -- Copy value of vector q to v.
+end</PRE><P>
+In S3GXL, whenever a function or other expression requires a certain
+type of data (for example, a &quot;float&quot;), and you specify a
+different type of data (for example, an &quot;int), the compiler will
+try to automatically convert the value you give to the proper type.
+Conversions among all the numerical data types (byte, int, and float)
+happen automatically, without any work on your part. 
+</P>
+<P>S3GXL is also able to many other built-in data types to other
+types, if you explicitly convert them in code. The syntax for this
+is: 
+</P>
+<PRE>function Test()
+
+   local int i;
+   local string s;
+   local vector v, q;
+   local rotation r;
+ 
+   s = string(i);     -- Convert integer i to a string, and assign it to s.
+   s = string(v);     -- Convert vector v to a string, and assign it to s.
+   v = q + vector(r); -- Convert rotation r to a vector, and add q.
+end</PRE><P>
+Here is the complete set of non-automatic conversions you can use in
+S3GXL: 
+</P>
+<UL>
+	<LI><P>String to Byte, Int, Float: Tries to convert a string like
+	<CODE>&quot;123&quot;</CODE> to a value like <CODE>123</CODE>. If
+	the string doesn't represent a value, the result is <CODE>0</CODE>. 
+	</P>
+	<LI><P>Byte, Int, Float, Vector, Rotation to String: Converts the
+	number to its textual representation. 
+	</P>
+	<LI><P>String to Vector, Rotation: Tries to parse the vector or
+	rotation's textual representation. 
+	</P>
+	<LI><P>String to Bool: Converts the case-insensitive words <CODE>&quot;True&quot;</CODE>
+	or <CODE>&quot;False&quot;</CODE> to <CODE>True</CODE> and <CODE>False</CODE>;
+	converts any non-zero value to <CODE>True</CODE>; everything else is
+	<CODE>False</CODE>. 
+	</P>
+	<LI><P>Bool to String: Result is either <CODE>&quot;True&quot;</CODE>
+	or <CODE>&quot;False&quot;</CODE>. 
+	</P>
+	<LI><P>Byte, Int, Float, Vector, Rotation to Bool: Converts nonzero
+	values to <CODE>True</CODE>; zero values to <CODE>False</CODE>. 
+	</P>
+	<LI><P>Bool to Byte, Int, Float: Converts <CODE>True</CODE> to <CODE>1</CODE>;
+	<CODE>False</CODE> to <CODE>0</CODE>. 
+	</P>
+	<LI><P>Name to String: Converts the name to the text equivalant. 
+	</P>
+	<LI><P>Rotation to Vector: Returns a vector facing &quot;forward&quot;
+	according to the rotation. 
+	</P>
+	<LI><P>Vector to Rotation: Returns a rotation pitching and yawing in
+	the direction of the vector; roll is zero. 
+	</P>
+	<LI><P>Object (or Actor) to Int: Returns an integer that is
+	guaranteed unique for that object. 
+	</P>
+	<LI><P>Object (or Actor) to Bool: Returns <CODE>False</CODE> if the
+	object is <CODE>None</CODE>; <CODE>True</CODE> otherwise. 
+	</P>
+	<LI><P>Object (or Actor) to String: Returns a textual representation
+	of the object. 
+	</P>
+</UL>
+<H3 CLASS="western"><A NAME="Converting object references among classes"></A>
+Converting object references among classes</H3>
+<P>Just like the conversion functions above, which convert among
+simple datatypes, in S3GXL you can convert actor and object
+references among various types. For example, all actors have a
+variable named &quot;Target&quot;, which is a reference to another
+actor. Say you are writing a script where you need to check and see
+if your Target belongs to the &quot;Pawn&quot; actor class, and you
+need to do something special with your target that only makes sense
+when it's a pawn -- for example, you need to call one of the Pawn
+functions. The actor cast operators let you do this. Here's an
+example: 
+</P>
+<PRE>var actor Target;
+--...
+ 
+function TestActorConversions
+
+   local P;
+ 
+   -- Cast Target to Pawn and assign the result to P.  If Target is not a Pawn (or subclass of Pawn), then the value assigned to P will be None.
+   P = Pawn(Target);
+   if( P != None )
+   
+      -- Target is a pawn, so set its Enemy to Self.
+      P.Enemy = Self;
+   end
+   else
+   
+      -- Target is not a pawn.
+   end
+end</PRE><P>
+To perform an actor conversion, type the class name followed by the
+actor expression you wish to convert, in parenthesis. Such
+conversions will either succeed or fail based on whether the
+conversion is sensible. In the above example, if your Target is
+referencing a Trigger object rather than a pawn, the expression
+Pawn(Target) will return &quot;None&quot;, since a Trigger can't be
+converted to a Pawn. However, if your Target is referencing a Brute
+object, the conversion will successfully return the Brute, because
+Brute is a subclass of Pawn. 
+</P>
+<P>Thus, actor conversions have two purposes: First, you can use them
+to see if a certain actor reference belongs to a certain class.
+Second, you can use them to convert an actor reference from one class
+to a more specific class. Note that these conversions don't affect
+the actor you're converting at all -- they just enable S3GXL to treat
+the actor reference as if it were a more specific type and allow you
+access the properties and methods declared in the more derived class.
+</P>
+<P>Another example of conversions lies in the Inventory script. Each
+Inventory actor is owned by a Pawn, even though its Owner variable
+can refer to any Actor (because Actor.Owner is a variable of type
+Actor). So a common theme in the Inventory code is to cast Owner to a
+Pawn, for example: 
+</P>
+<PRE>-- Called by engine when destroyed.
+function Destroyed()
+
+    -- Remove from owner's inventory.
+    if( Pawn(Owner)!=None )
+        Pawn(Owner).DeleteInventory( Self );
+end </PRE><H2 CLASS="western">
+<A NAME="Functions"></A>Functions</H2>
+<H3 CLASS="western"><A NAME="FunctionDeclarations"></A><A NAME="Declaring Functions"></A>
+Declaring Functions</H3>
+<P>In S3GXL, you can declare new functions and write new versions of
+existing functions (overwrite functions). Functions can take one or
+more parameters (of any variable type S3GXL supports), and can
+optionally return a value. Though most functions are written directly
+in S3GXL, you can also declare functions that can be called from
+S3GXL, but which are implemented in C++ and reside in a DLL. The S3GE
+technology supports all possible combinations of function calling:
+The C++ engine can call script functions; script can call C++
+functions; and script can call script. 
+</P>
+<P>Here is a simple function declaration. This function takes a
+vector as a parameter, and returns a floating point number: 
+</P>
+<PRE>-- Function to compute the size of a vector.
+function float VectorSize( vector V )
+
+   return sqrt( V.X * V.X + V.Y * V.Y + V.Z * V.Z );
+end</PRE><P>
+The word <CODE>function</CODE> always precedes a function
+declaration. It is followed by the optional return type of the
+function (in this case, <CODE>float</CODE>), then the function name,
+and then the list of function parameters enclosed in parenthesis. 
+</P>
+<P>When a function is called, the code within the brackets is
+executed. Inside the function, you can declare local variables (using
+the <CODE>local</CODE> keyword), and execute any S3GXL code. The
+optional <CODE>return</CODE> keyword causes the function to
+immediately return a value. 
+</P>
+<P>You can pass any S3GXL types to a function (including Tables), and
+a function can return any type. 
+</P>
+<P>By default, any local variables you declare in a function are
+initialized to zero. 
+</P>
+<P>Function calls can be recursive. For example, the following
+function computes the factorial of a number: 
+</P>
+<PRE>-- Function to compute the factorial of a number.
+function int Factorial( int Number )
+   if( Number &lt;= 0 )
+      return 1;
+   else
+      return Number * Factorial( Number - 1 );
+end</PRE><P>
+Some S3GXL functions are called by the engine whenever certain events
+occur. For example, when an actor is touched by another actor, the
+engine calls its <EM>Touch</EM> function to tell it who is touching
+it. By writing a custom <EM>Touch</EM> function, you can take special
+actions as a result of the touch occuring: 
+</P>
+<PRE>-- Called when something touches this actor.
+function Touch( actor Other )
+   bugBoardPrint( &quot;I was touched!&quot;)
+   Other.Message( &quot;You touched me!&quot; );
+end</PRE><P>
+The above function illustrates several things. First of all, the
+function writes a message to the log file using the <EM>Log</EM>
+command (which is the equivalent of Basic's &quot;print&quot; command
+and C's &quot;printf&quot;, with the exception on formatting rules).
+Second, it calls the &quot;Message&quot; function residing in the
+actor Other. Calling functions in other actors is a common action in
+S3GXL, and in object-oriented languages like Java in general, because
+it provides a simple means for actors to communicate with each other.
+</P>
+<H3 CLASS="western"><A NAME="Function parameter specifiers"></A>Function
+parameter specifiers</H3>
+<P>When you normally call a function, S3GXL makes a local copy of the
+parameters you pass the function. If the function modifies some of
+the parameters, those don't have any effect on the variables you
+passed in. For example, the following program: 
+</P>
+<PRE>function int DoSomething( int x )
+   x = x * 2;
+   return x;
+end
+function int DoSomethingElse()
+   local a, b;
+   a = 2;
+   bugBoardPrint( &quot;The value of a is &quot; $ a );
+   b = DoSomething( a );
+   bugBoardPrint( &quot;The value of a is &quot; $ a );
+   bugBoardPrint( &quot;The value of b is &quot; $ b );
+end</PRE><P>
+Produces the following output when DoSomethingElse is called:</P>
+<PRE>The value of a is 2
+The value of a is 2
+The value of b is 4</PRE><P>
+In other words, the function DoSomething was futzing with a local
+copy of the variable &quot;a&quot; which was passed to it, and it was
+not affecting the real variable &quot;a&quot;. 
+</P>
+<P>The <CODE>out</CODE> specified lets you tell a function that it
+should actually modify the variable that is passed to it, rather than
+making a local copy. This is useful, for example, if you have a
+function that needs to return several values to the caller. You can
+juse have the caller pass several variables to the function which are
+<CODE>out</CODE> values. For example: 
+</P>
+<PRE>-- Compute the minimum and maximum components of a vector.
+function VectorRange( vector V, out float Min, out float Max )
+
+   -- Compute the minimum value.
+   if ( V.X&lt;V.Y &amp;amp;&amp;amp; V.X&lt;V.Z ) Min = V.X;
+   else if( V.Y&lt;V.Z ) Min = V.Y;
+   else Min = V.Z;
+ 
+   -- Compute the maximum value.
+   if ( V.X&gt;V.Y &amp;amp;&amp;amp; V.X&gt;V.Z ) Max = V.X;
+   else if( V.Y&gt;V.Z ) Max = V.Y;
+   else Max = V.Z;
+end</PRE><P>
+Without the <CODE>out</CODE> keyword, it would be painful to try to
+write functions that had to return more than one value. One important
+note about the <CODE>out</CODE> keyword (does not apply to natvie
+functions): the value isn't really passed by reference, but the
+changed value is copied back to the variable. So there is no speed
+gain in using the <CODE>out</CODE> keyword, in had the opposite
+effect (copy before and after the function call). 
+</P>
+<P>With the <CODE>optional</CODE> keyword, you can make certain
+function parameters optional, as a convenience to the caller. For
+S3GXL functions, optional parameters which the caller doesn't specify
+are set to zero. For native functions, the default values of optional
+parameters depends on the function. For example, the Spawn function
+takes an optional location and rotation, which default to the
+spawning actor's location and rotation. 
+</P>
+<P>The <CODE>coerce</CODE> keyword forces the caller's parameters to
+be converted to the specified type (even if S3GXL normally would not
+perform the conversion automatically). This is useful for functions
+that deal with strings, so that the parameters are automatically
+converted to strings for you. 
+</P>
+<H3 CLASS="western"><A NAME="Function overriding"></A>Function
+overriding</H3>
+<P>&quot;Function overriding&quot; refers to writing a new version of
+a function in a subclass. For example, say you're writing a script
+for a new kind of monster called a Demon. The Demon class, which you
+just created, extends the Pawn class. Now, when a pawn sees a player
+for the first time, the pawn's &quot;SeePlayer&quot; function is
+called, so that the pawn can start attacking the player. This is a
+nice concept, but say you wanted to handle &quot;SeePlayer&quot;
+differently in your new Demon class. How do you do this? Function
+overriding is the answer. 
+</P>
+<P>To override a function, just cut and paste the function definition
+from the parent class into your new class. For example, for
+SeePlayer, you could add this to your Demon class. 
+</P>
+<PRE>-- New Demon class version of the Touch function.
+function SeePlayer( actor SeenPlayer )
+   bugBoardPrint( &quot;The demon saw a player&quot; );
+   -- Add new custom functionality here...
+end</PRE><P>
+Function overriding is the key to creating new S3GXL classes
+efficiently. You can create a new class that extends an existing
+class. Then, all you need to do is override the functions that you
+want to be handled differently. This enables you to create new kinds
+of objects without writing gigantic amounts of code. 
+</P>
+<P>Several functions in S3GXL are declared as <CODE>final</CODE>. The
+<CODE>final</CODE> keyword (which appears immediately before the word
+<CODE>function</CODE>) says &quot;this function cannot be overridden
+by child classes&quot;. This should be used in functions that you
+know nobody would want to override, because it results in faster
+script code. For example, say you have a <EM>VectorSize</EM> function
+that computes the size of a vector. There's absolutely no reason
+anyone would ever override that, so declare it as <CODE>final</CODE>.
+On the other hand, a function like <EM>Touch</EM> is very
+context-dependent and should not be final. 
+</P>
+<H3 CLASS="western"><A NAME="Advanced function specifiers"></A>Advanced
+function specifiers</H3>
+<DL>
+	<DT><B>Static</B></DT><DD>
+	A static function acts like a C global function, in that it can be
+	called without having a reference to an object of the class. Static
+	functions can call other static functions, and can access the
+	default values of variables. Static functions cannot call non-static
+	functions and they cannot access instance variables (since they are
+	not executed with respect to an instance of an object). Unlike
+	languages like C++, static functions are virtual and can be
+	overridden in child classes. This is useful in cases where you wish
+	to call a static function in a variable class (a class not known at
+	compile time, but referred to by a variable or an expression). 
+	</DD><DT>
+	<B>Singular</B></DT><DD>
+	The <CODE>singular</CODE> keyword, which appears immediately before
+	a function declaration, prevents a function from calling itself
+	recursively. The rule is this: If a certain actor is already in the
+	middle of a singular function, any subsequent calls to singular
+	functions will be skipped over. This is useful in avoiding
+	infinite-recursive bugs in some cases. For example, if you try to
+	move an actor inside of your <EM>Bump</EM> function, there is a good
+	chance that the actor will bump into another actor during its move,
+	resulting in another call to the <EM>Bump</EM> function, and so on.
+	You should be very careful in avoiding such behavior, but if you
+	can't write code with complete confidence that you're avoiding such
+	potential recursive situations, use the <CODE>singular</CODE>
+	keyword. 
+	</DD><DT>
+	<B>Native</B></DT><DD STYLE="margin-bottom: 0.2in">
+	You can declare S3GXL functions as <CODE>native</CODE>, which means
+	that the function is callable from S3GXL, but is actually
+	implemented (elsewhere) in C++. For example, the Actor class
+	contains a lot of native function definitions, such as: 
+	</DD></DL>
+<PRE STYLE="margin-bottom: 0.2in">native(266) final function bool Move( vector Delta );</PRE><P>
+The number inside the parenthesis after the <CODE>native</CODE>
+keyword corresponds to the number of the function as it was declared
+in C++ (using the <CODE>AUTOREGISTER_NATIVE</CODE> macro), and is
+only required for operator functions. The native function is expected
+to reside in the DLL named identically to the package of the class
+containing the S3GXL definition. 
+</P>
+<DL>
+	<DT><B>Latent</B></DT><DD>
+	Declares that a native function is latent, meaning that it can only
+	be called from state code, and it may return after some game-time
+	has passed. 
+	</DD><DT>
+	<B>Iterator</B></DT><DD>
+	Declares that a native function is an iterator, which can be used to
+	loop through a list of actors using the <CODE>foreach</CODE>
+	command. 
+	</DD><DT>
+	<B>Simulated</B></DT><DD>
+	Declares that a function may execute on the Client-side when an
+	actor is either a simulated proxy or an autonomous proxy. All
+	functions that are both native and final are automatically simulated
+	as well. 
+	</DD><DT>
+	<B>Operator,&nbsp;PreOperator,&nbsp;PostOperator</B></DT><DD>
+	These keywords are for declaring a special kind of function called
+	an operator (equivalent to C++ operators). This is how S3GXL knows
+	about all of the built-in operators like &quot;+&quot;, &quot;-&quot;,
+	&quot;==&quot;, and &quot;||&quot;. I'm not going into detail on how
+	operators work in this document, but the concept of operators is
+	similar to C++, and you can declare new operator functions and
+	keywords as S3GXL functions or native functions. 
+	</DD><DT>
+	<B>Event</B></DT><DD STYLE="margin-bottom: 0.2in">
+	The <CODE>event</CODE> keyword has the same meaning to S3GXL as
+	<CODE>function&quot;. However, when you export a C++ header file
+	from S3GE using =S3GE -make -h</CODE>, S3GEd automatically generates
+	a C++ -&gt; S3GXL calling stub for each &quot;event&quot;. This
+	automatically keeps C++ code synched up with S3GXL functions and
+	eliminates the possibility of passing invalid parameters to an S3GXL
+	function. For example, this bit of S3GXL code: 
+	</DD></DL>
+<PRE>event Touch( Actor Other )
+ ... end</PRE><P>
+Generates code similar to the following in EngineClasses.h: 
+</P>
+<PRE>void eventTouch(class AActor* Other)
+    FName N(&quot;Touch&quot;,FNAME_Intrinsic);
+    struct class AActor* Other; end Parms;
+    Parms.Other=Other;
+    ProcessEvent(N, &amp;Parms);
+end</PRE><P>
+Thus enabling you to call the S3GXL function from C++ like this: 
+</P>
+<PRE>AActor *SomeActor, *OtherActor;
+SomeActor-&gt;eventTouch(OtherActor);</PRE><H2 CLASS="western">
+<A NAME="Program Structure"></A>Program Structure</H2>
+<P>Reserved LUA Keywords(case sensitive):</P>
+<PRE>and       break     do        else      elseif
+end       false     for       function  if
+in        local     nil       not       or
+repeat    return    then      true      until     while</PRE><P>
+S3GXL supports all the standard flow-control statements of LUA:</P>
+<H3 CLASS="western"><A NAME="For Loops"></A>For Loops</H3>
+<P>&quot;For&quot; let you iterate as long as some condition is met.
+The iterating statement for has two forms. The first is for numerical
+iteration. For example: 
+</P>
+<PRE>-- Example of &quot;for&quot; loop.
+for count = 1,3 do print(count) end</PRE><P>
+The output of this loop is: 
+</P>
+<PRE>1
+2
+3</PRE><P>
+&quot;For&quot; The second is for sequential iteration, e.g. to print
+the contents of a table. Here, for is passed an iterator function,
+which here is pairs(), whose purpose it is to supply the values of
+each iteration: : 
+</P>
+<PRE>-- Example of &quot;for&quot; loop.
+for key,value in pairs(10, math.pi, &quot;banana&quot; end) do print(key, value) end  -- sequential iteration</PRE><P>
+The output of this loop is: 
+</P>
+<PRE>1       10
+2       3.1415926535898
+3       banana</PRE><H3 CLASS="western">
+<A NAME="Do-While Loops"></A>Do-While Loops</H3>
+<P>&quot;Do&quot; let you cycle through a loop while some ending
+expression is true. Note that S3GE's do-until syntax differs from
+C/Java (which use do-while). 
+</P>
+<PRE>-- Example of &quot;do&quot; loop.
+i = 0
+do
+   i = i + 1
+   if i == 3 then break end
+   print(i)
+end   </PRE><P>
+The output of this loop is: 
+</P>
+<PRE>1
+2
+3</PRE><H3 CLASS="western">
+<A NAME="While Loops"></A>While Loops</H3>
+<P>&quot;while expression do block end&quot; let you cycle through a
+loop while some starting expression is true. 
+</P>
+<PRE>-- Example of &quot;while&quot; loop.
+i = 3
+while i&gt;0 do
+    print(i)
+    i = i-1
+end</PRE><P>
+The output of this loop is: 
+</P>
+<PRE>3
+2
+1</PRE><P>
+<A NAME="Repeat-Until"></A>Repeat-Until Loops</P>
+<P>&quot; repeat block until exp &quot; let you cycle through a loop
+until some ending expression is true. 
+</P>
+<PRE>-- Example of &quot;repeat-until&quot; loop.
+i = 3
+    repeat
+    print(i)
+    i = i-1
+until i==0</PRE><P>
+The output of this loop is: 
+</P>
+<PRE>3
+2
+1</PRE><H3 CLASS="western">
+<A NAME="Break"></A>Break</H3>
+<P>The &quot;break&quot; command exits out of the nearest loop
+(&quot;For&quot;, &quot;Do&quot;, or &quot;While&quot;). 
+</P>
+<PRE>--We can exit the control of a while statement using the break keyword. Note, in Lua the break keyword must be the last statement in a block--i.e. the keyword end must follow--otherwise you will get compilation errors.
+
+a, b = 0,1
+while true do                   -- infinite loop
+    io.write(b, &quot;, &quot;)
+    a, b = b, a+b
+    if a &gt; 500 then break end   -- exit the loop if the condition is true
+end</PRE><P>
+The output of this loop is: 
+</P>
+<PRE STYLE="margin-bottom: 0.2in">1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, &gt;</PRE><H3 CLASS="western">
+<A NAME="Conditional Statements"></A>Conditional Statements</H3>
+<P>if expression then block elseif expression then blockend [else
+block] end<BR>let you execute code if certain conditions are met. 
+</P>
+<PRE>-- Example of simple
+if exp then block elseif exp then blockend [else block] end
+ if number &lt; 1 then
+   value = &quot;smaller than one&quot;
+ elseif number == 1 then
+   value = &quot;one&quot;
+ elseif number == 2 then
+   value = &quot;two&quot;
+ elseif number == 3 then
+   value = &quot;three&quot;
+ else
+   value = &quot;bigger than three&quot;
+ end</PRE><H2 CLASS="western">
+States &amp; Behaviors</H2>
+<H3 CLASS="western"><A NAME="StateDeclaration"></A><A NAME="Overview of States"></A>
+Overview of States &amp; Behaviors</H3>
+<P>States (and what is known as &quot;state machine programming&quot;)
+are a natural way of making complex object behaviour manageable. A
+Behavior is Scripted Logic that defines Next State change based on
+current State. A Transition is a Behavior that defines current State
+change based on Previous State. S3GE implements States and Behaviors
+in the User Interface System. S3GXL supports EventStates and
+Behaviors in both Markup and Script.</P>
+<P>In S3GE, each actor in the world is always in one and only one
+state. Its state reflects the action it wants to perform. 
+</P>
+<P>In S3GXL, you can write Script Chunks that exist in a particular
+state. This Script is only called when the actor is in that state.</P>
+<P>The easiest way to do this is by defining several states
+(Wandering and Attacking), and writing a different version of &quot;Touch&quot;
+in each state. S3GXL supports this. 
+</P>
+<P>Here is an example of Event States Defined for GUI Gizmos:</P>
+<PRE>    &lt;state name=&quot;IDLE&quot;/&gt;&lt;!-- default state (required first) --&gt;
+    &lt;state name=&quot;ENTER&quot;/&gt;
+    &lt;state name=&quot;HOVER&quot;/&gt;
+    &lt;state name=&quot;DOWN&quot;/&gt;
+    &lt;state name=&quot;HOLD&quot;/&gt;
+    &lt;state name=&quot;DRAG&quot;/&gt;
+    &lt;state name=&quot;UP&quot;/&gt;
+    &lt;state name=&quot;EXIT&quot;/&gt;
+    &lt;state name=&quot;WORK&quot;/&gt;
+    &lt;state name=&quot;SCROLLUP&quot;/&gt;
+    &lt;state name=&quot;SCROLLDOWN&quot;/&gt;
+    &lt;state name=&quot;SCROLLLOCKUP&quot;/&gt;
+    &lt;state name=&quot;SCROLLLOCKDOWN&quot;/&gt;
+    &lt;state name=&quot;MOVE&quot;/&gt;
+    &lt;state name=&quot;LOAD&quot;/&gt;
+    &lt;state name=&quot;UNLOAD&quot;/&gt;
+    &lt;state name=&quot;HIDE&quot;/&gt;
+    &lt;state name=&quot;SHOW&quot;/&gt;
+    &lt;state name=&quot;SELECT&quot;/&gt;
+    &lt;state name=&quot;UNSELECT&quot;/&gt;  </PRE><P>
+Here is an example of Behavior defined with Gizmo PushBox script:</P>
+<PRE>    &lt;behavior name=&quot;pushbox&quot; description=&quot;Pre-Fab Button&quot;&gt;
+        &lt;event state=&quot;IDLE&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                if uiPointerBound == 1 then
+                    uiGizmoNextEventState = ENTER
+                else
+                    uiGizmoNextEventState = IDLE
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;ENTER&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                if uiPointerBound == 1 then
+                    uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+                    uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+                    if uigizmoeventstatecounter &gt; 3 then
+                        uiGizmoPropertySet(this,'EventStateCounter',0)
+                        uiGizmoNextEventState = HOVER
+                    else
+                        uiGizmoNextEventState = ENTER
+                    end
+                else
+                    uiGizmoNextEventState = EXIT
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;HOVER&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                if uiPointerBound == 1 then
+                    if uiPointerContact == 1 then 
+                        uiGizmoNextEventState = DOWN
+                    else
+            uiOutput(uiGizmoPropertyGet(this,'Description'))
+                        uiGizmoNextEventState = HOVER
+                    end
+                else
+                    uiGizmoNextEventState = EXIT
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;DOWN&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                if uiPointerBound == 1 then
+                    if uiPointerContact == 1 then
+                        uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+                        uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+                        if uigizmoeventstatecounter == 8 then
+                            uiGizmoPropertySet(this,'EventStateCounter',0)
+                            uiGizmoNextEventState = HOLD
+                        else
+                            uiGizmoNextEventState = DOWN
+                        end
+                    end    
+                else
+                    uiGizmoNextEventState = EXIT
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;HOLD&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                if uiPointerBound == 1 then
+                    if uiPointerContact == 1 then
+                        uiGizmoNextEventState = HOLD
+                    else
+                        uiGizmoNextEventState = UP
+                    end
+                else
+                    if uiPointerContact == 1 then 
+                        uiGizmoNextEventState = DRAG
+                    end
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;DRAG&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                if uiPointerBound == 1 then
+                    if uiPointerContact == 1 then
+                        uiGizmoNextEventState = HOLD
+                    else
+                        uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+                        uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+                        if uigizmoeventstatecounter == 4 then
+                            uiGizmoNextEventState = UP
+                        end
+                    end
+                else
+                    if uiPointerContact == 1 then 
+                        uiGizmoNextEventState = DRAG
+                    else
+                        uigizmoeventstatecounter = uiGizmoPropertyGet(this,'EventStateCounter') + 1
+                        uiGizmoPropertySet(this,'EventStateCounter',uigizmoeventstatecounter)
+                        if uigizmoeventstatecounter == 4 then
+                            uiGizmoNextEventState = UP
+                        end                    
+                    end
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;UP&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                uiGizmoPropertySet(this,'EventStateCounter',0)
+                if uiPointerBound == 1 then
+                    if uiPointerContact == 1 then
+                        uiGizmoNextEventState = DOWN
+                    else
+                        uiGizmoNextEventState = HOVER
+                    end
+                else
+                    uiGizmoNextEventState = DRAG
+                end
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+        &lt;event state=&quot;EXIT&quot;&gt;
+            &lt;script language=&quot;darklua&quot; type=&quot;1&quot;&gt;
+                &lt;![CDATA[
+                uiGizmoPropertySet(this,'EventStateCounter',0)
+                uiGizmoNextEventState = IDLE
+                ]]&gt;
+            &lt;/script&gt;
+        &lt;/event&gt;
+    &lt;/behavior&gt;</PRE><H3 CLASS="western">
+Tag inheritance and scoping rules</H3>
+<P>In S3GXL, when you subtag an existing State Tag, your new Tag
+inherits all of the variables, functions and states from its parent
+class. This is well-understood. 
+</P>
+<P>However, the addition of the state abstraction to the S3GXL
+programming model adds additional twists to the inheritance and
+scoping rules. The complete inheritance rules are: 
+</P>
+<UL>
+	<LI><P>A new class inherits all of the variables from its parent
+	class. 
+	</P>
+	<LI><P>A new class inherits all of its parent class's non-state
+	functions. You can override any of those inherited non-state
+	functions. You can add entirely new non-state functions. 
+	</P>
+	<LI><P>A new class inherits all of its parent class's states,
+	including the functions and labels within those states. You can
+	override any of the inherited state functions, and you can override
+	any of the inherited state labels, you can add new state functions,
+	and you can add new state labels. 
+	</P>
+</UL>
+<P>Here is an example of all the overriding rules: 
+</P>
+<PRE>-- Here is an example parent class.
+class MyParentClass extends Actor;
+ 
+-- A non-state function.
+function MyInstanceFunction()
+
+   bugBoardPrint( &quot;Executing MyInstanceFunction&quot; );
+end
+ 
+-- A state.
+state MyState
+
+   -- A state function.
+   function MyStateFunction()
+   
+      bugBoardPrint( &quot;Executing MyStateFunction&quot; );
+   end
+-- The &quot;Begin&quot; label.
+Begin:
+   bugBoardPrint(&quot;Beginning MyState&quot;);
+end
+ 
+-- Here is an example child class.
+class MyChildClass extends MyParentClass;
+ 
+-- Here I'm overriding a non-state function.
+function MyInstanceFunction()
+
+   bugBoardPrint( &quot;Executing MyInstanceFunction in child class&quot; );
+end
+ 
+-- Here I'm redeclaring MyState so that I can override MyStateFunction.
+state MyState
+
+   -- Here I'm overriding MyStateFunction.
+   function MyStateFunction()
+   
+      bugBoardPrint( &quot;Executing MyStateFunction&quot; );
+   end
+-- Here I'm overriding the &quot;Begin&quot; label.
+Begin:
+   bugBoardPrint( &quot;Beginning MyState in MyChildClass&quot; );
+end</PRE><P>
+When you have a function that is implemented globally, in one or more
+states, and in one or more parent classes, you need to understand
+which version of the function will be called in a given context. The
+scoping rules that resolve these complex situations are: 
+</P>
+<UL>
+	<LI><P>If the object is in a state, and an implementation of the
+	function exists somewhere in that state (either in the actor's class
+	or in some parent class), the most-derived state version of the
+	function is called. 
+	</P>
+	<LI><P>Otherwise, the most-derived non-state version of the function
+	is called. 
+	</P>
+</UL>
+<H2 CLASS="western"><A NAME="Language Functionality"></A>Language
+Functionality</H2>
+<H3 CLASS="western"><A NAME="Built-in operators and their precedence"></A>
+Built-in operators and their precedence</H3>
+<P>With LUA, S3GXL provides a wide variety of .operators for such
+operations as adding numbers together, comparing values, and
+incrementing variables. The complete set of operators is defined in
+Object.u, but here is a recap. Here are the standard operators, in
+order of precedence. Note that all of the C style operators have the
+same precedence as they do in C. 
+</P>
+<TABLE WIDTH=965 BORDER=0 CELLPADDING=2 CELLSPACING=0>
+	<COL WIDTH=103>
+	<COL WIDTH=188>
+	<COL WIDTH=661>
+	<TR>
+		<TH WIDTH=103 BGCOLOR="#dadada">
+			<P><FONT COLOR="#000000">Operator</FONT> 
+			</P>
+		</TH>
+		<TH WIDTH=188 BGCOLOR="#dadada">
+			<P><FONT COLOR="#000000">Types it applies to</FONT> 
+			</P>
+		</TH>
+		<TH WIDTH=661 BGCOLOR="#dadada">
+			<P><FONT COLOR="#000000">Meaning</FONT> 
+			</P>
+		</TH>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER>. 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#ffffff">
+			<P>string 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#ffffff">
+			<P>String concatenation, with an additional space between the two
+			strings. &quot;string1&quot;@&quot;string2&quot; = &quot;string1
+			string2&quot; 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#eaeaea">
+			<P ALIGN=CENTER>..</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#eaeaea">
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#eaeaea">
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER>...</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#ffffff">
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#ffffff">
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#eaeaea">
+			<P ALIGN=CENTER>= 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#eaeaea">
+			<P>All 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#eaeaea">
+			<P>Compare for inequality 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER>== 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#ffffff">
+			<P>All 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#ffffff">
+			<P>Compare for equality 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#eaeaea">
+			<P ALIGN=CENTER>&lt; 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#eaeaea">
+			<P>byte, int, float, string 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#eaeaea">
+			<P>Less than 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER>&gt; 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#ffffff">
+			<P>byte, int, float, string 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#ffffff">
+			<P>Greater than 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#eaeaea">
+			<P ALIGN=CENTER>&lt;= 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#eaeaea">
+			<P>byte, int, float, string 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#eaeaea">
+			<P>Less than or equal to 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER>&gt;= 
+			</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#ffffff">
+			<P>byte, int, float, string 
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#ffffff">
+			<P>Greater than or equal to 
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#eaeaea">
+			<P ALIGN=CENTER>~=</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#eaeaea">
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#eaeaea">
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#ffffff">
+			<P ALIGN=CENTER>~</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#ffffff">
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#ffffff">
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+	<TR>
+		<TD WIDTH=103 BGCOLOR="#eaeaea">
+			<P ALIGN=CENTER>^</P>
+		</TD>
+		<TD WIDTH=188 BGCOLOR="#eaeaea">
+			<P><BR>
+			</P>
+		</TD>
+		<TD WIDTH=661 BGCOLOR="#eaeaea">
+			<P><BR>
+			</P>
+		</TD>
+	</TR>
+</TABLE>
+<P>The above table lists the operators in order of precedence (with
+operators of the same precedence grouped together). When you type in
+a complex expression like &quot;1*2+3*4&quot;, S3GXL automatically
+groups the operators by precedence. Since multiplication has a higher
+precedence than addition, the expression is evaluated as
+&quot;(1*2)+(3*4)&quot;. 
+</P>
+<H3 CLASS="western"><A NAME="General purpose functions"></A>General
+Purpose functions</H3>
+<H2 CLASS="western"><A NAME="Advanced Technical Issues"></A>Advanced
+Technical Issues</H2>
+<H3 CLASS="western"><A NAME="S3GXL Binary Compatibility Issues"></A><A NAME="_S3GXL Binary Compatibility Issues"></A>
+S3GXL Binary Compatibility Issues</H3>
+<P>S3GXL is designed so that classes in package files may evolve over
+time without breaking binary compatibility. Here, binary
+compatibility means &quot;dependent binary files may be loaded and
+linked without error&quot;; whether your modified code functions as
+designed is a separate issue. Specifically, the kinds of
+modifications when may be made safely are as follows: 
+</P>
+<UL>
+	<LI><P>The .uc script files in a package may be recompiled without
+	breaking binary compatibility. 
+	</P>
+	<LI><P>Adding new classes to a package. 
+	</P>
+	<LI><P>Adding new functions to a class. 
+	</P>
+	<LI><P>Adding new states to a class. 
+	</P>
+	<LI><P>Adding new variables to a class. 
+	</P>
+	<LI><P>Removing private variables from a class. 
+	</P>
+</UL>
+<P>Other transformations are generally unsafe, including (but not
+limited to): 
+</P>
+<UL>
+	<LI><P>Adding new members to a struct. 
+	</P>
+	<LI><P>Removing a class from a package. 
+	</P>
+	<LI><P>Changing the type of any variable, function parameter, or
+	return value. 
+	</P>
+	<LI><P>Changing the number of parameters in a function. 
+	</P>
+</UL>
+<H3 CLASS="western"><A NAME="Technical Notes"></A>Technical Notes</H3>
+<DL>
+	<DT>Persistent actor state</DT><DD>
+	It is important to note that in S3GE, because the user can save the
+	game at any time, the state of all actors, including their script
+	execution state, can be saved only at times when all actors are at
+	their lowest possible S3GXL stack level. This persistence
+	requirement is the reason behind the limitation that latent
+	functions may only be called from state code: state code executes at
+	the lowest possible stack level, and thus can be serialized easily.
+	Function code may exist at any stack level, and could have (for
+	example) C++ native functions below it on the stack, which is
+	clearly not a situation which one could save on disk and later
+	restore. 
+	</DD><DT>
+	S3GE files</DT><DD>
+	S3GEfiles are S3GE's native binary file format. S3GEfiles contain an
+	index, serialized dump of the objects in a particular S3GE package.
+	S3GEfiles are similar to DLL's, in that they can contain references
+	to other objects stored in other S3GEfiles. This approach makes it
+	possible to distribute S3GE content in predefined &quot;packages&quot;
+	on the Internet, in order to reduce download time (by never
+	downloading a particular package more than once). 
+	</DD><DT>
+	<BR>
+	</DT></DL>
+<H3 CLASS="western">
+<A NAME="S3GXL Programming Strategy"></A><A NAME="_S3GXL Programming Strategy"></A>
+S3GXL Programming Strategy</H3>
+<P>Here I want to cover a few topics on how to write S3GXL code
+effectively, and take advantage of S3GXL's strengths while avoiding
+the pitfalls. 
+</P>
+<UL>
+	<LI><P>S3GXL is a slow language compared to C/C++. A typical C++
+	program runs about 20X faster than S3GXL. The programming philosophy
+	behind all of our own script writing is this: Write scripts that are
+	almost always idle. In other words, use S3GXL only to handle the
+	&quot;interesting&quot; events that you want to customize, not the
+	rote tasks, like basic movement, which S3GE's physics code can
+	handle for you. For example, when writing a projectile script, you
+	typically write a HitWall(), Bounce(), and Touch() function
+	describing what to do when key events happen. Thus 95% of the time,
+	your projectile script isn't executing any code, and is just waiting
+	for the physics code to notify it of an event. This is inherently
+	very efficient. In our typical level, even though S3GXL is
+	comparably much slower than C++, S3GXL execution time averages 5-10%
+	of CPU time. 
+	</P>
+	<LI><P>Exploit latent functions (like FinishAnim and Sleep) as much
+	as possible. By basing the flow of your script execution on them,
+	you are creating animation-driven or time-driven code, which is
+	fairy efficient in S3GXL. 
+	</P>
+	<LI><P>Keep an eye on the S3GE bugBoard while you're testing your
+	scripts. The S3GXL runtime often generates useful warnings in the
+	log that notify you of nonfatal problems that are occuring. 
+	</P>
+	<LI><P>Be wary of code that can cause infinite recursion. For
+	example, the &quot;Move&quot; command moves the actor and calls your
+	Bump() function if you hit something. Therefore, if you use a Move
+	command within a Bump function, you run the risk of recursing
+	forever. Be careful. Infinite recursion and infinite looping are the
+	two error conditions which S3GXL doesn't handle gracefully. 
+	</P>
+	<LI><P>Spawning and destroying actors are fairly expensive
+	operations on the Server side, and are even more expensive in
+	network games, because spawns and destroys take up network
+	bandwidth. Use them reasonably, and regard actors as &quot;heavy
+	weight&quot; objects. For example, do not try to create a particle
+	system by spawning 100 unique actors and sending them off on
+	different trajectories using the physics code. That will be sloooow.
+		</P>
+	<LI><P>Exploit S3GXL's object-oriented capabilities as much as
+	possible. Creating new functionality by overriding existing
+	functions and states leads to clean code that is easy to modify and
+	easy to integrate with other peoples' work. Avoid using traditional
+	C techniques, like doing a switch() statement based on the class of
+	an actor or the state, because code like this tends to break as you
+	add new classes and modify things. 
+	</P>
+</UL>
+<H2 CLASS="western"><A NAME="End"></A>End</H2>
+</BODY>
+</HTML>

@@ -1,0 +1,110 @@
+//by threedpointinspace aka shawn hubscher
+#include <windows.h>
+#include <iostream>
+#pragma comment(lib,"comctl32.lib")
+#include <commctrl.h>
+#include <string>
+#include "about.h"
+using namespace std;
+#ifdef STRICT2
+WNDPROC lpPrevWndProc;
+#else
+FARPROC lpPrevWndProc;
+#endif
+
+LRESULT APIENTRY BRUSHCOLOR(HWND awin,UINT uMsg, WPARAM wParam,LPARAM lParam);
+
+
+namespace brushcolor
+{
+	class brushcolor
+	{
+	private:
+	int xpossmall;
+	int xposbig;
+	int ypossmall;
+	int yposbig;
+	int red;
+	int green;
+	int blue;
+	COLORREF backcolor;
+	RECT recto;
+	HDC hdc;
+	HWND brushcol;
+		WNDCLASS wc;
+		DWORD dwExStyle;
+		DWORD dwStyle;
+
+		HINSTANCE hInstance;
+		COLORREF g_rgbcustom[16];
+		
+	
+		
+	public:
+		void initbrushcolor();
+		void setbrushrgbvalue(int r,int g,int b);
+		int getbrushred();
+		int getbrushgreen();
+		int getbrushblue();
+		void showbrushcolorwin();
+		void hidebrushcolorwin();
+//		void initbrushcolor();
+
+	};
+}
+brushcolor::brushcolor *bru;
+void brushcolor::brushcolor::initbrushcolor()
+{
+	InitCommonControls();
+	wc.style=CS_HREDRAW|CS_VREDRAW|CS_OWNDC;
+	wc.lpfnWndProc=(WNDPROC)BRUSHCOLOR;
+	wc.cbClsExtra=0;
+	wc.cbWndExtra=0;
+	wc.hInstance=hInstance;
+	wc.hIcon=LoadIcon(NULL,IDI_HAND);
+	wc.hbrBackground=(HBRUSH)GetStockObject(LTGRAY_BRUSH);
+	wc.lpszMenuName=NULL;
+	wc.lpszClassName="Brushcolor";
+	if(!RegisterClass(&wc))
+	{
+		MessageBox(NULL,"Failed to Register the window Class.","ERROR",MB_OK|MB_ICONEXCLAMATION);
+	}
+	xpossmall=0;
+	ypossmall=0;
+	xposbig=300;
+	yposbig=250;
+	backcolor=RGB(100,100,100);
+	red=100;
+	green=100;
+	blue=100;
+	brushcol=CreateWindow("Brushcolor","Brushcolor",dwStyle|WS_OVERLAPPED|WS_BORDER,xpossmall,ypossmall,xposbig,yposbig,NULL,NULL,hInstance,NULL);
+
+}
+void brushcolor::brushcolor::showbrushcolorwin()
+{
+	ShowWindow (brushcol,SW_SHOW);
+}
+void initbrushcolor()
+{
+	bru=new brushcolor::brushcolor;
+	bru->initbrushcolor();
+}
+void showbrushcolorwin()
+{
+	bru->showbrushcolorwin();
+}
+
+
+
+
+LRESULT APIENTRY BRUSHCOLOR(HWND hWin,UINT uMsg, WPARAM wParam,LPARAM lParam)
+{
+	return DefWindowProc(hWin,uMsg,wParam,lParam);
+}
+
+void brushcolor::brushcolor::setbrushrgbvalue(int r,int g, int b)
+{
+		red=r;
+		green=g;
+		blue=b;
+}

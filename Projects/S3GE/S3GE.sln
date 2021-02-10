@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "S3GE", "S3GE\S3GE.vcproj", "{4BB75989-1AEA-41ED-8662-047E86B75914}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "testbed", "..\testbed\testbed.vcproj", "{C2255E74-1534-43E6-ABC3-C957CEACB6B9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Recast", "..\..\Include\recastnavigation\RecastDemo\Build\VC9\Recast.vcproj", "{CEF242C5-E9A3-403B-BAFF-99397BDA5730}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4BB75989-1AEA-41ED-8662-047E86B75914}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4BB75989-1AEA-41ED-8662-047E86B75914}.Debug|Win32.Build.0 = Debug|Win32
+		{4BB75989-1AEA-41ED-8662-047E86B75914}.Release|Win32.ActiveCfg = Release|Win32
+		{4BB75989-1AEA-41ED-8662-047E86B75914}.Release|Win32.Build.0 = Release|Win32
+		{C2255E74-1534-43E6-ABC3-C957CEACB6B9}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C2255E74-1534-43E6-ABC3-C957CEACB6B9}.Debug|Win32.Build.0 = Debug|Win32
+		{C2255E74-1534-43E6-ABC3-C957CEACB6B9}.Release|Win32.ActiveCfg = Release|Win32
+		{C2255E74-1534-43E6-ABC3-C957CEACB6B9}.Release|Win32.Build.0 = Release|Win32
+		{CEF242C5-E9A3-403B-BAFF-99397BDA5730}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CEF242C5-E9A3-403B-BAFF-99397BDA5730}.Debug|Win32.Build.0 = Debug|Win32
+		{CEF242C5-E9A3-403B-BAFF-99397BDA5730}.Release|Win32.ActiveCfg = Release|Win32
+		{CEF242C5-E9A3-403B-BAFF-99397BDA5730}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

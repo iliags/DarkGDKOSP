@@ -1,0 +1,317 @@
+<s3ge version="1.0">
+
+  <!-- NetEdit Sub Menu-->
+
+  <gizmo name="NetEditFile" parent="NetEdit" description="Network File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="NetEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="menubox" transition="ghostly" theme="earthbox" style="standard" scheme="pointingFX" label="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+    <gizmo name="NetEditFileNew" parent="NetEditFile" ref="previous" description="Create Network Log File">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditFileOpen" parent="NetEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Particle Format(*.s3ge) | Import">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditFileSave" parent="NetEditFile" ref="previous" description="Save|SaveAs Particle Format(*.s3ge)">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditFileClose" parent="NetEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="NetEditEdit" parent="NetEdit" ref="previous" description="Particle: Edit">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="NetEditEditUndo" parent="NetEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Undo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditEditRedo" parent="NetEditEdit" ref="previous" description="Redo">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditEditCut" parent="NetEditEdit" ref="previous" description="Cut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditEditCopy" parent="NetEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditEditPaste" parent="NetEditEdit" ref="previous" description="Paste">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditEditDelete" parent="NetEditEdit" ref="previous" description="Delete|Clear">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="NetEditObject" parent="NetEdit" ref="previous" description="Network Objects">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="NetEditObjectServer" parent="NetEditObject" ref="previous" description="Server">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Server" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+  
+    <gizmo name="NetEditObjectHost" parent="NetEditObject" ref="previous" description="Host">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Host" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="NetEditObjectClient" parent="NetEditObject" ref="previous" description="Client">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Client" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="NetEditTools" parent="NetEdit" ref="previous" description="Network Tools">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <!-- Forms Testing -->
+
+  <form name="testform" description="HTTP Test Form" method="POST" host="tournamentblitz.hpquest.com" port="80" src="/TBEMS.php" path="TBEMS.dat">
+
+    <gizmo name="username" parent="NetEditTools" description="Click to GET `donate.html` (test ascii file) | `testform` Form `username` Value" value="guest">
+      <variable name="spritey" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" theme="fade1" style="cyantext" scheme="pointingFX" caption="HTTP Test 1" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" caption="Get Data"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP" caption="Executing...">
+        <script language="darklua" type="1">
+          <![CDATA[
+						netHTTPFileGet('HTTP Test',1,'www.hpquest.com',80,'/TournamentBlitz/donate.html','donate.html',1)
+					 ]]>
+        </script>
+      </event>
+      <event state="EXIT" caption="HTTP Test 1"/>
+    </gizmo>
+
+    <gizmo name="password" parent="NetEditTools" description="Click to GET `insectoids.zip` (large media file) | `testform` Form `password` Value" value="guest">
+      <variable name="spritey" value="0"/>
+      <variable name="toggle" value="0"/>
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" theme="xray" style="cyantext" scheme="pointingFX" caption="HTTP Test 2" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" caption="Get Media"/>
+      <event state="DOWN"  />
+      <event state="HOLD"  />
+      <event state="DRAG"/>
+      <event state="UP" >
+        <script language="darklua" type="1">
+          <![CDATA[
+            netHTTPFileGet('HTTP Test',1,'tournamentblitz.hpquest.com',80,'/games/insectoids.zip','insectoids.zip')
+					 ]]>
+        </script>
+      </event>
+      <event state="EXIT" caption="HTTP Test 2"/>
+
+    </gizmo>
+
+  </form>
+
+  <gizmo name="submit" parent="NetEditTools" description="Submit `testform` via POST `TBEMS.php`" value="submit" form="testform">
+    <variable name="spritey" value="0"/>
+    <variable name="toggle" value="0"/>
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="pushbox" transition="ghostly" theme="xray" style="cyantext" scheme="pointingFX" caption="Submit" xalign="center" yalign="middle"/>
+    <event state="ENTER" caption="Submit"/>
+    <event state="HOVER" caption="Send"/>
+    <event state="DOWN"  caption="Send"/>
+    <event state="HOLD"  caption="Send"/>
+    <event state="DRAG" caption="Pending..."/>
+    <event state="UP" caption="Sending...">
+      <script language="darklua" type="1">
+        <![CDATA[
+						uiFormSubmit("testform")
+					 ]]>
+      </script>
+    </event>
+    <event state="EXIT" caption="Submit"/>
+  </gizmo>  
+
+  <gizmo name="NetEditView" parent="NetEdit" ref="previous" description="Network Tools">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="NetEditHelp" parent="NetEdit" ref="previous" description="Network Help">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="NetEditBlank" parent="NetEdit" description="Blank">
+     <orientate ref="previous" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="earthbox"/>
+  </gizmo>
+
+  <!-- TBEMS Forms Testing -->
+
+  <form name="TBEMSForm" ref="previous" description="TBEMS Test Form" method="POST" host="tournamentblitz.hpquest.com" port="80" src="/TBEMS.php" path="testform.dat">
+
+    <gizmo name="TBEMSLoginLabel" parent="NetEdit">
+      <orientate x="4" y="21" ref="NetEditBlank" width="108" height="18" yalign="top">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" theme="nil" transition="ghostly" caption="TBNet Login:"/>
+    </gizmo>
+
+    <gizmo name="TBEMSUsername" parent="NetEdit" description="TBEMS Login Username">
+      <orientate ref="previous" width="96" height="18" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <variable name="toggle" value="0"/>
+      <variable name="linecount" value="1"/>
+      <variable name="1" value="guest"/>
+      <event state="IDLE" behavior="textbox" transition="ghostly" theme="notepadder" style="textboxtypeset" scheme="pointingFX" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </gizmo>
+
+    <gizmo name="TBEMSPassword" parent="NetEdit" ref="previous" description="TBEMS Login Password" >
+      <orientate ref="previous" width="96" height="18" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+    </gizmo>
+
+    <gizmo name="TBEMSSubmit" parent="NetEdit" description="TBEMS Login Submit">
+      <orientate ref="TBEMSPassword" width="24" height="18" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <variable name="toggle" value="0"/>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" scheme="pointingFX" theme="earthbox" style="standard" caption="Go" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" theme="goldbox" scheme="pointingFX"/>
+      <event state="DOWN" theme="earthbox" />
+      <event state="HOLD" theme="earthbox"/>
+      <event state="DRAG" theme="cherrybox" />
+      <event state="UP" theme="earthbox" >
+        <script language="darklua" type="1">
+          <![CDATA[
+            tbGameAppVariableSet(TBEMS_TABLE_GAME,1,'SessionUname',uiGizmoPropertyGet( uiGizmoGet('TBEMSUsername'), 'Caption' ) )
+            tbGameAppVariableSet(TBEMS_TABLE_GAME,1,'SessionPass', uiGizmoPropertyGet( uiGizmoGet('TBEMSPassword'), 'Caption' ) )
+            tbGameAppVariableSet(TBEMS_TABLE_GAME,1,'EventType', 3 )
+            tbGameAppList()
+				   ]]>
+        </script>
+      </event>
+      <event state="EXIT" start="false"/>
+    </gizmo>
+
+  </form>
+
+  <gizmo name="GNETAdd" parent="NetEdit" ref="previous" description="Add To BlitzBasic GNet">
+    <orientate ref="previous" width="48" height="18" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Add" xalign="center" yalign="middle"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+						netHTTPFileGet('GNet_Add',1,'www.blitzbasic.com',80,'/gnet/gnet.php?opt=add&server=S3GE&game=TestBed','gnet.txt',1)
+				   ]]>
+      </script>
+    </event>
+    <event state="EXIT" start="false"/>
+  </gizmo>
+
+  <gizmo name="GNETRemove" parent="NetEdit" ref="previous" description="Remove From BlitzBasic GNet">
+    <orientate ref="previous" width="48" height="18" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <variable name="toggle" value="0"/>
+    <event state="IDLE" label="Remove" xalign="center" yalign="middle"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+						netHTTPFileGet('GNet_Remove',1,'www.blitzbasic.com',80,'/gnet/gnet.php?opt=rem&game=TestBed','gnet.txt',1)
+				   ]]>
+      </script>
+    </event>
+    <event state="EXIT" start="false"/>
+  </gizmo>
+
+</s3ge>

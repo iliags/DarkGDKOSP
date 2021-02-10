@@ -1,0 +1,203 @@
+<s3ge version="1.0">
+
+  <!-- FXEdit Sub Menu-->
+
+  <gizmo name="FXEditFile" parent="FXEdit" description="FX File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  behavior="menubox" transition="ghostly" theme="goldbox" style="standard" scheme="pointingFX" label="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+    <gizmo name="FXEditFileNew" parent="FXEditFile" ref="previous" description="Create FX File">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="FXEditFileOpen" parent="FXEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Particle Format(*.s3ge) | Import">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+    <gizmo name="FXEditFileSave" parent="FXEditFile" ref="previous" description="Save|SaveAs Particle Format(*.s3ge)">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+    <gizmo name="FXEditFileClose" parent="FXEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+  <gizmo name="FXEditEdit" parent="FXEdit" ref="FXEditFile" description="Particle: Edit">
+    <orientate ref="FXEditFile" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="FXEditEditUndo" parent="FXEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Undo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="FXEditEditRedo" parent="FXEditEdit" ref="previous" description="Redo">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="FXEditEditCut" parent="FXEditEdit" ref="previous" description="Cut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="FXEditEditCopy" parent="FXEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="FXEditEditPaste" parent="FXEditEdit" ref="previous" description="Paste">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="FXEditEditDelete" parent="FXEditEdit" ref="previous" description="Delete|Clear">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="FXEditObject" parent="FXEdit" ref="FXEditEdit" description="FX Objects">
+    <orientate ref="FXEditEdit" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="FXEditObjectParticle" parent="FXEditObject" ref="previous" description="New FX Particle">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Particle" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+      <gizmo name="FXEditObjectParticleBehavior" parent="FXEditObjectParticle" ref="previous" description="Particle Mechanical Operation Behavior">
+        <orientate ref="previous" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Behavior" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="FXEditObjectParticleTransition" parent="FXEditObjectParticle" ref="previous" description="Particle State Transition Behavior">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Transition" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="FXEditObjectParticleStyle" parent="FXEditObjectParticle" ref="previous" description="Particle Font Style">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Style" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="FXEditObjectParticleTheme" parent="FXEditObjectParticle" ref="previous" description="Particle Image Theme">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Theme" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="FXEditObjectParticleScheme" parent="FXEditObjectParticle" ref="previous" description="Particle Audio Scheme">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Scheme" x="24" xalign="left" yalign="middle"/>
+      </gizmo>  
+  
+    <gizmo name="FXEditObjectReactor" parent="FXEditObject" ref="previous" description="Particle Reactor">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Reactor" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="FXEditTools" parent="FXEdit" ref="FXEditObject" description="FX Tools">
+    <orientate ref="FXEditObject" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="FXDemo1" parent="FXEditTools" description="Illudium `Quark` Particle Reactor Demo" debug="1">
+    <variable name="spritey" value="0"/>
+    <variable name="toggle" value="0"/>
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="pushbox" transition="yshift" theme="goldbox" style="vile" scheme="pointingFX" label="QRK" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP" caption="ignition">
+      <script language="darklua" type="1">
+        <![CDATA[
+		      if uiGizmoExist('Quark') == 0 then uiLoad('Data/Logic/Quark.s3ge',1,3000) end 
+        ]]>
+      </script>
+    </event>
+    <event state="EXIT"/>
+  </gizmo>
+
+  <gizmo name="FXEditView" parent="FXEdit" ref="FXEditTools" description="FX Tools">
+    <orientate ref="FXEditTools" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="FXEditHelp" parent="FXEdit" ref="FXEditView" description="FX Help">
+    <orientate ref="FXEditView" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="FXEditBlank" parent="FXEdit" description="Blank">
+    <orientate ref="FXEditHelp" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="goldbox"/>
+  </gizmo>
+  
+</s3ge>

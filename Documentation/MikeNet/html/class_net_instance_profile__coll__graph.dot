@@ -1,0 +1,16 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="NetInstanceProfile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir=back,color="darkgreen",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="ConcurrencyControlSimple",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrency_control_simple.html",tooltip="simple version of ConcurrencyControl class which avoids the need for threadID parameters"];
+  Node3 -> Node2 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="mtControl",fontname="FreeSans"];
+  Node3 [label="CriticalSection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html",tooltip="Critical section class with Enter and Leave methods."];
+  Node4 -> Node1 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="localAddrUDP\nlocalAddrTCP",fontname="FreeSans"];
+  Node4 [label="NetAddress",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_address.html",tooltip="Stores a single address with IP and port."];
+  Node2 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 -> Node1 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="postFixTCP\nDEFAULT_POSTFIX_TCP",fontname="FreeSans"];
+  Node5 [label="Packet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html",tooltip="Efficiently and safely stores and manipulates data."];
+  Node3 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}

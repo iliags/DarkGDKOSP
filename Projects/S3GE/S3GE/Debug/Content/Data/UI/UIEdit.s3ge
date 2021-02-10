@@ -1,0 +1,294 @@
+<s3ge version="1.0">
+
+  <!-- UIEdit Sub Menu-->
+
+  <gizmo name="UIEditFile" parent="UIEdit" description="UI File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="menubox" transition="ghostly" theme="cyanbox" style="standard" scheme="pointingFX" caption="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+    <gizmo name="UIEditFileNew" parent="UIEditFile" ref="previous" description="Create FX Agent">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditFileOpen" parent="UIEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Particle Format(*.s3ge) | Import">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditFileSave" parent="UIEditFile" ref="previous" description="Save|SaveAs Particle Format(*.s3ge)">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditFileClose" parent="UIEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="UIEditEdit" parent="UIEdit" ref="previous" description="UI Edit">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="UIEditEditUndo" parent="UIEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Undo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditEditRedo" parent="UIEditEdit" ref="previous" description="Redo">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditEditCut" parent="UIEditEdit" ref="previous" description="Cut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditEditCopy" parent="UIEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditEditPaste" parent="UIEditEdit" ref="previous" description="Paste">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditEditDelete" parent="UIEditEdit" ref="previous" description="Delete|Clear">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="UIEditObject" parent="UIEdit" ref="previous" description="UI Objects">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="UIEditObjectInputdevice" parent="UIEditObject" ref="previous" description="Input Device">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Input" x="24" xalign="left" yalign="middle"/>
+    </gizmo>  
+
+    <gizmo name="UIEditObjectCanvas" parent="UIEditObject" ref="previous" description="Visual Output Device">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Canvas" x="24" xalign="left" yalign="middle"/>
+    </gizmo>  
+    
+    <gizmo name="UIEditObjectGizmo" parent="UIEditObject" ref="previous" description="Base Interactive Object">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Gizmo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+      <gizmo name="UIEditObjectGizmoBehavior" parent="UIEditObjectGizmo" ref="previous" description="Gizmo Mechanical Operation Behavior">
+        <orientate ref="previous" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Behavior" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="UIEditObjectGizmoTransition" parent="UIEditObjectGizmo" ref="previous" description="Gizmo State Transition Behavior">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Transition" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="UIEditObjectGizmoStyle" parent="UIEditObjectGizmo" ref="previous" description="Gizmo Font Style">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Style" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="UIEditObjectGizmoTheme" parent="UIEditObjectGizmo" ref="previous" description="Gizmo Image Theme">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Theme" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="UIEditObjectGizmoScheme" parent="UIEditObjectGizmo" ref="previous" description="Gizmo Audio Scheme">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Scheme" x="24" xalign="left" yalign="middle"/>
+       </gizmo>
+
+  <gizmo name="UIEditTools" parent="UIEdit" ref="previous" description="UI Tools">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="UIEditToolsApplicator" parent="UIEditTools" ref="previous" description="Applicator">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Applicator" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditToolsSelector" parent="UIEditTools" ref="previous" description="New Selector">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Selector" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="UIEditToolsTransformer" parent="UIEditTools" ref="previous" description="New Transformer">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Transformer" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="UIEditView" parent="UIEdit" ref="previous" description="UI Tools">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="UIEditHelp" parent="UIEdit" ref="previous" description="UI Help">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="UIEditBlank" parent="UIEdit" description="Blank">
+    <orientate ref="previous" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="cyanbox"/>
+  </gizmo>
+
+  <!-- Transformer Tool -->
+
+  <gadget name="UIEditTransformer2D" description="2D Transformer Tool">
+
+    <gizmo name="UIEditTransformer2DBase" parent="UIEdit" description="Gizmo Transformer">
+      <variable name="toggle" value="0"/>
+      <orientate x="darklua: xmlAttributeValue = dbScreenWidthGet()/2 - 48" y="darklua: xmlAttributeValue = dbScreenHeightGet()/2 - 48" width="96" height="96">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="menubox" transition="ghostly" theme="cyanbox" style="standard" scheme="pointingFX" caption="Transformer" xalign="center" yalign="middle"/>
+      <event state="ENTER"/>
+      <event state="HOVER" scheme="pointingFX"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DMover" parent="UIEditTransformer2DBase" description="TopLeft">
+      <variable name="toggle" value="0"/>
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) - 8" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) - 8" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" behavior="pushbox" transition="ghostly" theme="confetti" style="standard" scheme="pointingFX"/>
+      <event state="ENTER"/>
+      <event state="HOVER"/>
+      <event state="DOWN"/>
+      <event state="HOLD"/>
+      <event state="DRAG"/>
+      <event state="UP"/>
+      <event state="EXIT"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DMoverX" parent="UIEditTransformer2DBase" ref="previous" description="Left">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) - 8" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) + 40" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DMoverY" parent="UIEditTransformer2DBase" ref="previous" description="Top">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) + 40" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) - 8" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DMoverZ" parent="UIEditTransformer2DBase" ref="previous" description="TopRight`">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) + 88" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) - 8" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>    
+
+    <gizmo name="UIEditTransformer2DSizer" parent="UIEditTransformer2DBase" ref="previous" description="BottomRight">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) + 88" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) + 88" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DSizerX" parent="UIEditTransformer2DBase" ref="previous" description="Right">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) + 88" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) + 40" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DSizerY" parent="UIEditTransformer2DBase" ref="previous" description="Bottom">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) + 40" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) + 88" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>
+
+    <gizmo name="UIEditTransformer2DSizerZ" parent="UIEditTransformer2DBase" ref="previous" description="BottomLeft">
+      <orientate ref="previous" x="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundX',0) - 8" y="darklua: xmlAttributeValue = uiGizmoPropertyGet(uiGizmoGet('UIEditTransformer2DBase'),'BoundY',0) + 88" width="16" height="16">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"/>
+    </gizmo>    
+
+  </gadget>
+
+</s3ge>

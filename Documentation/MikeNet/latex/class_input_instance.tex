@@ -1,0 +1,173 @@
+\hypertarget{class_input_instance}{
+\section{InputInstance Class Reference}
+\label{class_input_instance}\index{InputInstance@{InputInstance}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_input_instance_ae912ed8fb6b82f3ccc21565b03a2a8d0}{
+void {\bfseries \_\-UnloadBuffer} (LPWAVEHDR wavehdr)}
+\label{class_input_instance_ae912ed8fb6b82f3ccc21565b03a2a8d0}
+
+\item 
+\hypertarget{class_input_instance_a50a27506fb572027769ed3989a67654e}{
+void {\bfseries \_\-LoadBuffer} (LPWAVEHDR wavehdr)}
+\label{class_input_instance_a50a27506fb572027769ed3989a67654e}
+
+\item 
+\hyperlink{class_input_instance_aeae07f31f1462b76bc3ee9b3d8c335a5}{InputInstance} (size\_\-t numberOfBuffers, size\_\-t \hyperlink{class_input_instance_afb8d43905f59773f07a8d07f3f70069f}{buffTimeLength}, const \hyperlink{class_sound_format}{SoundFormat} \&\hyperlink{class_input_instance_ac59241416a2e8e57c2d29e450ec071b8}{format}, unsigned int deviceID)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_a3834195c9489efd295b5664619733fb5}{
+\hyperlink{class_input_instance_a3834195c9489efd295b5664619733fb5}{$\sim$InputInstance} ()}
+\label{class_input_instance_a3834195c9489efd295b5664619733fb5}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_a04ed77f4f8efcc855e0892c043d3805d}{
+void \hyperlink{class_input_instance_a04ed77f4f8efcc855e0892c043d3805d}{UnpauseInput} ()}
+\label{class_input_instance_a04ed77f4f8efcc855e0892c043d3805d}
+
+\begin{DoxyCompactList}\small\item\em Unpauses input. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_input_instance_ace3463f9bf87b9976d97ed5b3c9a9428}{PauseInput} ()
+\begin{DoxyCompactList}\small\item\em Pauses input. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_input_instance_a676896d865e260935bca0550d7ec61d1}{IsPaused} ()
+\begin{DoxyCompactList}\small\item\em Determine whether input is paused. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_a8915ed32e7eb06dbcd9b750e17743d62}{
+void {\bfseries AddPacket} (\hyperlink{class_packet}{Packet} $\ast$\hyperlink{class_packet}{Packet})}
+\label{class_input_instance_a8915ed32e7eb06dbcd9b750e17743d62}
+
+\item 
+\hypertarget{class_input_instance_ad5dc282c145890cbacd049e0a194a7f7}{
+int {\bfseries GetPacket} (\hyperlink{class_packet}{Packet} $\ast$Destination)}
+\label{class_input_instance_ad5dc282c145890cbacd049e0a194a7f7}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_input_instance_a7506401c89349e0a28ab959c09a29466}{
+static const size\_\-t \hyperlink{class_input_instance_a7506401c89349e0a28ab959c09a29466}{DEFAULT\_\-BUFF\_\-COUNT} = 2}
+\label{class_input_instance_a7506401c89349e0a28ab959c09a29466}
+
+\begin{DoxyCompactList}\small\item\em Default value for InputInstance::buffer.Size(). \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_a68287bd04cc8053660fef3014f54caea}{
+static const size\_\-t \hyperlink{class_input_instance_a68287bd04cc8053660fef3014f54caea}{DEFAULT\_\-BUFF\_\-TIME\_\-LENGTH} = 250}
+\label{class_input_instance_a68287bd04cc8053660fef3014f54caea}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_input_instance_afb8d43905f59773f07a8d07f3f70069f}{InputInstance::buffTimeLength}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_input_instance_afb8d43905f59773f07a8d07f3f70069f}{
+size\_\-t \hyperlink{class_input_instance_afb8d43905f59773f07a8d07f3f70069f}{buffTimeLength}}
+\label{class_input_instance_afb8d43905f59773f07a8d07f3f70069f}
+
+\begin{DoxyCompactList}\small\item\em Length of time that each buffer records for in milliseconds. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_af7070cd37ea62d786deec46842bf0542}{
+size\_\-t \hyperlink{class_input_instance_af7070cd37ea62d786deec46842bf0542}{buffSizeSamples}}
+\label{class_input_instance_af7070cd37ea62d786deec46842bf0542}
+
+\begin{DoxyCompactList}\small\item\em Number of samples that can be stored in a single full buffer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_af91526b5ddbc786222c335142b58bc08}{
+size\_\-t \hyperlink{class_input_instance_af91526b5ddbc786222c335142b58bc08}{buffSizeBytes}}
+\label{class_input_instance_af91526b5ddbc786222c335142b58bc08}
+
+\begin{DoxyCompactList}\small\item\em Number of bytes allocated to a single buffer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_a948736c7f705cd2c027d5170caa29e87}{
+HWAVEIN \hyperlink{class_input_instance_a948736c7f705cd2c027d5170caa29e87}{deviceHandle}}
+\label{class_input_instance_a948736c7f705cd2c027d5170caa29e87}
+
+\begin{DoxyCompactList}\small\item\em Controls device. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_a90450a716bb744188724ee6d8e2d49cc}{
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_packet}{Packet} $>$ \hyperlink{class_input_instance_a90450a716bb744188724ee6d8e2d49cc}{bufferData}}
+\label{class_input_instance_a90450a716bb744188724ee6d8e2d49cc}
+
+\begin{DoxyCompactList}\small\item\em Stores input data, is used by \hyperlink{class_input_instance_aec0cf6441e90723068dcf9dcd97b2593}{InputInstance::buffer}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_aec0cf6441e90723068dcf9dcd97b2593}{
+\hyperlink{class_store_vector}{StoreVector}$<$ WAVEHDR $>$ \hyperlink{class_input_instance_aec0cf6441e90723068dcf9dcd97b2593}{buffer}}
+\label{class_input_instance_aec0cf6441e90723068dcf9dcd97b2593}
+
+\begin{DoxyCompactList}\small\item\em Stores input data, uses \hyperlink{class_input_instance_a90450a716bb744188724ee6d8e2d49cc}{InputInstance::bufferData}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_input_instance_a86c60cacc106703f53da51356d7aca80}{bufferInUseCount}
+\begin{DoxyCompactList}\small\item\em Records the number of buffers in use. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_ac59241416a2e8e57c2d29e450ec071b8}{
+\hyperlink{class_sound_format}{SoundFormat} \hyperlink{class_input_instance_ac59241416a2e8e57c2d29e450ec071b8}{format}}
+\label{class_input_instance_ac59241416a2e8e57c2d29e450ec071b8}
+
+\begin{DoxyCompactList}\small\item\em Sound format in use. \item\end{DoxyCompactList}\item 
+\hypertarget{class_input_instance_add83233aa094306a96dfdc6ddf5625a6}{
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_input_instance_add83233aa094306a96dfdc6ddf5625a6}{unpaused}}
+\label{class_input_instance_add83233aa094306a96dfdc6ddf5625a6}
+
+\begin{DoxyCompactList}\small\item\em Signaled when input is unpaused. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_input_instance_aeae07f31f1462b76bc3ee9b3d8c335a5}{
+\index{InputInstance@{InputInstance}!InputInstance@{InputInstance}}
+\index{InputInstance@{InputInstance}!InputInstance@{InputInstance}}
+\subsubsection[{InputInstance}]{\setlength{\rightskip}{0pt plus 5cm}InputInstance::InputInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numberOfBuffers, }
+\item[{size\_\-t}]{ buffTimeLength, }
+\item[{const {\bf SoundFormat} \&}]{ format, }
+\item[{unsigned int}]{ deviceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_input_instance_aeae07f31f1462b76bc3ee9b3d8c335a5}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numberOfBuffers}]Number of buffers. \item[{\em buffTimeLength}]Length of a buffer in milliseconds. \item[{\em format}]Sound format that device should use. \item[{\em deviceID}]ID of device that instance should use to retrieve input data. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_input_instance_a676896d865e260935bca0550d7ec61d1}{
+\index{InputInstance@{InputInstance}!IsPaused@{IsPaused}}
+\index{IsPaused@{IsPaused}!InputInstance@{InputInstance}}
+\subsubsection[{IsPaused}]{\setlength{\rightskip}{0pt plus 5cm}bool InputInstance::IsPaused (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_input_instance_a676896d865e260935bca0550d7ec61d1}
+
+
+Determine whether input is paused. 
+
+\begin{DoxyReturn}{Returns}
+true if paused, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_input_instance_ace3463f9bf87b9976d97ed5b3c9a9428}{
+\index{InputInstance@{InputInstance}!PauseInput@{PauseInput}}
+\index{PauseInput@{PauseInput}!InputInstance@{InputInstance}}
+\subsubsection[{PauseInput}]{\setlength{\rightskip}{0pt plus 5cm}void InputInstance::PauseInput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_input_instance_ace3463f9bf87b9976d97ed5b3c9a9428}
+
+
+Pauses input. 
+
+Any buffers receiving data stop receiving data immediately. 
+
+\subsection{Member Data Documentation}
+\hypertarget{class_input_instance_a86c60cacc106703f53da51356d7aca80}{
+\index{InputInstance@{InputInstance}!bufferInUseCount@{bufferInUseCount}}
+\index{bufferInUseCount@{bufferInUseCount}!InputInstance@{InputInstance}}
+\subsubsection[{bufferInUseCount}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<$size\_\-t$>$ {\bf InputInstance::bufferInUseCount}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_input_instance_a86c60cacc106703f53da51356d7aca80}
+
+
+Records the number of buffers in use. 
+
+Buffers must not be deallocated until this is 0. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clInputDevice.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clInputDevice.cpp\end{DoxyCompactItemize}

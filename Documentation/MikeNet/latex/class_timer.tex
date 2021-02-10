@@ -1,0 +1,183 @@
+\hypertarget{class_timer}{
+\section{Timer Class Reference}
+\label{class_timer}\index{Timer@{Timer}}
+}
+
+
+Timer object used to repeat an action every x number of milliseconds.  
+
+
+
+
+{\ttfamily \#include $<$Timer.h$>$}
+
+Inheritance diagram for Timer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_timer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_timer_a40cd086bdd630d853370bd344bc782c6}{Timer} (clock\_\-t \hyperlink{class_timer_a79e2af3b256a4ef822dfd838d868f5ce}{freq})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState} () const 
+\begin{DoxyCompactList}\small\item\em Returns true when \hyperlink{class_timer_ac269f1e2ad463fad27b483036a8686a1}{GetFreq()} gap has expired, and then false on subsequent calls until the gap expires again. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_timer_ae84a65595eacc5198b4a5a03de5dd18a}{GetTimer} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves clock\_\-t value updated the last time \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returned true. \item\end{DoxyCompactList}\item 
+\hypertarget{class_timer_a9390107e32bce6eec33469210096a0c0}{
+void \hyperlink{class_timer_a9390107e32bce6eec33469210096a0c0}{SetTimer} ()}
+\label{class_timer_a9390107e32bce6eec33469210096a0c0}
+
+\begin{DoxyCompactList}\small\item\em Updates \hyperlink{class_timer_ac0cfb5de0274313d265e3fe634463491}{Timer::timer} setting its value to clock(). \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_timer_ac269f1e2ad463fad27b483036a8686a1}{GetFreq} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the length of time between each occurrence of \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returning true. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_timer_a5ebafd5ef6ed205e795eb30f2079a6bb}{SetFreq} (clock\_\-t newFreq)
+\begin{DoxyCompactList}\small\item\em Changes the length of time between each occurrence of \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returning true. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_timer_ace0d8b39951732f96327cc3e06711c38}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_timer_ac0cfb5de0274313d265e3fe634463491}{
+clock\_\-t \hyperlink{class_timer_ac0cfb5de0274313d265e3fe634463491}{timer}}
+\label{class_timer_ac0cfb5de0274313d265e3fe634463491}
+
+\begin{DoxyCompactList}\small\item\em clock() updated last time \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returned true. \item\end{DoxyCompactList}\item 
+\hypertarget{class_timer_a79e2af3b256a4ef822dfd838d868f5ce}{
+clock\_\-t \hyperlink{class_timer_a79e2af3b256a4ef822dfd838d868f5ce}{freq}}
+\label{class_timer_a79e2af3b256a4ef822dfd838d868f5ce}
+
+\begin{DoxyCompactList}\small\item\em Frequency that \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} should return true in milliseconds. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer object used to repeat an action every x number of milliseconds. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is used to keep track of time so that an action can be performed repeatedly with a gap between each action. \par
+\par
+
+
+The gap is set by \hyperlink{class_timer_a5ebafd5ef6ed205e795eb30f2079a6bb}{SetFreq()} or in the constructor. \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} will return true after this gap has expired, and then false again until the gap expires again.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_timer_a40cd086bdd630d853370bd344bc782c6}{
+\index{Timer@{Timer}!Timer@{Timer}}
+\index{Timer@{Timer}!Timer@{Timer}}
+\subsubsection[{Timer}]{\setlength{\rightskip}{0pt plus 5cm}Timer::Timer (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ freq}
+\end{DoxyParamCaption}
+)}}
+\label{class_timer_a40cd086bdd630d853370bd344bc782c6}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em freq}]Frequency that clock should tick over in milliseconds. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_timer_ac269f1e2ad463fad27b483036a8686a1}{
+\index{Timer@{Timer}!GetFreq@{GetFreq}}
+\index{GetFreq@{GetFreq}!Timer@{Timer}}
+\subsubsection[{GetFreq}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t Timer::GetFreq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_timer_ac269f1e2ad463fad27b483036a8686a1}
+
+
+Retrieves the length of time between each occurrence of \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returning true. 
+
+\begin{DoxyReturn}{Returns}
+frequency that clock should tick over in milliseconds. 
+\end{DoxyReturn}
+\hypertarget{class_timer_a928753507fd1ea96ba00e7e4c3208058}{
+\index{Timer@{Timer}!GetState@{GetState}}
+\index{GetState@{GetState}!Timer@{Timer}}
+\subsubsection[{GetState}]{\setlength{\rightskip}{0pt plus 5cm}bool Timer::GetState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_timer_a928753507fd1ea96ba00e7e4c3208058}
+
+
+Returns true when \hyperlink{class_timer_ac269f1e2ad463fad27b483036a8686a1}{GetFreq()} gap has expired, and then false on subsequent calls until the gap expires again. 
+
+\begin{DoxyReturn}{Returns}
+true if clock has ticked over. 
+
+false if clock has not ticked over yet. 
+\end{DoxyReturn}
+\hypertarget{class_timer_ae84a65595eacc5198b4a5a03de5dd18a}{
+\index{Timer@{Timer}!GetTimer@{GetTimer}}
+\index{GetTimer@{GetTimer}!Timer@{Timer}}
+\subsubsection[{GetTimer}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t Timer::GetTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_timer_ae84a65595eacc5198b4a5a03de5dd18a}
+
+
+Retrieves clock\_\-t value updated the last time \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returned true. 
+
+\begin{DoxyReturn}{Returns}
+clock\_\-t value updated the last time \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returned true. 
+\end{DoxyReturn}
+\hypertarget{class_timer_a5ebafd5ef6ed205e795eb30f2079a6bb}{
+\index{Timer@{Timer}!SetFreq@{SetFreq}}
+\index{SetFreq@{SetFreq}!Timer@{Timer}}
+\subsubsection[{SetFreq}]{\setlength{\rightskip}{0pt plus 5cm}void Timer::SetFreq (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ newFreq}
+\end{DoxyParamCaption}
+)}}
+\label{class_timer_a5ebafd5ef6ed205e795eb30f2079a6bb}
+
+
+Changes the length of time between each occurrence of \hyperlink{class_timer_a928753507fd1ea96ba00e7e4c3208058}{GetState()} returning true. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newFreq}]New frequency that clock should tick over in milliseconds. \end{DoxyParams}
+\hypertarget{class_timer_ace0d8b39951732f96327cc3e06711c38}{
+\index{Timer@{Timer}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!Timer@{Timer}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool Timer::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_timer_ace0d8b39951732f96327cc3e06711c38}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Timer.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Timer.cpp\end{DoxyCompactItemize}

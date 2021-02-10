@@ -1,0 +1,27 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="NetModeTcpPostfix",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetModeTcp",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp.html",tooltip="TCP protocol class, provides a base for extensions to the protocol by TCP mode classes."];
+  Node3 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode.html",tooltip="Protocol interface inherited by protocol objects such as NetModeUdp and NetModeTcp."];
+  Node4 -> Node2 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="partialPacket"];
+  Node4 [label="Packet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html",tooltip="Efficiently and safely stores and manipulates data."];
+  Node5 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="CriticalSection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html",tooltip="Critical section class with Enter and Leave methods."];
+  Node6 -> Node2 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="packetStore"];
+  Node6 [label="StoreQueue\< Packet \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_store_queue.html"];
+  Node7 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Store\< Packet \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_store.html"];
+  Node8 -> Node7 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="mtControl"];
+  Node8 [label="ConcurrencyControlSimple",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrency_control_simple.html",tooltip="simple version of ConcurrencyControl class which avoids the need for threadID parameters"];
+  Node5 -> Node8 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="mtControl"];
+  Node9 -> Node2 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="autoResize"];
+  Node9 [label="ConcurrentObject\< bool \>",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html"];
+  Node10 -> Node9 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ConcurrencyControl",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrency_control.html",tooltip="Advanced concurrency control object."];
+  Node5 -> Node10 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="access"];
+  Node4 -> Node1 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="postfix"];
+}

@@ -1,0 +1,549 @@
+\hypertarget{class_upnp_nat_communication}{
+\section{UpnpNatCommunication Class Reference}
+\label{class_upnp_nat_communication}\index{UpnpNatCommunication@{UpnpNatCommunication}}
+}
+
+
+Communicates with UPnP NAT thread, controlling its actions.  
+
+
+
+
+{\ttfamily \#include $<$UpnpNatCommunication.h$>$}
+
+Inheritance diagram for UpnpNatCommunication:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_upnp_nat_communication}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_communication_a14c3b88f72d6156c64a60d26a7486997}{
+\hyperlink{class_upnp_nat_communication_a14c3b88f72d6156c64a60d26a7486997}{UpnpNatCommunication} ()}
+\label{class_upnp_nat_communication_a14c3b88f72d6156c64a60d26a7486997}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_communication_a25ab381b0c914241fb94630ffdae0942}{
+\hyperlink{class_upnp_nat_communication_a25ab381b0c914241fb94630ffdae0942}{$\sim$UpnpNatCommunication} ()}
+\label{class_upnp_nat_communication_a25ab381b0c914241fb94630ffdae0942}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_communication_aa62acbbaa53a002b409e000f1be32833}{
+void \hyperlink{class_upnp_nat_communication_aa62acbbaa53a002b409e000f1be32833}{WaitUntilLastActionFinished} () const }
+\label{class_upnp_nat_communication_aa62acbbaa53a002b409e000f1be32833}
+
+\begin{DoxyCompactList}\small\item\em Does not return until the last action has finished. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_upnp_nat_communication_ae74c948b4239798a1492f368a9a272bb}{IsLastActionFinished} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the last action has finished. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$ \hyperlink{class_upnp_nat_communication_ab61cad9c2a69ccab0c906f63722473b9}{ExtractLastMessage} ()
+\begin{DoxyCompactList}\small\item\em Extracts the last message that was sent to the controller thread, so that it will not be automatically cleaned up. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_error_report}{ErrorReport} $\ast$ \hyperlink{class_upnp_nat_communication_a30a380930a99ff04facb86a2fee96732}{GetError} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a stored thread error report. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_upnp_nat_communication_af1866eef08649acdd47374f6716b507d}{IsErrorStored} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether an error report is stored by the thread. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_communication_ae6a4927667bd6fa1bc67640c2d595933}{
+void \hyperlink{class_upnp_nat_communication_ae6a4927667bd6fa1bc67640c2d595933}{ClearError} ()}
+\label{class_upnp_nat_communication_ae6a4927667bd6fa1bc67640c2d595933}
+
+\begin{DoxyCompactList}\small\item\em Erases any currently stored error report stored by the thread. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_communication_a84646f88912a9f8b2333de6ad3561350}{
+void \hyperlink{class_upnp_nat_communication_a84646f88912a9f8b2333de6ad3561350}{UpdateInfo} ()}
+\label{class_upnp_nat_communication_a84646f88912a9f8b2333de6ad3561350}
+
+\begin{DoxyCompactList}\small\item\em Updates NAT, reloading all information. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_a0b1c580bb0b02eb6b5d06ed453a89a50}{AddPortMap} (long externalPort, const char $\ast$protocol, long internalPort, const char $\ast$internalIP, bool enabled, const char $\ast$description)
+\begin{DoxyCompactList}\small\item\em Adds a port map to the port forwarding list by sending an instruction to the controlling thread. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_a03852ca938bb87f61001278ac8377cc8}{DeletePortMap} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Deletes a port map. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_a7f328a7379332d76facdab41d0c41d9d}{DeletePortMap} (const char $\ast$protocol, long externalPort)
+\begin{DoxyCompactList}\small\item\em Deletes a port map. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_upnp_nat_communication_a0943a5bc4f406962049d7461686c0c17}{GetPortMapAmount} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of port map loaded. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_a922d852a18a45fe3f4258f7fa22c3ee7}{SetEnabled} (bool option, size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Enables or disables the port map. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_ab0b8e06057012b926db33dca8b8c27b7}{SetDescription} (const \hyperlink{class_packet}{Packet} \&description, size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Changes the description of the port map. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_a2ad4233d0fb79b78187c9fe1c8f82255}{SetInternalPort} (long internalPort, size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Changes the internal port of the port map. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_communication_a6f838066fccb2c3c873c4ee4830e8cc6}{SetInternalIP} (const \hyperlink{class_packet}{Packet} \&internalIP, size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Changes the internal IP of the port map. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_packet}{Packet} \& \hyperlink{class_upnp_nat_communication_a5ca48f022215446e7133cfa094b6b606}{GetExternalIP} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the external IP of the port map. \item\end{DoxyCompactList}\item 
+long \hyperlink{class_upnp_nat_communication_a6eb160e6207de28c3117bcdfb4177df2}{GetExternalPort} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the external port of the port map. \item\end{DoxyCompactList}\item 
+long \hyperlink{class_upnp_nat_communication_a52f93e997bbb9ba0ad86dcf1ec813394}{GetInternalPort} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the internal port of the port map. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_packet}{Packet} \& \hyperlink{class_upnp_nat_communication_a22c396b7787e5b1fc210333eb8af0e0d}{GetProtocol} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol of the port map. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_packet}{Packet} \& \hyperlink{class_upnp_nat_communication_a47c36b09d836d8e16057186b89c6891e}{GetInternalIP} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the internal IP of the port map. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_upnp_nat_communication_a30a5ab268869665e98fd42c5e043fa1d}{GetEnabled} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Determines whether the port map is enabled or disabled. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_packet}{Packet} \& \hyperlink{class_upnp_nat_communication_aa0612037ba2f4c468fda461cae4138f7}{GetDescription} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves a description of the port map. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_upnp_nat_communication_a203f65fcf27a0034cf2505ae0228c40e}{FindPortMap} (const char $\ast$protocol, long externalPort, size\_\-t $\ast$position=NULL)
+\begin{DoxyCompactList}\small\item\em Searches for a port map with the specified protocol and external port. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_upnp_nat_communication_ac5b40ecdbcfcedd7f2371e5abcb1ce26}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_communication_a3a15973c8d3f353f522cc10a7db5bb34}{
+\hyperlink{class_thread_single_message_keep_last}{ThreadSingleMessageKeepLast} \hyperlink{class_upnp_nat_communication_a3a15973c8d3f353f522cc10a7db5bb34}{actionThread}}
+\label{class_upnp_nat_communication_a3a15973c8d3f353f522cc10a7db5bb34}
+
+\begin{DoxyCompactList}\small\item\em Thread is responsible for all NAT actions. \item\end{DoxyCompactList}\item 
+\hyperlink{class_upnp_nat_action}{UpnpNatAction} $\ast$ \hyperlink{class_upnp_nat_communication_a63ebeb04434bd8ed3e4d088862258d4a}{natControls}
+\begin{DoxyCompactList}\small\item\em Stores and controls UPnP NAT. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Communicates with UPnP NAT thread, controlling its actions. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/16/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_upnp_nat_communication_a0b1c580bb0b02eb6b5d06ed453a89a50}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!AddPortMap@{AddPortMap}}
+\index{AddPortMap@{AddPortMap}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{AddPortMap}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::AddPortMap (
+\begin{DoxyParamCaption}
+\item[{long}]{ externalPort, }
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ internalPort, }
+\item[{const char $\ast$}]{ internalIP, }
+\item[{bool}]{ enabled, }
+\item[{const char $\ast$}]{ description}
+\end{DoxyParamCaption}
+)}}
+\label{class_upnp_nat_communication_a0b1c580bb0b02eb6b5d06ed453a89a50}
+
+
+Adds a port map to the port forwarding list by sending an instruction to the controlling thread. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em externalPort}]The external port. \item[{\em protocol}]The protocol. \item[{\em internalPort}]The internal port. \item[{\em internalIP}]The internal ip. \item[{\em enabled}]True if the entry should be enabled, false if not. \item[{\em description}]A description of the port map. \end{DoxyParams}
+\hypertarget{class_upnp_nat_communication_a03852ca938bb87f61001278ac8377cc8}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!DeletePortMap@{DeletePortMap}}
+\index{DeletePortMap@{DeletePortMap}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{DeletePortMap}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::DeletePortMap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{class_upnp_nat_communication_a03852ca938bb87f61001278ac8377cc8}
+
+
+Deletes a port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]Identifier for the port map. \end{DoxyParams}
+\hypertarget{class_upnp_nat_communication_a7f328a7379332d76facdab41d0c41d9d}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!DeletePortMap@{DeletePortMap}}
+\index{DeletePortMap@{DeletePortMap}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{DeletePortMap}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::DeletePortMap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort}
+\end{DoxyParamCaption}
+)}}
+\label{class_upnp_nat_communication_a7f328a7379332d76facdab41d0c41d9d}
+
+
+Deletes a port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol of the port map to delete. \item[{\em externalPort}]The external port of the port map to delete. \end{DoxyParams}
+\hypertarget{class_upnp_nat_communication_ab61cad9c2a69ccab0c906f63722473b9}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!ExtractLastMessage@{ExtractLastMessage}}
+\index{ExtractLastMessage@{ExtractLastMessage}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{ExtractLastMessage}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ThreadMessageItem} $\ast$ UpnpNatCommunication::ExtractLastMessage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_upnp_nat_communication_ab61cad9c2a69ccab0c906f63722473b9}
+
+
+Extracts the last message that was sent to the controller thread, so that it will not be automatically cleaned up. 
+
+\begin{DoxyReturn}{Returns}
+the last message sent. This pointer should be cleaned up using delete. Make sure to set in use by sender to false before attempting to cleanup. 
+
+NULL if no message has been sent yet. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_communication_a203f65fcf27a0034cf2505ae0228c40e}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!FindPortMap@{FindPortMap}}
+\index{FindPortMap@{FindPortMap}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{FindPortMap}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatCommunication::FindPortMap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort, }
+\item[{size\_\-t $\ast$}]{ position = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_upnp_nat_communication_a203f65fcf27a0034cf2505ae0228c40e}
+
+
+Searches for a port map with the specified protocol and external port. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol. \item[{\em externalPort}]The external port. \item[\mbox{\tt[out]} {\em position}]Location to store ID of port map. If NULL then ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a port mapping was found, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_communication_aa0612037ba2f4c468fda461cae4138f7}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetDescription@{GetDescription}}
+\index{GetDescription@{GetDescription}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetDescription}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet} \& UpnpNatCommunication::GetDescription (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_aa0612037ba2f4c468fda461cae4138f7}
+
+
+Retrieves a description of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a description of the port map. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a30a5ab268869665e98fd42c5e043fa1d}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetEnabled@{GetEnabled}}
+\index{GetEnabled@{GetEnabled}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatCommunication::GetEnabled (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a30a5ab268869665e98fd42c5e043fa1d}
+
+
+Determines whether the port map is enabled or disabled. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the port map is enabled, false if it is disabled. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a30a380930a99ff04facb86a2fee96732}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetError@{GetError}}
+\index{GetError@{GetError}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetError}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf ErrorReport} $\ast$ UpnpNatCommunication::GetError (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_upnp_nat_communication_a30a380930a99ff04facb86a2fee96732}
+
+
+Retrieves a stored thread error report. 
+
+\begin{DoxyReturn}{Returns}
+NULL if no report is stored. 
+
+an error report describing the error. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_communication_a5ca48f022215446e7133cfa094b6b606}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetExternalIP@{GetExternalIP}}
+\index{GetExternalIP@{GetExternalIP}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetExternalIP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet} \& UpnpNatCommunication::GetExternalIP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a5ca48f022215446e7133cfa094b6b606}
+
+
+Retrieves the external IP of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+external IP. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a6eb160e6207de28c3117bcdfb4177df2}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetExternalPort@{GetExternalPort}}
+\index{GetExternalPort@{GetExternalPort}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetExternalPort}]{\setlength{\rightskip}{0pt plus 5cm}long UpnpNatCommunication::GetExternalPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a6eb160e6207de28c3117bcdfb4177df2}
+
+
+Retrieves the external port of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+external port. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a47c36b09d836d8e16057186b89c6891e}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetInternalIP@{GetInternalIP}}
+\index{GetInternalIP@{GetInternalIP}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetInternalIP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet} \& UpnpNatCommunication::GetInternalIP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a47c36b09d836d8e16057186b89c6891e}
+
+
+Retrieves the internal IP of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+internal IP. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a52f93e997bbb9ba0ad86dcf1ec813394}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetInternalPort@{GetInternalPort}}
+\index{GetInternalPort@{GetInternalPort}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetInternalPort}]{\setlength{\rightskip}{0pt plus 5cm}long UpnpNatCommunication::GetInternalPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a52f93e997bbb9ba0ad86dcf1ec813394}
+
+
+Retrieves the internal port of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+internal port. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a0943a5bc4f406962049d7461686c0c17}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetPortMapAmount@{GetPortMapAmount}}
+\index{GetPortMapAmount@{GetPortMapAmount}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetPortMapAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t UpnpNatCommunication::GetPortMapAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_upnp_nat_communication_a0943a5bc4f406962049d7461686c0c17}
+
+
+Retrieves the number of port map loaded. 
+
+\begin{DoxyReturn}{Returns}
+the number of port mappings loaded. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_communication_a22c396b7787e5b1fc210333eb8af0e0d}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet} \& UpnpNatCommunication::GetProtocol (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a22c396b7787e5b1fc210333eb8af0e0d}
+
+
+Retrieves the protocol of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+protocol. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_af1866eef08649acdd47374f6716b507d}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!IsErrorStored@{IsErrorStored}}
+\index{IsErrorStored@{IsErrorStored}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{IsErrorStored}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatCommunication::IsErrorStored (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_upnp_nat_communication_af1866eef08649acdd47374f6716b507d}
+
+
+Determines whether an error report is stored by the thread. 
+
+\begin{DoxyReturn}{Returns}
+true if a report is stored, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_communication_ae74c948b4239798a1492f368a9a272bb}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!IsLastActionFinished@{IsLastActionFinished}}
+\index{IsLastActionFinished@{IsLastActionFinished}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{IsLastActionFinished}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatCommunication::IsLastActionFinished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_upnp_nat_communication_ae74c948b4239798a1492f368a9a272bb}
+
+
+Determines whether the last action has finished. 
+
+\begin{DoxyReturn}{Returns}
+true if the last action is finished. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_communication_ab0b8e06057012b926db33dca8b8c27b7}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!SetDescription@{SetDescription}}
+\index{SetDescription@{SetDescription}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{SetDescription}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::SetDescription (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ description, }
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_ab0b8e06057012b926db33dca8b8c27b7}
+
+
+Changes the description of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em description}]New description. Must be NULL terminated. \item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a922d852a18a45fe3f4258f7fa22c3ee7}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!SetEnabled@{SetEnabled}}
+\index{SetEnabled@{SetEnabled}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{SetEnabled}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::SetEnabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{ option, }
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a922d852a18a45fe3f4258f7fa22c3ee7}
+
+
+Enables or disables the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em option}]True to enable the port map, false to disable the port map. \item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a6f838066fccb2c3c873c4ee4830e8cc6}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!SetInternalIP@{SetInternalIP}}
+\index{SetInternalIP@{SetInternalIP}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{SetInternalIP}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::SetInternalIP (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ internalIP, }
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a6f838066fccb2c3c873c4ee4830e8cc6}
+
+
+Changes the internal IP of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em internalIP}]New internal IP. \item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_a2ad4233d0fb79b78187c9fe1c8f82255}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!SetInternalPort@{SetInternalPort}}
+\index{SetInternalPort@{SetInternalPort}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{SetInternalPort}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatCommunication::SetInternalPort (
+\begin{DoxyParamCaption}
+\item[{long}]{ internalPort, }
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_communication_a2ad4233d0fb79b78187c9fe1c8f82255}
+
+
+Changes the internal port of the port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em internalPort}]New internal port. \item[{\em portMapID}]ID of the port map to use. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat_port_map}{UpnpNatPortMap}.
+
+\hypertarget{class_upnp_nat_communication_ac5b40ecdbcfcedd7f2371e5abcb1ce26}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatCommunication::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_upnp_nat_communication_ac5b40ecdbcfcedd7f2371e5abcb1ce26}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_upnp_nat_communication_a63ebeb04434bd8ed3e4d088862258d4a}{
+\index{UpnpNatCommunication@{UpnpNatCommunication}!natControls@{natControls}}
+\index{natControls@{natControls}!UpnpNatCommunication@{UpnpNatCommunication}}
+\subsubsection[{natControls}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UpnpNatAction}$\ast$ {\bf UpnpNatCommunication::natControls}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_upnp_nat_communication_a63ebeb04434bd8ed3e4d088862258d4a}
+
+
+Stores and controls UPnP NAT. 
+
+\hyperlink{class_upnp_nat_communication_a3a15973c8d3f353f522cc10a7db5bb34}{UpnpNatCommunication::actionThread} makes changes to NAT whilst this object can manually read from the object but not write to it. This object instructs the thread to make any changes necassary. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNatCommunication.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNatCommunication.cpp\end{DoxyCompactItemize}

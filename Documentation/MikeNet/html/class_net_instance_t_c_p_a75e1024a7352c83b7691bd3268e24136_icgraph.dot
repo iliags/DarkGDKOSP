@@ -1,0 +1,19 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetInstanceTCP::GetRecvSizeMinTCP",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetInstanceTCP::ValidateRecvSizeTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_t_c_p.html#aed7c2c6c9c50f72e56c6c40f542e6a65"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetInstanceServer::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#aec1cb62dd80e73771a00d0f7a0ad47ba"];
+  Node3 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetInstanceServer::NetInstanceServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#afb65fda21c651d12b0027c0c7be3de6a"];
+  Node2 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetInstanceClient::NetInstanceClient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#a25862a2bb2e0e4d4dd361ae40d934e0d"];
+  Node2 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="NetInstanceServer::SetMaxPacketSizeTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#a4720e8561a26c5c8447332eac5c3843c"];
+  Node2 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="NetInstanceClient::SetMaxPacketSizeTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#aec241ce441a12e67ee21ea176e9fe072"];
+}

@@ -1,0 +1,25 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="ConcurrencyControl::GetNumThreads",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="ConcurrentObject\< bool \>::BitGet1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#add855305dbaab41ee7a863ac7df71318"];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ConcurrentObject\< bool \>::BitOff1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#a87eb0fccbebb3dfee6b466df6e22f19e"];
+  Node1 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="ConcurrentObject\< bool \>::BitOn1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#af811929b4eeca404e723282abcf0a6b7"];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="ConcurrentObject\< bool \>::BitToggle1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#a231edd677ba0f266ef2ba2f652665fcb"];
+  Node1 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="ConcurrentObject\< bool \>::Decrease1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#aa6a8a9a9d741aa97232eb600bbf84a6b"];
+  Node1 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="ConcurrentObject\< bool \>::Get1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#a443b1a7eec5d662194846767c4b8b9cf"];
+  Node1 -> Node8 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="ConcurrentObject\< bool \>::Increase1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#aefcb26e20e3a570387eb545ffddd0170"];
+  Node1 -> Node9 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="ConcurrentObject\< bool \>::Set1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#a99fa686c1846bf4b6e5e07f7a0abde53"];
+  Node1 -> Node10 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="ConcurrentObject\< bool \>::SetPtr1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#afaec1d53d762ec644b35b8fe42060673"];
+}

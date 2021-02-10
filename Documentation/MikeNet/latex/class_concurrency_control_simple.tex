@@ -1,0 +1,319 @@
+\hypertarget{class_concurrency_control_simple}{
+\section{ConcurrencyControlSimple Class Reference}
+\label{class_concurrency_control_simple}\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+}
+
+
+Simple version of \hyperlink{class_concurrency_control}{ConcurrencyControl} class which avoids the need for threadID parameters.  
+
+
+
+
+{\ttfamily \#include $<$ConcurrencyControlSimple.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_concurrency_control_simple_ae9ec89618b743101c09b6670668aad18}{
+\hyperlink{class_concurrency_control_simple_ae9ec89618b743101c09b6670668aad18}{ConcurrencyControlSimple} ()}
+\label{class_concurrency_control_simple_ae9ec89618b743101c09b6670668aad18}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_simple_a139541944409b43b6f8e189f73bc2422}{
+virtual \hyperlink{class_concurrency_control_simple_a139541944409b43b6f8e189f73bc2422}{$\sim$ConcurrencyControlSimple} ()}
+\label{class_concurrency_control_simple_a139541944409b43b6f8e189f73bc2422}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead} (size\_\-t \&readCount) const 
+\begin{DoxyCompactList}\small\item\em Take read control of object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead} (size\_\-t \&readCount) const 
+\begin{DoxyCompactList}\small\item\em Release read control of object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite} (size\_\-t readCount)
+\begin{DoxyCompactList}\small\item\em Take write control of object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_simple_afb64468163c99624de72611a1fff4846}{LeaveWrite} ()
+\begin{DoxyCompactList}\small\item\em Release write control of object. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeReadValueType $>$ }\\safeReadValueType \hyperlink{class_concurrency_control_simple_a1c346ff35d22a75bf37106dbd380481a}{\_\-safeReadValue} (const safeReadValueType \&readMe) const 
+\begin{DoxyCompactList}\small\item\em Safely reads a variable using critical sections. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_simple_a438f34a957e53795f1d3bf8a229ddd43}{\_\-safeWriteValueNK} (safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a non key variable. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_simple_af44214e11945a1e5cc44d5773c2d080a}{\_\-safeWriteValueNK} (safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a non key variable. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_simple_a6b6ed3c59460ce6458c49b66412a6cbe}{\_\-safeWriteValueKEY} (safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue, size\_\-t readCount)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a key variable. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_simple_abd290165d11b7841ef88863b8d7b4fe1}{\_\-safeWriteValueKEY} (safeWriteValueType \&updateMe, safeWriteValueType newValue, size\_\-t readCount)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a key variable. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_concurrency_control_simple_a10aee9429b3c42640e3bb44d932a74c4}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_concurrency_control_simple_a9e5e31fbda9c7403aa11780036cd7bf8}{IsAnyoneElseReading} (size\_\-t readCount) const 
+\begin{DoxyCompactList}\small\item\em Returns false if no other thread has read control. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_concurrency_control_simple_a97ede0b473f8673319f81d6760a4bd2c}{
+\hyperlink{class_critical_section}{CriticalSection} \hyperlink{class_concurrency_control_simple_a97ede0b473f8673319f81d6760a4bd2c}{mtControl}}
+\label{class_concurrency_control_simple_a97ede0b473f8673319f81d6760a4bd2c}
+
+\begin{DoxyCompactList}\small\item\em Controls access to \hyperlink{class_concurrency_control_simple_ab197742bd53accc09efc385464dfb0c3}{ConcurrencyControlSimple::numReading} with a single critical section. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_simple_ab197742bd53accc09efc385464dfb0c3}{
+size\_\-t \hyperlink{class_concurrency_control_simple_ab197742bd53accc09efc385464dfb0c3}{numReading}}
+\label{class_concurrency_control_simple_ab197742bd53accc09efc385464dfb0c3}
+
+\begin{DoxyCompactList}\small\item\em Increases when a thread takes read control of this object and decreases when a thread releases read control of this object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_simple_acb42ee4c44d6f3d6b8310f792c7eca45}{
+\hyperlink{class_critical_section}{CriticalSection} \hyperlink{class_concurrency_control_simple_acb42ee4c44d6f3d6b8310f792c7eca45}{writing}}
+\label{class_concurrency_control_simple_acb42ee4c44d6f3d6b8310f792c7eca45}
+
+\begin{DoxyCompactList}\small\item\em A thread takes control of this object when writing. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple version of \hyperlink{class_concurrency_control}{ConcurrencyControl} class which avoids the need for threadID parameters. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/16/2010.
+\end{DoxyRemark}
+This class is redundant since the use of thread local storage was introduced to \hyperlink{class_concurrency_control}{ConcurrencyControl}.
+
+This class is designed to maintain the high performance that \hyperlink{class_concurrency_control}{ConcurrencyControl} provides but avoid the need for threadIDs which can reduce flexibility.\par
+\par
+
+
+Usage of the class follows the same rules as \hyperlink{class_concurrency_control}{ConcurrencyControl}.\par
+\par
+
+
+There are some drawbacks:
+\begin{DoxyItemize}
+\item Additional parameter to the \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()}, \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} and \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead()} methods.
+\item Slightly reduced performance. 
+\end{DoxyItemize}
+
+\subsection{Member Function Documentation}
+\hypertarget{class_concurrency_control_simple_a1c346ff35d22a75bf37106dbd380481a}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!\_\-safeReadValue@{\_\-safeReadValue}}
+\index{\_\-safeReadValue@{\_\-safeReadValue}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{\_\-safeReadValue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeReadValueType $>$ safeReadValueType ConcurrencyControlSimple::\_\-safeReadValue (
+\begin{DoxyParamCaption}
+\item[{const safeReadValueType \&}]{ readMe}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_simple_a1c346ff35d22a75bf37106dbd380481a}
+
+
+Safely reads a variable using critical sections. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em readMe}]Reference to variable to read. \end{DoxyParams}
+\hypertarget{class_concurrency_control_simple_a6b6ed3c59460ce6458c49b66412a6cbe}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControlSimple::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue, }
+\item[{size\_\-t}]{ readCount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_simple_a6b6ed3c59460ce6458c49b66412a6cbe}
+
+
+Safely writes a value using critical sections to a key variable. 
+
+Key means that it does require write access when changing.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]Reference to object to write to. \item[{\em newValue}]Pointer to value to copy into {\itshape updateMe\/}. \item[{\em readCount}]This is used by a thread to keep track of how many calls to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} it has made, so that \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()} can correctly take read control if it is the only thread that has read control. \end{DoxyParams}
+\hypertarget{class_concurrency_control_simple_abd290165d11b7841ef88863b8d7b4fe1}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControlSimple::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue, }
+\item[{size\_\-t}]{ readCount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_simple_abd290165d11b7841ef88863b8d7b4fe1}
+
+
+Safely writes a value using critical sections to a key variable. 
+
+Key means that it does require write access when changing. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]Reference to object to write to. \item[{\em newValue}]Value to copy into {\itshape updateMe\/}. \item[{\em readCount}]This is used by a thread to keep track of how many calls to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} it has made, so that \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()} can correctly take read control if it is the only thread that has read control. \end{DoxyParams}
+\hypertarget{class_concurrency_control_simple_af44214e11945a1e5cc44d5773c2d080a}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControlSimple::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_simple_af44214e11945a1e5cc44d5773c2d080a}
+
+
+Safely writes a value using critical sections to a non key variable. 
+
+Non key means that it does not require write access when changing (see class description for reasoning).
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]Reference to object to write to. \item[{\em newValue}]Value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_concurrency_control_simple_a438f34a957e53795f1d3bf8a229ddd43}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControlSimple::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_simple_a438f34a957e53795f1d3bf8a229ddd43}
+
+
+Safely writes a value using critical sections to a non key variable. 
+
+Non key means that it does not require write access when changing (see class description for reasoning).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em updateMe}]Reference to object to write to. \item[{\em newValue}]Pointer to value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!EnterRead@{EnterRead}}
+\index{EnterRead@{EnterRead}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{EnterRead}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControlSimple::EnterRead (
+\begin{DoxyParamCaption}
+\item[{size\_\-t \&}]{ readCount}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}
+
+
+Take read control of object. 
+
+Write control will not be possible by other threads until \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead()} is used. EnterRead can be used multiple times by the same thread before \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead()} but is is essential that the same number of \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead()}'s as \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()}'s are used to prevent deadlock, since threads that want to take write control will wait for all read control to be released.\par
+\par
+
+
+In contrast to \hyperlink{class_concurrency_control}{ConcurrencyControl}, an additional parameter {\itshape readCount\/} is needed. If this is undesirable try using \hyperlink{class_concurrency_control}{ConcurrencyControl}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em readCount}]Increased by 1. This is used by a thread to keep track of how many calls to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} it has made, so that \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()} can correctly take read control if it is the only thread that has read control.\par
+\par
+\end{DoxyParams}
+This parameter does not always need to be 'accurate'. This means that if a method takes and releases read control before it returns it is okay to pass readCount as 0. ReadCount will increase by 1 and then decrease by 1 and it doesn't matter if the thread already has read control before the method call. \hypertarget{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!EnterWrite@{EnterWrite}}
+\index{EnterWrite@{EnterWrite}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{EnterWrite}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControlSimple::EnterWrite (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ readCount}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}
+
+
+Take write control of object. 
+
+Write control cannot be taken unless no other thread has read or write control. The method will block until write control can be taken. \par
+\par
+
+
+It is essential that a call to \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()} is counteracted by a call to \hyperlink{class_concurrency_control_simple_afb64468163c99624de72611a1fff4846}{LeaveWrite()}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em readCount}]This is used by a thread to keep track of how many calls to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} it has made, so that \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()} can correctly take read control if it is the only thread that has read control.\end{DoxyParams}
+This parameter does not always need to be calculated. This means that if it is certain that readCount is 0, a method can simple pass 0 directly to this method without calculating the value traditionally by passing a reference to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} and \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead()}. It is essential however that the readCount is correct in order to prevent deadlock. \hypertarget{class_concurrency_control_simple_a9e5e31fbda9c7403aa11780036cd7bf8}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!IsAnyoneElseReading@{IsAnyoneElseReading}}
+\index{IsAnyoneElseReading@{IsAnyoneElseReading}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{IsAnyoneElseReading}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyControlSimple::IsAnyoneElseReading (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ readCount}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_simple_a9e5e31fbda9c7403aa11780036cd7bf8}
+
+
+Returns false if no other thread has read control. 
+
+\begin{DoxyReturn}{Returns}
+false if no other thread has read control. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!LeaveRead@{LeaveRead}}
+\index{LeaveRead@{LeaveRead}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{LeaveRead}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControlSimple::LeaveRead (
+\begin{DoxyParamCaption}
+\item[{size\_\-t \&}]{ readCount}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}
+
+
+Release read control of object. 
+
+Read control is taken using \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()}.
+
+\begin{DoxyWarning}{Warning}
+This method MUST NOT be used unless the calling thread already has read control.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em readCount}]Decreased by 1. This is used by a thread to keep track of how many calls to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} it has made, so that \hyperlink{class_concurrency_control_simple_aa25904f2d9f563ef371d774dfb9b2082}{EnterWrite()} can correctly take read control if it is the only thread that has read control.\par
+\par
+\end{DoxyParams}
+This parameter does not always need to be 'accurate'. This means that if a method takes and releases read control before it returns it is okay to pass readCount as 0. ReadCount will increase by 1 and then decrease by 1 and it doesn't matter if the thread already has read control before the method call. \hypertarget{class_concurrency_control_simple_afb64468163c99624de72611a1fff4846}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!LeaveWrite@{LeaveWrite}}
+\index{LeaveWrite@{LeaveWrite}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{LeaveWrite}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControlSimple::LeaveWrite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_control_simple_afb64468163c99624de72611a1fff4846}
+
+
+Release write control of object. 
+
+Write control MUST NOT be released unless the calling thread has write control.
+
+This parameter does not always need to be calculated. This means that if it is certain that readCount is 0, a method can simple pass 0 directly to this method without calculating the value traditionally by passing a reference to \hyperlink{class_concurrency_control_simple_a78ef938728e79eb989dc0e3fcc666508}{EnterRead()} and \hyperlink{class_concurrency_control_simple_a534f054cf5af2f25709872c3e2fab00a}{LeaveRead()}. It is essential however that the readCount is correct in order to prevent deadlock. \hypertarget{class_concurrency_control_simple_a10aee9429b3c42640e3bb44d932a74c4}{
+\index{ConcurrencyControlSimple@{ConcurrencyControlSimple}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ConcurrencyControlSimple@{ConcurrencyControlSimple}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyControlSimple::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_concurrency_control_simple_a10aee9429b3c42640e3bb44d932a74c4}
+
+
+Tests class. 
+
+It is difficult to test for race condition but this is done by changing a pointer; if a thread does not wait for the pointer to be changed back, to point to something meaningful, the debugger will detect writing to a bad memory location. The debugger does not seem to detect two threads modifying the same variable at the same time. \par
+\par
+
+
+When running this test you should check for:
+\begin{DoxyItemize}
+\item Debugger alerts.
+\item Deadlock.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrencyControlSimple.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrencyControlSimple.cpp\end{DoxyCompactItemize}

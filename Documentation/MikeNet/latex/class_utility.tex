@@ -1,0 +1,162 @@
+\hypertarget{class_utility}{
+\section{Utility Class Reference}
+\label{class_utility}\index{Utility@{Utility}}
+}
+
+
+Utility class providing methods for basic and commonly used jobs.  
+
+
+
+
+{\ttfamily \#include $<$Utility.h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static char $\ast$ \hyperlink{class_utility_af04a93ab9f0f9a93d9adfdef147466c8}{ConcatArray} (const char $\ast$$\ast$textElements, size\_\-t numElements)
+\begin{DoxyCompactList}\small\item\em Combines array of C strings together into single string that is returned. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_utility_a93db37e7f7dfd02de3a5d130602541e5}{DisplayErrorMB} (const char $\ast$messageBoxText)
+\begin{DoxyCompactList}\small\item\em Displays an error message box. \item\end{DoxyCompactList}\item 
+static void $\ast$ \hyperlink{class_utility_ae9b88a37dc2e95519c938e673dd3de2c}{DynamicAllocCheck} (const void $\ast$checkMe, size\_\-t line, const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Checks that memory was successfully allocated to a pointer. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_utility_ac4fe98e04185450f534e7cb209a7cf09}{GetEvent} (HANDLE eventObject)
+\begin{DoxyCompactList}\small\item\em Queries an event object. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T $\ast$ \hyperlink{class_utility_ac636bc9d69afd77043a9afd6ffb570b5}{CopyObject} (const T \&copyMe)
+\begin{DoxyCompactList}\small\item\em Generates a copy of the specified object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_utility_a9847ce4a21abef1de7dc04f4849f4384}{
+static const char $\ast$ \hyperlink{class_utility_a9847ce4a21abef1de7dc04f4849f4384}{VERSION} = \char`\"{}2.0 Development Stage\char`\"{}}
+\label{class_utility_a9847ce4a21abef1de7dc04f4849f4384}
+
+\begin{DoxyCompactList}\small\item\em The version that this project is currently at. \item\end{DoxyCompactList}\item 
+\hypertarget{class_utility_ab78d62aeb89cf5847943512d422454ec}{
+static const char $\ast$ \hyperlink{class_utility_ab78d62aeb89cf5847943512d422454ec}{CREDITS} = \char`\"{}Michael Pryor\char`\"{}}
+\label{class_utility_ab78d62aeb89cf5847943512d422454ec}
+
+\begin{DoxyCompactList}\small\item\em The names of all significant contributors in order of importance. \item\end{DoxyCompactList}\item 
+\hypertarget{class_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{
+static const unsigned int \hyperlink{class_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{LargestSupportedBytesInt} = sizeof(\_\-\_\-int64)}
+\label{class_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}
+
+\begin{DoxyCompactList}\small\item\em Largest supported number of bytes in an integer. \item\end{DoxyCompactList}\item 
+\hypertarget{class_utility_aecfbcd7ef189efdf916f62b8b85b46f6}{
+static const unsigned int \hyperlink{class_utility_aecfbcd7ef189efdf916f62b8b85b46f6}{LargestSupportedBitsInt} = \hyperlink{class_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{LargestSupportedBytesInt} $\ast$ 8}
+\label{class_utility_aecfbcd7ef189efdf916f62b8b85b46f6}
+
+\begin{DoxyCompactList}\small\item\em Largest supported number of bits in an integer. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility class providing methods for basic and commonly used jobs. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_utility_af04a93ab9f0f9a93d9adfdef147466c8}{
+\index{Utility@{Utility}!ConcatArray@{ConcatArray}}
+\index{ConcatArray@{ConcatArray}!Utility@{Utility}}
+\subsubsection[{ConcatArray}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Utility::ConcatArray (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{ textElements, }
+\item[{size\_\-t}]{ numElements}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_utility_af04a93ab9f0f9a93d9adfdef147466c8}
+
+
+Combines array of C strings together into single string that is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em textElements}]Array of strings. \item[{\em numElements}]Number of elements in {\itshape textElements\/}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+single string that should be deallocated with delete\mbox{[}\mbox{]} when no longer needed. 
+\end{DoxyReturn}
+\hypertarget{class_utility_ac636bc9d69afd77043a9afd6ffb570b5}{
+\index{Utility@{Utility}!CopyObject@{CopyObject}}
+\index{CopyObject@{CopyObject}!Utility@{Utility}}
+\subsubsection[{CopyObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ static T$\ast$ Utility::CopyObject (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{class_utility_ac636bc9d69afd77043a9afd6ffb570b5}
+
+
+Generates a copy of the specified object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of {\itshape copyMe\/}. 
+\end{DoxyReturn}
+\hypertarget{class_utility_a93db37e7f7dfd02de3a5d130602541e5}{
+\index{Utility@{Utility}!DisplayErrorMB@{DisplayErrorMB}}
+\index{DisplayErrorMB@{DisplayErrorMB}!Utility@{Utility}}
+\subsubsection[{DisplayErrorMB}]{\setlength{\rightskip}{0pt plus 5cm}void Utility::DisplayErrorMB (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ messageBoxText}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_utility_a93db37e7f7dfd02de3a5d130602541e5}
+
+
+Displays an error message box. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em messageBoxText}]Message to be displayed. \end{DoxyParams}
+\hypertarget{class_utility_ae9b88a37dc2e95519c938e673dd3de2c}{
+\index{Utility@{Utility}!DynamicAllocCheck@{DynamicAllocCheck}}
+\index{DynamicAllocCheck@{DynamicAllocCheck}!Utility@{Utility}}
+\subsubsection[{DynamicAllocCheck}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ Utility::DynamicAllocCheck (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{ checkMe, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_utility_ae9b88a37dc2e95519c938e673dd3de2c}
+
+
+Checks that memory was successfully allocated to a pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em checkMe}]Object to check. When dynamic allocation fails, this will be NULL. \item[{\em line}]Line at which this method was called (use {\ttfamily \_\-\_\-LINE\_\-\_\-} macro). \item[\mbox{\tt[in]} {\em file}]Where this method was called (use {\ttfamily \_\-\_\-FILE\_\-\_\-} macro).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape checkMe\/}.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]If {\itshape checkMe\/} is NULL. \end{DoxyExceptions}
+\hypertarget{class_utility_ac4fe98e04185450f534e7cb209a7cf09}{
+\index{Utility@{Utility}!GetEvent@{GetEvent}}
+\index{GetEvent@{GetEvent}!Utility@{Utility}}
+\subsubsection[{GetEvent}]{\setlength{\rightskip}{0pt plus 5cm}bool Utility::GetEvent (
+\begin{DoxyParamCaption}
+\item[{HANDLE}]{ eventObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_utility_ac4fe98e04185450f534e7cb209a7cf09}
+
+
+Queries an event object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em eventObject}]Handle to an event object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape eventObject\/} is signaled, false if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Utility.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Utility.cpp\end{DoxyCompactItemize}

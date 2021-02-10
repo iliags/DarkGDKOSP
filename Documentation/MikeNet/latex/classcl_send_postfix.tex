@@ -1,0 +1,151 @@
+\hypertarget{classcl_send_postfix}{
+\section{clSendPostfix Class Reference}
+\label{classcl_send_postfix}\index{clSendPostfix@{clSendPostfix}}
+}
+
+
+Send class where packets sent have a postfix.  
+
+
+
+
+{\ttfamily \#include $<$clSendPostfix.h$>$}
+
+Inheritance diagram for clSendPostfix:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_send_postfix}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_send_postfix_ad95091de891752204293aa79d5591666}{clSendPostfix} (const \hyperlink{classcl_packet}{clPacket} $\ast$\hyperlink{classcl_send_postfix_a372780fa26eea19e710c6341f5633488}{packet}, bool \hyperlink{classcl_shared_send_aaaf411d2405cc3447a3bc11fe2ab2678}{block}, const \hyperlink{classcl_packet}{clPacket} $\ast$\hyperlink{classcl_send_postfix_accd15979eb11bf7e39b588537eb8e1b5}{postfix})
+\item 
+\hyperlink{classcl_send_postfix_a760cde356e6e10a6b466707c8bd5ad7b}{$\sim$clSendPostfix} ()
+\item 
+WSABUF $\ast$ \hyperlink{classcl_send_postfix_ace719e0f067b3f4cb0d8285fd0278ae9}{GetSendBuffer} ()
+\item 
+size\_\-t \hyperlink{classcl_send_postfix_ab2404132c3896b72c9cf0b695f858ed3}{GetSendBufferAmount} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_send_postfix_accd15979eb11bf7e39b588537eb8e1b5}{postfix}
+\item 
+const \hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_send_postfix_a372780fa26eea19e710c6341f5633488}{packet}
+\item 
+WSABUF \hyperlink{classcl_send_postfix_a8de5162b564e5a62ee4e78cd70413ce7}{buffers} \mbox{[}\hyperlink{classcl_send_postfix_a1243748bf3f0d732da1e59eed42068a1}{NUM\_\-BUFFERS}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{classcl_send_postfix_a1243748bf3f0d732da1e59eed42068a1}{NUM\_\-BUFFERS} = 2
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Send class where packets sent have a postfix. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is used for sending data with a postfix. \par
+ This class makes use of scatter/gather I/O to maximize efficiency. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_send_postfix_ad95091de891752204293aa79d5591666}{
+\index{clSendPostfix@{clSendPostfix}!clSendPostfix@{clSendPostfix}}
+\index{clSendPostfix@{clSendPostfix}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{clSendPostfix}]{\setlength{\rightskip}{0pt plus 5cm}clSendPostfix::clSendPostfix (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf clPacket} $\ast$}]{ postfix}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_send_postfix_ad95091de891752204293aa79d5591666}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]if true packet will be sent synchronously, if false packet will be sent asynchronously \item[{\em postfix}]postfix to attach to the end of the packet \end{DoxyParams}
+
+
+If the send operation blocks until completion then the send operation does not need its own buffer because the send operation will be completed before further usage of the packet buffer takes place. The destructor MUST NOT deallocate the buffer memory since this will be done automatically by the destructors of the objects that the buffer points to (we are not doing any copying).
+
+If the send operation does not block until completion then it needs its own buffer, which is allocated from the heap and MUST be deallocated by the destructor. This is necassary because the packet buffer may be used by another thread during sending.
+
+\hypertarget{classcl_send_postfix_a760cde356e6e10a6b466707c8bd5ad7b}{
+\index{clSendPostfix@{clSendPostfix}!$\sim$clSendPostfix@{$\sim$clSendPostfix}}
+\index{$\sim$clSendPostfix@{$\sim$clSendPostfix}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{$\sim$clSendPostfix}]{\setlength{\rightskip}{0pt plus 5cm}clSendPostfix::$\sim$clSendPostfix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_send_postfix_a760cde356e6e10a6b466707c8bd5ad7b}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_send_postfix_ace719e0f067b3f4cb0d8285fd0278ae9}{
+\index{clSendPostfix@{clSendPostfix}!GetSendBuffer@{GetSendBuffer}}
+\index{GetSendBuffer@{GetSendBuffer}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{GetSendBuffer}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF $\ast$ clSendPostfix::GetSendBuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_send_postfix_ace719e0f067b3f4cb0d8285fd0278ae9}
+\begin{DoxyReturn}{Returns}
+An array of WSABUF containing data to be sent, by passing to WSASend. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_send_a14aee968543a692af33c5d170b2cc1fe}{clSharedSend}.
+
+\hypertarget{classcl_send_postfix_ab2404132c3896b72c9cf0b695f858ed3}{
+\index{clSendPostfix@{clSendPostfix}!GetSendBufferAmount@{GetSendBufferAmount}}
+\index{GetSendBufferAmount@{GetSendBufferAmount}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{GetSendBufferAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSendPostfix::GetSendBufferAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_send_postfix_ab2404132c3896b72c9cf0b695f858ed3}
+\begin{DoxyReturn}{Returns}
+The number of elements in the array returned by GetSendBuffer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_send_afb9437432c75b81100927297961413a3}{clSharedSend}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_send_postfix_a8de5162b564e5a62ee4e78cd70413ce7}{
+\index{clSendPostfix@{clSendPostfix}!buffers@{buffers}}
+\index{buffers@{buffers}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{buffers}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF {\bf clSendPostfix::buffers}\mbox{[}{\bf NUM\_\-BUFFERS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_postfix_a8de5162b564e5a62ee4e78cd70413ce7}
+Array of buffers to be sent
+\begin{DoxyItemize}
+\item e0 is packet data
+\item e1 is postfix indicating end of packet 
+\end{DoxyItemize}\hypertarget{classcl_send_postfix_a1243748bf3f0d732da1e59eed42068a1}{
+\index{clSendPostfix@{clSendPostfix}!NUM\_\-BUFFERS@{NUM\_\-BUFFERS}}
+\index{NUM\_\-BUFFERS@{NUM\_\-BUFFERS}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{NUM\_\-BUFFERS}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clSendPostfix::NUM\_\-BUFFERS} = 2\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_send_postfix_a1243748bf3f0d732da1e59eed42068a1}
+Number of elements in buffers array \hypertarget{classcl_send_postfix_a372780fa26eea19e710c6341f5633488}{
+\index{clSendPostfix@{clSendPostfix}!packet@{packet}}
+\index{packet@{packet}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clPacket}$\ast$ {\bf clSendPostfix::packet}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_postfix_a372780fa26eea19e710c6341f5633488}
+Pointer to packet containing data to be sent \hypertarget{classcl_send_postfix_accd15979eb11bf7e39b588537eb8e1b5}{
+\index{clSendPostfix@{clSendPostfix}!postfix@{postfix}}
+\index{postfix@{postfix}!clSendPostfix@{clSendPostfix}}
+\subsubsection[{postfix}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clPacket}$\ast$ {\bf clSendPostfix::postfix}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_postfix_accd15979eb11bf7e39b588537eb8e1b5}
+Pointer to packet containing postfix 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSendPostfix.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSendPostfix.cpp\end{DoxyCompactItemize}

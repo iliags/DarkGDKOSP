@@ -1,0 +1,172 @@
+\hypertarget{class_net_send_raw}{
+\section{NetSendRaw Class Reference}
+\label{class_net_send_raw}\index{NetSendRaw@{NetSendRaw}}
+}
+
+
+Send class where packets sent have no postfix or prefix appended.  
+
+
+
+
+{\ttfamily \#include $<$NetSendRaw.h$>$}
+
+Inheritance diagram for NetSendRaw:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_send_raw}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_send_raw_ace4afd9ce85e7ea5cd0bc286e5b68754}{NetSendRaw} (const \hyperlink{class_packet}{Packet} $\ast$\hyperlink{class_net_send_raw_a2b05ae1fabb6e5acd6f5f04d47658258}{packet}, bool \hyperlink{class_net_send_afd9338a4ab3648178d0b5c816a0852d1}{block})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_send_raw_aca72d7d230af4915a5b6f4ad2ffcafdd}{
+\hyperlink{class_net_send_raw_aca72d7d230af4915a5b6f4ad2ffcafdd}{$\sim$NetSendRaw} ()}
+\label{class_net_send_raw_aca72d7d230af4915a5b6f4ad2ffcafdd}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+WSABUF $\ast$ \hyperlink{class_net_send_raw_ae37be26f84c154728e929f60e6a0b4af}{GetBuffer} ()
+\begin{DoxyCompactList}\small\item\em Retrieves an array of WSABUF structures containing data to send (\hyperlink{class_net_send_raw_a65c08b77ebbf2d2e6825d72a55fd5a67}{NetSendRaw::buffers}). \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_send_raw_ac4a6e408066cf7d1fd42e730996d0f10}{GetBufferAmount} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of elements in the array returned by \hyperlink{class_net_send_raw_ae37be26f84c154728e929f60e6a0b4af}{GetBuffer()}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_send_raw_a642a07ea5d7f20e9f67e3cf16018742e}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_send_raw_a2b05ae1fabb6e5acd6f5f04d47658258}{
+const \hyperlink{class_packet}{Packet} $\ast$ \hyperlink{class_net_send_raw_a2b05ae1fabb6e5acd6f5f04d47658258}{packet}}
+\label{class_net_send_raw_a2b05ae1fabb6e5acd6f5f04d47658258}
+
+\begin{DoxyCompactList}\small\item\em Pointer to packet containing data to be sent. \item\end{DoxyCompactList}\item 
+WSABUF \hyperlink{class_net_send_raw_a65c08b77ebbf2d2e6825d72a55fd5a67}{buffers} \mbox{[}\hyperlink{class_net_send_raw_a8cedc005f8989485477c911523451f4f}{NUM\_\-BUFFERS}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of buffers to be sent. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_send_raw_a8cedc005f8989485477c911523451f4f}{
+static const size\_\-t \hyperlink{class_net_send_raw_a8cedc005f8989485477c911523451f4f}{NUM\_\-BUFFERS} = 1}
+\label{class_net_send_raw_a8cedc005f8989485477c911523451f4f}
+
+\begin{DoxyCompactList}\small\item\em Number of elements in \hyperlink{class_net_send_raw_a65c08b77ebbf2d2e6825d72a55fd5a67}{NetSendRaw::buffers}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Send class where packets sent have no postfix or prefix appended. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is used for sending raw data with no modifications. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_send_raw_ace4afd9ce85e7ea5cd0bc286e5b68754}{
+\index{NetSendRaw@{NetSendRaw}!NetSendRaw@{NetSendRaw}}
+\index{NetSendRaw@{NetSendRaw}!NetSendRaw@{NetSendRaw}}
+\subsubsection[{NetSendRaw}]{\setlength{\rightskip}{0pt plus 5cm}NetSendRaw::NetSendRaw (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_send_raw_ace4afd9ce85e7ea5cd0bc286e5b68754}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true packet will be sent synchronously, if false packet will be sent asynchronously. \end{DoxyParams}
+
+
+If the send operation blocks until completion then the send operation does not need its own buffer because the send operation will be completed before further usage of the packet buffer takes place. The destructor MUST NOT deallocate the buffer memory since this will be done automatically by the destructors of the objects that the buffer points to (we are not doing any copying).
+
+If the send operation does not block until completion then it needs its own buffer, which is allocated from the heap and MUST be deallocated by the destructor. This is necessary because the packet buffer may be used by another thread during sending.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_send_raw_ae37be26f84c154728e929f60e6a0b4af}{
+\index{NetSendRaw@{NetSendRaw}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!NetSendRaw@{NetSendRaw}}
+\subsubsection[{GetBuffer}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF $\ast$ NetSendRaw::GetBuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_send_raw_ae37be26f84c154728e929f60e6a0b4af}
+
+
+Retrieves an array of WSABUF structures containing data to send (\hyperlink{class_net_send_raw_a65c08b77ebbf2d2e6825d72a55fd5a67}{NetSendRaw::buffers}). 
+
+\begin{DoxyReturn}{Returns}
+an array of WSABUF containing data to be sent. The sent packet or data stream will consist of a combination of all elements of the array, starting from element 0. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_send_a40c113ecb3007d5d397b2c69887bc4fa}{NetSend}.
+
+\hypertarget{class_net_send_raw_ac4a6e408066cf7d1fd42e730996d0f10}{
+\index{NetSendRaw@{NetSendRaw}!GetBufferAmount@{GetBufferAmount}}
+\index{GetBufferAmount@{GetBufferAmount}!NetSendRaw@{NetSendRaw}}
+\subsubsection[{GetBufferAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetSendRaw::GetBufferAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_send_raw_ac4a6e408066cf7d1fd42e730996d0f10}
+
+
+Retrieves the number of elements in the array returned by \hyperlink{class_net_send_raw_ae37be26f84c154728e929f60e6a0b4af}{GetBuffer()}. 
+
+\begin{DoxyReturn}{Returns}
+number of elements. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_send_af105bc7adc95d2fa981f580e16fc4c2e}{NetSend}.
+
+\hypertarget{class_net_send_raw_a642a07ea5d7f20e9f67e3cf16018742e}{
+\index{NetSendRaw@{NetSendRaw}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSendRaw@{NetSendRaw}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSendRaw::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_send_raw_a642a07ea5d7f20e9f67e3cf16018742e}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_send_ab93dd370f3117ed82eec3993ba0be71d}{NetSend}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_send_raw_a65c08b77ebbf2d2e6825d72a55fd5a67}{
+\index{NetSendRaw@{NetSendRaw}!buffers@{buffers}}
+\index{buffers@{buffers}!NetSendRaw@{NetSendRaw}}
+\subsubsection[{buffers}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF {\bf NetSendRaw::buffers}\mbox{[}{\bf NUM\_\-BUFFERS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_send_raw_a65c08b77ebbf2d2e6825d72a55fd5a67}
+
+
+Array of buffers to be sent. 
+
+
+\begin{DoxyItemize}
+\item e0 is packet data. 
+\end{DoxyItemize}
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSendRaw.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSendRaw.cpp\end{DoxyCompactItemize}

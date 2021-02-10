@@ -1,0 +1,115 @@
+\hypertarget{classcl_packet_store_vector}{
+\section{clPacketStoreVector Class Reference}
+\label{classcl_packet_store_vector}\index{clPacketStoreVector@{clPacketStoreVector}}
+}
+
+
+{\ttfamily \#include $<$clPacketStoreVector.h$>$}\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_packet_store_vector_affae13acdd3930ca0aa2609eae23dae6}{Clear} ()
+\item 
+\hyperlink{classcl_packet_store_vector_ae0469040a6e98410ea98ce70811fbc1e}{clPacketStoreVector} ()
+\item 
+\hyperlink{classcl_packet_store_vector_a1b41714f0b74042b8666dadcff99cfb1}{$\sim$clPacketStoreVector} ()
+\item 
+size\_\-t \hyperlink{classcl_packet_store_vector_a1166335dc4abb21918e4d3df80032ff0}{Get} (\hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+void \hyperlink{classcl_packet_store_vector_ace15f00dffcf3a84f084b5e7c47aa228}{Add} (\hyperlink{classcl_packet}{clPacket} $\ast$packet)
+\item 
+size\_\-t \hyperlink{classcl_packet_store_vector_ab926455abbf6e03326a5c75238cde1c5}{Size} () const 
+\item 
+\hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_packet_store_vector_a64a1bca7ea8a2c85feab5e743c3c37c2}{Front} () const 
+\item 
+\hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_packet_store_vector_a67f63c94d0898cdfafffd59dff28407e}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t element) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_packet_store_vector_ac2fca784781d16366be54b5a46893c60}{
+vector$<$ \hyperlink{classcl_packet}{clPacket} $\ast$ $>$ {\bfseries data}}
+\label{classcl_packet_store_vector_ac2fca784781d16366be54b5a46893c60}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class manages access to a queue of \hyperlink{classcl_packet}{clPacket} objects, all access is controlled by a single critical section making it multithread safe 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_packet_store_vector_ae0469040a6e98410ea98ce70811fbc1e}{
+\index{clPacketStoreVector@{clPacketStoreVector}!clPacketStoreVector@{clPacketStoreVector}}
+\index{clPacketStoreVector@{clPacketStoreVector}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{clPacketStoreVector}]{\setlength{\rightskip}{0pt plus 5cm}clPacketStoreVector::clPacketStoreVector ()}}
+\label{classcl_packet_store_vector_ae0469040a6e98410ea98ce70811fbc1e}
+Constructor Does nothing \hypertarget{classcl_packet_store_vector_a1b41714f0b74042b8666dadcff99cfb1}{
+\index{clPacketStoreVector@{clPacketStoreVector}!$\sim$clPacketStoreVector@{$\sim$clPacketStoreVector}}
+\index{$\sim$clPacketStoreVector@{$\sim$clPacketStoreVector}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{$\sim$clPacketStoreVector}]{\setlength{\rightskip}{0pt plus 5cm}clPacketStoreVector::$\sim$clPacketStoreVector ()}}
+\label{classcl_packet_store_vector_a1b41714f0b74042b8666dadcff99cfb1}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_packet_store_vector_ace15f00dffcf3a84f084b5e7c47aa228}{
+\index{clPacketStoreVector@{clPacketStoreVector}!Add@{Add}}
+\index{Add@{Add}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}void clPacketStoreVector::Add ({\bf clPacket} $\ast$ {\em packet})}}
+\label{classcl_packet_store_vector_ace15f00dffcf3a84f084b5e7c47aa228}
+Adds a packet to the vector 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to add to vector \end{DoxyParams}
+\hypertarget{classcl_packet_store_vector_affae13acdd3930ca0aa2609eae23dae6}{
+\index{clPacketStoreVector@{clPacketStoreVector}!Clear@{Clear}}
+\index{Clear@{Clear}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void clPacketStoreVector::Clear ()}}
+\label{classcl_packet_store_vector_affae13acdd3930ca0aa2609eae23dae6}
+Clear the contents of the vector \hypertarget{classcl_packet_store_vector_a64a1bca7ea8a2c85feab5e743c3c37c2}{
+\index{clPacketStoreVector@{clPacketStoreVector}!Front@{Front}}
+\index{Front@{Front}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} $\ast$ clPacketStoreVector::Front () const}}
+\label{classcl_packet_store_vector_a64a1bca7ea8a2c85feab5e743c3c37c2}
+Gets a packet from the vector without removing it \begin{DoxyReturn}{Returns}
+pointer to first packet in vector 
+\end{DoxyReturn}
+\hypertarget{classcl_packet_store_vector_a1166335dc4abb21918e4d3df80032ff0}{
+\index{clPacketStoreVector@{clPacketStoreVector}!Get@{Get}}
+\index{Get@{Get}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPacketStoreVector::Get ({\bf clPacket} $\ast$ {\em destination})}}
+\label{classcl_packet_store_vector_a1166335dc4abb21918e4d3df80032ff0}
+Remove a packet from the vector and copy it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]pointer to packet which data should be copied into \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\itshape destination\/} must be a \hyperlink{classcl_packet}{clPacket} object 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+number of objects in vector before method was called 
+\end{DoxyReturn}
+\hypertarget{classcl_packet_store_vector_a67f63c94d0898cdfafffd59dff28407e}{
+\index{clPacketStoreVector@{clPacketStoreVector}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} $\ast$ clPacketStoreVector::operator\mbox{[}$\,$\mbox{]} (size\_\-t {\em element}) const}}
+\label{classcl_packet_store_vector_a67f63c94d0898cdfafffd59dff28407e}
+\mbox{[}\mbox{]} operator, returns element in vector 
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]element to access \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object at {\itshape element\/} 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if element is out of bounds \end{DoxyExceptions}
+\hypertarget{classcl_packet_store_vector_ab926455abbf6e03326a5c75238cde1c5}{
+\index{clPacketStoreVector@{clPacketStoreVector}!Size@{Size}}
+\index{Size@{Size}!clPacketStoreVector@{clPacketStoreVector}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPacketStoreVector::Size () const}}
+\label{classcl_packet_store_vector_ab926455abbf6e03326a5c75238cde1c5}
+\begin{DoxyReturn}{Returns}
+number of objects in the vector 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPacketStoreVector.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPacketStoreVector.cpp\end{DoxyCompactItemize}

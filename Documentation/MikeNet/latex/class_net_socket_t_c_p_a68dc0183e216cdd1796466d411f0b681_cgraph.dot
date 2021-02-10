@@ -1,0 +1,19 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSocketTCP::GetConnectionStatus",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetSocketSimple::GetFullyOperational",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_simple.html#ab3e3381e2090c2041df3b0dac318cad9"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetModeTcp::GetPacketStore",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp.html#ad5ddc5ac4fd590005dacccc6d660b8f8"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetSocketTCP::GetRecvPossible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#a1ef0046a481208dec95ec38f7bb18b87"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Utility::GetEvent",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utility.html#ac4fe98e04185450f534e7cb209a7cf09"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="NetSocketTCP::GetSendPossible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#a80713fd55909bc23bbbe21422edf02bd"];
+  Node1 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="StoreQueue::Size",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_store_queue.html#a69b4ffee7bd2200c74eec51f5b9b5e6d"];
+}

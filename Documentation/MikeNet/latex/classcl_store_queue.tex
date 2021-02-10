@@ -1,0 +1,213 @@
+\hypertarget{classcl_store_queue}{
+\section{clStoreQueue$<$ T $>$ Class Template Reference}
+\label{classcl_store_queue}\index{clStoreQueue@{clStoreQueue}}
+}
+
+
+Manages a queue of objects efficiently and safely.  
+
+
+
+
+{\ttfamily \#include $<$clStoreQueue.h$>$}
+
+Inheritance diagram for clStoreQueue$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_store_queue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_store_queue_a194546aad6707beb89aecd424f21faed}{Clear} ()
+\item 
+\hyperlink{classcl_store_queue_a922cc3100b5269c57651e393987add85}{clStoreQueue} ()
+\item 
+\hyperlink{classcl_store_queue_aa7138be3a829a204d5ea0514ac28f6d9}{clStoreQueue} (const \hyperlink{classcl_store_queue}{clStoreQueue} \&copyMe)
+\item 
+\hyperlink{classcl_store_queue}{clStoreQueue} \& \hyperlink{classcl_store_queue_a8dfa2ee5eaf2ccab95d1ea1f113143d9}{operator=} (const \hyperlink{classcl_store_queue}{clStoreQueue} \&copyMe)
+\item 
+virtual \hyperlink{classcl_store_queue_a21554f043c66280035122de70695b708}{$\sim$clStoreQueue} ()
+\item 
+size\_\-t \hyperlink{classcl_store_queue_ac15b3716f7733992f81709b7ddfe6b71}{Get} (T $\ast$destination)
+\item 
+void \hyperlink{classcl_store_queue_a7851576e24ca060b529604e92fee2020}{Add} (T $\ast$object)
+\item 
+T $\ast$ \hyperlink{classcl_store_queue_a0e2ecd0a5aa2e3b5b9e4292520ae1352}{Front} () const 
+\item 
+T $\ast$ \hyperlink{classcl_store_queue_ae6897623e153bcb50f46fd12fa734cad}{Back} () const 
+\item 
+size\_\-t \hyperlink{classcl_store_queue_a22c0e035f508f164ce52768b9799f1c8}{Size} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_store_queue_ae5b85634b4b8e293ab7517939d97202b}{
+queue$<$ T $\ast$ $>$ {\bfseries data}}
+\label{classcl_store_queue_ae5b85634b4b8e293ab7517939d97202b}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class clStoreQueue$<$ T $>$}
+
+Manages a queue of objects efficiently and safely. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Class manages access to a queue of T objects. All access is controlled by a single critical section making it multithread safe. Note that the queue itself is thread safe but the objects are not necessarily. So e.g. we can pop an object from the queue safely but cannot change the contents of an object safely unless that object is itself threadsafe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_store_queue_a922cc3100b5269c57651e393987add85}{
+\index{clStoreQueue@{clStoreQueue}!clStoreQueue@{clStoreQueue}}
+\index{clStoreQueue@{clStoreQueue}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{clStoreQueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStoreQueue}$<$ T $>$::{\bf clStoreQueue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_store_queue_a922cc3100b5269c57651e393987add85}
+Constructor Does nothing \hypertarget{classcl_store_queue_aa7138be3a829a204d5ea0514ac28f6d9}{
+\index{clStoreQueue@{clStoreQueue}!clStoreQueue@{clStoreQueue}}
+\index{clStoreQueue@{clStoreQueue}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{clStoreQueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStoreQueue}$<$ T $>$::{\bf clStoreQueue} (
+\begin{DoxyParamCaption}
+\item[{const {\bf clStoreQueue}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_store_queue_aa7138be3a829a204d5ea0514ac28f6d9}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_store_queue_a21554f043c66280035122de70695b708}{
+\index{clStoreQueue@{clStoreQueue}!$\sim$clStoreQueue@{$\sim$clStoreQueue}}
+\index{$\sim$clStoreQueue@{$\sim$clStoreQueue}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{$\sim$clStoreQueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf clStoreQueue}$<$ T $>$::$\sim${\bf clStoreQueue} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_a21554f043c66280035122de70695b708}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_store_queue_a7851576e24ca060b529604e92fee2020}{
+\index{clStoreQueue@{clStoreQueue}!Add@{Add}}
+\index{Add@{Add}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStoreQueue}$<$ T $>$::Add (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_a7851576e24ca060b529604e92fee2020}
+Adds an object to the queue 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em object}]object to add to queue \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_store_a1bd48dc5a9dc8729cdd18b61eef17daa}{clStore$<$ T $>$}.
+
+\hypertarget{classcl_store_queue_ae6897623e153bcb50f46fd12fa734cad}{
+\index{clStoreQueue@{clStoreQueue}!Back@{Back}}
+\index{Back@{Back}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf clStoreQueue}$<$ T $>$::Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_ae6897623e153bcb50f46fd12fa734cad}
+Retrieves an object from the queue without removing it \begin{DoxyReturn}{Returns}
+pointer to last object in queue 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_store_a3a4c1bed69cc705414cf42eeb9e3601f}{clStore$<$ T $>$}.
+
+\hypertarget{classcl_store_queue_a194546aad6707beb89aecd424f21faed}{
+\index{clStoreQueue@{clStoreQueue}!Clear@{Clear}}
+\index{Clear@{Clear}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf clStoreQueue}$<$ T $>$::Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_a194546aad6707beb89aecd424f21faed}
+Clear the contents of the queue 
+
+Implements \hyperlink{classcl_store_a62772dea2e8b0ed2d913baacf8ee3bb4}{clStore$<$ T $>$}.
+
+\hypertarget{classcl_store_queue_a0e2ecd0a5aa2e3b5b9e4292520ae1352}{
+\index{clStoreQueue@{clStoreQueue}!Front@{Front}}
+\index{Front@{Front}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf clStoreQueue}$<$ T $>$::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_a0e2ecd0a5aa2e3b5b9e4292520ae1352}
+Retrieves an object from the queue without removing it \begin{DoxyReturn}{Returns}
+pointer to first object in queue 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_store_a31a2f4628a2ed892ac193bec64df1ca0}{clStore$<$ T $>$}.
+
+\hypertarget{classcl_store_queue_ac15b3716f7733992f81709b7ddfe6b71}{
+\index{clStoreQueue@{clStoreQueue}!Get@{Get}}
+\index{Get@{Get}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ size\_\-t {\bf clStoreQueue}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_ac15b3716f7733992f81709b7ddfe6b71}
+Remove an object from the queue and copy it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]pointer to object which data should be copied into \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+{\itshape destination\/} must be a T object 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+number of objects in queue before method was called 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_store_a6d95a4fd9236e1b005efdfcb27391006}{clStore$<$ T $>$}.
+
+\hypertarget{classcl_store_queue_a8dfa2ee5eaf2ccab95d1ea1f113143d9}{
+\index{clStoreQueue@{clStoreQueue}!operator=@{operator=}}
+\index{operator=@{operator=}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStoreQueue}\& {\bf clStoreQueue}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clStoreQueue}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_store_queue_a8dfa2ee5eaf2ccab95d1ea1f113143d9}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_store_queue_a22c0e035f508f164ce52768b9799f1c8}{
+\index{clStoreQueue@{clStoreQueue}!Size@{Size}}
+\index{Size@{Size}!clStoreQueue@{clStoreQueue}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ size\_\-t {\bf clStoreQueue}$<$ T $>$::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_queue_a22c0e035f508f164ce52768b9799f1c8}
+\begin{DoxyReturn}{Returns}
+number of objects in the queue 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_store_a8ea87e866f8e8c6a3b2bcdc0423ae469}{clStore$<$ T $>$}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clStoreQueue.h\end{DoxyCompactItemize}

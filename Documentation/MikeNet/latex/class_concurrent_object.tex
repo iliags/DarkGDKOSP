@@ -1,0 +1,475 @@
+\hypertarget{class_concurrent_object}{
+\section{ConcurrentObject$<$ T $>$ Class Template Reference}
+\label{class_concurrent_object}\index{ConcurrentObject@{ConcurrentObject}}
+}
+
+
+Uses \hyperlink{class_critical_section}{CriticalSection} to safely control access to an object.  
+
+
+
+
+{\ttfamily \#include $<$ConcurrentObject.h$>$}
+
+Inheritance diagram for ConcurrentObject$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_concurrent_object}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_concurrent_object_a0844cee0168d4803e20ab2ccebb7c4b2}{
+\hyperlink{class_concurrent_object_a0844cee0168d4803e20ab2ccebb7c4b2}{ConcurrentObject} ()}
+\label{class_concurrent_object_a0844cee0168d4803e20ab2ccebb7c4b2}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object_ade6d44385e7617576495c2eb6086b55e}{ConcurrentObject} (T paraObject)
+\begin{DoxyCompactList}\small\item\em Constructor, protected object is initialized by copying a temporary object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object_a475bcece2dc474e030fb06fef911d49e}{ConcurrentObject} (const T $\ast$paraObject)
+\begin{DoxyCompactList}\small\item\em Constructor, protected object is initialized by copying a dereferenced pointer. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object_a115032e2d183d4de597e5255a7b487ad}{ConcurrentObject} (const \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ T $>$ \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject} \& \hyperlink{class_concurrent_object_a0fbeab9f9c0f547d9da63ad1fef1b38e}{operator=} (T copyMe)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject} \& \hyperlink{class_concurrent_object_a89bc9c97db273c54c642ac2f48249619}{operator=} (const \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ T $>$ \&copyMe)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrent_object_a503b0dbf490847945d6c60e0f63f357e}{operator==} (const \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ T $>$ \&compare) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrent_object_a2a93ee241db643be0a10a63754dc22de}{operator!=} (const \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ T $>$ \&compare) const 
+\begin{DoxyCompactList}\small\item\em Inequality operator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_ae968d8f2bb78e19102ca57138416a91f}{SetB} (const T $\ast$paraObject)
+\begin{DoxyCompactList}\small\item\em Changes contents of protected object, by copying data from a dereferenced pointer. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_afa3d2932ed3b805db27ac22eee4a955d}{Set} (T paraObject)
+\begin{DoxyCompactList}\small\item\em Changes contents of protected object, by copying data from a temporary object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_a08c2689b30ec91e48396101a64fcca4d}{Decrease} (int amount)
+\begin{DoxyCompactList}\small\item\em Safely decreases protected object by specified amount. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_aa144f004cedf93c76d28c992a0ae9026}{Increase} (int amount)
+\begin{DoxyCompactList}\small\item\em Safely increases protected object by specified amount. \item\end{DoxyCompactList}\item 
+T \hyperlink{class_concurrent_object_a671350eedb2a56a14c4f10023d7b4ae9}{Get} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves copy of protected object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_a2e40c00b19595d7816ff3e8020b1594d}{GetB} (T \&destination)
+\begin{DoxyCompactList}\small\item\em Retrieves copy of protected object. \item\end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{class_concurrent_object_a1ef50fdbaf6004708adfd80aa54f4dd6}{GetPtr} ()
+\begin{DoxyCompactList}\small\item\em Retrieves mutable pointer to protected object, which is not thread safe. \item\end{DoxyCompactList}\item 
+const T $\ast$ \hyperlink{class_concurrent_object_a6cd29463e8fbdb1ec7bcb7df6fc5a598}{GetPtrConst} ()
+\begin{DoxyCompactList}\small\item\em Retrieves constant pointer to protected object, which is not thread safe. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_afcaf1c2ecea8ff0b58db40194e1424ef}{BitOn} (size\_\-t bitNumber)
+\begin{DoxyCompactList}\small\item\em Sets the specified bit of the protected object to on. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_a97cf35fb4e3e7b59b3a7b83f7aaad5cb}{BitOff} (size\_\-t bitNumber)
+\begin{DoxyCompactList}\small\item\em Sets the specified bit of the protected object to off. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrent_object_a2d4cb6575506a160c4f86d98d1c5e0a7}{BitToggle} (size\_\-t bitNumber)
+\begin{DoxyCompactList}\small\item\em Toggles the specified bit of the protected object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrent_object_a06cf9224d2a23979055560bf12c02c7f}{BitGet} (size\_\-t bitNumber) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the specified bit of the protected object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject} $\ast$ \hyperlink{class_concurrent_object_a9890ec2fff5e177bf3575d11d6a164f5}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves an exact copy of this object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_concurrent_object_a4ad66e44437b84b0ec7fd9d479a8300f}{
+T \hyperlink{class_concurrent_object_a4ad66e44437b84b0ec7fd9d479a8300f}{object}}
+\label{class_concurrent_object_a4ad66e44437b84b0ec7fd9d479a8300f}
+
+\begin{DoxyCompactList}\small\item\em Object that is protected by critical section. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class ConcurrentObject$<$ T $>$}
+
+Uses \hyperlink{class_critical_section}{CriticalSection} to safely control access to an object. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_concurrent_object_ade6d44385e7617576495c2eb6086b55e}{
+\index{ConcurrentObject@{ConcurrentObject}!ConcurrentObject@{ConcurrentObject}}
+\index{ConcurrentObject@{ConcurrentObject}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{ConcurrentObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ConcurrentObject}$<$ T $>$::{\bf ConcurrentObject} (
+\begin{DoxyParamCaption}
+\item[{T}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_ade6d44385e7617576495c2eb6086b55e}
+
+
+Constructor, protected object is initialized by copying a temporary object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraObject}]Object to be protected. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a475bcece2dc474e030fb06fef911d49e}{
+\index{ConcurrentObject@{ConcurrentObject}!ConcurrentObject@{ConcurrentObject}}
+\index{ConcurrentObject@{ConcurrentObject}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{ConcurrentObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ConcurrentObject}$<$ T $>$::{\bf ConcurrentObject} (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a475bcece2dc474e030fb06fef911d49e}
+
+
+Constructor, protected object is initialized by copying a dereferenced pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraObject}]Pointer to object to be protected, object contents is copied. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a115032e2d183d4de597e5255a7b487ad}{
+\index{ConcurrentObject@{ConcurrentObject}!ConcurrentObject@{ConcurrentObject}}
+\index{ConcurrentObject@{ConcurrentObject}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{ConcurrentObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ConcurrentObject}$<$ T $>$::{\bf ConcurrentObject} (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrentObject}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a115032e2d183d4de597e5255a7b487ad}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_concurrent_object_a06cf9224d2a23979055560bf12c02c7f}{
+\index{ConcurrentObject@{ConcurrentObject}!BitGet@{BitGet}}
+\index{BitGet@{BitGet}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{BitGet}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf ConcurrentObject}$<$ T $>$::BitGet (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a06cf9224d2a23979055560bf12c02c7f}
+
+
+Retrieves the specified bit of the protected object. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If bitNumber $>$ sizeof(object).\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]Bit number to retrieve the value of. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if specified bit is signaled. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a97cf35fb4e3e7b59b3a7b83f7aaad5cb}{
+\index{ConcurrentObject@{ConcurrentObject}!BitOff@{BitOff}}
+\index{BitOff@{BitOff}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{BitOff}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::BitOff (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a97cf35fb4e3e7b59b3a7b83f7aaad5cb}
+
+
+Sets the specified bit of the protected object to off. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If bitNumber $>$ sizeof(object).\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]Bit number to toggle off. \end{DoxyParams}
+\hypertarget{class_concurrent_object_afcaf1c2ecea8ff0b58db40194e1424ef}{
+\index{ConcurrentObject@{ConcurrentObject}!BitOn@{BitOn}}
+\index{BitOn@{BitOn}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{BitOn}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::BitOn (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_afcaf1c2ecea8ff0b58db40194e1424ef}
+
+
+Sets the specified bit of the protected object to on. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If bitNumber $>$ sizeof(object).\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]Bit number to toggle on. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a2d4cb6575506a160c4f86d98d1c5e0a7}{
+\index{ConcurrentObject@{ConcurrentObject}!BitToggle@{BitToggle}}
+\index{BitToggle@{BitToggle}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{BitToggle}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::BitToggle (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bitNumber}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a2d4cb6575506a160c4f86d98d1c5e0a7}
+
+
+Toggles the specified bit of the protected object. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If bitNumber $>$ sizeof(object).\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bitNumber}]Bit number to flip. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a9890ec2fff5e177bf3575d11d6a164f5}{
+\index{ConcurrentObject@{ConcurrentObject}!Clone@{Clone}}
+\index{Clone@{Clone}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ConcurrentObject}$\ast$ {\bf ConcurrentObject}$<$ T $>$::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a9890ec2fff5e177bf3575d11d6a164f5}
+
+
+Retrieves an exact copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+copy of this object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a08c2689b30ec91e48396101a64fcca4d}{
+\index{ConcurrentObject@{ConcurrentObject}!Decrease@{Decrease}}
+\index{Decrease@{Decrease}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{Decrease}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::Decrease (
+\begin{DoxyParamCaption}
+\item[{int}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a08c2689b30ec91e48396101a64fcca4d}
+
+
+Safely decreases protected object by specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]Amount to decrease protected object by. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a671350eedb2a56a14c4f10023d7b4ae9}{
+\index{ConcurrentObject@{ConcurrentObject}!Get@{Get}}
+\index{Get@{Get}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T {\bf ConcurrentObject}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a671350eedb2a56a14c4f10023d7b4ae9}
+
+
+Retrieves copy of protected object. 
+
+\begin{DoxyReturn}{Returns}
+copy of object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a2e40c00b19595d7816ff3e8020b1594d}{
+\index{ConcurrentObject@{ConcurrentObject}!GetB@{GetB}}
+\index{GetB@{GetB}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{GetB}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::GetB (
+\begin{DoxyParamCaption}
+\item[{T \&}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a2e40c00b19595d7816ff3e8020b1594d}
+
+
+Retrieves copy of protected object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy protected object into. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a1ef50fdbaf6004708adfd80aa54f4dd6}{
+\index{ConcurrentObject@{ConcurrentObject}!GetPtr@{GetPtr}}
+\index{GetPtr@{GetPtr}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{GetPtr}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf ConcurrentObject}$<$ T $>$::GetPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a1ef50fdbaf6004708adfd80aa54f4dd6}
+
+
+Retrieves mutable pointer to protected object, which is not thread safe. 
+
+\begin{DoxyWarning}{Warning}
+Object can be used unsafely if this command is used! Take care to ensure that appropriate read and write protection is used when accessing protected object.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+mutable pointer to protected object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a6cd29463e8fbdb1ec7bcb7df6fc5a598}{
+\index{ConcurrentObject@{ConcurrentObject}!GetPtrConst@{GetPtrConst}}
+\index{GetPtrConst@{GetPtrConst}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{GetPtrConst}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ const T$\ast$ {\bf ConcurrentObject}$<$ T $>$::GetPtrConst (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a6cd29463e8fbdb1ec7bcb7df6fc5a598}
+
+
+Retrieves constant pointer to protected object, which is not thread safe. 
+
+\begin{DoxyWarning}{Warning}
+Object can be used unsafely if this command is used! Take care to ensure that appropriate read and write protection is used.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+Did not overload GetPtr because visual studio compiler crashes in this case.
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+constant pointer to protected object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_aa144f004cedf93c76d28c992a0ae9026}{
+\index{ConcurrentObject@{ConcurrentObject}!Increase@{Increase}}
+\index{Increase@{Increase}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{Increase}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::Increase (
+\begin{DoxyParamCaption}
+\item[{int}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_aa144f004cedf93c76d28c992a0ae9026}
+
+
+Safely increases protected object by specified amount. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]Amount to increase protected object by. \end{DoxyParams}
+\hypertarget{class_concurrent_object_a2a93ee241db643be0a10a63754dc22de}{
+\index{ConcurrentObject@{ConcurrentObject}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf ConcurrentObject}$<$ T $>$::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrentObject}$<$ T $>$ \&}]{ compare}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a2a93ee241db643be0a10a63754dc22de}
+
+
+Inequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if {\itshape compare\/} is identical to this object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a0fbeab9f9c0f547d9da63ad1fef1b38e}{
+\index{ConcurrentObject@{ConcurrentObject}!operator=@{operator=}}
+\index{operator=@{operator=}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ConcurrentObject}\& {\bf ConcurrentObject}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{T}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a0fbeab9f9c0f547d9da63ad1fef1b38e}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a89bc9c97db273c54c642ac2f48249619}{
+\index{ConcurrentObject@{ConcurrentObject}!operator=@{operator=}}
+\index{operator=@{operator=}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf ConcurrentObject}\& {\bf ConcurrentObject}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrentObject}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a89bc9c97db273c54c642ac2f48249619}
+
+
+Assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_a503b0dbf490847945d6c60e0f63f357e}{
+\index{ConcurrentObject@{ConcurrentObject}!operator==@{operator==}}
+\index{operator==@{operator==}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ bool {\bf ConcurrentObject}$<$ T $>$::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrentObject}$<$ T $>$ \&}]{ compare}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_a503b0dbf490847945d6c60e0f63f357e}
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape compare\/} is identical to this object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrent_object_afa3d2932ed3b805db27ac22eee4a955d}{
+\index{ConcurrentObject@{ConcurrentObject}!Set@{Set}}
+\index{Set@{Set}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::Set (
+\begin{DoxyParamCaption}
+\item[{T}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_afa3d2932ed3b805db27ac22eee4a955d}
+
+
+Changes contents of protected object, by copying data from a temporary object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraObject}]Object who's data will be copied. \end{DoxyParams}
+\hypertarget{class_concurrent_object_ae968d8f2bb78e19102ca57138416a91f}{
+\index{ConcurrentObject@{ConcurrentObject}!SetB@{SetB}}
+\index{SetB@{SetB}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{SetB}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf ConcurrentObject}$<$ T $>$::SetB (
+\begin{DoxyParamCaption}
+\item[{const T $\ast$}]{ paraObject}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrent_object_ae968d8f2bb78e19102ca57138416a91f}
+
+
+Changes contents of protected object, by copying data from a dereferenced pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraObject}]Pointer who's data will be copied into object. \end{DoxyParams}
+\hypertarget{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}{
+\index{ConcurrentObject@{ConcurrentObject}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ConcurrentObject@{ConcurrentObject}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ static bool {\bf ConcurrentObject}$<$ T $>$::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{class_concurrent_object_accf05dbac146e8d6a87d1efa541eac42}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrentObject.h\end{DoxyCompactItemize}

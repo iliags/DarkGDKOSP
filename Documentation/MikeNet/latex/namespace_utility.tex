@@ -1,0 +1,284 @@
+\hypertarget{namespace_utility}{
+\section{Utility Namespace Reference}
+\label{namespace_utility}\index{Utility@{Utility}}
+}
+
+
+Utility namespace providing methods for basic and commonly used jobs.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \hyperlink{namespace_utility_af04a93ab9f0f9a93d9adfdef147466c8}{ConcatArray} (const char $\ast$$\ast$textElements, size\_\-t numElements)
+\begin{DoxyCompactList}\small\item\em Combines array of C strings together into single string that is returned. \item\end{DoxyCompactList}\item 
+void \hyperlink{namespace_utility_a93db37e7f7dfd02de3a5d130602541e5}{DisplayErrorMB} (const char $\ast$messageBoxText)
+\begin{DoxyCompactList}\small\item\em Displays an error message box. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{namespace_utility_ae9b88a37dc2e95519c938e673dd3de2c}{DynamicAllocCheck} (const void $\ast$checkMe, size\_\-t line, const char $\ast$file)
+\begin{DoxyCompactList}\small\item\em Checks that memory was successfully allocated to a pointer. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{namespace_utility_a24f29ed5876bcc68f8e1100a245d21fd}{ConvertFromIntToString} (int integer)
+\begin{DoxyCompactList}\small\item\em Converts an integer into a NULL terminated C string. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{namespace_utility_ac8c886f95e1fa62ddbfb96a508be945c}{ConvertFromIntToString} (\_\-\_\-int64 integer)
+\begin{DoxyCompactList}\small\item\em Converts an \_\-\_\-int64 into a NULL terminated C string. \item\end{DoxyCompactList}\item 
+void \hyperlink{namespace_utility_ad3d4459840aae914e299234567c953d2}{ConvertFromHexToInt} (const char $\ast$string, \hyperlink{class_store_vector}{StoreVector}$<$ unsigned char $>$ \&outputVector)
+\begin{DoxyCompactList}\small\item\em Convert from hexadecimal to int. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{namespace_utility_a7aa63ecb733b2cfa45e3b008d8594ac7}{ConvertFromIntToHex} (const unsigned char $\ast$convertMe, size\_\-t length)
+\begin{DoxyCompactList}\small\item\em Convert from int to hexadecimal. \item\end{DoxyCompactList}\item 
+void \hyperlink{namespace_utility_a39e32d9034635ac5f04fc4092764b7ce}{SplitDouble} (double dbl, WORD \&integer, WORD \&fraction)
+\begin{DoxyCompactList}\small\item\em Splits a double into its integer and fraction parts. \item\end{DoxyCompactList}\item 
+double \hyperlink{namespace_utility_ac36856671ce435cb9e4959f0be0125fe}{MakeDouble} (WORD integer, WORD fraction)
+\begin{DoxyCompactList}\small\item\em Creates a double by combining two words describing a fraction. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T $\ast$ \hyperlink{namespace_utility_a5e34c21307cc45af569a0ff80268f72b}{CopyObject} (const T \&copyMe)
+\begin{DoxyCompactList}\small\item\em Generates a copy of the specified object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{namespace_utility_a1de0c5308251a03ffa7898e8ae8f9636}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{namespace_utility_a1fe1f605ef9c02e43a339bfd1d2c8419}{
+\hyperlink{class_critical_section}{CriticalSection} \hyperlink{namespace_utility_a1fe1f605ef9c02e43a339bfd1d2c8419}{output}}
+\label{namespace_utility_a1fe1f605ef9c02e43a339bfd1d2c8419}
+
+\begin{DoxyCompactList}\small\item\em When multiple threads what to use {\ttfamily cout} at the same time, they should use output while using {\ttfamily cout}. \item\end{DoxyCompactList}\item 
+\hypertarget{namespace_utility_a9847ce4a21abef1de7dc04f4849f4384}{
+const char $\ast$ \hyperlink{namespace_utility_a9847ce4a21abef1de7dc04f4849f4384}{VERSION} = \char`\"{}Release v2.0\char`\"{}}
+\label{namespace_utility_a9847ce4a21abef1de7dc04f4849f4384}
+
+\begin{DoxyCompactList}\small\item\em The version that this project is currently at. \item\end{DoxyCompactList}\item 
+\hypertarget{namespace_utility_ab78d62aeb89cf5847943512d422454ec}{
+const char $\ast$ \hyperlink{namespace_utility_ab78d62aeb89cf5847943512d422454ec}{CREDITS} = \char`\"{}Michael Pryor\char`\"{}}
+\label{namespace_utility_ab78d62aeb89cf5847943512d422454ec}
+
+\begin{DoxyCompactList}\small\item\em The names of all significant contributors in order of importance. \item\end{DoxyCompactList}\item 
+\hypertarget{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{
+const unsigned int \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{LargestSupportedBytesInt} = sizeof(\_\-\_\-int64)}
+\label{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}
+
+\begin{DoxyCompactList}\small\item\em Largest supported number of bytes in an integer. \item\end{DoxyCompactList}\item 
+\hypertarget{namespace_utility_aecfbcd7ef189efdf916f62b8b85b46f6}{
+const unsigned int \hyperlink{namespace_utility_aecfbcd7ef189efdf916f62b8b85b46f6}{LargestSupportedBitsInt} = \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{LargestSupportedBytesInt} $\ast$ 8}
+\label{namespace_utility_aecfbcd7ef189efdf916f62b8b85b46f6}
+
+\begin{DoxyCompactList}\small\item\em Largest supported number of bits in an integer. \item\end{DoxyCompactList}\item 
+\hypertarget{namespace_utility_a74a525f7b4d09578f53f4a2dcf4c6d46}{
+const char \hyperlink{namespace_utility_a74a525f7b4d09578f53f4a2dcf4c6d46}{HexadecimalLookupTable} \mbox{[}16\mbox{]} = \{'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'\}}
+\label{namespace_utility_a74a525f7b4d09578f53f4a2dcf4c6d46}
+
+\begin{DoxyCompactList}\small\item\em Hexadecimal lookup table used when converting hexadecimal. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Utility namespace providing methods for basic and commonly used jobs. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespace_utility_af04a93ab9f0f9a93d9adfdef147466c8}{
+\index{Utility@{Utility}!ConcatArray@{ConcatArray}}
+\index{ConcatArray@{ConcatArray}!Utility@{Utility}}
+\subsubsection[{ConcatArray}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Utility::ConcatArray (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$$\ast$}]{ textElements, }
+\item[{size\_\-t}]{ numElements}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_af04a93ab9f0f9a93d9adfdef147466c8}
+
+
+Combines array of C strings together into single string that is returned. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em textElements}]Array of strings. \item[{\em numElements}]Number of elements in {\itshape textElements\/}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+single string that should be deallocated with delete\mbox{[}\mbox{]} when no longer needed. 
+\end{DoxyReturn}
+\hypertarget{namespace_utility_ad3d4459840aae914e299234567c953d2}{
+\index{Utility@{Utility}!ConvertFromHexToInt@{ConvertFromHexToInt}}
+\index{ConvertFromHexToInt@{ConvertFromHexToInt}!Utility@{Utility}}
+\subsubsection[{ConvertFromHexToInt}]{\setlength{\rightskip}{0pt plus 5cm}void Utility::ConvertFromHexToInt (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ string, }
+\item[{{\bf StoreVector}$<$ unsigned char $>$ \&}]{ outputVector}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_ad3d4459840aae914e299234567c953d2}
+
+
+Convert from hexadecimal to int. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em string}]String to convert. \item[\mbox{\tt[in,out]} {\em outputVector}]Vector which each hexadecimals is individually stored in. \end{DoxyParams}
+\hypertarget{namespace_utility_a7aa63ecb733b2cfa45e3b008d8594ac7}{
+\index{Utility@{Utility}!ConvertFromIntToHex@{ConvertFromIntToHex}}
+\index{ConvertFromIntToHex@{ConvertFromIntToHex}!Utility@{Utility}}
+\subsubsection[{ConvertFromIntToHex}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Utility::ConvertFromIntToHex (
+\begin{DoxyParamCaption}
+\item[{const unsigned char $\ast$}]{ convertMe, }
+\item[{size\_\-t}]{ length}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_a7aa63ecb733b2cfa45e3b008d8594ac7}
+
+
+Convert from int to hexadecimal. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em convertMe}]The string to convert. \item[{\em length}]The length.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string representation of hexadecimal, needs to be deallocated using delete\mbox{[}\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{namespace_utility_a24f29ed5876bcc68f8e1100a245d21fd}{
+\index{Utility@{Utility}!ConvertFromIntToString@{ConvertFromIntToString}}
+\index{ConvertFromIntToString@{ConvertFromIntToString}!Utility@{Utility}}
+\subsubsection[{ConvertFromIntToString}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Utility::ConvertFromIntToString (
+\begin{DoxyParamCaption}
+\item[{int}]{ integer}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_a24f29ed5876bcc68f8e1100a245d21fd}
+
+
+Converts an integer into a NULL terminated C string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]Integer to convert.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string representation of {\itshape integer\/}. This string must be deallocated using delete\mbox{[}\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{namespace_utility_ac8c886f95e1fa62ddbfb96a508be945c}{
+\index{Utility@{Utility}!ConvertFromIntToString@{ConvertFromIntToString}}
+\index{ConvertFromIntToString@{ConvertFromIntToString}!Utility@{Utility}}
+\subsubsection[{ConvertFromIntToString}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Utility::ConvertFromIntToString (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ integer}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_ac8c886f95e1fa62ddbfb96a508be945c}
+
+
+Converts an \_\-\_\-int64 into a NULL terminated C string. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]Integer to convert.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string representation of {\itshape integer\/}. This string must be deallocated using delete\mbox{[}\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{namespace_utility_a5e34c21307cc45af569a0ff80268f72b}{
+\index{Utility@{Utility}!CopyObject@{CopyObject}}
+\index{CopyObject@{CopyObject}!Utility@{Utility}}
+\subsubsection[{CopyObject}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T$\ast$ Utility::CopyObject (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_a5e34c21307cc45af569a0ff80268f72b}
+
+
+Generates a copy of the specified object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+copy of {\itshape copyMe\/}. 
+\end{DoxyReturn}
+\hypertarget{namespace_utility_a93db37e7f7dfd02de3a5d130602541e5}{
+\index{Utility@{Utility}!DisplayErrorMB@{DisplayErrorMB}}
+\index{DisplayErrorMB@{DisplayErrorMB}!Utility@{Utility}}
+\subsubsection[{DisplayErrorMB}]{\setlength{\rightskip}{0pt plus 5cm}void Utility::DisplayErrorMB (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ messageBoxText}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_a93db37e7f7dfd02de3a5d130602541e5}
+
+
+Displays an error message box. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em messageBoxText}]Message to be displayed. \end{DoxyParams}
+\hypertarget{namespace_utility_ae9b88a37dc2e95519c938e673dd3de2c}{
+\index{Utility@{Utility}!DynamicAllocCheck@{DynamicAllocCheck}}
+\index{DynamicAllocCheck@{DynamicAllocCheck}!Utility@{Utility}}
+\subsubsection[{DynamicAllocCheck}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ Utility::DynamicAllocCheck (
+\begin{DoxyParamCaption}
+\item[{const void $\ast$}]{ checkMe, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_ae9b88a37dc2e95519c938e673dd3de2c}
+
+
+Checks that memory was successfully allocated to a pointer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em checkMe}]Object to check. When dynamic allocation fails, this will be NULL. \item[{\em line}]Line at which this method was called (use {\ttfamily \_\-\_\-LINE\_\-\_\-} macro). \item[\mbox{\tt[in]} {\em file}]Where this method was called (use {\ttfamily \_\-\_\-FILE\_\-\_\-} macro).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape checkMe\/}.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape checkMe\/} is NULL. \end{DoxyExceptions}
+\hypertarget{namespace_utility_ac36856671ce435cb9e4959f0be0125fe}{
+\index{Utility@{Utility}!MakeDouble@{MakeDouble}}
+\index{MakeDouble@{MakeDouble}!Utility@{Utility}}
+\subsubsection[{MakeDouble}]{\setlength{\rightskip}{0pt plus 5cm}double Utility::MakeDouble (
+\begin{DoxyParamCaption}
+\item[{WORD}]{ integer, }
+\item[{WORD}]{ fraction}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_ac36856671ce435cb9e4959f0be0125fe}
+
+
+Creates a double by combining two words describing a fraction. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em integer}]Destination to store integer part. If return value is 15.5 this will be 15. \item[{\em fraction}]Destination to store fractional part. If return value is 15.5 this will be USHORT\_\-MAX / 2. If return value is 15.25 this will be USHORT\_\-MAX / 4. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+double representation of {\itshape integer\/} and {\itshape fraction\/}. 
+\end{DoxyReturn}
+\hypertarget{namespace_utility_a39e32d9034635ac5f04fc4092764b7ce}{
+\index{Utility@{Utility}!SplitDouble@{SplitDouble}}
+\index{SplitDouble@{SplitDouble}!Utility@{Utility}}
+\subsubsection[{SplitDouble}]{\setlength{\rightskip}{0pt plus 5cm}void Utility::SplitDouble (
+\begin{DoxyParamCaption}
+\item[{double}]{ dbl, }
+\item[{WORD \&}]{ integer, }
+\item[{WORD \&}]{ fraction}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_a39e32d9034635ac5f04fc4092764b7ce}
+
+
+Splits a double into its integer and fraction parts. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em dbl}]The double to split. \item[\mbox{\tt[out]} {\em integer}]Destination to store integer part. If {\itshape dbl\/} is 15.5 this will be 15. \item[\mbox{\tt[out]} {\em fraction}]Destination to store fractional part. If {\itshape dbl\/} is 15.5 this will be set to USHORT\_\-MAX / 2. If {\itshape dbl\/} is 15.25 this will be set to USHORT\_\-MAX / 4. \end{DoxyParams}
+\hypertarget{namespace_utility_a1de0c5308251a03ffa7898e8ae8f9636}{
+\index{Utility@{Utility}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!Utility@{Utility}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool Utility::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_utility_a1de0c5308251a03ffa7898e8ae8f9636}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}

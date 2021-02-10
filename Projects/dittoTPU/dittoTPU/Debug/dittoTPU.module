@@ -1,0 +1,9 @@
+Ditto TPU is gonna rock!<@
+a = 1
+b = 1 + 1
+@>Hello << >> World<@
+c = a*b + a/b
+if a < b then call a else call b
+@>as the world turns<@
+if c < b then call a else call a
+@>Goodbye

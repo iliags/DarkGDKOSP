@@ -1,0 +1,1802 @@
+\hypertarget{class_packet}{
+\section{Packet Class Reference}
+\label{class_packet}\index{Packet@{Packet}}
+}
+
+
+Efficiently and safely stores and manipulates data.  
+
+
+
+
+{\ttfamily \#include $<$Packet.h$>$}
+
+Inheritance diagram for Packet:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_packet}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_packet_a38a52f1b08658b5e1eae979967b02685}{operator+} (const \hyperlink{class_packet}{Packet} \&)
+\begin{DoxyCompactList}\small\item\em Addition operator (indirect). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a076a46dcad5f13d44ded9efe7b16a938}{operator+=} (const \hyperlink{class_packet}{Packet} \&)
+\begin{DoxyCompactList}\small\item\em Addition operator (direct). \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_ad6ddfcae873a585902bf3fcc16054951}{operator==} (const \hyperlink{class_packet}{Packet} \&) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_af6db78358a62d4df2f8a5b0e890adc5b}{operator!=} (const \hyperlink{class_packet}{Packet} \&) const 
+\begin{DoxyCompactList}\small\item\em Not equal operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_a466f52196626082faad1bda984b18491}{operator==} (const char $\ast$) const 
+\begin{DoxyCompactList}\small\item\em C string equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_a31ba2c941a82fa4efdfb1527e3dbfd3b}{operator!=} (const char $\ast$) const 
+\begin{DoxyCompactList}\small\item\em C string not equal operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_packet_a908f6daabb43beabbae997008b257cf3}{addWSABUF} (const WSABUF \&, size\_\-t used)
+\begin{DoxyCompactList}\small\item\em Addition operator (indirect). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a10eb8d42f70b985f311d4180bce14331}{addEqualWSABUF} (const WSABUF \&, size\_\-t used)
+\begin{DoxyCompactList}\small\item\em Addition operator (direct). \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_a9e3c011323e4805e3fd3ffc87560e8c9}{compareWSABUF} (const WSABUF \&, size\_\-t used)
+\begin{DoxyCompactList}\small\item\em WSABUF equality operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \& \hyperlink{class_packet_a64281460528b923a5d151d2180cbd82f}{equalWSABUF} (const WSABUF \&, size\_\-t used, size\_\-t offset)
+\begin{DoxyCompactList}\small\item\em WSABUF assignment operator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a18fe5254e32ac247d9a254f0c713d6b6}{Clear} ()
+\begin{DoxyCompactList}\small\item\em Empties packet and resets variables. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_aabcfb963c0d5bc0fa554668f92989622}{
+\hyperlink{class_packet_aabcfb963c0d5bc0fa554668f92989622}{Packet} ()}
+\label{class_packet_aabcfb963c0d5bc0fa554668f92989622}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet_a547b260e15dc790f8f275b532ce23771}{Packet} (const WSABUF \&\hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{data}, size\_\-t used, size\_\-t offset, size\_\-t \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{clientFrom}, size\_\-t \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{operation}, size\_\-t \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{instance}, clock\_\-t clock)
+\begin{DoxyCompactList}\small\item\em Constructor to be used to create a new packet after data has been received via winsock. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_ae9ea5d512acd9f1301da990dc58212e2}{LoadFull} (const WSABUF \&paraData, size\_\-t paraUsed, size\_\-t paraOffset, size\_\-t paraClientFrom, size\_\-t paraOperation, size\_\-t paraInstance, clock\_\-t paraClock)
+\begin{DoxyCompactList}\small\item\em Load packet with data and packet options. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_a48938391fb7e07460bb0e01198ae5ede}{
+\hyperlink{class_packet_a48938391fb7e07460bb0e01198ae5ede}{$\sim$Packet} ()}
+\label{class_packet_a48938391fb7e07460bb0e01198ae5ede}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet_ad134c30752b0a1991a33b924b85209c2}{Packet} (const \hyperlink{class_packet}{Packet} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet_a2df61111e81a889f28e924b0ee84385c}{Packet} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet_a88366956fa402c10fed30b1f15a36c22}{Packet} (const \hyperlink{class_com_string}{ComString} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \& \hyperlink{class_packet_a7f957f789fa6ad8875d1afe4e5f4b1dc}{operator=} (const \hyperlink{class_packet}{Packet} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \& \hyperlink{class_packet_ac980b3b22cf9f2110c637c67c20de499}{operator=} (const char $\ast$)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \& \hyperlink{class_packet_a42bf2d88a9a7449727ffb705fb9f0612}{operator=} (const \hyperlink{class_com_string}{ComString} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a58b00ec8ee88525187c8a095572530a9}{Erase} (size\_\-t startPos, size\_\-t amount)
+\begin{DoxyCompactList}\small\item\em Erases part of the packet, decreasing \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} and \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a7eba2a1d780f6723d98452c425f636c6}{Insert} (size\_\-t amount)
+\begin{DoxyCompactList}\small\item\em Inserts empty space at cursorPos, changing \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} and \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} as necessary. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_aa095be7beee502a044b0d0fb2954713e}{Find} (size\_\-t startPos, size\_\-t endPos, const \hyperlink{class_packet}{Packet} \&findMe, size\_\-t $\ast$result) const 
+\begin{DoxyCompactList}\small\item\em Searches for a packet. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a5a9857fa7701741a9be369c56c97ab53}{AddStringC} (const char $\ast$, size\_\-t length, bool prefix)
+\begin{DoxyCompactList}\small\item\em Adds a C string to the packet. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a35b1fc5b107629dfc63dd0d9382cfb03}{AddSizeT} (size\_\-t)
+\begin{DoxyCompactList}\small\item\em Adds a variable of type size\_\-t to the packet. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a60b85220c73a9474bfe17cb0e5d00771}{AddClockT} (clock\_\-t)
+\begin{DoxyCompactList}\small\item\em Adds a variable of type clock\_\-t to the packet. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a5e811abd88202438a9b1b887a0baf65b}{GetPacketRemainder} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of unread bytes in the packet. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_packet_adda05c109561de815c266d444c6285f0}{GetStringC} (size\_\-t length, bool nullTerminated) const 
+\begin{DoxyCompactList}\small\item\em Gets a C string from the packet, allocating memory to it and returning it. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a322f2409cab20ad6748753c565997aaa}{GetStringC} (char $\ast$destination, size\_\-t length, bool nullTerminated) const 
+\item 
+size\_\-t \hyperlink{class_packet_a53925d61303db6897c72afc29b2ef2a2}{GetStringSize} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the size of a string by reading its prefix. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a27a001a30a7a5c09869f1e1f567e09fa}{GetSizeT} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a variable of type size\_\-t from the packet. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_packet_a357ea92c52237847d12fa80f433fb839}{GetClockT} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a variable of type clock\_\-t from the packet. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a2488b5121b48f108f5acf5f85c234d8a}{GetMemorySize} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a3f7bc12f83b1a98be540be061af6a8e6}{SetMemorySize} (size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Changes the memory size of the packet, erasing all packet data in the process. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a72a324d12c83b183f77194b5d9c4ab72}{ChangeMemorySize} (size\_\-t size)
+\begin{DoxyCompactList}\small\item\em Changes the memory size of the packet without erasing its contents. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_a37596c747b8db1b2c07c971259f5f786}{
+void \hyperlink{class_packet_a37596c747b8db1b2c07c971259f5f786}{SetUsedSize} (size\_\-t size)}
+\label{class_packet_a37596c747b8db1b2c07c971259f5f786}
+
+\begin{DoxyCompactList}\small\item\em Changes \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}, increasing \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} if necessary. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a443cddd3bfce9890d8ba59ffa42dbe1b}{GetUsedSize} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a4864d45925c6798a6199929a038ca7f3}{GetCursor} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_addeffecd28116c91743d6dd908d1b9c6}{SetCursor} (size\_\-t position) const 
+\begin{DoxyCompactList}\small\item\em Changes \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_acc49a731fd83881c2d925ce1eccdefc2}{IncCursor} (size\_\-t amount) const 
+\begin{DoxyCompactList}\small\item\em Increases \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_ac2b9d9a1cb9c9e785ff119c61d2b93c7}{GetAge} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_af82113a0e0b36819fcbe4b8245db579e}{Packet::age}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a8ac622b3f32dd436e4fdaf345459a401}{SetAge} (size\_\-t clock)
+\begin{DoxyCompactList}\small\item\em Changes \hyperlink{class_packet_af82113a0e0b36819fcbe4b8245db579e}{Packet::age}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_adc3e10f8e3b90b281e524a08bb935a43}{GetClientFrom} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{Packet::clientFrom}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a74b80d681488bffc70bcc6d6ba368e71}{SetClientFrom} (size\_\-t \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{clientFrom})
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{Packet::clientFrom}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a557e791794531dd1642e352253ff0262}{GetOperation} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{Packet::operation}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a84ea3a060f4063fd2a7496643b7f2495}{SetOperation} (size\_\-t \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{operation})
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{Packet::operation}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a7ea59cb087fd573b502f294662f3be43}{GetInstance} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{Packet::instance}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a1829784ec417688a1522ee4815ddda73}{SetInstance} (size\_\-t \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{instance})
+\begin{DoxyCompactList}\small\item\em Sets \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{Packet::instance}. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_packet_a5cd834326344e1de941a122ec1cc21ce}{GetDataPtr} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable pointer to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_packet_aac86d0fa93713d18ff931ef1deafd924}{GetDataPtr} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a constant pointer to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_packet_a366951c2268a1e7745802ef9ed28dc28}{GetNullTerminated} ()
+\begin{DoxyCompactList}\small\item\em Modifies the packet so that its data is a NULL terminated string. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_packet_ac35aada76c25f06260afff9e0fd54552}{GetNullTerminated} () const 
+\begin{DoxyCompactList}\small\item\em Throws an exception if the contents of the packet is not NULL terminated. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_a538a7c5b42aa2b17697ed0d3f65bd0ac}{IsNullTerminated} () const 
+\begin{DoxyCompactList}\small\item\em Determine whether the data of the packet is null terminated. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_packet_ae86889cb0cd14f16837424268c07d72d}{GetDataPtrCopy} () const 
+\begin{DoxyCompactList}\small\item\em Returns a copy of \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_aa035f4665c27f8960ae6a585fb3a9ab6}{PtrIntoWSABUF} (WSABUF \&buffer) const 
+\begin{DoxyCompactList}\small\item\em Copies pointer of packet data into a WSABUF, ignoring pre-\/existing WSABUF contents. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_acd150eca1bc37b444f37598c7181d808}{CopyIntoWSABUF} (WSABUF \&buffer) const 
+\begin{DoxyCompactList}\small\item\em Copies packet into a WSABUF, allocating new memory and ignoring pre-\/existing WSABUF contents. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a38192749e78469e015c2234fa5f3fed9}{SetDataPtr} (char $\ast$newPtr, size\_\-t paraMemSize, size\_\-t paraUsedSize)
+\begin{DoxyCompactList}\small\item\em Changes \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} to point to an alternative point in memory that is not managed by the object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_aec0d1088b95c8a2daa6a12affc28b2d9}{UnsetDataPtr} ()
+\begin{DoxyCompactList}\small\item\em Undoes SetDataPtr returning \hyperlink{class_packet}{Packet} object to normal usage. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a7960ab336730d43e2358b8fd2876a074}{Encrypt} (const \hyperlink{class_encrypt_key}{EncryptKey} \&key, bool block=true)
+\begin{DoxyCompactList}\small\item\em Encrypts packet. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a4514e3e3fa894e5b4d6f5fab5f091ca3}{Decrypt} (const \hyperlink{class_encrypt_key}{EncryptKey} \&key, bool block=true)
+\begin{DoxyCompactList}\small\item\em Decrypts packet. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_a86cd877cd9866ffa52eb83f147d01d69}{
+void \hyperlink{class_packet_a86cd877cd9866ffa52eb83f147d01d69}{WaitUntilLastEncryptionOperationFinished} ()}
+\label{class_packet_a86cd877cd9866ffa52eb83f147d01d69}
+
+\begin{DoxyCompactList}\small\item\em Does not return until the last encryption operation has finished. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_packet_a6c4f956822f2a7becf84f94d55642da6}{IsLastEncryptionOperationFinished} ()
+\begin{DoxyCompactList}\small\item\em Determines whether the last encryption operation has finished. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a67ceba4df218fe99c98735be075527f9}{AddHex} (const char $\ast$hex)
+\begin{DoxyCompactList}\small\item\em Adds a NULL terminated string of hexadecimal e.g. 2b7e151628aed2a6 to the packet. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_packet_a4726a5ac096197b383fd18c728711cf1}{GetHex} (size\_\-t startPos, size\_\-t numBytes) const 
+\begin{DoxyCompactList}\small\item\em Retrieves a NULL terminated string of hexadecimal e.g. 2b7e151628aed2a6 from the packet. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_aa464430375a70fcf692b697b0b17a91d}{
+void \hyperlink{class_packet_aa464430375a70fcf692b697b0b17a91d}{OutputContents} ()}
+\label{class_packet_aa464430375a70fcf692b697b0b17a91d}
+
+\begin{DoxyCompactList}\small\item\em Outputs packet contents as a C string using cout. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{class_packet_a80e211740ec18468ac623e2a333234e0}{Get} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves data of any type from the packet. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\T \hyperlink{class_packet_ac42cb39221c733bfbf2c405ecf436250}{GetPrefix} (size\_\-t position) const 
+\begin{DoxyCompactList}\small\item\em Retrieves data of any type from the specified position without moving the cursor. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_aeb3920d9196357139ad67a3b24054697}{GetPrefixSizeT} (size\_\-t position=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves a variable of type size\_\-t from the specified position without moving the cursor. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\void \hyperlink{class_packet_ae9adff3647758cc7f8eb4c7d132e7ba4}{Add} (T add)
+\begin{DoxyCompactList}\small\item\em Adds data of any type to the packet. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_packet_a20fdfbf92489c69fbebaf937c59a9be4}{DecryptWSABUF} (WSABUF decryptMe, size\_\-t used, size\_\-t offset, const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$key)
+\begin{DoxyCompactList}\small\item\em Decrypts WSABUF. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_packet_a60f8b04e48b7ae57289bb009d74e97a2}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const unsigned int \hyperlink{class_packet_a42ceeb49399f078bf848896bef2fa529}{prefixSizeBytes} = \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{Utility::LargestSupportedBytesInt}
+\begin{DoxyCompactList}\small\item\em Number of bytes including any padding that prefix added using \hyperlink{class_packet_a35b1fc5b107629dfc63dd0d9382cfb03}{AddSizeT()} or \hyperlink{class_packet_a60b85220c73a9474bfe17cb0e5d00771}{AddClockT()} use. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_packet_a6199a7116a99201270755b0c6bead6e0}{\_\-UpdateMemoryAndCursor} (size\_\-t addSize)
+\begin{DoxyCompactList}\small\item\em Adjusts \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} and \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} if \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} increases beyond it with the addition of {\itshape addSize\/}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_ae965e1981922f3176ed91a352a152d9f}{Copy} (const \hyperlink{class_packet}{Packet} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper function. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_aa25d95a05c5b2b40eb59b44a203d7570}{Copy} (const char $\ast$copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper function. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_a41d94997f70041ab7498c07387e9472f}{Copy} (const \hyperlink{class_com_string}{ComString} \&comString)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper function. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_aa5acb9e08849a417575ad51167051fe9}{DefaultVariables} (bool full)
+\begin{DoxyCompactList}\small\item\em Sets internal variables to default. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_packet_aa4e03b15b09c1feb607aae889cda4f0f}{DoEncryptionOperation} (bool encryption, const \hyperlink{class_encrypt_key}{EncryptKey} \&key, bool block)
+\begin{DoxyCompactList}\small\item\em Starts an encryption or decryption operation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_packet_afcc7bfb21d45884b60d26036efa4f6cd}{\_\-AddPacket} (\hyperlink{class_packet}{Packet} \&destination, const \hyperlink{class_packet}{Packet} \&source)
+\begin{DoxyCompactList}\small\item\em Addition operator helper method. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_packet_ac4dee2aa279939236f3bea21d0fed88b}{\_\-AddWSABUF} (\hyperlink{class_packet}{Packet} \&destination, const WSABUF \&source, size\_\-t used)
+\begin{DoxyCompactList}\small\item\em Addition operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_packet_ab790106eb4fd31c750c3e39ee46c07c8}{dataPtrChanged}
+\begin{DoxyCompactList}\small\item\em When true data will not be cleaned up on destruction. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{data}
+\begin{DoxyCompactList}\small\item\em Memory block of size which contains packet data. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{clientFrom}
+\begin{DoxyCompactList}\small\item\em ID of client that packet was received from. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{operation}
+\begin{DoxyCompactList}\small\item\em Operation ID associated with packet. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{instance}
+\begin{DoxyCompactList}\small\item\em ID of instance that packet was received on. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_af82113a0e0b36819fcbe4b8245db579e}{age}
+\begin{DoxyCompactList}\small\item\em Value indicating packet age. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{cursorPos}
+\begin{DoxyCompactList}\small\item\em Position within packet that \hyperlink{class_packet_ae9adff3647758cc7f8eb4c7d132e7ba4}{Add()} and \hyperlink{class_packet_a80e211740ec18468ac623e2a333234e0}{Get()} should begin reading or writing data. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{
+size\_\-t \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{memSize}}
+\label{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}
+
+\begin{DoxyCompactList}\small\item\em Amount of memory allocated to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_packet_a1da1eb4f461522942bada139f0d94acd}{
+size\_\-t \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{usedSize}}
+\label{class_packet_a1da1eb4f461522942bada139f0d94acd}
+
+\begin{DoxyCompactList}\small\item\em Amount of \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} that is in use. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Efficiently and safely stores and manipulates data. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is at the core of the networking module and is one of the main reasons for its efficiency.\par
+\par
+
+
+Data added to the class moves a cursor along. This cursor acts in the same way as one used in a word processing application (e.g. Notepad). If I add an integer (4 bytes in size) the cursor will move from 0 to 4, and the data will be inserted in elements 0, 1, 2 and 3. Then I add a string 5 bytes in size and the cursor moves from 4 to 9, and the data is inserted starting at 4, 5, 6, 7, 8 and 9. The cursor is also used with retrieving data and acts in the same way.\par
+\par
+
+
+There are two sizes associated with each packet. Firstly there is the memory size. This is the amount of memory (in bytes) that is allocated to the packet. If more memory is needed it is automatically allocated but for maximum efficiency you should try to allocate all memory at the start using \hyperlink{class_packet_a72a324d12c83b183f77194b5d9c4ab72}{ChangeMemorySize()} or \hyperlink{class_packet_a3f7bc12f83b1a98be540be061af6a8e6}{SetMemorySize()}. \par
+\par
+
+
+Secondly there is used size. This is the amount of memory allocated to the packet that is actually in use. The used size can never be more than the memory size.
+
+The way the used size and memory size interact with each other is a key contributor to efficiency. e.g. You may want to reuse the same packet for multiple purposes, some that require small amounts of memory and some that require large amounts of memory. Instead of decreasing and increasing the memory size between usage we simply change the used size. \par
+\par
+
+
+How about a second example? If I want to empty the packet I only need to change the used size to 0. I do not need to change the contents of the packet, or do any additional assignment!\par
+\par
+
+
+The last reason that this class is efficient lies in some funky (but actually fairly simple) memory manipulation that goes on, particularly with the \hyperlink{class_packet_a7eba2a1d780f6723d98452c425f636c6}{Insert()} and \hyperlink{class_packet_a58b00ec8ee88525187c8a095572530a9}{Erase()} methods which are very quick. \par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_packet_a547b260e15dc790f8f275b532ce23771}{
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection[{Packet}]{\setlength{\rightskip}{0pt plus 5cm}Packet::Packet (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ paraData, }
+\item[{size\_\-t}]{ paraUsed, }
+\item[{size\_\-t}]{ paraOffset, }
+\item[{size\_\-t}]{ paraClientFrom, }
+\item[{size\_\-t}]{ paraOperation, }
+\item[{size\_\-t}]{ paraInstance, }
+\item[{clock\_\-t}]{ paraClock}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a547b260e15dc790f8f275b532ce23771}
+
+
+Constructor to be used to create a new packet after data has been received via winsock. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraData}]Data to copy into the packet. \item[{\em paraUsed}]Number of bytes of the WSABUF buffer ({\itshape paraData\/}) that are in use; not including {\itshape paraOffset\/} bytes (note that WSABUF.len indicates the size of the buffer, not the amount that has been filled). \item[{\em paraOffset}]Number of bytes from the start of the buffer ({\itshape paraData\/}) that should be ignored (i.e. Not copied). Remember that {\itshape paraUsed\/} does not include {\itshape paraOffset\/} bytes. \item[{\em paraClientFrom}]The client that the packet was received from. ClientFrom is set to this. \item[{\em paraOperation}]The operation of the packet. ParaOperation is set to this. \item[{\em paraInstance}]The instance that the packet was received on. Operation is set to this. \item[{\em paraClock}]The age value of the packet. Clock is set to this. \end{DoxyParams}
+\hypertarget{class_packet_ad134c30752b0a1991a33b924b85209c2}{
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection[{Packet}]{\setlength{\rightskip}{0pt plus 5cm}Packet::Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_ad134c30752b0a1991a33b924b85209c2}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_packet_a2df61111e81a889f28e924b0ee84385c}{
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection[{Packet}]{\setlength{\rightskip}{0pt plus 5cm}Packet::Packet (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a2df61111e81a889f28e924b0ee84385c}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]String to copy. \end{DoxyParams}
+\hypertarget{class_packet_a88366956fa402c10fed30b1f15a36c22}{
+\index{Packet@{Packet}!Packet@{Packet}}
+\index{Packet@{Packet}!Packet@{Packet}}
+\subsubsection[{Packet}]{\setlength{\rightskip}{0pt plus 5cm}Packet::Packet (
+\begin{DoxyParamCaption}
+\item[{const {\bf ComString} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a88366956fa402c10fed30b1f15a36c22}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]COM string to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_packet_afcc7bfb21d45884b60d26036efa4f6cd}{
+\index{Packet@{Packet}!\_\-AddPacket@{\_\-AddPacket}}
+\index{\_\-AddPacket@{\_\-AddPacket}!Packet@{Packet}}
+\subsubsection[{\_\-AddPacket}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::\_\-AddPacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} \&}]{ destination, }
+\item[{const {\bf Packet} \&}]{ source}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_packet_afcc7bfb21d45884b60d26036efa4f6cd}
+
+
+Addition operator helper method. 
+
+{\itshape source\/} is added to {\itshape destination\/} at position \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} and {\itshape source\/} is copied entirely up to {\itshape source.usedSize\/}. {\itshape destination's\/} cursor is set to the new end of the packet ({\itshape destination.cursorPos\/} + {\itshape source.usedSize\/}).
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]\hyperlink{class_packet}{Packet} that {\itshape source\/} will be added to. \item[{\em source}]\hyperlink{class_packet}{Packet} that will be added to {\itshape destination\/}. \end{DoxyParams}
+\hypertarget{class_packet_ac4dee2aa279939236f3bea21d0fed88b}{
+\index{Packet@{Packet}!\_\-AddWSABUF@{\_\-AddWSABUF}}
+\index{\_\-AddWSABUF@{\_\-AddWSABUF}!Packet@{Packet}}
+\subsubsection[{\_\-AddWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::\_\-AddWSABUF (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} \&}]{ destination, }
+\item[{const WSABUF \&}]{ source, }
+\item[{size\_\-t}]{ used}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_packet_ac4dee2aa279939236f3bea21d0fed88b}
+
+
+Addition operator helper method. 
+
+Adds WSABUF {\itshape source\/} to {\itshape destination\/}. {\itshape source\/} is added to {\itshape destination\/} at position usedSize and {\itshape source\/} is copied up to {\itshape used\/}. {\itshape destination's\/} cursor is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]\hyperlink{class_packet}{Packet} that {\itshape source\/} will be added to. \item[{\em source}]WSABUF that will be added to {\itshape destination\/}. \item[{\em used}]Number of bytes of {\itshape source\/} that are in use. Note that {\itshape source.len\/} indicates the size of the buffer rather than the number of bytes in use. \end{DoxyParams}
+\hypertarget{class_packet_a6199a7116a99201270755b0c6bead6e0}{
+\index{Packet@{Packet}!\_\-UpdateMemoryAndCursor@{\_\-UpdateMemoryAndCursor}}
+\index{\_\-UpdateMemoryAndCursor@{\_\-UpdateMemoryAndCursor}!Packet@{Packet}}
+\subsubsection[{\_\-UpdateMemoryAndCursor}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::\_\-UpdateMemoryAndCursor (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ amount}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_a6199a7116a99201270755b0c6bead6e0}
+
+
+Adjusts \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} and \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} if \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} increases beyond it with the addition of {\itshape addSize\/}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]Size that \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} may increase to after this method has been called. \end{DoxyParams}
+\hypertarget{class_packet_ae9adff3647758cc7f8eb4c7d132e7ba4}{
+\index{Packet@{Packet}!Add@{Add}}
+\index{Add@{Add}!Packet@{Packet}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ void Packet::Add (
+\begin{DoxyParamCaption}
+\item[{T}]{ add}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_packet_ae9adff3647758cc7f8eb4c7d132e7ba4}
+
+
+Adds data of any type to the packet. 
+
+Data is added to the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+C strings should not be added using this method, use \hyperlink{class_packet_a5a9857fa7701741a9be369c56c97ab53}{AddStringC()} instead.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If retrieving data would mean exceeding the used size. \end{DoxyExceptions}
+\hypertarget{class_packet_a60b85220c73a9474bfe17cb0e5d00771}{
+\index{Packet@{Packet}!AddClockT@{AddClockT}}
+\index{AddClockT@{AddClockT}!Packet@{Packet}}
+\subsubsection[{AddClockT}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::AddClockT (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ add}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a60b85220c73a9474bfe17cb0e5d00771}
+
+
+Adds a variable of type clock\_\-t to the packet. 
+
+Data is added to the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+Note that the cursor will move \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{Utility::LargestSupportedBytesInt} length even if sizeof(clock\_\-t) is smaller. This is to ensure that the different bit versions of the module are compatible with each other.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em add}]Data to add. \end{DoxyParams}
+\hypertarget{class_packet_a10eb8d42f70b985f311d4180bce14331}{
+\index{Packet@{Packet}!addEqualWSABUF@{addEqualWSABUF}}
+\index{addEqualWSABUF@{addEqualWSABUF}!Packet@{Packet}}
+\subsubsection[{addEqualWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::addEqualWSABUF (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ addMe, }
+\item[{size\_\-t}]{ used}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a10eb8d42f70b985f311d4180bce14331}
+
+
+Addition operator (direct). 
+
+{\itshape addMe\/} is added directly to this object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addMe}]WSABUF we want to add to this object. \item[{\em used}]Number of bytes of {\itshape addMe\/} that are in use. Note that {\itshape addMe.len\/} indicates the size of the buffer rather than the number of bytes in use. \end{DoxyParams}
+\hypertarget{class_packet_a67ceba4df218fe99c98735be075527f9}{
+\index{Packet@{Packet}!AddHex@{AddHex}}
+\index{AddHex@{AddHex}!Packet@{Packet}}
+\subsubsection[{AddHex}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::AddHex (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ hex}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a67ceba4df218fe99c98735be075527f9}
+
+
+Adds a NULL terminated string of hexadecimal e.g. 2b7e151628aed2a6 to the packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em hex}]NULL terminated hexadecimal string. \end{DoxyParams}
+\hypertarget{class_packet_a35b1fc5b107629dfc63dd0d9382cfb03}{
+\index{Packet@{Packet}!AddSizeT@{AddSizeT}}
+\index{AddSizeT@{AddSizeT}!Packet@{Packet}}
+\subsubsection[{AddSizeT}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::AddSizeT (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ add}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a35b1fc5b107629dfc63dd0d9382cfb03}
+
+
+Adds a variable of type size\_\-t to the packet. 
+
+Data is added to the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+Note that the cursor will move \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{Utility::LargestSupportedBytesInt} length even if sizeof(size\_\-t) is smaller. This is to ensure that the different bit versions of the module are compatible with each other.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em add}]Data to add. \end{DoxyParams}
+\hypertarget{class_packet_a5a9857fa7701741a9be369c56c97ab53}{
+\index{Packet@{Packet}!AddStringC@{AddStringC}}
+\index{AddStringC@{AddStringC}!Packet@{Packet}}
+\subsubsection[{AddStringC}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::AddStringC (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ add, }
+\item[{size\_\-t}]{ length, }
+\item[{bool}]{ prefix}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a5a9857fa7701741a9be369c56c97ab53}
+
+
+Adds a C string to the packet. 
+
+Adds {\itshape add\/} to this object. Data is added to the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em add}]C string to add. \item[{\em length}]Length of C string, if 0 then the string must be NULL terminated and the length will be calculated automatically.. \item[{\em prefix}]If true the string will be added with a prefix that is used by GetStringC to determine its length and how much data to get. \end{DoxyParams}
+\hypertarget{class_packet_a908f6daabb43beabbae997008b257cf3}{
+\index{Packet@{Packet}!addWSABUF@{addWSABUF}}
+\index{addWSABUF@{addWSABUF}!Packet@{Packet}}
+\subsubsection[{addWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} Packet::addWSABUF (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ addMe, }
+\item[{size\_\-t}]{ used}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a908f6daabb43beabbae997008b257cf3}
+
+
+Addition operator (indirect). 
+
+The contents of this object is not changed.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addMe}]WSABUF we want to add to this object. The contents of this object is not changed, the addition happens in an auxiliary object is returned. \item[{\em used}]Number of bytes of {\itshape addMe\/} that are in use. Note that {\itshape addMe.len\/} indicates the size of the buffer rather than the number of bytes in use. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a packet containing {\itshape addMe\/} added to this object. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a72a324d12c83b183f77194b5d9c4ab72}{
+\index{Packet@{Packet}!ChangeMemorySize@{ChangeMemorySize}}
+\index{ChangeMemorySize@{ChangeMemorySize}!Packet@{Packet}}
+\subsubsection[{ChangeMemorySize}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::ChangeMemorySize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a72a324d12c83b183f77194b5d9c4ab72}
+
+
+Changes the memory size of the packet without erasing its contents. 
+
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} cannot be decreased below \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}, if you try to do this the \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} will be set to = \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} as it decreases as much as possible.\par
+\par
+
+
+See \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} for more information on memory size.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]New memory size. \end{DoxyParams}
+\hypertarget{class_packet_a18fe5254e32ac247d9a254f0c713d6b6}{
+\index{Packet@{Packet}!Clear@{Clear}}
+\index{Clear@{Clear}!Packet@{Packet}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a18fe5254e32ac247d9a254f0c713d6b6}
+
+
+Empties packet and resets variables. 
+
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} and \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} are left unchanged. \hypertarget{class_packet_a9e3c011323e4805e3fd3ffc87560e8c9}{
+\index{Packet@{Packet}!compareWSABUF@{compareWSABUF}}
+\index{compareWSABUF@{compareWSABUF}!Packet@{Packet}}
+\subsubsection[{compareWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::compareWSABUF (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ copyMe, }
+\item[{size\_\-t}]{ used}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a9e3c011323e4805e3fd3ffc87560e8c9}
+
+
+WSABUF equality operator. 
+
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} is compared with {\itshape used\/}. \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} is compared with {\itshape copyMe.buf's\/} contents.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]WSABUF to compare. \item[{\em used}]Number of bytes used in WSABUF. Note that copyMe.len indicates only the size of the buffer, not how much of the buffer is in use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape copyMe\/} and this object are the same, false if they are different. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a41d94997f70041ab7498c07387e9472f}{
+\index{Packet@{Packet}!Copy@{Copy}}
+\index{Copy@{Copy}!Packet@{Packet}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf ComString} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_a41d94997f70041ab7498c07387e9472f}
+
+
+Copy constructor / assignment operator helper function. 
+
+\begin{DoxyWarning}{Warning}
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} and packet::data must be valid (for both objects) before using this method e.g. If memSize is 0 then data must be NULL.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]String to copy. \end{DoxyParams}
+\hypertarget{class_packet_ae965e1981922f3176ed91a352a152d9f}{
+\index{Packet@{Packet}!Copy@{Copy}}
+\index{Copy@{Copy}!Packet@{Packet}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_ae965e1981922f3176ed91a352a152d9f}
+
+
+Copy constructor / assignment operator helper function. 
+
+\begin{DoxyWarning}{Warning}
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} and packet::data must be valid (for both objects) before using this method e.g. If memSize is 0 then data must be NULL.
+
+Never let this method copy dataPtrChanged, because it is a deep copy!
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]\hyperlink{class_packet}{Packet} to be copied into this object. \end{DoxyParams}
+\hypertarget{class_packet_aa25d95a05c5b2b40eb59b44a203d7570}{
+\index{Packet@{Packet}!Copy@{Copy}}
+\index{Copy@{Copy}!Packet@{Packet}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Copy (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_aa25d95a05c5b2b40eb59b44a203d7570}
+
+
+Copy constructor / assignment operator helper function. 
+
+\begin{DoxyWarning}{Warning}
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} and packet::data must be valid (for both objects) before using this method e.g. If memSize is 0 then data must be NULL.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]String to copy. \end{DoxyParams}
+\hypertarget{class_packet_acd150eca1bc37b444f37598c7181d808}{
+\index{Packet@{Packet}!CopyIntoWSABUF@{CopyIntoWSABUF}}
+\index{CopyIntoWSABUF@{CopyIntoWSABUF}!Packet@{Packet}}
+\subsubsection[{CopyIntoWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::CopyIntoWSABUF (
+\begin{DoxyParamCaption}
+\item[{WSABUF \&}]{ buffer}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_acd150eca1bc37b444f37598c7181d808}
+
+
+Copies packet into a WSABUF, allocating new memory and ignoring pre-\/existing WSABUF contents. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em buffer}]The buffer to copy into. \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Contents of {\itshape buffer\/} is ignored so any memory deallocation of the buffer should take place before calling this method. 
+\end{DoxyWarning}
+\hypertarget{class_packet_a4514e3e3fa894e5b4d6f5fab5f091ca3}{
+\index{Packet@{Packet}!Decrypt@{Decrypt}}
+\index{Decrypt@{Decrypt}!Packet@{Packet}}
+\subsubsection[{Decrypt}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Decrypt (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} \&}]{ key, }
+\item[{bool}]{ block = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a4514e3e3fa894e5b4d6f5fab5f091ca3}
+
+
+Decrypts packet. 
+
+Note that you must not read or write data to the packet while the operation is in progress.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} = 0. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} $<$ 16. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} \% 16 != 0.\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Key to use when decrypting, must be the same as the key used for encrypting for decryption to work. \item[{\em block}]If true the method will not return until the encryption operation has finished, if false it will return straight away and \hyperlink{class_packet_a6c4f956822f2a7becf84f94d55642da6}{Packet::IsLastEncryptionOperationFinished} and \hyperlink{class_packet_a86cd877cd9866ffa52eb83f147d01d69}{Packet::WaitUntilLastEncryptionOperationFinished} can be used to determine when it is completed. \end{DoxyParams}
+\hypertarget{class_packet_a20fdfbf92489c69fbebaf937c59a9be4}{
+\index{Packet@{Packet}!DecryptWSABUF@{DecryptWSABUF}}
+\index{DecryptWSABUF@{DecryptWSABUF}!Packet@{Packet}}
+\subsubsection[{DecryptWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::DecryptWSABUF (
+\begin{DoxyParamCaption}
+\item[{WSABUF}]{ decryptMe, }
+\item[{size\_\-t}]{ used, }
+\item[{size\_\-t}]{ offset, }
+\item[{const {\bf EncryptKey} $\ast$}]{ key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_packet_a20fdfbf92489c69fbebaf937c59a9be4}
+
+
+Decrypts WSABUF. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em decryptMe}]WSABUF to decrypt. \item[{\em used}]Number of bytes of the WSABUF buffer that are in use; not including {\itshape offset\/} bytes (note that WSABUF.len indicates the size of the buffer, not the amount that has been filled). \item[{\em offset}]Number of bytes from the start of the buffer that should be ignored (i.e. Not copied). Remember that {\itshape used\/} does not include {\itshape offset\/} bytes. \item[{\em key}]Decryption key to use while decrypting. \end{DoxyParams}
+\hypertarget{class_packet_aa5acb9e08849a417575ad51167051fe9}{
+\index{Packet@{Packet}!DefaultVariables@{DefaultVariables}}
+\index{DefaultVariables@{DefaultVariables}!Packet@{Packet}}
+\subsubsection[{DefaultVariables}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::DefaultVariables (
+\begin{DoxyParamCaption}
+\item[{bool}]{ paraFull}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_aa5acb9e08849a417575ad51167051fe9}
+
+
+Sets internal variables to default. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraFull}]If true then data and memSize are set to 0, this is only done in the constructor because in all other places memory should be cleaned up. \end{DoxyParams}
+\hypertarget{class_packet_aa4e03b15b09c1feb607aae889cda4f0f}{
+\index{Packet@{Packet}!DoEncryptionOperation@{DoEncryptionOperation}}
+\index{DoEncryptionOperation@{DoEncryptionOperation}!Packet@{Packet}}
+\subsubsection[{DoEncryptionOperation}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::DoEncryptionOperation (
+\begin{DoxyParamCaption}
+\item[{bool}]{ encryption, }
+\item[{const {\bf EncryptKey} \&}]{ key, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_aa4e03b15b09c1feb607aae889cda4f0f}
+
+
+Starts an encryption or decryption operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em encryption}]If true an encryption operation will be started, if false a decryption operation will be started. \item[{\em key}]The key to use. \item[{\em block}]If true the method will not return until the encryption operation has finished, if false it will return straight away and \hyperlink{class_packet_a6c4f956822f2a7becf84f94d55642da6}{Packet::IsLastEncryptionOperationFinished} and \hyperlink{class_packet_a86cd877cd9866ffa52eb83f147d01d69}{Packet::WaitUntilLastEncryptionOperationFinished} can be used to determine when it is completed. \end{DoxyParams}
+\hypertarget{class_packet_a7960ab336730d43e2358b8fd2876a074}{
+\index{Packet@{Packet}!Encrypt@{Encrypt}}
+\index{Encrypt@{Encrypt}!Packet@{Packet}}
+\subsubsection[{Encrypt}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Encrypt (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} \&}]{ key, }
+\item[{bool}]{ block = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a7960ab336730d43e2358b8fd2876a074}
+
+
+Encrypts packet. 
+
+Note that you must not read or write data to the packet while the operation is in progress.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} = 0.\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Key to use when encrypting, must be the same as the key used for decrypting for decryption to work. \item[{\em block}]If true the method will not return until the encryption operation has finished, if false it will return straight away and \hyperlink{class_packet_a6c4f956822f2a7becf84f94d55642da6}{Packet::IsLastEncryptionOperationFinished} and \hyperlink{class_packet_a86cd877cd9866ffa52eb83f147d01d69}{Packet::WaitUntilLastEncryptionOperationFinished} can be used to determine when it is completed. \end{DoxyParams}
+\hypertarget{class_packet_a64281460528b923a5d151d2180cbd82f}{
+\index{Packet@{Packet}!equalWSABUF@{equalWSABUF}}
+\index{equalWSABUF@{equalWSABUF}!Packet@{Packet}}
+\subsubsection[{equalWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} \& Packet::equalWSABUF (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ copyMe, }
+\item[{size\_\-t}]{ used, }
+\item[{size\_\-t}]{ offset}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a64281460528b923a5d151d2180cbd82f}
+
+
+WSABUF assignment operator. 
+
+\begin{DoxyNote}{Note}
+This method does not actually implement the = operator because 3 parameters (not just one) are required. 
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If copyMe.len $<$ {\itshape used\/} + {\itshape offset\/} as this would cause a buffer overrun.\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]WSABUF to copy. \item[{\em used}]Number of bytes of the WSABUF buffer that are in use; not including {\itshape offset\/} bytes (note that WSABUF.len indicates the size of the buffer, not the amount that has been filled). \item[{\em offset}]Number of bytes from the start of the buffer that should be ignored (i.e. Not copied). Remember that {\itshape used\/} does not include {\itshape offset\/} bytes.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a58b00ec8ee88525187c8a095572530a9}{
+\index{Packet@{Packet}!Erase@{Erase}}
+\index{Erase@{Erase}!Packet@{Packet}}
+\subsubsection[{Erase}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Erase (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ startPos, }
+\item[{size\_\-t}]{ amount}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a58b00ec8ee88525187c8a095572530a9}
+
+
+Erases part of the packet, decreasing \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} and \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em startPos}]Position to begin erasing. \item[{\em amount}]Number of bytes to erase. \end{DoxyParams}
+\hypertarget{class_packet_aa095be7beee502a044b0d0fb2954713e}{
+\index{Packet@{Packet}!Find@{Find}}
+\index{Find@{Find}!Packet@{Packet}}
+\subsubsection[{Find}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::Find (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ startPos, }
+\item[{size\_\-t}]{ endPos, }
+\item[{const {\bf Packet} \&}]{ findMe, }
+\item[{size\_\-t $\ast$}]{ result}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_aa095be7beee502a044b0d0fb2954713e}
+
+
+Searches for a packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em startPos}]The position to start searching from within this object (inclusive). \item[{\em endPos}]The position to stop searching within this object (inclusive). If 0 then the search will search up to the end of the packet. \item[{\em findMe}]The packet to find. \item[\mbox{\tt[out]} {\em result}]Set to the found position, if no position is found then this is not modified. The found position will be the location that {\itshape findMe\/} begins. If NULL then is ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape findMe\/} was found, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a80e211740ec18468ac623e2a333234e0}{
+\index{Packet@{Packet}!Get@{Get}}
+\index{Get@{Get}!Packet@{Packet}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Packet::Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_packet_a80e211740ec18468ac623e2a333234e0}
+
+
+Retrieves data of any type from the packet. 
+
+Data is retrieved from the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+C strings should not be retrieved using this method, use \hyperlink{class_packet_adda05c109561de815c266d444c6285f0}{GetStringC()} instead.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If retrieving data would mean exceeding the used size. \end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+retrieved data. 
+\end{DoxyReturn}
+\hypertarget{class_packet_ac2b9d9a1cb9c9e785ff119c61d2b93c7}{
+\index{Packet@{Packet}!GetAge@{GetAge}}
+\index{GetAge@{GetAge}!Packet@{Packet}}
+\subsubsection[{GetAge}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetAge (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_ac2b9d9a1cb9c9e785ff119c61d2b93c7}
+
+
+Retrieves \hyperlink{class_packet_af82113a0e0b36819fcbe4b8245db579e}{Packet::age}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_packet_af82113a0e0b36819fcbe4b8245db579e}{Packet::age}. 
+\end{DoxyReturn}
+\hypertarget{class_packet_adc3e10f8e3b90b281e524a08bb935a43}{
+\index{Packet@{Packet}!GetClientFrom@{GetClientFrom}}
+\index{GetClientFrom@{GetClientFrom}!Packet@{Packet}}
+\subsubsection[{GetClientFrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetClientFrom (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_adc3e10f8e3b90b281e524a08bb935a43}
+
+
+Retrieves \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{Packet::clientFrom}. 
+
+\begin{DoxyReturn}{Returns}
+the ID of the client that this packet was received from. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a357ea92c52237847d12fa80f433fb839}{
+\index{Packet@{Packet}!GetClockT@{GetClockT}}
+\index{GetClockT@{GetClockT}!Packet@{Packet}}
+\subsubsection[{GetClockT}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t Packet::GetClockT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a357ea92c52237847d12fa80f433fb839}
+
+
+Retrieves a variable of type clock\_\-t from the packet. 
+
+Data is retrieved from the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+Note that the cursor will move \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{Utility::LargestSupportedBytesInt} length even if sizeof(clock\_\-t) is smaller. This is to ensure that the different bit versions of the module are compatible with each other.
+
+\begin{DoxyReturn}{Returns}
+data from the packet. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a4864d45925c6798a6199929a038ca7f3}{
+\index{Packet@{Packet}!GetCursor@{GetCursor}}
+\index{GetCursor@{GetCursor}!Packet@{Packet}}
+\subsubsection[{GetCursor}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetCursor (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a4864d45925c6798a6199929a038ca7f3}
+
+
+Retrieves \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a5cd834326344e1de941a122ec1cc21ce}{
+\index{Packet@{Packet}!GetDataPtr@{GetDataPtr}}
+\index{GetDataPtr@{GetDataPtr}!Packet@{Packet}}
+\subsubsection[{GetDataPtr}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Packet::GetDataPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a5cd834326344e1de941a122ec1cc21ce}
+
+
+Retrieves a mutable pointer to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. 
+
+\begin{DoxyWarning}{Warning}
+Incorrect use of this method can cause severe problems, use with caution. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to data. 
+\end{DoxyReturn}
+\hypertarget{class_packet_aac86d0fa93713d18ff931ef1deafd924}{
+\index{Packet@{Packet}!GetDataPtr@{GetDataPtr}}
+\index{GetDataPtr@{GetDataPtr}!Packet@{Packet}}
+\subsubsection[{GetDataPtr}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Packet::GetDataPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_aac86d0fa93713d18ff931ef1deafd924}
+
+
+Retrieves a constant pointer to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. 
+
+\begin{DoxyWarning}{Warning}
+Incorrect use of this method can cause severe problems, use with caution. 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to data. 
+\end{DoxyReturn}
+\hypertarget{class_packet_ae86889cb0cd14f16837424268c07d72d}{
+\index{Packet@{Packet}!GetDataPtrCopy@{GetDataPtrCopy}}
+\index{GetDataPtrCopy@{GetDataPtrCopy}!Packet@{Packet}}
+\subsubsection[{GetDataPtrCopy}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Packet::GetDataPtrCopy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_ae86889cb0cd14f16837424268c07d72d}
+
+
+Returns a copy of \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data}. 
+
+\begin{DoxyReturn}{Returns}
+copy of data. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a4726a5ac096197b383fd18c728711cf1}{
+\index{Packet@{Packet}!GetHex@{GetHex}}
+\index{GetHex@{GetHex}!Packet@{Packet}}
+\subsubsection[{GetHex}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Packet::GetHex (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ startPos, }
+\item[{size\_\-t}]{ numBytes}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a4726a5ac096197b383fd18c728711cf1}
+
+
+Retrieves a NULL terminated string of hexadecimal e.g. 2b7e151628aed2a6 from the packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em startPos}]The position to start retrieving from. \item[{\em numBytes}]Number of bytes to retrieve.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+hexadecimal string which should be deallocated using delete\mbox{[}\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a7ea59cb087fd573b502f294662f3be43}{
+\index{Packet@{Packet}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!Packet@{Packet}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a7ea59cb087fd573b502f294662f3be43}
+
+
+Retrieves \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{Packet::instance}. 
+
+\begin{DoxyReturn}{Returns}
+instance ID that packet was received on. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a2488b5121b48f108f5acf5f85c234d8a}{
+\index{Packet@{Packet}!GetMemorySize@{GetMemorySize}}
+\index{GetMemorySize@{GetMemorySize}!Packet@{Packet}}
+\subsubsection[{GetMemorySize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetMemorySize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a2488b5121b48f108f5acf5f85c234d8a}
+
+
+Retrieves \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize}. 
+\end{DoxyReturn}
+\hypertarget{class_packet_ac35aada76c25f06260afff9e0fd54552}{
+\index{Packet@{Packet}!GetNullTerminated@{GetNullTerminated}}
+\index{GetNullTerminated@{GetNullTerminated}!Packet@{Packet}}
+\subsubsection[{GetNullTerminated}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Packet::GetNullTerminated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_ac35aada76c25f06260afff9e0fd54552}
+
+
+Throws an exception if the contents of the packet is not NULL terminated. 
+
+\begin{DoxyReturn}{Returns}
+a constant pointer to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} which is NULL terminated.
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em clError}]If the contents of the packet are not NULL terminated. \end{DoxyExceptions}
+\hypertarget{class_packet_a366951c2268a1e7745802ef9ed28dc28}{
+\index{Packet@{Packet}!GetNullTerminated@{GetNullTerminated}}
+\index{GetNullTerminated@{GetNullTerminated}!Packet@{Packet}}
+\subsubsection[{GetNullTerminated}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Packet::GetNullTerminated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a366951c2268a1e7745802ef9ed28dc28}
+
+
+Modifies the packet so that its data is a NULL terminated string. 
+
+This allows the \hyperlink{class_packet}{Packet} class to be used as a string class.
+
+\begin{DoxyReturn}{Returns}
+a mutable pointer to \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} which is NULL terminated. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a557e791794531dd1642e352253ff0262}{
+\index{Packet@{Packet}!GetOperation@{GetOperation}}
+\index{GetOperation@{GetOperation}!Packet@{Packet}}
+\subsubsection[{GetOperation}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetOperation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a557e791794531dd1642e352253ff0262}
+
+
+Retrieves \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{Packet::operation}. 
+
+\begin{DoxyReturn}{Returns}
+operation ID that packet was received on. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a5e811abd88202438a9b1b887a0baf65b}{
+\index{Packet@{Packet}!GetPacketRemainder@{GetPacketRemainder}}
+\index{GetPacketRemainder@{GetPacketRemainder}!Packet@{Packet}}
+\subsubsection[{GetPacketRemainder}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetPacketRemainder (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a5e811abd88202438a9b1b887a0baf65b}
+
+
+Retrieves the number of unread bytes in the packet. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} -\/ \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. 
+\end{DoxyReturn}
+\hypertarget{class_packet_ac42cb39221c733bfbf2c405ecf436250}{
+\index{Packet@{Packet}!GetPrefix@{GetPrefix}}
+\index{GetPrefix@{GetPrefix}!Packet@{Packet}}
+\subsubsection[{GetPrefix}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T $>$ T Packet::GetPrefix (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ position}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_packet_ac42cb39221c733bfbf2c405ecf436250}
+
+
+Retrieves data of any type from the specified position without moving the cursor. 
+
+C strings should not be retrieved using this method, use \hyperlink{class_packet_adda05c109561de815c266d444c6285f0}{GetStringC()} instead.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If retrieving data would mean exceeding the used size.\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em position}]Position to retrieve data from.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retrieved data. 
+\end{DoxyReturn}
+\hypertarget{class_packet_aeb3920d9196357139ad67a3b24054697}{
+\index{Packet@{Packet}!GetPrefixSizeT@{GetPrefixSizeT}}
+\index{GetPrefixSizeT@{GetPrefixSizeT}!Packet@{Packet}}
+\subsubsection[{GetPrefixSizeT}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetPrefixSizeT (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ position = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_aeb3920d9196357139ad67a3b24054697}
+
+
+Retrieves a variable of type size\_\-t from the specified position without moving the cursor. 
+
+Note that the cursor will move \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{Utility::LargestSupportedBytesInt} length even if sizeof(size\_\-t) is smaller. This is to ensure that the different bit versions of the module are compatible with each other.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em position}]Position to retrieve data from.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retrieved data. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a27a001a30a7a5c09869f1e1f567e09fa}{
+\index{Packet@{Packet}!GetSizeT@{GetSizeT}}
+\index{GetSizeT@{GetSizeT}!Packet@{Packet}}
+\subsubsection[{GetSizeT}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetSizeT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a27a001a30a7a5c09869f1e1f567e09fa}
+
+
+Retrieves a variable of type size\_\-t from the packet. 
+
+Data is retrieved from the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.\par
+\par
+
+
+Note that the cursor will move \hyperlink{namespace_utility_a1a17222360aeac0c7e8b5a9b3b13cc58}{Utility::LargestSupportedBytesInt} length even if sizeof(size\_\-t) is smaller. This is to ensure that the different bit versions of the module are compatible with each other.
+
+\begin{DoxyReturn}{Returns}
+data from the packet. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a322f2409cab20ad6748753c565997aaa}{
+\index{Packet@{Packet}!GetStringC@{GetStringC}}
+\index{GetStringC@{GetStringC}!Packet@{Packet}}
+\subsubsection[{GetStringC}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::GetStringC (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ destination, }
+\item[{size\_\-t}]{ length, }
+\item[{bool}]{ nullTerminated}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a322f2409cab20ad6748753c565997aaa}
+Gets a C string from the packet, copying it into the specified memory location.
+
+\begin{DoxyWarning}{Warning}
+{\itshape destination\/} must have enough memory to store the retrieved string, use \hyperlink{class_packet_a53925d61303db6897c72afc29b2ef2a2}{GetStringSize()} to determine how much memory is required.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em destination}]Pointer to memory where C string should be copied into. \item[{\em length}]Length of string to retrieve, if 0 then the string must have a prefix which indicates its length and this is used to determine how much data to retrieve. \item[{\em nullTerminated}]If true return string has a null terminator appended. \end{DoxyParams}
+\hypertarget{class_packet_adda05c109561de815c266d444c6285f0}{
+\index{Packet@{Packet}!GetStringC@{GetStringC}}
+\index{GetStringC@{GetStringC}!Packet@{Packet}}
+\subsubsection[{GetStringC}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ Packet::GetStringC (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ length, }
+\item[{bool}]{ nullTerminated}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_adda05c109561de815c266d444c6285f0}
+
+
+Gets a C string from the packet, allocating memory to it and returning it. 
+
+Data is retrieved from the packet's data buffer starting at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is moved along by the size of the data retrieved.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em length}]Length of string to retrieve, if 0 then the string must have a prefix which indicates its length and this is used to determine how much data to retrieve. \item[{\em nullTerminated}]If true return string has a null terminator appended.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+c string from the packet. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a53925d61303db6897c72afc29b2ef2a2}{
+\index{Packet@{Packet}!GetStringSize@{GetStringSize}}
+\index{GetStringSize@{GetStringSize}!Packet@{Packet}}
+\subsubsection[{GetStringSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetStringSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a53925d61303db6897c72afc29b2ef2a2}
+
+
+Retrieves the size of a string by reading its prefix. 
+
+The string must have a prefix or this command will return meaningless values.\par
+\par
+
+
+The prefix is read at \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is NOT changed; this means that you can use this command and straight away use \hyperlink{class_packet_adda05c109561de815c266d444c6285f0}{GetStringC()}.
+
+\begin{DoxyReturn}{Returns}
+the size of the string. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a443cddd3bfce9890d8ba59ffa42dbe1b}{
+\index{Packet@{Packet}!GetUsedSize@{GetUsedSize}}
+\index{GetUsedSize@{GetUsedSize}!Packet@{Packet}}
+\subsubsection[{GetUsedSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Packet::GetUsedSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a443cddd3bfce9890d8ba59ffa42dbe1b}
+
+
+Retrieves \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}. 
+\end{DoxyReturn}
+\hypertarget{class_packet_acc49a731fd83881c2d925ce1eccdefc2}{
+\index{Packet@{Packet}!IncCursor@{IncCursor}}
+\index{IncCursor@{IncCursor}!Packet@{Packet}}
+\subsubsection[{IncCursor}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::IncCursor (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ amount}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_acc49a731fd83881c2d925ce1eccdefc2}
+
+
+Increases \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If new cursor position $>$ \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}.\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]Amount to increase \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} by. \end{DoxyParams}
+\hypertarget{class_packet_a7eba2a1d780f6723d98452c425f636c6}{
+\index{Packet@{Packet}!Insert@{Insert}}
+\index{Insert@{Insert}!Packet@{Packet}}
+\subsubsection[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::Insert (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ amount}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a7eba2a1d780f6723d98452c425f636c6}
+
+
+Inserts empty space at cursorPos, changing \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} and \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} as necessary. 
+
+\hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} is not changed; this means that data can be written over empty space straight away.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em amount}]Number of bytes to insert. \end{DoxyParams}
+\hypertarget{class_packet_a6c4f956822f2a7becf84f94d55642da6}{
+\index{Packet@{Packet}!IsLastEncryptionOperationFinished@{IsLastEncryptionOperationFinished}}
+\index{IsLastEncryptionOperationFinished@{IsLastEncryptionOperationFinished}!Packet@{Packet}}
+\subsubsection[{IsLastEncryptionOperationFinished}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::IsLastEncryptionOperationFinished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a6c4f956822f2a7becf84f94d55642da6}
+
+
+Determines whether the last encryption operation has finished. 
+
+\begin{DoxyReturn}{Returns}
+true if last encryption operation finished, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a538a7c5b42aa2b17697ed0d3f65bd0ac}{
+\index{Packet@{Packet}!IsNullTerminated@{IsNullTerminated}}
+\index{IsNullTerminated@{IsNullTerminated}!Packet@{Packet}}
+\subsubsection[{IsNullTerminated}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::IsNullTerminated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a538a7c5b42aa2b17697ed0d3f65bd0ac}
+
+
+Determine whether the data of the packet is null terminated. 
+
+This method checks the last byte of the packet to see if it is null terminated.
+
+\begin{DoxyReturn}{Returns}
+true if null terminated, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_packet_ae9ea5d512acd9f1301da990dc58212e2}{
+\index{Packet@{Packet}!LoadFull@{LoadFull}}
+\index{LoadFull@{LoadFull}!Packet@{Packet}}
+\subsubsection[{LoadFull}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::LoadFull (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ paraData, }
+\item[{size\_\-t}]{ paraUsed, }
+\item[{size\_\-t}]{ paraOffset, }
+\item[{size\_\-t}]{ paraClientFrom, }
+\item[{size\_\-t}]{ paraOperation, }
+\item[{size\_\-t}]{ paraInstance, }
+\item[{clock\_\-t}]{ paraClock}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_ae9ea5d512acd9f1301da990dc58212e2}
+
+
+Load packet with data and packet options. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraData}]Data to copy into the packet. \item[{\em paraUsed}]Number of bytes of the WSABUF buffer ({\itshape paraData\/}) that are in use; not including {\itshape paraOffset\/} bytes (note that WSABUF.len indicates the size of the buffer, not the amount that has been filled). \item[{\em paraOffset}]Number of bytes from the start of the buffer ({\itshape paraData\/}) that should be ignored (i.e. Not copied). Remember that {\itshape paraUsed\/} does not include {\itshape paraOffset\/} bytes. \item[{\em paraClientFrom}]The client that the packet was received from. ClientFrom is set to this. \item[{\em paraOperation}]The operation of the packet. ParaOperation is set to this. \item[{\em paraInstance}]The instance that the packet was received on. Operation is set to this. \item[{\em paraClock}]The age value of the packet. Clock is set to this. \end{DoxyParams}
+\hypertarget{class_packet_af6db78358a62d4df2f8a5b0e890adc5b}{
+\index{Packet@{Packet}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Packet@{Packet}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_af6db78358a62d4df2f8a5b0e890adc5b}
+
+
+Not equal operator. 
+
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}, \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} and \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} are ignored in the comparison.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to compare.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if {\itshape param\/} and this object are the same, true if they are different. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a31ba2c941a82fa4efdfb1527e3dbfd3b}{
+\index{Packet@{Packet}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!Packet@{Packet}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::operator!= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ str}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a31ba2c941a82fa4efdfb1527e3dbfd3b}
+
+
+C string not equal operator. 
+
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} is compared with {\itshape param's\/} length. \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} is compared with {\itshape param's\/} contents.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em param}]Null terminated string to compare.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if {\itshape param\/} and this object are the same, true if they are different. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a38a52f1b08658b5e1eae979967b02685}{
+\index{Packet@{Packet}!operator+@{operator+}}
+\index{operator+@{operator+}!Packet@{Packet}}
+\subsubsection[{operator+}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} Packet::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ addMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a38a52f1b08658b5e1eae979967b02685}
+
+
+Addition operator (indirect). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addMe}]\hyperlink{class_packet}{Packet} we want to add to this object. The contents of this object is not changed, the addition happens in an auxiliary object is returned.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a packet containing {\itshape addMe\/} added to this object. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a076a46dcad5f13d44ded9efe7b16a938}{
+\index{Packet@{Packet}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Packet@{Packet}}
+\subsubsection[{operator+=}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ addMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a076a46dcad5f13d44ded9efe7b16a938}
+
+
+Addition operator (direct). 
+
+{\itshape addMe\/} is added directly to this object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addMe}]\hyperlink{class_packet}{Packet} we want to add to this object. \end{DoxyParams}
+\hypertarget{class_packet_ac980b3b22cf9f2110c637c67c20de499}{
+\index{Packet@{Packet}!operator=@{operator=}}
+\index{operator=@{operator=}!Packet@{Packet}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} \& Packet::operator= (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_ac980b3b22cf9f2110c637c67c20de499}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]String to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a42bf2d88a9a7449727ffb705fb9f0612}{
+\index{Packet@{Packet}!operator=@{operator=}}
+\index{operator=@{operator=}!Packet@{Packet}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} \& Packet::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ComString} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a42bf2d88a9a7449727ffb705fb9f0612}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]COM string to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a7f957f789fa6ad8875d1afe4e5f4b1dc}{
+\index{Packet@{Packet}!operator=@{operator=}}
+\index{operator=@{operator=}!Packet@{Packet}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} \& Packet::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a7f957f789fa6ad8875d1afe4e5f4b1dc}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_packet_a466f52196626082faad1bda984b18491}{
+\index{Packet@{Packet}!operator==@{operator==}}
+\index{operator==@{operator==}!Packet@{Packet}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::operator== (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ param}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_a466f52196626082faad1bda984b18491}
+
+
+C string equality operator. 
+
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} is compared with {\itshape param's\/} length. \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} is compared with {\itshape param's\/} contents.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em param}]Null terminated string to compare.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape param\/} and this object are the same, false if they are different. 
+\end{DoxyReturn}
+\hypertarget{class_packet_ad6ddfcae873a585902bf3fcc16054951}{
+\index{Packet@{Packet}!operator==@{operator==}}
+\index{operator==@{operator==}!Packet@{Packet}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ param}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_ad6ddfcae873a585902bf3fcc16054951}
+
+
+Equality operator. 
+
+\hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}, \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} and \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} are ignored in the comparison.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em param}]\hyperlink{class_packet}{Packet} to compare.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape param\/} and this object are the same, false if they are different. 
+\end{DoxyReturn}
+\hypertarget{class_packet_aa035f4665c27f8960ae6a585fb3a9ab6}{
+\index{Packet@{Packet}!PtrIntoWSABUF@{PtrIntoWSABUF}}
+\index{PtrIntoWSABUF@{PtrIntoWSABUF}!Packet@{Packet}}
+\subsubsection[{PtrIntoWSABUF}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::PtrIntoWSABUF (
+\begin{DoxyParamCaption}
+\item[{WSABUF \&}]{ buffer}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_aa035f4665c27f8960ae6a585fb3a9ab6}
+
+
+Copies pointer of packet data into a WSABUF, ignoring pre-\/existing WSABUF contents. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em buffer}]The buffer to copy into.\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+Contents of {\itshape buffer\/} is ignored so any memory deallocation of the buffer should take place before calling this method. 
+
+Manipulation of this packet will impact on the buffer since the two will be linked to the same data pointer, use with caution. 
+
+Do not modify the data of buffer as this would violate const correctness. \par
+ this method is constant because it is assumed that the buffer will not be modified. 
+\end{DoxyWarning}
+\hypertarget{class_packet_a8ac622b3f32dd436e4fdaf345459a401}{
+\index{Packet@{Packet}!SetAge@{SetAge}}
+\index{SetAge@{SetAge}!Packet@{Packet}}
+\subsubsection[{SetAge}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetAge (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ age}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a8ac622b3f32dd436e4fdaf345459a401}
+
+
+Changes \hyperlink{class_packet_af82113a0e0b36819fcbe4b8245db579e}{Packet::age}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em age}]New age value. \end{DoxyParams}
+\hypertarget{class_packet_a74b80d681488bffc70bcc6d6ba368e71}{
+\index{Packet@{Packet}!SetClientFrom@{SetClientFrom}}
+\index{SetClientFrom@{SetClientFrom}!Packet@{Packet}}
+\subsubsection[{SetClientFrom}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetClientFrom (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientFrom}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a74b80d681488bffc70bcc6d6ba368e71}
+
+
+Sets \hyperlink{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{Packet::clientFrom}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientFrom}]The ID of the client that this packet was received from. \end{DoxyParams}
+\hypertarget{class_packet_addeffecd28116c91743d6dd908d1b9c6}{
+\index{Packet@{Packet}!SetCursor@{SetCursor}}
+\index{SetCursor@{SetCursor}!Packet@{Packet}}
+\subsubsection[{SetCursor}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetCursor (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraCursor}
+\end{DoxyParamCaption}
+) const}}
+\label{class_packet_addeffecd28116c91743d6dd908d1b9c6}
+
+
+Changes \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraCursor}]New cursor position.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape paraCursor\/} $>$ \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}. \end{DoxyExceptions}
+\hypertarget{class_packet_a38192749e78469e015c2234fa5f3fed9}{
+\index{Packet@{Packet}!SetDataPtr@{SetDataPtr}}
+\index{SetDataPtr@{SetDataPtr}!Packet@{Packet}}
+\subsubsection[{SetDataPtr}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetDataPtr (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{ newPtr, }
+\item[{size\_\-t}]{ paraMemSize, }
+\item[{size\_\-t}]{ paraUsedSize}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a38192749e78469e015c2234fa5f3fed9}
+
+
+Changes \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} to point to an alternative point in memory that is not managed by the object. 
+
+The object will no longer attempt to deallocate or reallocate this memory and assumes no responsibility over it.\par
+\par
+
+
+\hyperlink{class_packet_a3f7bc12f83b1a98be540be061af6a8e6}{SetMemorySize()} and \hyperlink{class_packet_a72a324d12c83b183f77194b5d9c4ab72}{ChangeMemorySize()} will fail.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape paraUsedSize\/} $>$ {\itshape paraMemSize\/}.\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newPtr}]New pointer to set \hyperlink{class_packet_a6ce50b69127890b9012cb91f287f137f}{Packet::data} to. \item[{\em paraMemSize}]Memory size of pointer. \item[{\em paraUsedSize}]Amount of memory pointed to by {\itshape newPtr\/} that should be considered in use. \end{DoxyParams}
+\hypertarget{class_packet_a1829784ec417688a1522ee4815ddda73}{
+\index{Packet@{Packet}!SetInstance@{SetInstance}}
+\index{SetInstance@{SetInstance}!Packet@{Packet}}
+\subsubsection[{SetInstance}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a1829784ec417688a1522ee4815ddda73}
+
+
+Sets \hyperlink{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{Packet::instance}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instance}]Instance ID that packet was received on. \end{DoxyParams}
+\hypertarget{class_packet_a3f7bc12f83b1a98be540be061af6a8e6}{
+\index{Packet@{Packet}!SetMemorySize@{SetMemorySize}}
+\index{SetMemorySize@{SetMemorySize}!Packet@{Packet}}
+\subsubsection[{SetMemorySize}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetMemorySize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a3f7bc12f83b1a98be540be061af6a8e6}
+
+
+Changes the memory size of the packet, erasing all packet data in the process. 
+
+\hyperlink{class_packet}{Packet} options are not lost after using this command. Only \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize}, \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} and \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} are changes.\par
+\par
+
+
+See \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} for more information on memory size.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]New memory size. \end{DoxyParams}
+\hypertarget{class_packet_a84ea3a060f4063fd2a7496643b7f2495}{
+\index{Packet@{Packet}!SetOperation@{SetOperation}}
+\index{SetOperation@{SetOperation}!Packet@{Packet}}
+\subsubsection[{SetOperation}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::SetOperation (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ operation}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_a84ea3a060f4063fd2a7496643b7f2495}
+
+
+Sets \hyperlink{class_packet_a03920d292b5acc0f9223f6364d663001}{Packet::operation}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operation}]Operation ID that packet was received on. \end{DoxyParams}
+\hypertarget{class_packet_a60f8b04e48b7ae57289bb009d74e97a2}{
+\index{Packet@{Packet}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!Packet@{Packet}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool Packet::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_packet_a60f8b04e48b7ae57289bb009d74e97a2}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_packet_aec0d1088b95c8a2daa6a12affc28b2d9}{
+\index{Packet@{Packet}!UnsetDataPtr@{UnsetDataPtr}}
+\index{UnsetDataPtr@{UnsetDataPtr}!Packet@{Packet}}
+\subsubsection[{UnsetDataPtr}]{\setlength{\rightskip}{0pt plus 5cm}void Packet::UnsetDataPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_packet_aec0d1088b95c8a2daa6a12affc28b2d9}
+
+
+Undoes SetDataPtr returning \hyperlink{class_packet}{Packet} object to normal usage. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If dataPtrChanged = false. \end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_packet_af82113a0e0b36819fcbe4b8245db579e}{
+\index{Packet@{Packet}!age@{age}}
+\index{age@{age}!Packet@{Packet}}
+\subsubsection[{age}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf Packet::age}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_af82113a0e0b36819fcbe4b8245db579e}
+
+
+Value indicating packet age. 
+
+Usually the higher the value the younger the packet. \hypertarget{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}{
+\index{Packet@{Packet}!clientFrom@{clientFrom}}
+\index{clientFrom@{clientFrom}!Packet@{Packet}}
+\subsubsection[{clientFrom}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf Packet::clientFrom}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_ae3b05f3a3a910c466caa042f5b6961dd}
+
+
+ID of client that packet was received from. 
+
+If this value is not set value will be 0. \hypertarget{class_packet_acce561b50a43897e8fd0c03222b617bd}{
+\index{Packet@{Packet}!cursorPos@{cursorPos}}
+\index{cursorPos@{cursorPos}!Packet@{Packet}}
+\subsubsection[{cursorPos}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf Packet::cursorPos}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{class_packet_acce561b50a43897e8fd0c03222b617bd}
+
+
+Position within packet that \hyperlink{class_packet_ae9adff3647758cc7f8eb4c7d132e7ba4}{Add()} and \hyperlink{class_packet_a80e211740ec18468ac623e2a333234e0}{Get()} should begin reading or writing data. 
+
+\hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} $<$= \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize}.\par
+ \hyperlink{class_packet_acce561b50a43897e8fd0c03222b617bd}{Packet::cursorPos} $<$= \hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize}. \hypertarget{class_packet_a6ce50b69127890b9012cb91f287f137f}{
+\index{Packet@{Packet}!data@{data}}
+\index{data@{data}!Packet@{Packet}}
+\subsubsection[{data}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ {\bf Packet::data}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_a6ce50b69127890b9012cb91f287f137f}
+
+
+Memory block of size which contains packet data. 
+
+\hyperlink{class_packet_a1c2e5054d27221467e8db5dc9e71c04a}{Packet::memSize} is the amount of memory allocated.\par
+ \hyperlink{class_packet_a1da1eb4f461522942bada139f0d94acd}{Packet::usedSize} is the amount of memory in use. \hypertarget{class_packet_ab790106eb4fd31c750c3e39ee46c07c8}{
+\index{Packet@{Packet}!dataPtrChanged@{dataPtrChanged}}
+\index{dataPtrChanged@{dataPtrChanged}!Packet@{Packet}}
+\subsubsection[{dataPtrChanged}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf Packet::dataPtrChanged}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_ab790106eb4fd31c750c3e39ee46c07c8}
+
+
+When true data will not be cleaned up on destruction. 
+
+This is only set to true by \hyperlink{class_packet_a38192749e78469e015c2234fa5f3fed9}{SetDataPtr()} and can be reversed by \hyperlink{class_packet_aec0d1088b95c8a2daa6a12affc28b2d9}{UnsetDataPtr()}. It is useful when packet commands are required on an unassociated data block. \hypertarget{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}{
+\index{Packet@{Packet}!instance@{instance}}
+\index{instance@{instance}!Packet@{Packet}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf Packet::instance}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_afce0ae0cb900f81df3cb1aaa2d197495}
+
+
+ID of instance that packet was received on. 
+
+If value is not set value will be 0. \hypertarget{class_packet_a03920d292b5acc0f9223f6364d663001}{
+\index{Packet@{Packet}!operation@{operation}}
+\index{operation@{operation}!Packet@{Packet}}
+\subsubsection[{operation}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf Packet::operation}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_packet_a03920d292b5acc0f9223f6364d663001}
+
+
+Operation ID associated with packet. 
+
+If value is not set value will be 0. \hypertarget{class_packet_a42ceeb49399f078bf848896bef2fa529}{
+\index{Packet@{Packet}!prefixSizeBytes@{prefixSizeBytes}}
+\index{prefixSizeBytes@{prefixSizeBytes}!Packet@{Packet}}
+\subsubsection[{prefixSizeBytes}]{\setlength{\rightskip}{0pt plus 5cm}const unsigned int {\bf Packet::prefixSizeBytes} = {\bf Utility::LargestSupportedBytesInt}\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_packet_a42ceeb49399f078bf848896bef2fa529}
+
+
+Number of bytes including any padding that prefix added using \hyperlink{class_packet_a35b1fc5b107629dfc63dd0d9382cfb03}{AddSizeT()} or \hyperlink{class_packet_a60b85220c73a9474bfe17cb0e5d00771}{AddClockT()} use. 
+
+This is not always the same as sizeof(size\_\-t) or sizeof(clock\_\-t). 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Packet.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Packet.cpp\end{DoxyCompactItemize}

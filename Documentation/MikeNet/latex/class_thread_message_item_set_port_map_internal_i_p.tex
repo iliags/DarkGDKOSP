@@ -1,0 +1,108 @@
+\hypertarget{class_thread_message_item_set_port_map_internal_i_p}{
+\section{ThreadMessageItemSetPortMapInternalIP Class Reference}
+\label{class_thread_message_item_set_port_map_internal_i_p}\index{ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}}
+}
+
+
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItemSetPortMapInternalIP.h$>$}
+
+Inheritance diagram for ThreadMessageItemSetPortMapInternalIP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thread_message_item_set_port_map_internal_i_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item_set_port_map_internal_i_p_a77c4c9e319f6b98359de0441ea019801}{ThreadMessageItemSetPortMapInternalIP} (\hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} $\ast$\hyperlink{class_thread_message_item_set_port_map_internal_i_p_a98778535e120a46f73f7a7ab85856b0e}{takeActionOnMe}, const \hyperlink{class_packet}{Packet} \&\hyperlink{class_thread_message_item_set_port_map_internal_i_p_affffbd207f88ef6e0df40e7c1103d22e}{internalIP})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_set_port_map_internal_i_p_a272d3a103438d34acf9387c7d05d7e16}{
+\hyperlink{class_thread_message_item_set_port_map_internal_i_p_a272d3a103438d34acf9387c7d05d7e16}{$\sim$ThreadMessageItemSetPortMapInternalIP} (void)}
+\label{class_thread_message_item_set_port_map_internal_i_p_a272d3a103438d34acf9387c7d05d7e16}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_message_item_set_port_map_internal_i_p_ae6f401b5688f877b518626a49ad8935e}{TakeAction} ()
+\begin{DoxyCompactList}\small\item\em Changes the internal IP of a port map. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_set_port_map_internal_i_p_a98778535e120a46f73f7a7ab85856b0e}{
+\hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} $\ast$ \hyperlink{class_thread_message_item_set_port_map_internal_i_p_a98778535e120a46f73f7a7ab85856b0e}{takeActionOnMe}}
+\label{class_thread_message_item_set_port_map_internal_i_p_a98778535e120a46f73f7a7ab85856b0e}
+
+\begin{DoxyCompactList}\small\item\em Object to take action on. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_thread_message_item_set_port_map_internal_i_p_affffbd207f88ef6e0df40e7c1103d22e}{internalIP}
+\begin{DoxyCompactList}\small\item\em Internal IP of new port map. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_message_item_set_port_map_internal_i_p_a77c4c9e319f6b98359de0441ea019801}{
+\index{ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}!ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}}
+\index{ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}!ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}}
+\subsubsection[{ThreadMessageItemSetPortMapInternalIP}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItemSetPortMapInternalIP::ThreadMessageItemSetPortMapInternalIP (
+\begin{DoxyParamCaption}
+\item[{{\bf UpnpNatPortMapAction} $\ast$}]{ takeActionOnMe, }
+\item[{const {\bf Packet} \&}]{ internalIP}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_set_port_map_internal_i_p_a77c4c9e319f6b98359de0441ea019801}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em takeActionOnMe}]Object to take action on. \item[{\em internalIP}]The internal ip. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_message_item_set_port_map_internal_i_p_ae6f401b5688f877b518626a49ad8935e}{
+\index{ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}!TakeAction@{TakeAction}}
+\index{TakeAction@{TakeAction}!ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}}
+\subsubsection[{TakeAction}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadMessageItemSetPortMapInternalIP::TakeAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_message_item_set_port_map_internal_i_p_ae6f401b5688f877b518626a49ad8935e}
+
+
+Changes the internal IP of a port map. 
+
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{ThreadMessageItem}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_message_item_set_port_map_internal_i_p_affffbd207f88ef6e0df40e7c1103d22e}{
+\index{ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}!internalIP@{internalIP}}
+\index{internalIP@{internalIP}!ThreadMessageItemSetPortMapInternalIP@{ThreadMessageItemSetPortMapInternalIP}}
+\subsubsection[{internalIP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf ThreadMessageItemSetPortMapInternalIP::internalIP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_set_port_map_internal_i_p_affffbd207f88ef6e0df40e7c1103d22e}
+
+
+Internal IP of new port map. 
+
+Stored as a packet because it is important that the string remains valid until the thread has finished using it. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemSetPortMapInternalIP.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemSetPortMapInternalIP.cpp\end{DoxyCompactItemize}

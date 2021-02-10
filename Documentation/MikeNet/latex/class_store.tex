@@ -1,0 +1,212 @@
+\hypertarget{class_store}{
+\section{Store$<$ T $>$ Class Template Reference}
+\label{class_store}\index{Store@{Store}}
+}
+
+
+Base class for any object that safely controls access to a number of objects.  
+
+
+
+
+{\ttfamily \#include $<$Store.h$>$}
+
+Inheritance diagram for Store$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_store}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_store_a3966b60e25e5b867c66f49059a20ff2a}{
+\hyperlink{class_store_a3966b60e25e5b867c66f49059a20ff2a}{Store} ()}
+\label{class_store_a3966b60e25e5b867c66f49059a20ff2a}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_store_aa47f74ca4c6172eb748b8ddd85557ca0}{
+virtual \hyperlink{class_store_aa47f74ca4c6172eb748b8ddd85557ca0}{$\sim$Store} ()}
+\label{class_store_aa47f74ca4c6172eb748b8ddd85557ca0}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_a803e16a0fc3fa45717a4d949cf036414}{Store} (const \hyperlink{class_store}{Store} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store}{Store} \& \hyperlink{class_store_adb6f52d7984903ab1376049e515fb2c3}{operator=} (const \hyperlink{class_store}{Store} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_store_a5b636444da803d93dabf5f42ce6afdad}{
+virtual void \hyperlink{class_store_a5b636444da803d93dabf5f42ce6afdad}{Clear} ()=0}
+\label{class_store_a5b636444da803d93dabf5f42ce6afdad}
+
+\begin{DoxyCompactList}\small\item\em Empty contents of collection. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_store_abbe385f839e6bd682d84a7a3b2374774}{Get} (T $\ast$destination)=0
+\begin{DoxyCompactList}\small\item\em Get object from front of collection and remove it from collection. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_store_a18a77de2e4fce1e80413c2d122fa3906}{Add} (T $\ast$obj)=0
+\begin{DoxyCompactList}\small\item\em Add object to back of collection. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_store_a24ce67007b2c9c65eb0542415a8d0cac}{Size} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the number of objects in the collection. \item\end{DoxyCompactList}\item 
+virtual T $\ast$ \hyperlink{class_store_ac176e1bb63ac3b34a574cf3cc5d4d1a1}{Front} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the object at the front of the collection (without removing it). \item\end{DoxyCompactList}\item 
+virtual T $\ast$ \hyperlink{class_store_ae00374bb6e2216fc02e84016b8980f75}{Back} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieve the object at the back of the collection (without removing it). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class Store$<$ T $>$}
+
+Base class for any object that safely controls access to a number of objects. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Base class for objects that manage access to T objects. \par
+\par
+
+
+Only the store itself is thread safe, not the use of the objects in the store. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_store_a803e16a0fc3fa45717a4d949cf036414}{
+\index{Store@{Store}!Store@{Store}}
+\index{Store@{Store}!Store@{Store}}
+\subsubsection[{Store}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Store}$<$ T $>$::{\bf Store} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Store}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_a803e16a0fc3fa45717a4d949cf036414}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_store_a18a77de2e4fce1e80413c2d122fa3906}{
+\index{Store@{Store}!Add@{Add}}
+\index{Add@{Add}!Store@{Store}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual void {\bf Store}$<$ T $>$::Add (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_store_a18a77de2e4fce1e80413c2d122fa3906}
+
+
+Add object to back of collection. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em obj}]Object to add to collection. {\itshape obj\/} is now owned by this object and should not be referenced elsewhere. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_store_queue_a333cd8c9af7f748401c8ad97c1487556}{StoreQueue$<$ T $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ T $>$}, \hyperlink{class_store_queue_a333cd8c9af7f748401c8ad97c1487556}{StoreQueue$<$ size\_\-t $>$}, \hyperlink{class_store_queue_a333cd8c9af7f748401c8ad97c1487556}{StoreQueue$<$ Packet $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ ThreadSingleMessageKeepLast $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ StoreVector$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ NetSend $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ UpnpNatPortMapAction $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ NetAddress $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ Packet $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ ThreadSingle $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ ThreadMessageItem $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ SoundInstanceOutput $\ast$ $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ NetServerClient $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ StoreQueue$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ NetInstanceContainer $>$}, \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ WAVEHDR $>$}, and \hyperlink{class_store_vector_a2c946161d0ec3f96aa023bd8d22bc5af}{StoreVector$<$ ConcurrentObject$<$ size\_\-t $>$ $>$}.
+
+\hypertarget{class_store_ae00374bb6e2216fc02e84016b8980f75}{
+\index{Store@{Store}!Back@{Back}}
+\index{Back@{Back}!Store@{Store}}
+\subsubsection[{Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual T$\ast$ {\bf Store}$<$ T $>$::Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_store_ae00374bb6e2216fc02e84016b8980f75}
+
+
+Retrieve the object at the back of the collection (without removing it). 
+
+\begin{DoxyReturn}{Returns}
+element at back. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_store_queue_ae1dd92855531862ecd695ae3d6b708d3}{StoreQueue$<$ T $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ T $>$}, \hyperlink{class_store_queue_ae1dd92855531862ecd695ae3d6b708d3}{StoreQueue$<$ size\_\-t $>$}, \hyperlink{class_store_queue_ae1dd92855531862ecd695ae3d6b708d3}{StoreQueue$<$ Packet $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ ThreadSingleMessageKeepLast $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ StoreVector$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ NetSend $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ UpnpNatPortMapAction $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ NetAddress $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ Packet $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ ThreadSingle $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ ThreadMessageItem $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ SoundInstanceOutput $\ast$ $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ NetServerClient $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ StoreQueue$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ NetInstanceContainer $>$}, \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ WAVEHDR $>$}, and \hyperlink{class_store_vector_ac858192f1e1e1e4bdfe6f3167f9cd204}{StoreVector$<$ ConcurrentObject$<$ size\_\-t $>$ $>$}.
+
+\hypertarget{class_store_ac176e1bb63ac3b34a574cf3cc5d4d1a1}{
+\index{Store@{Store}!Front@{Front}}
+\index{Front@{Front}!Store@{Store}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual T$\ast$ {\bf Store}$<$ T $>$::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_store_ac176e1bb63ac3b34a574cf3cc5d4d1a1}
+
+
+Retrieve the object at the front of the collection (without removing it). 
+
+\begin{DoxyReturn}{Returns}
+element at front. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_store_queue_a94f37b5741e7c96a6072a2d42fa11292}{StoreQueue$<$ T $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ T $>$}, \hyperlink{class_store_queue_a94f37b5741e7c96a6072a2d42fa11292}{StoreQueue$<$ size\_\-t $>$}, \hyperlink{class_store_queue_a94f37b5741e7c96a6072a2d42fa11292}{StoreQueue$<$ Packet $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ ThreadSingleMessageKeepLast $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ StoreVector$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ NetSend $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ UpnpNatPortMapAction $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ NetAddress $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ Packet $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ ThreadSingle $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ ThreadMessageItem $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ SoundInstanceOutput $\ast$ $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ NetServerClient $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ StoreQueue$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ NetInstanceContainer $>$}, \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ WAVEHDR $>$}, and \hyperlink{class_store_vector_a7011731300d7ec28cfde632a9d6eff56}{StoreVector$<$ ConcurrentObject$<$ size\_\-t $>$ $>$}.
+
+\hypertarget{class_store_abbe385f839e6bd682d84a7a3b2374774}{
+\index{Store@{Store}!Get@{Get}}
+\index{Get@{Get}!Store@{Store}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual size\_\-t {\bf Store}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_store_abbe385f839e6bd682d84a7a3b2374774}
+
+
+Get object from front of collection and remove it from collection. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Location to copy retrieved object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of objects in collection before this method was called. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_store_queue_a21d6d227bf4303022384a9ef5ab54c61}{StoreQueue$<$ T $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ T $>$}, \hyperlink{class_store_queue_a21d6d227bf4303022384a9ef5ab54c61}{StoreQueue$<$ size\_\-t $>$}, \hyperlink{class_store_queue_a21d6d227bf4303022384a9ef5ab54c61}{StoreQueue$<$ Packet $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ ThreadSingleMessageKeepLast $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ StoreVector$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ NetSend $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ UpnpNatPortMapAction $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ NetAddress $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ Packet $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ ThreadSingle $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ ThreadMessageItem $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ SoundInstanceOutput $\ast$ $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ NetServerClient $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ StoreQueue$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ NetInstanceContainer $>$}, \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ WAVEHDR $>$}, and \hyperlink{class_store_vector_ad46c0b4759c50a2dfd47c3cbccbb5d67}{StoreVector$<$ ConcurrentObject$<$ size\_\-t $>$ $>$}.
+
+\hypertarget{class_store_adb6f52d7984903ab1376049e515fb2c3}{
+\index{Store@{Store}!operator=@{operator=}}
+\index{operator=@{operator=}!Store@{Store}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf Store}\& {\bf Store}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Store}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_adb6f52d7984903ab1376049e515fb2c3}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_store_a24ce67007b2c9c65eb0542415a8d0cac}{
+\index{Store@{Store}!Size@{Size}}
+\index{Size@{Size}!Store@{Store}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual size\_\-t {\bf Store}$<$ T $>$::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_store_a24ce67007b2c9c65eb0542415a8d0cac}
+
+
+Retrieve the number of objects in the collection. 
+
+\begin{DoxyReturn}{Returns}
+number of objects in collection. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_store_queue_a69b4ffee7bd2200c74eec51f5b9b5e6d}{StoreQueue$<$ T $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ T $>$}, \hyperlink{class_store_queue_a69b4ffee7bd2200c74eec51f5b9b5e6d}{StoreQueue$<$ size\_\-t $>$}, \hyperlink{class_store_queue_a69b4ffee7bd2200c74eec51f5b9b5e6d}{StoreQueue$<$ Packet $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ ThreadSingleMessageKeepLast $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ StoreVector$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ NetSend $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ UpnpNatPortMapAction $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ NetAddress $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ Packet $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ ThreadSingle $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ ThreadMessageItem $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ SoundInstanceOutput $\ast$ $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ NetServerClient $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ StoreQueue$<$ Packet $>$ $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ NetInstanceContainer $>$}, \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ WAVEHDR $>$}, and \hyperlink{class_store_vector_a161dc8c23affc6290c7dced3f1b77382}{StoreVector$<$ ConcurrentObject$<$ size\_\-t $>$ $>$}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Store.h\end{DoxyCompactItemize}

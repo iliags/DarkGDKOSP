@@ -1,0 +1,41 @@
+// XBox360 Controller Library for Dark GDK
+// Header file to be included in any source files that you need to call these functions in.
+
+void XB360Init();
+void XB360CheckHeadsetConnections();
+void XB360CheckControllerConnections();
+void XB360Poll(int mode);
+void XB360Exit();
+void XB360StartAudio();
+void XB360StopAudio();
+int XB360CheckNewSoundData(int index);
+int XB360GetSoundDataMemblockID(int index);
+void XB360PlayAudio(int index, int SoundDataMemblockID);
+int XB360HeadsetConnected(int index);
+int XB360ControllerType(int index);
+int XB360VoiceSupported(int index);
+int XB360GetBatteryLevel(int index, int BatteryDeviceType);
+void XB360ThumbDeadZonePercent(int index, int percent);
+void XB360ThumbDeadZoneEnable(int index, int enable);
+void XB360TriggerDeadZonePercent(int index, int percent);
+void XB360TriggerDeadZoneEnable(int index, int enable);
+int XB360ControllerConnected(int index);
+int XB360DPAD(int index);
+int XB360StartButton(int index);
+int XB360BackButton(int index);
+int XB360LeftThumb(int index);
+int XB360RightThumb(int index);
+int XB360LeftShoulder(int index);
+int XB360RightShoulder(int index);
+int XB360AButton(int index);
+int XB360BButton(int index);
+int XB360XButton(int index);
+int XB360YButton(int index);
+int XB360LeftTrigger(int index);
+int XB360RightTrigger(int index);
+int XB360ThumbLeftX(int index);
+int XB360ThumbLeftY(int index);
+int XB360ThumbRightX(int index);
+int XB360ThumbRightY(int index);
+void XB360LeftMotorSpeed(int index, int speed);
+void XB360RightMotorSpeed(int index, int speed);

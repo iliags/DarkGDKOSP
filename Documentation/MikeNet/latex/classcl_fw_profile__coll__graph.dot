@@ -1,0 +1,10 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  Node1 [label="clFwProfile",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node2 -> Node1 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="OpenPorts"];
+  Node2 [label="clFwOpenPorts",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$classcl_fw_open_ports.html"];
+  Node3 -> Node1 [dir=back,color="darkorchid3",fontsize="10",style="dashed",label="sRemoteAddr"];
+  Node3 [label="_clString",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$struct__cl_string.html"];
+}

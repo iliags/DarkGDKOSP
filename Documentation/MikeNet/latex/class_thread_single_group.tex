@@ -1,0 +1,211 @@
+\hypertarget{class_thread_single_group}{
+\section{ThreadSingleGroup Class Reference}
+\label{class_thread_single_group}\index{ThreadSingleGroup@{ThreadSingleGroup}}
+}
+
+
+Manages a group of \hyperlink{class_thread_single}{ThreadSingle} objects.  
+
+
+
+
+{\ttfamily \#include $<$ThreadSingleGroup.h$>$}
+
+Inheritance diagram for ThreadSingleGroup:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_thread_single_group}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_single_group_a9b1944b59a56ecd04fbe8f079c500de9}{
+\hyperlink{class_thread_single_group_a9b1944b59a56ecd04fbe8f079c500de9}{ThreadSingleGroup} ()}
+\label{class_thread_single_group_a9b1944b59a56ecd04fbe8f079c500de9}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_group_a6d5bd19c475e76db5d9a591e0540227e}{
+virtual \hyperlink{class_thread_single_group_a6d5bd19c475e76db5d9a591e0540227e}{$\sim$ThreadSingleGroup} (void)}
+\label{class_thread_single_group_a6d5bd19c475e76db5d9a591e0540227e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}{TerminateForce} (DWORD exitCode)
+\begin{DoxyCompactList}\small\item\em Forces all threads in this group to exit. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{TerminateFriendly} (bool block)
+\begin{DoxyCompactList}\small\item\em Requests that all threads in this group exit. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_group_a482c5c07a7eb8fa416d7e4390485ed47}{TerminateNormal} (clock\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Terminates the thread normally, first by attempting to use \hyperlink{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{TerminateFriendly()}, and then if that fails using \hyperlink{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}{TerminateForce()}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_group_a96cc9b3b041011cd4e6e416a7a3e047e}{IsRunning} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether all threads in the group are running. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_group_a95b7684ba22a7ece84515ce3cbb67294}{IsSuspended} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether all threads in the group are suspended. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_group_aaee0da337872b47f714675701d82b883}{Resume} ()
+\begin{DoxyCompactList}\small\item\em Resumes execution of all threads in the group after being suspended. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_group_a0742cd78d822bcefbbafadc5dc044fbf}{Suspend} ()
+\begin{DoxyCompactList}\small\item\em Suspends execution of all threads in the group. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_group_a69112aa6762e363d3b8c07ff713a8198}{
+void \hyperlink{class_thread_single_group_a69112aa6762e363d3b8c07ff713a8198}{WaitForThreadsToExit} ()}
+\label{class_thread_single_group_a69112aa6762e363d3b8c07ff713a8198}
+
+\begin{DoxyCompactList}\small\item\em Does not return until all threads have exited. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_thread_single_group_a26f35ba9c432a49de2ca2e446add6888}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a group of \hyperlink{class_thread_single}{ThreadSingle} objects. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_single_group_a96cc9b3b041011cd4e6e416a7a3e047e}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{IsRunning}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleGroup::IsRunning (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_group_a96cc9b3b041011cd4e6e416a7a3e047e}
+
+
+Determines whether all threads in the group are running. 
+
+\begin{DoxyReturn}{Returns}
+true if all threads in the group are running, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_group_a95b7684ba22a7ece84515ce3cbb67294}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!IsSuspended@{IsSuspended}}
+\index{IsSuspended@{IsSuspended}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{IsSuspended}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleGroup::IsSuspended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_group_a95b7684ba22a7ece84515ce3cbb67294}
+
+
+Determines whether all threads in the group are suspended. 
+
+\begin{DoxyReturn}{Returns}
+true if all threads in the group are suspended. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_group_aaee0da337872b47f714675701d82b883}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!Resume@{Resume}}
+\index{Resume@{Resume}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{Resume}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleGroup::Resume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_group_aaee0da337872b47f714675701d82b883}
+
+
+Resumes execution of all threads in the group after being suspended. 
+
+Execution can be suspended using \hyperlink{class_thread_single_group_a0742cd78d822bcefbbafadc5dc044fbf}{Suspend()} and a thread may initially be suspended when constructed. \hypertarget{class_thread_single_group_a0742cd78d822bcefbbafadc5dc044fbf}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!Suspend@{Suspend}}
+\index{Suspend@{Suspend}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{Suspend}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleGroup::Suspend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_group_a0742cd78d822bcefbbafadc5dc044fbf}
+
+
+Suspends execution of all threads in the group. 
+
+Execution can be resumed using \hyperlink{class_thread_single_group_aaee0da337872b47f714675701d82b883}{Resume()}.
+
+\begin{DoxyWarning}{Warning}
+This method should be avoided as it can cause deadlock in other threads since a thread may have control of a critical section or mutex. 
+\end{DoxyWarning}
+\hypertarget{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!TerminateForce@{TerminateForce}}
+\index{TerminateForce@{TerminateForce}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{TerminateForce}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleGroup::TerminateForce (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ exitCode}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}
+
+
+Forces all threads in this group to exit. 
+
+Use of this should be avoided where possible, favouring \hyperlink{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{TerminateFriendly()} instead. This is because the freeing of resources make not properly occur.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em exitCode}]Exit code retrieved using \hyperlink{class_thread_single_a08b4ac536ac97fef18a07d6593bb5cbf}{ThreadSingle::GetExitCode()} that thread should have. \end{DoxyParams}
+\hypertarget{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!TerminateFriendly@{TerminateFriendly}}
+\index{TerminateFriendly@{TerminateFriendly}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{TerminateFriendly}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleGroup::TerminateFriendly (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}
+
+
+Requests that all threads in this group exit. 
+
+Threads are not guaranteed to exit as they may not be checking GetTerminateRequest(). If they are performing an operation they may also not exit straight away. Use TerminateForce to guarantee quick thread exit.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]If true this method will not return until the thread has exited. \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_completion_port_a02bf5e9c71e6da01d30db9c693dfd2e4}{CompletionPort}.
+
+\hypertarget{class_thread_single_group_a482c5c07a7eb8fa416d7e4390485ed47}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!TerminateNormal@{TerminateNormal}}
+\index{TerminateNormal@{TerminateNormal}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{TerminateNormal}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleGroup::TerminateNormal (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ timeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_group_a482c5c07a7eb8fa416d7e4390485ed47}
+
+
+Terminates the thread normally, first by attempting to use \hyperlink{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{TerminateFriendly()}, and then if that fails using \hyperlink{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}{TerminateForce()}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]Length of time in milliseconds to wait after using \hyperlink{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{TerminateFriendly()} for the threads to terminate, before using \hyperlink{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}{TerminateForce()}. If \hyperlink{class_thread_single_group_a61f00b3cd9642ab084b306a9302b1389}{TerminateForce()} is used exit code will be 0. \end{DoxyParams}
+\hypertarget{class_thread_single_group_a26f35ba9c432a49de2ca2e446add6888}{
+\index{ThreadSingleGroup@{ThreadSingleGroup}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ThreadSingleGroup@{ThreadSingleGroup}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleGroup::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_group_a26f35ba9c432a49de2ca2e446add6888}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_store_vector_ac46654a34bc5c0a5f7bc4f8819314a2d}{StoreVector$<$ ThreadSingle $>$}.
+
+
+
+Reimplemented in \hyperlink{class_completion_port_a4e6534add3fe77949094d7d273a5b9f6}{CompletionPort}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleGroup.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleGroup.cpp\end{DoxyCompactItemize}

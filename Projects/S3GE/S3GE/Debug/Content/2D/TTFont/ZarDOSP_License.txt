@@ -1,0 +1,13 @@
+Anitarquious I
+
+Joined: Wed Mar 28th 2007
+Location: ...lost in cyberspace...
+	
+Posted: 11th Mar 2011 18:20     Edited: 11th Mar 2011 21:59 	    | link | toggle
+I know may be premature but I created a TTF of the yellow font I did for the "buttons". I called it ZarDOSP!... LOL
+
+I am allowing all of you who work on DOSP to grab a copy. I am permitting DOSP USE ONLY! Any other use, unless it's in a game that someone is building, must ask my permission FIRST, then grant me credits in TWO PLACES: Paper/PDF Documentation -AND- in the Game's Credits Screen.
+
+Thank you.
+
+Please note that there are no special "foreign" characters yet, and there are some "glyphs" that were predefined that I didn't change/delete. If you need those, I will update this font to accommodate those. Just ask. Thanks.

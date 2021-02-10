@@ -1,0 +1,517 @@
+\hypertarget{classcl_instance_t_c_p}{
+\section{clInstanceTCP Class Reference}
+\label{classcl_instance_t_c_p}\index{clInstanceTCP@{clInstanceTCP}}
+}
+
+
+TCP instance class responsible for managing all TCP operations on at an instance level.  
+
+
+
+
+{\ttfamily \#include $<$clInstanceTCP.h$>$}
+
+Inheritance diagram for clInstanceTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_instance_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classcl_instance_t_c_p_a20b988c8482d363c8761e8f347e78f1e}{ValidateRecvSizeTCP} (size\_\-t size) const 
+\item 
+\hyperlink{classcl_instance_t_c_p_a4b9ba11655513ad84c19b3b8a21567e7}{clInstanceTCP} (bool \hyperlink{classcl_instance_t_c_p_a4a35647e926d2c2c5abec877242f69fa}{handshakeEnabled}, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} recvFunc=NULL)
+\item 
+virtual \hyperlink{classcl_instance_t_c_p_ab841d8e7bb49c48b3b57b3804e454cc9}{$\sim$clInstanceTCP} ()
+\item 
+virtual void \hyperlink{classcl_instance_t_c_p_a680fdd73e7ea21c59da3029f30ab9409}{DoRecvTCP} (size\_\-t threadID, size\_\-t clientID)=0
+\item 
+bool \hyperlink{classcl_instance_t_c_p_a8900daedc98164438e26383a0001cc22}{GetHandshakeEnabled} () const 
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} \hyperlink{classcl_instance_t_c_p_a535b2bebcd899467da153f156ca5c78b}{GetUserFunctionTCP} () const 
+\item 
+bool \hyperlink{classcl_instance_t_c_p_a37c65c52f6fc37b2eeab22e3b74961c3}{GetUserFunctionExistTCP} () const 
+\item 
+virtual bool \hyperlink{classcl_instance_t_c_p_aad5a5af8e7fa2b973dc7b3ae6ba82dd4}{GetGracefulDisconnectEnabled} () const =0
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_t_c_p_a50e7cc70cb2e6e8a717c8f8fb6b4f21a}{GetMaxPacketSizeTCP} (size\_\-t threadID, size\_\-t clientID) const =0
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_t_c_p_ac813fb12b20efbae4b5ea266309bfa85}{GetRecvBufferLengthTCP} (size\_\-t threadID, size\_\-t clientID) const =0
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_t_c_p_aafa9f7579aaf64c135d0a386da496e07}{GetPartialPacketCurrentSizeTCP} (size\_\-t threadID, size\_\-t clientID) const =0
+\item 
+virtual void \hyperlink{classcl_instance_t_c_p_a614c842749f0dadca9da9aa825323c2e}{SetMaxPacketSizeTCP} (size\_\-t threadID, size\_\-t clientID, size\_\-t newMaxSize)=0
+\item 
+virtual bool \hyperlink{classcl_instance_t_c_p_a2680e4844a26f13f593634982fb77343}{GetAutoResizeTCP} (size\_\-t threadID, size\_\-t clientID) const =0
+\item 
+virtual void \hyperlink{classcl_instance_t_c_p_aa2f17e01ca732a1692d5c1abab70f343}{SetAutoResizeTCP} (size\_\-t threadID, size\_\-t clientID, bool newAutoResizeTCP)=0
+\item 
+virtual \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_t_c_p_a80ec758cf218a01fa6ad5ca77289b11a}{GetProtocolModeTCP} () const =0
+\item 
+virtual const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_instance_t_c_p_a16f0d87a9b4f577ae81b4f9fc3a3b182}{GetLocalAddressTCP} () const =0
+\item 
+virtual const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_instance_t_c_p_ad702ce7451f0c80a59861b13c9a4d5d8}{GetConnectAddressTCP} (size\_\-t threadID, size\_\-t clientID) const =0
+\item 
+virtual void \hyperlink{classcl_instance_t_c_p_af99126459308bfabf259aa9a2170a36b}{FlushRecvTCP} (size\_\-t threadID, size\_\-t clientID)=0
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_t_c_p_a193776679f0af0fdb98ac91c6db6f3d1}{GetPacketAmountTCP} (size\_\-t threadID, size\_\-t clientID) const =0
+\item 
+virtual void \hyperlink{classcl_instance_t_c_p_acb97c70b1a0cdba98fd4ac0a658ed6ec}{ShutdownTCP} (size\_\-t threadID, size\_\-t clientID)=0
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_t_c_p_afd639273cee92d3c612c40c761ec6d5b}{GetPacketFromStoreTCP} (size\_\-t threadID, size\_\-t clientID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)=0
+\item 
+virtual \hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_instance_t_c_p_a155def07aa6e36251e3d629111a70bc4}{SendTCP} (size\_\-t threadID, size\_\-t clientID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_t_c_p_a14fbd5458779f3f5a569e8aa57362ee7}{GetRecvSizeMinTCP} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} \hyperlink{classcl_instance_t_c_p_aae4ec2a4dd6ac904c67e53c0620e2843}{recvFuncTCP}
+\item 
+bool \hyperlink{classcl_instance_t_c_p_a4a35647e926d2c2c5abec877242f69fa}{handshakeEnabled}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+TCP instance class responsible for managing all TCP operations on at an instance level. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class should be inherited by any instance class wishing to make use of Transmission Control Protocol. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_t_c_p_a4b9ba11655513ad84c19b3b8a21567e7}{
+\index{clInstanceTCP@{clInstanceTCP}!clInstanceTCP@{clInstanceTCP}}
+\index{clInstanceTCP@{clInstanceTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{clInstanceTCP}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceTCP::clInstanceTCP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ handshakeEnabled, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_t_c_p_a4b9ba11655513ad84c19b3b8a21567e7}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em handshakeEnabled}]if false the TCP handshake process is disabled \item[\mbox{\tt[in]} {\em recvFunc}]TCP user method to be executed every time a new packet is received (optional, default NULL) \end{DoxyParams}
+\begin{DoxyNote}{Note}
+virtual inheritance means that \hyperlink{classcl_instance_core}{clInstanceCore} constructor will never be called by this constructor 
+\end{DoxyNote}
+\hypertarget{classcl_instance_t_c_p_ab841d8e7bb49c48b3b57b3804e454cc9}{
+\index{clInstanceTCP@{clInstanceTCP}!$\sim$clInstanceTCP@{$\sim$clInstanceTCP}}
+\index{$\sim$clInstanceTCP@{$\sim$clInstanceTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{$\sim$clInstanceTCP}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceTCP::$\sim$clInstanceTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_ab841d8e7bb49c48b3b57b3804e454cc9}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_t_c_p_a680fdd73e7ea21c59da3029f30ab9409}{
+\index{clInstanceTCP@{clInstanceTCP}!DoRecvTCP@{DoRecvTCP}}
+\index{DoRecvTCP@{DoRecvTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{DoRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceTCP::DoRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a680fdd73e7ea21c59da3029f30ab9409}
+Starts a receive operation via TCP and deals with errors appropriately
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \item[{\em clientID}]ID of client that receive operation should apply to \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_server_state_a692ed17b33921c31f87941b2c95bf99a}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_af99126459308bfabf259aa9a2170a36b}{
+\index{clInstanceTCP@{clInstanceTCP}!FlushRecvTCP@{FlushRecvTCP}}
+\index{FlushRecvTCP@{FlushRecvTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{FlushRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceTCP::FlushRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_af99126459308bfabf259aa9a2170a36b}
+Removes all fully received TCP packets from the packet queue \par
+ Has no impact on the partial packet store 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_server_state_ac139ec3acb06e1b28744339cbb9710d6}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a2680e4844a26f13f593634982fb77343}{
+\index{clInstanceTCP@{clInstanceTCP}!GetAutoResizeTCP@{GetAutoResizeTCP}}
+\index{GetAutoResizeTCP@{GetAutoResizeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool clInstanceTCP::GetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a2680e4844a26f13f593634982fb77343}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a40e9658d157664d28b4ff6764653ee52}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_ad702ce7451f0c80a59861b13c9a4d5d8}{
+\index{clInstanceTCP@{clInstanceTCP}!GetConnectAddressTCP@{GetConnectAddressTCP}}
+\index{GetConnectAddressTCP@{GetConnectAddressTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetConnectAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf clSingleAddr}\& clInstanceTCP::GetConnectAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_ad702ce7451f0c80a59861b13c9a4d5d8}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_ac464bdb2b462528f5e08d8d044e052d5}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_aad5a5af8e7fa2b973dc7b3ae6ba82dd4}{
+\index{clInstanceTCP@{clInstanceTCP}!GetGracefulDisconnectEnabled@{GetGracefulDisconnectEnabled}}
+\index{GetGracefulDisconnectEnabled@{GetGracefulDisconnectEnabled}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}virtual bool clInstanceTCP::GetGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_aad5a5af8e7fa2b973dc7b3ae6ba82dd4}
+\begin{DoxyReturn}{Returns}
+if true graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a3458bc8c0e335c67243fe5f4225bc5e5}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a8900daedc98164438e26383a0001cc22}{
+\index{clInstanceTCP@{clInstanceTCP}!GetHandshakeEnabled@{GetHandshakeEnabled}}
+\index{GetHandshakeEnabled@{GetHandshakeEnabled}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetHandshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceTCP::GetHandshakeEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_t_c_p_a8900daedc98164438e26383a0001cc22}
+\begin{DoxyReturn}{Returns}
+true if handshake is enabled, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_t_c_p_a16f0d87a9b4f577ae81b4f9fc3a3b182}{
+\index{clInstanceTCP@{clInstanceTCP}!GetLocalAddressTCP@{GetLocalAddressTCP}}
+\index{GetLocalAddressTCP@{GetLocalAddressTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual const {\bf clSingleAddr}\& clInstanceTCP::GetLocalAddressTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a16f0d87a9b4f577ae81b4f9fc3a3b182}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP local address information. This reference should remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a43b1ac7de146c88e64bfeacb277a2b8f}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a50e7cc70cb2e6e8a717c8f8fb6b4f21a}{
+\index{clInstanceTCP@{clInstanceTCP}!GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}}
+\index{GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceTCP::GetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a50e7cc70cb2e6e8a717c8f8fb6b4f21a}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_ae65f7e9ed108d2ceee3e803be4663e21}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a193776679f0af0fdb98ac91c6db6f3d1}{
+\index{clInstanceTCP@{clInstanceTCP}!GetPacketAmountTCP@{GetPacketAmountTCP}}
+\index{GetPacketAmountTCP@{GetPacketAmountTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetPacketAmountTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceTCP::GetPacketAmountTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a193776679f0af0fdb98ac91c6db6f3d1}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of fully received UDP packets in the packet store 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a6293150ae0d2deee1e853e8de2fc6549}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_afd639273cee92d3c612c40c761ec6d5b}{
+\index{clInstanceTCP@{clInstanceTCP}!GetPacketFromStoreTCP@{GetPacketFromStoreTCP}}
+\index{GetPacketFromStoreTCP@{GetPacketFromStoreTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetPacketFromStoreTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceTCP::GetPacketFromStoreTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_afd639273cee92d3c612c40c761ec6d5b}
+Retrieves a complete packet from the TCP packet store and copies it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \item[\mbox{\tt[out]} {\em destination}]destination to copy into \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a434b7015edbb25a83593e60f7ee6f0f7}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_aafa9f7579aaf64c135d0a386da496e07}{
+\index{clInstanceTCP@{clInstanceTCP}!GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}}
+\index{GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetPartialPacketCurrentSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceTCP::GetPartialPacketCurrentSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_aafa9f7579aaf64c135d0a386da496e07}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use, may be ignored \item[{\em threadID}]ID of thread using this object, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current size of the TCP partial packet being received \par
+ i.e. the number of bytes of the packet that have been received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a657be97242d234350f5d5193bf1323fd}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a80ec758cf218a01fa6ad5ca77289b11a}{
+\index{clInstanceTCP@{clInstanceTCP}!GetProtocolModeTCP@{GetProtocolModeTCP}}
+\index{GetProtocolModeTCP@{GetProtocolModeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetProtocolModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clSharedProtocol::ProtocolMode} clInstanceTCP::GetProtocolModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a80ec758cf218a01fa6ad5ca77289b11a}
+\begin{DoxyReturn}{Returns}
+protocol mode in use by instance 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_aaedff3aeda921ce765c0d92a116d34b3}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_ac813fb12b20efbae4b5ea266309bfa85}{
+\index{clInstanceTCP@{clInstanceTCP}!GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}}
+\index{GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetRecvBufferLengthTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceTCP::GetRecvBufferLengthTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_ac813fb12b20efbae4b5ea266309bfa85}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF used by the TCP socket. \par
+ This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_a25076fc19a70980db2d575a0e0d4fb8c}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a14fbd5458779f3f5a569e8aa57362ee7}{
+\index{clInstanceTCP@{clInstanceTCP}!GetRecvSizeMinTCP@{GetRecvSizeMinTCP}}
+\index{GetRecvSizeMinTCP@{GetRecvSizeMinTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetRecvSizeMinTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceTCP::GetRecvSizeMinTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a14fbd5458779f3f5a569e8aa57362ee7}
+The smallest acceptable packet size that can be received 
+
+Implemented in \hyperlink{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a37c65c52f6fc37b2eeab22e3b74961c3}{
+\index{clInstanceTCP@{clInstanceTCP}!GetUserFunctionExistTCP@{GetUserFunctionExistTCP}}
+\index{GetUserFunctionExistTCP@{GetUserFunctionExistTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetUserFunctionExistTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceTCP::GetUserFunctionExistTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_t_c_p_a37c65c52f6fc37b2eeab22e3b74961c3}
+\begin{DoxyReturn}{Returns}
+true if a method to be executed when data is received has been set 
+
+false if no method has been set 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_t_c_p_a535b2bebcd899467da153f156ca5c78b}{
+\index{clInstanceTCP@{clInstanceTCP}!GetUserFunctionTCP@{GetUserFunctionTCP}}
+\index{GetUserFunctionTCP@{GetUserFunctionTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{GetUserFunctionTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::RecvFunc} clInstanceTCP::GetUserFunctionTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_t_c_p_a535b2bebcd899467da153f156ca5c78b}
+\begin{DoxyReturn}{Returns}
+the method set by the user that should be executed when data is received 
+
+NULL if there is no method 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_t_c_p_a155def07aa6e36251e3d629111a70bc4}{
+\index{clInstanceTCP@{clInstanceTCP}!SendTCP@{SendTCP}}
+\index{SendTCP@{SendTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{SendTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clNetworkingUtility::SendStatus} clInstanceTCP::SendTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a155def07aa6e36251e3d629111a70bc4}
+Sends {\itshape packet\/} via TCP to specified client 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to send to, may be ignored \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_server_state_aa26a11694b770b75c58e3a5931fd387e}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_aa2f17e01ca732a1692d5c1abab70f343}{
+\index{clInstanceTCP@{clInstanceTCP}!SetAutoResizeTCP@{SetAutoResizeTCP}}
+\index{SetAutoResizeTCP@{SetAutoResizeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{SetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceTCP::SetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{bool}]{ newAutoResizeTCP}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_aa2f17e01ca732a1692d5c1abab70f343}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \item[{\em newAutoResizeTCP}]When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_server_state_aa324f4af4421895f4c06fed536826d40}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a614c842749f0dadca9da9aa825323c2e}{
+\index{clInstanceTCP@{clInstanceTCP}!SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}}
+\index{SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{SetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceTCP::SetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ newMaxSize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_a614c842749f0dadca9da9aa825323c2e}
+Manually changes the maximum packet size that can be received 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \item[{\em newMaxSize}]The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_server_state_a69575a84cd634b4105187cb1644a9fe9}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_acb97c70b1a0cdba98fd4ac0a658ed6ec}{
+\index{clInstanceTCP@{clInstanceTCP}!ShutdownTCP@{ShutdownTCP}}
+\index{ShutdownTCP@{ShutdownTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{ShutdownTCP}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceTCP::ShutdownTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_t_c_p_acb97c70b1a0cdba98fd4ac0a658ed6ec}
+Stops sending on TCP socket so that all further send operations will fail \par
+ All data sent up till now will be received by recipient
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to use, may be ignored \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_server_state_ab6bb7ca048e12e276cfa85798bbca305}{clServerState}.
+
+\hypertarget{classcl_instance_t_c_p_a20b988c8482d363c8761e8f347e78f1e}{
+\index{clInstanceTCP@{clInstanceTCP}!ValidateRecvSizeTCP@{ValidateRecvSizeTCP}}
+\index{ValidateRecvSizeTCP@{ValidateRecvSizeTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{ValidateRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceTCP::ValidateRecvSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ size}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_t_c_p_a20b988c8482d363c8761e8f347e78f1e}
+\begin{DoxyReturn}{Returns}
+true if {\itshape size\/} is larger enough (i.e. larger than or equal to GetRecvSizeMinTCP) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_instance_t_c_p_a4a35647e926d2c2c5abec877242f69fa}{
+\index{clInstanceTCP@{clInstanceTCP}!handshakeEnabled@{handshakeEnabled}}
+\index{handshakeEnabled@{handshakeEnabled}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{handshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceTCP::handshakeEnabled}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_instance_t_c_p_a4a35647e926d2c2c5abec877242f69fa}
+true if the handshaking process is enabled \par
+ false if the handshaking process is disabled, connection will occur with no additional data transfer \hypertarget{classcl_instance_t_c_p_aae4ec2a4dd6ac904c67e53c0620e2843}{
+\index{clInstanceTCP@{clInstanceTCP}!recvFuncTCP@{recvFuncTCP}}
+\index{recvFuncTCP@{recvFuncTCP}!clInstanceTCP@{clInstanceTCP}}
+\subsubsection[{recvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RecvFunc} {\bf clInstanceTCP::recvFuncTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_instance_t_c_p_aae4ec2a4dd6ac904c67e53c0620e2843}
+Pointer to function to be executed when TCP packet is received \par
+ NULL if no function exists 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceTCP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceTCP.cpp\end{DoxyCompactItemize}

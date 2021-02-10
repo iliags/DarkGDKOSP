@@ -1,0 +1,881 @@
+\hypertarget{class_net_socket}{
+\section{NetSocket Class Reference}
+\label{class_net_socket}\index{NetSocket@{NetSocket}}
+}
+
+
+Socket class providing more advanced functionality than \hyperlink{class_net_socket_simple}{NetSocketSimple} that is common to all protocols.  
+
+
+
+
+{\ttfamily \#include $<$NetSocket.h$>$}
+
+Inheritance diagram for NetSocket:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_socket}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{
+typedef void($\ast$ \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{RecvFunc} )(\hyperlink{class_packet}{Packet} \&packet)}
+\label{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}
+
+\begin{DoxyCompactList}\small\item\em Placeholder method supplied by external source (e.g. Application) that can be called by API. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_socket_a0f3c63a94517b043d5c1b8c070852c60}{NetSocket} (size\_\-t bufferLength, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{RecvFunc} receiveFunction)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_ab916dbb4c1afa5078068eaef73274c92}{NetSocket} (size\_\-t bufferLength, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{RecvFunc} receiveFunction, \hyperlink{class_net_instance}{NetInstance} $\ast$instance)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_a3ebe4e1d8db6978255f48e1034d638a4}{
+virtual \hyperlink{class_net_socket_a3ebe4e1d8db6978255f48e1034d638a4}{$\sim$NetSocket} ()}
+\label{class_net_socket_a3ebe4e1d8db6978255f48e1034d638a4}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a505f592181260a75c7c5060021ac4201}{NetSocket} (const \hyperlink{class_net_socket}{NetSocket} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket}{NetSocket} \& \hyperlink{class_net_socket_a703ac13a72d73c598c81372946097210}{operator=} (const \hyperlink{class_net_socket}{NetSocket} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_a900eb09b76f4098e67af95daf9e0b3b2}{
+void \hyperlink{class_net_socket_a900eb09b76f4098e67af95daf9e0b3b2}{DefaultVariables} ()}
+\label{class_net_socket_a900eb09b76f4098e67af95daf9e0b3b2}
+
+\begin{DoxyCompactList}\small\item\em Sets variables to default. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_aa5e8328367081d19e64a37e6b15703cf}{SetInstance} (\hyperlink{class_net_instance}{NetInstance} $\ast$instance)
+\begin{DoxyCompactList}\small\item\em Sets the completion key instance field. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_aafadb66f83b867d49633a304d1083cad}{SetClientID} (size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Sets the completion key client ID field. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_aedd848a5bbf20f92dcd2f2d68603a16a}{RemoveSend} (const OVERLAPPED $\ast$operation)
+\begin{DoxyCompactList}\small\item\em Cleans up the send operation that is using the specified overlapped object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_ae6829ea0830059f1c21154a9c1392ed2}{RemoveSend} (size\_\-t element)
+\begin{DoxyCompactList}\small\item\em Cleans up the send operation at the specified element. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_a84eea723ebe08ab09554c56a07d5411a}{AddSend} (\hyperlink{class_net_send}{NetSend} $\ast$send)
+\begin{DoxyCompactList}\small\item\em Adds a send operation to the cleanup vector. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_aea9f9a2581f8f07a22a0d36d3bb23654}{
+void \hyperlink{class_net_socket_aea9f9a2581f8f07a22a0d36d3bb23654}{ClearSend} ()}
+\label{class_net_socket_aea9f9a2581f8f07a22a0d36d3bb23654}
+
+\begin{DoxyCompactList}\small\item\em Empties the send cleanup vector, cleaning up all send operations. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_a0f18c5b9a572438bb51cd166ae85e573}{FindSend} (const OVERLAPPED $\ast$operation, size\_\-t \&position) const 
+\begin{DoxyCompactList}\small\item\em Searches for the send operation that is using the specified overlapped object in the send cleanup list. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_a9dad9c9499a245c125ba90fc753592f4}{IsSendEmpty} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the send cleanup vector is empty. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_socket_a85c6cba30c3a8d780bb24d7af8d0a561}{Close} ()
+\begin{DoxyCompactList}\small\item\em Closes socket. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_aaba0fd1ddc4b4f52751ccb15146aba9a}{AssociateCompletionPort} ()
+\item 
+virtual void \hyperlink{class_net_socket_ad085ef45c567752aae4457f7945b46aa}{ClearRecv} ()
+\begin{DoxyCompactList}\small\item\em Clears \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{NetSocket::recvOverlapped} object ready for next receive. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_ad6ef9866517f7aad01a69b70467375d5}{
+virtual bool \hyperlink{class_net_socket_ad6ef9866517f7aad01a69b70467375d5}{Recv} ()=0}
+\label{class_net_socket_ad6ef9866517f7aad01a69b70467375d5}
+
+\begin{DoxyCompactList}\small\item\em Starts a receive operation. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_socket_a808894184a1eed1a647e1cdf3c015f3a}{Send} (const \hyperlink{class_packet}{Packet} \&packet, bool block, const \hyperlink{class_net_address}{NetAddress} $\ast$sendToAddr, unsigned int timeout)=0
+\begin{DoxyCompactList}\small\item\em Sends a packet using this socket. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_socket_ae2524e6cffa4e30726fde6b4e703ebc3}{GetRecvBufferLength} () const 
+\begin{DoxyCompactList}\small\item\em Determines the size of the receive buffer. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_a8d65090c23a7624c34bdff512261e74f}{IsOurOverlapped} (const WSAOVERLAPPED $\ast$overlapped) const 
+\begin{DoxyCompactList}\small\item\em Determines whether the specified overlapped object is the overlapped object used by this object to monitor the status of pending receive operations. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{Protocol} \hyperlink{class_net_socket_a2c62a6815ffb8b17aabd4963f63c1afc}{GetProtocol} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol type that the socket represents as an enum. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_socket_afbb34329c03836f0a6962d7396752979}{GetRecvFunction} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the function that is executed when complete packets are received. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_a8eca2a547a5e1e613f782edc3fe8b910}{IsRecvFunctionLoaded} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether a receive function has been loaded. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_afb09f225fda4d4b8f1108cb6c1e6b3d9}{RemoveRecvFunction} ()
+\begin{DoxyCompactList}\small\item\em Temporarily disables the receive function. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_a0da1e270db405a2a49cb66670fbb2fbd}{
+void \hyperlink{class_net_socket_a0da1e270db405a2a49cb66670fbb2fbd}{UndoRemoveRecvFunction} ()}
+\label{class_net_socket_a0da1e270db405a2a49cb66670fbb2fbd}
+
+\begin{DoxyCompactList}\small\item\em Resets receive function as if RemoveRecvFunction had never been used. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_socket_a99a69ab706122acc2bbe63c64b279b8e}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc, size\_\-t clientID, size\_\-t instanceID)=0
+\begin{DoxyCompactList}\small\item\em Deals with newly received data using the socket's protocol object. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_socket_a4c8e1cac6b9bde0ef6ce3c137a8563ad}{CompletedSendOperation} (const WSAOVERLAPPED $\ast$overlapped, bool success, bool shuttingDown)
+\begin{DoxyCompactList}\small\item\em Deals with completed send operation. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_a419d22dbf82c32e89b2664a18f7a05af}{GetCompletionPortCloseRequest} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the completion port has signaled this socket for closure. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_ad04c291a00cc8b97425a60f6f8a20d3a}{CompletionPortRequestClose} ()
+\begin{DoxyCompactList}\small\item\em Signal that the socket should be closed by the main process. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_a389b4eb60158c997a932798a2de02e68}{SetCompletionPortFinishRecvNotification} ()
+\begin{DoxyCompactList}\small\item\em Signal that the receive operation that was last initiated has completed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_socket_ae2233dd5a751f07101b1347df5dfc308}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_completion_key}{CompletionKey} \hyperlink{class_net_socket_a26693d766fabf449245ef0a1e2a5ff49}{completionKey}
+\begin{DoxyCompactList}\small\item\em Unique completion key used by completion port to identify this object. \item\end{DoxyCompactList}\item 
+WSAOVERLAPPED \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{recvOverlapped}
+\begin{DoxyCompactList}\small\item\em Winsock overlapped operation used to identify when a receive operation has completed. \item\end{DoxyCompactList}\item 
+WSABUF \hyperlink{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}{recvBuffer}
+\begin{DoxyCompactList}\small\item\em Winsock buffer that is filled with newly received data. \item\end{DoxyCompactList}\item 
+DWORD \hyperlink{class_net_socket_a794267d0dd5ed57e8d9bfdfea01d2995}{flags}
+\begin{DoxyCompactList}\small\item\em Filled when TCP receive operation completes, is ignored but required by winsock. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_socket_a41017899d90bb50e70345c5fcfbce577}{SetRecvOverlappedEvent} ()
+\begin{DoxyCompactList}\small\item\em Manually sets the overlapped event. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_socket_a35080a7efc36c4a4444dcf8a35213ccd}{Send} (\hyperlink{class_net_send}{NetSend} \&sendObject, const \hyperlink{class_net_address}{NetAddress} $\ast$sendToAddr, unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Sends a send object to the specified address. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_net_socket_a03f60f949b31ee3feae0d1d3daa3bf3c}{notDealingWithData}
+\begin{DoxyCompactList}\small\item\em False after a receive operation has been initiated, only true when the operation has finished AND all data has been dealt with. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_socket_a8eeea3a43d5eeeb3a7a12cdcc8a5fc64}{AllocateBuffer} (size\_\-t bufferLength)
+\begin{DoxyCompactList}\small\item\em Sets up \hyperlink{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}{NetSocket::recvBuffer}, allocating memory to it. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_a9d149d9ffbfe8d2240f664fd1923eb74}{Initialize} (size\_\-t bufferLength)
+\begin{DoxyCompactList}\small\item\em Initializes objects. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_a92fcd22d674b159c192f356728d2a575}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} $>$ \hyperlink{class_net_socket_a92fcd22d674b159c192f356728d2a575}{recvFunction}}
+\label{class_net_socket_a92fcd22d674b159c192f356728d2a575}
+
+\begin{DoxyCompactList}\small\item\em Function to be called every time a complete packet is received. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} $>$ \hyperlink{class_net_socket_a7d4dd5d72c86d0ee4f46a3ec9e03bdfc}{recvFunctionAux}
+\begin{DoxyCompactList}\small\item\em Temporary store of \hyperlink{class_net_socket_a92fcd22d674b159c192f356728d2a575}{NetSocket::recvFunction}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_net_socket_aeeae305cd0382ee87cf9c35aec571719}{recvOverlappedEvent}
+\begin{DoxyCompactList}\small\item\em Event object associated with \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{NetSocket::recvOverlapped}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_net_socket_aeff1c796b40fa0545b6b3f2bb7767f4d}{completionPortCloseNotification}
+\begin{DoxyCompactList}\small\item\em True if completion port wants this socket to be closed by the main process. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_net_send}{NetSend} $>$ \hyperlink{class_net_socket_a84e789c6d2552eef894f1f751539233f}{sendCleanup}
+\begin{DoxyCompactList}\small\item\em This vector is filled with send operations that are in progress. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket class providing more advanced functionality than \hyperlink{class_net_socket_simple}{NetSocketSimple} that is common to all protocols. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class provides functionality for interacting with the completion port and for sending data.\par
+\par
+
+
+This class is not completely thread safe. Send cleanup is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_socket_a0f3c63a94517b043d5c1b8c070852c60}{
+\index{NetSocket@{NetSocket}!NetSocket@{NetSocket}}
+\index{NetSocket@{NetSocket}!NetSocket@{NetSocket}}
+\subsubsection[{NetSocket}]{\setlength{\rightskip}{0pt plus 5cm}NetSocket::NetSocket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{{\bf RecvFunc}}]{ receiveFunction}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_a0f3c63a94517b043d5c1b8c070852c60}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[\mbox{\tt[in]} {\em receiveFunction}]Function to be executed when packets are received. If NULL received packets are put into a queue and retrieved using GetPacketFromStore(). \end{DoxyParams}
+\hypertarget{class_net_socket_ab916dbb4c1afa5078068eaef73274c92}{
+\index{NetSocket@{NetSocket}!NetSocket@{NetSocket}}
+\index{NetSocket@{NetSocket}!NetSocket@{NetSocket}}
+\subsubsection[{NetSocket}]{\setlength{\rightskip}{0pt plus 5cm}NetSocket::NetSocket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{{\bf RecvFunc}}]{ receiveFunction, }
+\item[{{\bf NetInstance} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_ab916dbb4c1afa5078068eaef73274c92}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[\mbox{\tt[in]} {\em receiveFunction}]Function to be executed when packets are received. If NULL received packets are put into a queue and retrieved using GetPacketFromStore(). \item[\mbox{\tt[in]} {\em instance}]Pointer to instance that owns this object, use other constructor if no instance does. \end{DoxyParams}
+\hypertarget{class_net_socket_a505f592181260a75c7c5060021ac4201}{
+\index{NetSocket@{NetSocket}!NetSocket@{NetSocket}}
+\index{NetSocket@{NetSocket}!NetSocket@{NetSocket}}
+\subsubsection[{NetSocket}]{\setlength{\rightskip}{0pt plus 5cm}NetSocket::NetSocket (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_a505f592181260a75c7c5060021ac4201}
+
+
+Deep copy constructor. 
+
+Socket does not directly copy contents of {\itshape copyMe\/}, but initializes its buffer to be the same size as {\itshape copyMe's\/}.\par
+\par
+
+
+\hyperlink{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}{NetSocketSimple::winsockSocket} is not copied.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_socket_a84eea723ebe08ab09554c56a07d5411a}{
+\index{NetSocket@{NetSocket}!AddSend@{AddSend}}
+\index{AddSend@{AddSend}!NetSocket@{NetSocket}}
+\subsubsection[{AddSend}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::AddSend (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSend} $\ast$}]{ send}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_a84eea723ebe08ab09554c56a07d5411a}
+
+
+Adds a send operation to the cleanup vector. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em send}]Send operation to add to cleanup vector. \end{DoxyParams}
+\hypertarget{class_net_socket_a8eeea3a43d5eeeb3a7a12cdcc8a5fc64}{
+\index{NetSocket@{NetSocket}!AllocateBuffer@{AllocateBuffer}}
+\index{AllocateBuffer@{AllocateBuffer}!NetSocket@{NetSocket}}
+\subsubsection[{AllocateBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::AllocateBuffer (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_a8eeea3a43d5eeeb3a7a12cdcc8a5fc64}
+
+
+Sets up \hyperlink{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}{NetSocket::recvBuffer}, allocating memory to it. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \end{DoxyParams}
+\hypertarget{class_net_socket_aaba0fd1ddc4b4f52751ccb15146aba9a}{
+\index{NetSocket@{NetSocket}!AssociateCompletionPort@{AssociateCompletionPort}}
+\index{AssociateCompletionPort@{AssociateCompletionPort}!NetSocket@{NetSocket}}
+\subsubsection[{AssociateCompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::AssociateCompletionPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_aaba0fd1ddc4b4f52751ccb15146aba9a}
+Associates the socket with a completion port. The completion port takes over the following jobs:
+\begin{DoxyItemize}
+\item Cleaning up send operations.
+\item Receiving data and dealing with it. 
+\end{DoxyItemize}\hypertarget{class_net_socket_ad085ef45c567752aae4457f7945b46aa}{
+\index{NetSocket@{NetSocket}!ClearRecv@{ClearRecv}}
+\index{ClearRecv@{ClearRecv}!NetSocket@{NetSocket}}
+\subsubsection[{ClearRecv}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::ClearRecv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_ad085ef45c567752aae4457f7945b46aa}
+
+
+Clears \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{NetSocket::recvOverlapped} object ready for next receive. 
+
+This must be done before every receive operation. 
+
+Reimplemented in \hyperlink{class_net_socket_u_d_p_ad6c506ea179efce7d353b9f0735e2706}{NetSocketUDP}.
+
+\hypertarget{class_net_socket_a85c6cba30c3a8d780bb24d7af8d0a561}{
+\index{NetSocket@{NetSocket}!Close@{Close}}
+\index{Close@{Close}!NetSocket@{NetSocket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_a85c6cba30c3a8d780bb24d7af8d0a561}
+
+
+Closes socket. 
+
+To ensure that deallocation does not occur when the completion port is using the method:
+\begin{DoxyItemize}
+\item This method waits for all send operations to be cleaned up.
+\item This method waits for all winsock receive operations to complete.
+\item This method waits for finished receive operations to finish being dealt with.
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+This method must not be used by the completion port, in case only one worker thread exists. In that case the completion port would be waiting for things that only it can do. 
+\end{DoxyWarning}
+
+
+Reimplemented from \hyperlink{class_net_socket_simple_a2ec9f15bf28b6ae73783d03c6aedffec}{NetSocketSimple}.
+
+
+
+Reimplemented in \hyperlink{class_net_socket_t_c_p_a407a844020c03e9dd24048f38a4d2c1f}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_a2363fe21c1fa15e7781766c952c72e95}{NetSocketUDP}.
+
+\hypertarget{class_net_socket_a4c8e1cac6b9bde0ef6ce3c137a8563ad}{
+\index{NetSocket@{NetSocket}!CompletedSendOperation@{CompletedSendOperation}}
+\index{CompletedSendOperation@{CompletedSendOperation}!NetSocket@{NetSocket}}
+\subsubsection[{CompletedSendOperation}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::CompletedSendOperation (
+\begin{DoxyParamCaption}
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped, }
+\item[{bool}]{ success, }
+\item[{bool}]{ shuttingDown}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_a4c8e1cac6b9bde0ef6ce3c137a8563ad}
+
+
+Deals with completed send operation. 
+
+In the event of an error that needs further action \hyperlink{class_net_socket_aeff1c796b40fa0545b6b3f2bb7767f4d}{NetSocket::completionPortCloseNotification} is signaled.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em overlapped}]Pointer to WSAOVERLAPPED object associated with send operation. \item[{\em success}]True if the operation completed successfully. \item[{\em shuttingDown}]True if the operation failed but this was because the socket is shutting down. \end{DoxyParams}
+\hypertarget{class_net_socket_ad04c291a00cc8b97425a60f6f8a20d3a}{
+\index{NetSocket@{NetSocket}!CompletionPortRequestClose@{CompletionPortRequestClose}}
+\index{CompletionPortRequestClose@{CompletionPortRequestClose}!NetSocket@{NetSocket}}
+\subsubsection[{CompletionPortRequestClose}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::CompletionPortRequestClose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_ad04c291a00cc8b97425a60f6f8a20d3a}
+
+
+Signal that the socket should be closed by the main process. 
+
+The completion port will only signal a socket for closure if it is stand alone i.e. Not part of an instance.
+
+\begin{DoxyWarning}{Warning}
+Should only be used by completion port. 
+\end{DoxyWarning}
+\hypertarget{class_net_socket_a99a69ab706122acc2bbe63c64b279b8e}{
+\index{NetSocket@{NetSocket}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetSocket@{NetSocket}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NetSocket::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_socket_a99a69ab706122acc2bbe63c64b279b8e}
+
+
+Deals with newly received data using the socket's protocol object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em recvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_test_net_socket_a048a7cff25a17d0e163c3d182211156c}{TestNetSocket}, \hyperlink{class_net_socket_t_c_p_a33a379bcc79c7c2631be6bea0ac13ce3}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_a433c0374fee477952c0b89b128cd2df6}{NetSocketUDP}.
+
+\hypertarget{class_net_socket_a0f18c5b9a572438bb51cd166ae85e573}{
+\index{NetSocket@{NetSocket}!FindSend@{FindSend}}
+\index{FindSend@{FindSend}!NetSocket@{NetSocket}}
+\subsubsection[{FindSend}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::FindSend (
+\begin{DoxyParamCaption}
+\item[{const OVERLAPPED $\ast$}]{ operation, }
+\item[{size\_\-t \&}]{ position}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_a0f18c5b9a572438bb51cd166ae85e573}
+
+
+Searches for the send operation that is using the specified overlapped object in the send cleanup list. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operation}]Pointer to overlapped object. \item[\mbox{\tt[out]} {\em position}]The location of the found send operation will be stored here.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the send operation that is using the specified overlapped object was found in the send cleanup list. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_a419d22dbf82c32e89b2664a18f7a05af}{
+\index{NetSocket@{NetSocket}!GetCompletionPortCloseRequest@{GetCompletionPortCloseRequest}}
+\index{GetCompletionPortCloseRequest@{GetCompletionPortCloseRequest}!NetSocket@{NetSocket}}
+\subsubsection[{GetCompletionPortCloseRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::GetCompletionPortCloseRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_a419d22dbf82c32e89b2664a18f7a05af}
+
+
+Determines whether the completion port has signaled this socket for closure. 
+
+The completion port will only signal a socket for closure if it is stand alone i.e. Not part of an instance.
+
+\begin{DoxyReturn}{Returns}
+true if the completion port wants this socket to be closed. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_a2c62a6815ffb8b17aabd4963f63c1afc}{
+\index{NetSocket@{NetSocket}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!NetSocket@{NetSocket}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Protocol} NetSocket::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_socket_a2c62a6815ffb8b17aabd4963f63c1afc}
+
+
+Retrieves the protocol type that the socket represents as an enum. 
+
+\begin{DoxyReturn}{Returns}
+protocol type that socket represents. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_net_socket_a66959377686b85046b06a71cd88e285e}{TestNetSocket}, \hyperlink{class_net_socket_t_c_p_ac599af5903f2a92f481f41ad1466390d}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_a38f2d51c45a6205aa8209edf8d954dbf}{NetSocketUDP}.
+
+\hypertarget{class_net_socket_ae2524e6cffa4e30726fde6b4e703ebc3}{
+\index{NetSocket@{NetSocket}!GetRecvBufferLength@{GetRecvBufferLength}}
+\index{GetRecvBufferLength@{GetRecvBufferLength}!NetSocket@{NetSocket}}
+\subsubsection[{GetRecvBufferLength}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetSocket::GetRecvBufferLength (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_ae2524e6cffa4e30726fde6b4e703ebc3}
+
+
+Determines the size of the receive buffer. 
+
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF. This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_afbb34329c03836f0a6962d7396752979}{
+\index{NetSocket@{NetSocket}!GetRecvFunction@{GetRecvFunction}}
+\index{GetRecvFunction@{GetRecvFunction}!NetSocket@{NetSocket}}
+\subsubsection[{GetRecvFunction}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::RecvFunc} NetSocket::GetRecvFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_afbb34329c03836f0a6962d7396752979}
+
+
+Retrieves the function that is executed when complete packets are received. 
+
+\begin{DoxyReturn}{Returns}
+the function that will be executed when data is received. 
+
+NULL if there is no method loaded. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_a9d149d9ffbfe8d2240f664fd1923eb74}{
+\index{NetSocket@{NetSocket}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!NetSocket@{NetSocket}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::Initialize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_a9d149d9ffbfe8d2240f664fd1923eb74}
+
+
+Initializes objects. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \end{DoxyParams}
+\hypertarget{class_net_socket_a8d65090c23a7624c34bdff512261e74f}{
+\index{NetSocket@{NetSocket}!IsOurOverlapped@{IsOurOverlapped}}
+\index{IsOurOverlapped@{IsOurOverlapped}!NetSocket@{NetSocket}}
+\subsubsection[{IsOurOverlapped}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::IsOurOverlapped (
+\begin{DoxyParamCaption}
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_a8d65090c23a7624c34bdff512261e74f}
+
+
+Determines whether the specified overlapped object is the overlapped object used by this object to monitor the status of pending receive operations. 
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape overlapped\/} points to the overlapped object used by this object. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em overlapped}]Overlapped pointer to compare. \end{DoxyParams}
+\hypertarget{class_net_socket_a8eca2a547a5e1e613f782edc3fe8b910}{
+\index{NetSocket@{NetSocket}!IsRecvFunctionLoaded@{IsRecvFunctionLoaded}}
+\index{IsRecvFunctionLoaded@{IsRecvFunctionLoaded}!NetSocket@{NetSocket}}
+\subsubsection[{IsRecvFunctionLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::IsRecvFunctionLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_a8eca2a547a5e1e613f782edc3fe8b910}
+
+
+Determines whether a receive function has been loaded. 
+
+If no function has been loaded received packets are put into a queue and retrieved using GetPacketFromStore().
+
+\begin{DoxyReturn}{Returns}
+true if a method to be executed when packets are received has been set. 
+
+false if no method has been set. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_a9dad9c9499a245c125ba90fc753592f4}{
+\index{NetSocket@{NetSocket}!IsSendEmpty@{IsSendEmpty}}
+\index{IsSendEmpty@{IsSendEmpty}!NetSocket@{NetSocket}}
+\subsubsection[{IsSendEmpty}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::IsSendEmpty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_a9dad9c9499a245c125ba90fc753592f4}
+
+
+Determines whether the send cleanup vector is empty. 
+
+\begin{DoxyReturn}{Returns}
+true if the send cleanup vector is empty. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_a703ac13a72d73c598c81372946097210}{
+\index{NetSocket@{NetSocket}!operator=@{operator=}}
+\index{operator=@{operator=}!NetSocket@{NetSocket}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket} \& NetSocket::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_a703ac13a72d73c598c81372946097210}
+
+
+Deep assignment operator. 
+
+Socket does not directly copy contents of {\itshape copyMe\/}, but initializes its buffer to be the same size as {\itshape copyMe's\/}.\par
+\par
+
+
+\hyperlink{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}{NetSocketSimple::winsockSocket} is not copied.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_afb09f225fda4d4b8f1108cb6c1e6b3d9}{
+\index{NetSocket@{NetSocket}!RemoveRecvFunction@{RemoveRecvFunction}}
+\index{RemoveRecvFunction@{RemoveRecvFunction}!NetSocket@{NetSocket}}
+\subsubsection[{RemoveRecvFunction}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::RemoveRecvFunction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_afb09f225fda4d4b8f1108cb6c1e6b3d9}
+
+
+Temporarily disables the receive function. 
+
+Use \hyperlink{class_net_socket_a0da1e270db405a2a49cb66670fbb2fbd}{UndoRemoveRecvFunction()} to undo this action. \hypertarget{class_net_socket_ae6829ea0830059f1c21154a9c1392ed2}{
+\index{NetSocket@{NetSocket}!RemoveSend@{RemoveSend}}
+\index{RemoveSend@{RemoveSend}!NetSocket@{NetSocket}}
+\subsubsection[{RemoveSend}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::RemoveSend (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_ae6829ea0830059f1c21154a9c1392ed2}
+
+
+Cleans up the send operation at the specified element. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em element}]Element to cleanup. \end{DoxyParams}
+
+
+Check that object is not in use. The object will only be in use at this point if it is still executing the internal function it was doing when it added itself to the cleanup queue. It may still need to use some internal variables e.g. If it is blocking for completion and so we must wait before we clean it up. We must release the critical section BEFORE cleaning it up.
+
+\hypertarget{class_net_socket_aedd848a5bbf20f92dcd2f2d68603a16a}{
+\index{NetSocket@{NetSocket}!RemoveSend@{RemoveSend}}
+\index{RemoveSend@{RemoveSend}!NetSocket@{NetSocket}}
+\subsubsection[{RemoveSend}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::RemoveSend (
+\begin{DoxyParamCaption}
+\item[{const OVERLAPPED $\ast$}]{ operation}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_aedd848a5bbf20f92dcd2f2d68603a16a}
+
+
+Cleans up the send operation that is using the specified overlapped object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operation}]Pointer to overlapped operation of send operation to cleanup.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an operation was cleaned up, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_a808894184a1eed1a647e1cdf3c015f3a}{
+\index{NetSocket@{NetSocket}!Send@{Send}}
+\index{Send@{Send}!NetSocket@{NetSocket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NetUtility::SendStatus} NetSocket::Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf NetAddress} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_socket_a808894184a1eed1a647e1cdf3c015f3a}
+
+
+Sends a packet using this socket. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em sendToAddr}]Address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]Length of time in milliseconds to wait before canceling send operation.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_net_socket_a8532d19ebb469fa60ed3c66ca62ad0b7}{TestNetSocket}, \hyperlink{class_net_socket_t_c_p_a0c81335a45d43fc31073596bee96f7c0}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_ab9f7c46f5aab7fb043a40f831132f213}{NetSocketUDP}.
+
+\hypertarget{class_net_socket_a35080a7efc36c4a4444dcf8a35213ccd}{
+\index{NetSocket@{NetSocket}!Send@{Send}}
+\index{Send@{Send}!NetSocket@{NetSocket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetSocket::Send (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSend} \&}]{ sendObject, }
+\item[{const {\bf NetAddress} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_a35080a7efc36c4a4444dcf8a35213ccd}
+
+
+Sends a send object to the specified address. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em sendObject}]Object to send. \item[{\em sendToAddr}]Address to send to, if NULL then object is sent to address that socket is connected to. \item[{\em timeout}]Length of time in milliseconds to wait before canceling send operation.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_aafadb66f83b867d49633a304d1083cad}{
+\index{NetSocket@{NetSocket}!SetClientID@{SetClientID}}
+\index{SetClientID@{SetClientID}!NetSocket@{NetSocket}}
+\subsubsection[{SetClientID}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::SetClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_aafadb66f83b867d49633a304d1083cad}
+
+
+Sets the completion key client ID field. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]Client ID to be loaded into completion key. \end{DoxyParams}
+\hypertarget{class_net_socket_a389b4eb60158c997a932798a2de02e68}{
+\index{NetSocket@{NetSocket}!SetCompletionPortFinishRecvNotification@{SetCompletionPortFinishRecvNotification}}
+\index{SetCompletionPortFinishRecvNotification@{SetCompletionPortFinishRecvNotification}!NetSocket@{NetSocket}}
+\subsubsection[{SetCompletionPortFinishRecvNotification}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::SetCompletionPortFinishRecvNotification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_a389b4eb60158c997a932798a2de02e68}
+
+
+Signal that the receive operation that was last initiated has completed. 
+
+\begin{DoxyWarning}{Warning}
+Should only be used by completion port. 
+\end{DoxyWarning}
+\hypertarget{class_net_socket_aa5e8328367081d19e64a37e6b15703cf}{
+\index{NetSocket@{NetSocket}!SetInstance@{SetInstance}}
+\index{SetInstance@{SetInstance}!NetSocket@{NetSocket}}
+\subsubsection[{SetInstance}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::SetInstance (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstance} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_aa5e8328367081d19e64a37e6b15703cf}
+
+
+Sets the completion key instance field. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]Pointer to instance to be loaded into completion key. \end{DoxyParams}
+\hypertarget{class_net_socket_a41017899d90bb50e70345c5fcfbce577}{
+\index{NetSocket@{NetSocket}!SetRecvOverlappedEvent@{SetRecvOverlappedEvent}}
+\index{SetRecvOverlappedEvent@{SetRecvOverlappedEvent}!NetSocket@{NetSocket}}
+\subsubsection[{SetRecvOverlappedEvent}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocket::SetRecvOverlappedEvent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_a41017899d90bb50e70345c5fcfbce577}
+
+
+Manually sets the overlapped event. 
+
+This is necessary when an overlapped recv operation fails before pending as in this case the overlapped event object is not automatically signaled. \hypertarget{class_net_socket_ae2233dd5a751f07101b1347df5dfc308}{
+\index{NetSocket@{NetSocket}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSocket@{NetSocket}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocket::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_socket_ae2233dd5a751f07101b1347df5dfc308}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_socket_simple_a69c2149f61ab6af018faf89e61ec6592}{NetSocketSimple}.
+
+
+
+Reimplemented in \hyperlink{class_net_socket_t_c_p_a844311ce7f1248d66b4e15d9e042e89a}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_a68728f4e9718f3f730a8f28c94a91968}{NetSocketUDP}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_socket_a26693d766fabf449245ef0a1e2a5ff49}{
+\index{NetSocket@{NetSocket}!completionKey@{completionKey}}
+\index{completionKey@{completionKey}!NetSocket@{NetSocket}}
+\subsubsection[{completionKey}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CompletionKey} {\bf NetSocket::completionKey}}}
+\label{class_net_socket_a26693d766fabf449245ef0a1e2a5ff49}
+
+
+Unique completion key used by completion port to identify this object. 
+
+Public access rights so that winsock has access to it. \hypertarget{class_net_socket_aeff1c796b40fa0545b6b3f2bb7767f4d}{
+\index{NetSocket@{NetSocket}!completionPortCloseNotification@{completionPortCloseNotification}}
+\index{completionPortCloseNotification@{completionPortCloseNotification}!NetSocket@{NetSocket}}
+\subsubsection[{completionPortCloseNotification}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} {\bf NetSocket::completionPortCloseNotification}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{class_net_socket_aeff1c796b40fa0545b6b3f2bb7767f4d}
+
+
+True if completion port wants this socket to be closed by the main process. 
+
+\begin{DoxyNote}{Note}
+Completion port does not close socket directly in order to simplify multithreaded architecture. 
+\end{DoxyNote}
+\hypertarget{class_net_socket_a794267d0dd5ed57e8d9bfdfea01d2995}{
+\index{NetSocket@{NetSocket}!flags@{flags}}
+\index{flags@{flags}!NetSocket@{NetSocket}}
+\subsubsection[{flags}]{\setlength{\rightskip}{0pt plus 5cm}DWORD {\bf NetSocket::flags}}}
+\label{class_net_socket_a794267d0dd5ed57e8d9bfdfea01d2995}
+
+
+Filled when TCP receive operation completes, is ignored but required by winsock. 
+
+Public access rights so that winsock has access to it. \hypertarget{class_net_socket_a03f60f949b31ee3feae0d1d3daa3bf3c}{
+\index{NetSocket@{NetSocket}!notDealingWithData@{notDealingWithData}}
+\index{notDealingWithData@{notDealingWithData}!NetSocket@{NetSocket}}
+\subsubsection[{notDealingWithData}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} {\bf NetSocket::notDealingWithData}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_a03f60f949b31ee3feae0d1d3daa3bf3c}
+
+
+False after a receive operation has been initiated, only true when the operation has finished AND all data has been dealt with. 
+
+This is important during the socket closure process so that resources being used are not cleaned up. \hypertarget{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}{
+\index{NetSocket@{NetSocket}!recvBuffer@{recvBuffer}}
+\index{recvBuffer@{recvBuffer}!NetSocket@{NetSocket}}
+\subsubsection[{recvBuffer}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF {\bf NetSocket::recvBuffer}}}
+\label{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}
+
+
+Winsock buffer that is filled with newly received data. 
+
+Public access rights so that winsock has access to it. \hypertarget{class_net_socket_a7d4dd5d72c86d0ee4f46a3ec9e03bdfc}{
+\index{NetSocket@{NetSocket}!recvFunctionAux@{recvFunctionAux}}
+\index{recvFunctionAux@{recvFunctionAux}!NetSocket@{NetSocket}}
+\subsubsection[{recvFunctionAux}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<${\bf NetSocket::RecvFunc}$>$ {\bf NetSocket::recvFunctionAux}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_a7d4dd5d72c86d0ee4f46a3ec9e03bdfc}
+
+
+Temporary store of \hyperlink{class_net_socket_a92fcd22d674b159c192f356728d2a575}{NetSocket::recvFunction}. 
+
+This is used in rare cases where the receive function needs to be temporarily disabled during an initial connection process, usually at the instance level. \hypertarget{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{
+\index{NetSocket@{NetSocket}!recvOverlapped@{recvOverlapped}}
+\index{recvOverlapped@{recvOverlapped}!NetSocket@{NetSocket}}
+\subsubsection[{recvOverlapped}]{\setlength{\rightskip}{0pt plus 5cm}WSAOVERLAPPED {\bf NetSocket::recvOverlapped}}}
+\label{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}
+
+
+Winsock overlapped operation used to identify when a receive operation has completed. 
+
+See \hyperlink{class_net_socket_aeeae305cd0382ee87cf9c35aec571719}{NetSocket::recvOverlappedEvent} for details on the status of the associated event object.\par
+\par
+
+
+Public access rights so that winsock has access to it. \hypertarget{class_net_socket_aeeae305cd0382ee87cf9c35aec571719}{
+\index{NetSocket@{NetSocket}!recvOverlappedEvent@{recvOverlappedEvent}}
+\index{recvOverlappedEvent@{recvOverlappedEvent}!NetSocket@{NetSocket}}
+\subsubsection[{recvOverlappedEvent}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} {\bf NetSocket::recvOverlappedEvent}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_aeeae305cd0382ee87cf9c35aec571719}
+
+
+Event object associated with \hyperlink{class_net_socket_ac260f690a6f192c22463d1f5ea903d96}{NetSocket::recvOverlapped}. 
+
+The overlapped event object goes through the following stages: \par
+ 1. Starts signaled. \par
+ 2. Begins operation, becomes unsignaled. \par
+ 3. Finishes operation successfully and becomes signaled. \par
+ 4. OR fails to complete operation and is manually signaled (to prevent deadlock). \par
+\par
+ \hypertarget{class_net_socket_a84e789c6d2552eef894f1f751539233f}{
+\index{NetSocket@{NetSocket}!sendCleanup@{sendCleanup}}
+\index{sendCleanup@{sendCleanup}!NetSocket@{NetSocket}}
+\subsubsection[{sendCleanup}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StoreVector}$<${\bf NetSend}$>$ {\bf NetSocket::sendCleanup}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{class_net_socket_a84e789c6d2552eef894f1f751539233f}
+
+
+This vector is filled with send operations that are in progress. 
+
+Upon completion, a completion thread compares the overlapped pointer using. \hyperlink{class_net_socket_aedd848a5bbf20f92dcd2f2d68603a16a}{RemoveSend()} to determine which send operation should be cleaned up. When cleaned up the send operation is removed from this vector.
+
+\begin{DoxyNote}{Note}
+Vector should not be used if socket is not associated with completion port. 
+
+Made mutable because vector CPP class is not const correct. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocket.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocket.cpp\end{DoxyCompactItemize}

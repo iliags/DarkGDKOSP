@@ -1,0 +1,395 @@
+\hypertarget{class_completion_key}{
+\section{CompletionKey Class Reference}
+\label{class_completion_key}\index{CompletionKey@{CompletionKey}}
+}
+
+
+Completion key used by the completion port to identify instances, sockets and other objects.  
+
+
+
+
+{\ttfamily \#include $<$CompletionKey.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4}{KeyType} \{ \hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4a935186545139a1c56403400651f6a25c}{SOCKET}, 
+\hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4ac1d7e0bee4bbd1cd27869c1ad970dad8}{SHUTDOWN}
+ \}
+\begin{DoxyCompactList}\small\item\em Types of completion key objects, indicating what their purpose is. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_completion_key_a08c67ff59ddc8704d3e21373a27155b9}{CompletionKey} (const \hyperlink{class_completion_key}{CompletionKey} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_completion_key}{CompletionKey} \& \hyperlink{class_completion_key_ad544e6e2d72865351c09e77166633424}{operator=} (const \hyperlink{class_completion_key}{CompletionKey} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Assignment operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_completion_key_a51628dbd9aca436ef191d7eef2a60487}{operator==} (const \hyperlink{class_completion_key}{CompletionKey} \&compare) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_completion_key_aaaabca93c940e464338e85c523980c0c}{operator!=} (const \hyperlink{class_completion_key}{CompletionKey} \&compare) const 
+\begin{DoxyCompactList}\small\item\em Inequality operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_completion_key_a0b3139b955f8c725a7d41a603b0dcb32}{CompletionKey} (\hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4}{KeyType} \hyperlink{class_completion_key_a9baa44ea64d0e6b40e8863b1f4d6c2dd}{type}, \hyperlink{class_net_socket}{NetSocket} $\ast$\hyperlink{class_completion_key_a277a71c81d700138d73fb918c41ee8e2}{socket}=NULL, \hyperlink{class_net_instance}{NetInstance} $\ast$\hyperlink{class_completion_key_a56e795d930e82555049fbf97c82f6493}{instance}=NULL, size\_\-t \hyperlink{class_completion_key_ae434a173023d23d9cc22b131509d0325}{clientID}=NULL)
+\begin{DoxyCompactList}\small\item\em Constructor where an instance, socket and client are involved. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket}{NetSocket} $\ast$ \hyperlink{class_completion_key_a9e785a464b4c5ade148d506d9e8eeeef}{GetSocket} ()
+\begin{DoxyCompactList}\small\item\em Retrieves pointer to socket that owns this object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance}{NetInstance} $\ast$ \hyperlink{class_completion_key_a80c10491545d7a2de283e301d970b1d6}{GetInstance} ()
+\begin{DoxyCompactList}\small\item\em Retrieves pointer to instance that owns this object. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_completion_key_acbf632d51b18ec2717be3f93b09ed52a}{GetCustomObject} ()
+\begin{DoxyCompactList}\small\item\em Retrieves custom object that relates to this object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4}{KeyType} \hyperlink{class_completion_key_a2d61a4bec4faff98ddacc896a89fe458}{GetType} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the purpose of this object. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_completion_key_ac42a83d6549a4fc3cfc9a336b08704f9}{GetClientID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the client ID of the client that owns this object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_completion_key_a5055dfb3ac139408458f0f7469715195}{SetInstance} (\hyperlink{class_net_instance}{NetInstance} $\ast$\hyperlink{class_completion_key_a56e795d930e82555049fbf97c82f6493}{instance})
+\begin{DoxyCompactList}\small\item\em Sets instance field, can only be done if the instance field is currently empty. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_completion_key_a03d3896b9cb138783b865f3f4f7fb6ac}{SetClientID} (size\_\-t \hyperlink{class_completion_key_ae434a173023d23d9cc22b131509d0325}{clientID})
+\begin{DoxyCompactList}\small\item\em Sets client ID field, can only be done if the client ID field is currently empty. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_completion_key_a1b8ca558f20c99ee689c39d4cae281ae}{IsOwnedByInstance} () const 
+\begin{DoxyCompactList}\small\item\em Determine if this object is owned by an instance. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_completion_key_a99f9ec1d20ab8a952222176345a7b065}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_completion_key_a77abe450afe2bee29fca1046b3973e69}{
+static const \hyperlink{class_completion_key}{CompletionKey} \hyperlink{class_completion_key_a77abe450afe2bee29fca1046b3973e69}{shutdownKey}}
+\label{class_completion_key_a77abe450afe2bee29fca1046b3973e69}
+
+\begin{DoxyCompactList}\small\item\em Completion key to be posted when the completion port is being shut down. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_completion_key_a0aca2c8d539bd05b7261626634a57dba}{Copy} (const \hyperlink{class_completion_key}{CompletionKey} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / Assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_completion_key_a277a71c81d700138d73fb918c41ee8e2}{
+\hyperlink{class_net_socket}{NetSocket} $\ast$ \hyperlink{class_completion_key_a277a71c81d700138d73fb918c41ee8e2}{socket}}
+\label{class_completion_key_a277a71c81d700138d73fb918c41ee8e2}
+
+\begin{DoxyCompactList}\small\item\em Pointer to socket, not NULL only if this object belongs to a socket. \item\end{DoxyCompactList}\item 
+\hypertarget{class_completion_key_a56e795d930e82555049fbf97c82f6493}{
+\hyperlink{class_net_instance}{NetInstance} $\ast$ \hyperlink{class_completion_key_a56e795d930e82555049fbf97c82f6493}{instance}}
+\label{class_completion_key_a56e795d930e82555049fbf97c82f6493}
+
+\begin{DoxyCompactList}\small\item\em Pointer to an instance, not NULL only if this object belongs to an instance. \item\end{DoxyCompactList}\item 
+\hypertarget{class_completion_key_ae434a173023d23d9cc22b131509d0325}{
+size\_\-t \hyperlink{class_completion_key_ae434a173023d23d9cc22b131509d0325}{clientID}}
+\label{class_completion_key_ae434a173023d23d9cc22b131509d0325}
+
+\begin{DoxyCompactList}\small\item\em ID of client within instance that this object belongs to. \item\end{DoxyCompactList}\item 
+\hypertarget{class_completion_key_aa74de82c848029cc41fe974edf6eef59}{
+void $\ast$ \hyperlink{class_completion_key_aa74de82c848029cc41fe974edf6eef59}{customObject}}
+\label{class_completion_key_aa74de82c848029cc41fe974edf6eef59}
+
+\begin{DoxyCompactList}\small\item\em Pointer to any object, for additional custom data storage. \item\end{DoxyCompactList}\item 
+\hypertarget{class_completion_key_a9baa44ea64d0e6b40e8863b1f4d6c2dd}{
+\hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4}{KeyType} \hyperlink{class_completion_key_a9baa44ea64d0e6b40e8863b1f4d6c2dd}{type}}
+\label{class_completion_key_a9baa44ea64d0e6b40e8863b1f4d6c2dd}
+
+\begin{DoxyCompactList}\small\item\em Purpose of this completion key. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Completion key used by the completion port to identify instances, sockets and other objects. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+When queued events complete they are often passed to the completion port. If they are, they must be identified. To identify them the completion port is given a \hyperlink{class_completion_key}{CompletionKey} object and from this it can retrieve the entity that initiated the event and pass it relevant information about the event now that it has completed. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4}{
+\index{CompletionKey@{CompletionKey}!KeyType@{KeyType}}
+\index{KeyType@{KeyType}!CompletionKey@{CompletionKey}}
+\subsubsection[{KeyType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf CompletionKey::KeyType}}}
+\label{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4}
+
+
+Types of completion key objects, indicating what their purpose is. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{SOCKET@{SOCKET}!CompletionKey@{CompletionKey}}\index{CompletionKey@{CompletionKey}!SOCKET@{SOCKET}}\item[{\em 
+\hypertarget{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4a935186545139a1c56403400651f6a25c}{
+SOCKET}
+\label{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4a935186545139a1c56403400651f6a25c}
+}]Completed operation was initiated by a socket. \index{SHUTDOWN@{SHUTDOWN}!CompletionKey@{CompletionKey}}\index{CompletionKey@{CompletionKey}!SHUTDOWN@{SHUTDOWN}}\item[{\em 
+\hypertarget{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4ac1d7e0bee4bbd1cd27869c1ad970dad8}{
+SHUTDOWN}
+\label{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4ac1d7e0bee4bbd1cd27869c1ad970dad8}
+}]Completion port threads should shut down. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_completion_key_a08c67ff59ddc8704d3e21373a27155b9}{
+\index{CompletionKey@{CompletionKey}!CompletionKey@{CompletionKey}}
+\index{CompletionKey@{CompletionKey}!CompletionKey@{CompletionKey}}
+\subsubsection[{CompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}CompletionKey::CompletionKey (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_a08c67ff59ddc8704d3e21373a27155b9}
+
+
+Copy constructor. 
+
+Copies {\itshape copyMe\/} into this object. 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_completion_key_a0b3139b955f8c725a7d41a603b0dcb32}{
+\index{CompletionKey@{CompletionKey}!CompletionKey@{CompletionKey}}
+\index{CompletionKey@{CompletionKey}!CompletionKey@{CompletionKey}}
+\subsubsection[{CompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}CompletionKey::CompletionKey (
+\begin{DoxyParamCaption}
+\item[{{\bf KeyType}}]{ type, }
+\item[{{\bf NetSocket} $\ast$}]{ socket = {\ttfamily NULL}, }
+\item[{{\bf NetInstance} $\ast$}]{ instance = {\ttfamily NULL}, }
+\item[{size\_\-t}]{ clientID = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_a0b3139b955f8c725a7d41a603b0dcb32}
+
+
+Constructor where an instance, socket and client are involved. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]Purpose of completion key. \item[\mbox{\tt[in]} {\em socket}]Pointer to socket that owns this object (optional, default = NULL). \item[\mbox{\tt[in]} {\em instance}]Pointer to instance that owns this object (optional, default = NULL). \item[{\em clientID}]ID of client that owns this object (optional, default = NULL). \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_completion_key_a0aca2c8d539bd05b7261626634a57dba}{
+\index{CompletionKey@{CompletionKey}!Copy@{Copy}}
+\index{Copy@{Copy}!CompletionKey@{CompletionKey}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionKey::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_completion_key_a0aca2c8d539bd05b7261626634a57dba}
+
+
+Copy constructor / Assignment operator helper method. 
+
+Nothing is cleaned up by this method.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy into this object. \end{DoxyParams}
+\hypertarget{class_completion_key_ac42a83d6549a4fc3cfc9a336b08704f9}{
+\index{CompletionKey@{CompletionKey}!GetClientID@{GetClientID}}
+\index{GetClientID@{GetClientID}!CompletionKey@{CompletionKey}}
+\subsubsection[{GetClientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t CompletionKey::GetClientID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_completion_key_ac42a83d6549a4fc3cfc9a336b08704f9}
+
+
+Retrieves the client ID of the client that owns this object. 
+
+\begin{DoxyReturn}{Returns}
+client ID of client within instance that owns this object. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_acbf632d51b18ec2717be3f93b09ed52a}{
+\index{CompletionKey@{CompletionKey}!GetCustomObject@{GetCustomObject}}
+\index{GetCustomObject@{GetCustomObject}!CompletionKey@{CompletionKey}}
+\subsubsection[{GetCustomObject}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ CompletionKey::GetCustomObject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_acbf632d51b18ec2717be3f93b09ed52a}
+
+
+Retrieves custom object that relates to this object. 
+
+\begin{DoxyReturn}{Returns}
+pointer to object of any type, if NULL then no object was loaded. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_a80c10491545d7a2de283e301d970b1d6}{
+\index{CompletionKey@{CompletionKey}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!CompletionKey@{CompletionKey}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstance} $\ast$ CompletionKey::GetInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_a80c10491545d7a2de283e301d970b1d6}
+
+
+Retrieves pointer to instance that owns this object. 
+
+\begin{DoxyReturn}{Returns}
+pointer to instance, if NULL then no object was loaded. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_a9e785a464b4c5ade148d506d9e8eeeef}{
+\index{CompletionKey@{CompletionKey}!GetSocket@{GetSocket}}
+\index{GetSocket@{GetSocket}!CompletionKey@{CompletionKey}}
+\subsubsection[{GetSocket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket} $\ast$ CompletionKey::GetSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_a9e785a464b4c5ade148d506d9e8eeeef}
+
+
+Retrieves pointer to socket that owns this object. 
+
+\begin{DoxyReturn}{Returns}
+pointer to socket, if NULL then no object was loaded. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_a2d61a4bec4faff98ddacc896a89fe458}{
+\index{CompletionKey@{CompletionKey}!GetType@{GetType}}
+\index{GetType@{GetType}!CompletionKey@{CompletionKey}}
+\subsubsection[{GetType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CompletionKey::KeyType} CompletionKey::GetType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_completion_key_a2d61a4bec4faff98ddacc896a89fe458}
+
+
+Retrieves the purpose of this object. 
+
+\begin{DoxyReturn}{Returns}
+purpose of this completion key. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_a1b8ca558f20c99ee689c39d4cae281ae}{
+\index{CompletionKey@{CompletionKey}!IsOwnedByInstance@{IsOwnedByInstance}}
+\index{IsOwnedByInstance@{IsOwnedByInstance}!CompletionKey@{CompletionKey}}
+\subsubsection[{IsOwnedByInstance}]{\setlength{\rightskip}{0pt plus 5cm}bool CompletionKey::IsOwnedByInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_completion_key_a1b8ca558f20c99ee689c39d4cae281ae}
+
+
+Determine if this object is owned by an instance. 
+
+\begin{DoxyReturn}{Returns}
+true if the completion key contains a pointer to an instance. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_aaaabca93c940e464338e85c523980c0c}{
+\index{CompletionKey@{CompletionKey}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!CompletionKey@{CompletionKey}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool CompletionKey::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ compare}
+\end{DoxyParamCaption}
+) const}}
+\label{class_completion_key_aaaabca93c940e464338e85c523980c0c}
+
+
+Inequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if {\itshape compare\/} is identical to this object. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_ad544e6e2d72865351c09e77166633424}{
+\index{CompletionKey@{CompletionKey}!operator=@{operator=}}
+\index{operator=@{operator=}!CompletionKey@{CompletionKey}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CompletionKey} \& CompletionKey::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_ad544e6e2d72865351c09e77166633424}
+
+
+Assignment operator. 
+
+Copies {\itshape copyMe\/} into this object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_a51628dbd9aca436ef191d7eef2a60487}{
+\index{CompletionKey@{CompletionKey}!operator==@{operator==}}
+\index{operator==@{operator==}!CompletionKey@{CompletionKey}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool CompletionKey::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ compare}
+\end{DoxyParamCaption}
+) const}}
+\label{class_completion_key_a51628dbd9aca436ef191d7eef2a60487}
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape compare\/} is identical to this object. 
+\end{DoxyReturn}
+\hypertarget{class_completion_key_a03d3896b9cb138783b865f3f4f7fb6ac}{
+\index{CompletionKey@{CompletionKey}!SetClientID@{SetClientID}}
+\index{SetClientID@{SetClientID}!CompletionKey@{CompletionKey}}
+\subsubsection[{SetClientID}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionKey::SetClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_a03d3896b9cb138783b865f3f4f7fb6ac}
+
+
+Sets client ID field, can only be done if the client ID field is currently empty. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ClientID of client that owns this object. \end{DoxyParams}
+\hypertarget{class_completion_key_a5055dfb3ac139408458f0f7469715195}{
+\index{CompletionKey@{CompletionKey}!SetInstance@{SetInstance}}
+\index{SetInstance@{SetInstance}!CompletionKey@{CompletionKey}}
+\subsubsection[{SetInstance}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionKey::SetInstance (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstance} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_key_a5055dfb3ac139408458f0f7469715195}
+
+
+Sets instance field, can only be done if the instance field is currently empty. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]Instance object that owns this object. \end{DoxyParams}
+\hypertarget{class_completion_key_a99f9ec1d20ab8a952222176345a7b065}{
+\index{CompletionKey@{CompletionKey}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!CompletionKey@{CompletionKey}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool CompletionKey::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_completion_key_a99f9ec1d20ab8a952222176345a7b065}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/CompletionKey.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/CompletionKey.cpp\end{DoxyCompactItemize}

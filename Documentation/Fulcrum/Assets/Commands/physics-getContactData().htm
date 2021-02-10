@@ -1,0 +1,63 @@
+<HTML>
+
+
+    <HEAD>
+        <title> FulcrumPhy::getContactData() </title>
+		<link rel="stylesheet" type="text/css" href="style1.css"/>
+    </HEAD>
+
+   
+    <BODY id = "wrap">
+     
+        <span class="returns">
+	       bool
+        </span> 
+	   
+	    FulcrumPhy::getContactData
+	  
+	    <span class="parameters">
+	      ( )
+        </span> 
+	 
+	    <br>
+		<br>
+	This command will check to see if any contacts have been added to the stack. You setup contact pairs using 
+        FulcrumPhy::setContactPair(), any contact between these actors/objects will then be added to the stack.
+        If there is at least one contact, you can get information about which objects were involved using 
+        FulcrumPhy::getContactActorA() and FulcrumPhy::getContactActorB(). Its good to note that two or more
+        contacts may be added to the stack in one cycle so you may want to call this command repeatedly until
+        it returns false.        
+        <br>
+        <br>
+          
+        <span class="parameters">
+	        Parameters:
+	    </span>
+	  
+        <br>
+  
+
+        <br>
+        <br>
+      
+        <span class="returns">
+	        Returns:
+	    </span>
+          
+        <br>
+         bool - TRUE if there is at least one contact on the stack, FALSE otherwise 
+        <br>
+   
+              
+        <br>
+        <br>
+	    <br>
+		
+
+           
+		   
+    </BODY>
+
+   
+</HTML>
+   

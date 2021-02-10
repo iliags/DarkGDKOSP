@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetInstanceProfile::SetRecvSizeUDP",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="mnSetBufferSizes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__proc_commands.html#ga69600b131132b7c380434137a9d24903"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="mnSetBufferSizes",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$group__proc_commands.html#ga153e81509a5bcdf4430aead4356f8465"];
+}

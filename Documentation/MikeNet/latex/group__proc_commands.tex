@@ -1,0 +1,2747 @@
+\hypertarget{group__proc_commands}{
+\section{Procedural commands}
+\label{group__proc_commands}\index{Procedural commands@{Procedural commands}}
+}
+
+
+Commands for procedural programming, that wrap around internal classes.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+DBP\_\-CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_gaef8fabefb36ea01174c25b6f49aa5650}{mnGetVersion} ()
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gac6c722451c4ba1f4077414b1fb80aaeb}{mnStart} (size\_\-t numInstances, size\_\-t numThreads)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gac852ff7aa925290861cbcc1fb95cd874}{mnFinish} (size\_\-t instanceID)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_ga079ccfaa9e1271d0aae5bf4483854035}{mnDNS} (const \hyperlink{class_net_address}{NetAddress} \&hostName)
+\item 
+DBP\_\-CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga301162e293cb12262ccd4b305f267f0e}{mnDNS} (const char $\ast$hostName)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga476a722d849ef0062aa8e25f2cf4ccd3}{mnGetNumLocalInterface} ()
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_ga0c953533800374f59c5771f6ade976c6}{mnGetLocalInterface} (size\_\-t num)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga8f4a3f98a801a11b84c416ba7f847362}{mnGetLocalInterfaceStr} (size\_\-t num)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_gad5c1f5e78e84a88300ba571374ad45f9}{mnGetHostName} ()
+\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{group__proc_commands_ga6ffd3536c34f39d9cacd3eb06cf41d79}{mnConnect} (size\_\-t instanceID, const \hyperlink{class_net_address}{NetAddress} \&connectAddrTCP, const \hyperlink{class_net_address}{NetAddress} \&connectAddrUDP, size\_\-t timeoutMilliseconds, bool block, const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile)
+\item 
+DBP\_\-CPP\_\-DLL \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{group__proc_commands_ga601b506b062a594ea02a44502a7b4d0f}{mnConnect} (size\_\-t instanceID, const char $\ast$connectIP\_\-TCP, unsigned short connectPort\_\-TCP, const char $\ast$connectIP\_\-UDP, unsigned short connectPort\_\-UDP, size\_\-t timeoutMilliseconds, bool block, INT\_\-PTR profile)
+\item 
+int \hyperlink{group__proc_commands_gac613edc6f09726bf3f105cdd0393539e}{mnStartServer} (size\_\-t instanceID, size\_\-t maxClients, const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga51d3f53c0195b53dc5f73905230cf37e}{mnStartServer} (size\_\-t instanceID, size\_\-t maxClients, INT\_\-PTR profile)
+\item 
+int \hyperlink{group__proc_commands_ga6d38ae0c7de397bc81d86c4dc89690aa}{mnStartBroadcast} (size\_\-t instanceID, const \hyperlink{class_net_address}{NetAddress} \&connectAddress, bool sendEnabled, bool recvEnabled, const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga4b8bcae5ef6c2c4f767c520d70f55111}{mnStartBroadcast} (size\_\-t instanceID, const char $\ast$connectAddressIP, unsigned short connectAddressPort, bool sendEnabled, bool recvEnabled, INT\_\-PTR profile)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gaf5c7710b502024017c00563b640018c8}{mnSetServerTimeout} (size\_\-t instanceID, size\_\-t timeoutMilliseconds)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga5b23e7eaa1da3078ae3d14fc53a6f21e}{mnGetServerTimeout} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gaaf4e027be8ee358936898816fa653562}{mnClientJoined} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga66a67e72dab31e11fe04f7673767af96}{mnClientLeft} (size\_\-t instanceID)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_gaf4578bcfb95f1af86eb9b2e02c49296e}{mnGetClientIPTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_gaf0c312f497ceedef50b30ad1d0cc625f}{mnGetClientPortTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+const \hyperlink{class_net_address}{NetAddress} $\ast$ \hyperlink{group__proc_commands_gaf609f471da0b48a6a955630a1e2dd6be}{mnGetClientAddressTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga0d9b38d97906d466ce0070ef549860fe}{mnGetClientIPUDP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_ga8604a4693616d0715e06c08416804297}{mnGetClientPortUDP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+const \hyperlink{class_net_address}{NetAddress} $\ast$ \hyperlink{group__proc_commands_gaebfce0412edce2520f8fd499308b2955}{mnGetClientAddressUDP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga893e7a42e875cfc75c6ebf7a7672d9cb}{mnGetClientFrom} (INT\_\-PTR \hyperlink{class_packet}{Packet})
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga6de40734944378fc47b970e82739e60b}{mnShutdownClient} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{group__proc_commands_ga06bd89fdaf152806f4c2f3a9b4abfae0}{mnClientConnected} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga7c734249b65877579ed80cb604f3c638}{mnFlushRecvTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga7906f6bad100b8ac04f6fda92f78db37}{mnFlushRecvUDP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga45512c25fa483ff9d9d12f486dd225dd}{mnChangeBufferSizeTCP} (size\_\-t instanceID, size\_\-t clientID, size\_\-t newSize)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga5b3a8551fa3dd795dc0c03556ebd7843}{mnSetAutoResizeTCP} (size\_\-t instanceID, size\_\-t clientID, bool autoResize)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_ga5c4ebf0ca006ab0bd1750a6adefe907d}{mnGetConnectAddressTCP} (size\_\-t instanceID)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga083b63339c2f42778cbdf19f677055fe}{mnGetConnectIPTCP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_ga6dee9379f99fb78a9513349cabd4ea05}{mnGetConnectPortTCP} (size\_\-t instanceID)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_ga98684f25ae6e70672236a61bad79046e}{mnGetConnectAddressUDP} (size\_\-t instanceID)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga302bfaa47c6aed08e0edc0b5c5a1e093}{mnGetConnectIPUDP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_ga469a2d1aab2e3ed994c18fefb33eea56}{mnGetConnectPortUDP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{group__proc_commands_gadf0357210e9ea8ed418b9507df861604}{mnPollConnect} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gad549e29ca5e200d6d690a4941a570305}{mnStopConnect} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga825c196d663945fe6d1f7e8eaad2313e}{mnGetClientID} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga4fa1fbbae8da05c5c3e90541a935637e}{mnGetMaxClients} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga0563d35ebbd393497e421c4580ab1415}{mnGetNumOperations} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_gaddd3740aec26e31092bc983bdcfa2bc9}{mnGetRecvSizeUDP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga0f58a68488b9564841b09e483c38c556}{mnGetThreads} ()
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga6359d2db10828ddbf0eca0f10ca86b95}{mnGetNumInstances} ()
+\item 
+DBP\_\-CPP\_\-DLL \hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{NetInstance::Type} \hyperlink{group__proc_commands_gad17f849ecac289f110936b76a2d0289f}{mnGetState} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{group__proc_commands_gafde552e5f3aee9bab9d4e913a6fb013c}{mnGetModeUDP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga7ef175fdabecd51849b547b8b8189f7a}{mnGetEnabledUDP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL double \hyperlink{group__proc_commands_ga922264b7d67b59a1082ff2c6a41becd0}{mnGetPercentTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga44af1a9b458dbd2fe537304d3056be3f}{mnGetRecvSizeTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga148c4ffb0ba646210ea65ac774678790}{mnGetBytesTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga7e9fa40cd084c812db742bb6c7cccab1}{mnGetHandshakeEnabledTCP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{group__proc_commands_gaf99961eb824319fa3c46d16e9591dd2a}{mnGetModeTCP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga2d4e1426b9394a3000dc9e3171cd2b91}{mnGetGracefulDisconnectEnabledTCP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_gaee054d4d3417ea53f73a83964c15aa8b}{mnGetSendTimeout} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_gaa766b35aa60438d4333ffefa943b34e5}{mnGetStoreAmountTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga65a491d5eefeb9d5a8b2266cc1c89db4}{mnGetStoreAmountUDP} (size\_\-t instanceID, size\_\-t clientID, size\_\-t operationID)
+\item 
+int \hyperlink{group__proc_commands_ga5a7015eba81f69c5e542d80672932730}{mnGetPostfixTCP} (size\_\-t instanceID, \hyperlink{class_packet}{Packet} \&packet)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga93ce24610df1cd2ba4bfa5677751314b}{mnGetPostfixTCP} (size\_\-t instanceID, INT\_\-PTR packet)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gac6751902ccefd2b24eee546fd460be86}{mnGetNagleEnabledTCP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gae6916f4b04f5c6dbf2c526216ee43c75}{mnGetAutoResizeTCP} (size\_\-t instanceID, size\_\-t clientID)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_ga191660f11ab55ff6d765d0553b60be78}{mnGetLocalAddressTCP} (size\_\-t instanceID)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga5d79d6e116438ddfb76d186f112509c2}{mnGetLocalIPTCP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_gad1489b71e71452d1008815c282145a7b}{mnGetLocalPortTCP} (size\_\-t instanceID)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_gad78bd1aa3310f998f352a05bd3f26d1e}{mnGetLocalAddressUDP} (size\_\-t instanceID)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_ga3232bef18bae4df9acf445f07eef4610}{mnGetLocalIPUDP} (size\_\-t instanceID)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_ga3f2ea3393ca3f246eae575484c5e7957}{mnGetLocalPortUDP} (size\_\-t instanceID)
+\item 
+size\_\-t \hyperlink{group__proc_commands_gaa7714c849a1a3502d9d98aeffe64cbc5}{mnRecvTCP} (size\_\-t instanceID, size\_\-t clientID, \hyperlink{class_packet}{Packet} \&destinationPacket)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga14e48459c282befe5eb44fc07e094796}{mnRecvTCP} (size\_\-t instanceID, size\_\-t clientID, INT\_\-PTR destinationPacket)
+\item 
+size\_\-t \hyperlink{group__proc_commands_ga29a3720649b37fa0429c195f8655604d}{mnRecvUDP} (size\_\-t instanceID, size\_\-t clientID, size\_\-t operationID, \hyperlink{class_packet}{Packet} \&destinationPacket)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga8267c845d7eb86daa604efc9dc317b3c}{mnRecvUDP} (size\_\-t instanceID, size\_\-t clientID, size\_\-t operationID, INT\_\-PTR destinationPacket)
+\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{group__proc_commands_ga7be727df70de53051e1952db9a872970}{mnSendUDP} (size\_\-t instanceID, size\_\-t clientID, \hyperlink{class_packet}{Packet} \&packet, bool keep, bool block)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga4d4196f72fab0f2d1424f63ff5c5ced7}{mnSendUDP} (size\_\-t instanceID, size\_\-t clientID, INT\_\-PTR packet, bool keep, bool block)
+\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{group__proc_commands_ga9410455a617d38a8e9bd7ea6a1c1e273}{mnSendToUDP} (size\_\-t instanceID, const \hyperlink{class_net_address}{NetAddress} \&address, \hyperlink{class_packet}{Packet} \&packet, bool keep, bool block)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga9904f92dbfda68419dbc86793295579a}{mnSendToUDP} (size\_\-t instanceID, const char $\ast$addrIP, unsigned short addrPort, INT\_\-PTR packet, bool keep, bool block)
+\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{group__proc_commands_ga2be055f23f7d82e6f6a7834099652de4}{mnSendTCP} (size\_\-t instanceID, size\_\-t clientID, \hyperlink{class_packet}{Packet} \&packet, bool keep, bool block)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga6211caba884ba2710d2b7854b792f4a4}{mnSendTCP} (size\_\-t instanceID, size\_\-t clientID, INT\_\-PTR packet, bool keep, bool block)
+\item 
+int \hyperlink{group__proc_commands_ga4ae3e56019d3e8706dbcc7660278f0b5}{mnSendAllTCP} (size\_\-t instanceID, \hyperlink{class_packet}{Packet} \&packet, bool keep, bool block, size\_\-t clientExcludeID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga5922467db1c9256df6b6f5a598902b97}{mnSendAllTCP} (size\_\-t instanceID, INT\_\-PTR packet, bool keep, bool block, size\_\-t clientExcludeID)
+\item 
+int \hyperlink{group__proc_commands_gab5bd7c87f6802d6d246ace6f0bb37163}{mnSendAllUDP} (size\_\-t instanceID, \hyperlink{class_packet}{Packet} \&packet, bool keep, bool block, size\_\-t clientExcludeID)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga3e06bdec881534065fc62974bbefd69f}{mnSendAllUDP} (size\_\-t instanceID, INT\_\-PTR packet, bool keep, bool block, size\_\-t clientExcludeID)
+\item 
+CPP\_\-DLL int \hyperlink{group__proc_commands_gad9602aa0f667ce2cb4e7b7f5cf39b24c}{mnSetProfileFunction} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, \hyperlink{class_net_instance_a5a7825b101b3c88c9237d9a8f0134bd5}{NetInstance::RecvFunc} recvFuncTCP, \hyperlink{class_net_instance_a5a7825b101b3c88c9237d9a8f0134bd5}{NetInstance::RecvFunc} recvFuncUDP)
+\item 
+int \hyperlink{group__proc_commands_ga049fcd0a4c7b6d23781826ea33fb1991}{mnSetProfileBufferSizes} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, size\_\-t recvSizeTCP, size\_\-t recvSizeUDP)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga2a3156ef14550e2502871e07b4d14e71}{mnSetProfileBufferSizes} (INT\_\-PTR profile, size\_\-t recvSizeTCP, size\_\-t recvSizeUDP)
+\item 
+int \hyperlink{group__proc_commands_ga5944d44f314464cd2e54ef97932624be}{mnSetProfileEnabledUDP} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, bool option)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga9b57aa13886f8cbad981efcbd6eda55b}{mnSetProfileEnabledUDP} (INT\_\-PTR profile, bool option)
+\item 
+int \hyperlink{group__proc_commands_ga601f764dc3721b9376807b7338bd57e1}{mnSetProfileAutoResizeTCP} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, bool autoResize)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga1c1ad889fc6103f364518e98b91ecdb5}{mnSetProfileAutoResizeTCP} (INT\_\-PTR profile, bool autoResize)
+\item 
+int \hyperlink{group__proc_commands_ga7f704dde6483eb4e5b4bb3958c98bbb9}{mnSetProfileHandshakeEnabled} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, bool option)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga1b4d8ac7fc6d22f92339dc05b7c2c06f}{mnSetProfileHandshakeEnabled} (INT\_\-PTR profile, bool option)
+\item 
+int \hyperlink{group__proc_commands_gaecf77c1c7906ced1ff86a6c94ced1da7}{mnSetProfileModeTCP} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} modeTCP)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga08110043448e44ec4e4522abbb909b5a}{mnSetProfileModeTCP} (INT\_\-PTR profile, char modeTCP)
+\item 
+int \hyperlink{group__proc_commands_gaa318fd49d83a6a4b37e11808424331cf}{mnSetProfileGracefulDisconnectEnabled} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, bool option)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga857500d66217e3c1c8261c2a372ca8b6}{mnSetProfileGracefulDisconnectEnabled} (INT\_\-PTR profile, bool option)
+\item 
+int \hyperlink{group__proc_commands_gaa51770b52ce020dc00c3d2239acfb67d}{mnSetProfileSendTimeout} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, size\_\-t timeoutMilliseconds)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga8e6ae0d7fe3ea65af0df88b73c159d65}{mnSetProfileSendTimeout} (INT\_\-PTR profile, size\_\-t timeoutMilliseconds)
+\item 
+int \hyperlink{group__proc_commands_ga3eac7d2011d58116b7429d043f801327}{mnSetProfilePostfixTCP} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, const \hyperlink{class_packet}{Packet} \&packet)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gaaef2c5f071939a37da436bd735a3356b}{mnSetProfilePostfixTCP} (INT\_\-PTR profile, INT\_\-PTR packet)
+\item 
+int \hyperlink{group__proc_commands_gaa586f7c1253e0a7dc2e6a7cfc1525fbb}{mnSetProfileNagleEnabled} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, bool option)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gaf99afa35c05c5aa5a93447d36f2d3dc5}{mnSetProfileNagleEnabled} (INT\_\-PTR profile, bool option)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_gacc21782108b1f441a5076f4d90ad9ab3}{mnGetProfileLocalAddressTCP} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_gaaa746d348bcdafe679f538b67a22eb4e}{mnGetProfileLocalIPTCP} (INT\_\-PTR profile)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_gab6d79f3f40d30d817d4f80a9385493af}{mnGetProfileLocalPortTCP} (INT\_\-PTR profile)
+\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{group__proc_commands_ga6e57bb32ab2679f0b1c7cb345c04b2ef}{mnGetProfileLocalAddressUDP} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile)
+\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{group__proc_commands_gaf3bed6301ac3f191316527f130c185ba}{mnGetProfileLocalIPUDP} (INT\_\-PTR profile)
+\item 
+DBP\_\-CPP\_\-DLL unsigned short \hyperlink{group__proc_commands_ga8b36e97c27d269a9653b53b1e447ecb1}{mnGetProfileLocalPortUDP} (INT\_\-PTR profile)
+\item 
+int \hyperlink{group__proc_commands_gab19e44812fe755a8e6053b1dcddfd7e1}{mnSetProfileLocalTCP} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, const \hyperlink{class_net_address}{NetAddress} \&addressTCP)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gaf336a7eca486dfee88ef138d8a161c8b}{mnSetProfileLocalTCP} (INT\_\-PTR profile, const char $\ast$IP, unsigned short port)
+\item 
+int \hyperlink{group__proc_commands_ga9440ec7413085fac31407237d3734497}{mnSetProfileLocalUDP} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, const \hyperlink{class_net_address}{NetAddress} \&addressUDP)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga4f28d6098ff285f4ca6f3227062927db}{mnSetProfileLocalUDP} (INT\_\-PTR profile, const char $\ast$IP, unsigned short port)
+\item 
+int \hyperlink{group__proc_commands_ga8aa562c858adb07d9b9b54fe8467ea7c}{mnSetProfileLocal} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, const \hyperlink{class_net_address}{NetAddress} \&addressTCP, const \hyperlink{class_net_address}{NetAddress} \&addressUDP)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_gab8b04864e29fdee69b6bae6a25f247dc}{mnSetProfileLocal} (INT\_\-PTR profile, const char $\ast$IP\_\-TCP, unsigned short portTCP, const char $\ast$IP\_\-UDP, unsigned short portUDP)
+\item 
+int \hyperlink{group__proc_commands_ga91b33a4ec5298a27187a018a464722f1}{mnSetProfileServerTimeout} (\hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, size\_\-t timeoutMilliseconds)
+\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{group__proc_commands_ga1caaa732468a1a40d823851a648056ab}{mnSetProfileServerTimeout} (INT\_\-PTR profile, size\_\-t timeoutMilliseconds)
+\item 
+size\_\-t \hyperlink{group__proc_commands_gaaee155f47891b8d9bf13bb762573d6d0}{mnGetProfileServerTimeout} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile)
+\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{group__proc_commands_ga83695176c1d0aea9a853a39497471a29}{mnGetProfileServerTimeout} (INT\_\-PTR profile)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Commands for procedural programming, that wrap around internal classes. These commands exist for those who prefer procedural programming over object orientated. They wrap around the classes of the networking module and deal with errors differently dependent on the error mode we are in. 
+
+\subsection{Function Documentation}
+\hypertarget{group__proc_commands_ga45512c25fa483ff9d9d12f486dd225dd}{
+\index{procCommands@{procCommands}!mnChangeBufferSizeTCP@{mnChangeBufferSizeTCP}}
+\index{mnChangeBufferSizeTCP@{mnChangeBufferSizeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnChangeBufferSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnChangeBufferSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga45512c25fa483ff9d9d12f486dd225dd}
+Changes the size of the largest packet that can be received, packets larger than this will require an increase in memory size or an error will be thrown. \begin{DoxyNote}{Note}
+Attempting to decrease the size may not be effective. If data exists in the buffer this will not be discarded. The buffer will decrease as much as possible without discarding data.
+\end{DoxyNote}
+If an attempt is made to decrease the buffer size below the minimum for that instance then an error will occur. \par
+\par
+
+
+Can only be used on an active TCP instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client \item[{\em newSize}]new buffer size\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga06bd89fdaf152806f4c2f3a9b4abfae0}{
+\index{procCommands@{procCommands}!mnClientConnected@{mnClientConnected}}
+\index{mnClientConnected@{mnClientConnected}!procCommands@{procCommands}}
+\subsubsection[{mnClientConnected}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL {\bf NetUtility::ConnectionStatus} mnClientConnected (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga06bd89fdaf152806f4c2f3a9b4abfae0}
+In server state this command is used to check if the specified client ID is in use. \par
+ In client state this command is used to check that the client is still connected to the server ({\itshape clientID\/} is ignored). \par
+ In other states this command returns \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} indicating that the instance is active or \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}{NetUtility::NOT\_\-CONNECTED} indicating that the instance is inactive.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED}: fully connected/operational 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}{NetUtility::NOT\_\-CONNECTED}: not connected at all 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}{NetUtility::NO\_\-RECV}: connected but new data cannot be received because {\ttfamily Shutdown} has been used by recipient (only possible if graceful disconnect is enabled) 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}{NetUtility::NO\_\-SEND}: connected but data cannot be sent because {\ttfamily Shutdown} has been used (only possible if graceful disconnect is enabled) 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}{NetUtility::NO\_\-SEND\_\-RECV}: connected but data cannot be sent or received because {\ttfamily Shutdown} has been used on both sides, only data that has already been received and is in the packet queue can be received (only possible if graceful disconnect is enabled) 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR}: if an error occurred whilst connecting or whilst executing this command 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaaf4e027be8ee358936898816fa653562}{
+\index{procCommands@{procCommands}!mnClientJoined@{mnClientJoined}}
+\index{mnClientJoined@{mnClientJoined}!procCommands@{procCommands}}
+\subsubsection[{mnClientJoined}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnClientJoined (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaaf4e027be8ee358936898816fa653562}
+This command manages incoming connections from clients. For a client to connect, this command must have been called several times during the handshaking process. It is best to call this continuously in a loop that runs this networking module. \par
+\par
+
+
+Connection requests will be rejected if the maximum number of clients has been reached.\par
+\par
+
+
+This command can be used only on an active server instance.
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 if a client was accepted, this is the client ID that was assigned to that client 
+
+0 if no new clients were accepted in this call 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga66a67e72dab31e11fe04f7673767af96}{
+\index{procCommands@{procCommands}!mnClientLeft@{mnClientLeft}}
+\index{mnClientLeft@{mnClientLeft}!procCommands@{procCommands}}
+\subsubsection[{mnClientLeft}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnClientLeft (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga66a67e72dab31e11fe04f7673767af96}
+Use this command to keep track of who has disconnected recently.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$>$0 if a client has disconnected since the last call to this method, this is the ID of that client 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6ffd3536c34f39d9cacd3eb06cf41d79}{
+\index{procCommands@{procCommands}!mnConnect@{mnConnect}}
+\index{mnConnect@{mnConnect}!procCommands@{procCommands}}
+\subsubsection[{mnConnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} mnConnect (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const {\bf NetAddress} \&}]{ connectAddrTCP, }
+\item[{const {\bf NetAddress} \&}]{ connectAddrUDP, }
+\item[{size\_\-t}]{ timeoutMilliseconds, }
+\item[{bool}]{ block, }
+\item[{const {\bf NetInstanceProfile} \&}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6ffd3536c34f39d9cacd3eb06cf41d79}
+Loads a client instance into the specified instance ID. The client instance attempts to connect to the specified address. Once the connection process is complete the instance is fully active. Any instance already loaded into the specified instance ID will be deactivated and overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Instance ID that new instance should be stored in \item[{\em connectAddrTCP}]Address to connect to via TCP \item[{\em connectAddrUDP}]Address to connect to via UDP \item[{\em timeoutMilliseconds}]Length of time in milliseconds to wait before giving up on the connection attempt \item[{\em block}]If true this command will block until {\itshape timeoutMilliseconds\/} has expired or the connection process has completed \par
+ If false this command will return instantly and mnPollConnect should be used on the instance to poll on the connection process and determine its success/failure \item[{\em profile}]Instance profile containing additional instance settings\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if block is true: \par
+ 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} if the handshaking process completed successfully and the client is now fully connected 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{NetUtility::TIMED\_\-OUT} if the handshaking process timed out 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{NetUtility::REFUSED} if the server is full and so the connection attempt failed\par
+\par
+
+
+if {\itshape block\/} is false:\par
+ 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}{NetUtility::STILL\_\-CONNECTING} indicating that the connection process has begun and mnPollConnect should be used to check its status 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga601b506b062a594ea02a44502a7b4d0f}{
+\index{procCommands@{procCommands}!mnConnect@{mnConnect}}
+\index{mnConnect@{mnConnect}!procCommands@{procCommands}}
+\subsubsection[{mnConnect}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL {\bf NetUtility::ConnectionStatus} mnConnect (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const char $\ast$}]{ connectIP\_\-TCP, }
+\item[{unsigned short}]{ connectPort\_\-TCP, }
+\item[{const char $\ast$}]{ connectIP\_\-UDP, }
+\item[{unsigned short}]{ connectPort\_\-UDP, }
+\item[{size\_\-t}]{ timeoutMilliseconds, }
+\item[{bool}]{ block, }
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga601b506b062a594ea02a44502a7b4d0f}
+Loads a client instance into the specified instance ID. The client instance attempts to connect to the specified address. Once the connection process is complete the instance is fully active. Any instance already loaded into the specified instance ID will be deactivated and overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Instance ID that new instance should be stored in \item[{\em connectIP\_\-TCP}]IP address to connect to via TCP \item[{\em connectPort\_\-TCP}]Port to connect to via TCP \item[{\em connectIP\_\-UDP}]IP address to connect to via UDP \item[{\em connectPort\_\-UDP}]Port to connect to via UDP \item[{\em timeoutMilliseconds}]Length of time in milliseconds to wait before giving up on the connection attempt \item[{\em block}]If true this command will block until {\itshape timeoutMilliseconds\/} has expired or the connection process has completed \par
+ If false this command will return instantly and mnPollConnect should be used on the instance to poll on the connection process and determine its success/failure \item[{\em profile}]Pointer (cast to INT\_\-PTR) to instance profile containing additional instance settings\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+if block is true: \par
+ 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} if the handshaking process completed successfully and the client is now fully connected 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{NetUtility::TIMED\_\-OUT} if the handshaking process timed out 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{NetUtility::REFUSED} if the server is full and so the connection attempt failed\par
+\par
+
+
+if {\itshape block\/} is false:\par
+ 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}{NetUtility::STILL\_\-CONNECTING} indicating that the connection process has begun and mnPollConnect should be used to check its status 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga079ccfaa9e1271d0aae5bf4483854035}{
+\index{procCommands@{procCommands}!mnDNS@{mnDNS}}
+\index{mnDNS@{mnDNS}!procCommands@{procCommands}}
+\subsubsection[{mnDNS}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnDNS (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ hostName}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga079ccfaa9e1271d0aae5bf4483854035}
+Converts a domain name (e.g. www.google.com) to an IP address. If {\itshape addr\/} contains an IP address already then the return value will be that IP address unchanged.\par
+\par
+
+
+This method is thread safe. The return value will remain valid and unmodified until the next call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]domain name to convert. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IP address representation of {\itshape addr\/}. 
+\end{DoxyReturn}
+ \begin{DoxyReturn}{Returns}
+an empty \hyperlink{class_net_address}{NetAddress} structure if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga301162e293cb12262ccd4b305f267f0e}{
+\index{procCommands@{procCommands}!mnDNS@{mnDNS}}
+\index{mnDNS@{mnDNS}!procCommands@{procCommands}}
+\subsubsection[{mnDNS}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL const char$\ast$ mnDNS (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ hostName}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga301162e293cb12262ccd4b305f267f0e}
+Converts a domain name (e.g. www.google.com) to an IP address. If {\itshape addr\/} contains an IP address already then the return value will be that IP address unchanged.\par
+\par
+
+
+This method is thread safe. The return value will remain valid and unmodified until the next call.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addr}]domain name to convert. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+IP address representation of {\itshape addr\/}. 
+\end{DoxyReturn}
+ \begin{DoxyReturn}{Returns}
+an empty string if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gac852ff7aa925290861cbcc1fb95cd874}{
+\index{procCommands@{procCommands}!mnFinish@{mnFinish}}
+\index{mnFinish@{mnFinish}!procCommands@{procCommands}}
+\subsubsection[{mnFinish}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnFinish (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gac852ff7aa925290861cbcc1fb95cd874}
+Shuts down the networking module if {\itshape instanceID\/} is -\/1 \par
+ Shuts down the networking module if {\itshape instanceID\/} is $>$ -\/1 If the module or instance is not active then this command will do nothing 
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to shutdown, or -\/1 if the entire networking module should be unloaded \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga7c734249b65877579ed80cb604f3c638}{
+\index{procCommands@{procCommands}!mnFlushRecvTCP@{mnFlushRecvTCP}}
+\index{mnFlushRecvTCP@{mnFlushRecvTCP}!procCommands@{procCommands}}
+\subsubsection[{mnFlushRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnFlushRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga7c734249b65877579ed80cb604f3c638}
+When TCP packets are received and a receive function has not been set using mnSetFunction, packets are put into a queue and received using mnRecvTCP. If the queue gets too big newer packets may not be received for some time and so it can be useful to empty the queue. This command discards everything in the queue.\par
+\par
+
+
+Can only be used on an active TCP instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga7906f6bad100b8ac04f6fda92f78db37}{
+\index{procCommands@{procCommands}!mnFlushRecvUDP@{mnFlushRecvUDP}}
+\index{mnFlushRecvUDP@{mnFlushRecvUDP}!procCommands@{procCommands}}
+\subsubsection[{mnFlushRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnFlushRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga7906f6bad100b8ac04f6fda92f78db37}
+When UDP packets are received and a receive function has not been set using mnSetFunction, packets are put into a queue and received using mnRecvUDP. If the queue gets too big newer packets may not be received for some time and so it can be useful to empty the queue. This command discards everything in the queue.\par
+\par
+
+
+Can only be used on an active UDP instance. Has no impact unless in UDP mode CATCH\_\-ALL or CATCH\_\-ALL\_\-NO.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gae6916f4b04f5c6dbf2c526216ee43c75}{
+\index{procCommands@{procCommands}!mnGetAutoResizeTCP@{mnGetAutoResizeTCP}}
+\index{mnGetAutoResizeTCP@{mnGetAutoResizeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gae6916f4b04f5c6dbf2c526216ee43c75}
+This command can be used only on an active TCP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{NetInstanceProfile::DEFAULT\_\-AUTO\_\-RESIZE\_\-TCP}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if auto resize is enabled; this means that if a packet larger than \hyperlink{group__proc_commands_ga44af1a9b458dbd2fe537304d3056be3f}{mnGetRecvSizeTCP()} size is received then the max size will be increased silently. 
+
+0 if auto resize is disabled; this means that an exception will be thrown if a packet larger than \hyperlink{group__proc_commands_ga44af1a9b458dbd2fe537304d3056be3f}{mnGetRecvSizeTCP()} is received. In server state the client will be silently disconnected and in client state an error will occur 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga148c4ffb0ba646210ea65ac774678790}{
+\index{procCommands@{procCommands}!mnGetBytesTCP@{mnGetBytesTCP}}
+\index{mnGetBytesTCP@{mnGetBytesTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetBytesTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetBytesTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga148c4ffb0ba646210ea65ac774678790}
+This command can be used only on an active TCP instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current size of the TCP partial packet being received \par
+ i.e. the number of bytes of the packet that have been received 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf609f471da0b48a6a955630a1e2dd6be}{
+\index{procCommands@{procCommands}!mnGetClientAddressTCP@{mnGetClientAddressTCP}}
+\index{mnGetClientAddressTCP@{mnGetClientAddressTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}$\ast$ mnGetClientAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf609f471da0b48a6a955630a1e2dd6be}
+Retrieves the remote TCP address of a currently connected client.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the remote TCP address of the specified client 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaebfce0412edce2520f8fd499308b2955}{
+\index{procCommands@{procCommands}!mnGetClientAddressUDP@{mnGetClientAddressUDP}}
+\index{mnGetClientAddressUDP@{mnGetClientAddressUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}$\ast$ mnGetClientAddressUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaebfce0412edce2520f8fd499308b2955}
+Retrieves the remote UDP address of a currently connected client.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to the remote UDP address of the specified client 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga893e7a42e875cfc75c6ebf7a7672d9cb}{
+\index{procCommands@{procCommands}!mnGetClientFrom@{mnGetClientFrom}}
+\index{mnGetClientFrom@{mnGetClientFrom}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientFrom}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetClientFrom (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga893e7a42e875cfc75c6ebf7a7672d9cb}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]Pointer (cast to INT\_\-PTR) to packet.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the client ID of the client that sent us the specified packet 
+
+0 if the specified packet was not received from a client 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga825c196d663945fe6d1f7e8eaad2313e}{
+\index{procCommands@{procCommands}!mnGetClientID@{mnGetClientID}}
+\index{mnGetClientID@{mnGetClientID}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientID}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga825c196d663945fe6d1f7e8eaad2313e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+ID of client, filled during the handshaking process  
+
+0 if the client is not fully connected to the server 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf4578bcfb95f1af86eb9b2e02c49296e}{
+\index{procCommands@{procCommands}!mnGetClientIPTCP@{mnGetClientIPTCP}}
+\index{mnGetClientIPTCP@{mnGetClientIPTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientIPTCP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetClientIPTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf4578bcfb95f1af86eb9b2e02c49296e}
+Retrieves the remote TCP IP of a currently connected client.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the remote TCP IP of the specified client 
+
+an empty string if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga0d9b38d97906d466ce0070ef549860fe}{
+\index{procCommands@{procCommands}!mnGetClientIPUDP@{mnGetClientIPUDP}}
+\index{mnGetClientIPUDP@{mnGetClientIPUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientIPUDP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetClientIPUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga0d9b38d97906d466ce0070ef549860fe}
+Retrieves the remote UDP IP of a currently connected client.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the remote UDP IP of the specified client 
+
+an empty string if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf0c312f497ceedef50b30ad1d0cc625f}{
+\index{procCommands@{procCommands}!mnGetClientPortTCP@{mnGetClientPortTCP}}
+\index{mnGetClientPortTCP@{mnGetClientPortTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientPortTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetClientPortTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf0c312f497ceedef50b30ad1d0cc625f}
+Retrieves the remote TCP port of a currently connected client.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the remote TCP port of the specified client 
+
+an empty string if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga8604a4693616d0715e06c08416804297}{
+\index{procCommands@{procCommands}!mnGetClientPortUDP@{mnGetClientPortUDP}}
+\index{mnGetClientPortUDP@{mnGetClientPortUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetClientPortUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetClientPortUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga8604a4693616d0715e06c08416804297}
+Retrieves the remote UDP port of a currently connected client.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the remote UDP port of the specified client 
+
+an empty string if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga5c4ebf0ca006ab0bd1750a6adefe907d}{
+\index{procCommands@{procCommands}!mnGetConnectAddressTCP@{mnGetConnectAddressTCP}}
+\index{mnGetConnectAddressTCP@{mnGetConnectAddressTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetConnectAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetConnectAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5c4ebf0ca006ab0bd1750a6adefe907d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga98684f25ae6e70672236a61bad79046e}{
+\index{procCommands@{procCommands}!mnGetConnectAddressUDP@{mnGetConnectAddressUDP}}
+\index{mnGetConnectAddressUDP@{mnGetConnectAddressUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetConnectAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetConnectAddressUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga98684f25ae6e70672236a61bad79046e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UDP remote address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga083b63339c2f42778cbdf19f677055fe}{
+\index{procCommands@{procCommands}!mnGetConnectIPTCP@{mnGetConnectIPTCP}}
+\index{mnGetConnectIPTCP@{mnGetConnectIPTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetConnectIPTCP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetConnectIPTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga083b63339c2f42778cbdf19f677055fe}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote IP of the specified client. This pointer will remain valid and unmodified until the next call. 
+
+An empty string if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga302bfaa47c6aed08e0edc0b5c5a1e093}{
+\index{procCommands@{procCommands}!mnGetConnectIPUDP@{mnGetConnectIPUDP}}
+\index{mnGetConnectIPUDP@{mnGetConnectIPUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetConnectIPUDP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetConnectIPUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga302bfaa47c6aed08e0edc0b5c5a1e093}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UDP remote IP of the specified client. This pointer will remain valid and unmodified until the next call. 
+
+An empty string if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6dee9379f99fb78a9513349cabd4ea05}{
+\index{procCommands@{procCommands}!mnGetConnectPortTCP@{mnGetConnectPortTCP}}
+\index{mnGetConnectPortTCP@{mnGetConnectPortTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetConnectPortTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetConnectPortTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6dee9379f99fb78a9513349cabd4ea05}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote port of the specified client. This pointer will remain valid and unmodified until the next call. 
+
+0 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga469a2d1aab2e3ed994c18fefb33eea56}{
+\index{procCommands@{procCommands}!mnGetConnectPortUDP@{mnGetConnectPortUDP}}
+\index{mnGetConnectPortUDP@{mnGetConnectPortUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetConnectPortUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetConnectPortUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga469a2d1aab2e3ed994c18fefb33eea56}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UDP remote port of the specified client. This pointer will remain valid and unmodified until the next call. 
+
+0 if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga7ef175fdabecd51849b547b8b8189f7a}{
+\index{procCommands@{procCommands}!mnGetEnabledUDP@{mnGetEnabledUDP}}
+\index{mnGetEnabledUDP@{mnGetEnabledUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetEnabledUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga7ef175fdabecd51849b547b8b8189f7a}
+This command can be used only on an active UDP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{NetInstanceProfile::DEFAULT\_\-ENABLED\_\-UDP}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if UDP is enabled 
+
+0 if UDP is disabled 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga2d4e1426b9394a3000dc9e3171cd2b91}{
+\index{procCommands@{procCommands}!mnGetGracefulDisconnectEnabledTCP@{mnGetGracefulDisconnectEnabledTCP}}
+\index{mnGetGracefulDisconnectEnabledTCP@{mnGetGracefulDisconnectEnabledTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetGracefulDisconnectEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetGracefulDisconnectEnabledTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga2d4e1426b9394a3000dc9e3171cd2b91}
+For more information see the \hyperlink{graceful_disconnect_page}{graceful disconnection page}.\par
+\par
+
+
+This command can be used only on an active TCP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{NetInstanceProfile::DEFAULT\_\-GRACEFUL\_\-DISCONNECT}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled 
+
+0 if \hyperlink{graceful_disconnect_page}{graceful disconnection} is disabled 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga7e9fa40cd084c812db742bb6c7cccab1}{
+\index{procCommands@{procCommands}!mnGetHandshakeEnabledTCP@{mnGetHandshakeEnabledTCP}}
+\index{mnGetHandshakeEnabledTCP@{mnGetHandshakeEnabledTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetHandshakeEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetHandshakeEnabledTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga7e9fa40cd084c812db742bb6c7cccab1}
+For more information see \hyperlink{handshake_page}{server/client handshaking process}.
+
+This command can be used only on an active TCP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{NetInstanceProfile::DEFAULT\_\-HANDSHAKE\_\-ENABLED}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the \hyperlink{handshake_page}{handshake process} is enabled 
+
+0 if the \hyperlink{handshake_page}{handshake process} is disabled 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gad5c1f5e78e84a88300ba571374ad45f9}{
+\index{procCommands@{procCommands}!mnGetHostName@{mnGetHostName}}
+\index{mnGetHostName@{mnGetHostName}!procCommands@{procCommands}}
+\subsubsection[{mnGetHostName}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetHostName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gad5c1f5e78e84a88300ba571374ad45f9}
+\begin{DoxyReturn}{Returns}
+the name of the computer 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga191660f11ab55ff6d765d0553b60be78}{
+\index{procCommands@{procCommands}!mnGetLocalAddressTCP@{mnGetLocalAddressTCP}}
+\index{mnGetLocalAddressTCP@{mnGetLocalAddressTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetLocalAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga191660f11ab55ff6d765d0553b60be78}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local TCP address of the specified instance 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gad78bd1aa3310f998f352a05bd3f26d1e}{
+\index{procCommands@{procCommands}!mnGetLocalAddressUDP@{mnGetLocalAddressUDP}}
+\index{mnGetLocalAddressUDP@{mnGetLocalAddressUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetLocalAddressUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gad78bd1aa3310f998f352a05bd3f26d1e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local UDP address of the specified instance 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga0c953533800374f59c5771f6ade976c6}{
+\index{procCommands@{procCommands}!mnGetLocalInterface@{mnGetLocalInterface}}
+\index{mnGetLocalInterface@{mnGetLocalInterface}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalInterface}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetLocalInterface (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ num}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga0c953533800374f59c5771f6ade976c6}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]of interface, interface IDs range from 0 inclusive to number of local interfaces exclusive \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+local interface 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga8f4a3f98a801a11b84c416ba7f847362}{
+\index{procCommands@{procCommands}!mnGetLocalInterfaceStr@{mnGetLocalInterfaceStr}}
+\index{mnGetLocalInterfaceStr@{mnGetLocalInterfaceStr}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalInterfaceStr}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetLocalInterfaceStr (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ num}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga8f4a3f98a801a11b84c416ba7f847362}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ID}]of interface, interface IDs range from 0 inclusive to number of local interfaces exclusive \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+local interface 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga5d79d6e116438ddfb76d186f112509c2}{
+\index{procCommands@{procCommands}!mnGetLocalIPTCP@{mnGetLocalIPTCP}}
+\index{mnGetLocalIPTCP@{mnGetLocalIPTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalIPTCP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetLocalIPTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5d79d6e116438ddfb76d186f112509c2}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local TCP IP of the specified instance 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga3232bef18bae4df9acf445f07eef4610}{
+\index{procCommands@{procCommands}!mnGetLocalIPUDP@{mnGetLocalIPUDP}}
+\index{mnGetLocalIPUDP@{mnGetLocalIPUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalIPUDP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetLocalIPUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga3232bef18bae4df9acf445f07eef4610}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local UDP IP of the specified instance 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gad1489b71e71452d1008815c282145a7b}{
+\index{procCommands@{procCommands}!mnGetLocalPortTCP@{mnGetLocalPortTCP}}
+\index{mnGetLocalPortTCP@{mnGetLocalPortTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalPortTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetLocalPortTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gad1489b71e71452d1008815c282145a7b}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local TCP port of the specified instance 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga3f2ea3393ca3f246eae575484c5e7957}{
+\index{procCommands@{procCommands}!mnGetLocalPortUDP@{mnGetLocalPortUDP}}
+\index{mnGetLocalPortUDP@{mnGetLocalPortUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetLocalPortUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetLocalPortUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga3f2ea3393ca3f246eae575484c5e7957}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local UDP port of the specified instance 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga4fa1fbbae8da05c5c3e90541a935637e}{
+\index{procCommands@{procCommands}!mnGetMaxClients@{mnGetMaxClients}}
+\index{mnGetMaxClients@{mnGetMaxClients}!procCommands@{procCommands}}
+\subsubsection[{mnGetMaxClients}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetMaxClients (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga4fa1fbbae8da05c5c3e90541a935637e}
+This command can be used only on an active server or client instance. \par
+\par
+
+
+Client IDs range from 1 inclusive to this value inclusive, client ID 0 can be used to identify the server, as it will not be assigned to any client.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+In server state: the maximum number of clients that can be connected to the server at any one time 
+
+In client state: the maximum number of clients that can be connected to the server at any one time that the client is connected to. 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf99961eb824319fa3c46d16e9591dd2a}{
+\index{procCommands@{procCommands}!mnGetModeTCP@{mnGetModeTCP}}
+\index{mnGetModeTCP@{mnGetModeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL {\bf NetMode::ProtocolMode} mnGetModeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf99961eb824319fa3c46d16e9591dd2a}
+This command can be used only on an active TCP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{NetInstanceProfile::DEFAULT\_\-MODE\_\-TCP}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} value indicating the TCP mode in use. Note that the return value will only be a TCP mode, not any other mode type. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gafde552e5f3aee9bab9d4e913a6fb013c}{
+\index{procCommands@{procCommands}!mnGetModeUDP@{mnGetModeUDP}}
+\index{mnGetModeUDP@{mnGetModeUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL {\bf NetMode::ProtocolMode} mnGetModeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gafde552e5f3aee9bab9d4e913a6fb013c}
+This command can be used only on an active UDP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}{NetInstanceProfile::DEFAULT\_\-MODE\_\-UDP}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} value indicating the UDP mode in use. Note that the return value will only be a UDP mode, not any other mode type. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gac6751902ccefd2b24eee546fd460be86}{
+\index{procCommands@{procCommands}!mnGetNagleEnabledTCP@{mnGetNagleEnabledTCP}}
+\index{mnGetNagleEnabledTCP@{mnGetNagleEnabledTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetNagleEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetNagleEnabledTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gac6751902ccefd2b24eee546fd460be86}
+This command can be used only on an active TCP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{NetInstanceProfile::DEFAULT\_\-NAGLE\_\-ENABLED}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+1 if the nagle algorithm is enabled 
+
+0 if the nagle algorithm is disabled 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6359d2db10828ddbf0eca0f10ca86b95}{
+\index{procCommands@{procCommands}!mnGetNumInstances@{mnGetNumInstances}}
+\index{mnGetNumInstances@{mnGetNumInstances}!procCommands@{procCommands}}
+\subsubsection[{mnGetNumInstances}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetNumInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6359d2db10828ddbf0eca0f10ca86b95}
+\begin{DoxyReturn}{Returns}
+the number of instances available, included in this number are both inactive and active instances 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga476a722d849ef0062aa8e25f2cf4ccd3}{
+\index{procCommands@{procCommands}!mnGetNumLocalInterface@{mnGetNumLocalInterface}}
+\index{mnGetNumLocalInterface@{mnGetNumLocalInterface}!procCommands@{procCommands}}
+\subsubsection[{mnGetNumLocalInterface}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetNumLocalInterface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga476a722d849ef0062aa8e25f2cf4ccd3}
+\begin{DoxyReturn}{Returns}
+the number of local interfaces available, interface IDs range from 0 inclusive to number of local interfaces exclusive 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga0563d35ebbd393497e421c4580ab1415}{
+\index{procCommands@{procCommands}!mnGetNumOperations@{mnGetNumOperations}}
+\index{mnGetNumOperations@{mnGetNumOperations}!procCommands@{procCommands}}
+\subsubsection[{mnGetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetNumOperations (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga0563d35ebbd393497e421c4580ab1415}
+This command can be used only on an active UDP instance.\par
+\par
+
+
+In client state this value is retrieved from the server during the handshaking process.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}{NetInstanceProfile::DEFAULT\_\-NUM\_\-OPERATIONS}
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of UDP operation IDs available. Operation IDs range from 0 inclusive to number of operations exclusive. 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga922264b7d67b59a1082ff2c6a41becd0}{
+\index{procCommands@{procCommands}!mnGetPercentTCP@{mnGetPercentTCP}}
+\index{mnGetPercentTCP@{mnGetPercentTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetPercentTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL double mnGetPercentTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga922264b7d67b59a1082ff2c6a41becd0}
+This command can be used only on an active TCP instance.\par
+\par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the percentage of the partial packet that has been received i.e. between 0 and 100 where 50 indicates that half the packet has been received and we are now waiting for the second half to be received 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga5a7015eba81f69c5e542d80672932730}{
+\index{procCommands@{procCommands}!mnGetPostfixTCP@{mnGetPostfixTCP}}
+\index{mnGetPostfixTCP@{mnGetPostfixTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetPostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}int mnGetPostfixTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf Packet} \&}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5a7015eba81f69c5e542d80672932730}
+This command copies the TCP postfix of the specified instance into {\itshape packet\/}.\par
+\par
+
+
+This command can be used only on an active TCP instance in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX} TCP mode.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[\mbox{\tt[out]} {\em packet}]packet that postfix should be copied into, overwriting any existing data in the packet\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga93ce24610df1cd2ba4bfa5677751314b}{
+\index{procCommands@{procCommands}!mnGetPostfixTCP@{mnGetPostfixTCP}}
+\index{mnGetPostfixTCP@{mnGetPostfixTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetPostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnGetPostfixTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{INT\_\-PTR}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga93ce24610df1cd2ba4bfa5677751314b}
+This command copies the TCP postfix of the specified instance into {\itshape packet\/}.\par
+\par
+
+
+This command can be used only on an active TCP instance in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX} TCP mode.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[\mbox{\tt[out]} {\em packet}]packet that postfix should be copied into, overwriting any existing data in the packet\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gacc21782108b1f441a5076f4d90ad9ab3}{
+\index{procCommands@{procCommands}!mnGetProfileLocalAddressTCP@{mnGetProfileLocalAddressTCP}}
+\index{mnGetProfileLocalAddressTCP@{mnGetProfileLocalAddressTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetProfileLocalAddressTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gacc21782108b1f441a5076f4d90ad9ab3}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em profile}]profile to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local TCP address currently loaded into the specified profile 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6e57bb32ab2679f0b1c7cb345c04b2ef}{
+\index{procCommands@{procCommands}!mnGetProfileLocalAddressUDP@{mnGetProfileLocalAddressUDP}}
+\index{mnGetProfileLocalAddressUDP@{mnGetProfileLocalAddressUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileLocalAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress}\& mnGetProfileLocalAddressUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6e57bb32ab2679f0b1c7cb345c04b2ef}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em profile}]profile to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local UDP address currently loaded into the specified profile 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaaa746d348bcdafe679f538b67a22eb4e}{
+\index{procCommands@{procCommands}!mnGetProfileLocalIPTCP@{mnGetProfileLocalIPTCP}}
+\index{mnGetProfileLocalIPTCP@{mnGetProfileLocalIPTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileLocalIPTCP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetProfileLocalIPTCP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaaa746d348bcdafe679f538b67a22eb4e}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em profile}]profile to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local TCP IP currently loaded into the specified profile 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf3bed6301ac3f191316527f130c185ba}{
+\index{procCommands@{procCommands}!mnGetProfileLocalIPUDP@{mnGetProfileLocalIPUDP}}
+\index{mnGetProfileLocalIPUDP@{mnGetProfileLocalIPUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileLocalIPUDP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char$\ast$ mnGetProfileLocalIPUDP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf3bed6301ac3f191316527f130c185ba}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em profile}]profile to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local UDP IP currently loaded into the specified profile 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gab6d79f3f40d30d817d4f80a9385493af}{
+\index{procCommands@{procCommands}!mnGetProfileLocalPortTCP@{mnGetProfileLocalPortTCP}}
+\index{mnGetProfileLocalPortTCP@{mnGetProfileLocalPortTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileLocalPortTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetProfileLocalPortTCP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gab6d79f3f40d30d817d4f80a9385493af}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em profile}]profile to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local TCP port currently loaded into the specified profile 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga8b36e97c27d269a9653b53b1e447ecb1}{
+\index{procCommands@{procCommands}!mnGetProfileLocalPortUDP@{mnGetProfileLocalPortUDP}}
+\index{mnGetProfileLocalPortUDP@{mnGetProfileLocalPortUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileLocalPortUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL unsigned short mnGetProfileLocalPortUDP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga8b36e97c27d269a9653b53b1e447ecb1}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em profile}]profile to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the local UDP port currently loaded into the specified profile 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaaee155f47891b8d9bf13bb762573d6d0}{
+\index{procCommands@{procCommands}!mnGetProfileServerTimeout@{mnGetProfileServerTimeout}}
+\index{mnGetProfileServerTimeout@{mnGetProfileServerTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t mnGetProfileServerTimeout (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaaee155f47891b8d9bf13bb762573d6d0}
+See \hyperlink{handshake_page_handshakeSecurityConnectionTimeout}{server/client handshaking process connection timeout} for more information. \par
+\par
+
+
+From the moment that a client first communicates with the server, it is allowed this amount of time to complete the handshaking process before the process is aborted and the client is forcefully silently disconnected. Note that mnClientLeft will not receive notification since mnClientJoined will not have. \par
+\par
+
+
+The default value is \hyperlink{class_net_instance_server_ace7e83c6a82f0810cee2c7c638bb9397}{NetInstanceServer::DEFAULT\_\-CONNECTION\_\-TIMEOUT}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]instance profile to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of milliseconds that connection attempts should be allowed to complete before entity is forcefully disconnected 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga83695176c1d0aea9a853a39497471a29}{
+\index{procCommands@{procCommands}!mnGetProfileServerTimeout@{mnGetProfileServerTimeout}}
+\index{mnGetProfileServerTimeout@{mnGetProfileServerTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnGetProfileServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetProfileServerTimeout (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga83695176c1d0aea9a853a39497471a29}
+See \hyperlink{handshake_page_handshakeSecurityConnectionTimeout}{server/client handshaking process connection timeout} for more information. \par
+\par
+
+
+From the moment that a client first communicates with the server, it is allowed this amount of time to complete the handshaking process before the process is aborted and the client is forcefully silently disconnected. Note that mnClientLeft will not receive notification since mnClientJoined will not have. \par
+\par
+
+
+The default value is \hyperlink{class_net_instance_server_ace7e83c6a82f0810cee2c7c638bb9397}{NetInstanceServer::DEFAULT\_\-CONNECTION\_\-TIMEOUT}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]instance profile to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of milliseconds that connection attempts should be allowed to complete before entity is forcefully disconnected 
+
+0 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga44af1a9b458dbd2fe537304d3056be3f}{
+\index{procCommands@{procCommands}!mnGetRecvSizeTCP@{mnGetRecvSizeTCP}}
+\index{mnGetRecvSizeTCP@{mnGetRecvSizeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetRecvSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga44af1a9b458dbd2fe537304d3056be3f}
+This command can be used only on an active TCP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of the TCP receive buffer. TCP packets larger than this cannot be received unless the auto resize option is true. If the packet cannot be received then an error may occur (this happens in client state) or the problem will be silently dealt with (this happens in server state). 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaddd3740aec26e31092bc983bdcfa2bc9}{
+\index{procCommands@{procCommands}!mnGetRecvSizeUDP@{mnGetRecvSizeUDP}}
+\index{mnGetRecvSizeUDP@{mnGetRecvSizeUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetRecvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetRecvSizeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaddd3740aec26e31092bc983bdcfa2bc9}
+This command can be used only on an active UDP instance.\par
+\par
+
+
+The default value for this option is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of the UDP receive buffer, UDP packets larger than this size cannot be received. 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaee054d4d3417ea53f73a83964c15aa8b}{
+\index{procCommands@{procCommands}!mnGetSendTimeout@{mnGetSendTimeout}}
+\index{mnGetSendTimeout@{mnGetSendTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnGetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetSendTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaee054d4d3417ea53f73a83964c15aa8b}
+This command can be used only on an active instance.
+
+The default value for this option is \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{NetInstanceProfile::DEFAULT\_\-SEND\_\-TIMEOUT}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+length of time in milliseconds to wait for a send operation to complete before disconnecting client 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga5b23e7eaa1da3078ae3d14fc53a6f21e}{
+\index{procCommands@{procCommands}!mnGetServerTimeout@{mnGetServerTimeout}}
+\index{mnGetServerTimeout@{mnGetServerTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnGetServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetServerTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5b23e7eaa1da3078ae3d14fc53a6f21e}
+See \hyperlink{handshake_page_handshakeSecurityConnectionTimeout}{server/client handshaking process connection timeout} for more information. \par
+\par
+
+
+From the moment that a client first communicates with the server, it is allowed this amount of time to complete the handshaking process before the process is aborted and the client is forcefully silently disconnected. Note that mnClientLeft will not receive notification since mnClientJoined will not have. \par
+\par
+
+
+The default value is \hyperlink{class_net_instance_server_ace7e83c6a82f0810cee2c7c638bb9397}{NetInstanceServer::DEFAULT\_\-CONNECTION\_\-TIMEOUT}.
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of milliseconds that connection attempts should be allowed to complete before entity is forcefully disconnected 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gad17f849ecac289f110936b76a2d0289f}{
+\index{procCommands@{procCommands}!mnGetState@{mnGetState}}
+\index{mnGetState@{mnGetState}!procCommands@{procCommands}}
+\subsubsection[{mnGetState}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL {\bf NetInstance::Type} mnGetState (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gad17f849ecac289f110936b76a2d0289f}
+This command can be used only on an active instance.\par
+\par
+
+
+This command is used to determine what type of instance is loaded at an instance ID. 
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{NetInstance::Type} value, indicating the type of instance loaded at ID {\itshape instanceID\/}. 
+
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca88c09e9cfed79e86db169ca2b8ea5457}{NetInstance::INACTIVE} if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaa766b35aa60438d4333ffefa943b34e5}{
+\index{procCommands@{procCommands}!mnGetStoreAmountTCP@{mnGetStoreAmountTCP}}
+\index{mnGetStoreAmountTCP@{mnGetStoreAmountTCP}!procCommands@{procCommands}}
+\subsubsection[{mnGetStoreAmountTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetStoreAmountTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaa766b35aa60438d4333ffefa943b34e5}
+This command can be used only on an active TCP instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in the TCP packet store. If a TCP receive function has been set using mnSetFunction, this method will always return 0 because the queue system is not in use. 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga65a491d5eefeb9d5a8b2266cc1c89db4}{
+\index{procCommands@{procCommands}!mnGetStoreAmountUDP@{mnGetStoreAmountUDP}}
+\index{mnGetStoreAmountUDP@{mnGetStoreAmountUDP}!procCommands@{procCommands}}
+\subsubsection[{mnGetStoreAmountUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetStoreAmountUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga65a491d5eefeb9d5a8b2266cc1c89db4}
+This command can be used only on an active UDP instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to use \item[{\em operationID}]ID of operation to use\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in the UDP packet store. If a UDP receive function has been set using mnSetFunction, this method will always return 0 because the queue system is not in use. 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga0f58a68488b9564841b09e483c38c556}{
+\index{procCommands@{procCommands}!mnGetThreads@{mnGetThreads}}
+\index{mnGetThreads@{mnGetThreads}!procCommands@{procCommands}}
+\subsubsection[{mnGetThreads}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnGetThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga0f58a68488b9564841b09e483c38c556}
+\begin{DoxyReturn}{Returns}
+the number of completion port threads in operation 
+
+0 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaef8fabefb36ea01174c25b6f49aa5650}{
+\index{procCommands@{procCommands}!mnGetVersion@{mnGetVersion}}
+\index{mnGetVersion@{mnGetVersion}!procCommands@{procCommands}}
+\subsubsection[{mnGetVersion}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL const char$\ast$ mnGetVersion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaef8fabefb36ea01174c25b6f49aa5650}
+\begin{DoxyReturn}{Returns}
+Stores the version that this project is currently at  
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gadf0357210e9ea8ed418b9507df861604}{
+\index{procCommands@{procCommands}!mnPollConnect@{mnPollConnect}}
+\index{mnPollConnect@{mnPollConnect}!procCommands@{procCommands}}
+\subsubsection[{mnPollConnect}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL {\bf NetUtility::ConnectionStatus} mnPollConnect (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gadf0357210e9ea8ed418b9507df861604}
+Used to determine status of handshaking process. This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}{NetUtility::STILL\_\-CONNECTING} if the handshaking process is in progress still 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} if the handshaking process completed successfully and the client is now fully connected 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{NetUtility::TIMED\_\-OUT} if the handshaking process timed out 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{NetUtility::REFUSED} if the server is full and so the connection attempt failed 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaa7714c849a1a3502d9d98aeffe64cbc5}{
+\index{procCommands@{procCommands}!mnRecvTCP@{mnRecvTCP}}
+\index{mnRecvTCP@{mnRecvTCP}!procCommands@{procCommands}}
+\subsubsection[{mnRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t mnRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf Packet} \&}]{ destinationPacket}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaa7714c849a1a3502d9d98aeffe64cbc5}
+When TCP packets are received and a TCP receive function has not been set (using mnSetFunction), they are put into a queue and retrieved using this command.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[\mbox{\tt[out]} {\em destinationPacket}]received packet will be copied into this location, overwriting any existing data \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no packet was received. 
+
+$>$0 if a packet was received, this is the number of packets in the receive queue before this command was called. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga14e48459c282befe5eb44fc07e094796}{
+\index{procCommands@{procCommands}!mnRecvTCP@{mnRecvTCP}}
+\index{mnRecvTCP@{mnRecvTCP}!procCommands@{procCommands}}
+\subsubsection[{mnRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{INT\_\-PTR}]{ destinationPacket}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga14e48459c282befe5eb44fc07e094796}
+When TCP packets are received and a TCP receive function has not been set (using mnSetFunction), they are put into a queue and retrieved using this command.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[\mbox{\tt[out]} {\em destinationPacket}]received packet will be copied into this location, overwriting any existing data \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no packet was received. 
+
+$>$0 if a packet was received, this is the number of packets in the receive queue before this command was called. 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga29a3720649b37fa0429c195f8655604d}{
+\index{procCommands@{procCommands}!mnRecvUDP@{mnRecvUDP}}
+\index{mnRecvUDP@{mnRecvUDP}!procCommands@{procCommands}}
+\subsubsection[{mnRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t mnRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf Packet} \&}]{ destinationPacket}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga29a3720649b37fa0429c195f8655604d}
+When UDP packets are received and a UDP receive function has not been set (using mnSetFunction), they are put into a queue or store and retrieved using this command.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[{\em operationID}]ID of operation to check, only valid in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} UDP mode \item[\mbox{\tt[out]} {\em destinationPacket}]received packet will be copied into this location, overwriting any existing data \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no packet was received. 
+
+$>$0 if a packet was received, this is the number of packets in the receive queue before this command was called. 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga8267c845d7eb86daa604efc9dc317b3c}{
+\index{procCommands@{procCommands}!mnRecvUDP@{mnRecvUDP}}
+\index{mnRecvUDP@{mnRecvUDP}!procCommands@{procCommands}}
+\subsubsection[{mnRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{INT\_\-PTR}]{ destinationPacket}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga8267c845d7eb86daa604efc9dc317b3c}
+When UDP packets are received and a UDP receive function has not been set (using mnSetFunction), they are put into a queue or store and retrieved using this command.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[{\em operationID}]ID of operation to check, only valid in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} UDP mode \item[\mbox{\tt[out]} {\em destinationPacket}]received packet will be copied into this location, overwriting any existing data \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no packet was received. 
+
+$>$0 if a packet was received, this is the number of packets in the receive queue before this command was called. 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga4ae3e56019d3e8706dbcc7660278f0b5}{
+\index{procCommands@{procCommands}!mnSendAllTCP@{mnSendAllTCP}}
+\index{mnSendAllTCP@{mnSendAllTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSendAllTCP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSendAllTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf Packet} \&}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ clientExcludeID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga4ae3e56019d3e8706dbcc7660278f0b5}
+This command is used to send a TCP packet to all clients on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete \item[{\em clientExcludeID}]ID of client to exclude, the packet will be sent to all clients except one with this ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga5922467db1c9256df6b6f5a598902b97}{
+\index{procCommands@{procCommands}!mnSendAllTCP@{mnSendAllTCP}}
+\index{mnSendAllTCP@{mnSendAllTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSendAllTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSendAllTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{INT\_\-PTR}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ clientExcludeID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5922467db1c9256df6b6f5a598902b97}
+This command is used to send a TCP packet to all clients on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete \item[{\em clientExcludeID}]ID of client to exclude, the packet will be sent to all clients except one with this ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_gab5bd7c87f6802d6d246ace6f0bb37163}{
+\index{procCommands@{procCommands}!mnSendAllUDP@{mnSendAllUDP}}
+\index{mnSendAllUDP@{mnSendAllUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSendAllUDP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSendAllUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf Packet} \&}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ clientExcludeID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gab5bd7c87f6802d6d246ace6f0bb37163}
+This command is used to send a UDP packet to all clients on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete \item[{\em clientExcludeID}]ID of client to exclude, the packet will be sent to all clients except one with this ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga3e06bdec881534065fc62974bbefd69f}{
+\index{procCommands@{procCommands}!mnSendAllUDP@{mnSendAllUDP}}
+\index{mnSendAllUDP@{mnSendAllUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSendAllUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSendAllUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{INT\_\-PTR}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ clientExcludeID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga3e06bdec881534065fc62974bbefd69f}
+This command is used to send a UDP packet to all clients on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete \item[{\em clientExcludeID}]ID of client to exclude, the packet will be sent to all clients except one with this ID\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga2be055f23f7d82e6f6a7834099652de4}{
+\index{procCommands@{procCommands}!mnSendTCP@{mnSendTCP}}
+\index{mnSendTCP@{mnSendTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSendTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} mnSendTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf Packet} \&}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga2be055f23f7d82e6f6a7834099652de4}
+This command is used to send TCP data to a client on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6211caba884ba2710d2b7854b792f4a4}{
+\index{procCommands@{procCommands}!mnSendTCP@{mnSendTCP}}
+\index{mnSendTCP@{mnSendTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSendTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSendTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{INT\_\-PTR}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6211caba884ba2710d2b7854b792f4a4}
+This command is used to send TCP data to a client on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga9410455a617d38a8e9bd7ea6a1c1e273}{
+\index{procCommands@{procCommands}!mnSendToUDP@{mnSendToUDP}}
+\index{mnSendToUDP@{mnSendToUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} mnSendToUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const {\bf NetAddress} \&}]{ address, }
+\item[{{\bf Packet} \&}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga9410455a617d38a8e9bd7ea6a1c1e273}
+This command is used to send UDP data to an unconnected entity, identified only by its remote address.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em address}]address to send packet to \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga9904f92dbfda68419dbc86793295579a}{
+\index{procCommands@{procCommands}!mnSendToUDP@{mnSendToUDP}}
+\index{mnSendToUDP@{mnSendToUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSendToUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const char $\ast$}]{ addrIP, }
+\item[{unsigned short}]{ addrPort, }
+\item[{INT\_\-PTR}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga9904f92dbfda68419dbc86793295579a}
+This command is used to send UDP data to an unconnected entity, identified only by its remote address.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em address}]address to send packet to \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga7be727df70de53051e1952db9a872970}{
+\index{procCommands@{procCommands}!mnSendUDP@{mnSendUDP}}
+\index{mnSendUDP@{mnSendUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSendUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} mnSendUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf Packet} \&}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga7be727df70de53051e1952db9a872970}
+This command is used to send UDP data to a client on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga4d4196f72fab0f2d1424f63ff5c5ced7}{
+\index{procCommands@{procCommands}!mnSendUDP@{mnSendUDP}}
+\index{mnSendUDP@{mnSendUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSendUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSendUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{INT\_\-PTR}]{ packet, }
+\item[{bool}]{ keep, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga4d4196f72fab0f2d1424f63ff5c5ced7}
+This command is used to send UDP data to a client on the specified instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client to receive from \item[\mbox{\tt[in]} {\em packet}]packet to send \item[{\em keep}]if false {\itshape packet's\/} contents will be erased, if true no modifications to {\itshape packet\/} will be made \item[{\em block}]if false the command will return immediately without waiting for the send operation to complete\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga5b3a8551fa3dd795dc0c03556ebd7843}{
+\index{procCommands@{procCommands}!mnSetAutoResizeTCP@{mnSetAutoResizeTCP}}
+\index{mnSetAutoResizeTCP@{mnSetAutoResizeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5b3a8551fa3dd795dc0c03556ebd7843}
+Changes the auto resize option for the specified TCP client. When auto resize is true, if an incoming TCP packet is too large to be received, instead of throwing an error or forcefully disconnecting that client, the TCP receive buffer automatically resizes to allow for the TCP packet to be received.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client \item[{\em autoResize}]true if the TCP receive buffer should automatically resize, false if not.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga601f764dc3721b9376807b7338bd57e1}{
+\index{procCommands@{procCommands}!mnSetProfileAutoResizeTCP@{mnSetProfileAutoResizeTCP}}
+\index{mnSetProfileAutoResizeTCP@{mnSetProfileAutoResizeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga601f764dc3721b9376807b7338bd57e1}
+Changes the auto resize option for the specified instance profile. When auto resize is true, if an incoming TCP packet is too large to be received, instead of throwing an error or forcefully disconnecting that client, the TCP receive buffer automatically resizes to allow for the TCP packet to be received.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em autoResize}]true if the TCP receive buffer should automatically resize, false if not. Default is \hyperlink{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{NetInstanceProfile::DEFAULT\_\-AUTO\_\-RESIZE\_\-TCP}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga1c1ad889fc6103f364518e98b91ecdb5}{
+\index{procCommands@{procCommands}!mnSetProfileAutoResizeTCP@{mnSetProfileAutoResizeTCP}}
+\index{mnSetProfileAutoResizeTCP@{mnSetProfileAutoResizeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga1c1ad889fc6103f364518e98b91ecdb5}
+ \hypertarget{group__proc_commands_ga049fcd0a4c7b6d23781826ea33fb1991}{
+\index{procCommands@{procCommands}!mnSetProfileBufferSizes@{mnSetProfileBufferSizes}}
+\index{mnSetProfileBufferSizes@{mnSetProfileBufferSizes}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileBufferSizes}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileBufferSizes (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{size\_\-t}]{ recvSizeTCP, }
+\item[{size\_\-t}]{ recvSizeUDP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga049fcd0a4c7b6d23781826ea33fb1991}
+This command will modify the specified instance profile, loading it with buffer sizes. \par
+\par
+
+
+If these buffer sizes are too small, an error will not be thrown until an attempt is made to activate an instance. This is because what is defined as 'too small' differs between instance types.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em recvSizeTCP}]Maximum size a received TCP packet can be without increasing the buffer size or throwing an error (default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}) \item[{\em recvFuncUDP}]Maximum size a received UDP packet can be without throwing an error (default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE})\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga2a3156ef14550e2502871e07b4d14e71}{
+\index{procCommands@{procCommands}!mnSetProfileBufferSizes@{mnSetProfileBufferSizes}}
+\index{mnSetProfileBufferSizes@{mnSetProfileBufferSizes}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileBufferSizes}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileBufferSizes (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{size\_\-t}]{ recvSizeTCP, }
+\item[{size\_\-t}]{ recvSizeUDP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga2a3156ef14550e2502871e07b4d14e71}
+ \hypertarget{group__proc_commands_ga5944d44f314464cd2e54ef97932624be}{
+\index{procCommands@{procCommands}!mnSetProfileEnabledUDP@{mnSetProfileEnabledUDP}}
+\index{mnSetProfileEnabledUDP@{mnSetProfileEnabledUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileEnabledUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga5944d44f314464cd2e54ef97932624be}
+This command is used to disable UDP. When UDP is disabled all UDP commands on the specified instance will fail. The handshaking process will be slightly faster and compatibility with other applications will improve.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em option}]If true UDP will be enabled, if false UDP will be disabled. Default is \hyperlink{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{NetInstanceProfile::DEFAULT\_\-ENABLED\_\-UDP}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga9b57aa13886f8cbad981efcbd6eda55b}{
+\index{procCommands@{procCommands}!mnSetProfileEnabledUDP@{mnSetProfileEnabledUDP}}
+\index{mnSetProfileEnabledUDP@{mnSetProfileEnabledUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileEnabledUDP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga9b57aa13886f8cbad981efcbd6eda55b}
+ \hypertarget{group__proc_commands_gad9602aa0f667ce2cb4e7b7f5cf39b24c}{
+\index{procCommands@{procCommands}!mnSetProfileFunction@{mnSetProfileFunction}}
+\index{mnSetProfileFunction@{mnSetProfileFunction}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileFunction}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL int mnSetProfileFunction (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{{\bf NetInstance::RecvFunc}}]{ recvFuncTCP, }
+\item[{{\bf NetInstance::RecvFunc}}]{ recvFuncUDP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gad9602aa0f667ce2cb4e7b7f5cf39b24c}
+This command will modify the specified instance profile, loading it with receive functions. These functions are called whenever data is received on the instance. Care must be taken that these functions are thread safe. See \hyperlink{multithreading_page}{multithreaded usage} for more information.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[\mbox{\tt[in]} {\em recvFuncTCP}]Pointer to function that can be executed when TCP data is received (NULL or 0 if none, default is \hyperlink{class_net_instance_profile_a8f636660af09da957f839af1092106b6}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}) \item[\mbox{\tt[in]} {\em recvFuncUDP}]Pointer to function that can be executed when UDP data is received (NULL or 0 if none, default is \hyperlink{class_net_instance_profile_a8f636660af09da957f839af1092106b6}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC})\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga857500d66217e3c1c8261c2a372ca8b6}{
+\index{procCommands@{procCommands}!mnSetProfileGracefulDisconnectEnabled@{mnSetProfileGracefulDisconnectEnabled}}
+\index{mnSetProfileGracefulDisconnectEnabled@{mnSetProfileGracefulDisconnectEnabled}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga857500d66217e3c1c8261c2a372ca8b6}
+This method enables or disables the \hyperlink{graceful_disconnect_page}{graceful disconnect process} for the specified instance profile. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em option}]true if graceful disconnect process should be enabled, false if not. Default is \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{NetInstanceProfile::DEFAULT\_\-GRACEFUL\_\-DISCONNECT}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_gaa318fd49d83a6a4b37e11808424331cf}{
+\index{procCommands@{procCommands}!mnSetProfileGracefulDisconnectEnabled@{mnSetProfileGracefulDisconnectEnabled}}
+\index{mnSetProfileGracefulDisconnectEnabled@{mnSetProfileGracefulDisconnectEnabled}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaa318fd49d83a6a4b37e11808424331cf}
+This method enables or disables the \hyperlink{graceful_disconnect_page}{graceful disconnect process} for the specified instance profile. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em option}]true if graceful disconnect process should be enabled, false if not. Default is \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{NetInstanceProfile::DEFAULT\_\-GRACEFUL\_\-DISCONNECT}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga7f704dde6483eb4e5b4bb3958c98bbb9}{
+\index{procCommands@{procCommands}!mnSetProfileHandshakeEnabled@{mnSetProfileHandshakeEnabled}}
+\index{mnSetProfileHandshakeEnabled@{mnSetProfileHandshakeEnabled}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileHandshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileHandshakeEnabled (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga7f704dde6483eb4e5b4bb3958c98bbb9}
+Disables or enables the handshaking option for the specified instance profile. For more information see \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em autoResize}]true if the TCP handshake process should be enabled. Default is \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{NetInstanceProfile::DEFAULT\_\-HANDSHAKE\_\-ENABLED}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga1b4d8ac7fc6d22f92339dc05b7c2c06f}{
+\index{procCommands@{procCommands}!mnSetProfileHandshakeEnabled@{mnSetProfileHandshakeEnabled}}
+\index{mnSetProfileHandshakeEnabled@{mnSetProfileHandshakeEnabled}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileHandshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileHandshakeEnabled (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga1b4d8ac7fc6d22f92339dc05b7c2c06f}
+Disables or enables the handshaking option for the specified instance profile. For more information see \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em autoResize}]true if the TCP handshake process should be enabled. Default is \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{NetInstanceProfile::DEFAULT\_\-HANDSHAKE\_\-ENABLED}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_gab8b04864e29fdee69b6bae6a25f247dc}{
+\index{procCommands@{procCommands}!mnSetProfileLocal@{mnSetProfileLocal}}
+\index{mnSetProfileLocal@{mnSetProfileLocal}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileLocal}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileLocal (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{const char $\ast$}]{ IP\_\-TCP, }
+\item[{unsigned short}]{ portTCP, }
+\item[{const char $\ast$}]{ IP\_\-UDP, }
+\item[{unsigned short}]{ portUDP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gab8b04864e29fdee69b6bae6a25f247dc}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]profile to use \item[{\em IP\_\-TCP}]the TCP IP address to load into the profile, overwriting any existing TCP IP \item[{\em port\_\-TCP}]the TCP port to load into the profile, overwriting any existing TCP port \item[{\em IP\_\-UDP}]the UDP IP address to load into the profile, overwriting any existing UDP IP \item[{\em port\_\-UDP}]the UDP port to load into the profile, overwriting any existing UDP port\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga8aa562c858adb07d9b9b54fe8467ea7c}{
+\index{procCommands@{procCommands}!mnSetProfileLocal@{mnSetProfileLocal}}
+\index{mnSetProfileLocal@{mnSetProfileLocal}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileLocal}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileLocal (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{const {\bf NetAddress} \&}]{ addressTCP, }
+\item[{const {\bf NetAddress} \&}]{ addressUDP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga8aa562c858adb07d9b9b54fe8467ea7c}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]profile to use \item[{\em addressTCP}]the TCP address to load into the profile, overwriting any existing TCP address \item[{\em addressUDP}]the UDP address to load into the profile, overwriting any existing UDP address\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gab19e44812fe755a8e6053b1dcddfd7e1}{
+\index{procCommands@{procCommands}!mnSetProfileLocalTCP@{mnSetProfileLocalTCP}}
+\index{mnSetProfileLocalTCP@{mnSetProfileLocalTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileLocalTCP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileLocalTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{const {\bf NetAddress} \&}]{ addressTCP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gab19e44812fe755a8e6053b1dcddfd7e1}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]profile to use \item[{\em addressTCP}]the TCP address to load into the profile, overwriting any existing TCP address\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf336a7eca486dfee88ef138d8a161c8b}{
+\index{procCommands@{procCommands}!mnSetProfileLocalTCP@{mnSetProfileLocalTCP}}
+\index{mnSetProfileLocalTCP@{mnSetProfileLocalTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileLocalTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileLocalTCP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{const char $\ast$}]{ IP, }
+\item[{unsigned short}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf336a7eca486dfee88ef138d8a161c8b}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]profile to use \item[{\em IP}]the TCP IP address to load into the profile, overwriting any existing TCP IP \item[{\em port}]the TCP port to load into the profile, overwriting any existing TCP port\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga4f28d6098ff285f4ca6f3227062927db}{
+\index{procCommands@{procCommands}!mnSetProfileLocalUDP@{mnSetProfileLocalUDP}}
+\index{mnSetProfileLocalUDP@{mnSetProfileLocalUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileLocalUDP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileLocalUDP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{const char $\ast$}]{ IP, }
+\item[{unsigned short}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga4f28d6098ff285f4ca6f3227062927db}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]profile to use \item[{\em IP}]the UDP IP address to load into the profile, overwriting any existing UDP IP \item[{\em port}]the UDP port to load into the profile, overwriting any existing UDP port\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga9440ec7413085fac31407237d3734497}{
+\index{procCommands@{procCommands}!mnSetProfileLocalUDP@{mnSetProfileLocalUDP}}
+\index{mnSetProfileLocalUDP@{mnSetProfileLocalUDP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileLocalUDP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileLocalUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{const {\bf NetAddress} \&}]{ addressUDP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga9440ec7413085fac31407237d3734497}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]profile to use \item[{\em addressUDP}]the UDP address to load into the profile, overwriting any existing UDP address\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaecf77c1c7906ced1ff86a6c94ced1da7}{
+\index{procCommands@{procCommands}!mnSetProfileModeTCP@{mnSetProfileModeTCP}}
+\index{mnSetProfileModeTCP@{mnSetProfileModeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileModeTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{{\bf NetMode::ProtocolMode}}]{ modeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaecf77c1c7906ced1ff86a6c94ced1da7}
+Sets the TCP mode for the specified instance profile. The TCP mode describes changes should be made to TCP packets sent and how data is split into packets when received.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em modeTCP}]TCP mode option. Default is \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{NetInstanceProfile::DEFAULT\_\-MODE\_\-TCP}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape modeTCP\/} is not a TCP mode \end{DoxyExceptions}
+\hypertarget{group__proc_commands_ga08110043448e44ec4e4522abbb909b5a}{
+\index{procCommands@{procCommands}!mnSetProfileModeTCP@{mnSetProfileModeTCP}}
+\index{mnSetProfileModeTCP@{mnSetProfileModeTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileModeTCP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{char}]{ modeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga08110043448e44ec4e4522abbb909b5a}
+Sets the TCP mode for the specified instance profile. The TCP mode describes changes should be made to TCP packets sent and how data is split into packets when received.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em modeTCP}]TCP mode option. Default is \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{NetInstanceProfile::DEFAULT\_\-MODE\_\-TCP}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape modeTCP\/} is not a TCP mode \end{DoxyExceptions}
+ \begin{DoxyNote}{Note}
+{\itshape modeTCP\/} is the value of \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} e.g. for TCP\_\-PREFIX\_\-SIZE {\itshape modeTCP\/} should be 1. 
+\end{DoxyNote}
+\hypertarget{group__proc_commands_gaa586f7c1253e0a7dc2e6a7cfc1525fbb}{
+\index{procCommands@{procCommands}!mnSetProfileNagleEnabled@{mnSetProfileNagleEnabled}}
+\index{mnSetProfileNagleEnabled@{mnSetProfileNagleEnabled}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileNagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileNagleEnabled (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaa586f7c1253e0a7dc2e6a7cfc1525fbb}
+This command changes the nagle algorithm option. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em option}]If true the nagle algorithm is enabled, if false the nagle algorithm is disabled. Default is \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{NetInstanceProfile::DEFAULT\_\-NAGLE\_\-ENABLED}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gaf99afa35c05c5aa5a93447d36f2d3dc5}{
+\index{procCommands@{procCommands}!mnSetProfileNagleEnabled@{mnSetProfileNagleEnabled}}
+\index{mnSetProfileNagleEnabled@{mnSetProfileNagleEnabled}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileNagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileNagleEnabled (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf99afa35c05c5aa5a93447d36f2d3dc5}
+This command changes the nagle algorithm option. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em option}]If true the nagle algorithm is enabled, if false the nagle algorithm is disabled. Default is \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{NetInstanceProfile::DEFAULT\_\-NAGLE\_\-ENABLED}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_gaaef2c5f071939a37da436bd735a3356b}{
+\index{procCommands@{procCommands}!mnSetProfilePostfixTCP@{mnSetProfilePostfixTCP}}
+\index{mnSetProfilePostfixTCP@{mnSetProfilePostfixTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfilePostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfilePostfixTCP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{INT\_\-PTR}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaaef2c5f071939a37da436bd735a3356b}
+This command changes the postfix option of the specified instance profile. This has no impact on instances not in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX} mode. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em packet}]new postfix, default is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga3eac7d2011d58116b7429d043f801327}{
+\index{procCommands@{procCommands}!mnSetProfilePostfixTCP@{mnSetProfilePostfixTCP}}
+\index{mnSetProfilePostfixTCP@{mnSetProfilePostfixTCP}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfilePostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfilePostfixTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{const {\bf Packet} \&}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga3eac7d2011d58116b7429d043f801327}
+This command changes the postfix option of the specified instance profile. This has no impact on instances not in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX} mode. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em packet}]new postfix, default is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_gaa51770b52ce020dc00c3d2239acfb67d}{
+\index{procCommands@{procCommands}!mnSetProfileSendTimeout@{mnSetProfileSendTimeout}}
+\index{mnSetProfileSendTimeout@{mnSetProfileSendTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileSendTimeout (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{size\_\-t}]{ timeoutMilliseconds}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaa51770b52ce020dc00c3d2239acfb67d}
+This changes the send timeout option for the specified instance profile. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em timeoutMilliseconds}]length of time in milliseconds to wait for a send operation to complete before disconnecting client (default = \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{NetInstanceProfile::DEFAULT\_\-SEND\_\-TIMEOUT})\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga8e6ae0d7fe3ea65af0df88b73c159d65}{
+\index{procCommands@{procCommands}!mnSetProfileSendTimeout@{mnSetProfileSendTimeout}}
+\index{mnSetProfileSendTimeout@{mnSetProfileSendTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileSendTimeout (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{size\_\-t}]{ timeoutMilliseconds}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga8e6ae0d7fe3ea65af0df88b73c159d65}
+This changes the send timeout option for the specified instance profile. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em profile}]Instance profile to be modified \item[{\em timeoutMilliseconds}]length of time in milliseconds to wait for a send operation to complete before disconnecting client (default = \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{NetInstanceProfile::DEFAULT\_\-SEND\_\-TIMEOUT})\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_ga91b33a4ec5298a27187a018a464722f1}{
+\index{procCommands@{procCommands}!mnSetProfileServerTimeout@{mnSetProfileServerTimeout}}
+\index{mnSetProfileServerTimeout@{mnSetProfileServerTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}int mnSetProfileServerTimeout (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstanceProfile} \&}]{ profile, }
+\item[{size\_\-t}]{ timeoutMilliseconds}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga91b33a4ec5298a27187a018a464722f1}
+See \hyperlink{handshake_page_handshakeSecurityConnectionTimeout}{server/client handshaking process connection timeout} for more information. \par
+\par
+
+
+From the moment that a client first communicates with the server, it is allowed {\itshape timeoutMilliseconds\/} to complete the handshaking process before the process is aborted and the client is forcefully silently disconnected. Note that mnClientLeft will not receive notification since mnClientJoined will not have. \par
+\par
+
+
+The default value is \hyperlink{class_net_instance_server_ace7e83c6a82f0810cee2c7c638bb9397}{NetInstanceServer::DEFAULT\_\-CONNECTION\_\-TIMEOUT}\par
+\par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em profile}]instance profile to use \item[{\em timeoutMilliseconds}]Number of milliseconds that connection attempts should be allowed to complete before entity is forcefully disconnected\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga1caaa732468a1a40d823851a648056ab}{
+\index{procCommands@{procCommands}!mnSetProfileServerTimeout@{mnSetProfileServerTimeout}}
+\index{mnSetProfileServerTimeout@{mnSetProfileServerTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnSetProfileServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetProfileServerTimeout (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ profile, }
+\item[{size\_\-t}]{ timeoutMilliseconds}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga1caaa732468a1a40d823851a648056ab}
+  \hypertarget{group__proc_commands_gaf5c7710b502024017c00563b640018c8}{
+\index{procCommands@{procCommands}!mnSetServerTimeout@{mnSetServerTimeout}}
+\index{mnSetServerTimeout@{mnSetServerTimeout}!procCommands@{procCommands}}
+\subsubsection[{mnSetServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnSetServerTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ timeoutMilliseconds}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gaf5c7710b502024017c00563b640018c8}
+See \hyperlink{handshake_page_handshakeSecurityConnectionTimeout}{server/client handshaking process connection timeout} for more information. \par
+\par
+
+
+From the moment that a client first communicates with the server, it is allowed {\itshape timeoutMilliseconds\/} to complete the handshaking process before the process is aborted and the client is forcefully silently disconnected. Note that mnClientLeft will not receive notification since mnClientJoined will not have. \par
+\par
+
+
+The default value is \hyperlink{class_net_instance_server_ace7e83c6a82f0810cee2c7c638bb9397}{NetInstanceServer::DEFAULT\_\-CONNECTION\_\-TIMEOUT}\par
+\par
+
+
+This command can be used only on an active server instance.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em timeoutMilliseconds}]Number of milliseconds that connection attempts should be allowed to complete before entity is forcefully disconnected\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6de40734944378fc47b970e82739e60b}{
+\index{procCommands@{procCommands}!mnShutdownClient@{mnShutdownClient}}
+\index{mnShutdownClient@{mnShutdownClient}!procCommands@{procCommands}}
+\subsubsection[{mnShutdownClient}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnShutdownClient (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6de40734944378fc47b970e82739e60b}
+Begins the graceful disconnection process. \par
+ After using this command all send commands will fail, receiving will still operate as normal however. \par
+ All data sent up till now will be received by recipient. \par
+
+
+See the \hyperlink{graceful_disconnect_page}{graceful disconnection page} for more information \par
+\par
+
+
+Can only be used on an active TCP instance
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em clientID}]ID of client\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if graceful disconnect is disabled \end{DoxyExceptions}
+\hypertarget{group__proc_commands_gac6c722451c4ba1f4077414b1fb80aaeb}{
+\index{procCommands@{procCommands}!mnStart@{mnStart}}
+\index{mnStart@{mnStart}!procCommands@{procCommands}}
+\subsubsection[{mnStart}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnStart (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInstances, }
+\item[{size\_\-t}]{ numThreads}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gac6c722451c4ba1f4077414b1fb80aaeb}
+Starts up the networking module \par
+ If the module is already active then the module will be restarted 
+\begin{DoxyParams}{Parameters}
+\item[{\em numInstances}]number of instances to be created but no setup \item[{\em numThreads}]number of threads to be created to manage data being received \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error occurred 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga6d38ae0c7de397bc81d86c4dc89690aa}{
+\index{procCommands@{procCommands}!mnStartBroadcast@{mnStartBroadcast}}
+\index{mnStartBroadcast@{mnStartBroadcast}!procCommands@{procCommands}}
+\subsubsection[{mnStartBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}int mnStartBroadcast (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const {\bf NetAddress} \&}]{ connectAddress, }
+\item[{bool}]{ sendEnabled, }
+\item[{bool}]{ recvEnabled, }
+\item[{const {\bf NetInstanceProfile} \&}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga6d38ae0c7de397bc81d86c4dc89690aa}
+Loads a broadcasting instance into the specified instance ID. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This instance is capable of communicating with entities on a common local area network without first forming a direct connection. Messages sent to the router are broadcasted to all other entities connected to that router using this instance. This is useful for e.g. detecting a server on a network, and then later making a direct connection to that server. Due to the simplicity of this instance, it is possible to use it with applications not based on this module. 
+
+If you are receiving broadcast packets then using the instance profile you should specify the local IP that is on the LAN that you expect to receive broadcast packets from. The local port should be the port that the broadcaster is broadcasting to. Use mnRecvUDP to receive data\par
+\par
+
+
+Use mnSendUDP to send broadcast packets if sending is enabled.\par
+\par
+
+
+Any instance already loaded into the specified instance ID will be deactivated and overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em connectAddress}]address to broadcast to. Set the IP to 255.255.255.255 to broadcast to all entities connected to the local area network, or specify a subnet to broadcast to. Set the port to the port that entities should listen for broadcast packets on. \item[{\em sendEnabled}]true if this instance should be capable of sending broadcast packets \item[{\em recvEnabled}]true if this instance should be capable of receiving broadcast packets \item[{\em profile}]Instance profile containing additional instance settings\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the instance was started successfully 
+
+-\/1 if the instance failed to start 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga4b8bcae5ef6c2c4f767c520d70f55111}{
+\index{procCommands@{procCommands}!mnStartBroadcast@{mnStartBroadcast}}
+\index{mnStartBroadcast@{mnStartBroadcast}!procCommands@{procCommands}}
+\subsubsection[{mnStartBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnStartBroadcast (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{const char $\ast$}]{ connectAddressIP, }
+\item[{unsigned short}]{ connectAddressPort, }
+\item[{bool}]{ sendEnabled, }
+\item[{bool}]{ recvEnabled, }
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga4b8bcae5ef6c2c4f767c520d70f55111}
+Loads a broadcasting instance into the specified instance ID. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This instance is capable of communicating with entities on a common local area network without first forming a direct connection. Messages sent to the router are broadcasted to all other entities connected to that router using this instance. This is useful for e.g. detecting a server on a network, and then later making a direct connection to that server. Due to the simplicity of this instance, it is possible to use it with applications not based on this module. 
+
+If you are receiving broadcast packets then using the instance profile you should specify the local IP that is on the LAN that you expect to receive broadcast packets from. The local port should be the port that the broadcaster is broadcasting to. Use mnRecvUDP to receive data\par
+\par
+
+
+Use mnSendUDP to send broadcast packets if sending is enabled.\par
+\par
+
+
+Any instance already loaded into the specified instance ID will be deactivated and overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em connectAddressIP}]address to broadcast to. Set this to 255.255.255.255 to broadcast to all entities connected to the local area network, or specify a subnet to broadcast to. \item[{\em connectAddressPort}]Set this to the port that entities should listen for broadcast packets on. \item[{\em sendEnabled}]true if this instance should be capable of sending broadcast packets \item[{\em recvEnabled}]true if this instance should be capable of receiving broadcast packets \item[{\em profile}]Pointer (cast to INT\_\-PTR) to instance profile containing additional instance settings\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the instance was started successfully 
+
+-\/1 if the instance failed to start 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_gac613edc6f09726bf3f105cdd0393539e}{
+\index{procCommands@{procCommands}!mnStartServer@{mnStartServer}}
+\index{mnStartServer@{mnStartServer}!procCommands@{procCommands}}
+\subsubsection[{mnStartServer}]{\setlength{\rightskip}{0pt plus 5cm}int mnStartServer (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ maxClients, }
+\item[{const {\bf NetInstanceProfile} \&}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gac613edc6f09726bf3f105cdd0393539e}
+Load a server instance into the specified instance ID. The instance is fully active and clients can connect after this command has been called. Any instance already loaded into the specified instance ID will be deactivated and overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em maxClients}]maximum number of clients that can be connected to server at any one time \item[{\em profile}]Instance profile containing additional instance settings \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the server was started successfully 
+
+-\/1 if the server failed to start 
+\end{DoxyReturn}
+\hypertarget{group__proc_commands_ga51d3f53c0195b53dc5f73905230cf37e}{
+\index{procCommands@{procCommands}!mnStartServer@{mnStartServer}}
+\index{mnStartServer@{mnStartServer}!procCommands@{procCommands}}
+\subsubsection[{mnStartServer}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnStartServer (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ maxClients, }
+\item[{INT\_\-PTR}]{ profile}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_ga51d3f53c0195b53dc5f73905230cf37e}
+Load a server instance into the specified instance ID. The instance is fully active and clients can connect after this command has been called. Any instance already loaded into the specified instance ID will be deactivated and overwritten.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \item[{\em maxClients}]maximum number of clients that can be connected to server at any one time \item[{\em profile}]Instance profile containing additional instance settings \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the server was started successfully 
+
+-\/1 if the server failed to start 
+\end{DoxyReturn}
+ \hypertarget{group__proc_commands_gad549e29ca5e200d6d690a4941a570305}{
+\index{procCommands@{procCommands}!mnStopConnect@{mnStopConnect}}
+\index{mnStopConnect@{mnStopConnect}!procCommands@{procCommands}}
+\subsubsection[{mnStopConnect}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnStopConnect (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{group__proc_commands_gad549e29ca5e200d6d690a4941a570305}
+Cancels the handshaking process. The handshaking must be in progress otherwise this command will fail. This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+\begin{DoxyWarning}{Warning}
+PollConnect should not be used after this command, it will fail
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]unique identifier for instance \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the command completed successfully 
+
+-\/1 if an error occurred 
+\end{DoxyReturn}

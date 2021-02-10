@@ -1,0 +1,43 @@
+--S3GE Configuration Registry Properties Setup
+local useregistry = 0
+if useregistry == 1 then
+	local RegistryFolder = 'SOFTWARE\\HPQuest.com\\DOSP\\S3GE\\Engine'
+	sysConfigPropertySet(RegistryFolder,'AuthorizationKey')
+	sysConfigPropertySet(RegistryFolder,'Coorinator')
+	sysConfigPropertySet(RegistryFolder,'GameContentDirectory')
+	sysConfigPropertySet(RegistryFolder,'GameServerHostname')
+	sysConfigPropertySet(RegistryFolder,'GameServerPort')
+	sysConfigPropertySet(RegistryFolder,'HostServer')
+	sysConfigPropertySet(RegistryFolder,'HostServerContentDirectory')
+	sysConfigPropertySet(RegistryFolder,'HostServerPort')
+	sysConfigPropertySet(RegistryFolder,'MAUIMainFile')
+	sysConfigPropertySet(RegistryFolder,'ProductionPhase')
+	sysConfigPropertySet(RegistryFolder,'ScreenHeight')
+	sysConfigPropertySet(RegistryFolder,'ScreenWidth')
+	sysConfigPropertySet(RegistryFolder,'SplashScreenImage')
+	sysConfigPropertySet(RegistryFolder,'TBEMSServer')
+	sysConfigPropertySet(RegistryFolder,'TBEMSServerPort')	
+	sysConfigPropertySet(RegistryFolder,'Title')
+	sysConfigPropertySet(RegistryFolder,'URL')
+	sysConfigPropertySet(RegistryFolder,'Version')
+else 
+	sysConfigPropertyValueSet('AuthorizationKey', 'e6ceb3eece2a66a5d4a29088a783b2e3')
+	sysConfigPropertyValueSet('Coorinator', 'TechLord @ frankie_taylor@hotmail.com')
+	sysConfigPropertyValueSet('GameContentDirectory', 'Content/')
+	sysConfigPropertyValueSet('GameServerHostname', 'localhost')
+	sysConfigPropertyValueSet('GameServerPort', '6565')
+	sysConfigPropertyValueSet('HostServer', 'www.hpquest.com')	
+	sysConfigPropertyValueSet('HostServerContentDirectory', '/MOR/')
+	sysConfigPropertyValueSet('HostServerPort', '80')
+	sysConfigPropertyValueSet('MAUIMainFile', 'Data/UI/maui.s3ge')
+	sysConfigPropertyValueSet('ProductionPhase', 'Research & Development')	
+	sysConfigPropertyValueSet('ScreenHeight', '768')	
+	sysConfigPropertyValueSet('ScreenWidth', '1024')	
+	sysConfigPropertyValueSet('SplashScreenImage', '2D/splash.png')
+	sysConfigPropertyValueSet('TBEMSServer', 'tournamentblitz.hpquest.com')
+	sysConfigPropertyValueSet('TBEMSServerPort', '80')
+	sysConfigPropertyValueSet('Title', 'Super 3D Game Engine')
+	sysConfigPropertyValueSet('URL', 'http://forum.thegamecreators.com/?m=forum_view&t=155919&b=22')
+	sysConfigPropertyValueSet('Version', '1.1')
+end
+

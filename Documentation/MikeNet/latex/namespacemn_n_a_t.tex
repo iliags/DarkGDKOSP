@@ -1,0 +1,577 @@
+\hypertarget{namespacemn_n_a_t}{
+\section{mnNAT Namespace Reference}
+\label{namespacemn_n_a_t}\index{mnNAT@{mnNAT}}
+}
+
+
+Commands for procedural programming, that wrap around internal classes.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{namespacemn_n_a_t_a6ea1e6643d17c0c9a5179376a51c023c}{\_\-Block} (bool block)
+\begin{DoxyCompactList}\small\item\em Waits for the last action to complete if 'block' is true. \item\end{DoxyCompactList}\item 
+\hypertarget{namespacemn_n_a_t_af20ffeb7905e67d45c4cad2a5ba188e4}{
+void \hyperlink{namespacemn_n_a_t_af20ffeb7905e67d45c4cad2a5ba188e4}{\_\-DealWithError} ()}
+\label{namespacemn_n_a_t_af20ffeb7905e67d45c4cad2a5ba188e4}
+
+\begin{DoxyCompactList}\small\item\em If an error occurred while performing an operation, this method will throw it. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a6f874ce55f2055c92494b9f959e189e0}{StartNAT} (bool block)
+\begin{DoxyCompactList}\small\item\em Initializes UPnP NAT module. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a28e1d77839663d749e473a3298a7b12f}{FinishNAT} ()
+\begin{DoxyCompactList}\small\item\em Uninitializes NAT. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a03ddf47374677d349b0468f3f6d8f2e8}{UpdateNAT} (bool block)
+\begin{DoxyCompactList}\small\item\em Updates information stored about port mappings. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a814eac3685422d65c29bb651b3859d5f}{AddPortMap} (const char $\ast$protocol, long externalPort, long internalPort, const char $\ast$internalIP, bool enabled, const char $\ast$description, bool block)
+\begin{DoxyCompactList}\small\item\em Creates a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_n_a_t_afda3af12d37a7a9676da4b04361947e6}{GetPortMapAmount} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of port mappings. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a0bb597938cc5b7d83f5c94f5b42bbf0b}{EnablePortMap} (size\_\-t portMapID, bool block)
+\begin{DoxyCompactList}\small\item\em Enables a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_aab32fbe4d8c86dda1f0f5eae6edff81c}{DisablePortMap} (size\_\-t portMapID, bool block)
+\begin{DoxyCompactList}\small\item\em Disables a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a530f2074e8ca81e4570fcb8420f5b988}{SetPortMapInternalIP} (size\_\-t portMapID, const char $\ast$internalIP, bool block)
+\begin{DoxyCompactList}\small\item\em Changes the internal IP of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a297eaf053cfa273d77b7d3f920284fd9}{SetPortMapInternalPort} (size\_\-t portMapID, long internalPort, bool block)
+\begin{DoxyCompactList}\small\item\em Changes the internal port of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_ae4990bc98b0165fa47ce4cbf9c002d9b}{SetPortMapDescription} (size\_\-t portMapID, const char $\ast$description, bool block)
+\begin{DoxyCompactList}\small\item\em Changes the description of a port mapping. \item\end{DoxyCompactList}\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{namespacemn_n_a_t_aa4efb49b4881fce664be6fa9e362badf}{GetPortMapExternalIP} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the external IP of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL long \hyperlink{namespacemn_n_a_t_a592cb3bdeb5c5bd801a1a6f1f730007d}{GetPortMapExternalPort} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the external port of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL long \hyperlink{namespacemn_n_a_t_ada1ec93ffca837a2fef02cb2d8466663}{GetPortMapInternalPort} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the internal port of a port mapping. \item\end{DoxyCompactList}\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{namespacemn_n_a_t_aee47b934f042fcfda5a6540bebbc4679}{GetPortMapProtocol} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol of a port mapping. \item\end{DoxyCompactList}\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{namespacemn_n_a_t_ac37022019aa9496591be5c013f1e11f7}{GetPortMapInternalIP} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the internal IP of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a5dfa43e73d28ccc8ce428bebeb323774}{GetPortMapEnabled} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Determines whether a port mapping is enabled. \item\end{DoxyCompactList}\item 
+CPP\_\-DLL const char $\ast$ \hyperlink{namespacemn_n_a_t_a0d57b7debf7c97550f77a2c2cd35f678}{GetPortMapDescription} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the description of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a5be3072a358db533b423765556d75a0e}{DeletePortMapA} (size\_\-t portMapID, bool block)
+\begin{DoxyCompactList}\small\item\em Deletes a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_aaf785d3bc7d1dac4f7be1c350b36d218}{DeletePortMapB} (const char $\ast$protocol, long externalPort, bool block)
+\begin{DoxyCompactList}\small\item\em Deletes a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_add1a4615f05c855773c27df2e6a41496}{PortMapExist} (const char $\ast$protocol, long externalPort)
+\begin{DoxyCompactList}\small\item\em Determines whether a port mapping exists. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL size\_\-t \hyperlink{namespacemn_n_a_t_a660dc977a7f695453320530563af6083}{FindPortMap} (const char $\ast$protocol, long externalPort)
+\begin{DoxyCompactList}\small\item\em Finds the ID of a port mapping. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_ab76572df8f76968a74c1b2af17d5d80a}{WaitUntilLastActionFinished} ()
+\begin{DoxyCompactList}\small\item\em Does not return until the last 'doing' action has finished. \item\end{DoxyCompactList}\item 
+DBP\_\-CPP\_\-DLL int \hyperlink{namespacemn_n_a_t_a21874523b67217401be26fd7fdca13c8}{PollNAT} ()
+\begin{DoxyCompactList}\small\item\em Determines whether the last 'doing' action has finished. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Commands for procedural programming, that wrap around internal classes. These commands exist for those who prefer procedural programming over object orientated. They wrap around the classes of the Universal Plug and Play Network Address Translation module and deal with errors differently dependent on the error mode we are in. 
+
+\subsection{Function Documentation}
+\hypertarget{namespacemn_n_a_t_a6ea1e6643d17c0c9a5179376a51c023c}{
+\index{mnNAT@{mnNAT}!\_\-Block@{\_\-Block}}
+\index{\_\-Block@{\_\-Block}!mnNAT@{mnNAT}}
+\subsubsection[{\_\-Block}]{\setlength{\rightskip}{0pt plus 5cm}void mnNAT::\_\-Block (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a6ea1e6643d17c0c9a5179376a51c023c}
+
+
+Waits for the last action to complete if 'block' is true. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]True to wait for the last action to complete, false to return instantly. \end{DoxyParams}
+\hypertarget{namespacemn_n_a_t_a814eac3685422d65c29bb651b3859d5f}{
+\index{mnNAT@{mnNAT}!AddPortMap@{AddPortMap}}
+\index{AddPortMap@{AddPortMap}!mnNAT@{mnNAT}}
+\subsubsection[{AddPortMap}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::AddPortMap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort, }
+\item[{long}]{ internalPort, }
+\item[{const char $\ast$}]{ internalIP, }
+\item[{bool}]{ enabled, }
+\item[{const char $\ast$}]{ description, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a814eac3685422d65c29bb651b3859d5f}
+
+
+Creates a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em externalPort}]The external port. \item[{\em protocol}]The protocol. \item[{\em internalPort}]The internal port. \item[{\em internalIP}]The internal ip. \item[{\em enabled}]True if the entry should be enabled, false if not. \item[{\em description}]A description of the port map. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a5be3072a358db533b423765556d75a0e}{
+\index{mnNAT@{mnNAT}!DeletePortMapA@{DeletePortMapA}}
+\index{DeletePortMapA@{DeletePortMapA}!mnNAT@{mnNAT}}
+\subsubsection[{DeletePortMapA}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::DeletePortMapA (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a5be3072a358db533b423765556d75a0e}
+
+
+Deletes a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_aaf785d3bc7d1dac4f7be1c350b36d218}{
+\index{mnNAT@{mnNAT}!DeletePortMapB@{DeletePortMapB}}
+\index{DeletePortMapB@{DeletePortMapB}!mnNAT@{mnNAT}}
+\subsubsection[{DeletePortMapB}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::DeletePortMapB (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_aaf785d3bc7d1dac4f7be1c350b36d218}
+
+
+Deletes a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol. \item[{\em externalPort}]The external port. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_aab32fbe4d8c86dda1f0f5eae6edff81c}{
+\index{mnNAT@{mnNAT}!DisablePortMap@{DisablePortMap}}
+\index{DisablePortMap@{DisablePortMap}!mnNAT@{mnNAT}}
+\subsubsection[{DisablePortMap}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::DisablePortMap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_aab32fbe4d8c86dda1f0f5eae6edff81c}
+
+
+Disables a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a0bb597938cc5b7d83f5c94f5b42bbf0b}{
+\index{mnNAT@{mnNAT}!EnablePortMap@{EnablePortMap}}
+\index{EnablePortMap@{EnablePortMap}!mnNAT@{mnNAT}}
+\subsubsection[{EnablePortMap}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::EnablePortMap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a0bb597938cc5b7d83f5c94f5b42bbf0b}
+
+
+Enables a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a660dc977a7f695453320530563af6083}{
+\index{mnNAT@{mnNAT}!FindPortMap@{FindPortMap}}
+\index{FindPortMap@{FindPortMap}!mnNAT@{mnNAT}}
+\subsubsection[{FindPortMap}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnNAT::FindPortMap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a660dc977a7f695453320530563af6083}
+
+
+Finds the ID of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol. \item[{\em externalPort}]The external port.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the ID of the found port map. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a28e1d77839663d749e473a3298a7b12f}{
+\index{mnNAT@{mnNAT}!FinishNAT@{FinishNAT}}
+\index{FinishNAT@{FinishNAT}!mnNAT@{mnNAT}}
+\subsubsection[{FinishNAT}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::FinishNAT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a28e1d77839663d749e473a3298a7b12f}
+
+
+Uninitializes NAT. 
+
+Does nothing is NAT is not initialized.
+
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_afda3af12d37a7a9676da4b04361947e6}{
+\index{mnNAT@{mnNAT}!GetPortMapAmount@{GetPortMapAmount}}
+\index{GetPortMapAmount@{GetPortMapAmount}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapAmount}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL size\_\-t mnNAT::GetPortMapAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_afda3af12d37a7a9676da4b04361947e6}
+
+
+Retrieves the number of port mappings. 
+
+\begin{DoxyReturn}{Returns}
+the number of port mappings loaded. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a0d57b7debf7c97550f77a2c2cd35f678}{
+\index{mnNAT@{mnNAT}!GetPortMapDescription@{GetPortMapDescription}}
+\index{GetPortMapDescription@{GetPortMapDescription}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapDescription}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char $\ast$ mnNAT::GetPortMapDescription (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a0d57b7debf7c97550f77a2c2cd35f678}
+
+
+Retrieves the description of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a description of the port map. 
+
+an empty string if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a5dfa43e73d28ccc8ce428bebeb323774}{
+\index{mnNAT@{mnNAT}!GetPortMapEnabled@{GetPortMapEnabled}}
+\index{GetPortMapEnabled@{GetPortMapEnabled}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapEnabled}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::GetPortMapEnabled (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a5dfa43e73d28ccc8ce428bebeb323774}
+
+
+Determines whether a port mapping is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the port mapping is enabled, false if not. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_aa4efb49b4881fce664be6fa9e362badf}{
+\index{mnNAT@{mnNAT}!GetPortMapExternalIP@{GetPortMapExternalIP}}
+\index{GetPortMapExternalIP@{GetPortMapExternalIP}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapExternalIP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char $\ast$ mnNAT::GetPortMapExternalIP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_aa4efb49b4881fce664be6fa9e362badf}
+
+
+Retrieves the external IP of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an empty string if an error occurred. 
+
+the external IP of the port mapping. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a592cb3bdeb5c5bd801a1a6f1f730007d}{
+\index{mnNAT@{mnNAT}!GetPortMapExternalPort@{GetPortMapExternalPort}}
+\index{GetPortMapExternalPort@{GetPortMapExternalPort}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapExternalPort}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL long mnNAT::GetPortMapExternalPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a592cb3bdeb5c5bd801a1a6f1f730007d}
+
+
+Retrieves the external port of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the external port of the port mapping. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_ac37022019aa9496591be5c013f1e11f7}{
+\index{mnNAT@{mnNAT}!GetPortMapInternalIP@{GetPortMapInternalIP}}
+\index{GetPortMapInternalIP@{GetPortMapInternalIP}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapInternalIP}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char $\ast$ mnNAT::GetPortMapInternalIP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_ac37022019aa9496591be5c013f1e11f7}
+
+
+Retrieves the internal IP of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the internal IP of the port mapping. 
+
+an empty string if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_ada1ec93ffca837a2fef02cb2d8466663}{
+\index{mnNAT@{mnNAT}!GetPortMapInternalPort@{GetPortMapInternalPort}}
+\index{GetPortMapInternalPort@{GetPortMapInternalPort}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapInternalPort}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL long mnNAT::GetPortMapInternalPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_ada1ec93ffca837a2fef02cb2d8466663}
+
+
+Retrieves the internal port of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the internal port of the port mapping. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_aee47b934f042fcfda5a6540bebbc4679}{
+\index{mnNAT@{mnNAT}!GetPortMapProtocol@{GetPortMapProtocol}}
+\index{GetPortMapProtocol@{GetPortMapProtocol}!mnNAT@{mnNAT}}
+\subsubsection[{GetPortMapProtocol}]{\setlength{\rightskip}{0pt plus 5cm}CPP\_\-DLL const char $\ast$ mnNAT::GetPortMapProtocol (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_aee47b934f042fcfda5a6540bebbc4679}
+
+
+Retrieves the protocol of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the protocol of the port mapping. 
+
+an empty string if an error occurred. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a21874523b67217401be26fd7fdca13c8}{
+\index{mnNAT@{mnNAT}!PollNAT@{PollNAT}}
+\index{PollNAT@{PollNAT}!mnNAT@{mnNAT}}
+\subsubsection[{PollNAT}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::PollNAT (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a21874523b67217401be26fd7fdca13c8}
+
+
+Determines whether the last 'doing' action has finished. 
+
+You cannot use this on any method which does not have a 'block' parameter.
+
+\begin{DoxyReturn}{Returns}
+true if the last action that was initiated has finished, false if not. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_add1a4615f05c855773c27df2e6a41496}{
+\index{mnNAT@{mnNAT}!PortMapExist@{PortMapExist}}
+\index{PortMapExist@{PortMapExist}!mnNAT@{mnNAT}}
+\subsubsection[{PortMapExist}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::PortMapExist (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_add1a4615f05c855773c27df2e6a41496}
+
+
+Determines whether a port mapping exists. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol. \item[{\em externalPort}]The external port.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_ae4990bc98b0165fa47ce4cbf9c002d9b}{
+\index{mnNAT@{mnNAT}!SetPortMapDescription@{SetPortMapDescription}}
+\index{SetPortMapDescription@{SetPortMapDescription}!mnNAT@{mnNAT}}
+\subsubsection[{SetPortMapDescription}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::SetPortMapDescription (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID, }
+\item[{const char $\ast$}]{ description, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_ae4990bc98b0165fa47ce4cbf9c002d9b}
+
+
+Changes the description of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \item[{\em description}]The description. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a530f2074e8ca81e4570fcb8420f5b988}{
+\index{mnNAT@{mnNAT}!SetPortMapInternalIP@{SetPortMapInternalIP}}
+\index{SetPortMapInternalIP@{SetPortMapInternalIP}!mnNAT@{mnNAT}}
+\subsubsection[{SetPortMapInternalIP}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::SetPortMapInternalIP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID, }
+\item[{const char $\ast$}]{ internalIP, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a530f2074e8ca81e4570fcb8420f5b988}
+
+
+Changes the internal IP of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \item[{\em internalIP}]The internal IP. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a297eaf053cfa273d77b7d3f920284fd9}{
+\index{mnNAT@{mnNAT}!SetPortMapInternalPort@{SetPortMapInternalPort}}
+\index{SetPortMapInternalPort@{SetPortMapInternalPort}!mnNAT@{mnNAT}}
+\subsubsection[{SetPortMapInternalPort}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::SetPortMapInternalPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID, }
+\item[{long}]{ internalPort, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a297eaf053cfa273d77b7d3f920284fd9}
+
+
+Changes the internal port of a port mapping. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]ID of the port map to use. \item[{\em internalPort}]The internal port. \item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a6f874ce55f2055c92494b9f959e189e0}{
+\index{mnNAT@{mnNAT}!StartNAT@{StartNAT}}
+\index{StartNAT@{StartNAT}!mnNAT@{mnNAT}}
+\subsubsection[{StartNAT}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::StartNAT (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a6f874ce55f2055c92494b9f959e189e0}
+
+
+Initializes UPnP NAT module. 
+
+No NAT commands will work until this has been used. \par
+\par
+
+
+If NAT is already running, it will be unloaded and reinitialized.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_a03ddf47374677d349b0468f3f6d8f2e8}{
+\index{mnNAT@{mnNAT}!UpdateNAT@{UpdateNAT}}
+\index{UpdateNAT@{UpdateNAT}!mnNAT@{mnNAT}}
+\subsubsection[{UpdateNAT}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::UpdateNAT (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_a03ddf47374677d349b0468f3f6d8f2e8}
+
+
+Updates information stored about port mappings. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]False if the command should return instantly, true if the command should wait for the operation to complete.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}
+\hypertarget{namespacemn_n_a_t_ab76572df8f76968a74c1b2af17d5d80a}{
+\index{mnNAT@{mnNAT}!WaitUntilLastActionFinished@{WaitUntilLastActionFinished}}
+\index{WaitUntilLastActionFinished@{WaitUntilLastActionFinished}!mnNAT@{mnNAT}}
+\subsubsection[{WaitUntilLastActionFinished}]{\setlength{\rightskip}{0pt plus 5cm}DBP\_\-CPP\_\-DLL int mnNAT::WaitUntilLastActionFinished (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespacemn_n_a_t_ab76572df8f76968a74c1b2af17d5d80a}
+
+
+Does not return until the last 'doing' action has finished. 
+
+You cannot use this on any method which does not have a 'block' parameter.
+
+\begin{DoxyReturn}{Returns}
+0 if the operation completed successfully. 
+
+-\/1 if the operation failed to complete. 
+\end{DoxyReturn}

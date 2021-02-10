@@ -1,0 +1,185 @@
+\hypertarget{classcl_shared_u_d_p}{
+\section{clSharedUDP Class Reference}
+\label{classcl_shared_u_d_p}\index{clSharedUDP@{clSharedUDP}}
+}
+
+
+UDP protocol class, provides a base for extensions to the protocol by UDP mode classes.  
+
+
+
+
+{\ttfamily \#include $<$clSharedUDP.h$>$}
+
+Inheritance diagram for clSharedUDP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcl_shared_u_d_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{classcl_shared_u_d_p_a6985d2cd42ad37bc2477efb162bad157}{Reset} (size\_\-t clientID)=0
+\item 
+virtual void \hyperlink{classcl_shared_u_d_p_a086fea6811fed1dc76d54ba9cbf52763}{Reset} ()=0
+\item 
+virtual size\_\-t \hyperlink{classcl_shared_u_d_p_ac27f28fb266c9faaf44ee7e515ab0727}{GetPacketAmount} (size\_\-t clientID, size\_\-t operationID) const =0
+\item 
+virtual size\_\-t \hyperlink{classcl_shared_u_d_p_a8b6e71b0ce806b23e378fe7206a0d8a5}{GetPacketFromStore} (size\_\-t clientID, size\_\-t operationID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)=0
+\item 
+virtual size\_\-t \hyperlink{classcl_shared_u_d_p_a4018cccdd8593a0df78f7dd6f59c40c1}{GetNumOperations} () const =0
+\item 
+virtual size\_\-t \hyperlink{classcl_shared_u_d_p_afacd36fa8d2b7bb21bff349cf0c1b3c9}{GetNumClients} () const =0
+\item 
+virtual \hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$ \hyperlink{classcl_shared_u_d_p_a62267e9d085f8e6b72a91fadf4a55670}{Clone} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_shared_u_d_p_a7a5628fdd4926da13cba2a5295e0e5e7}{
+static \hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$ {\bfseries GenerateModeUDP} (\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} protocolMode, size\_\-t numClients, size\_\-t numOperations, size\_\-t recvSize, INT\_\-PTR decryptKey)}
+\label{classcl_shared_u_d_p_a7a5628fdd4926da13cba2a5295e0e5e7}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP protocol class, provides a base for extensions to the protocol by UDP mode classes. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Should be inherited by UDP mode objects.\par
+\par
+
+
+This class lays out the functionality required by UDP mode classes. 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_shared_u_d_p_a62267e9d085f8e6b72a91fadf4a55670}{
+\index{clSharedUDP@{clSharedUDP}!Clone@{Clone}}
+\index{Clone@{Clone}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clSharedUDP}$\ast$ clSharedUDP::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_a62267e9d085f8e6b72a91fadf4a55670}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_catch_all_no_u_d_p_a64c2a0db2dffeb144559bb2c134c4aa0}{clCatchAllNoUDP}, \hyperlink{classcl_catch_all_u_d_p_a0e329ffd49f681f9e81938d20ac1ab06}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_a927ff441992e605aaa5caf2bcb0a19b6}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_u_d_p_afacd36fa8d2b7bb21bff349cf0c1b3c9}{
+\index{clSharedUDP@{clSharedUDP}!GetNumClients@{GetNumClients}}
+\index{GetNumClients@{GetNumClients}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{GetNumClients}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clSharedUDP::GetNumClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_afacd36fa8d2b7bb21bff349cf0c1b3c9}
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_catch_all_u_d_p_ac4eb348fdfc5b85a58aab9c48023171c}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_a273adfddaf1db4ff56d6a17b10aa7674}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_u_d_p_a4018cccdd8593a0df78f7dd6f59c40c1}{
+\index{clSharedUDP@{clSharedUDP}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clSharedUDP::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_a4018cccdd8593a0df78f7dd6f59c40c1}
+\begin{DoxyReturn}{Returns}
+the number of operations that this object can manage 
+
+if operations are not valid for this object then 1 should be returned 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_catch_all_u_d_p_aebbfac2716ad96b0344fe8ab776d771b}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_a3bfc57d56a06ce0a719d7c699029861b}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_u_d_p_ac27f28fb266c9faaf44ee7e515ab0727}{
+\index{clSharedUDP@{clSharedUDP}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clSharedUDP::GetPacketAmount (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_ac27f28fb266c9faaf44ee7e515ab0727}
+\begin{DoxyReturn}{Returns}
+the number of packets in the packet store 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use, may be ignored \item[{\em operationID}]operation ID of operation to use, may be ignored \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_catch_all_u_d_p_a366bd96e44b0352b9d35b626c5b60bfc}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_ad56e31637dfbb161912701621da7ecf6}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_u_d_p_a8b6e71b0ce806b23e378fe7206a0d8a5}{
+\index{clSharedUDP@{clSharedUDP}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clSharedUDP::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_a8b6e71b0ce806b23e378fe7206a0d8a5}
+Copies a packet from the packet store into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use, may be ignored \item[{\em operationID}]operation ID of operation to use, may be ignored \item[{\em destination}]pointer to a \hyperlink{classcl_packet}{clPacket} object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in packet queue before this method was called 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+destination must be a pointer to a \hyperlink{classcl_packet}{clPacket} object 
+\end{DoxyWarning}
+
+
+Implemented in \hyperlink{classcl_catch_all_u_d_p_a61371c284ba4ce5e83ba3679439cf765}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_ae5adb603508d2a61d53b95c48b077e73}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_u_d_p_a086fea6811fed1dc76d54ba9cbf52763}{
+\index{clSharedUDP@{clSharedUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clSharedUDP::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_a086fea6811fed1dc76d54ba9cbf52763}
+Reset data of entire object (all clients) 
+
+Implemented in \hyperlink{classcl_catch_all_no_u_d_p_a5b4b52daa2fe9319eb25481951a70818}{clCatchAllNoUDP}, \hyperlink{classcl_catch_all_u_d_p_ab73dbee966b725003aa44dcf88eb89d5}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_a650dc543709d94ea2826871a15e526f5}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_u_d_p_a6985d2cd42ad37bc2477efb162bad157}{
+\index{clSharedUDP@{clSharedUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clSharedUDP@{clSharedUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clSharedUDP::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_u_d_p_a6985d2cd42ad37bc2477efb162bad157}
+Reset data of specified client 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_catch_all_no_u_d_p_af80b84880abeb4cc701c4facd4391156}{clCatchAllNoUDP}, \hyperlink{classcl_catch_all_u_d_p_ad4530482136db2ffffff7fdac7f2e00f}{clCatchAllUDP}, and \hyperlink{classcl_per_client_u_d_p_ae7d279662aacd52fae6d64683820e653}{clPerClientUDP}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSharedUDP.h\end{DoxyCompactItemize}

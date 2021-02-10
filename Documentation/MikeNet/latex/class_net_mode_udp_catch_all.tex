@@ -1,0 +1,461 @@
+\hypertarget{class_net_mode_udp_catch_all}{
+\section{NetModeUdpCatchAll Class Reference}
+\label{class_net_mode_udp_catch_all}\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+}
+
+
+UDP mode where all packets are received, even out of order ones.  
+
+
+
+
+{\ttfamily \#include $<$NetModeUdpCatchAll.h$>$}
+
+Inheritance diagram for NetModeUdpCatchAll:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_net_mode_udp_catch_all}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_mode_udp_catch_all_a9931877b6d191a2876232edd36c2fc50}{NetModeUdpCatchAll} (size\_\-t numClients)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_catch_all_a357692e773b7b3d68f8a412f28d09cc4}{
+virtual \hyperlink{class_net_mode_udp_catch_all_a357692e773b7b3d68f8a412f28d09cc4}{$\sim$NetModeUdpCatchAll} ()}
+\label{class_net_mode_udp_catch_all_a357692e773b7b3d68f8a412f28d09cc4}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_catch_all_af57dcd2731c4695473b1e492db61f3d2}{NetModeUdpCatchAll} (const \hyperlink{class_net_mode_udp_catch_all}{NetModeUdpCatchAll} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp_catch_all}{NetModeUdpCatchAll} \& \hyperlink{class_net_mode_udp_catch_all_ae6f49327f5ee096131088bd57ae243eb}{operator=} (const \hyperlink{class_net_mode_udp_catch_all}{NetModeUdpCatchAll} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_mode_udp_catch_all}{NetModeUdpCatchAll} $\ast$ \hyperlink{class_net_mode_udp_catch_all_a6ab3fa975dd909cc49ce378436343d8b}{Clone} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a deep copy of this object. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_mode_udp_catch_all_a00d7aca63598b6e3c270fd157627885f}{Reset} (size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Resets data of specified client. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_catch_all_a0a727c03f13ab2372a7be9477e6fb6e9}{
+virtual void \hyperlink{class_net_mode_udp_catch_all_a0a727c03f13ab2372a7be9477e6fb6e9}{Reset} ()}
+\label{class_net_mode_udp_catch_all_a0a727c03f13ab2372a7be9477e6fb6e9}
+
+\begin{DoxyCompactList}\small\item\em Reset data of all clients. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_catch_all_acfc10ca9c1b4204fdbb021bf755e4e55}{PacketDone} (\hyperlink{class_packet}{Packet} $\ast$completePacket, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} udpRecvFunc)
+\begin{DoxyCompactList}\small\item\em Deals with a complete packet. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_mode_udp_catch_all_adc52011adf841020e996d6c50f6fb7c1}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} udpRecvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Deals with newly received data. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_catch_all_a56defc6f6d09211a49cc5c110cfb3fcf}{GetPacketAmount} (size\_\-t clientID, size\_\-t operationID=0) const 
+\begin{DoxyCompactList}\small\item\em Determines the number of packets in the specified packet store. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_catch_all_a79fa50275b49fed4af9cce8756a81394}{GetPacketFromStore} (\hyperlink{class_packet}{Packet} $\ast$destination, size\_\-t clientID, size\_\-t operationID=0)
+\begin{DoxyCompactList}\small\item\em Retrieves a packet from the specified packet store. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_send}{NetSend} $\ast$ \hyperlink{class_net_mode_udp_catch_all_a31fc998bff9b19d93f7437ae7f03d7ef}{GetSendObject} (const \hyperlink{class_packet}{Packet} $\ast$packet, bool block)
+\begin{DoxyCompactList}\small\item\em Generates a \hyperlink{class_net_send}{NetSend} object. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{ProtocolMode} \hyperlink{class_net_mode_udp_catch_all_a84cd8b30de444fa8dbd699fdae416a84}{GetProtocolMode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol mode in use. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_catch_all_a44f2ced63d3d36ba590edb7cb60c0532}{GetNumOperations} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of operations that this object can manage. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_udp_catch_all_a5726dba2839ba6dccb9a384bf91ae0dc}{GetNumClients} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of clients that this object can manage. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_mode_udp_catch_all_abf7feda18651d7fc4638da1a75841ad9}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_mode_udp_catch_all_a2eba04c6f0b36531765db21858d96c54}{
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_store_queue}{StoreQueue}$<$ \hyperlink{class_packet}{Packet} $>$ $>$ \hyperlink{class_net_mode_udp_catch_all_a2eba04c6f0b36531765db21858d96c54}{packetStore}}
+\label{class_net_mode_udp_catch_all_a2eba04c6f0b36531765db21858d96c54}
+
+\begin{DoxyCompactList}\small\item\em Stores all recently received packets for every client. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_mode_udp_catch_all_a27195f4faaf7bb96e1f216cf1531950e}{ValidateClientID} (size\_\-t clientID) const 
+\begin{DoxyCompactList}\small\item\em Throws an exception if an invalid client ID is specified. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_udp_catch_all_ab6c440044e5e6fae6127998c05c9fc08}{Copy} (const \hyperlink{class_net_mode_udp_catch_all}{NetModeUdpCatchAll} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP mode where all packets are received, even out of order ones. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+The packet is sent unmodified and packets received are transfered straight to the application. Out of order packets may be received.\par
+\par
+
+
+In addition to this connection packets may be received in server state, as the client blasts UDP packets to the server which may arrive late, after the connection has completed. These packets always have a prefix of size\_\-t of value 0. You can use this to single them out and discard them. For more information see the \hyperlink{handshake_page}{server/client handshaking process}.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_mode_udp_catch_all_a9931877b6d191a2876232edd36c2fc50}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{NetModeUdpCatchAll}]{\setlength{\rightskip}{0pt plus 5cm}NetModeUdpCatchAll::NetModeUdpCatchAll (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numClients}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_catch_all_a9931877b6d191a2876232edd36c2fc50}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numClients}]Number of clients that object should store packets for. \end{DoxyParams}
+\hypertarget{class_net_mode_udp_catch_all_af57dcd2731c4695473b1e492db61f3d2}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{NetModeUdpCatchAll}]{\setlength{\rightskip}{0pt plus 5cm}NetModeUdpCatchAll::NetModeUdpCatchAll (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpCatchAll} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_catch_all_af57dcd2731c4695473b1e492db61f3d2}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_mode_udp_catch_all_a6ab3fa975dd909cc49ce378436343d8b}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!Clone@{Clone}}
+\index{Clone@{Clone}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdpCatchAll} $\ast$ NetModeUdpCatchAll::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a6ab3fa975dd909cc49ce378436343d8b}
+
+
+Retrieves a deep copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_udp_ae0160135a69173309701952b9bdf7488}{NetModeUdp}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_no_aec441e93f9eb158bf09fd0013aca12a5}{NetModeUdpCatchAllNo}.
+
+\hypertarget{class_net_mode_udp_catch_all_ab6c440044e5e6fae6127998c05c9fc08}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!Copy@{Copy}}
+\index{Copy@{Copy}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAll::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpCatchAll} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_ab6c440044e5e6fae6127998c05c9fc08}
+
+
+Copy constructor / assignment operator helper method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy into this object. \end{DoxyParams}
+\hypertarget{class_net_mode_udp_catch_all_adc52011adf841020e996d6c50f6fb7c1}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAll::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ udpRecvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_adc52011adf841020e996d6c50f6fb7c1}
+
+
+Deals with newly received data. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in {\itshape buffer\/}. \item[\mbox{\tt[in]} {\em udpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a075020ac61bedee59eb7b0dcb6754847}{NetMode}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_no_a9a7e511a9c813ae4889ee4afa1e840ba}{NetModeUdpCatchAllNo}.
+
+\hypertarget{class_net_mode_udp_catch_all_a5726dba2839ba6dccb9a384bf91ae0dc}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!GetNumClients@{GetNumClients}}
+\index{GetNumClients@{GetNumClients}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{GetNumClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpCatchAll::GetNumClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a5726dba2839ba6dccb9a384bf91ae0dc}
+
+
+Retrieves the number of clients that this object can manage. 
+
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_udp_a2ec3aa4ddf8d531d1754f8be2a1d87ba}{NetModeUdp}.
+
+\hypertarget{class_net_mode_udp_catch_all_a44f2ced63d3d36ba590edb7cb60c0532}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpCatchAll::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a44f2ced63d3d36ba590edb7cb60c0532}
+
+
+Retrieves the number of operations that this object can manage. 
+
+\begin{DoxyReturn}{Returns}
+1 because operations are not valid for this object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_udp_a36a62c7bf9df7c7d7f2a3ad5cfb79b42}{NetModeUdp}.
+
+\hypertarget{class_net_mode_udp_catch_all_a56defc6f6d09211a49cc5c110cfb3fcf}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpCatchAll::GetPacketAmount (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a56defc6f6d09211a49cc5c110cfb3fcf}
+
+
+Determines the number of packets in the specified packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \item[{\em operationID}]Ignored (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in the packet store. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a5e5d20657ffc037022adc4b81fe2df6d}{NetMode}.
+
+\hypertarget{class_net_mode_udp_catch_all_a79fa50275b49fed4af9cce8756a81394}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeUdpCatchAll::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ destination, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a79fa50275b49fed4af9cce8756a81394}
+
+
+Retrieves a packet from the specified packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy packet into. \item[{\em clientID}]ID of client to use. \item[{\em operationID}]Ignored (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in packet queue before this method was called. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a7231dcd15fc1896f61d7ac80c3e9b4ba}{NetMode}.
+
+\hypertarget{class_net_mode_udp_catch_all_a84cd8b30de444fa8dbd699fdae416a84}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetModeUdpCatchAll::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a84cd8b30de444fa8dbd699fdae416a84}
+
+
+Retrieves the protocol mode in use. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a158ce5f833cde150d209f480936b2b0a}{NetMode::UDP\_\-CATCH\_\-ALL}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a955c73991a8f13465e509f3841071455}{NetMode}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_no_a29a144e8ac3263b8ea2d8efb3ca6d657}{NetModeUdpCatchAllNo}.
+
+\hypertarget{class_net_mode_udp_catch_all_a31fc998bff9b19d93f7437ae7f03d7ef}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSend} $\ast$ NetModeUdpCatchAll::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a31fc998bff9b19d93f7437ae7f03d7ef}
+
+
+Generates a \hyperlink{class_net_send}{NetSend} object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]True if sending should be synchronous, false if sending should be asynchronous.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a send object. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a2a44f68cb6dccbeff90cabbdede0b54e}{NetMode}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_no_a32447c9f1e407a509e3b0179f50fab5c}{NetModeUdpCatchAllNo}.
+
+\hypertarget{class_net_mode_udp_catch_all_ae6f49327f5ee096131088bd57ae243eb}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!operator=@{operator=}}
+\index{operator=@{operator=}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdpCatchAll} \& NetModeUdpCatchAll::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeUdpCatchAll} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_udp_catch_all_ae6f49327f5ee096131088bd57ae243eb}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_udp_catch_all_acfc10ca9c1b4204fdbb021bf755e4e55}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!PacketDone@{PacketDone}}
+\index{PacketDone@{PacketDone}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{PacketDone}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAll::PacketDone (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ completePacket, }
+\item[{{\bf NetSocket::RecvFunc}}]{ udpRecvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_acfc10ca9c1b4204fdbb021bf755e4e55}
+
+
+Deals with a complete packet. 
+
+The class deals with it in one of two ways:
+\begin{DoxyItemize}
+\item Passes it to a user function specified by {\itshape udpRecvFunc\/} parameter.
+\item If no user function is defined then it is put into a queue to be retrieved using \hyperlink{class_net_mode_udp_catch_all_a79fa50275b49fed4af9cce8756a81394}{GetPacketFromStore()}.
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+If the packet is passed to a user function this is done synchronously, so this method will not return until the user function returns.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em completePacket}]The complete packet that should be dealt with. The packet is now owned by this object and should not be referenced elsewhere. \item[\mbox{\tt[in]} {\em udpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a6dfa7ab2954246efda52867ef345a6bb}{NetMode}.
+
+\hypertarget{class_net_mode_udp_catch_all_a00d7aca63598b6e3c270fd157627885f}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!Reset@{Reset}}
+\index{Reset@{Reset}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAll::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a00d7aca63598b6e3c270fd157627885f}
+
+
+Resets data of specified client. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_udp_af5895c1120cdc8d0d04bd3e1bb34bdd7}{NetModeUdp}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_no_abb09001562a985298f208ffd4f45825e}{NetModeUdpCatchAllNo}.
+
+\hypertarget{class_net_mode_udp_catch_all_abf7feda18651d7fc4638da1a75841ad9}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeUdpCatchAll::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_abf7feda18651d7fc4638da1a75841ad9}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_udp_a2d4e3b8aede50899cb756392c48a8bcd}{NetModeUdp}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_no_a479484b12ab0700640a8caaefb13f33f}{NetModeUdpCatchAllNo}.
+
+\hypertarget{class_net_mode_udp_catch_all_a27195f4faaf7bb96e1f216cf1531950e}{
+\index{NetModeUdpCatchAll@{NetModeUdpCatchAll}!ValidateClientID@{ValidateClientID}}
+\index{ValidateClientID@{ValidateClientID}!NetModeUdpCatchAll@{NetModeUdpCatchAll}}
+\subsubsection[{ValidateClientID}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeUdpCatchAll::ValidateClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_udp_catch_all_a27195f4faaf7bb96e1f216cf1531950e}
+
+
+Throws an exception if an invalid client ID is specified. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]Client ID to check.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape clientID\/} is invalid. \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdpCatchAll.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdpCatchAll.cpp\end{DoxyCompactItemize}

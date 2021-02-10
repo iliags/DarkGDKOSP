@@ -1,0 +1,108 @@
+\hypertarget{class_thread_message_item_set_port_map_description}{
+\section{ThreadMessageItemSetPortMapDescription Class Reference}
+\label{class_thread_message_item_set_port_map_description}\index{ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}}
+}
+
+
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItemSetPortMapDescription.h$>$}
+
+Inheritance diagram for ThreadMessageItemSetPortMapDescription:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thread_message_item_set_port_map_description}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item_set_port_map_description_aea44c92bb286c134288206c27a80375d}{ThreadMessageItemSetPortMapDescription} (\hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} $\ast$\hyperlink{class_thread_message_item_set_port_map_description_a2dd35dc3624f47b32bf2b4942e5601bb}{takeActionOnMe}, const \hyperlink{class_packet}{Packet} \&\hyperlink{class_thread_message_item_set_port_map_description_a3555b193e1583eda3c822b8c7f9d2026}{description})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_set_port_map_description_accc5651f6d19802efea80fb7fcbcf6c0}{
+\hyperlink{class_thread_message_item_set_port_map_description_accc5651f6d19802efea80fb7fcbcf6c0}{$\sim$ThreadMessageItemSetPortMapDescription} (void)}
+\label{class_thread_message_item_set_port_map_description_accc5651f6d19802efea80fb7fcbcf6c0}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_message_item_set_port_map_description_a96c1ac0e7436f3251f3433155f911104}{TakeAction} ()
+\begin{DoxyCompactList}\small\item\em Changes the description of a port map. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_set_port_map_description_a2dd35dc3624f47b32bf2b4942e5601bb}{
+\hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} $\ast$ \hyperlink{class_thread_message_item_set_port_map_description_a2dd35dc3624f47b32bf2b4942e5601bb}{takeActionOnMe}}
+\label{class_thread_message_item_set_port_map_description_a2dd35dc3624f47b32bf2b4942e5601bb}
+
+\begin{DoxyCompactList}\small\item\em Object to take action on. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_thread_message_item_set_port_map_description_a3555b193e1583eda3c822b8c7f9d2026}{description}
+\begin{DoxyCompactList}\small\item\em Description of the port map. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_message_item_set_port_map_description_aea44c92bb286c134288206c27a80375d}{
+\index{ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}!ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}}
+\index{ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}!ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}}
+\subsubsection[{ThreadMessageItemSetPortMapDescription}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItemSetPortMapDescription::ThreadMessageItemSetPortMapDescription (
+\begin{DoxyParamCaption}
+\item[{{\bf UpnpNatPortMapAction} $\ast$}]{ takeActionOnMe, }
+\item[{const {\bf Packet} \&}]{ description}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_set_port_map_description_aea44c92bb286c134288206c27a80375d}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em takeActionOnMe}]Object to take action on. \item[{\em description}]The description. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_message_item_set_port_map_description_a96c1ac0e7436f3251f3433155f911104}{
+\index{ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}!TakeAction@{TakeAction}}
+\index{TakeAction@{TakeAction}!ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}}
+\subsubsection[{TakeAction}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadMessageItemSetPortMapDescription::TakeAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_message_item_set_port_map_description_a96c1ac0e7436f3251f3433155f911104}
+
+
+Changes the description of a port map. 
+
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{ThreadMessageItem}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_message_item_set_port_map_description_a3555b193e1583eda3c822b8c7f9d2026}{
+\index{ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}!description@{description}}
+\index{description@{description}!ThreadMessageItemSetPortMapDescription@{ThreadMessageItemSetPortMapDescription}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf ThreadMessageItemSetPortMapDescription::description}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_set_port_map_description_a3555b193e1583eda3c822b8c7f9d2026}
+
+
+Description of the port map. 
+
+Stored as a packet because it is important that the string remains valid until the thread has finished using it. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemSetPortMapDescription.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemSetPortMapDescription.cpp\end{DoxyCompactItemize}

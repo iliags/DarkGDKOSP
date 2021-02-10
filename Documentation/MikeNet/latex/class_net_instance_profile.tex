@@ -1,0 +1,1442 @@
+\hypertarget{class_net_instance_profile}{
+\section{NetInstanceProfile Class Reference}
+\label{class_net_instance_profile}\index{NetInstanceProfile@{NetInstanceProfile}}
+}
+
+
+Manages instance startup information.  
+
+
+
+
+{\ttfamily \#include $<$NetInstanceProfile.h$>$}
+
+Inheritance diagram for NetInstanceProfile:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_net_instance_profile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_profile_aa3442dc52d4b8f43f7494df0f62be347}{
+\hyperlink{class_net_instance_profile_aa3442dc52d4b8f43f7494df0f62be347}{NetInstanceProfile} ()}
+\label{class_net_instance_profile_aa3442dc52d4b8f43f7494df0f62be347}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_profile_afb388a609224bd742f6db0d0b7b1d6a7}{NetInstanceProfile} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_profile}{NetInstanceProfile} \& \hyperlink{class_net_instance_profile_adb152f79d06708b6f557c8d2a86cd424}{operator=} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_a8bfa833d397c682b21eedd7b345b497d}{operator==} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&compare) const 
+\begin{DoxyCompactList}\small\item\em Compares this object with another instance profile. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a55b654936fc693d7a4ab2e25f69413aa}{
+virtual \hyperlink{class_net_instance_profile_a55b654936fc693d7a4ab2e25f69413aa}{$\sim$NetInstanceProfile} ()}
+\label{class_net_instance_profile_a55b654936fc693d7a4ab2e25f69413aa}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_aea8ecf597e31112af7d8e10217063caa}{SetRecvFuncUDP} (\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} newRecvFuncUDP)
+\begin{DoxyCompactList}\small\item\em Sets the UDP receive function that should be called when an incoming UDP packet is received. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a2bd3bbd81542f5a006e88fc45091c8e1}{SetHandshakeEnabled} (bool newhandshakeEnabled)
+\begin{DoxyCompactList}\small\item\em Enables or disables the handshake process. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a0108f46983695c115e2765f37cfda734}{SetWsaRecvSizeTCP} (size\_\-t newWsaRecvSizeTCP)
+\begin{DoxyCompactList}\small\item\em Sets the WSA winsock buffer size i.e. The amount of TCP data that can be received in one winsock TCP receive operation. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a79577ee788215ec47931ae3599e5a824}{SetRecvSizeTCP} (size\_\-t newRecvSizeTCP)
+\begin{DoxyCompactList}\small\item\em Sets the TCP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error or needing the buffer to be increased in size. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a862741f4e82fd603e27d7d6fc683cc8d}{SetRecvSizeUDP} (size\_\-t newRecvSizeUDP)
+\begin{DoxyCompactList}\small\item\em Sets the UDP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_ad3f5d1c25fb1dce3b1c2f692d4e2a0fa}{SetLocalAddrTCP} (const \hyperlink{class_net_address}{NetAddress} \&newLocalAddrTCP)
+\begin{DoxyCompactList}\small\item\em Sets the local TCP address that the instance should be bound to. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a8299e23979c397f8d75a71212ba240c9}{SetLocalAddrUDP} (const \hyperlink{class_net_address}{NetAddress} \&newLocalAddrUDP)
+\begin{DoxyCompactList}\small\item\em Sets the local UDP address that the instance should be bound to. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a902105c1a8743cce62e3df9c9a022700}{SetEnabledUDP} (bool newEnabledUDP)
+\begin{DoxyCompactList}\small\item\em Enables or disables UDP. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a73cc53b7890131ee645288ef5ec728ff}{SetDecryptKeyUDP} (const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$newDecryptKeyUDP)
+\begin{DoxyCompactList}\small\item\em Sets the pointer to the decryption key used to decrypt incoming UDP packets. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_ae962a48359066ff383f459dad140d1b2}{SetRecvFuncTCP} (\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} newRecvFuncTCP)
+\begin{DoxyCompactList}\small\item\em Sets the TCP receive function that should be called when an incoming TCP packet is received. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a8fb33cbbfb7f5caf9eb8545c38775eeb}{SetModeTCP} (\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} newModeTCP)
+\begin{DoxyCompactList}\small\item\em Sets the TCP mode that should be used by the instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_aa0df09d0393d0021f20c9a134a035de1}{SetModeUDP} (\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} newModeUDP)
+\begin{DoxyCompactList}\small\item\em Sets the UDP mode that should be used by the instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_aa7f2196d4a36a242d2a5e588d19ab8d4}{SetAutoResizeTCP} (bool newAutoResizeTCP)
+\begin{DoxyCompactList}\small\item\em Enables or disables the auto resize option is enabled. If it is enabled then if a packet larger than the TCP receive buffer size is received, then the buffer will automatically increase in size. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_ad9e42f02af634309b946e3ed585afe2e}{SetSendTimeout} (unsigned int newSendTimeout)
+\begin{DoxyCompactList}\small\item\em Sets the number of milliseconds that send operations will be allowed to complete before they are canceled and the entity that initiated the operation is forcefully disconnected. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_af18b9b5d71dcc3eb25a4da7d1ece6d4a}{SetGracefulDisconnectEnabled} (bool newGracefulDisconnect)
+\begin{DoxyCompactList}\small\item\em Enables or disables graceful disconnection. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_ac83c91e34f442dbc25e83d21bbeff8e2}{SetNagleEnabled} (bool newNagleEnabled)
+\begin{DoxyCompactList}\small\item\em Enables or disables the nagle algorithm. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_afd7d56b3d087a5c2ea9d202a705fc2e1}{SetPostFixTCP} (const \hyperlink{class_packet}{Packet} \&newPostFixTCP)
+\begin{DoxyCompactList}\small\item\em Sets the TCP postfix in use in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetModeTcp::TCP\_\-POSTFIX} TCP mode. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a29e19e0f4a542cc105c50ff7f7169102}{SetReusableUDP} (bool option)
+\begin{DoxyCompactList}\small\item\em Enables or disables the reusable UDP option. If reusable other applications, instances and sockets can bind to the same UDP address as this instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a66b8793bf17d64b8ef9080b2ebd03d47}{SetConnectionToServerTimeout} (size\_\-t newConnectionToServerTimeout)
+\begin{DoxyCompactList}\small\item\em Sets the number of milliseconds that a client is allowed to handshake with the server before it is forcefully disconnected. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a24e097e1c072358163fa00998d33e0fd}{SetNumOperations} (size\_\-t newNumOperations)
+\begin{DoxyCompactList}\small\item\em Specifies the number of UDP operations in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetModeUdp::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_a89f3243d78963e4eb890d5fda63877b9}{GetWsaRecvSizeTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the WSA winsock buffer size i.e. The amount of TCP data that can be received in one winsock TCP receive operation. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_a34189e13e8b5a89800f0aa512c80fdb1}{GetRecvSizeTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error or needing the buffer to be increased in size. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_ac93208f09c1034d1ff7b9b4318f60b21}{GetRecvSizeUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the UDP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_instance_profile_a584ba16218e7d6340eebfefaba180477}{GetLocalAddrTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the local TCP address that the instance should be bound to. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_instance_profile_a6a74c2b832b5662de13b5e23370129f8}{GetLocalAddrUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the local UDP address that the instance should be bound to. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_aa5a2c1ea8752efc51c70a41bb3ecbb20}{IsEnabledUDP} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether UDP is enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_ae7b72771c67facf3e4b5893b71f82b64}{IsDecryptKeyLoadedUDP} ()
+\begin{DoxyCompactList}\small\item\em Determines whether a decryption key has been set. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$ \hyperlink{class_net_instance_profile_a67ebfeeeae376870b959b6f6655cf330}{GetDecryptKeyUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the decryption key used to decrypt incoming UDP packets. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_ac69cc1c6258261af12d7397ecb4e2839}{IsHandshakeEnabled} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the handshake process is enabled. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_profile_a33d0b363560c97904e1e1b764f49a5c5}{GetModeTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP mode that should be used by the instance. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_profile_a58a1289d1dbd339a1ac58a745f78060c}{GetModeUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the UDP mode that should be used by the instance. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_a3138ff491860a299c87cc45f17f193bf}{GetAutoResizeTCP} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the auto resize option is enabled. If it is then if a packet larger than the TCP receive buffer size is received, then the buffer will automatically increase in size. \item\end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_net_instance_profile_ad4ed7a0ee24cf165e639fead2ec3e940}{GetSendTimeout} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of milliseconds that send operations will be allowed to complete before they are canceled and the entity that initiated the operation is forcefully disconnected. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_aafc19d5c04af571aa711ad5f306e2686}{IsGracefulDisconnectEnabled} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether graceful disconnection is enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_acb8b8c3655ce8abbd79867130222bd20}{IsNagleEnabled} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the nagle algorithm is enabled or disabled. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_net_instance_profile_a1b41a8d54a6fe70d9ac3cf0dbe20ef3a}{GetPostFixTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP postfix in use in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetModeTcp::TCP\_\-POSTFIX} TCP mode. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_a57b4bca1eac3896118011edecd961ee1}{IsReusableUDP} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether UDP should be reusable. If reusable other applications, instances and sockets can bind to the same UDP address as this instance. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_ab2f53e23e75a13104855efb4f8b4c063}{GetConnectionToServerTimeout} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of milliseconds that a client is allowed to handshake with the server before it is forcefully disconnected. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_ae4d9e03d9700d57b01921027459c477f}{GetNumOperations} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of UDP operations in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetModeUdp::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_instance_profile_af498bede8c8e0029db0f26c3ef796dc0}{GetRecvFuncTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP receive function that should be called when an incoming TCP packet is received. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_instance_profile_a63584bbc071271a73cc422e7e075b518}{GetRecvFuncUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the UDP receive function that should be called when an incoming UDP packet is received. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$ \hyperlink{class_net_instance_profile_ae6ad441d78eb208534e1321521345f93}{GenerateObjectModeUDP} (size\_\-t numClients, size\_\-t \hyperlink{class_net_instance_profile_acfc20340749f35543345f8b6c00fef4a}{numOperations}) const 
+\begin{DoxyCompactList}\small\item\em Generates a \hyperlink{class_net_mode_udp}{NetModeUdp} object based on local variables. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$ \hyperlink{class_net_instance_profile_a51acbcfcbd4920688fa4ac69dc654d99}{GenerateObjectModeTCP} () const 
+\begin{DoxyCompactList}\small\item\em Generates a \hyperlink{class_net_mode_tcp}{NetModeTcp} object based on local variables. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_u_d_p}{NetSocketUDP} $\ast$ \hyperlink{class_net_instance_profile_a5620819c1e617258b5abb939d1df8dd8}{GenerateObjectSocketUDP} (size\_\-t bufferLength, const \hyperlink{class_net_address}{NetAddress} \&localAddr, bool reusable, \hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$udpMode, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc=NULL) const 
+\begin{DoxyCompactList}\small\item\em Creates a normal UDP socket. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{DEFAULT\_\-BUFFER\_\-SIZE} = 1024
+\begin{DoxyCompactList}\small\item\em Default number of bytes to allocate to receive buffers. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{
+static const bool \hyperlink{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{DEFAULT\_\-ENABLED\_\-UDP} = true}
+\label{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_add7906378b2fe3ebc0fed461b0e02395}{NetInstanceProfile::enabledUDP}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a3468dd5fa20f1c13888bf1d6eed1736a}{
+static const \_\-\_\-int64 \hyperlink{class_net_instance_profile_a3468dd5fa20f1c13888bf1d6eed1736a}{DEFAULT\_\-DECRYPT\_\-KEY\_\-UDP} = NULL}
+\label{class_net_instance_profile_a3468dd5fa20f1c13888bf1d6eed1736a}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a0909a6a77030a97700cef25384df37b0}{NetInstanceProfile::decryptKeyUDP}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{
+static const \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{DEFAULT\_\-RECV\_\-FUNC} = NULL}
+\label{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a879b3034d521919570637748adefb6d8}{NetInstanceProfile::tcpRecvFunc} and \hyperlink{class_net_instance_profile_a2825db403a006e006f4f0b6b4b50c0bb}{NetInstanceProfile::udpRecvFunc}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{
+static const bool \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{DEFAULT\_\-HANDSHAKE\_\-ENABLED} = true}
+\label{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_aaeba0fb41f3972711b0d789d13d74c0f}{NetInstanceProfile::handshakeEnabled}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{
+static const \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{DEFAULT\_\-MODE\_\-TCP} = NetMode::TCP\_\-PREFIX\_\-SIZE}
+\label{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_acfc65e0440c83e5e5fa35f3480d8db3e}{NetInstanceProfile::modeTCP}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{
+static const bool \hyperlink{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{DEFAULT\_\-AUTO\_\-RESIZE\_\-TCP} = false}
+\label{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a9c10389be76ce558cdaad5e5847d7d96}{NetInstanceProfile::autoResizeTCP}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{
+static const unsigned int \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{DEFAULT\_\-SEND\_\-TIMEOUT} = INFINITE}
+\label{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a6cc36534bcb31e4411e2698e55908c18}{NetInstanceProfile::sendTimeout}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{
+static const bool \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{DEFAULT\_\-GRACEFUL\_\-DISCONNECT} = false}
+\label{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a73dbd928100dce63697399d8e21058eb}{NetInstanceProfile::gracefulDisconnect}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{
+static const bool \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{DEFAULT\_\-NAGLE\_\-ENABLED} = true}
+\label{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a959f0b77c0e19d4f425c5c36b601ec8c}{NetInstanceProfile::nagleEnabled}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{
+static const \hyperlink{class_packet}{Packet} \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{DEFAULT\_\-POSTFIX\_\-TCP} = \char`\"{}$\backslash$r$\backslash$n\char`\"{}}
+\label{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a6d540756a8887426bdff2cd7fa82e349}{NetInstanceProfile::postFixTCP}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a899fa95f6ada0deb60f43dae6935976f}{
+static const bool \hyperlink{class_net_instance_profile_a899fa95f6ada0deb60f43dae6935976f}{DEFAULT\_\-REUSABLE\_\-UDP} = false}
+\label{class_net_instance_profile_a899fa95f6ada0deb60f43dae6935976f}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_ad73bd8106b0993d4f8c89f2293c7a4e2}{NetInstanceProfile::reusableUDP}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}{
+static const size\_\-t \hyperlink{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}{DEFAULT\_\-NUM\_\-OPERATIONS} = 1}
+\label{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_acfc20340749f35543345f8b6c00fef4a}{NetInstanceProfile::numOperations}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}{
+static const \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}{DEFAULT\_\-MODE\_\-UDP} = NetMode::UDP\_\-CATCH\_\-ALL\_\-NO}
+\label{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_a959f0b77c0e19d4f425c5c36b601ec8c}{NetInstanceProfile::nagleEnabled}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_profile_a650e1a57d7229fab6a4a9295a8145f79}{
+static const size\_\-t \hyperlink{class_net_instance_profile_a650e1a57d7229fab6a4a9295a8145f79}{DEFAULT\_\-CONNECTION\_\-TO\_\-SERVER\_\-TIMEOUT} = 10000}
+\label{class_net_instance_profile_a650e1a57d7229fab6a4a9295a8145f79}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_net_instance_profile_aa9aa810da463cdab017ab864515527c9}{NetInstanceProfile::connectionToServerTimeout}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_profile_a0b2533bc5540e7beb22abf25fb18dcc1}{
+void \hyperlink{class_net_instance_profile_a0b2533bc5540e7beb22abf25fb18dcc1}{DefaultVariables} ()}
+\label{class_net_instance_profile_a0b2533bc5540e7beb22abf25fb18dcc1}
+
+\begin{DoxyCompactList}\small\item\em Resets all variables to default. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_profile_a06dc28fba6ad7f3f9e91fe37b475f31f}{Copy} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copies the contents of the specified instance profile. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{class_net_instance_profile_ad83ca6291444ecb7e1138f336952afc7}{wsaRecvSizeTCP}
+\begin{DoxyCompactList}\small\item\em Maximum amount of data that can be received via TCP in one operation. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_a399872e7c3f23fbee9f2283d1ac8fc04}{recvSizeTCP}
+\begin{DoxyCompactList}\small\item\em Maximum size an incoming TCP packet can be. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_ae24b078e006a395092d9256ab5947e95}{recvSizeUDP}
+\begin{DoxyCompactList}\small\item\em Maximum size an incoming UDP packet can be. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_instance_profile_ad8c7a728119a1e74e44fdbeb9dba3392}{localAddrTCP}
+\begin{DoxyCompactList}\small\item\em Local TCP address of instance. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_instance_profile_ad68155dc7f50c06688b8adae226626eb}{localAddrUDP}
+\begin{DoxyCompactList}\small\item\em Local UDP address of instance. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_add7906378b2fe3ebc0fed461b0e02395}{enabledUDP}
+\begin{DoxyCompactList}\small\item\em If true UDP is enabled. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$ \hyperlink{class_net_instance_profile_a0909a6a77030a97700cef25384df37b0}{decryptKeyUDP}
+\begin{DoxyCompactList}\small\item\em Pointer to \hyperlink{class_encrypt_key}{EncryptKey} object used when decrypting UDP packets. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_instance_profile_a879b3034d521919570637748adefb6d8}{tcpRecvFunc}
+\begin{DoxyCompactList}\small\item\em This function will be called whenever TCP data is received on the instance. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_instance_profile_a2825db403a006e006f4f0b6b4b50c0bb}{udpRecvFunc}
+\begin{DoxyCompactList}\small\item\em This function will be called whenever UDP data is received on the instance. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_aaeba0fb41f3972711b0d789d13d74c0f}{handshakeEnabled}
+\begin{DoxyCompactList}\small\item\em If true the TCP handshaking process is enabled. If false the TCP handshaking process is disabled and so connection will occur with no additional data transfer. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_profile_acfc65e0440c83e5e5fa35f3480d8db3e}{modeTCP}
+\begin{DoxyCompactList}\small\item\em TCP mode in use. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_a9c10389be76ce558cdaad5e5847d7d96}{autoResizeTCP}
+\begin{DoxyCompactList}\small\item\em If true maximum size of incoming TCP packet will increase if necessary to store an incoming packet. If false an error will occur when a TCP packet that is too large is receive. \item\end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_net_instance_profile_a6cc36534bcb31e4411e2698e55908c18}{sendTimeout}
+\begin{DoxyCompactList}\small\item\em Length of time that send operation will wait before canceling and disconnecting. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_a73dbd928100dce63697399d8e21058eb}{gracefulDisconnect}
+\begin{DoxyCompactList}\small\item\em If true graceful disconnecting is enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_a959f0b77c0e19d4f425c5c36b601ec8c}{nagleEnabled}
+\begin{DoxyCompactList}\small\item\em If true the nagle algorithm is enabled. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_net_instance_profile_a6d540756a8887426bdff2cd7fa82e349}{postFixTCP}
+\begin{DoxyCompactList}\small\item\em The postfix to apply in TCP mode \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_profile_ad73bd8106b0993d4f8c89f2293c7a4e2}{reusableUDP}
+\begin{DoxyCompactList}\small\item\em True if UDP should be reusable. When reusable other applications (including this one) may bind to the local port in use. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_acfc20340749f35543345f8b6c00fef4a}{numOperations}
+\begin{DoxyCompactList}\small\item\em In \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} this variable is used, describing the number of operations. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_profile_a6f7dcc6d649e11ab2f9c9cf99dd74313}{modeUDP}
+\begin{DoxyCompactList}\small\item\em UDP mode to use. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_profile_aa9aa810da463cdab017ab864515527c9}{connectionToServerTimeout}
+\begin{DoxyCompactList}\small\item\em Time in milliseconds that a connection attempt will be waited on before giving up. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages instance startup information. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/5/2010.
+\end{DoxyRemark}
+Part of the instance system. \par
+\par
+
+
+An instance profile is an object that contains a variety of options specific to instances. Any instance can have an instance profile loaded into it during initialization. Each option has a default value, which often does not need to be changed. By using instance profiles lengthy constructors are avoided. As well as this, similar profiles with similar settings can use the same profile; this is a neat way of sharing options between instances.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_profile_afb388a609224bd742f6db0d0b7b1d6a7}{
+\index{NetInstanceProfile@{NetInstanceProfile}!NetInstanceProfile@{NetInstanceProfile}}
+\index{NetInstanceProfile@{NetInstanceProfile}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{NetInstanceProfile}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceProfile::NetInstanceProfile (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_afb388a609224bd742f6db0d0b7b1d6a7}
+
+
+Deep copy constructor. 
+
+Copies contents of {\itshape copyMe\/} into this object (deep). 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_profile_a06dc28fba6ad7f3f9e91fe37b475f31f}{
+\index{NetInstanceProfile@{NetInstanceProfile}!Copy@{Copy}}
+\index{Copy@{Copy}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ a}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a06dc28fba6ad7f3f9e91fe37b475f31f}
+
+
+Copies the contents of the specified instance profile. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a51acbcfcbd4920688fa4ac69dc654d99}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GenerateObjectModeTCP@{GenerateObjectModeTCP}}
+\index{GenerateObjectModeTCP@{GenerateObjectModeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GenerateObjectModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeTcp} $\ast$ NetInstanceProfile::GenerateObjectModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a51acbcfcbd4920688fa4ac69dc654d99}
+
+
+Generates a \hyperlink{class_net_mode_tcp}{NetModeTcp} object based on local variables. 
+
+\begin{DoxyReturn}{Returns}
+object. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ae6ad441d78eb208534e1321521345f93}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GenerateObjectModeUDP@{GenerateObjectModeUDP}}
+\index{GenerateObjectModeUDP@{GenerateObjectModeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GenerateObjectModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdp} $\ast$ NetInstanceProfile::GenerateObjectModeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numClients, }
+\item[{size\_\-t}]{ numOperations}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_ae6ad441d78eb208534e1321521345f93}
+
+
+Generates a \hyperlink{class_net_mode_udp}{NetModeUdp} object based on local variables. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numClients}]Number of clients that data may be received for (optional, default 1). \item[{\em numOperations}]Number of operations that data may be received for (optional, default 1). Ignored in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a158ce5f833cde150d209f480936b2b0a}{NetMode::UDP\_\-CATCH\_\-ALL} and \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964ad4582c7d9e25f9fbd2cec99e4455386f}{NetMode::UDP\_\-CATCH\_\-ALL\_\-NO} UDP modes. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object.
+
+netModeUdp object if UDP is enabled. 
+
+NULL if UDP is disabled. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a5620819c1e617258b5abb939d1df8dd8}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GenerateObjectSocketUDP@{GenerateObjectSocketUDP}}
+\index{GenerateObjectSocketUDP@{GenerateObjectSocketUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GenerateObjectSocketUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketUDP} $\ast$ NetInstanceProfile::GenerateObjectSocketUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength, }
+\item[{const {\bf NetAddress} \&}]{ localAddr, }
+\item[{bool}]{ reusable, }
+\item[{{\bf NetModeUdp} $\ast$}]{ udpMode, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a5620819c1e617258b5abb939d1df8dd8}
+
+
+Creates a normal UDP socket. 
+
+The purpose of this method is for class constructors. If UDP is disabled NULL needs to be set.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[{\em localAddr}]Local address to bind to, if IP or port is set to 0 then winsock will automatically find one. \item[{\em reusable}]If true socket local address can be reused. See. \hyperlink{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{NetSocketSimple::reusable} for more information. \item[\mbox{\tt[in]} {\em udpMode}]Describes how received data should be dealt with and how sent data should be modified. If NULL, LoadMode() must later be used. \item[\mbox{\tt[in]} {\em recvFunc}]Function that any received packets will be passed to. (optional, default NULL). Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}. If NULL then packets will not be passed to a function, and instead will be put into a queue.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a dynamically allocated socketUDP object. 
+
+NULL if UDP is disabled. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a3138ff491860a299c87cc45f17f193bf}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetAutoResizeTCP@{GetAutoResizeTCP}}
+\index{GetAutoResizeTCP@{GetAutoResizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::GetAutoResizeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a3138ff491860a299c87cc45f17f193bf}
+
+
+Determines whether the auto resize option is enabled. If it is then if a packet larger than the TCP receive buffer size is received, then the buffer will automatically increase in size. 
+
+\begin{DoxyReturn}{Returns}
+If true maximum size of incoming TCP packet will increase if necessary to store an incoming packet. If false an error will occur when a TCP packet that is too large is receive. 
+
+Default is \hyperlink{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{NetInstanceProfile::DEFAULT\_\-AUTO\_\-RESIZE\_\-TCP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ab2f53e23e75a13104855efb4f8b4c063}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetConnectionToServerTimeout@{GetConnectionToServerTimeout}}
+\index{GetConnectionToServerTimeout@{GetConnectionToServerTimeout}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetConnectionToServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceProfile::GetConnectionToServerTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_ab2f53e23e75a13104855efb4f8b4c063}
+
+
+Retrieves the number of milliseconds that a client is allowed to handshake with the server before it is forcefully disconnected. 
+
+\begin{DoxyReturn}{Returns}
+Time in milliseconds that a connection attempt will be waited on before giving up. 
+
+Default is \hyperlink{class_net_instance_profile_a650e1a57d7229fab6a4a9295a8145f79}{NetInstanceProfile::DEFAULT\_\-CONNECTION\_\-TO\_\-SERVER\_\-TIMEOUT}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a67ebfeeeae376870b959b6f6655cf330}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetDecryptKeyUDP@{GetDecryptKeyUDP}}
+\index{GetDecryptKeyUDP@{GetDecryptKeyUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetDecryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf EncryptKey} $\ast$ NetInstanceProfile::GetDecryptKeyUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a67ebfeeeae376870b959b6f6655cf330}
+
+
+Retrieves a pointer to the decryption key used to decrypt incoming UDP packets. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to \hyperlink{class_encrypt_key}{EncryptKey} object used when decrypting UDP packets. 
+
+NULL if no key exists. \par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a3468dd5fa20f1c13888bf1d6eed1736a}{NetInstanceProfile::DEFAULT\_\-DECRYPT\_\-KEY\_\-UDP}. \par
+\par
+
+
+Note that the key is not necessarily used by. UDP instances, only if the mode in use specifically specifies in its documentation will the key ever be used.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a584ba16218e7d6340eebfefaba180477}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetLocalAddrTCP@{GetLocalAddrTCP}}
+\index{GetLocalAddrTCP@{GetLocalAddrTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetLocalAddrTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetInstanceProfile::GetLocalAddrTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a584ba16218e7d6340eebfefaba180477}
+
+
+Retrieves the local TCP address that the instance should be bound to. 
+
+\begin{DoxyReturn}{Returns}
+Local TCP address of instance. 
+
+Default initialized using \hyperlink{class_net_address}{NetAddress} default constructor.  
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Is okay to return reference because \hyperlink{class_net_address}{NetAddress} is thread safe. 
+\end{DoxyNote}
+\hypertarget{class_net_instance_profile_a6a74c2b832b5662de13b5e23370129f8}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetLocalAddrUDP@{GetLocalAddrUDP}}
+\index{GetLocalAddrUDP@{GetLocalAddrUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetLocalAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetInstanceProfile::GetLocalAddrUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a6a74c2b832b5662de13b5e23370129f8}
+
+
+Retrieves the local UDP address that the instance should be bound to. 
+
+\begin{DoxyReturn}{Returns}
+Local UDP address of instance. 
+
+Default initialized using \hyperlink{class_net_address}{NetAddress} default constructor.  
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Is okay to return reference because \hyperlink{class_net_address}{NetAddress} is thread safe. 
+\end{DoxyNote}
+\hypertarget{class_net_instance_profile_a33d0b363560c97904e1e1b764f49a5c5}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetModeTCP@{GetModeTCP}}
+\index{GetModeTCP@{GetModeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetInstanceProfile::GetModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a33d0b363560c97904e1e1b764f49a5c5}
+
+
+Retrieves the TCP mode that should be used by the instance. 
+
+\begin{DoxyReturn}{Returns}
+TCP mode in use. 
+
+Default is \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{NetInstanceProfile::DEFAULT\_\-MODE\_\-TCP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a58a1289d1dbd339a1ac58a745f78060c}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetModeUDP@{GetModeUDP}}
+\index{GetModeUDP@{GetModeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetInstanceProfile::GetModeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a58a1289d1dbd339a1ac58a745f78060c}
+
+
+Retrieves the UDP mode that should be used by the instance. 
+
+\begin{DoxyReturn}{Returns}
+UDP mode to use. 
+
+Default is \hyperlink{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}{NetInstanceProfile::DEFAULT\_\-MODE\_\-UDP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ae4d9e03d9700d57b01921027459c477f}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceProfile::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_ae4d9e03d9700d57b01921027459c477f}
+
+
+Retrieves the number of UDP operations in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetModeUdp::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}. 
+
+\begin{DoxyReturn}{Returns}
+In \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} this variable is used, describing the number of operations. 
+
+Default is \hyperlink{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}{NetInstanceProfile::DEFAULT\_\-NUM\_\-OPERATIONS}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a1b41a8d54a6fe70d9ac3cf0dbe20ef3a}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetPostFixTCP@{GetPostFixTCP}}
+\index{GetPostFixTCP@{GetPostFixTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetPostFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} NetInstanceProfile::GetPostFixTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a1b41a8d54a6fe70d9ac3cf0dbe20ef3a}
+
+
+Retrieves the TCP postfix in use in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetModeTcp::TCP\_\-POSTFIX} TCP mode. 
+
+\begin{DoxyReturn}{Returns}
+The postfix to apply in TCP mode \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX}. 
+
+Default is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_af498bede8c8e0029db0f26c3ef796dc0}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetRecvFuncTCP@{GetRecvFuncTCP}}
+\index{GetRecvFuncTCP@{GetRecvFuncTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetRecvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::RecvFunc} NetInstanceProfile::GetRecvFuncTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_af498bede8c8e0029db0f26c3ef796dc0}
+
+
+Retrieves the TCP receive function that should be called when an incoming TCP packet is received. 
+
+\begin{DoxyReturn}{Returns}
+This function will be called whenever TCP data is received on the instance. 
+
+Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}.\par
+\par
+
+
+NULL if no function exists. \par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a63584bbc071271a73cc422e7e075b518}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetRecvFuncUDP@{GetRecvFuncUDP}}
+\index{GetRecvFuncUDP@{GetRecvFuncUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetRecvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::RecvFunc} NetInstanceProfile::GetRecvFuncUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a63584bbc071271a73cc422e7e075b518}
+
+
+Retrieves the UDP receive function that should be called when an incoming UDP packet is received. 
+
+\begin{DoxyReturn}{Returns}
+This function will be called whenever UDP data is received on the instance. 
+
+Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}.\par
+\par
+
+
+NULL if no function exists.\par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a34189e13e8b5a89800f0aa512c80fdb1}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetRecvSizeTCP@{GetRecvSizeTCP}}
+\index{GetRecvSizeTCP@{GetRecvSizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceProfile::GetRecvSizeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a34189e13e8b5a89800f0aa512c80fdb1}
+
+
+Retrieves the TCP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error or needing the buffer to be increased in size. 
+
+\begin{DoxyReturn}{Returns}
+Maximum size an incoming TCP packet can be. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE} + \hyperlink{class_net_instance_profile_ad83ca6291444ecb7e1138f336952afc7}{NetInstanceProfile::wsaRecvSizeTCP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ac93208f09c1034d1ff7b9b4318f60b21}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetRecvSizeUDP@{GetRecvSizeUDP}}
+\index{GetRecvSizeUDP@{GetRecvSizeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetRecvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceProfile::GetRecvSizeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_ac93208f09c1034d1ff7b9b4318f60b21}
+
+
+Retrieves the UDP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error. 
+
+\begin{DoxyReturn}{Returns}
+Maximum size an incoming UDP packet can be. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ad4ed7a0ee24cf165e639fead2ec3e940}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetSendTimeout@{GetSendTimeout}}
+\index{GetSendTimeout@{GetSendTimeout}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int NetInstanceProfile::GetSendTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_ad4ed7a0ee24cf165e639fead2ec3e940}
+
+
+Retrieves the number of milliseconds that send operations will be allowed to complete before they are canceled and the entity that initiated the operation is forcefully disconnected. 
+
+\begin{DoxyReturn}{Returns}
+Length of time that send operation will wait before canceling and disconnecting. 
+
+Default is \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{NetInstanceProfile::DEFAULT\_\-SEND\_\-TIMEOUT}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a89f3243d78963e4eb890d5fda63877b9}{
+\index{NetInstanceProfile@{NetInstanceProfile}!GetWsaRecvSizeTCP@{GetWsaRecvSizeTCP}}
+\index{GetWsaRecvSizeTCP@{GetWsaRecvSizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{GetWsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceProfile::GetWsaRecvSizeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a89f3243d78963e4eb890d5fda63877b9}
+
+
+Retrieves the WSA winsock buffer size i.e. The amount of TCP data that can be received in one winsock TCP receive operation. 
+
+\begin{DoxyReturn}{Returns}
+Maximum amount of data that can be received via TCP in one operation. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ae7b72771c67facf3e4b5893b71f82b64}{
+\index{NetInstanceProfile@{NetInstanceProfile}!IsDecryptKeyLoadedUDP@{IsDecryptKeyLoadedUDP}}
+\index{IsDecryptKeyLoadedUDP@{IsDecryptKeyLoadedUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{IsDecryptKeyLoadedUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::IsDecryptKeyLoadedUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_ae7b72771c67facf3e4b5893b71f82b64}
+
+
+Determines whether a decryption key has been set. 
+
+\begin{DoxyReturn}{Returns}
+true if decrypt key UDP is loaded, default = false. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_aa5a2c1ea8752efc51c70a41bb3ecbb20}{
+\index{NetInstanceProfile@{NetInstanceProfile}!IsEnabledUDP@{IsEnabledUDP}}
+\index{IsEnabledUDP@{IsEnabledUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{IsEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::IsEnabledUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_aa5a2c1ea8752efc51c70a41bb3ecbb20}
+
+
+Determines whether UDP is enabled. 
+
+\begin{DoxyReturn}{Returns}
+If true UDP is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{NetInstanceProfile::DEFAULT\_\-ENABLED\_\-UDP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_aafc19d5c04af571aa711ad5f306e2686}{
+\index{NetInstanceProfile@{NetInstanceProfile}!IsGracefulDisconnectEnabled@{IsGracefulDisconnectEnabled}}
+\index{IsGracefulDisconnectEnabled@{IsGracefulDisconnectEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{IsGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::IsGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_aafc19d5c04af571aa711ad5f306e2686}
+
+
+Determines whether graceful disconnection is enabled. 
+
+\begin{DoxyReturn}{Returns}
+If true graceful disconnecting is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{NetInstanceProfile::DEFAULT\_\-GRACEFUL\_\-DISCONNECT}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_ac69cc1c6258261af12d7397ecb4e2839}{
+\index{NetInstanceProfile@{NetInstanceProfile}!IsHandshakeEnabled@{IsHandshakeEnabled}}
+\index{IsHandshakeEnabled@{IsHandshakeEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{IsHandshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::IsHandshakeEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_ac69cc1c6258261af12d7397ecb4e2839}
+
+
+Determines whether the handshake process is enabled. 
+
+\begin{DoxyReturn}{Returns}
+If true the TCP handshaking process is enabled. If false the TCP handshaking process is disabled and so connection will occur with no additional data transfer. 
+
+For more information see \hyperlink{handshake_page}{server/client handshaking process}.\par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{NetInstanceProfile::DEFAULT\_\-HANDSHAKE\_\-ENABLED}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_acb8b8c3655ce8abbd79867130222bd20}{
+\index{NetInstanceProfile@{NetInstanceProfile}!IsNagleEnabled@{IsNagleEnabled}}
+\index{IsNagleEnabled@{IsNagleEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{IsNagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::IsNagleEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_acb8b8c3655ce8abbd79867130222bd20}
+
+
+Determines whether the nagle algorithm is enabled or disabled. 
+
+\begin{DoxyReturn}{Returns}
+If true the nagle algorithm is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{NetInstanceProfile::DEFAULT\_\-NAGLE\_\-ENABLED}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_a57b4bca1eac3896118011edecd961ee1}{
+\index{NetInstanceProfile@{NetInstanceProfile}!IsReusableUDP@{IsReusableUDP}}
+\index{IsReusableUDP@{IsReusableUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{IsReusableUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::IsReusableUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a57b4bca1eac3896118011edecd961ee1}
+
+
+Determines whether UDP should be reusable. If reusable other applications, instances and sockets can bind to the same UDP address as this instance. 
+
+\begin{DoxyReturn}{Returns}
+True if UDP should be reusable. When reusable other applications (including this one) may bind to the local port in use. 
+
+Default is \hyperlink{class_net_instance_profile_a899fa95f6ada0deb60f43dae6935976f}{NetInstanceProfile::DEFAULT\_\-REUSABLE\_\-UDP}.  
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_adb152f79d06708b6f557c8d2a86cd424}{
+\index{NetInstanceProfile@{NetInstanceProfile}!operator=@{operator=}}
+\index{operator=@{operator=}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceProfile} \& NetInstanceProfile::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_adb152f79d06708b6f557c8d2a86cd424}
+
+
+Deep assignment operator. 
+
+Copies contents of {\itshape copyMe\/} into this object (deep). 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a8bfa833d397c682b21eedd7b345b497d}{
+\index{NetInstanceProfile@{NetInstanceProfile}!operator==@{operator==}}
+\index{operator==@{operator==}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceProfile::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ a}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_profile_a8bfa833d397c682b21eedd7b345b497d}
+
+
+Compares this object with another instance profile. 
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape a\/} is identical to this object. 
+
+false if {\itshape a\/} is different in any way to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_profile_aa7f2196d4a36a242d2a5e588d19ab8d4}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetAutoResizeTCP@{SetAutoResizeTCP}}
+\index{SetAutoResizeTCP@{SetAutoResizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newAutoResizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_aa7f2196d4a36a242d2a5e588d19ab8d4}
+
+
+Enables or disables the auto resize option is enabled. If it is enabled then if a packet larger than the TCP receive buffer size is received, then the buffer will automatically increase in size. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newAutoResizeTCP}]If true maximum size of incoming TCP packet will increase if necessary to store an incoming packet. If false an error will occur when a TCP packet that is too large is receive. 
+
+Default is \hyperlink{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{NetInstanceProfile::DEFAULT\_\-AUTO\_\-RESIZE\_\-TCP}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a66b8793bf17d64b8ef9080b2ebd03d47}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetConnectionToServerTimeout@{SetConnectionToServerTimeout}}
+\index{SetConnectionToServerTimeout@{SetConnectionToServerTimeout}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetConnectionToServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetConnectionToServerTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newConnectionToServerTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a66b8793bf17d64b8ef9080b2ebd03d47}
+
+
+Sets the number of milliseconds that a client is allowed to handshake with the server before it is forcefully disconnected. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newConnectionToServerTimeout}]Time in milliseconds that a connection attempt will be waited on before giving up. 
+
+Default is \hyperlink{class_net_instance_profile_a650e1a57d7229fab6a4a9295a8145f79}{NetInstanceProfile::DEFAULT\_\-CONNECTION\_\-TO\_\-SERVER\_\-TIMEOUT}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a73cc53b7890131ee645288ef5ec728ff}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetDecryptKeyUDP@{SetDecryptKeyUDP}}
+\index{SetDecryptKeyUDP@{SetDecryptKeyUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetDecryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetDecryptKeyUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} $\ast$}]{ newDecryptKeyUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a73cc53b7890131ee645288ef5ec728ff}
+
+
+Sets the pointer to the decryption key used to decrypt incoming UDP packets. 
+
+Note that the contents of {\itshape newDecryptKeyUDP\/} is copied into this object.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newDecryptKeyUDP}]Pointer to \hyperlink{class_encrypt_key}{EncryptKey} object used when decrypting UDP packets. 
+
+NULL if no key exists. \par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a3468dd5fa20f1c13888bf1d6eed1736a}{NetInstanceProfile::DEFAULT\_\-DECRYPT\_\-KEY\_\-UDP}. \par
+\par
+
+
+Note that the key is not necessarily used by. UDP instances, only if the mode in use specifically specifies in its documentation will the key ever be used.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a902105c1a8743cce62e3df9c9a022700}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetEnabledUDP@{SetEnabledUDP}}
+\index{SetEnabledUDP@{SetEnabledUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetEnabledUDP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newEnabledUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a902105c1a8743cce62e3df9c9a022700}
+
+
+Enables or disables UDP. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newEnabledUDP}]If true UDP is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{NetInstanceProfile::DEFAULT\_\-ENABLED\_\-UDP}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_af18b9b5d71dcc3eb25a4da7d1ece6d4a}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetGracefulDisconnectEnabled@{SetGracefulDisconnectEnabled}}
+\index{SetGracefulDisconnectEnabled@{SetGracefulDisconnectEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newGracefulDisconnect}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_af18b9b5d71dcc3eb25a4da7d1ece6d4a}
+
+
+Enables or disables graceful disconnection. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newGracefulDisconnect}]If true graceful disconnecting is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{NetInstanceProfile::DEFAULT\_\-GRACEFUL\_\-DISCONNECT}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a2bd3bbd81542f5a006e88fc45091c8e1}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetHandshakeEnabled@{SetHandshakeEnabled}}
+\index{SetHandshakeEnabled@{SetHandshakeEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetHandshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetHandshakeEnabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newhandshakeEnabled}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a2bd3bbd81542f5a006e88fc45091c8e1}
+
+
+Enables or disables the handshake process. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newhandshakeEnabled}]If true the TCP handshaking process is enabled. If false the TCP handshaking process is disabled and so connection will occur with no additional data transfer. 
+
+For more information see \hyperlink{handshake_page}{server/client handshaking process}.\par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{NetInstanceProfile::DEFAULT\_\-HANDSHAKE\_\-ENABLED}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_ad3f5d1c25fb1dce3b1c2f692d4e2a0fa}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetLocalAddrTCP@{SetLocalAddrTCP}}
+\index{SetLocalAddrTCP@{SetLocalAddrTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetLocalAddrTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetLocalAddrTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ newLocalAddrTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_ad3f5d1c25fb1dce3b1c2f692d4e2a0fa}
+
+
+Sets the local TCP address that the instance should be bound to. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newLocalAddrTCP}]Local TCP address of instance. 
+
+Default initialized using \hyperlink{class_net_address}{NetAddress} default constructor.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a8299e23979c397f8d75a71212ba240c9}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetLocalAddrUDP@{SetLocalAddrUDP}}
+\index{SetLocalAddrUDP@{SetLocalAddrUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetLocalAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetLocalAddrUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ newLocalAddrUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a8299e23979c397f8d75a71212ba240c9}
+
+
+Sets the local UDP address that the instance should be bound to. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newLocalAddrUDP}]Local UDP address of instance. 
+
+Default initialized using \hyperlink{class_net_address}{NetAddress} default constructor.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a8fb33cbbfb7f5caf9eb8545c38775eeb}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetModeTCP@{SetModeTCP}}
+\index{SetModeTCP@{SetModeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetModeTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetMode::ProtocolMode}}]{ newModeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a8fb33cbbfb7f5caf9eb8545c38775eeb}
+
+
+Sets the TCP mode that should be used by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newModeTCP}]TCP mode in use. 
+
+Default is \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{NetInstanceProfile::DEFAULT\_\-MODE\_\-TCP}.  \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape newModeUDP\/} is not a valid TCP mode. \end{DoxyExceptions}
+\hypertarget{class_net_instance_profile_aa0df09d0393d0021f20c9a134a035de1}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetModeUDP@{SetModeUDP}}
+\index{SetModeUDP@{SetModeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetModeUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetMode::ProtocolMode}}]{ newModeUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_aa0df09d0393d0021f20c9a134a035de1}
+
+
+Sets the UDP mode that should be used by the instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newModeUDP}]UDP mode to use. 
+
+Default is \hyperlink{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}{NetInstanceProfile::DEFAULT\_\-MODE\_\-UDP}.  \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape newModeUDP\/} is not a valid UDP mode. \end{DoxyExceptions}
+\hypertarget{class_net_instance_profile_ac83c91e34f442dbc25e83d21bbeff8e2}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetNagleEnabled@{SetNagleEnabled}}
+\index{SetNagleEnabled@{SetNagleEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetNagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetNagleEnabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newNagleEnabled}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_ac83c91e34f442dbc25e83d21bbeff8e2}
+
+
+Enables or disables the nagle algorithm. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newNagleEnabled}]If true the nagle algorithm is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{NetInstanceProfile::DEFAULT\_\-NAGLE\_\-ENABLED}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a24e097e1c072358163fa00998d33e0fd}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetNumOperations@{SetNumOperations}}
+\index{SetNumOperations@{SetNumOperations}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetNumOperations (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newNumOperations}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a24e097e1c072358163fa00998d33e0fd}
+
+
+Specifies the number of UDP operations in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetModeUdp::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newNumOperations}]In \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} this variable is used, describing the number of operations. 
+
+Default is \hyperlink{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}{NetInstanceProfile::DEFAULT\_\-NUM\_\-OPERATIONS}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_afd7d56b3d087a5c2ea9d202a705fc2e1}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetPostFixTCP@{SetPostFixTCP}}
+\index{SetPostFixTCP@{SetPostFixTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetPostFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetPostFixTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ newPostFixTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_afd7d56b3d087a5c2ea9d202a705fc2e1}
+
+
+Sets the TCP postfix in use in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetModeTcp::TCP\_\-POSTFIX} TCP mode. 
+
+This command changes the postfix option and has no impact on instances not in \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX} mode. 
+\begin{DoxyParams}{Parameters}
+\item[{\em newPostFixTCP}]The postfix to apply in TCP mode \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX}. 
+
+Default is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_ae962a48359066ff383f459dad140d1b2}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetRecvFuncTCP@{SetRecvFuncTCP}}
+\index{SetRecvFuncTCP@{SetRecvFuncTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetRecvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetRecvFuncTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket::RecvFunc}}]{ newRecvFuncTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_ae962a48359066ff383f459dad140d1b2}
+
+
+Sets the TCP receive function that should be called when an incoming TCP packet is received. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvFuncTCP}]This function will be called whenever TCP data is received on the instance. 
+
+Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}.\par
+\par
+
+
+NULL if no function exists. \par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_aea8ecf597e31112af7d8e10217063caa}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetRecvFuncUDP@{SetRecvFuncUDP}}
+\index{SetRecvFuncUDP@{SetRecvFuncUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetRecvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetRecvFuncUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket::RecvFunc}}]{ newRecvFuncUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_aea8ecf597e31112af7d8e10217063caa}
+
+
+Sets the UDP receive function that should be called when an incoming UDP packet is received. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvFuncUDP}]This function will be called whenever UDP data is received on the instance. 
+
+Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}.\par
+\par
+
+
+NULL if no function exists.\par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a79577ee788215ec47931ae3599e5a824}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetRecvSizeTCP@{SetRecvSizeTCP}}
+\index{SetRecvSizeTCP@{SetRecvSizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetRecvSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newRecvSizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a79577ee788215ec47931ae3599e5a824}
+
+
+Sets the TCP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error or needing the buffer to be increased in size. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvSizeTCP}]Maximum size an incoming TCP packet can be. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE} + \hyperlink{class_net_instance_profile_ad83ca6291444ecb7e1138f336952afc7}{NetInstanceProfile::wsaRecvSizeTCP}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a862741f4e82fd603e27d7d6fc683cc8d}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetRecvSizeUDP@{SetRecvSizeUDP}}
+\index{SetRecvSizeUDP@{SetRecvSizeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetRecvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetRecvSizeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newRecvSizeUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a862741f4e82fd603e27d7d6fc683cc8d}
+
+
+Sets the UDP receive buffer size i.e. The maximum size a packet can be for it to be received without causing an error. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvSizeUDP}]Maximum size an incoming UDP packet can be. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a29e19e0f4a542cc105c50ff7f7169102}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetReusableUDP@{SetReusableUDP}}
+\index{SetReusableUDP@{SetReusableUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetReusableUDP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetReusableUDP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newReusableUDP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a29e19e0f4a542cc105c50ff7f7169102}
+
+
+Enables or disables the reusable UDP option. If reusable other applications, instances and sockets can bind to the same UDP address as this instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newReusableUDP}]True if UDP should be reusable. When reusable other applications (including this one) may bind to the local port in use. 
+
+Default is \hyperlink{class_net_instance_profile_a899fa95f6ada0deb60f43dae6935976f}{NetInstanceProfile::DEFAULT\_\-REUSABLE\_\-UDP}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_ad9e42f02af634309b946e3ed585afe2e}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetSendTimeout@{SetSendTimeout}}
+\index{SetSendTimeout@{SetSendTimeout}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetSendTimeout (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ newSendTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_ad9e42f02af634309b946e3ed585afe2e}
+
+
+Sets the number of milliseconds that send operations will be allowed to complete before they are canceled and the entity that initiated the operation is forcefully disconnected. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSendTimeout}]Length of time that send operation will wait before canceling and disconnecting. 
+
+Default is \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{NetInstanceProfile::DEFAULT\_\-SEND\_\-TIMEOUT}.  \end{DoxyParams}
+\hypertarget{class_net_instance_profile_a0108f46983695c115e2765f37cfda734}{
+\index{NetInstanceProfile@{NetInstanceProfile}!SetWsaRecvSizeTCP@{SetWsaRecvSizeTCP}}
+\index{SetWsaRecvSizeTCP@{SetWsaRecvSizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{SetWsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceProfile::SetWsaRecvSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newWsaRecvSizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_profile_a0108f46983695c115e2765f37cfda734}
+
+
+Sets the WSA winsock buffer size i.e. The amount of TCP data that can be received in one winsock TCP receive operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newWsaRecvSizeTCP}]Maximum amount of data that can be received via TCP in one operation. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}.  \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_instance_profile_a9c10389be76ce558cdaad5e5847d7d96}{
+\index{NetInstanceProfile@{NetInstanceProfile}!autoResizeTCP@{autoResizeTCP}}
+\index{autoResizeTCP@{autoResizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{autoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetInstanceProfile::autoResizeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a9c10389be76ce558cdaad5e5847d7d96}
+
+
+If true maximum size of incoming TCP packet will increase if necessary to store an incoming packet. If false an error will occur when a TCP packet that is too large is receive. 
+
+Default is \hyperlink{class_net_instance_profile_ae0797a8d2fdfb3f67a7b67a103a99fcb}{NetInstanceProfile::DEFAULT\_\-AUTO\_\-RESIZE\_\-TCP}. \hypertarget{class_net_instance_profile_aa9aa810da463cdab017ab864515527c9}{
+\index{NetInstanceProfile@{NetInstanceProfile}!connectionToServerTimeout@{connectionToServerTimeout}}
+\index{connectionToServerTimeout@{connectionToServerTimeout}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{connectionToServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf NetInstanceProfile::connectionToServerTimeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_aa9aa810da463cdab017ab864515527c9}
+
+
+Time in milliseconds that a connection attempt will be waited on before giving up. 
+
+Default is \hyperlink{class_net_instance_profile_a650e1a57d7229fab6a4a9295a8145f79}{NetInstanceProfile::DEFAULT\_\-CONNECTION\_\-TO\_\-SERVER\_\-TIMEOUT}. \hypertarget{class_net_instance_profile_a0909a6a77030a97700cef25384df37b0}{
+\index{NetInstanceProfile@{NetInstanceProfile}!decryptKeyUDP@{decryptKeyUDP}}
+\index{decryptKeyUDP@{decryptKeyUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{decryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf EncryptKey}$\ast$ {\bf NetInstanceProfile::decryptKeyUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a0909a6a77030a97700cef25384df37b0}
+
+
+Pointer to \hyperlink{class_encrypt_key}{EncryptKey} object used when decrypting UDP packets. 
+
+NULL if no key exists. \par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a3468dd5fa20f1c13888bf1d6eed1736a}{NetInstanceProfile::DEFAULT\_\-DECRYPT\_\-KEY\_\-UDP}. \par
+\par
+
+
+Note that the key is not necessarily used by. UDP instances, only if the mode in use specifically specifies in its documentation will the key ever be used. \hypertarget{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{
+\index{NetInstanceProfile@{NetInstanceProfile}!DEFAULT\_\-BUFFER\_\-SIZE@{DEFAULT\_\-BUFFER\_\-SIZE}}
+\index{DEFAULT\_\-BUFFER\_\-SIZE@{DEFAULT\_\-BUFFER\_\-SIZE}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{DEFAULT\_\-BUFFER\_\-SIZE}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE} = 1024\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}
+
+
+Default number of bytes to allocate to receive buffers. 
+
+\begin{DoxyWarning}{Warning}
+Must be $>$= minimum of any instance. 
+\end{DoxyWarning}
+\hypertarget{class_net_instance_profile_add7906378b2fe3ebc0fed461b0e02395}{
+\index{NetInstanceProfile@{NetInstanceProfile}!enabledUDP@{enabledUDP}}
+\index{enabledUDP@{enabledUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{enabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetInstanceProfile::enabledUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_add7906378b2fe3ebc0fed461b0e02395}
+
+
+If true UDP is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_aceaa7353038094829951787fcb7ce2b8}{NetInstanceProfile::DEFAULT\_\-ENABLED\_\-UDP}. \hypertarget{class_net_instance_profile_a73dbd928100dce63697399d8e21058eb}{
+\index{NetInstanceProfile@{NetInstanceProfile}!gracefulDisconnect@{gracefulDisconnect}}
+\index{gracefulDisconnect@{gracefulDisconnect}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{gracefulDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetInstanceProfile::gracefulDisconnect}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a73dbd928100dce63697399d8e21058eb}
+
+
+If true graceful disconnecting is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_ada7dfa96aa2fd6c205dc1137f2aad30d}{NetInstanceProfile::DEFAULT\_\-GRACEFUL\_\-DISCONNECT}. \hypertarget{class_net_instance_profile_aaeba0fb41f3972711b0d789d13d74c0f}{
+\index{NetInstanceProfile@{NetInstanceProfile}!handshakeEnabled@{handshakeEnabled}}
+\index{handshakeEnabled@{handshakeEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{handshakeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetInstanceProfile::handshakeEnabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_aaeba0fb41f3972711b0d789d13d74c0f}
+
+
+If true the TCP handshaking process is enabled. If false the TCP handshaking process is disabled and so connection will occur with no additional data transfer. 
+
+For more information see \hyperlink{handshake_page}{server/client handshaking process}.\par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a28c3283c29676e4dfbc7ea2428df32b5}{NetInstanceProfile::DEFAULT\_\-HANDSHAKE\_\-ENABLED}. \hypertarget{class_net_instance_profile_ad8c7a728119a1e74e44fdbeb9dba3392}{
+\index{NetInstanceProfile@{NetInstanceProfile}!localAddrTCP@{localAddrTCP}}
+\index{localAddrTCP@{localAddrTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{localAddrTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetAddress} {\bf NetInstanceProfile::localAddrTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_ad8c7a728119a1e74e44fdbeb9dba3392}
+
+
+Local TCP address of instance. 
+
+Default initialized using \hyperlink{class_net_address}{NetAddress} default constructor. \hypertarget{class_net_instance_profile_ad68155dc7f50c06688b8adae226626eb}{
+\index{NetInstanceProfile@{NetInstanceProfile}!localAddrUDP@{localAddrUDP}}
+\index{localAddrUDP@{localAddrUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{localAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetAddress} {\bf NetInstanceProfile::localAddrUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_ad68155dc7f50c06688b8adae226626eb}
+
+
+Local UDP address of instance. 
+
+Default initialized using \hyperlink{class_net_address}{NetAddress} default constructor. \hypertarget{class_net_instance_profile_acfc65e0440c83e5e5fa35f3480d8db3e}{
+\index{NetInstanceProfile@{NetInstanceProfile}!modeTCP@{modeTCP}}
+\index{modeTCP@{modeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{modeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} {\bf NetInstanceProfile::modeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_acfc65e0440c83e5e5fa35f3480d8db3e}
+
+
+TCP mode in use. 
+
+Default is \hyperlink{class_net_instance_profile_ad1d027ea1d01003564961be529fd5766}{NetInstanceProfile::DEFAULT\_\-MODE\_\-TCP}. \hypertarget{class_net_instance_profile_a6f7dcc6d649e11ab2f9c9cf99dd74313}{
+\index{NetInstanceProfile@{NetInstanceProfile}!modeUDP@{modeUDP}}
+\index{modeUDP@{modeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{modeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} {\bf NetInstanceProfile::modeUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a6f7dcc6d649e11ab2f9c9cf99dd74313}
+
+
+UDP mode to use. 
+
+Default is \hyperlink{class_net_instance_profile_a247c5f6aeb339edcb8f01a66a592bf3c}{NetInstanceProfile::DEFAULT\_\-MODE\_\-UDP}. \hypertarget{class_net_instance_profile_a959f0b77c0e19d4f425c5c36b601ec8c}{
+\index{NetInstanceProfile@{NetInstanceProfile}!nagleEnabled@{nagleEnabled}}
+\index{nagleEnabled@{nagleEnabled}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{nagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetInstanceProfile::nagleEnabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a959f0b77c0e19d4f425c5c36b601ec8c}
+
+
+If true the nagle algorithm is enabled. 
+
+Default is \hyperlink{class_net_instance_profile_a0f709c306b12e5572df975b10d6c748f}{NetInstanceProfile::DEFAULT\_\-NAGLE\_\-ENABLED}. \hypertarget{class_net_instance_profile_acfc20340749f35543345f8b6c00fef4a}{
+\index{NetInstanceProfile@{NetInstanceProfile}!numOperations@{numOperations}}
+\index{numOperations@{numOperations}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{numOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf NetInstanceProfile::numOperations}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_acfc20340749f35543345f8b6c00fef4a}
+
+
+In \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964a947fd0828716fc0442ea546cce111c27}{NetMode::UDP\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} this variable is used, describing the number of operations. 
+
+Default is \hyperlink{class_net_instance_profile_a23a92f33275c72e9f999e80a9acfe8e3}{NetInstanceProfile::DEFAULT\_\-NUM\_\-OPERATIONS}. \hypertarget{class_net_instance_profile_a6d540756a8887426bdff2cd7fa82e349}{
+\index{NetInstanceProfile@{NetInstanceProfile}!postFixTCP@{postFixTCP}}
+\index{postFixTCP@{postFixTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{postFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf NetInstanceProfile::postFixTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a6d540756a8887426bdff2cd7fa82e349}
+
+
+The postfix to apply in TCP mode \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX}. 
+
+Default is \hyperlink{class_net_instance_profile_a309f6b2f32bd9dcbb9bd5e15e7381de2}{NetInstanceProfile::DEFAULT\_\-POSTFIX\_\-TCP}. \hypertarget{class_net_instance_profile_a399872e7c3f23fbee9f2283d1ac8fc04}{
+\index{NetInstanceProfile@{NetInstanceProfile}!recvSizeTCP@{recvSizeTCP}}
+\index{recvSizeTCP@{recvSizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{recvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf NetInstanceProfile::recvSizeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a399872e7c3f23fbee9f2283d1ac8fc04}
+
+
+Maximum size an incoming TCP packet can be. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE} + \hyperlink{class_net_instance_profile_ad83ca6291444ecb7e1138f336952afc7}{NetInstanceProfile::wsaRecvSizeTCP}. \hypertarget{class_net_instance_profile_ae24b078e006a395092d9256ab5947e95}{
+\index{NetInstanceProfile@{NetInstanceProfile}!recvSizeUDP@{recvSizeUDP}}
+\index{recvSizeUDP@{recvSizeUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{recvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf NetInstanceProfile::recvSizeUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_ae24b078e006a395092d9256ab5947e95}
+
+
+Maximum size an incoming UDP packet can be. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}. \hypertarget{class_net_instance_profile_ad73bd8106b0993d4f8c89f2293c7a4e2}{
+\index{NetInstanceProfile@{NetInstanceProfile}!reusableUDP@{reusableUDP}}
+\index{reusableUDP@{reusableUDP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{reusableUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetInstanceProfile::reusableUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_ad73bd8106b0993d4f8c89f2293c7a4e2}
+
+
+True if UDP should be reusable. When reusable other applications (including this one) may bind to the local port in use. 
+
+Default is \hyperlink{class_net_instance_profile_a899fa95f6ada0deb60f43dae6935976f}{NetInstanceProfile::DEFAULT\_\-REUSABLE\_\-UDP}. \hypertarget{class_net_instance_profile_a6cc36534bcb31e4411e2698e55908c18}{
+\index{NetInstanceProfile@{NetInstanceProfile}!sendTimeout@{sendTimeout}}
+\index{sendTimeout@{sendTimeout}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{sendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf NetInstanceProfile::sendTimeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a6cc36534bcb31e4411e2698e55908c18}
+
+
+Length of time that send operation will wait before canceling and disconnecting. 
+
+Default is \hyperlink{class_net_instance_profile_a7a3abeb53ed94ac5a75c408f2684e909}{NetInstanceProfile::DEFAULT\_\-SEND\_\-TIMEOUT}. \hypertarget{class_net_instance_profile_a879b3034d521919570637748adefb6d8}{
+\index{NetInstanceProfile@{NetInstanceProfile}!tcpRecvFunc@{tcpRecvFunc}}
+\index{tcpRecvFunc@{tcpRecvFunc}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{tcpRecvFunc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::RecvFunc} {\bf NetInstanceProfile::tcpRecvFunc}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a879b3034d521919570637748adefb6d8}
+
+
+This function will be called whenever TCP data is received on the instance. 
+
+Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}.\par
+\par
+
+
+NULL if no function exists. \par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}. \hypertarget{class_net_instance_profile_a2825db403a006e006f4f0b6b4b50c0bb}{
+\index{NetInstanceProfile@{NetInstanceProfile}!udpRecvFunc@{udpRecvFunc}}
+\index{udpRecvFunc@{udpRecvFunc}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{udpRecvFunc}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::RecvFunc} {\bf NetInstanceProfile::udpRecvFunc}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_a2825db403a006e006f4f0b6b4b50c0bb}
+
+
+This function will be called whenever UDP data is received on the instance. 
+
+Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}.\par
+\par
+
+
+NULL if no function exists.\par
+\par
+
+
+Default is \hyperlink{class_net_instance_profile_a51f05ca66c76fdc588d34455d5185f6b}{NetInstanceProfile::DEFAULT\_\-RECV\_\-FUNC}. \hypertarget{class_net_instance_profile_ad83ca6291444ecb7e1138f336952afc7}{
+\index{NetInstanceProfile@{NetInstanceProfile}!wsaRecvSizeTCP@{wsaRecvSizeTCP}}
+\index{wsaRecvSizeTCP@{wsaRecvSizeTCP}!NetInstanceProfile@{NetInstanceProfile}}
+\subsubsection[{wsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf NetInstanceProfile::wsaRecvSizeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_profile_ad83ca6291444ecb7e1138f336952afc7}
+
+
+Maximum amount of data that can be received via TCP in one operation. 
+
+Default is \hyperlink{class_net_instance_profile_a285d88534b9936cc603e778aa70d8ec3}{NetInstanceProfile::DEFAULT\_\-BUFFER\_\-SIZE}. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceProfile.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceProfile.cpp\end{DoxyCompactItemize}

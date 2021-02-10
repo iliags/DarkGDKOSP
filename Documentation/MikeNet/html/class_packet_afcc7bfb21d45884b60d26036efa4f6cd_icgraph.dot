@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Packet::_AddPacket",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Packet::operator+",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a38a52f1b08658b5e1eae979967b02685"];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Packet::operator+=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a076a46dcad5f13d44ded9efe7b16a938"];
+}

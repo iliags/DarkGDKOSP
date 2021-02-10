@@ -1,0 +1,21 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="CriticalSection",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html",tooltip="Critical section class with Enter and Leave methods."];
+  Node1 -> Node2 [dir=back,color="darkgreen",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Counter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_counter.html",tooltip="Counter object, used to detect a large frequency of an event occurring simultaneously."];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetSend",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send.html",tooltip="Base class for sendable objects which can be used in conjunction with WSASend."];
+  Node3 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetSendPostfix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send_postfix.html",tooltip="Send class where packets sent have a postfix."];
+  Node3 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetSendPrefix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send_prefix.html",tooltip="Send class where packets sent have a prefix."];
+  Node3 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="NetSendRaw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send_raw.html",tooltip="Send class where packets sent have no postfix or prefix appended."];
+  Node1 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="Packet",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html",tooltip="Efficiently and safely stores and manipulates data."];
+  Node1 -> Node8 [dir=back,color="darkgreen",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="Timer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_timer.html",tooltip="Timer object used to repeat an action every x number of milliseconds."];
+}

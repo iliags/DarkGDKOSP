@@ -1,0 +1,19 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetInstance",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance.html",tooltip="Core instance class responsible for the core structure of a networking instance."];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetInstanceTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_t_c_p.html",tooltip="TCP instance class responsible for managing all TCP operations on at an instance level."];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetInstanceClient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html",tooltip="Client instance, designed to communicate with servers."];
+  Node2 -> Node4 [dir=back,color="firebrick4",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetInstanceServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html",tooltip="Server instance, designed to communicate with clients."];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetInstanceUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html",tooltip="UDP instance class responsible for managing all UDP operations on at an instance level."];
+  Node5 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="NetInstanceBroadcast",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_broadcast.html",tooltip="Broadcast instance designed to communicate with entities on a common local area network."];
+  Node5 -> Node3 [dir=back,color="firebrick4",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+}

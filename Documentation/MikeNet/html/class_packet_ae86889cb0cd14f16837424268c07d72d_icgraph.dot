@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Packet::GetDataPtrCopy",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="Packet::CopyIntoWSABUF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#acd150eca1bc37b444f37598c7181d808"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetSendPostfix::NetSendPostfix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send_postfix.html#aa94a0a4cae94625957301924b054d34a"];
+  Node2 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetSendPrefix::NetSendPrefix",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send_prefix.html#ab162e1f6996ef9059b781a2c3afd71f6"];
+  Node2 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetSendRaw::NetSendRaw",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_send_raw.html#ace4afd9ce85e7ea5cd0bc286e5b68754"];
+}

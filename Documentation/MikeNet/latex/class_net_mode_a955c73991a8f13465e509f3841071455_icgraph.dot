@@ -1,0 +1,21 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetMode::GetProtocolMode",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetInstanceUDP::GetModeUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html#a344d7df20fa0886b782cd6d7d4f2f4bf"];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetInstanceServer::GetModeUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#a70cdb75d88690871c7734b6ede603dc6"];
+  Node1 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetInstanceServer::GetProtocolModeTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#a545676597d34fabc02a6d896d9c69d3d"];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="NetInstanceClient::GetProtocolModeTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#ac829226de99742a3287ced4285849870"];
+  Node1 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="NetInstanceUDP::GetProtocolModeUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html#a52102ab4743e54c79d882d03253f4fb1"];
+  Node1 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="NetInstanceServer::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#aec1cb62dd80e73771a00d0f7a0ad47ba"];
+  Node7 -> Node8 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="NetInstanceServer::NetInstanceServer",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#afb65fda21c651d12b0027c0c7be3de6a"];
+}

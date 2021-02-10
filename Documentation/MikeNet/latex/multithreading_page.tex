@@ -1,0 +1,35 @@
+This page explains how to use this API with multiple threads.\par
+\par
+\hypertarget{multithreading_page_mtSockets}{}\section{Sockets}\label{multithreading_page_mtSockets}
+This section describes how \hyperlink{class_net_socket_u_d_p}{NetSocketUDP} and \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} can be used safely.\par
+\par
+
+
+You should set the socket up in one thread and not attempt to change socket options with multiple threads concurrently. Setting up includes any action taken before the socket is fully operational. After this you can initiate Send operations and manipulate the TCP or UDP mode using GetMode() concurrently. \par
+\par
+
+
+Closing the socket must be done by only one thread and attempts should not be made by two threads to close the same socket. However, two different sockets may each be closed by a different thread. \par
+\par
+
+
+All other commands (excluding those designed for internal use by the API itself e.g. Recv) can be used concurrently.\par
+\par
+\hypertarget{multithreading_page_mtNetInstances}{}\section{Networking Instances}\label{multithreading_page_mtNetInstances}
+This section describes how \hyperlink{class_net_instance_server}{NetInstanceServer}, \hyperlink{class_net_instance_client}{NetInstanceClient} and clBroadcast state can be used safely.\par
+\par
+
+
+\hyperlink{class_net_instance_server}{NetInstanceServer}, \hyperlink{class_net_instance_client}{NetInstanceClient} and clBroadcastState can be used concurrently. Where a thread ID is required use \hyperlink{class_net_utility_aca0bbea45a7bc232fdb88505f97cc016}{NetUtility::GetMainProcessThreadID()}. Any threads using this ID will become synchronized and wait on each other where necessary.
+
+Shutting down of an instance must take place in the main process. You do not need to worry about instances being deallocated while in use by the completion port because this can never happen. The socket destructors will ensure that the instance remains active until all send operations and receive operations have been completely dealt with.\hypertarget{multithreading_page_mtProcedural}{}\section{Procedural Commands}\label{multithreading_page_mtProcedural}
+All procedural commands are thread safe.\par
+\par
+\hypertarget{multithreading_page_mtClasses}{}\section{Concurrency Classes}\label{multithreading_page_mtClasses}
+The following classes exist for concurrency purposes, and are used internally:
+\begin{DoxyItemize}
+\item \hyperlink{class_critical_section}{CriticalSection}.
+\item \hyperlink{class_concurrency_control}{ConcurrencyControl}.
+\item \hyperlink{class_concurrency_control_simple}{ConcurrencyControlSimple}.
+\item \hyperlink{class_concurrent_object}{ConcurrentObject}. 
+\end{DoxyItemize}

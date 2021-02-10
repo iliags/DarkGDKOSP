@@ -1,0 +1,19 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="StoreQueue::Size",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetSocketTCP::GetConnectionStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#a68dc0183e216cdd1796466d411f0b681"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetInstanceClient::ClientConnected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#a2ed875ffc7d1e5e843a39155d317dd2f"];
+  Node2 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetServerClient::GetConnectionStateTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#a27029d633c46a37bffea72a463d375e4"];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetModeTcp::GetPacketAmount",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp.html#a269a6b59b105b0048acc16217a9e55ed"];
+  Node5 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="NetServerClient::GetPacketAmountTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#a69b7eb8d1e839c68895b4b1a5d94e8d9"];
+  Node5 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="NetInstanceClient::GetPacketAmountTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#a2ef30911346449c37b2b5ba6a74d72eb"];
+}

@@ -1,0 +1,582 @@
+\hypertarget{class_net_socket_t_c_p}{
+\section{NetSocketTCP Class Reference}
+\label{class_net_socket_t_c_p}\index{NetSocketTCP@{NetSocketTCP}}
+}
+
+
+Socket used for TCP data transfer.  
+
+
+
+
+{\ttfamily \#include $<$NetSocketTCP.h$>$}
+
+Inheritance diagram for NetSocketTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_socket_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_socket_t_c_p_a95b4b79524f18cf19c2bf067ab94799e}{NetSocketTCP} (size\_\-t wsaBufferLength, const \hyperlink{class_net_address}{NetAddress} \&localAddr, bool \hyperlink{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{nagleEnabled}, bool gracefulDisconnectEnabled, \hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$\hyperlink{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}{modeTCP}, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc=NULL)
+\begin{DoxyCompactList}\small\item\em Constructor, sets up socket ready to be connected and transfer data. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_t_c_p_afd3973e920c0c5eb352d1cced26d8c30}{NetSocketTCP} (size\_\-t wsaBufferLength, bool \hyperlink{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{nagleEnabled}, bool gracefulDisconnectEnabled, \hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$\hyperlink{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}{modeTCP}, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc=NULL)
+\begin{DoxyCompactList}\small\item\em Constructor, sets up socket ready to be loaded (via \hyperlink{class_net_socket_t_c_p_a2c2fc5b7ff9f35930f566b6913b67aef}{LoadSOCKET()}) with a fully operational socket. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_t_c_p_ae689f3d8989ce0b5bc4e78c61e7236b1}{
+\hyperlink{class_net_socket_t_c_p_ae689f3d8989ce0b5bc4e78c61e7236b1}{$\sim$NetSocketTCP} ()}
+\label{class_net_socket_t_c_p_ae689f3d8989ce0b5bc4e78c61e7236b1}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_t_c_p_ab8958e92980c0f82dc75c2dc59e05577}{NetSocketTCP} (const \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} \& \hyperlink{class_net_socket_t_c_p_a5307a3b22575686da141a3929e5eb3be}{operator=} (const \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_t_c_p_a2c2fc5b7ff9f35930f566b6913b67aef}{LoadSOCKET} (SOCKET paraSocket, const \hyperlink{class_net_address}{NetAddress} \&addr)
+\begin{DoxyCompactList}\small\item\em Loads a TCP winsock socket that is already fully setup and connected. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_t_c_p_a211e98d94191998d689e4ddc0714f18d}{PollConnect} () const 
+\begin{DoxyCompactList}\small\item\em Checks the status of the TCP handshake routine started by \hyperlink{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{NetSocketSimple::Connect()}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_socket_t_c_p_a0c81335a45d43fc31073596bee96f7c0}{Send} (const \hyperlink{class_packet}{Packet} \&packet, bool block, const \hyperlink{class_net_address}{NetAddress} $\ast$sendToAddr, unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Sends a packet using this socket. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{
+void \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown} ()}
+\label{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}
+
+\begin{DoxyCompactList}\small\item\em Calls \hyperlink{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}{StopSend()}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}{StopSend} ()
+\begin{DoxyCompactList}\small\item\em Halts sending on socket so that all further send operations will fail. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_t_c_p_a3bfb846d84dd1f29ece510f025adba3d}{IsSendPossible} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether further send operations can be initiated. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_t_c_p_a1e1063d77e9ae490c4c5146136141199}{IsRecvPossible} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether further receive operations can be initiated. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_t_c_p_a11891910910477cf1eba5fffef8bda52}{Recv} ()
+\begin{DoxyCompactList}\small\item\em Starts a receive operation via TCP. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_t_c_p_a407a844020c03e9dd24048f38a4d2c1f}{
+virtual void \hyperlink{class_net_socket_t_c_p_a407a844020c03e9dd24048f38a4d2c1f}{Close} ()}
+\label{class_net_socket_t_c_p_a407a844020c03e9dd24048f38a4d2c1f}
+
+\begin{DoxyCompactList}\small\item\em Closes socket and resets \hyperlink{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}{NetSocketTCP::modeTCP} to unused state. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_socket_t_c_p_a68dc0183e216cdd1796466d411f0b681}{GetConnectionStatus} () const 
+\begin{DoxyCompactList}\small\item\em Queries the status of the connection. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$ \hyperlink{class_net_socket_t_c_p_ad528efe4a16f0a110f488820d7abbc89}{GetMode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves constant pointer to TCP mode object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$ \hyperlink{class_net_socket_t_c_p_a75ede4ec55e9e9ec49a0f31da51e2dd3}{GetMode} ()
+\begin{DoxyCompactList}\small\item\em Retrieves mutable pointer to TCP mode object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_t_c_p_a00ea1a6922eb6cf69e23a1992752685c}{IsGracefulDisconnectEnabled} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{NetSocket::Protocol} \hyperlink{class_net_socket_t_c_p_ac599af5903f2a92f481f41ad1466390d}{GetProtocol} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the protocol type that the socket represents as an enum. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_t_c_p_a33a379bcc79c7c2631be6bea0ac13ce3}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Deals with newly received data using the stored \hyperlink{class_net_mode_tcp}{NetModeTcp} object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_socket_t_c_p_a844311ce7f1248d66b4e15d9e042e89a}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_t_c_p_a39f8b4993f0995b1ee3c3f037870184d}{
+void \hyperlink{class_net_socket_t_c_p_a39f8b4993f0995b1ee3c3f037870184d}{AssociateGracefulDisconnect} ()}
+\label{class_net_socket_t_c_p_a39f8b4993f0995b1ee3c3f037870184d}
+
+\begin{DoxyCompactList}\small\item\em Associates event object with FD\_\-CLOSE notification if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_t_c_p_aa53e2b58c3330e5d8ea6a61942a3daf7}{Initialize} (bool gracefulDisconnectEnabled, \hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$\hyperlink{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}{modeTCP})
+\begin{DoxyCompactList}\small\item\em Initializes object, contains code that is shared between constructors. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_t_c_p_a70bc18da8a63c5209f10e818cda8675b}{Copy} (const \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} $\ast$ \hyperlink{class_net_socket_t_c_p_a59ecfff878b08596b570c17ae57b93b9}{gracefulShutdown}
+\begin{DoxyCompactList}\small\item\em Non NULL if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. Signaled when an {\ttfamily FD\_\-CLOSE} notification has been received. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_t_c_p_a405f72b045af06f88730b1b239dfe61d}{sendPossible}
+\begin{DoxyCompactList}\small\item\em False when \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()} or \hyperlink{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}{StopSend()} have been used. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}{
+\hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$ \hyperlink{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}{modeTCP}}
+\label{class_net_socket_t_c_p_aafcdf2d4234f269eab1c9d43955e99bc}
+
+\begin{DoxyCompactList}\small\item\em Describes how received data should be dealt with and how sent data should be modified. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket used for TCP data transfer. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 3/28/2010.
+\end{DoxyRemark}
+This class provides functionality specific to the TCP protocol.\par
+\par
+
+
+This class is not thread safe: 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_socket_t_c_p_a95b4b79524f18cf19c2bf067ab94799e}{
+\index{NetSocketTCP@{NetSocketTCP}!NetSocketTCP@{NetSocketTCP}}
+\index{NetSocketTCP@{NetSocketTCP}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{NetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketTCP::NetSocketTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ wsaBufferLength, }
+\item[{const {\bf NetAddress} \&}]{ localAddr, }
+\item[{bool}]{ nagleEnabled, }
+\item[{bool}]{ gracefulDisconnectEnabled, }
+\item[{{\bf NetModeTcp} $\ast$}]{ modeTCP, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_t_c_p_a95b4b79524f18cf19c2bf067ab94799e}
+
+
+Constructor, sets up socket ready to be connected and transfer data. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em wsaBufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[{\em localAddr}]Local address to bind to, if IP or port is set to 0 then winsock will automatically find one. \item[{\em nagleEnabled}]If true then the nagle algorithm will be enabled. See. \hyperlink{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{NetSocketSimple::nagleEnabled} for more information. \item[{\em gracefulDisconnectEnabled}]If true \hyperlink{graceful_disconnect_page}{graceful} disconnection" is possible. \item[\mbox{\tt[in]} {\em modeTCP}]Describes how received data should be dealt with and how sent data should be modified. Must not be NULL. \item[\mbox{\tt[in]} {\em recvFunc}]Function that any received packets will be passed to. (optional, default NULL). Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}. If NULL then packets will not be passed to a function, and instead will be put into a queue. \end{DoxyParams}
+\hypertarget{class_net_socket_t_c_p_afd3973e920c0c5eb352d1cced26d8c30}{
+\index{NetSocketTCP@{NetSocketTCP}!NetSocketTCP@{NetSocketTCP}}
+\index{NetSocketTCP@{NetSocketTCP}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{NetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketTCP::NetSocketTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ wsaBufferLength, }
+\item[{bool}]{ nagleEnabled, }
+\item[{bool}]{ gracefulDisconnectEnabled, }
+\item[{{\bf NetModeTcp} $\ast$}]{ modeTCP, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_t_c_p_afd3973e920c0c5eb352d1cced26d8c30}
+
+
+Constructor, sets up socket ready to be loaded (via \hyperlink{class_net_socket_t_c_p_a2c2fc5b7ff9f35930f566b6913b67aef}{LoadSOCKET()}) with a fully operational socket. 
+
+\begin{DoxyWarning}{Warning}
+This socket is not ready to be used yet, LoadSOCKET MUST be used before attempting to transfer data.
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+\hyperlink{class_net_server_client}{NetServerClient} has an object constructed in this way as it is more efficient to allocate memory to the WSABUF during initial instance setup, since typically this buffer will not be reallocated during the lifetime of the instance. An alternative method (which is not implemented in MikeNet) would be to pass a new \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} object after WSAAccept accepts a connection but this has the overhead of WSABUF allocation during connection and equally. WSABUF deallocation during disconnection of a client.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em wsaBufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \item[{\em nagleEnabled}]True if the nagle algorithm should be enabled, false if not. See \hyperlink{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{NetSocketSimple::nagleEnabled} for more information. \item[{\em gracefulDisconnectEnabled}]If true \hyperlink{graceful_disconnect_page}{graceful} disconnection" is possible. \item[\mbox{\tt[in]} {\em modeTCP}]Describes how received data should be dealt with and how sent data should be modified. Must not be NULL. \item[\mbox{\tt[in]} {\em recvFunc}]Function that any received packets will be passed to. (optional, default NULL). Care must be taken to ensure that this function is thread safe. See \hyperlink{multithreading_page}{multithreaded usage}. If NULL then packets will not be passed to a function, and instead will be put into a queue. \end{DoxyParams}
+\hypertarget{class_net_socket_t_c_p_ab8958e92980c0f82dc75c2dc59e05577}{
+\index{NetSocketTCP@{NetSocketTCP}!NetSocketTCP@{NetSocketTCP}}
+\index{NetSocketTCP@{NetSocketTCP}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{NetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketTCP::NetSocketTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_t_c_p_ab8958e92980c0f82dc75c2dc59e05577}
+
+
+Deep copy constructor. 
+
+Socket will not be ready to send or receive data, even if {\itshape copyMe\/} is. First LoadSOCKET must be used to load a fully setup winsock socket object.\par
+\par
+
+
+\hyperlink{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}{NetSocketSimple::winsockSocket} is not copied.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_socket_t_c_p_a70bc18da8a63c5209f10e818cda8675b}{
+\index{NetSocketTCP@{NetSocketTCP}!Copy@{Copy}}
+\index{Copy@{Copy}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketTCP::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_t_c_p_a70bc18da8a63c5209f10e818cda8675b}
+
+
+Copy constructor / assignment operator helper method. 
+
+\begin{DoxyNote}{Note}
+Does not copy modeTCP, do this elsewhere.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_socket_t_c_p_a33a379bcc79c7c2631be6bea0ac13ce3}{
+\index{NetSocketTCP@{NetSocketTCP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketTCP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_t_c_p_a33a379bcc79c7c2631be6bea0ac13ce3}
+
+
+Deals with newly received data using the stored \hyperlink{class_net_mode_tcp}{NetModeTcp} object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Newly received data. \item[{\em completionBytes}]Number of bytes of new data stored in NetSocket::buffer. \item[\mbox{\tt[in]} {\em recvFunc}]Method will be executed and data not added to the queue if this is non NULL. \item[{\em instanceID}]Instance that data was received on. \item[{\em clientID}]ID of client that data was received from, set to 0 if not applicable. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_socket_a99a69ab706122acc2bbe63c64b279b8e}{NetSocket}.
+
+\hypertarget{class_net_socket_t_c_p_a68dc0183e216cdd1796466d411f0b681}{
+\index{NetSocketTCP@{NetSocketTCP}!GetConnectionStatus@{GetConnectionStatus}}
+\index{GetConnectionStatus@{GetConnectionStatus}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{GetConnectionStatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetSocketTCP::GetConnectionStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_t_c_p_a68dc0183e216cdd1796466d411f0b681}
+
+
+Queries the status of the connection. 
+
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED}: Fully connected. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}{NetUtility::NOT\_\-CONNECTED}: Not connected at all. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}{NetUtility::NO\_\-RECV}: Connected but new data cannot be received because \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()} has been used by the end point that we are connected to (only possible if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled). 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}{NetUtility::NO\_\-SEND}: Connected but data cannot be sent because \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()} has been used by the end point that we are connected to (only possible if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled). 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}{NetUtility::NO\_\-SEND\_\-RECV}: Connected but data cannot be sent or received because \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()} has been used on both sides, only data that has already been received and is in the packet queue can be received (only possible if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled). 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_a75ede4ec55e9e9ec49a0f31da51e2dd3}{
+\index{NetSocketTCP@{NetSocketTCP}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{GetMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeTcp} $\ast$ NetSocketTCP::GetMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_t_c_p_a75ede4ec55e9e9ec49a0f31da51e2dd3}
+
+
+Retrieves mutable pointer to TCP mode object. 
+
+\begin{DoxyReturn}{Returns}
+returns pointer to object representing TCP mode specific options. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_ad528efe4a16f0a110f488820d7abbc89}{
+\index{NetSocketTCP@{NetSocketTCP}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{GetMode}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetModeTcp} $\ast$ NetSocketTCP::GetMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_t_c_p_ad528efe4a16f0a110f488820d7abbc89}
+
+
+Retrieves constant pointer to TCP mode object. 
+
+\begin{DoxyReturn}{Returns}
+returns pointer to object (which cannot be modified) representing TCP mode specific options. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_ac599af5903f2a92f481f41ad1466390d}{
+\index{NetSocketTCP@{NetSocketTCP}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::Protocol} NetSocketTCP::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_t_c_p_ac599af5903f2a92f481f41ad1466390d}
+
+
+Retrieves the protocol type that the socket represents as an enum. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}{NetSocketSimple::TCP}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_a2c62a6815ffb8b17aabd4963f63c1afc}{NetSocket}.
+
+\hypertarget{class_net_socket_t_c_p_aa53e2b58c3330e5d8ea6a61942a3daf7}{
+\index{NetSocketTCP@{NetSocketTCP}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketTCP::Initialize (
+\begin{DoxyParamCaption}
+\item[{bool}]{ gracefulDisconnectEnabled, }
+\item[{{\bf NetModeTcp} $\ast$}]{ modeTCP}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_t_c_p_aa53e2b58c3330e5d8ea6a61942a3daf7}
+
+
+Initializes object, contains code that is shared between constructors. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em modeTCP}]Describes how received data should be dealt with and how sent data should be modified. Must not be NULL. \item[{\em gracefulDisconnectEnabled}]If true \hyperlink{graceful_disconnect_page}{graceful} disconnection" is possible. \end{DoxyParams}
+\hypertarget{class_net_socket_t_c_p_a00ea1a6922eb6cf69e23a1992752685c}{
+\index{NetSocketTCP@{NetSocketTCP}!IsGracefulDisconnectEnabled@{IsGracefulDisconnectEnabled}}
+\index{IsGracefulDisconnectEnabled@{IsGracefulDisconnectEnabled}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{IsGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketTCP::IsGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_t_c_p_a00ea1a6922eb6cf69e23a1992752685c}
+
+
+Determines whether \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. 
+
+See NetSocketTCP::gracefulDisconnectEnabled for more information.
+
+\begin{DoxyReturn}{Returns}
+gracefulDisconnectEnabled true if \hyperlink{graceful_disconnect_page}{graceful disconnection} is possible. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_a1e1063d77e9ae490c4c5146136141199}{
+\index{NetSocketTCP@{NetSocketTCP}!IsRecvPossible@{IsRecvPossible}}
+\index{IsRecvPossible@{IsRecvPossible}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{IsRecvPossible}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketTCP::IsRecvPossible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_t_c_p_a1e1063d77e9ae490c4c5146136141199}
+
+
+Determines whether further receive operations can be initiated. 
+
+See \hyperlink{class_net_socket_t_c_p_a59ecfff878b08596b570c17ae57b93b9}{NetSocketTCP::gracefulShutdown} for more information.
+
+\begin{DoxyReturn}{Returns}
+true if further receive operations can be initiated. 
+
+false if further receive operations will fail. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_a3bfb846d84dd1f29ece510f025adba3d}{
+\index{NetSocketTCP@{NetSocketTCP}!IsSendPossible@{IsSendPossible}}
+\index{IsSendPossible@{IsSendPossible}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{IsSendPossible}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketTCP::IsSendPossible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_t_c_p_a3bfb846d84dd1f29ece510f025adba3d}
+
+
+Determines whether further send operations can be initiated. 
+
+See \hyperlink{class_net_socket_t_c_p_a405f72b045af06f88730b1b239dfe61d}{NetSocketTCP::sendPossible} for more information.
+
+\begin{DoxyReturn}{Returns}
+true if further send operations can be initiated. 
+
+false if further send operations will fail. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_a2c2fc5b7ff9f35930f566b6913b67aef}{
+\index{NetSocketTCP@{NetSocketTCP}!LoadSOCKET@{LoadSOCKET}}
+\index{LoadSOCKET@{LoadSOCKET}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{LoadSOCKET}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketTCP::LoadSOCKET (
+\begin{DoxyParamCaption}
+\item[{SOCKET}]{ paraSocket, }
+\item[{const {\bf NetAddress} \&}]{ addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_t_c_p_a2c2fc5b7ff9f35930f566b6913b67aef}
+
+
+Loads a TCP winsock socket that is already fully setup and connected. 
+
+This is used when {\ttfamily WSAAccept} accepts a connection. WSAAccept does not associate the socket with the completion port, so this is done by this method.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraSocket}]TCP winsock socket that is fully setup. \item[{\em addr}]Address that socket is connected to. \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_net_socket_simple_a891ba8e42ebdea12ee56888e5adf942d}{NetSocketSimple}.
+
+\hypertarget{class_net_socket_t_c_p_a5307a3b22575686da141a3929e5eb3be}{
+\index{NetSocketTCP@{NetSocketTCP}!operator=@{operator=}}
+\index{operator=@{operator=}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketTCP} \& NetSocketTCP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_t_c_p_a5307a3b22575686da141a3929e5eb3be}
+
+
+Deep assignment operator. 
+
+\hyperlink{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}{NetSocketSimple::winsockSocket} is not copied.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_a211e98d94191998d689e4ddc0714f18d}{
+\index{NetSocketTCP@{NetSocketTCP}!PollConnect@{PollConnect}}
+\index{PollConnect@{PollConnect}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{PollConnect}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketTCP::PollConnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_t_c_p_a211e98d94191998d689e4ddc0714f18d}
+
+
+Checks the status of the TCP handshake routine started by \hyperlink{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{NetSocketSimple::Connect()}. 
+
+\begin{DoxyReturn}{Returns}
+true if the connection is in progress. 
+
+false if the connection has completed. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_t_c_p_a11891910910477cf1eba5fffef8bda52}{
+\index{NetSocketTCP@{NetSocketTCP}!Recv@{Recv}}
+\index{Recv@{Recv}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{Recv}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketTCP::Recv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_t_c_p_a11891910910477cf1eba5fffef8bda52}
+
+
+Starts a receive operation via TCP. 
+
+This method calls the winsock method {\ttfamily WSARecv}.\par
+\par
+
+
+If {\ttfamily WSARecv} is successful the result of the operation (which will probably not complete instantly) will be passed to the completion port. Upon completion \hyperlink{class_net_socket_a0565a5dafc4df4589c0013d0c2816f33}{NetSocket::recvBuffer} will be filled with received data.\par
+\par
+
+
+If {\ttfamily WSARecv} is unsuccessful the operation will not complete so the completion port will receive no notification. This means that we must manually set the overlapped event in the case of initial failure.
+
+\begin{DoxyWarning}{Warning}
+Receive operations will fail when the thread exits, so if you start a receive operation and the thread that started it completes then the operation will fail and no data will be received.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+true if an error occurred and data was not properly received, false if no error occurred. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_ad6ef9866517f7aad01a69b70467375d5}{NetSocket}.
+
+\hypertarget{class_net_socket_t_c_p_a0c81335a45d43fc31073596bee96f7c0}{
+\index{NetSocketTCP@{NetSocketTCP}!Send@{Send}}
+\index{Send@{Send}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetSocketTCP::Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf NetAddress} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_t_c_p_a0c81335a45d43fc31073596bee96f7c0}
+
+
+Sends a packet using this socket. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em sendToAddr}]Ignored. \item[{\em timeout}]Length of time in milliseconds to wait before canceling send operation.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_a808894184a1eed1a647e1cdf3c015f3a}{NetSocket}.
+
+\hypertarget{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}{
+\index{NetSocketTCP@{NetSocketTCP}!StopSend@{StopSend}}
+\index{StopSend@{StopSend}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{StopSend}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketTCP::StopSend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}
+
+
+Halts sending on socket so that all further send operations will fail. 
+
+See \hyperlink{class_net_socket_t_c_p_a405f72b045af06f88730b1b239dfe61d}{NetSocketTCP::sendPossible} for more information.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If graceful disconnect is disabled. \end{DoxyExceptions}
+\hypertarget{class_net_socket_t_c_p_a844311ce7f1248d66b4e15d9e042e89a}{
+\index{NetSocketTCP@{NetSocketTCP}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketTCP::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_socket_t_c_p_a844311ce7f1248d66b4e15d9e042e89a}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_socket_ae2233dd5a751f07101b1347df5dfc308}{NetSocket}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_socket_t_c_p_a59ecfff878b08596b570c17ae57b93b9}{
+\index{NetSocketTCP@{NetSocketTCP}!gracefulShutdown@{gracefulShutdown}}
+\index{gracefulShutdown@{gracefulShutdown}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{gracefulShutdown}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent}$\ast$ {\bf NetSocketTCP::gracefulShutdown}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_t_c_p_a59ecfff878b08596b570c17ae57b93b9}
+
+
+Non NULL if \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. Signaled when an {\ttfamily FD\_\-CLOSE} notification has been received. 
+
+If non NULL \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()} / \hyperlink{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}{StopSend()}, \hyperlink{class_net_socket_t_c_p_a1e1063d77e9ae490c4c5146136141199}{IsRecvPossible()} and \hyperlink{class_net_socket_t_c_p_a3bfb846d84dd1f29ece510f025adba3d}{IsSendPossible()} can now be used (with purpose). When this variable is false these methods should not be used.\par
+\par
+
+
+{\ttfamily FD\_\-CLOSE} is a signal that indicates that the end point that the socket is connected to has used \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()}. All further attempts to start a receive operation will fail and. \hyperlink{class_net_socket_t_c_p_a1e1063d77e9ae490c4c5146136141199}{IsRecvPossible()} will return false. This is only possible when \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. \hypertarget{class_net_socket_t_c_p_a405f72b045af06f88730b1b239dfe61d}{
+\index{NetSocketTCP@{NetSocketTCP}!sendPossible@{sendPossible}}
+\index{sendPossible@{sendPossible}!NetSocketTCP@{NetSocketTCP}}
+\subsubsection[{sendPossible}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetSocketTCP::sendPossible}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_t_c_p_a405f72b045af06f88730b1b239dfe61d}
+
+
+False when \hyperlink{class_net_socket_t_c_p_a31775717fef7b062f9af098ca5e6b7c9}{Shutdown()} or \hyperlink{class_net_socket_t_c_p_a71e478845fc449fc9fccaa098db37c50}{StopSend()} have been used. 
+
+All further send operations will fail and \hyperlink{class_net_socket_t_c_p_a3bfb846d84dd1f29ece510f025adba3d}{IsSendPossible()} will return false. Further receive operations may succeed if \hyperlink{class_net_socket_t_c_p_a1e1063d77e9ae490c4c5146136141199}{IsRecvPossible()} returns true.\par
+\par
+
+
+An {\ttfamily FD\_\-CLOSE} notification is sent to the end point that the socket is connected to when this is first changed to false, see \hyperlink{class_net_socket_t_c_p_a59ecfff878b08596b570c17ae57b93b9}{NetSocketTCP::gracefulShutdown} for more information. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketTCP.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketTCP.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,130 @@
+\hypertarget{classcl_timer}{
+\section{clTimer Class Reference}
+\label{classcl_timer}\index{clTimer@{clTimer}}
+}
+
+
+Timer object used to repeat an action every x number of milliseconds.  
+
+
+
+
+{\ttfamily \#include $<$clTimer.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_timer_a72ef68b5b8a411d751337ba10ec23adc}{clTimer} (clock\_\-t \hyperlink{classcl_timer_a72b7305f6dcd12bbf782fc9fbbc68b4e}{freq})
+\item 
+bool \hyperlink{classcl_timer_a8164ec7e5e0ca6223cfbaf13ebd51b63}{GetState} ()
+\item 
+clock\_\-t \hyperlink{classcl_timer_a7c836ada48d28b1a398d2decbc76d4d3}{GetTimer} ()
+\item 
+clock\_\-t \hyperlink{classcl_timer_a4fbf6aa5b46917ce1e4be162a1332fbe}{GetFreq} ()
+\item 
+void \hyperlink{classcl_timer_a93cdf6a3159deedd1c1209846634b768}{SetFreq} (clock\_\-t newFreq)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+clock\_\-t \hyperlink{classcl_timer_a8c93f49afaed2dc361b11bd8d0edff1f}{timer}
+\item 
+clock\_\-t \hyperlink{classcl_timer_a72b7305f6dcd12bbf782fc9fbbc68b4e}{freq}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Timer object used to repeat an action every x number of milliseconds. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is used to keep track of time and perform an action repeatedly but with a gap between each action. \par
+\par
+
+
+The gap is set by SetFreq or in the constructor. GetState will return true after this gap has expired, and then false again until the gap expires again. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_timer_a72ef68b5b8a411d751337ba10ec23adc}{
+\index{clTimer@{clTimer}!clTimer@{clTimer}}
+\index{clTimer@{clTimer}!clTimer@{clTimer}}
+\subsubsection[{clTimer}]{\setlength{\rightskip}{0pt plus 5cm}clTimer::clTimer (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ freq}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_timer_a72ef68b5b8a411d751337ba10ec23adc}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em freq}]frequency that clock should tick over in milliseconds \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_timer_a4fbf6aa5b46917ce1e4be162a1332fbe}{
+\index{clTimer@{clTimer}!GetFreq@{GetFreq}}
+\index{GetFreq@{GetFreq}!clTimer@{clTimer}}
+\subsubsection[{GetFreq}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t clTimer::GetFreq (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_timer_a4fbf6aa5b46917ce1e4be162a1332fbe}
+\begin{DoxyReturn}{Returns}
+frequency that clock should tick over in milliseconds 
+\end{DoxyReturn}
+\hypertarget{classcl_timer_a8164ec7e5e0ca6223cfbaf13ebd51b63}{
+\index{clTimer@{clTimer}!GetState@{GetState}}
+\index{GetState@{GetState}!clTimer@{clTimer}}
+\subsubsection[{GetState}]{\setlength{\rightskip}{0pt plus 5cm}bool clTimer::GetState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_timer_a8164ec7e5e0ca6223cfbaf13ebd51b63}
+\begin{DoxyReturn}{Returns}
+true if clock has ticked over 
+
+false if clock has not ticked over yet 
+\end{DoxyReturn}
+\hypertarget{classcl_timer_a7c836ada48d28b1a398d2decbc76d4d3}{
+\index{clTimer@{clTimer}!GetTimer@{GetTimer}}
+\index{GetTimer@{GetTimer}!clTimer@{clTimer}}
+\subsubsection[{GetTimer}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t clTimer::GetTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_timer_a7c836ada48d28b1a398d2decbc76d4d3}
+\begin{DoxyReturn}{Returns}
+timer 
+\end{DoxyReturn}
+\hypertarget{classcl_timer_a93cdf6a3159deedd1c1209846634b768}{
+\index{clTimer@{clTimer}!SetFreq@{SetFreq}}
+\index{SetFreq@{SetFreq}!clTimer@{clTimer}}
+\subsubsection[{SetFreq}]{\setlength{\rightskip}{0pt plus 5cm}void clTimer::SetFreq (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ newFreq}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_timer_a93cdf6a3159deedd1c1209846634b768}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newFreq}]new frequency that clock should tick over in milliseconds \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_timer_a72b7305f6dcd12bbf782fc9fbbc68b4e}{
+\index{clTimer@{clTimer}!freq@{freq}}
+\index{freq@{freq}!clTimer@{clTimer}}
+\subsubsection[{freq}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t {\bf clTimer::freq}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_timer_a72b7305f6dcd12bbf782fc9fbbc68b4e}
+frequency that GetState should return true in milliseconds \hypertarget{classcl_timer_a8c93f49afaed2dc361b11bd8d0edff1f}{
+\index{clTimer@{clTimer}!timer@{timer}}
+\index{timer@{timer}!clTimer@{clTimer}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t {\bf clTimer::timer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_timer_a8c93f49afaed2dc361b11bd8d0edff1f}
+clock() value of last GetState returning true 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clTimer.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clTimer.cpp\end{DoxyCompactItemize}

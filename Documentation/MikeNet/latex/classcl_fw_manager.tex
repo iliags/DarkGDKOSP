@@ -1,0 +1,79 @@
+\hypertarget{classcl_fw_manager}{
+\section{clFwManager Class Reference}
+\label{classcl_fw_manager}\index{clFwManager@{clFwManager}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_fw_manager_a76e6d9e36ac12016a492337c0971f540}{
+void {\bfseries \_\-CheckProfileID} (size\_\-t ProfileID)}
+\label{classcl_fw_manager_a76e6d9e36ac12016a492337c0971f540}
+
+\item 
+\hypertarget{classcl_fw_manager_a8887c4676ce30f16653c3f05381e4a71}{
+void {\bfseries RestoreDefaults} ()}
+\label{classcl_fw_manager_a8887c4676ce30f16653c3f05381e4a71}
+
+\item 
+\hypertarget{classcl_fw_manager_a2b7aa8f9418032aa0e383e6737f05ad1}{
+int {\bfseries IsPortAllowed} (char $\ast$FileName, long PortNumber, NET\_\-FW\_\-IP\_\-PROTOCOL Protocol, char $\ast$LocalAddress, NET\_\-FW\_\-IP\_\-VERSION ipVersion)}
+\label{classcl_fw_manager_a2b7aa8f9418032aa0e383e6737f05ad1}
+
+\item 
+\hypertarget{classcl_fw_manager_a02369e798298bbc3d2948574f0798b8c}{
+int {\bfseries IsPortAllowed} (long PortNumber, NET\_\-FW\_\-IP\_\-PROTOCOL Protocol)}
+\label{classcl_fw_manager_a02369e798298bbc3d2948574f0798b8c}
+
+\item 
+\hypertarget{classcl_fw_manager_ac2b1a29c47fbe41dd7b634b1dc696ed6}{
+int {\bfseries IsTypeAllowedICMP} (unsigned char Type, char $\ast$LocalAddress, NET\_\-FW\_\-IP\_\-VERSION ipVersion)}
+\label{classcl_fw_manager_ac2b1a29c47fbe41dd7b634b1dc696ed6}
+
+\item 
+\hypertarget{classcl_fw_manager_a1bd2f93ef6302a3d3e70f05e23ab4ed1}{
+int {\bfseries IsTypeAllowedICMP} (unsigned char Type, NET\_\-FW\_\-IP\_\-VERSION ipVersion)}
+\label{classcl_fw_manager_a1bd2f93ef6302a3d3e70f05e23ab4ed1}
+
+\item 
+\hypertarget{classcl_fw_manager_ad7dfa0eb3ba57f37bf0cc265b72e7541}{
+void {\bfseries \_\-LoadProfileByType} (NET\_\-FW\_\-PROFILE\_\-TYPE Type)}
+\label{classcl_fw_manager_ad7dfa0eb3ba57f37bf0cc265b72e7541}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_fw_manager_a8a0e2e32682da0b1e3497b2309c901c7}{
+NET\_\-FW\_\-PROFILE\_\-TYPE {\bfseries iCurrentProfileType}}
+\label{classcl_fw_manager_a8a0e2e32682da0b1e3497b2309c901c7}
+
+\item 
+\hypertarget{classcl_fw_manager_ab1e6f67436745af91d246b90d6e812a3}{
+size\_\-t {\bfseries iCurrentProfileID}}
+\label{classcl_fw_manager_ab1e6f67436745af91d246b90d6e812a3}
+
+\item 
+\hypertarget{classcl_fw_manager_a7b4d97365f8ab10f89cc802f828956ff}{
+vector$<$ \hyperlink{classcl_fw_profile}{clFwProfile} $\ast$ $>$ {\bfseries vectorProfiles}}
+\label{classcl_fw_manager_a7b4d97365f8ab10f89cc802f828956ff}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_fw_manager_aace1bd6a98745d908f4f073aa2441fc1}{
+INetFwMgr $\ast$ {\bfseries Manager}}
+\label{classcl_fw_manager_aace1bd6a98745d908f4f073aa2441fc1}
+
+\item 
+\hypertarget{classcl_fw_manager_a04861385f18e5cfb5cdc0146b6a68cea}{
+INetFwPolicy $\ast$ {\bfseries LocalPolicy}}
+\label{classcl_fw_manager_a04861385f18e5cfb5cdc0146b6a68cea}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clFwManager.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clFwManager.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,483 @@
+\hypertarget{classcl_socket_t_c_p}{
+\section{clSocketTCP Class Reference}
+\label{classcl_socket_t_c_p}\index{clSocketTCP@{clSocketTCP}}
+}
+
+
+Socket used for TCP data transfer.  
+
+
+
+
+{\ttfamily \#include $<$clSocketTCP.h$>$}
+
+Inheritance diagram for clSocketTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_socket_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_socket_t_c_p_acdc98f821bf186e1626e76fb9d25980b}{\_\-BaseInit} (bool \hyperlink{classcl_socket_t_c_p_a6e949c2c5e772c5b043ff92c22268753}{gracefulDisconnectEnabled}, \hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$\hyperlink{classcl_socket_t_c_p_ac2e53997bca4ebcb0486b29b40ad9e65}{modeTCP})
+\item 
+\hyperlink{classcl_socket_t_c_p_ab4aebf846356dc997509bfc1f9814da0}{clSocketTCP} (size\_\-t wsaBufferLength, const \hyperlink{classcl_single_addr}{clSingleAddr} \&localAddr, bool nagleDisabled, bool \hyperlink{classcl_socket_t_c_p_a6e949c2c5e772c5b043ff92c22268753}{gracefulDisconnectEnabled}, \hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$\hyperlink{classcl_socket_t_c_p_ac2e53997bca4ebcb0486b29b40ad9e65}{modeTCP})
+\item 
+\hyperlink{classcl_socket_t_c_p_a104b8bd6aa4481ca80be3278d7fcad3c}{clSocketTCP} (size\_\-t wsaBufferLength, bool \hyperlink{classcl_socket_t_c_p_a6e949c2c5e772c5b043ff92c22268753}{gracefulDisconnectEnabled}, \hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$\hyperlink{classcl_socket_t_c_p_ac2e53997bca4ebcb0486b29b40ad9e65}{modeTCP})
+\item 
+\hyperlink{classcl_socket_t_c_p_a458dc827a7d5d3c5f37a94791fc600e4}{$\sim$clSocketTCP} ()
+\item 
+\hyperlink{classcl_socket_t_c_p_a7b69c388602c39301c77bbd6a2705f42}{clSocketTCP} (const \hyperlink{classcl_socket_t_c_p}{clSocketTCP} \&)
+\item 
+\hyperlink{classcl_socket_t_c_p}{clSocketTCP} \& \hyperlink{classcl_socket_t_c_p_a6d6b01ca2de1b744684cf4c06b4135a2}{operator=} (const \hyperlink{classcl_socket_t_c_p}{clSocketTCP} \&)
+\item 
+void \hyperlink{classcl_socket_t_c_p_a276fcb218bb483a56f10e740b6c5b2e1}{LoadSOCKET} (SOCKET paraSocket, const \hyperlink{classcl_single_addr}{clSingleAddr} \&addr)
+\item 
+int \hyperlink{classcl_socket_t_c_p_ac4e2880d1cfd6e137ce062722016bd83}{PollConnect} () const 
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_socket_t_c_p_a0bb0f55d6064c6e2eedb8aee4d42d211}{Send} (const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, const \hyperlink{classcl_single_addr}{clSingleAddr} $\ast$sendToAddr, unsigned int timeout)
+\item 
+void \hyperlink{classcl_socket_t_c_p_a2be09cc6cfc5203a921722b9e833f03b}{Shutdown} ()
+\item 
+void \hyperlink{classcl_socket_t_c_p_abd106ce306134bb4e87c89bfbde267a4}{StopSend} ()
+\item 
+bool \hyperlink{classcl_socket_t_c_p_aa128c9f6045f2c040cb165ad9dba6a8e}{GetSendPossible} () const 
+\item 
+bool \hyperlink{classcl_socket_t_c_p_a6d57707357f916253e4f78099e5df36d}{GetRecvPossible} () const 
+\item 
+bool \hyperlink{classcl_socket_t_c_p_aaf5c2cebf6f2139dd84a85b8e95945df}{Recv} ()
+\item 
+void \hyperlink{classcl_socket_t_c_p_a8f1031669c4093bf2aacb788f97c1adf}{Close} ()
+\item 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{clNetworkingUtility::ConnectionStatus} \hyperlink{classcl_socket_t_c_p_a8076fc92db377e9ece2fa23f01b97db2}{GetConnectionStatus} () const 
+\item 
+const \hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$ \hyperlink{classcl_socket_t_c_p_a2038e72fa1ee96c9d3d7f736b6838fbe}{GetMode} () const 
+\item 
+\hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$ \hyperlink{classcl_socket_t_c_p_ad75ea89e1ab738e56cac2ca193a2d78f}{GetMode} ()
+\item 
+bool \hyperlink{classcl_socket_t_c_p_a279e1f27a53c3eb8a6e2ac26647a8915}{GetGracefulDisconnectEnabled} () const 
+\item 
+\hyperlink{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}{clSocket::Protocol} \hyperlink{classcl_socket_t_c_p_ad465fce0e99ce328cafe5c77cbc8cef9}{GetProtocol} () const 
+\item 
+void \hyperlink{classcl_socket_t_c_p_a1b168f8a28b7100d6b837201b766e05a}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFunc)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_socket_t_c_p_afede37c796405c00079db93346316c79}{\_\-Copy} (const \hyperlink{classcl_socket_t_c_p}{clSocketTCP} \&copyMe)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+HANDLE \hyperlink{classcl_socket_t_c_p_a0a32a324e96a95cd037a06d71b767008}{gracefulShutdown}
+\item 
+bool \hyperlink{classcl_socket_t_c_p_add406cee5019b329709c8fc557d3b64e}{sendPossible}
+\item 
+bool \hyperlink{classcl_socket_t_c_p_a6e949c2c5e772c5b043ff92c22268753}{gracefulDisconnectEnabled}
+\item 
+\hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$ \hyperlink{classcl_socket_t_c_p_ac2e53997bca4ebcb0486b29b40ad9e65}{modeTCP}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Socket used for TCP data transfer. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 3/28/2010.
+\end{DoxyRemark}
+This class provides functionality specific to the TCP protocol.\par
+\par
+
+
+This class is not inherently thread safe. Send is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_socket_t_c_p_ab4aebf846356dc997509bfc1f9814da0}{
+\index{clSocketTCP@{clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\index{clSocketTCP@{clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{clSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketTCP::clSocketTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ wsaBufferLength, }
+\item[{const {\bf clSingleAddr} \&}]{ localAddr, }
+\item[{bool}]{ nagleDisabled, }
+\item[{bool}]{ gracefulDisconnectEnabled, }
+\item[{{\bf clSharedTCP} $\ast$}]{ modeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_ab4aebf846356dc997509bfc1f9814da0}
+Constructor \par
+ Sets up socket ready to be connected and transfer data
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em wsaBufferLength}]length of receive buffer in bytes \item[{\em localAddr}]local address to bind to, if IP/port is set to 0 then winsock will automatically find one \item[{\em nagleDisabled}]if true then the nagle algorithm will be disabled \item[{\em gracefulDisconnectEnabled}]if true graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed. If false clients will be disconnected instantly with no wait. \item[\mbox{\tt[in]} {\em modeTCP}]TCP mode, deals with data received on socket, must not be NULL \end{DoxyParams}
+\hypertarget{classcl_socket_t_c_p_a104b8bd6aa4481ca80be3278d7fcad3c}{
+\index{clSocketTCP@{clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\index{clSocketTCP@{clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{clSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketTCP::clSocketTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ wsaBufferLength, }
+\item[{bool}]{ gracefulDisconnectEnabled, }
+\item[{{\bf clSharedTCP} $\ast$}]{ modeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_a104b8bd6aa4481ca80be3278d7fcad3c}
+Constructor \par
+ Sets up socket ready to be loaded (via LoadSOCKET) with a fully operational socket
+
+\begin{DoxyWarning}{Warning}
+this socket is not ready to be used yet, LoadSOCKET MUST be used before attempting to transfer data
+\end{DoxyWarning}
+\begin{DoxyNote}{Note}
+\hyperlink{classcl_s_client}{clSClient} has an object constructed in this way as it is more efficient to allocate memory to the WSABUF during initial instance setup, since typically this buffer will not be reallocated during the lifetime of the instance. An alternative method (which is not implemented in MikeNet) would be to pass a new \hyperlink{classcl_socket_t_c_p}{clSocketTCP} object after WSAAccept accepts a connection but this has the overhead of WSABUF allocation during connection and equally WSABUF deallocation during disconnection of a client.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em wsaBufferLength}]length of receive buffer in bytes \item[{\em gracefulDisconnectEnabled}]if true graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed \item[\mbox{\tt[in]} {\em modeTCP}]TCP mode, deals with data received on socket, must not be NULL \end{DoxyParams}
+\hypertarget{classcl_socket_t_c_p_a458dc827a7d5d3c5f37a94791fc600e4}{
+\index{clSocketTCP@{clSocketTCP}!$\sim$clSocketTCP@{$\sim$clSocketTCP}}
+\index{$\sim$clSocketTCP@{$\sim$clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{$\sim$clSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketTCP::$\sim$clSocketTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_a458dc827a7d5d3c5f37a94791fc600e4}
+Destructor \par
+ Cleans up object \hypertarget{classcl_socket_t_c_p_a7b69c388602c39301c77bbd6a2705f42}{
+\index{clSocketTCP@{clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\index{clSocketTCP@{clSocketTCP}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{clSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}clSocketTCP::clSocketTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocketTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_a7b69c388602c39301c77bbd6a2705f42}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_socket_t_c_p_acdc98f821bf186e1626e76fb9d25980b}{
+\index{clSocketTCP@{clSocketTCP}!\_\-BaseInit@{\_\-BaseInit}}
+\index{\_\-BaseInit@{\_\-BaseInit}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{\_\-BaseInit}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::\_\-BaseInit (
+\begin{DoxyParamCaption}
+\item[{bool}]{ gracefulDisconnectEnabled, }
+\item[{{\bf clSharedTCP} $\ast$}]{ modeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_acdc98f821bf186e1626e76fb9d25980b}
+Initializes object, contains code that is shared between constructors
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em modeTCP}]TCP mode, deals with data received on socket, must not be NULL \item[{\em gracefulDisconnectEnabled}]if true graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed \end{DoxyParams}
+\hypertarget{classcl_socket_t_c_p_afede37c796405c00079db93346316c79}{
+\index{clSocketTCP@{clSocketTCP}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocketTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_t_c_p_afede37c796405c00079db93346316c79}
+Copies {\itshape copyMe\/} into this object (deep) \begin{DoxyNote}{Note}
+does not copy modeTCP, do this elsewhere 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_socket_t_c_p_a8f1031669c4093bf2aacb788f97c1adf}{
+\index{clSocketTCP@{clSocketTCP}!Close@{Close}}
+\index{Close@{Close}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_t_c_p_a8f1031669c4093bf2aacb788f97c1adf}
+Closes socket and resets {\ttfamily modeTCP} to unused state 
+
+Reimplemented from \hyperlink{classcl_socket_a5ff0b79fb0cb1c43019e726ea085ec36}{clSocket}.
+
+\hypertarget{classcl_socket_t_c_p_a1b168f8a28b7100d6b837201b766e05a}{
+\index{clSocketTCP@{clSocketTCP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ recvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_t_c_p_a1b168f8a28b7100d6b837201b766e05a}
+Deals with newly received data 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that packet was received on \item[{\em completionBytes}]size of packet stored in {\itshape buffer\/} \item[{\em buffer}]where newly received packet is stored \item[{\em clientID}]ID of client that packet was received from, 0 in client state \item[{\em instanceID}]instance that packet was received on \item[{\em recvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_socket_a4ddfb1b3168816c667e1193d1df42535}{clSocket}.
+
+\hypertarget{classcl_socket_t_c_p_a8076fc92db377e9ece2fa23f01b97db2}{
+\index{clSocketTCP@{clSocketTCP}!GetConnectionStatus@{GetConnectionStatus}}
+\index{GetConnectionStatus@{GetConnectionStatus}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetConnectionStatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::ConnectionStatus} clSocketTCP::GetConnectionStatus (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_t_c_p_a8076fc92db377e9ece2fa23f01b97db2}
+Used to query the status of the connection. This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. \begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da91a3fd8751354e5c4f32181268627d9f}{clNetworkingUtility::CONNECTED}: fully connected 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da7ea7f5aa34e94ec65b905c2a37610583}{clNetworkingUtility::NOT\_\-CONNECTED}: not connected at all 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}{clNetworkingUtility::NO\_\-RECV}: connected but new data cannot be received because {\ttfamily Shutdown} has been used by recipient (only possible if graceful disconnect is enabled) 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}{clNetworkingUtility::NO\_\-SEND}: connected but data cannot be sent because {\ttfamily Shutdown} has been used (only possible if graceful disconnect is enabled) 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{clNetworkingUtility::NO\_\-SEND\_\-RECV}: connected but data cannot be sent or received because {\ttfamily Shutdown} has been used on both sides, only data that has already been received and is in the packet queue can be received (only possible if graceful disconnect is enabled) 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_a279e1f27a53c3eb8a6e2ac26647a8915}{
+\index{clSocketTCP@{clSocketTCP}!GetGracefulDisconnectEnabled@{GetGracefulDisconnectEnabled}}
+\index{GetGracefulDisconnectEnabled@{GetGracefulDisconnectEnabled}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocketTCP::GetGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_t_c_p_a279e1f27a53c3eb8a6e2ac26647a8915}
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. \begin{DoxyReturn}{Returns}
+gracefulDisconnectEnabled true if graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_ad75ea89e1ab738e56cac2ca193a2d78f}{
+\index{clSocketTCP@{clSocketTCP}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedTCP} $\ast$ clSocketTCP::GetMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_ad75ea89e1ab738e56cac2ca193a2d78f}
+\begin{DoxyReturn}{Returns}
+returns pointer to object representing TCP mode specific options 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_a2038e72fa1ee96c9d3d7f736b6838fbe}{
+\index{clSocketTCP@{clSocketTCP}!GetMode@{GetMode}}
+\index{GetMode@{GetMode}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetMode}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSharedTCP} $\ast$ clSocketTCP::GetMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_t_c_p_a2038e72fa1ee96c9d3d7f736b6838fbe}
+\begin{DoxyReturn}{Returns}
+returns pointer to object (which cannot be modified) representing TCP mode specific options 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_ad465fce0e99ce328cafe5c77cbc8cef9}{
+\index{clSocketTCP@{clSocketTCP}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocket::Protocol} clSocketTCP::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_t_c_p_ad465fce0e99ce328cafe5c77cbc8cef9}
+\begin{DoxyReturn}{Returns}
+clSimpleSocket::TCP indicating that this socket is for TCP data transfer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_socket_a8ce9d2d6fa68c1d70fa757122093f7ca}{clSocket}.
+
+\hypertarget{classcl_socket_t_c_p_a6d57707357f916253e4f78099e5df36d}{
+\index{clSocketTCP@{clSocketTCP}!GetRecvPossible@{GetRecvPossible}}
+\index{GetRecvPossible@{GetRecvPossible}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetRecvPossible}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocketTCP::GetRecvPossible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_t_c_p_a6d57707357f916253e4f78099e5df36d}
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. \begin{DoxyReturn}{Returns}
+true if further receive operations can be initiated 
+
+false if further receive operations will fail 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_aa128c9f6045f2c040cb165ad9dba6a8e}{
+\index{clSocketTCP@{clSocketTCP}!GetSendPossible@{GetSendPossible}}
+\index{GetSendPossible@{GetSendPossible}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{GetSendPossible}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocketTCP::GetSendPossible (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_t_c_p_aa128c9f6045f2c040cb165ad9dba6a8e}
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. \begin{DoxyReturn}{Returns}
+true if further send operations can be initiated 
+
+false if further send operations will fail 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_a276fcb218bb483a56f10e740b6c5b2e1}{
+\index{clSocketTCP@{clSocketTCP}!LoadSOCKET@{LoadSOCKET}}
+\index{LoadSOCKET@{LoadSOCKET}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{LoadSOCKET}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::LoadSOCKET (
+\begin{DoxyParamCaption}
+\item[{SOCKET}]{ paraSocket, }
+\item[{const {\bf clSingleAddr} \&}]{ addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_t_c_p_a276fcb218bb483a56f10e740b6c5b2e1}
+Loads a TCP winsock socket that is already fully setup and connected \par
+ This is used when {\ttfamily WSAAccept} accepts a connection \begin{DoxyNote}{Note}
+WSAAccept does not associate the socket with the completion port, so this is done manually
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraSocket}]TCP winsock socket that is fully setup \item[{\em addr}]address that socket is connected to \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{classcl_simple_socket_a3d1e886eb5fe1ed25f35ff4c5cad546e}{clSimpleSocket}.
+
+\hypertarget{classcl_socket_t_c_p_a6d6b01ca2de1b744684cf4c06b4135a2}{
+\index{clSocketTCP@{clSocketTCP}!operator=@{operator=}}
+\index{operator=@{operator=}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketTCP} \& clSocketTCP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSocketTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_a6d6b01ca2de1b744684cf4c06b4135a2}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_ac4e2880d1cfd6e137ce062722016bd83}{
+\index{clSocketTCP@{clSocketTCP}!PollConnect@{PollConnect}}
+\index{PollConnect@{PollConnect}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{PollConnect}]{\setlength{\rightskip}{0pt plus 5cm}int clSocketTCP::PollConnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_socket_t_c_p_ac4e2880d1cfd6e137ce062722016bd83}
+Used to check the status of the TCP handshake routine started by {\ttfamily connect} winsock command
+
+\begin{DoxyReturn}{Returns}
+0 if the connection is in progress 
+
+not 0 if the connection has completed 
+\end{DoxyReturn}
+\hypertarget{classcl_socket_t_c_p_aaf5c2cebf6f2139dd84a85b8e95945df}{
+\index{clSocketTCP@{clSocketTCP}!Recv@{Recv}}
+\index{Recv@{Recv}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{Recv}]{\setlength{\rightskip}{0pt plus 5cm}bool clSocketTCP::Recv (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_t_c_p_aaf5c2cebf6f2139dd84a85b8e95945df}
+Starts a receive operation via TCP \par
+ If {\ttfamily WSARecv} is successful the result of the operation (which will probably not complete instantly) will be passed to the completion port \par
+ Upon completion {\ttfamily recvBuffer} will be filled with received data \par
+ If {\ttfamily WSARecv} is unsuccessful the operation will not complete so the completion port will receive no notification \par
+ \begin{DoxyWarning}{Warning}
+receive operations will fail when the thread exits, so if you start a receive operation and the thread that started it completes then the operation will fail and no data will be received.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+true if an error occurred and data was not properly received, false if no error occurred 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_socket}{clSocket}.
+
+\hypertarget{classcl_socket_t_c_p_a0bb0f55d6064c6e2eedb8aee4d42d211}{
+\index{clSocketTCP@{clSocketTCP}!Send@{Send}}
+\index{Send@{Send}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clSocketTCP::Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf clSingleAddr} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_socket_t_c_p_a0bb0f55d6064c6e2eedb8aee4d42d211}
+Sends a packet using this socket 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent \item[{\em sendToAddr}]ignored \item[{\em timeout}]length of time in milliseconds to wait before canceling send operation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_socket}{clSocket}.
+
+\hypertarget{classcl_socket_t_c_p_a2be09cc6cfc5203a921722b9e833f03b}{
+\index{clSocketTCP@{clSocketTCP}!Shutdown@{Shutdown}}
+\index{Shutdown@{Shutdown}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{Shutdown}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::Shutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_a2be09cc6cfc5203a921722b9e833f03b}
+Calls StopSend. This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. \hypertarget{classcl_socket_t_c_p_abd106ce306134bb4e87c89bfbde267a4}{
+\index{clSocketTCP@{clSocketTCP}!StopSend@{StopSend}}
+\index{StopSend@{StopSend}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{StopSend}]{\setlength{\rightskip}{0pt plus 5cm}void clSocketTCP::StopSend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_socket_t_c_p_abd106ce306134bb4e87c89bfbde267a4}
+Stops sending on socket so that all further send operations will fail \par
+ All data sent up till now will be received by recipient \par
+ Recipient mnClientConnected will return \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}{clNetworkingUtility::NO\_\-RECV}, or \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{clNetworkingUtility::NO\_\-SEND\_\-RECV} \par
+ Our mnClientConnected will return \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}{clNetworkingUtility::NO\_\-SEND} or \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{clNetworkingUtility::NO\_\-SEND\_\-RECV} \par
+ This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if graceful disconnect is disabled \end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_socket_t_c_p_a6e949c2c5e772c5b043ff92c22268753}{
+\index{clSocketTCP@{clSocketTCP}!gracefulDisconnectEnabled@{gracefulDisconnectEnabled}}
+\index{gracefulDisconnectEnabled@{gracefulDisconnectEnabled}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{gracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clSocketTCP::gracefulDisconnectEnabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_t_c_p_a6e949c2c5e772c5b043ff92c22268753}
+if true graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed \hypertarget{classcl_socket_t_c_p_a0a32a324e96a95cd037a06d71b767008}{
+\index{clSocketTCP@{clSocketTCP}!gracefulShutdown@{gracefulShutdown}}
+\index{gracefulShutdown@{gracefulShutdown}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{gracefulShutdown}]{\setlength{\rightskip}{0pt plus 5cm}HANDLE {\bf clSocketTCP::gracefulShutdown}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_t_c_p_a0a32a324e96a95cd037a06d71b767008}
+Signaled when an {\ttfamily FD\_\-CLOSE} notification has been received \hypertarget{classcl_socket_t_c_p_ac2e53997bca4ebcb0486b29b40ad9e65}{
+\index{clSocketTCP@{clSocketTCP}!modeTCP@{modeTCP}}
+\index{modeTCP@{modeTCP}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{modeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedTCP}$\ast$ {\bf clSocketTCP::modeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_t_c_p_ac2e53997bca4ebcb0486b29b40ad9e65}
+TCP mode object \par
+ Is initialized as \hyperlink{classcl_int_prefix_t_c_p}{clIntPrefixTCP} or \hyperlink{classcl_postfix_t_c_p}{clPostfixTCP} depending on TCP mode \hypertarget{classcl_socket_t_c_p_add406cee5019b329709c8fc557d3b64e}{
+\index{clSocketTCP@{clSocketTCP}!sendPossible@{sendPossible}}
+\index{sendPossible@{sendPossible}!clSocketTCP@{clSocketTCP}}
+\subsubsection[{sendPossible}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clSocketTCP::sendPossible}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_socket_t_c_p_add406cee5019b329709c8fc557d3b64e}
+false when Shutdown (StopSend) has been used 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocketTCP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSocketTCP.cpp\end{DoxyCompactItemize}

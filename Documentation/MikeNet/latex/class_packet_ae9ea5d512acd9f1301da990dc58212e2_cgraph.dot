@@ -1,0 +1,28 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Packet::LoadFull",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Packet::_DefaultVars",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#abc3d3ae32845a645edbe4bcd8fa3bc5f"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CriticalSection::Enter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html#a509be5342b2f07ae06e1af5d9e08b871"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="CriticalSection::Leave",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html#a6fa0931385f066492f31fc98e3fca657"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Packet::equalWSABUF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a64281460528b923a5d151d2180cbd82f"];
+  Node5 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Packet::SetMemorySize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a6a59836dfc9a2cbbc247264e223eee1a"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="Packet::ClearPacket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a3752c0fb6d3de548e56583af6b7d5dbe"];
+  Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Utility::DynamicAllocCheck",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utility.html#ae9b88a37dc2e95519c938e673dd3de2c"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+}

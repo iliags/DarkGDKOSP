@@ -1,0 +1,359 @@
+<s3ge version="1.0">
+
+  <!-- S3GEd Sub Menu: Systems Testbed -->
+  <wizmo name="3Dbutton" description="Wizmo Example (3D Plane w/ Theme)" value="Hello World" collision="1" operate="1" transit="1"  audio="true" visible="1" active="1">
+    <orientate width="96" height="48" anglex="0" angley="-180" anglez="0">
+      <physics noresponse="true"/>
+    </orientate>
+    <variable name="automove" value="0"/>
+    <variable name="checked" value="0"/>
+    <event state="IDLE" behavior="checkbox" theme="darkbox" style="vile" scheme="pointingFX" caption="Wizmo"/>
+    <event state="ENTER" caption="Enter"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+    <event state="MOVE" scheme="pointingFX" start="true">
+      <script language="darklua" type="1">
+        <![CDATA[
+          uigizmoautomove = uiGizmoVariableGet(this,'automove')
+          if uigizmoautomove ~= '64' then
+            uiGizmoPropertySet(this,'BoundZ', uiGizmoPropertyGet(this,'BoundZ') + .1)
+            uiGizmoVariableSet(this,'automove', uigizmoautomove + 1)
+          else
+            uiGizmoPropertySet(this,'EventState',IDLE)
+          end
+				 ]]>
+      </script>
+    </event>
+  </wizmo> 
+
+   <gizmo name="S3GEEditFile" parent="S3GEEdit" description="S3GE File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="menubox" transition="ghostly" theme="graybox" style="standard" scheme="pointingFX" label="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditFileNew" parent="S3GEEditFile" ref="previous" description="Create New Project">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditFileOpen" parent="S3GEEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) S3GE File (.s3ge, .s3ge)">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle" icon_label="icon_open" icon_x="4" icon_xalign="left" icon_yalign="center"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditFileSave" parent="S3GEEditFile" ref="previous" description="Save|SaveAs Game Format(*.game)">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle" icon_label="icon_nil" />
+  </gizmo>
+
+  <gizmo name="S3GEEditFileClose" parent="S3GEEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEdit" parent="S3GEEdit" ref="previous" description="Edit">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEditUndo" parent="S3GEEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Undo" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEditRedo" parent="S3GEEditEdit" ref="previous" description="Redo">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEditCut" parent="S3GEEditEdit" ref="previous" description="Cut">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEditCopy" parent="S3GEEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEditPaste" parent="S3GEEditEdit" ref="previous" description="Paste">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditEditDelete" parent="S3GEEditEdit" ref="previous" description="Delete|Clear">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditObject" parent="S3GEEdit" ref="previous" description="S3GE Objects (The Toys)">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Object" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditObjectToy" parent="S3GEEditObject" description="Show/Hide MAUI TOY">
+    <variable name="toggle" value="0"/>
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="pushbox" transition="ghostly" theme="graybox" style="standard" scheme="pointingFX" caption="MAUI Toy" x="24" xalign="left" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[	
+
+              uiGizmoToggle = 1 - uiGizmoVariableGet(this, 'toggle')
+              uiGizmoVariableSet(this, 'toggle', uiGizmoToggle)              
+              
+              msg = uiGizmoMessageCreate()
+              uiGizmoMessageInsert(msg, MAUI_MSG_TYPE_VALUE, MAUI_MSG_GIZMO_CLOSE + uiGizmoToggle, 0);
+              uiGizmoMessageSend(msg, 'mauitoy', MAUI_MSG_TO_SELF, 0)
+              uiGizmoMessageDestroy(msg) 
+         
+              if uiGizmoToggle > 0 then 
+                uiGizmoPropertySet(this,'Description', 'Hide MAUI TOY' )
+              else
+                uiGizmoPropertySet(this,'Description', 'Show MAUI TOY' )
+              end
+              
+            ]]>
+      </script>
+    </event>
+    <event state="EXIT"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditObjectLoco" parent="S3GEEditObject" ref="parent" description="Show/Hide S3GE Loco Logo">
+    <variable name="toggle" value="0"/>
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  behavior="menubox" transition="ghostly" theme="graybox" style="standard" scheme="pointingFX" caption="Loco" x="24" xalign="left" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX" caption="Click Me"/>
+    <event state="DOWN" caption="Choo Choo">
+      <script language="darklua" type="1">
+        <![CDATA[
+				dbObjectSpinX(dbObjectGet('Loco'),3)				
+				dbObjectSpinY(dbObjectGet('Loco'),3)
+				 ]]>
+      </script>
+    </event>
+    <event state="HOLD" caption="Choo Choo">
+      <script language="darklua" type="1">
+        <![CDATA[
+				dbObjectSpinX(dbObjectGet('Loco'),3)				
+				dbObjectSpinY(dbObjectGet('Loco'),3)
+				 ]]>
+      </script>
+    </event>
+    <event state="DRAG">
+      <script language="darklua" type="1">
+        <![CDATA[
+				dbObjectSpinY(dbObjectGet('Loco'),3)
+				dbObjectSpinX(dbObjectGet('Loco'),3)
+				 ]]>
+      </script>
+    </event>
+    <event state="UP"/>
+    <event state="EXIT"/>    
+    
+  </gizmo>
+
+  <gizmo name="S3GEEditTools" parent="S3GEEdit" ref="previous" description="S3GE Demos">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+  
+  <gizmo name="S3GEEditView" parent="S3GEEdit" ref="previous" description="S3GE View">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+ 
+  <gizmo name="S3GEEditViewZoom" parent="S3GEEditView" ref="previous" description="Zoom Canvas">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Zoom..." x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditViewArrange" parent="S3GEEditView" ref="previous" description="Arrange Sub Canvases">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Arrange" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditViewDialogs" parent="S3GEEditView" ref="previous" description="Show/Hide Dialogs">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Dialogs" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditViewOptions" parent="S3GEEditView" ref="previous" description="Viewing Options">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Options" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditHelp" parent="S3GEEdit" ref="previous" description="S3GE Editor Help">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="S3GEEditHelpCredits" parent="S3GEEditHelp" description="S3GE Credits">
+    <variable name="toggle" value="0"/>
+    <orientate ref="previous" width="64" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  behavior="pushbox" transition="ghostly" theme="confetti" style="standard" scheme="pointingFX" caption="Credits" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+          local uigizmocredits = uiGizmoGet('credits')
+          if uiGizmoPropertyGet(uigizmocredits,'State') == '0' then
+            uiGizmoPropertySet(uigizmocredits,'State', '3')
+          else
+            uiGizmoPropertySet(uigizmocredits,'State', '0')
+          end
+        ]]>
+      </script>
+    </event>
+    <event state="EXIT"/>
+  </gizmo>  
+
+  <gizmo name="S3GEEditBlank" parent="S3GEEdit" ref="previous" description="S3GE Blank">
+   <orientate ref="previous" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" transition="ghostly" theme="graybox" style="standard" scheme="pointingFX" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <!-- Toys -->
+
+  <doodad name="Teleport" description="Click x 3[0] to Teleport to the Center of the 3D World!" collision="1" operate="1" transit="1" active="1" debug="1" visible="1">
+    <orientate width="96" height="48" x="darklua: xmlAttributeValue = (dbScreenWidthGet() / 2) - 48" y="darklua: xmlAttributeValue = (dbScreenHeightGet() / 2) - 24">
+      <physics noresponse="true"/>
+    </orientate>
+    <variable name="clickcount" value="0"/>
+    <event state="IDLE" behavior="pushbox"/>
+    <event state="ENTER"/>
+    <event state="HOVER"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+          local clickcount = uiGizmoVariableGet(this,'clickcount')
+          if clickcount == '2' then
+					  dbCameraPositionSet(0,0,0,0)
+            dbCameraRotate(0,0,0,0)
+            clickcount = 0
+          else
+            clickcount = clickcount + 1
+          end
+          uiGizmoVariableSet(this,'clickcount',clickcount) 
+          uiGizmoPropertySet(this, 'Description', 'Click x 3['..clickcount..'] to Teleport to the Center of the 3D World!')
+				 ]]>
+      </script>
+    </event>
+    <event state="EXIT"/>
+  </doodad>
+  
+  <doodad name="MoveMe" description="Test MoveBox Behavior" collision="1" operate="1" transit="1" active="1" visible="1" debug="1" >
+    <orientate ref="Teleport" width="96" height="48" yalign="bottom">
+      <physics noresponse="false"/>
+    </orientate>
+    <variable name="pointerlocky" value="1"/>
+    <event state="IDLE" behavior="movebox"/>
+    <event state="ENTER"/>
+    <event state="HOVER"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </doodad>
+
+  <widget name="bompdropper" inputdevice="kbdevice" value="space" collision="1" operate="1" transit="1" audio="1" active="1">
+    <variable name="keyfilter" value="0"/>
+    <variable name="bombcounter" value="0"/>
+    <event state="IDLE" behavior="singlekey" scheme="bombsaway"/>
+    <event state="ENTER"/>
+    <event state="HOVER"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP">
+      <script language="darklua" type="1">
+        <![CDATA[
+		        bombcount = uiGizmoVariableGet(this,'bombcounter')
+		        bombID = dbObjectResourcePop()
+            bombpower = 10000
+		        dbObjectSphereMake(bombID, 1, 10, 10)
+		        dbObjectColorSet(bombID, dbRGBGet(255, 0, 0))
+		        dbObjectPositionSet(bombID, dbCameraPositionXGet(0), dbCameraPositionYGet(0), dbCameraPositionZGet(0))
+            phySphereMake(bombID, 1, 10)           
+            phyForceApply(bombID, dbSIN(dbCameraAngleYGet(0)) * dbCOS(dbCameraAngleXGet(0)) * bombpower, -dbSIN(dbCameraAngleXGet(0)) * bombpower, dbCOS(dbCameraAngleYGet(0)) * dbCOS(dbCameraAngleXGet(0)) * bombpower)
+            bombcount = uiGizmoVariableSet(this, 'bombcounter', bombcount + 1)
+ 	        ]]>
+      </script>
+    </event>
+    <event state="EXIT"/>
+  </widget>
+
+</s3ge>

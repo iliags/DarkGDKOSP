@@ -1,0 +1,348 @@
+\hypertarget{classcl_instance_core}{
+\section{clInstanceCore Class Reference}
+\label{classcl_instance_core}\index{clInstanceCore@{clInstanceCore}}
+}
+
+
+Core instance class responsible for the core structure of a networking instance.  
+
+
+
+
+{\ttfamily \#include $<$clInstanceCore.h$>$}
+
+Inheritance diagram for clInstanceCore:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.921739cm]{classcl_instance_core}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}{Type} \{ {\bfseries CLIENT}, 
+{\bfseries SERVER}, 
+{\bfseries BROADCAST}
+ \}
+\item 
+typedef void($\ast$ \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} )(size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} \&packet)
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_core_a23effe8840b9ad7a5b9c899e3332d8d5}{clInstanceCore} ()
+\item 
+\hyperlink{classcl_instance_core_af0d4c297b8b2b5f8a4e96eb8db4c0fd3}{clInstanceCore} (size\_\-t \hyperlink{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{instanceID}, \hyperlink{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}{Type} \hyperlink{classcl_instance_core_a09705e1a816f5720469b7931d7d7fc0d}{state}, size\_\-t \hyperlink{classcl_instance_core_a05be31d3ac12930f23fb1a06c25b225c}{sendTimeout})
+\item 
+virtual \hyperlink{classcl_instance_core_a01d4c8e66c5a058b7000acffde8e0179}{$\sim$clInstanceCore} ()
+\item 
+\hyperlink{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}{Type} \hyperlink{classcl_instance_core_a4a921fab6c7832cbdd41d7144ad7881b}{GetState} ()
+\item 
+size\_\-t \hyperlink{classcl_instance_core_a9b562e4ed72e3f291df54da562527498}{GetInstanceID} ()
+\item 
+unsigned int \hyperlink{classcl_instance_core_ac409d7c75418026b9d4f1909f80e07a4}{GetSendTimeout} ()
+\item 
+virtual void \hyperlink{classcl_instance_core_afb72728b46b08c2928845cd67acc238d}{DealCompletion} (size\_\-t threadID, \hyperlink{classcl_completion_key}{clCompletionKey} \&completionKey, DWORD bytes, const WSAOVERLAPPED $\ast$overlapped, BOOL success)=0
+\item 
+virtual void \hyperlink{classcl_instance_core_ad5359146ac131598d7f6b86e10577738}{ErrorOccurred} (size\_\-t threadID, size\_\-t clientID)=0
+\item 
+virtual void \hyperlink{classcl_instance_core_a5eb49c613f5b8a49d079fdc66e9f8fd6}{CompletedSendOperation} (size\_\-t threadID, BOOL success, bool shuttingDown, \hyperlink{classcl_socket}{clSocket} $\ast$socket, const WSAOVERLAPPED $\ast$overlapped, size\_\-t clientID)
+\item 
+virtual void \hyperlink{classcl_instance_core_ad2eda53d7f3ba76c2fef2d08e868b81c}{SetContainer} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$container)=0
+\item 
+void \hyperlink{classcl_instance_core_a7c934d532e702646d98f66302b4aa991}{RequestDestroy} ()
+\item 
+bool \hyperlink{classcl_instance_core_aafb188a87bf02b916e9cd3c5a15ae7fd}{GetDestroyRequest} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}{Type} \hyperlink{classcl_instance_core_a7912e94314b18bd6fc490bb9b629e871}{ConvertToType} (int type)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_instance_core_a48878d5b6d36775488f51113d4df8a36}{
+\hyperlink{classcl_status}{clStatus}$<$ bool $>$ {\bfseries shouldBeDestroyed}}
+\label{classcl_instance_core_a48878d5b6d36775488f51113d4df8a36}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_instance_core_ab5c385b1381dbb5720e5fa8a31720935}{SetInstanceID} (size\_\-t newID)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{instanceID}
+\item 
+\hyperlink{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}{Type} \hyperlink{classcl_instance_core_a09705e1a816f5720469b7931d7d7fc0d}{state}
+\item 
+unsigned int \hyperlink{classcl_instance_core_a05be31d3ac12930f23fb1a06c25b225c}{sendTimeout}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcl_instance_core_aa36ab37d58700602c2ce91068947437b}{clInstanceContainer}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core instance class responsible for the core structure of a networking instance. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class should not be directly inherited by instance classes, instead see \hyperlink{classcl_instance_t_c_p}{clInstanceTCP} and \hyperlink{classcl_instance_u_d_p}{clInstanceUDP}. This class makes up the inner workings of any instance whether it be TCP, UDP or any other type. 
+
+\subsection{Member Typedef Documentation}
+\hypertarget{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{
+\index{clInstanceCore@{clInstanceCore}!RecvFunc@{RecvFunc}}
+\index{RecvFunc@{RecvFunc}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{RecvFunc}]{\setlength{\rightskip}{0pt plus 5cm}typedef void($\ast$ {\bf clInstanceCore::RecvFunc})(size\_\-t threadID, {\bf clPacket} \&packet)}}
+\label{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}
+Placeholder method supplied by user that can be called by DarkNet 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}{
+\index{clInstanceCore@{clInstanceCore}!Type@{Type}}
+\index{Type@{Type}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clInstanceCore::Type}}}
+\label{classcl_instance_core_a576bdbf2ccec2df9cb2aab1edfe9dd2e}
+Possible instance types 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_core_a23effe8840b9ad7a5b9c899e3332d8d5}{
+\index{clInstanceCore@{clInstanceCore}!clInstanceCore@{clInstanceCore}}
+\index{clInstanceCore@{clInstanceCore}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{clInstanceCore}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceCore::clInstanceCore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_a23effe8840b9ad7a5b9c899e3332d8d5}
+Constructor that should never be called \par
+ Included to please compiler regarding virtual inheritance 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]always \end{DoxyExceptions}
+\hypertarget{classcl_instance_core_af0d4c297b8b2b5f8a4e96eb8db4c0fd3}{
+\index{clInstanceCore@{clInstanceCore}!clInstanceCore@{clInstanceCore}}
+\index{clInstanceCore@{clInstanceCore}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{clInstanceCore}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceCore::clInstanceCore (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf Type}}]{ state, }
+\item[{size\_\-t}]{ sendTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_af0d4c297b8b2b5f8a4e96eb8db4c0fd3}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Unique identifier for instance \item[{\em state}]Type of instance \item[{\em sendTimeout}]Length of time to wait before cancelling send operation and killing responbile participant \end{DoxyParams}
+\hypertarget{classcl_instance_core_a01d4c8e66c5a058b7000acffde8e0179}{
+\index{clInstanceCore@{clInstanceCore}!$\sim$clInstanceCore@{$\sim$clInstanceCore}}
+\index{$\sim$clInstanceCore@{$\sim$clInstanceCore}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{$\sim$clInstanceCore}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceCore::$\sim$clInstanceCore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_core_a01d4c8e66c5a058b7000acffde8e0179}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_core_a5eb49c613f5b8a49d079fdc66e9f8fd6}{
+\index{clInstanceCore@{clInstanceCore}!CompletedSendOperation@{CompletedSendOperation}}
+\index{CompletedSendOperation@{CompletedSendOperation}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{CompletedSendOperation}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceCore::CompletedSendOperation (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{BOOL}]{ success, }
+\item[{bool}]{ shuttingDown, }
+\item[{{\bf clSocket} $\ast$}]{ socket, }
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_core_a5eb49c613f5b8a49d079fdc66e9f8fd6}
+Deals with completed send operation 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \item[{\em success}]TRUE if the operation completed successfully \item[{\em shuttingDown}]TRUE if the operation failed but this was because the socket is shutting down \item[{\em pointer}]to socket that initiated send operation \item[{\em overlapped}]pointer to WSAOVERLAPPED object associated with send operation \item[{\em clientID}]ID of client that initiated send operation, may be ignored \end{DoxyParams}
+\hypertarget{classcl_instance_core_a7912e94314b18bd6fc490bb9b629e871}{
+\index{clInstanceCore@{clInstanceCore}!ConvertToType@{ConvertToType}}
+\index{ConvertToType@{ConvertToType}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{ConvertToType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::Type} clInstanceCore::ConvertToType (
+\begin{DoxyParamCaption}
+\item[{int}]{ type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_instance_core_a7912e94314b18bd6fc490bb9b629e871}
+Converts integer into enum for Type 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]integer to convert\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+enum equivalent of {\itshape mode\/} 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_core_afb72728b46b08c2928845cd67acc238d}{
+\index{clInstanceCore@{clInstanceCore}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceCore::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clCompletionKey} \&}]{ completionKey, }
+\item[{DWORD}]{ bytes, }
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped, }
+\item[{BOOL}]{ success}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_core_afb72728b46b08c2928845cd67acc238d}
+When send and receive operations are completed on this instance, this method is called
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em completionKey}]reference to completion key which provides information about the completed operation \item[{\em bytes}]number of bytes of data transferred in operation \item[{\em overlapped}]pointer to overlapped operation associated with event \item[{\em success}]TRUE if no error occurred \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_ac63a0685d30154d928d37d3f09561ac8}{clBroadcastState}, \hyperlink{classcl_client_state_aa6eebf5f365dc2afe8617973a9f40049}{clClientState}, and \hyperlink{classcl_server_state_a8d2ff8fdba2c01906239b7f513140fd7}{clServerState}.
+
+\hypertarget{classcl_instance_core_ad5359146ac131598d7f6b86e10577738}{
+\index{clInstanceCore@{clInstanceCore}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceCore::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_core_ad5359146ac131598d7f6b86e10577738}
+Deals with error 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to disconnected \item[{\em threadID}]ID of thread using method \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_a4f5e91ef70339629c71fbaa1f87b2f39}{clBroadcastState}, \hyperlink{classcl_client_state_af30b846a7bed7581322a639758f386f6}{clClientState}, and \hyperlink{classcl_server_state_ad484dd6b0de0014bafe361ba4b8aa19a}{clServerState}.
+
+\hypertarget{classcl_instance_core_aafb188a87bf02b916e9cd3c5a15ae7fd}{
+\index{clInstanceCore@{clInstanceCore}!GetDestroyRequest@{GetDestroyRequest}}
+\index{GetDestroyRequest@{GetDestroyRequest}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{GetDestroyRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceCore::GetDestroyRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_aafb188a87bf02b916e9cd3c5a15ae7fd}
+\begin{DoxyReturn}{Returns}
+true if object wants to be destroyed 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_core_a9b562e4ed72e3f291df54da562527498}{
+\index{clInstanceCore@{clInstanceCore}!GetInstanceID@{GetInstanceID}}
+\index{GetInstanceID@{GetInstanceID}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{GetInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceCore::GetInstanceID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_a9b562e4ed72e3f291df54da562527498}
+\begin{DoxyReturn}{Returns}
+unique instance ID 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_core_ac409d7c75418026b9d4f1909f80e07a4}{
+\index{clInstanceCore@{clInstanceCore}!GetSendTimeout@{GetSendTimeout}}
+\index{GetSendTimeout@{GetSendTimeout}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{GetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int clInstanceCore::GetSendTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_ac409d7c75418026b9d4f1909f80e07a4}
+\begin{DoxyReturn}{Returns}
+length of time that send operation will wait before cancelling and disconnecting 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_core_a4a921fab6c7832cbdd41d7144ad7881b}{
+\index{clInstanceCore@{clInstanceCore}!GetState@{GetState}}
+\index{GetState@{GetState}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{GetState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::Type} clInstanceCore::GetState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_a4a921fab6c7832cbdd41d7144ad7881b}
+\begin{DoxyReturn}{Returns}
+instance type 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_core_a7c934d532e702646d98f66302b4aa991}{
+\index{clInstanceCore@{clInstanceCore}!RequestDestroy@{RequestDestroy}}
+\index{RequestDestroy@{RequestDestroy}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{RequestDestroy}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceCore::RequestDestroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_core_a7c934d532e702646d98f66302b4aa991}
+Requests that object be destroyed \par
+ The container object (clInstance) will then cleanup this object in the following situations:
+
+-\/GetInstanceCore: exception will be thrown since no active instance can be retrieved -\/GetInstanceUDP: exception will be thrown since no active instance can be retrieved -\/GetInstanceTCP: exception will be thrown since no active instance can be retrieved -\/IsInstanceActive: silent -\/LoadInstance: silent if by main thread \hypertarget{classcl_instance_core_ad2eda53d7f3ba76c2fef2d08e868b81c}{
+\index{clInstanceCore@{clInstanceCore}!SetContainer@{SetContainer}}
+\index{SetContainer@{SetContainer}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{SetContainer}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceCore::SetContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ container}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_core_ad2eda53d7f3ba76c2fef2d08e868b81c}
+Sets the instance container that owns this instance 
+\begin{DoxyParams}{Parameters}
+\item[{\em container}]instance container that owns this instance \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_a0daeea87a7c2ffbcb062f254db68041a}{clBroadcastState}, \hyperlink{classcl_client_state_afd1442e1b167bb89c198582804bdb7c9}{clClientState}, \hyperlink{classcl_instance_u_d_p_a2b1ca50c2b076e37fecbff3269083c67}{clInstanceUDP}, and \hyperlink{classcl_server_state_ae2bc69bbd2bff4071cb148da272bfe95}{clServerState}.
+
+\hypertarget{classcl_instance_core_ab5c385b1381dbb5720e5fa8a31720935}{
+\index{clInstanceCore@{clInstanceCore}!SetInstanceID@{SetInstanceID}}
+\index{SetInstanceID@{SetInstanceID}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{SetInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceCore::SetInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_core_ab5c385b1381dbb5720e5fa8a31720935}
+Change instance ID, for use only by \hyperlink{classcl_instance_container}{clInstanceContainer} (via friendship) during initialization 
+\begin{DoxyParams}{Parameters}
+\item[{\em newID}]new instance ID \end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classcl_instance_core_aa36ab37d58700602c2ce91068947437b}{
+\index{clInstanceCore@{clInstanceCore}!clInstanceContainer@{clInstanceContainer}}
+\index{clInstanceContainer@{clInstanceContainer}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{clInstanceContainer}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf clInstanceContainer}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classcl_instance_core_aa36ab37d58700602c2ce91068947437b}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classcl_instance_container}{clInstanceContainer} should only use SetInstanceID method and nothing else 
+\end{DoxyWarning}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{
+\index{clInstanceCore@{clInstanceCore}!instanceID@{instanceID}}
+\index{instanceID@{instanceID}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{instanceID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceCore::instanceID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}
+ID of instance \hypertarget{classcl_instance_core_a05be31d3ac12930f23fb1a06c25b225c}{
+\index{clInstanceCore@{clInstanceCore}!sendTimeout@{sendTimeout}}
+\index{sendTimeout@{sendTimeout}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{sendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf clInstanceCore::sendTimeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_core_a05be31d3ac12930f23fb1a06c25b225c}
+Length of time that send operation will wait before canceling and disconnecting \hypertarget{classcl_instance_core_a09705e1a816f5720469b7931d7d7fc0d}{
+\index{clInstanceCore@{clInstanceCore}!state@{state}}
+\index{state@{state}!clInstanceCore@{clInstanceCore}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Type} {\bf clInstanceCore::state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_core_a09705e1a816f5720469b7931d7d7fc0d}
+Type of instance this object is: 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceCore.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceCore.cpp\end{DoxyCompactItemize}

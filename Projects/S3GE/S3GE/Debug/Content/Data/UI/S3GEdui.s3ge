@@ -1,0 +1,54 @@
+<s3ge version="1.0">
+  
+  <!-- Icon Theme -->
+  
+ <theme name="icon_open" description="First Icon Theme">
+    <event state="IDLE" >
+      <border middlecentersrc="2D/Icon/icon_folder_open.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="ENTER">
+      <border middlecentersrc="2D/Icon/icon_folder_open.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="HOVER">
+      <border middlecentersrc="2D/Icon/icon_folder_hover.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="DOWN">
+      <border middlecentersrc="2D/Icon/icon_folder_down.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="HOLD">
+      <border middlecentersrc="2D/Icon/icon_folder_hold.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="DRAG">
+      <border middlecentersrc="2D/Icon/icon_folder_drag.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="UP">
+      <border middlecentersrc="2D/Icon/icon_folder_down.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="EXIT">
+      <border middlecentersrc="2D/Icon/icon_folder_open.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+    <event state="MOVE">
+      <border middlecentersrc="2D/Icon/icon_folder_open.png" middlecentertile="1" middlecentertransparency="1"/>
+    </event>
+  </theme>
+
+  <!-- Schemes -->
+
+  <scheme name="bombsaway" description="Dropping Bombs">
+    <event state="IDLE"/>
+    <event state="ENTER">
+      <audio system="dgdk" type="sound" loop="0" src="Audio/Sound/bombfire.wav"/>
+    </event>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="UP">
+      <audio system="dgdk" type="sound" loop="0" src="Audio/Sound/bombfire.wav"/>
+    </event>
+    <event state="EXIT"/>
+  </scheme>  
+  
+  <!-- LOAD Application UI Below -->
+  
+  <include src="Data/UI/S3GEd.s3ge" all="true"/>
+     
+</s3ge>

@@ -1,0 +1,131 @@
+\hypertarget{class_test_net_socket}{
+\section{TestNetSocket Class Reference}
+\label{class_test_net_socket}\index{TestNetSocket@{TestNetSocket}}
+}
+
+
+Class that implements \hyperlink{class_net_socket}{NetSocket} so that it can be tested.  
+
+
+Inheritance diagram for TestNetSocket:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_test_net_socket}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_test_net_socket_a3dd4eaac2581358d27bb10b3525fd250}{TestNetSocket} (size\_\-t bufferLength)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_test_net_socket_a2b1b26ddbc607a96f8cfb87d43a0ff2b}{
+bool \hyperlink{class_test_net_socket_a2b1b26ddbc607a96f8cfb87d43a0ff2b}{Recv} ()}
+\label{class_test_net_socket_a2b1b26ddbc607a96f8cfb87d43a0ff2b}
+
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_test_net_socket_a8532d19ebb469fa60ed3c66ca62ad0b7}{Send} (const \hyperlink{class_packet}{Packet} \&packet, bool block, const \hyperlink{class_net_address}{NetAddress} $\ast$sendToAddr, unsigned int timeout)
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{Protocol} \hyperlink{class_test_net_socket_a66959377686b85046b06a71cd88e285e}{GetProtocol} () const 
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_test_net_socket_a048a7cff25a17d0e163c3d182211156c}{DealWithData} (const WSABUF \&buffer, size\_\-t completionBytes, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} recvFunc, size\_\-t clientID, size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Implements virtual method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class that implements \hyperlink{class_net_socket}{NetSocket} so that it can be tested. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_test_net_socket_a3dd4eaac2581358d27bb10b3525fd250}{
+\index{TestNetSocket@{TestNetSocket}!TestNetSocket@{TestNetSocket}}
+\index{TestNetSocket@{TestNetSocket}!TestNetSocket@{TestNetSocket}}
+\subsubsection[{TestNetSocket}]{\setlength{\rightskip}{0pt plus 5cm}TestNetSocket::TestNetSocket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ bufferLength}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_test_net_socket_a3dd4eaac2581358d27bb10b3525fd250}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em bufferLength}]Length of receive buffer in bytes; this is the maximum amount of data that can be received in one receive operation. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_test_net_socket_a048a7cff25a17d0e163c3d182211156c}{
+\index{TestNetSocket@{TestNetSocket}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!TestNetSocket@{TestNetSocket}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void TestNetSocket::DealWithData (
+\begin{DoxyParamCaption}
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{{\bf NetSocket::RecvFunc}}]{ recvFunc, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_net_socket_a048a7cff25a17d0e163c3d182211156c}
+
+
+Implements virtual method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]Ignored. \item[{\em completionBytes}]Ignored. \item[\mbox{\tt[in]} {\em recvFunc}]Ignored. \item[{\em instanceID}]Ignored. \item[{\em clientID}]Ignored. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_socket_a99a69ab706122acc2bbe63c64b279b8e}{NetSocket}.
+
+\hypertarget{class_test_net_socket_a66959377686b85046b06a71cd88e285e}{
+\index{TestNetSocket@{TestNetSocket}!GetProtocol@{GetProtocol}}
+\index{GetProtocol@{GetProtocol}!TestNetSocket@{TestNetSocket}}
+\subsubsection[{GetProtocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Protocol} TestNetSocket::GetProtocol (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_net_socket_a66959377686b85046b06a71cd88e285e}
+
+
+Implements virtual method. 
+
+\begin{DoxyReturn}{Returns}
+protocol type that socket represents. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_a2c62a6815ffb8b17aabd4963f63c1afc}{NetSocket}.
+
+\hypertarget{class_test_net_socket_a8532d19ebb469fa60ed3c66ca62ad0b7}{
+\index{TestNetSocket@{TestNetSocket}!Send@{Send}}
+\index{Send@{Send}!TestNetSocket@{TestNetSocket}}
+\subsubsection[{Send}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} TestNetSocket::Send (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{const {\bf NetAddress} $\ast$}]{ sendToAddr, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_test_net_socket_a8532d19ebb469fa60ed3c66ca62ad0b7}
+
+
+Implements virtual method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]Ignored. \item[{\em block}]Ignored. \item[{\em sendToAddr}]Ignored. \item[{\em timeout}]Ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED}. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_socket_a808894184a1eed1a647e1cdf3c015f3a}{NetSocket}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocket.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,196 @@
+\hypertarget{class_net_socket_listening}{
+\section{NetSocketListening Class Reference}
+\label{class_net_socket_listening}\index{NetSocketListening@{NetSocketListening}}
+}
+
+
+Listening socket used to listen for and accept new TCP connections.  
+
+
+
+
+{\ttfamily \#include $<$NetSocketListening.h$>$}
+
+Inheritance diagram for NetSocketListening:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_net_socket_listening}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_socket_listening_af0a54f8ad6401c0121a58e9d4649f153}{NetSocketListening} (const \hyperlink{class_net_address}{NetAddress} \&localAddr, \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$socketTCP)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_listening_af3c42d13c13a61e717c49825a9dced5c}{
+virtual \hyperlink{class_net_socket_listening_af3c42d13c13a61e717c49825a9dced5c}{$\sim$NetSocketListening} ()}
+\label{class_net_socket_listening_af3c42d13c13a61e717c49825a9dced5c}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$ \hyperlink{class_net_socket_listening_ab350cd4d7db17d7c602396066182295d}{GetSocket} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a constant pointer to the client socket template. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$ \hyperlink{class_net_socket_listening_a596f25dd3f4c8efa4e4e87e4529f87f9}{GetCopySocket} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable deep copy of the client socket template. \item\end{DoxyCompactList}\item 
+SOCKET \hyperlink{class_net_socket_listening_a805f004ca169dc6dadd9863f06be65b5}{AcceptConnection} (size\_\-t testValue, \hyperlink{class_net_address}{NetAddress} $\ast$addr)
+\begin{DoxyCompactList}\small\item\em Deals with any pending connection attempts. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_socket_listening_a397dd748e239d7638ead233d55c9b0dc}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_socket_listening_af676aa9c97ac043095f42f0800e68a1b}{HelperTestClass} (\hyperlink{class_net_socket_listening}{NetSocketListening} \&listeningSocket, \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} \&listeningSocketClient, \hyperlink{class_net_socket_t_c_p}{NetSocketTCP} \&client)
+\begin{DoxyCompactList}\small\item\em Helper test class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$ \hyperlink{class_net_socket_listening_a7356aeb773bfca9a4997ac6bc120c348}{clientSocketTemplate}
+\begin{DoxyCompactList}\small\item\em A client socket template, used when setting up new clients. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Listening socket used to listen for and accept new TCP connections. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Accepts or rejects incoming TCP connection attempts, and stores a template socket object to be used with setting up new clients. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_socket_listening_af0a54f8ad6401c0121a58e9d4649f153}{
+\index{NetSocketListening@{NetSocketListening}!NetSocketListening@{NetSocketListening}}
+\index{NetSocketListening@{NetSocketListening}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{NetSocketListening}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketListening::NetSocketListening (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ localAddr, }
+\item[{{\bf NetSocketTCP} $\ast$}]{ clientSocketTemplate}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_listening_af0a54f8ad6401c0121a58e9d4649f153}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em localAddr}]Local address to bind to, if IP or port is set to 0 then winsock will automatically find one. \item[\mbox{\tt[in]} {\em clientSocketTemplate}]Client socket template which describes how clients (who's connections are accepted by this listening socket) should deal with data received and how big their receive buffers should be. \par
+ A copy of this object is passed to each client during server instance setup. \par
+ The object is not directly used by \hyperlink{class_net_socket_listening}{NetSocketListening} and so this class will not clean it up. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_socket_listening_a805f004ca169dc6dadd9863f06be65b5}{
+\index{NetSocketListening@{NetSocketListening}!AcceptConnection@{AcceptConnection}}
+\index{AcceptConnection@{AcceptConnection}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{AcceptConnection}]{\setlength{\rightskip}{0pt plus 5cm}SOCKET NetSocketListening::AcceptConnection (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ testValue, }
+\item[{{\bf NetAddress} $\ast$}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_listening_a805f004ca169dc6dadd9863f06be65b5}
+
+
+Deals with any pending connection attempts. 
+
+\_\-AcceptDenyClient is called by {\ttfamily WSAAccept} and its return value determines whether a client is accepted or rejected.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em testValue}]If testValue is 0 the connection is rejected, otherwise it is accepted. If non 0 then it represents the client ID that will be assigned to the connecting client. \item[{\em addr}]\mbox{[}out\mbox{]} Address of newly connected client will be copied to here.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]Iff an error occurs in WSAAccept, but not if a connection attempt fails or no connection attempts were found on this call.\end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+new winsock socket object capable of transferring TCP data with newly connected client. 
+
+INVALID\_\-SOCKET if no TCP connection was successfully accepted on this call. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_listening_a596f25dd3f4c8efa4e4e87e4529f87f9}{
+\index{NetSocketListening@{NetSocketListening}!GetCopySocket@{GetCopySocket}}
+\index{GetCopySocket@{GetCopySocket}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{GetCopySocket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketTCP} $\ast$ NetSocketListening::GetCopySocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_listening_a596f25dd3f4c8efa4e4e87e4529f87f9}
+
+
+Retrieves a mutable deep copy of the client socket template. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of the client socket template. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_listening_ab350cd4d7db17d7c602396066182295d}{
+\index{NetSocketListening@{NetSocketListening}!GetSocket@{GetSocket}}
+\index{GetSocket@{GetSocket}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{GetSocket}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetSocketTCP} $\ast$ NetSocketListening::GetSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_listening_ab350cd4d7db17d7c602396066182295d}
+
+
+Retrieves a constant pointer to the client socket template. 
+
+\begin{DoxyReturn}{Returns}
+client socket template. A copy of this object is passed to each client during server instance setup. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_listening_af676aa9c97ac043095f42f0800e68a1b}{
+\index{NetSocketListening@{NetSocketListening}!HelperTestClass@{HelperTestClass}}
+\index{HelperTestClass@{HelperTestClass}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{HelperTestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketListening::HelperTestClass (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocketListening} \&}]{ listeningSocket, }
+\item[{{\bf NetSocketTCP} \&}]{ listeningSocketClient, }
+\item[{{\bf NetSocketTCP} \&}]{ client}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_socket_listening_af676aa9c97ac043095f42f0800e68a1b}
+
+
+Helper test class. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em listeningSocket}]Listening socket to use. \item[\mbox{\tt[in,out]} {\em listeningSocketClient}]Listening socket client, where newly connected client information will be stored. \item[\mbox{\tt[in,out]} {\em client}]Client to connect to listening socket.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if it succeeds, false if it fails. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_listening_a397dd748e239d7638ead233d55c9b0dc}{
+\index{NetSocketListening@{NetSocketListening}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketListening::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_socket_listening_a397dd748e239d7638ead233d55c9b0dc}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_socket_simple_a69c2149f61ab6af018faf89e61ec6592}{NetSocketSimple}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_socket_listening_a7356aeb773bfca9a4997ac6bc120c348}{
+\index{NetSocketListening@{NetSocketListening}!clientSocketTemplate@{clientSocketTemplate}}
+\index{clientSocketTemplate@{clientSocketTemplate}!NetSocketListening@{NetSocketListening}}
+\subsubsection[{clientSocketTemplate}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketTCP}$\ast$ {\bf NetSocketListening::clientSocketTemplate}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_listening_a7356aeb773bfca9a4997ac6bc120c348}
+
+
+A client socket template, used when setting up new clients. 
+
+New clients should be loaded into a copy of this template. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketListening.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketListening.cpp\end{DoxyCompactItemize}

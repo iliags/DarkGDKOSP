@@ -1,0 +1,335 @@
+\hypertarget{classcl_instance_container}{
+\section{clInstanceContainer Class Reference}
+\label{classcl_instance_container}\index{clInstanceContainer@{clInstanceContainer}}
+}
+
+
+Stores instances, allowing safe shutdown of instance.  
+
+
+
+
+{\ttfamily \#include $<$clInstanceContainer.h$>$}
+
+Inheritance diagram for clInstanceContainer:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_instance_container}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_container_a49ac9b33bdb75028208c7b4084cbaacd}{clInstanceContainer} (\hyperlink{classcl_instance_core}{clInstanceCore} $\ast$instance)
+\item 
+\hyperlink{classcl_instance_container_a11553ac24548f650ae0500066cd10fb6}{$\sim$clInstanceContainer} ()
+\item 
+bool \hyperlink{classcl_instance_container_a34dad02080a638bf441c32c3b1a663b9}{IsInstanceLoaded} ()
+\item 
+bool \hyperlink{classcl_instance_container_abd6e085c9c842f8a5b19a9f2fec78ebe}{KillInstance} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+void \hyperlink{classcl_instance_container_a5a98fbed42ac21e30f847e35c3184101}{LoadInstance} (size\_\-t threadID, \hyperlink{classcl_instance_core}{clInstanceCore} $\ast$instance)
+\item 
+\hyperlink{classcl_instance_u_d_p}{clInstanceUDP} $\ast$ \hyperlink{classcl_instance_container_aa07de23793b91688b5cc19a83aa923e6}{GetInstanceUDP} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+\hyperlink{classcl_instance_t_c_p}{clInstanceTCP} $\ast$ \hyperlink{classcl_instance_container_a241894585fe9e2f910b20eea905e8825}{GetInstanceTCP} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+\hyperlink{classcl_instance_core}{clInstanceCore} $\ast$ \hyperlink{classcl_instance_container_a41722ed1f72c38de44fabe0a14a4c29c}{GetInstanceCore} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+\hyperlink{classcl_server_state}{clServerState} $\ast$ \hyperlink{classcl_instance_container_adbbe989e89a36cfbdce75a624c2e0f24}{GetInstanceServer} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+\hyperlink{classcl_client_state}{clClientState} $\ast$ \hyperlink{classcl_instance_container_a882208eec5a378ec679d1a5d00627326}{GetInstanceClient} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+\hyperlink{classcl_broadcast_state}{clBroadcastState} $\ast$ \hyperlink{classcl_instance_container_a2f2a96538fab79ca8f26954f7470f3ab}{GetInstanceBroadcast} (size\_\-t threadID=clNetworkingUtility::GetMainProcessThreadID())
+\item 
+bool \hyperlink{classcl_instance_container_a2cd318091c5dd6da8c31f15edbaa69d6}{DealWithDestroyRequest} (size\_\-t threadID)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_core}{clInstanceCore} $\ast$ \hyperlink{classcl_instance_container_aecc82ed22b1fa93cb36b0fcc6f311f46}{\_\-AccessInstance} (size\_\-t threadID)
+\item 
+void \hyperlink{classcl_instance_container_a68bb446d4b29b6a31ead4af6dd0eb55b}{SetInstanceID} (size\_\-t newID)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_instance_container_ac61b6dc5eff7efcc9dd62e4976b832b0}{
+\hyperlink{classcl_instance_core}{clInstanceCore} $\ast$ {\bfseries instance}}
+\label{classcl_instance_container_ac61b6dc5eff7efcc9dd62e4976b832b0}
+
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcl_instance_container_a95dcaa37ec56761e5d8f6818ff0da441}{clInstanceGroup}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores instances, allowing safe shutdown of instance. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/15/2010. The purposes of this instance are:
+\begin{DoxyItemize}
+\item To manage the life of a \hyperlink{classcl_instance_core}{clInstanceCore} object. An instance object can request it be destroyed. This object will then safely destroy the instance from the main process. Similarly the instance can be manually destroyed using KillInstance. IMPORTANT: any thread must use \hyperlink{classcl_multithread}{clMultithread} methods of this class when accessing any part of the instance e.g. a returned \hyperlink{classcl_instance_t_c_p}{clInstanceTCP} object. The main thread does not need to do this however because it is the only thread that can shutdown the instance. The need to follow this rule is avoided so long as before shutting down the instance only one thread is using the instance (i.e. the thread that shuts down the instance).
+\end{DoxyItemize}
+\end{DoxyRemark}
+
+\begin{DoxyItemize}
+\item To access different types of instance safely. e.g. If you want to access UDP methods of an instance you can use GetInstanceUDP but if that instance has no UDP methods an exception will be thrown. 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_container_a49ac9b33bdb75028208c7b4084cbaacd}{
+\index{clInstanceContainer@{clInstanceContainer}!clInstanceContainer@{clInstanceContainer}}
+\index{clInstanceContainer@{clInstanceContainer}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{clInstanceContainer}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceContainer::clInstanceContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceCore} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a49ac9b33bdb75028208c7b4084cbaacd}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]pointer to instance that this object should manage. This pointer and its data is now owned by this object and should not be used elsewhere. \end{DoxyParams}
+\hypertarget{classcl_instance_container_a11553ac24548f650ae0500066cd10fb6}{
+\index{clInstanceContainer@{clInstanceContainer}!$\sim$clInstanceContainer@{$\sim$clInstanceContainer}}
+\index{$\sim$clInstanceContainer@{$\sim$clInstanceContainer}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{$\sim$clInstanceContainer}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceContainer::$\sim$clInstanceContainer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a11553ac24548f650ae0500066cd10fb6}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_container_aecc82ed22b1fa93cb36b0fcc6f311f46}{
+\index{clInstanceContainer@{clInstanceContainer}!\_\-AccessInstance@{\_\-AccessInstance}}
+\index{\_\-AccessInstance@{\_\-AccessInstance}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{\_\-AccessInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore} $\ast$ clInstanceContainer::\_\-AccessInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_container_aecc82ed22b1fa93cb36b0fcc6f311f46}
+Access currently loaded instance \par
+ 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object \end{DoxyParams}
+\hypertarget{classcl_instance_container_a2cd318091c5dd6da8c31f15edbaa69d6}{
+\index{clInstanceContainer@{clInstanceContainer}!DealWithDestroyRequest@{DealWithDestroyRequest}}
+\index{DealWithDestroyRequest@{DealWithDestroyRequest}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{DealWithDestroyRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceContainer::DealWithDestroyRequest (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a2cd318091c5dd6da8c31f15edbaa69d6}
+Cleans up instance if instance requests this 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method, if not main thread then method does nothing \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if instance was cleaned up, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_container_a2f2a96538fab79ca8f26954f7470f3ab}{
+\index{clInstanceContainer@{clInstanceContainer}!GetInstanceBroadcast@{GetInstanceBroadcast}}
+\index{GetInstanceBroadcast@{GetInstanceBroadcast}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{GetInstanceBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clBroadcastState} $\ast$ clInstanceContainer::GetInstanceBroadcast (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a2f2a96538fab79ca8f26954f7470f3ab}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{classcl_broadcast_state}{clBroadcastState} object 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must have read control when using object if not the main thread 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if instance is not of this type \end{DoxyExceptions}
+\hypertarget{classcl_instance_container_a882208eec5a378ec679d1a5d00627326}{
+\index{clInstanceContainer@{clInstanceContainer}!GetInstanceClient@{GetInstanceClient}}
+\index{GetInstanceClient@{GetInstanceClient}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{GetInstanceClient}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clClientState} $\ast$ clInstanceContainer::GetInstanceClient (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a882208eec5a378ec679d1a5d00627326}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{classcl_client_state}{clClientState} object 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must have read control when using object if not the main thread 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if instance is not of this type \end{DoxyExceptions}
+\hypertarget{classcl_instance_container_a41722ed1f72c38de44fabe0a14a4c29c}{
+\index{clInstanceContainer@{clInstanceContainer}!GetInstanceCore@{GetInstanceCore}}
+\index{GetInstanceCore@{GetInstanceCore}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{GetInstanceCore}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore} $\ast$ clInstanceContainer::GetInstanceCore (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a41722ed1f72c38de44fabe0a14a4c29c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{classcl_instance_core}{clInstanceCore} object 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must have read control when using object if not the main thread 
+\end{DoxyWarning}
+\hypertarget{classcl_instance_container_adbbe989e89a36cfbdce75a624c2e0f24}{
+\index{clInstanceContainer@{clInstanceContainer}!GetInstanceServer@{GetInstanceServer}}
+\index{GetInstanceServer@{GetInstanceServer}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{GetInstanceServer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clServerState} $\ast$ clInstanceContainer::GetInstanceServer (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_adbbe989e89a36cfbdce75a624c2e0f24}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{classcl_server_state}{clServerState} object 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must have read control when using object if not the main thread 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if instance is not of this type \end{DoxyExceptions}
+\hypertarget{classcl_instance_container_a241894585fe9e2f910b20eea905e8825}{
+\index{clInstanceContainer@{clInstanceContainer}!GetInstanceTCP@{GetInstanceTCP}}
+\index{GetInstanceTCP@{GetInstanceTCP}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{GetInstanceTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceTCP} $\ast$ clInstanceContainer::GetInstanceTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a241894585fe9e2f910b20eea905e8825}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{classcl_instance_t_c_p}{clInstanceTCP} object 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must have read control when using object if not the main thread 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if instance is not of this type \end{DoxyExceptions}
+\hypertarget{classcl_instance_container_aa07de23793b91688b5cc19a83aa923e6}{
+\index{clInstanceContainer@{clInstanceContainer}!GetInstanceUDP@{GetInstanceUDP}}
+\index{GetInstanceUDP@{GetInstanceUDP}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{GetInstanceUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceUDP} $\ast$ clInstanceContainer::GetInstanceUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_aa07de23793b91688b5cc19a83aa923e6}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+instance as \hyperlink{classcl_instance_u_d_p}{clInstanceUDP} object 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+must have read control when using object if not the main thread 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if instance is not of this type \end{DoxyExceptions}
+\hypertarget{classcl_instance_container_a34dad02080a638bf441c32c3b1a663b9}{
+\index{clInstanceContainer@{clInstanceContainer}!IsInstanceLoaded@{IsInstanceLoaded}}
+\index{IsInstanceLoaded@{IsInstanceLoaded}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{IsInstanceLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceContainer::IsInstanceLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a34dad02080a638bf441c32c3b1a663b9}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if an instance is loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_container_abd6e085c9c842f8a5b19a9f2fec78ebe}{
+\index{clInstanceContainer@{clInstanceContainer}!KillInstance@{KillInstance}}
+\index{KillInstance@{KillInstance}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{KillInstance}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceContainer::KillInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID = {\ttfamily clNetworkingUtility::GetMainProcessThreadID()}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_abd6e085c9c842f8a5b19a9f2fec78ebe}
+Destroy currently loaded instance \par
+ Has no impact if threadID is not that of main thread 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object (optional, default = \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if instance was destroyed, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_container_a5a98fbed42ac21e30f847e35c3184101}{
+\index{clInstanceContainer@{clInstanceContainer}!LoadInstance@{LoadInstance}}
+\index{LoadInstance@{LoadInstance}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{LoadInstance}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceContainer::LoadInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clInstanceCore} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_container_a5a98fbed42ac21e30f847e35c3184101}
+Loads an instance into this object 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if an instance is already loaded and could not be killed \end{DoxyExceptions}
+\begin{DoxyNote}{Note}
+deals with destroy requests 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]thread ID of thread using this object \item[\mbox{\tt[in]} {\em instance}]instance to load. This pointer and its data is now owned by this object and should not be used elsewhere. \end{DoxyParams}
+\hypertarget{classcl_instance_container_a68bb446d4b29b6a31ead4af6dd0eb55b}{
+\index{clInstanceContainer@{clInstanceContainer}!SetInstanceID@{SetInstanceID}}
+\index{SetInstanceID@{SetInstanceID}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{SetInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceContainer::SetInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_container_a68bb446d4b29b6a31ead4af6dd0eb55b}
+For use only by \hyperlink{classcl_instance_group}{clInstanceGroup} (via friendship) to set instanceID during initialization 
+\begin{DoxyParams}{Parameters}
+\item[{\em newID}]new instance ID \end{DoxyParams}
+
+
+\subsection{Friends And Related Function Documentation}
+\hypertarget{classcl_instance_container_a95dcaa37ec56761e5d8f6818ff0da441}{
+\index{clInstanceContainer@{clInstanceContainer}!clInstanceGroup@{clInstanceGroup}}
+\index{clInstanceGroup@{clInstanceGroup}!clInstanceContainer@{clInstanceContainer}}
+\subsubsection[{clInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}friend class {\bf clInstanceGroup}\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
+\label{classcl_instance_container_a95dcaa37ec56761e5d8f6818ff0da441}
+\begin{DoxyWarning}{Warning}
+\hyperlink{classcl_instance_group}{clInstanceGroup} should only use SetInstanceID and nothing else 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceContainer.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceContainer.cpp\end{DoxyCompactItemize}

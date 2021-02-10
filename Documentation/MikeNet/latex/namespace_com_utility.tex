@@ -1,0 +1,86 @@
+\hypertarget{namespace_com_utility}{
+\section{ComUtility Namespace Reference}
+\label{namespace_com_utility}\index{ComUtility@{ComUtility}}
+}
+
+
+Common COM operations.  
+
+
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{namespace_com_utility_ac5510fce1ef3fa6f7c40a7fb94751d00}{Initialize} ()
+\begin{DoxyCompactList}\small\item\em Initializes COM. \item\end{DoxyCompactList}\item 
+\hypertarget{namespace_com_utility_adbbe42be9c6a35833b6e77e05f2c9f50}{
+void \hyperlink{namespace_com_utility_adbbe42be9c6a35833b6e77e05f2c9f50}{Cleanup} ()}
+\label{namespace_com_utility_adbbe42be9c6a35833b6e77e05f2c9f50}
+
+\begin{DoxyCompactList}\small\item\em Cleanups up COM. \item\end{DoxyCompactList}\item 
+VARIANT\_\-BOOL \hyperlink{namespace_com_utility_a03d035b7fc2030f7a69f2fa415ad4238}{ConvertBoolean} (bool cBool)
+\begin{DoxyCompactList}\small\item\em Converts from bool to VARIANT\_\-BOOL. \item\end{DoxyCompactList}\item 
+bool \hyperlink{namespace_com_utility_a260bc1227a67aae4afb584984f8ee7bb}{ConvertBoolean} (VARIANT\_\-BOOL vBool)
+\begin{DoxyCompactList}\small\item\em Converts from VARIANT\_\-BOOL to bool. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Common COM operations. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 10/16/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Function Documentation}
+\hypertarget{namespace_com_utility_a260bc1227a67aae4afb584984f8ee7bb}{
+\index{ComUtility@{ComUtility}!ConvertBoolean@{ConvertBoolean}}
+\index{ConvertBoolean@{ConvertBoolean}!ComUtility@{ComUtility}}
+\subsubsection[{ConvertBoolean}]{\setlength{\rightskip}{0pt plus 5cm}bool ComUtility::ConvertBoolean (
+\begin{DoxyParamCaption}
+\item[{VARIANT\_\-BOOL}]{ vBool}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_com_utility_a260bc1227a67aae4afb584984f8ee7bb}
+
+
+Converts from VARIANT\_\-BOOL to bool. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em vBool}]Boolean to convert.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted boolean. 
+\end{DoxyReturn}
+\hypertarget{namespace_com_utility_a03d035b7fc2030f7a69f2fa415ad4238}{
+\index{ComUtility@{ComUtility}!ConvertBoolean@{ConvertBoolean}}
+\index{ConvertBoolean@{ConvertBoolean}!ComUtility@{ComUtility}}
+\subsubsection[{ConvertBoolean}]{\setlength{\rightskip}{0pt plus 5cm}VARIANT\_\-BOOL ComUtility::ConvertBoolean (
+\begin{DoxyParamCaption}
+\item[{bool}]{ cBool}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_com_utility_a03d035b7fc2030f7a69f2fa415ad4238}
+
+
+Converts from bool to VARIANT\_\-BOOL. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em cBool}]Boolean to convert.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted boolean. 
+\end{DoxyReturn}
+\hypertarget{namespace_com_utility_ac5510fce1ef3fa6f7c40a7fb94751d00}{
+\index{ComUtility@{ComUtility}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ComUtility@{ComUtility}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}bool ComUtility::Initialize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{namespace_com_utility_ac5510fce1ef3fa6f7c40a7fb94751d00}
+
+
+Initializes COM. 
+
+\begin{DoxyReturn}{Returns}
+true if initialization occurred, false if COM was already initialized. 
+\end{DoxyReturn}

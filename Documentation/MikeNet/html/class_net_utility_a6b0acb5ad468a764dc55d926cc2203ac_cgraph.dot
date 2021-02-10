@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetUtility::GetEverythingLoaded",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetUtility::GetCompletionPortSetup",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_utility.html#af72b31d4be41360dae73248b3eff89ad"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetUtility::GetInstanceGroupLoaded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_utility.html#a32aef288e7a5b6d3bb0eb2fb52593d7d"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetUtility::GetLocalInfoLoaded",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_utility.html#a2b9dbf9017ed18c2604852d98b950a3f"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetUtility::GetWinsockActive",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_utility.html#a6d03941c6896d07a309eb96b0ac18bdd"];
+}

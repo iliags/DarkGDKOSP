@@ -1,0 +1,394 @@
+\hypertarget{classcl_per_client_u_d_p}{
+\section{clPerClientUDP Class Reference}
+\label{classcl_per_client_u_d_p}\index{clPerClientUDP@{clPerClientUDP}}
+}
+
+
+UDP mode where only in order packets are received, some in order packets may be discarded however.  
+
+
+
+
+{\ttfamily \#include $<$clPerClientUDP.h$>$}
+
+Inheritance diagram for clPerClientUDP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_per_client_u_d_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_per_client_u_d_p_a01f4f49f8c3aefd4a88f891b8346815c}{clPerClientUDP} (size\_\-t recvSize, size\_\-t numClients, size\_\-t numOperations, bool \hyperlink{classcl_per_client_u_d_p_ae270ad0657e279032f9e1bebee3f0698}{perOperation}, INT\_\-PTR \hyperlink{classcl_per_client_u_d_p_a997243e373a1d997f27b111d06cccd90}{decryptKey})
+\item 
+\hyperlink{classcl_per_client_u_d_p_ab08cd50d1dda3900f42d99e15093deeb}{$\sim$clPerClientUDP} ()
+\item 
+\hyperlink{classcl_per_client_u_d_p_abebbec5f47158b191db9108b824ab31d}{clPerClientUDP} (const \hyperlink{classcl_per_client_u_d_p}{clPerClientUDP} \&)
+\item 
+\hyperlink{classcl_per_client_u_d_p}{clPerClientUDP} \& \hyperlink{classcl_per_client_u_d_p_a8401c5217b43d904b053e0fbcb0fa462}{operator=} (const \hyperlink{classcl_per_client_u_d_p}{clPerClientUDP} \&)
+\item 
+\hyperlink{classcl_per_client_u_d_p}{clPerClientUDP} $\ast$ \hyperlink{classcl_per_client_u_d_p_a927ff441992e605aaa5caf2bcb0a19b6}{Clone} () const 
+\item 
+void \hyperlink{classcl_per_client_u_d_p_ae7d279662aacd52fae6d64683820e653}{Reset} (size\_\-t clientID)
+\item 
+void \hyperlink{classcl_per_client_u_d_p_a650dc543709d94ea2826871a15e526f5}{Reset} ()
+\item 
+void \hyperlink{classcl_per_client_u_d_p_acf380c1466abb6941edb950801d09b20}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFuncUDP)
+\item 
+size\_\-t \hyperlink{classcl_per_client_u_d_p_ad56e31637dfbb161912701621da7ecf6}{GetPacketAmount} (size\_\-t clientID, size\_\-t operationID) const 
+\item 
+size\_\-t \hyperlink{classcl_per_client_u_d_p_ae5adb603508d2a61d53b95c48b077e73}{GetPacketFromStore} (size\_\-t clientID, size\_\-t operationID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+clock\_\-t \hyperlink{classcl_per_client_u_d_p_a1b94d67fd8a10170e31f9b65c4901b0d}{GetRecvCounter} (size\_\-t clientID, size\_\-t operationID)
+\item 
+void \hyperlink{classcl_per_client_u_d_p_a97cce2497fa9687fa5854f2c0a3fc684}{SetRecvCounter} (size\_\-t clientID, size\_\-t operationID, clock\_\-t newCounter)
+\item 
+\hyperlink{classcl_shared_send}{clSharedSend} $\ast$ \hyperlink{classcl_per_client_u_d_p_a33f25535cfef99e9abe9b2556928f364}{GetSendObject} (const \hyperlink{classcl_packet}{clPacket} $\ast$packet, bool block)
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_per_client_u_d_p_aa0f2be71b5dac611c2a6c6fd8b17c00a}{GetProtocolMode} () const 
+\item 
+size\_\-t \hyperlink{classcl_per_client_u_d_p_a3bfc57d56a06ce0a719d7c699029861b}{GetNumOperations} () const 
+\item 
+size\_\-t \hyperlink{classcl_per_client_u_d_p_a273adfddaf1db4ff56d6a17b10aa7674}{GetNumClients} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_per_client_u_d_p_a120350a3fece7004e731d883e1387426}{\_\-Copy} (const \hyperlink{classcl_per_client_u_d_p}{clPerClientUDP} \&copyMe)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_store_vector}{clStoreVector}$<$ \hyperlink{classcl_store_vector}{clStoreVector}$<$ \hyperlink{classcl_packet}{clPacket} $>$ $>$ \hyperlink{classcl_per_client_u_d_p_a7ed46a6713cec6ebc3c788d7542bdc58}{packetStore}
+\item 
+bool \hyperlink{classcl_per_client_u_d_p_ae270ad0657e279032f9e1bebee3f0698}{perOperation}
+\item 
+INT\_\-PTR \hyperlink{classcl_per_client_u_d_p_a997243e373a1d997f27b111d06cccd90}{decryptKey}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP mode where only in order packets are received, some in order packets may be discarded however. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This UDP mode is most useful with slow languages which cannot deal with large numbers of packets. The UDP mode will only ever have one packet in its store, this will be the newest packet received. Due to the lack of a queue, the system cannot get clogged up dealing with too many packets.
+
+The clock() value increments every millisecond and so acts as a counter. This should be changed to operate in the same way as \hyperlink{classcl_catch_all_no_u_d_p}{clCatchAllNoUDP} using an actual counter so that packet loss can be detected.
+
+The prefix is 32 bits for the 32 bit version of this plugin and 64 bits for the 64 bit version.
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_per_client_u_d_p_a01f4f49f8c3aefd4a88f891b8346815c}{
+\index{clPerClientUDP@{clPerClientUDP}!clPerClientUDP@{clPerClientUDP}}
+\index{clPerClientUDP@{clPerClientUDP}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{clPerClientUDP}]{\setlength{\rightskip}{0pt plus 5cm}clPerClientUDP::clPerClientUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ recvSize, }
+\item[{size\_\-t}]{ numClients, }
+\item[{size\_\-t}]{ numOperations, }
+\item[{bool}]{ perOperation, }
+\item[{INT\_\-PTR}]{ decryptKey}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_per_client_u_d_p_a01f4f49f8c3aefd4a88f891b8346815c}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em recvSize}]maximum size of UDP packet that can be received \item[{\em numClients}]number of clients that object needs to store received packets for \item[{\em numOperations}]number of operations per client that object needs to store received packets for, ignored if {\itshape perOperation\/} is true \item[{\em perOperation}]if true operation ID will be extracted from packet and object is used in per client, per operation UDP mode \item[{\em decryptKey}]ignored if NULL, otherwise represents memory address of \hyperlink{classcl_encrypt_key}{clEncryptKey} object used to decrypt incoming packets before reading them \end{DoxyParams}
+\hypertarget{classcl_per_client_u_d_p_ab08cd50d1dda3900f42d99e15093deeb}{
+\index{clPerClientUDP@{clPerClientUDP}!$\sim$clPerClientUDP@{$\sim$clPerClientUDP}}
+\index{$\sim$clPerClientUDP@{$\sim$clPerClientUDP}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{$\sim$clPerClientUDP}]{\setlength{\rightskip}{0pt plus 5cm}clPerClientUDP::$\sim$clPerClientUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_per_client_u_d_p_ab08cd50d1dda3900f42d99e15093deeb}
+Destructor \hypertarget{classcl_per_client_u_d_p_abebbec5f47158b191db9108b824ab31d}{
+\index{clPerClientUDP@{clPerClientUDP}!clPerClientUDP@{clPerClientUDP}}
+\index{clPerClientUDP@{clPerClientUDP}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{clPerClientUDP}]{\setlength{\rightskip}{0pt plus 5cm}clPerClientUDP::clPerClientUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPerClientUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_per_client_u_d_p_abebbec5f47158b191db9108b824ab31d}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_per_client_u_d_p_a120350a3fece7004e731d883e1387426}{
+\index{clPerClientUDP@{clPerClientUDP}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clPerClientUDP::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPerClientUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a120350a3fece7004e731d883e1387426}
+Copies {\itshape copyMe\/} into this object (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_per_client_u_d_p_a927ff441992e605aaa5caf2bcb0a19b6}{
+\index{clPerClientUDP@{clPerClientUDP}!Clone@{Clone}}
+\index{Clone@{Clone}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPerClientUDP} $\ast$ clPerClientUDP::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a927ff441992e605aaa5caf2bcb0a19b6}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a62267e9d085f8e6b72a91fadf4a55670}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_acf380c1466abb6941edb950801d09b20}{
+\index{clPerClientUDP@{clPerClientUDP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void clPerClientUDP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ udpRecvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_acf380c1466abb6941edb950801d09b20}
+Deals with a recently received UDP packet \par
+ Packet must be deemed new (based on its clock value) 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that packet was received on \item[{\em completionBytes}]size of packet stored in {\itshape buffer\/} \item[{\em buffer}]where newly received packet is stored \item[{\em clientID}]ID of client that packet was received from, 0 in client state \item[{\em instanceID}]instance that packet was received on \item[\mbox{\tt[in]} {\em udpRecvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_protocol_a2b6f3bd561af01c5ef02b06ebe24c5a0}{clSharedProtocol}.
+
+\hypertarget{classcl_per_client_u_d_p_a273adfddaf1db4ff56d6a17b10aa7674}{
+\index{clPerClientUDP@{clPerClientUDP}!GetNumClients@{GetNumClients}}
+\index{GetNumClients@{GetNumClients}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetNumClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPerClientUDP::GetNumClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a273adfddaf1db4ff56d6a17b10aa7674}
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_afacd36fa8d2b7bb21bff349cf0c1b3c9}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_a3bfc57d56a06ce0a719d7c699029861b}{
+\index{clPerClientUDP@{clPerClientUDP}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPerClientUDP::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a3bfc57d56a06ce0a719d7c699029861b}
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage 
+
+1 if in per client mode (not per client per operation) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a4018cccdd8593a0df78f7dd6f59c40c1}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_ad56e31637dfbb161912701621da7ecf6}{
+\index{clPerClientUDP@{clPerClientUDP}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPerClientUDP::GetPacketAmount (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_ad56e31637dfbb161912701621da7ecf6}
+Returns the number of packets in the packet queue 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to check \item[{\em operationID}]operation ID of operation to check, ignored if {\ttfamily perOperation} is true \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if clientID is out of bounds \item[{\em \hyperlink{structcl_error}{clError}}]if operationID is out of bounds \end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+1 if a newly received packet exists in the packet queue for the specified clientID and operationID, 0 if not 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_ac27f28fb266c9faaf44ee7e515ab0727}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_ae5adb603508d2a61d53b95c48b077e73}{
+\index{clPerClientUDP@{clPerClientUDP}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clPerClientUDP::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_ae5adb603508d2a61d53b95c48b077e73}
+Copies a packet from the packet store into {\itshape destination\/} and clears the original packet indicating that it has been transferred to user 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \item[{\em operationID}]operation ID of operation to use, ignored if {\ttfamily perOperation} is true \item[\mbox{\tt[out]} {\em destination}]pointer to a \hyperlink{classcl_packet}{clPacket} object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in packet queue before this method was called 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if clientID is out of bounds \item[{\em \hyperlink{structcl_error}{clError}}]if operationID is out of bounds \end{DoxyExceptions}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a8b6e71b0ce806b23e378fe7206a0d8a5}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_aa0f2be71b5dac611c2a6c6fd8b17c00a}{
+\index{clPerClientUDP@{clPerClientUDP}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clPerClientUDP::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_aa0f2be71b5dac611c2a6c6fd8b17c00a}
+\begin{DoxyReturn}{Returns}
+UDP mode that this class represents 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}{clSharedProtocol}.
+
+\hypertarget{classcl_per_client_u_d_p_a1b94d67fd8a10170e31f9b65c4901b0d}{
+\index{clPerClientUDP@{clPerClientUDP}!GetRecvCounter@{GetRecvCounter}}
+\index{GetRecvCounter@{GetRecvCounter}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetRecvCounter}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t clPerClientUDP::GetRecvCounter (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_per_client_u_d_p_a1b94d67fd8a10170e31f9b65c4901b0d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \item[{\em operationID}]operation ID of operation to use, ignored if {\ttfamily perOperation} is true \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+age of currently stored packet for specified client and operation 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if clientID is out of bounds \item[{\em \hyperlink{structcl_error}{clError}}]if operationID is out of bounds \end{DoxyExceptions}
+\hypertarget{classcl_per_client_u_d_p_a33f25535cfef99e9abe9b2556928f364}{
+\index{clPerClientUDP@{clPerClientUDP}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedSend} $\ast$ clPerClientUDP::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a33f25535cfef99e9abe9b2556928f364}
+\begin{DoxyReturn}{Returns}
+a send object with a prefix of the return value of {\ttfamily clock()} casted to size\_\-t which is the system timer 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]true if sending should be synchronous, false if sending should be asynchronous \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}{clSharedProtocol}.
+
+\hypertarget{classcl_per_client_u_d_p_a8401c5217b43d904b053e0fbcb0fa462}{
+\index{clPerClientUDP@{clPerClientUDP}!operator=@{operator=}}
+\index{operator=@{operator=}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPerClientUDP} \& clPerClientUDP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPerClientUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_per_client_u_d_p_a8401c5217b43d904b053e0fbcb0fa462}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_per_client_u_d_p_a650dc543709d94ea2826871a15e526f5}{
+\index{clPerClientUDP@{clPerClientUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void clPerClientUDP::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a650dc543709d94ea2826871a15e526f5}
+Reset all client's packet store 
+
+Implements \hyperlink{classcl_shared_u_d_p_a086fea6811fed1dc76d54ba9cbf52763}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_ae7d279662aacd52fae6d64683820e653}{
+\index{clPerClientUDP@{clPerClientUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void clPerClientUDP::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_per_client_u_d_p_ae7d279662aacd52fae6d64683820e653}
+Reset client's packet store, done when client leaves 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]clientID of client to reset \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a6985d2cd42ad37bc2477efb162bad157}{clSharedUDP}.
+
+\hypertarget{classcl_per_client_u_d_p_a97cce2497fa9687fa5854f2c0a3fc684}{
+\index{clPerClientUDP@{clPerClientUDP}!SetRecvCounter@{SetRecvCounter}}
+\index{SetRecvCounter@{SetRecvCounter}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{SetRecvCounter}]{\setlength{\rightskip}{0pt plus 5cm}void clPerClientUDP::SetRecvCounter (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{clock\_\-t}]{ newCounter}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_per_client_u_d_p_a97cce2497fa9687fa5854f2c0a3fc684}
+Sets {\ttfamily recvCounter} which indicates age of current data 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \item[{\em operationID}]operation ID of operation to use, ignored if {\ttfamily perOperation} is true \item[{\em newCounter}]{\ttfamily recvCounter} will be set to this \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if clientID is out of bounds \item[{\em \hyperlink{structcl_error}{clError}}]if operationID is out of bounds \end{DoxyExceptions}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_per_client_u_d_p_a997243e373a1d997f27b111d06cccd90}{
+\index{clPerClientUDP@{clPerClientUDP}!decryptKey@{decryptKey}}
+\index{decryptKey@{decryptKey}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{decryptKey}]{\setlength{\rightskip}{0pt plus 5cm}INT\_\-PTR {\bf clPerClientUDP::decryptKey}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a997243e373a1d997f27b111d06cccd90}
+decryptKey ignored if NULL, otherwise represents memory address of \hyperlink{classcl_encrypt_key}{clEncryptKey} object used to decrypt incoming packets before reading them \hypertarget{classcl_per_client_u_d_p_a7ed46a6713cec6ebc3c788d7542bdc58}{
+\index{clPerClientUDP@{clPerClientUDP}!packetStore@{packetStore}}
+\index{packetStore@{packetStore}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{packetStore}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStoreVector}$<${\bf clStoreVector}$<${\bf clPacket}$>$ $>$ {\bf clPerClientUDP::packetStore}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_per_client_u_d_p_a7ed46a6713cec6ebc3c788d7542bdc58}
+2D vector that stores received packets and safely controls access \hypertarget{classcl_per_client_u_d_p_ae270ad0657e279032f9e1bebee3f0698}{
+\index{clPerClientUDP@{clPerClientUDP}!perOperation@{perOperation}}
+\index{perOperation@{perOperation}!clPerClientUDP@{clPerClientUDP}}
+\subsubsection[{perOperation}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clPerClientUDP::perOperation}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_per_client_u_d_p_ae270ad0657e279032f9e1bebee3f0698}
+true if object is used in 'per client, per operation' UDP mode, false if object is used in 'per client' UDP mode 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPerClientUDP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPerClientUDP.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,241 @@
+\hypertarget{class_thread_single_message}{
+\section{ThreadSingleMessage Class Reference}
+\label{class_thread_single_message}\index{ThreadSingleMessage@{ThreadSingleMessage}}
+}
+
+
+Extends \hyperlink{class_thread_single}{ThreadSingle} with additional functionality for threads to receive and be sent \hyperlink{class_thread_message_item}{ThreadMessageItem} messages.  
+
+
+
+
+{\ttfamily \#include $<$ThreadSingleMessage.h$>$}
+
+Inheritance diagram for ThreadSingleMessage:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_thread_single_message}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_single_message_a3dc51455525b6c764817e9ee7d598010}{ThreadSingleMessage} (LPTHREAD\_\-START\_\-ROUTINE function, void $\ast$\hyperlink{class_thread_single_ad0aa14d604bca6bb1ba5ec5721cd859c}{parameter}, bool \hyperlink{class_thread_single_a710b7388ce616e858f776efab32fbe61}{suspended}, size\_\-t \hyperlink{class_thread_single_a43cc2e11c57294cfcf6f61ef9754f70b}{manualThreadID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_message_ab350d533f27480153bda0d817a55cd23}{
+virtual \hyperlink{class_thread_single_message_ab350d533f27480153bda0d817a55cd23}{$\sim$ThreadSingleMessage} (void)}
+\label{class_thread_single_message_ab350d533f27480153bda0d817a55cd23}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_thread_single_message_af5816a537c68ced255d2d8331a1ab641}{PostMessageItem} (\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$message)
+\begin{DoxyCompactList}\small\item\em Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{GetMessageItem()}. \item\end{DoxyCompactList}\item 
+\hyperlink{class_thread_message_item}{ThreadMessageItem} $\ast$ \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{GetMessageItem} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a message from the message queue. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_message_ad7e22cff6fc4a778b7dcd208a1678f9b}{IsQueueEmpty} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the message queue is empty. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_message_a44b112ebedfba5e48ca8384a2db24061}{GetTerminateRequest} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the thread should exit. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_thread_single_message_a070c58a93f28c1a2514506c55e1810fb}{TerminateFriendly} (bool block)
+\begin{DoxyCompactList}\small\item\em Requests that the thread exits. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_message_a63c92021e21e3c06512fabad7e3c7a91}{
+void \hyperlink{class_thread_single_message_a63c92021e21e3c06512fabad7e3c7a91}{WaitForThreadToBeReady} ()}
+\label{class_thread_single_message_a63c92021e21e3c06512fabad7e3c7a91}
+
+\begin{DoxyCompactList}\small\item\em Does not return until thread is ready for messages to be sent. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_thread_single_message_a1bd833e3ffcd36b3cfe26648a7e74625}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_single_message_adc4e41d8cb0847c6e340951172bd23af}{
+static const HWND \hyperlink{class_thread_single_message_adc4e41d8cb0847c6e340951172bd23af}{THIS\_\-QUEUE\_\-ONLY}}
+\label{class_thread_single_message_adc4e41d8cb0847c6e340951172bd23af}
+
+\begin{DoxyCompactList}\small\item\em Value to pass to windows functions to ensure that messages dealt with are only ones that are intended specifically for this thread. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_thread_single_message_ae120ad936311a2c422789a8a5b3d7304}{threadReady}
+\begin{DoxyCompactList}\small\item\em Signaled when the thread is ready to receive messages. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Extends \hyperlink{class_thread_single}{ThreadSingle} with additional functionality for threads to receive and be sent \hyperlink{class_thread_message_item}{ThreadMessageItem} messages. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/16/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_single_message_a3dc51455525b6c764817e9ee7d598010}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!ThreadSingleMessage@{ThreadSingleMessage}}
+\index{ThreadSingleMessage@{ThreadSingleMessage}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{ThreadSingleMessage}]{\setlength{\rightskip}{0pt plus 5cm}ThreadSingleMessage::ThreadSingleMessage (
+\begin{DoxyParamCaption}
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function, }
+\item[{void $\ast$}]{ parameter, }
+\item[{bool}]{ suspended, }
+\item[{size\_\-t}]{ manualThreadID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_message_a3dc51455525b6c764817e9ee7d598010}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em function}]Entry point for thread. A pointer to this object will be passed as a parameter. \item[{\em parameter}]Parameter to be passed to thread. \item[{\em suspended}]If true the thread will not begin execution until \hyperlink{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}{Resume()} is used. \item[{\em manualThreadID}]Custom thread ID that can be retrieved by thread (optional, default = 0). \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!GetMessageItem@{GetMessageItem}}
+\index{GetMessageItem@{GetMessageItem}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{GetMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ThreadMessageItem} $\ast$ ThreadSingleMessage::GetMessageItem (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}
+
+
+Retrieves a message from the message queue. 
+
+Messages are posted using PostMessageItem.
+
+\begin{DoxyReturn}{Returns}
+the message item that was retrieved. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_a44b112ebedfba5e48ca8384a2db24061}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!GetTerminateRequest@{GetTerminateRequest}}
+\index{GetTerminateRequest@{GetTerminateRequest}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{GetTerminateRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleMessage::GetTerminateRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_message_a44b112ebedfba5e48ca8384a2db24061}
+
+
+Determines whether the thread should exit. 
+
+The thread should check this regularly and exit when this method returns true.\par
+\par
+
+
+This method will only return true when the message queue is empty.
+
+\begin{DoxyReturn}{Returns}
+true if the thread should exit, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_thread_single_a8f5ea100a4e85739b2350e1318e8a6f3}{ThreadSingle}.
+
+\hypertarget{class_thread_single_message_ad7e22cff6fc4a778b7dcd208a1678f9b}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!IsQueueEmpty@{IsQueueEmpty}}
+\index{IsQueueEmpty@{IsQueueEmpty}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{IsQueueEmpty}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleMessage::IsQueueEmpty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_message_ad7e22cff6fc4a778b7dcd208a1678f9b}
+
+
+Determines whether the message queue is empty. 
+
+\begin{DoxyReturn}{Returns}
+true if the queue is empty, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_message_af5816a537c68ced255d2d8331a1ab641}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!PostMessageItem@{PostMessageItem}}
+\index{PostMessageItem@{PostMessageItem}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{PostMessageItem}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessage::PostMessageItem (
+\begin{DoxyParamCaption}
+\item[{{\bf ThreadMessageItem} $\ast$}]{ message}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_message_af5816a537c68ced255d2d8331a1ab641}
+
+
+Posts a message to the thread to be received using \hyperlink{class_thread_single_message_ac6385cefd086e9c40aa28241caa08d09}{GetMessageItem()}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em message}]The message to post. \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_thread_single_message_keep_last_a75fcc872de92fedf3dc60719d2d44761}{ThreadSingleMessageKeepLast}.
+
+\hypertarget{class_thread_single_message_a070c58a93f28c1a2514506c55e1810fb}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!TerminateFriendly@{TerminateFriendly}}
+\index{TerminateFriendly@{TerminateFriendly}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{TerminateFriendly}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingleMessage::TerminateFriendly (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_message_a070c58a93f28c1a2514506c55e1810fb}
+
+
+Requests that the thread exits. 
+
+The thread is not guaranteed to exit as it may not be checking \hyperlink{class_thread_single_message_a44b112ebedfba5e48ca8384a2db24061}{GetTerminateRequest()}. If it is performing an operation it may also not exit straight away. Use TerminateForce to guarantee quick thread exit.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]Ignored, will always block. \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{ThreadSingle}.
+
+
+
+Reimplemented in \hyperlink{class_thread_single_message_keep_last_a408f2a12f684c32cb640c3b17f74f933}{ThreadSingleMessageKeepLast}.
+
+\hypertarget{class_thread_single_message_a1bd833e3ffcd36b3cfe26648a7e74625}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingleMessage::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_message_a1bd833e3ffcd36b3cfe26648a7e74625}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_thread_single_ad62d9d1a31db4a8a77848a8c6dab4815}{ThreadSingle}.
+
+
+
+Reimplemented in \hyperlink{class_thread_single_message_keep_last_adbab8972129d51d509f20d5d575a393b}{ThreadSingleMessageKeepLast}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_single_message_ae120ad936311a2c422789a8a5b3d7304}{
+\index{ThreadSingleMessage@{ThreadSingleMessage}!threadReady@{threadReady}}
+\index{threadReady@{threadReady}!ThreadSingleMessage@{ThreadSingleMessage}}
+\subsubsection[{threadReady}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} {\bf ThreadSingleMessage::threadReady}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_message_ae120ad936311a2c422789a8a5b3d7304}
+
+
+Signaled when the thread is ready to receive messages. 
+
+Until the thread has used GetMessageItem, PostMessageItem will fail. This is because. GetMessageItem initializes the message queue. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleMessage.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingleMessage.cpp\end{DoxyCompactItemize}

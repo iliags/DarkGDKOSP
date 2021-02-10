@@ -1,0 +1,418 @@
+\hypertarget{class_net_instance}{
+\section{NetInstance Class Reference}
+\label{class_net_instance}\index{NetInstance@{NetInstance}}
+}
+
+
+Core instance class responsible for the core structure of a networking instance.  
+
+
+
+
+{\ttfamily \#include $<$NetInstance.h$>$}
+
+Inheritance diagram for NetInstance:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.085661cm]{class_net_instance}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{Type} \{ \par
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca508124ab62368682064b3426f41042fd}{CLIENT}, 
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca63eff5d4d29668e163da47a29638516a}{SERVER}, 
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca147898bd37bd1b60c7d24332fdd14aea}{BROADCAST}, 
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdcac36db18c34b893784a650878756c1097}{SERVER\_\-CLIENT}, 
+\par
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca88c09e9cfed79e86db169ca2b8ea5457}{INACTIVE}
+ \}
+\begin{DoxyCompactList}\small\item\em Possible instance types. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_instance_af7c6a53e6ccd04338e5628b2702f75ac}{NetInstance} ()
+\begin{DoxyCompactList}\small\item\em Constructor. Should never be called. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_ac95a2590fab6438ffdc3c704b47dd147}{NetInstance} (size\_\-t \hyperlink{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{instanceID}, \hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{Type} \hyperlink{class_net_instance_a8eda1eb1e030ca5edfc292d97b8efbed}{state}, unsigned int \hyperlink{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}{sendTimeout})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_ae0e36e0e07d6b1f8dac7fa9acf3a3af4}{
+virtual \hyperlink{class_net_instance_ae0e36e0e07d6b1f8dac7fa9acf3a3af4}{$\sim$NetInstance} ()}
+\label{class_net_instance_ae0e36e0e07d6b1f8dac7fa9acf3a3af4}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{Type} \hyperlink{class_net_instance_a5dc12b39b45ca3511fca4e693d6f0038}{GetState} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the type of instance that this is. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_a77155b3764ea62c4b5d1979540915539}{GetInstanceID} () const 
+\begin{DoxyCompactList}\small\item\em ID of instance within \hyperlink{class_net_instance_group}{NetInstanceGroup} object. \item\end{DoxyCompactList}\item 
+unsigned int \hyperlink{class_net_instance_a34536f0fde1de8e8e1ad6c3890cd7128}{GetSendTimeout} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve length of time that send operation is allowed to complete before canceling and disconnecting. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_a77a9c992d7ab0b023de51470a3392c49}{DealCompletion} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, DWORD bytes, size\_\-t clientID)=0
+\begin{DoxyCompactList}\small\item\em When send and receive operations are completed on this instance, this method is called. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_ab3369f37337a9de2cbefe92f0bf1d087}{ErrorOccurred} (size\_\-t clientID)=0
+\begin{DoxyCompactList}\small\item\em Deals with errors. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_a260aef8bfd339567619b78bc2ffc1d80}{CompletedSendOperation} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, const WSAOVERLAPPED $\ast$overlapped, bool success, bool shuttingDown, size\_\-t clientID)
+\begin{DoxyCompactList}\small\item\em Deals with completed send operation. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_a6f1377ef6caee467d27288cf53619b37}{CompletionError} (\hyperlink{class_net_socket}{NetSocket} $\ast$completionSocket, size\_\-t clientID)=0
+\begin{DoxyCompactList}\small\item\em Called by the completion port when an error occurred during an operation. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_a3c3e7a1dfd8e6c54c25f2a61aa86f183}{DoRecv} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, size\_\-t clientID)=0
+\begin{DoxyCompactList}\small\item\em Starts a receive operation on the specified socket and deals with errors appropriately. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_a68147db634644849af174937e6706ded}{RequestDestroy} ()
+\begin{DoxyCompactList}\small\item\em Requests that object be destroyed by its parent \hyperlink{class_net_instance_container}{NetInstanceContainer}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_ada1fec02cb2835fd600bc3c454b42606}{GetDestroyRequest} () const 
+\begin{DoxyCompactList}\small\item\em Determine whether this object wants to be destroyed by its parent \hyperlink{class_net_instance_container}{NetInstanceContainer}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_ac66260d17fe4b07c2f01aefee8a2b480}{
+virtual void \hyperlink{class_net_instance_ac66260d17fe4b07c2f01aefee8a2b480}{CloseSockets} ()=0}
+\label{class_net_instance_ac66260d17fe4b07c2f01aefee8a2b480}
+
+\begin{DoxyCompactList}\small\item\em Closes any sockets in use by the instance. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{Type} \hyperlink{class_net_instance_a045180c582af2f076774958142b5f5bb}{ConvertToType} (int type)
+\begin{DoxyCompactList}\small\item\em Converts integer into Type. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_a76e5bc2ba84bf43b8bbc23a3a9031d7d}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ \hyperlink{class_net_instance_a76e5bc2ba84bf43b8bbc23a3a9031d7d}{shouldBeDestroyed}}
+\label{class_net_instance_a76e5bc2ba84bf43b8bbc23a3a9031d7d}
+
+\begin{DoxyCompactList}\small\item\em True when this object wants to be destroyed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_instance_aecf5ccfc0448e938cfb2bb1387725393}{SetInstanceID} (size\_\-t newID)
+\begin{DoxyCompactList}\small\item\em Change instance ID, for use only by \hyperlink{class_net_instance_container}{NetInstanceContainer} (via friendship) during initialization. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{
+size\_\-t \hyperlink{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{instanceID}}
+\label{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}
+
+\begin{DoxyCompactList}\small\item\em ID of instance, within \hyperlink{class_net_instance_group}{NetInstanceGroup}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_a8eda1eb1e030ca5edfc292d97b8efbed}{
+\hyperlink{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{Type} \hyperlink{class_net_instance_a8eda1eb1e030ca5edfc292d97b8efbed}{state}}
+\label{class_net_instance_a8eda1eb1e030ca5edfc292d97b8efbed}
+
+\begin{DoxyCompactList}\small\item\em Type of instance this object is. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}{
+unsigned int \hyperlink{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}{sendTimeout}}
+\label{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}
+
+\begin{DoxyCompactList}\small\item\em Length of time that send operation will wait before canceling and disconnecting. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_a0ec8400fb82d945920f1752be36f316a}{
+class \hyperlink{class_net_instance_a0ec8400fb82d945920f1752be36f316a}{NetInstanceContainer}}
+\label{class_net_instance_a0ec8400fb82d945920f1752be36f316a}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Core instance class responsible for the core structure of a networking instance. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class should not be directly inherited by instance classes, instead see \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} and \hyperlink{class_net_instance_u_d_p}{NetInstanceUDP}. This class makes up the inner workings of any instance whether it be TCP, UDP or any other type. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}{
+\index{NetInstance@{NetInstance}!Type@{Type}}
+\index{Type@{Type}!NetInstance@{NetInstance}}
+\subsubsection[{Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NetInstance::Type}}}
+\label{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdc}
+
+
+Possible instance types. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{CLIENT@{CLIENT}!NetInstance@{NetInstance}}\index{NetInstance@{NetInstance}!CLIENT@{CLIENT}}\item[{\em 
+\hypertarget{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca508124ab62368682064b3426f41042fd}{
+CLIENT}
+\label{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca508124ab62368682064b3426f41042fd}
+}]Instance is in client state i.e. Of \hyperlink{class_net_instance_client}{NetInstanceClient} type. \index{SERVER@{SERVER}!NetInstance@{NetInstance}}\index{NetInstance@{NetInstance}!SERVER@{SERVER}}\item[{\em 
+\hypertarget{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca63eff5d4d29668e163da47a29638516a}{
+SERVER}
+\label{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca63eff5d4d29668e163da47a29638516a}
+}]Instance is in server state i.e. Of \hyperlink{class_net_instance_server}{NetInstanceServer} type. \index{BROADCAST@{BROADCAST}!NetInstance@{NetInstance}}\index{NetInstance@{NetInstance}!BROADCAST@{BROADCAST}}\item[{\em 
+\hypertarget{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca147898bd37bd1b60c7d24332fdd14aea}{
+BROADCAST}
+\label{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca147898bd37bd1b60c7d24332fdd14aea}
+}]Instance is in broadcast state i.e. Of \hyperlink{class_net_instance_broadcast}{NetInstanceBroadcast} type. \index{SERVER\_\-CLIENT@{SERVER\_\-CLIENT}!NetInstance@{NetInstance}}\index{NetInstance@{NetInstance}!SERVER\_\-CLIENT@{SERVER\_\-CLIENT}}\item[{\em 
+\hypertarget{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdcac36db18c34b893784a650878756c1097}{
+SERVER\_\-CLIENT}
+\label{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdcac36db18c34b893784a650878756c1097}
+}]A client object as part of a server instance i.e. Of \hyperlink{class_net_instance_client}{NetInstanceClient} type. \index{INACTIVE@{INACTIVE}!NetInstance@{NetInstance}}\index{NetInstance@{NetInstance}!INACTIVE@{INACTIVE}}\item[{\em 
+\hypertarget{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca88c09e9cfed79e86db169ca2b8ea5457}{
+INACTIVE}
+\label{class_net_instance_a0ec01a76d9b78794cfbdeab10a436cdca88c09e9cfed79e86db169ca2b8ea5457}
+}]Instance is inactive. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_af7c6a53e6ccd04338e5628b2702f75ac}{
+\index{NetInstance@{NetInstance}!NetInstance@{NetInstance}}
+\index{NetInstance@{NetInstance}!NetInstance@{NetInstance}}
+\subsubsection[{NetInstance}]{\setlength{\rightskip}{0pt plus 5cm}NetInstance::NetInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_af7c6a53e6ccd04338e5628b2702f75ac}
+
+
+Constructor. Should never be called. 
+
+Included to please compiler regarding virtual inheritance. 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]Always. \end{DoxyExceptions}
+\hypertarget{class_net_instance_ac95a2590fab6438ffdc3c704b47dd147}{
+\index{NetInstance@{NetInstance}!NetInstance@{NetInstance}}
+\index{NetInstance@{NetInstance}!NetInstance@{NetInstance}}
+\subsubsection[{NetInstance}]{\setlength{\rightskip}{0pt plus 5cm}NetInstance::NetInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf Type}}]{ state, }
+\item[{unsigned int}]{ sendTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_ac95a2590fab6438ffdc3c704b47dd147}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Unique identifier for instance. \item[{\em state}]Type of instance. \item[{\em sendTimeout}]Length of time that send operations are allowed to complete before canceling send operation and disconnecting. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_a260aef8bfd339567619b78bc2ffc1d80}{
+\index{NetInstance@{NetInstance}!CompletedSendOperation@{CompletedSendOperation}}
+\index{CompletedSendOperation@{CompletedSendOperation}!NetInstance@{NetInstance}}
+\subsubsection[{CompletedSendOperation}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstance::CompletedSendOperation (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped, }
+\item[{bool}]{ success, }
+\item[{bool}]{ shuttingDown, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_a260aef8bfd339567619b78bc2ffc1d80}
+
+
+Deals with completed send operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Pointer to socket that initiated send operation. \item[{\em overlapped}]Pointer to WSAOVERLAPPED object associated with send operation. \item[{\em success}]True if the operation completed successfully. \item[{\em shuttingDown}]True if the operation failed but this was because the socket is shutting down. \item[{\em clientID}]ID of client that initiated send operation, may be ignored. \end{DoxyParams}
+\hypertarget{class_net_instance_a6f1377ef6caee467d27288cf53619b37}{
+\index{NetInstance@{NetInstance}!CompletionError@{CompletionError}}
+\index{CompletionError@{CompletionError}!NetInstance@{NetInstance}}
+\subsubsection[{CompletionError}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NetInstance::CompletionError (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ completionSocket, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_instance_a6f1377ef6caee467d27288cf53619b37}
+
+
+Called by the completion port when an error occurred during an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em completionSocket}]The socket responsible for the error. \item[{\em clientID}]The client ID responsible for the error. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_net_instance_broadcast_ab5a92372b16809e63d5842e20997468d}{NetInstanceBroadcast}, \hyperlink{class_net_instance_client_a81244ebf13908fd198a79de50afc6a2a}{NetInstanceClient}, \hyperlink{class_net_instance_server_a6a1425669efcbb0e36bddb6394e79f57}{NetInstanceServer}, and \hyperlink{class_net_server_client_a71698dcdd0c469dbe93079b67a0c0afd}{NetServerClient}.
+
+\hypertarget{class_net_instance_a045180c582af2f076774958142b5f5bb}{
+\index{NetInstance@{NetInstance}!ConvertToType@{ConvertToType}}
+\index{ConvertToType@{ConvertToType}!NetInstance@{NetInstance}}
+\subsubsection[{ConvertToType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstance::Type} NetInstance::ConvertToType (
+\begin{DoxyParamCaption}
+\item[{int}]{ type}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_instance_a045180c582af2f076774958142b5f5bb}
+
+
+Converts integer into Type. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]Integer to convert. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+enum equivalent of {\itshape type\/}. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_a77a9c992d7ab0b023de51470a3392c49}{
+\index{NetInstance@{NetInstance}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!NetInstance@{NetInstance}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NetInstance::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{DWORD}]{ bytes, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_instance_a77a9c992d7ab0b023de51470a3392c49}
+
+
+When send and receive operations are completed on this instance, this method is called. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Socket that operation was started by. \item[{\em bytes}]Number of bytes of data transferred in operation. \item[{\em clientID}]ID of client that owns socket. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_net_instance_broadcast_a9f0b6f8c6ccf8a452a0e7942e7d037fe}{NetInstanceBroadcast}, \hyperlink{class_net_instance_client_a71c2b11a56a18ae3b1c3a76390776ee9}{NetInstanceClient}, \hyperlink{class_net_instance_server_ae7ce00865c6b1224deb6ea7c29efff4f}{NetInstanceServer}, and \hyperlink{class_net_server_client_a1326ff79039cc29bafe26a1c8839a215}{NetServerClient}.
+
+\hypertarget{class_net_instance_a3c3e7a1dfd8e6c54c25f2a61aa86f183}{
+\index{NetInstance@{NetInstance}!DoRecv@{DoRecv}}
+\index{DoRecv@{DoRecv}!NetInstance@{NetInstance}}
+\subsubsection[{DoRecv}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NetInstance::DoRecv (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_instance_a3c3e7a1dfd8e6c54c25f2a61aa86f183}
+
+
+Starts a receive operation on the specified socket and deals with errors appropriately. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Pointer to socket that receive operation should be started on. \item[{\em clientID}]ID of client using this method. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_net_instance_broadcast_a0b97764b7516ddce77fb302002842902}{NetInstanceBroadcast}, \hyperlink{class_net_instance_client_a92a62257550ff1d2d4db8b47ed55e8b7}{NetInstanceClient}, \hyperlink{class_net_instance_server_a1df65dc8572fc44730e5dd76e5aeabfe}{NetInstanceServer}, and \hyperlink{class_net_server_client_a61dfce726fc6edcc2afc72f4a6b1e95a}{NetServerClient}.
+
+\hypertarget{class_net_instance_ab3369f37337a9de2cbefe92f0bf1d087}{
+\index{NetInstance@{NetInstance}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!NetInstance@{NetInstance}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NetInstance::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_instance_ab3369f37337a9de2cbefe92f0bf1d087}
+
+
+Deals with errors. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to disconnected. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_net_instance_broadcast_a4dd405fd8ee38f91eb569516b8d3fc93}{NetInstanceBroadcast}, \hyperlink{class_net_instance_client_a55e57774e40393af927fa2a517a2a2a8}{NetInstanceClient}, \hyperlink{class_net_instance_server_aa230090218577e35109d61e87b560877}{NetInstanceServer}, and \hyperlink{class_net_server_client_ae84c13e2793afcdd4ede5111abbac887}{NetServerClient}.
+
+\hypertarget{class_net_instance_ada1fec02cb2835fd600bc3c454b42606}{
+\index{NetInstance@{NetInstance}!GetDestroyRequest@{GetDestroyRequest}}
+\index{GetDestroyRequest@{GetDestroyRequest}!NetInstance@{NetInstance}}
+\subsubsection[{GetDestroyRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstance::GetDestroyRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_ada1fec02cb2835fd600bc3c454b42606}
+
+
+Determine whether this object wants to be destroyed by its parent \hyperlink{class_net_instance_container}{NetInstanceContainer}. 
+
+\begin{DoxyReturn}{Returns}
+true if object wants to be destroyed. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_a77155b3764ea62c4b5d1979540915539}{
+\index{NetInstance@{NetInstance}!GetInstanceID@{GetInstanceID}}
+\index{GetInstanceID@{GetInstanceID}!NetInstance@{NetInstance}}
+\subsubsection[{GetInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstance::GetInstanceID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_a77155b3764ea62c4b5d1979540915539}
+
+
+ID of instance within \hyperlink{class_net_instance_group}{NetInstanceGroup} object. 
+
+\begin{DoxyReturn}{Returns}
+unique instance ID within \hyperlink{class_net_instance_group}{NetInstanceGroup} object. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_a34536f0fde1de8e8e1ad6c3890cd7128}{
+\index{NetInstance@{NetInstance}!GetSendTimeout@{GetSendTimeout}}
+\index{GetSendTimeout@{GetSendTimeout}!NetInstance@{NetInstance}}
+\subsubsection[{GetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int NetInstance::GetSendTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_a34536f0fde1de8e8e1ad6c3890cd7128}
+
+
+Retrieve length of time that send operation is allowed to complete before canceling and disconnecting. 
+
+\begin{DoxyReturn}{Returns}
+length of time that send operation is allowed to complete before canceling and disconnecting. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_a5dc12b39b45ca3511fca4e693d6f0038}{
+\index{NetInstance@{NetInstance}!GetState@{GetState}}
+\index{GetState@{GetState}!NetInstance@{NetInstance}}
+\subsubsection[{GetState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstance::Type} NetInstance::GetState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_a5dc12b39b45ca3511fca4e693d6f0038}
+
+
+Retrieves the type of instance that this is. 
+
+\begin{DoxyReturn}{Returns}
+instance type. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_a68147db634644849af174937e6706ded}{
+\index{NetInstance@{NetInstance}!RequestDestroy@{RequestDestroy}}
+\index{RequestDestroy@{RequestDestroy}!NetInstance@{NetInstance}}
+\subsubsection[{RequestDestroy}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstance::RequestDestroy (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_a68147db634644849af174937e6706ded}
+
+
+Requests that object be destroyed by its parent \hyperlink{class_net_instance_container}{NetInstanceContainer}. 
+
+The container object (\hyperlink{class_net_instance_container}{NetInstanceContainer}) will then cleanup this object when it deems appropriate, so as not to interrupt program flow. \hypertarget{class_net_instance_aecf5ccfc0448e938cfb2bb1387725393}{
+\index{NetInstance@{NetInstance}!SetInstanceID@{SetInstanceID}}
+\index{SetInstanceID@{SetInstanceID}!NetInstance@{NetInstance}}
+\subsubsection[{SetInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstance::SetInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_aecf5ccfc0448e938cfb2bb1387725393}
+
+
+Change instance ID, for use only by \hyperlink{class_net_instance_container}{NetInstanceContainer} (via friendship) during initialization. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newID}]New instance ID. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstance.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstance.cpp\end{DoxyCompactItemize}

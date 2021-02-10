@@ -1,0 +1,1099 @@
+\hypertarget{classcl_server_state}{
+\section{clServerState Class Reference}
+\label{classcl_server_state}\index{clServerState@{clServerState}}
+}
+
+
+Server instance, designed to communicate with clients.  
+
+
+
+
+{\ttfamily \#include $<$clServerState.h$>$}
+
+Inheritance diagram for clServerState:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_server_state}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{classcl_server_state_af58617f6176dafbd31bf7518f28caffe}{GetRecvSizeMinUDP} () const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{GetRecvSizeMinTCP} () const 
+\item 
+\hyperlink{classcl_server_state_abf0e50dd728a1aa409d61294a618a4f6}{clServerState} (size\_\-t \hyperlink{classcl_server_state_a78bea97e597f0122863a4ee259a24785}{maxClients}, \hyperlink{classcl_socket_listening}{clSocketListening} $\ast$listeningSocket, \hyperlink{classcl_socket_u_d_p}{clSocketUDP} $\ast$\hyperlink{classcl_instance_u_d_p_adabf31cb357eb5dada6ad5c8e57c611e}{socketUDP}, bool \hyperlink{classcl_instance_t_c_p_a4a35647e926d2c2c5abec877242f69fa}{handshakeEnabled}, size\_\-t \hyperlink{classcl_instance_core_a05be31d3ac12930f23fb1a06c25b225c}{sendTimeout}=INFINITE, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_t_c_p_aae4ec2a4dd6ac904c67e53c0620e2843}{recvFuncTCP}=NULL, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_u_d_p_a71fd288aaec92fa83f45060bc15d1f1e}{recvFuncUDP}=NULL, size\_\-t connectionTimeout=\hyperlink{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}{DEFAULT\_\-CONNECTION\_\-TIMEOUT}, size\_\-t \hyperlink{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{instanceID}=0)
+\item 
+\hyperlink{classcl_server_state_a9e3ba068464bfab6b9000ed412476801}{clServerState} (size\_\-t \hyperlink{classcl_server_state_a78bea97e597f0122863a4ee259a24785}{maxClients}, const \hyperlink{classcl_instance_profile}{clInstanceProfile} \&profile, size\_\-t \hyperlink{classcl_instance_core_ad3de74dbad74098dc2f010806186bf7f}{instanceID}=0)
+\item 
+void \hyperlink{classcl_server_state_a8752bfaf6e69d575f483fb09ad2d1ade}{init} (size\_\-t \hyperlink{classcl_server_state_a78bea97e597f0122863a4ee259a24785}{maxClients}, bool \hyperlink{classcl_instance_t_c_p_a4a35647e926d2c2c5abec877242f69fa}{handshakeEnabled}, size\_\-t connectionTimeout, \hyperlink{classcl_socket_listening}{clSocketListening} $\ast$\hyperlink{classcl_server_state_a5420d87b6c3e42c7ab033d00273ffe51}{socketListening})
+\item 
+\hyperlink{classcl_server_state_aecbd792cf629712b55a673406c2111e9}{$\sim$clServerState} ()
+\item 
+void \hyperlink{classcl_server_state_aa20c329aee577aefe77e3a8b9c517686}{AddDisconnect} (size\_\-t clientID)
+\item 
+size\_\-t \hyperlink{classcl_server_state_a1823d201b34aa75de541a7c14bd1d774}{GetDisconnect} ()
+\item 
+size\_\-t \hyperlink{classcl_server_state_a78cca781121c231c27b705ac04aa90c3}{GetMaxClients} () const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_a8aa76c5f0ae3202e74f3c85bb62a1710}{GetServerTimeout} () const 
+\item 
+void \hyperlink{classcl_server_state_afc302a2ceb465e93a8e1396c1c69978d}{SetServerTimeout} (size\_\-t milliseconds)
+\item 
+void \hyperlink{classcl_server_state_a0c6c0c0c2db0181c66945c649ff016d4}{SetAutoResize} (size\_\-t threadID, bool autoResize)
+\item 
+void \hyperlink{classcl_server_state_a4cb4d04f8f9d0292b406a633fdf4aaf1}{DoRecvUDP} (size\_\-t threadID)
+\item 
+void \hyperlink{classcl_server_state_a692ed17b33921c31f87941b2c95bf99a}{DoRecvTCP} (size\_\-t threadID, size\_\-t clientID)
+\item 
+void \hyperlink{classcl_server_state_ad484dd6b0de0014bafe361ba4b8aa19a}{ErrorOccurred} (size\_\-t threadID, size\_\-t clientID)
+\item 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{clNetworkingUtility::ConnectionStatus} \hyperlink{classcl_server_state_a74388f1a87e39ae71a67a796ed61da11}{ClientConnected} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_a8d559d88c2635a34110063c408b4440e}{ClientJoined} (size\_\-t threadID)
+\item 
+void \hyperlink{classcl_server_state_ab595d445807ac565db31e922b22d58f8}{DisconnectClient} (size\_\-t threadID, size\_\-t clientID)
+\item 
+const \hyperlink{classcl_packet}{clPacket} \& \hyperlink{classcl_server_state_a31a4202c942e75d35bc5cfd325e383fd}{GetServerInfo} () const 
+\item 
+bool \hyperlink{classcl_server_state_ad0e980f5aa1e93270092d67412aa2684}{GetEnabledUDP} () const 
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_server_state_aa2bbcc834edc34008fa234a62e70e72c}{GetModeUDP} () const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_a25076fc19a70980db2d575a0e0d4fb8c}{GetRecvBufferLengthTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_a657be97242d234350f5d5193bf1323fd}{GetPartialPacketCurrentSizeTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_ae65f7e9ed108d2ceee3e803be4663e21}{GetMaxPacketSizeTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+void \hyperlink{classcl_server_state_a69575a84cd634b4105187cb1644a9fe9}{SetMaxPacketSizeTCP} (size\_\-t threadID, size\_\-t clientID, size\_\-t newMaxSize)
+\item 
+bool \hyperlink{classcl_server_state_a40e9658d157664d28b4ff6764653ee52}{GetAutoResizeTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+void \hyperlink{classcl_server_state_aa324f4af4421895f4c06fed536826d40}{SetAutoResizeTCP} (size\_\-t threadID, size\_\-t clientID, bool newAutoResizeTCP)
+\item 
+bool \hyperlink{classcl_server_state_a3458bc8c0e335c67243fe5f4225bc5e5}{GetGracefulDisconnectEnabled} () const 
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_server_state_aaedff3aeda921ce765c0d92a116d34b3}{GetProtocolModeTCP} () const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_server_state_a417e525b8f5cd73c2051bf32040334cc}{GetClientLocalAddressTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_server_state_a43b1ac7de146c88e64bfeacb277a2b8f}{GetLocalAddressTCP} () const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_server_state_ac464bdb2b462528f5e08d8d044e052d5}{GetConnectAddressTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_server_state_ab76e0a98a18b26f5c9c90a2c30127228}{GetConnectAddressUDP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+void \hyperlink{classcl_server_state_ac139ec3acb06e1b28744339cbb9710d6}{FlushRecvTCP} (size\_\-t threadID, size\_\-t clientID)
+\item 
+size\_\-t \hyperlink{classcl_server_state_a6293150ae0d2deee1e853e8de2fc6549}{GetPacketAmountTCP} (size\_\-t threadID, size\_\-t clientID) const 
+\item 
+void \hyperlink{classcl_server_state_ab6bb7ca048e12e276cfa85798bbca305}{ShutdownTCP} (size\_\-t threadID, size\_\-t clientID)
+\item 
+size\_\-t \hyperlink{classcl_server_state_a434b7015edbb25a83593e60f7ee6f0f7}{GetPacketFromStoreTCP} (size\_\-t threadID, size\_\-t clientID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_server_state_aa26a11694b770b75c58e3a5931fd387e}{SendTCP} (size\_\-t threadID, size\_\-t clientID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)
+\item 
+void \hyperlink{classcl_server_state_ab3abf9a84501271ce55c2b1eda4d5fa3}{SendAllTCP} (size\_\-t threadID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, size\_\-t clientExclude)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_server_state_a4c582a5907e427eb0091079bd4ada3b0}{SendUDP} (size\_\-t threadID, size\_\-t clientID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)
+\item 
+void \hyperlink{classcl_server_state_a53e069f3cc1bc74202704ffb75e398f1}{SendAllUDP} (size\_\-t threadID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, size\_\-t clientExclude)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_server_state_ac2f8e109ed5f86a2feaebc04d2379b45}{SendToUDP} (size\_\-t threadID, const \hyperlink{classcl_single_addr}{clSingleAddr} \&address, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)
+\item 
+size\_\-t \hyperlink{classcl_server_state_ac5219f6dfbf0a4fc46c2f0b10f4777a4}{GetPacketAmountUDP} (size\_\-t threadID, size\_\-t clientID, size\_\-t operationID) const 
+\item 
+void \hyperlink{classcl_server_state_a3e804dd8e1d0fb5ce0307f461d5a1e5e}{FlushRecvUDP} (size\_\-t threadID, size\_\-t clientID)
+\item 
+size\_\-t \hyperlink{classcl_server_state_acd70ba0bd1cf45ddc0f30cda86a1fbc5}{GetPacketFromStoreUDP} (size\_\-t threadID, size\_\-t clientID, size\_\-t operationID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+void \hyperlink{classcl_server_state_a8d2ff8fdba2c01906239b7f513140fd7}{DealCompletion} (size\_\-t threadID, \hyperlink{classcl_completion_key}{clCompletionKey} \&completionKey, DWORD bytes, const WSAOVERLAPPED $\ast$overlapped, BOOL success)
+\item 
+void \hyperlink{classcl_server_state_ae2bc69bbd2bff4071cb148da272bfe95}{SetContainer} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$container)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{classcl_server_state_ae6d8460b8b124c1ece70b94440cea634}{recvSizeMinUDP} = 20
+\item 
+static const size\_\-t \hyperlink{classcl_server_state_a6f718c1f7be5673a45d04df644f7ce5b}{recvSizeMinTCP} = 0
+\item 
+static const size\_\-t \hyperlink{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}{DEFAULT\_\-CONNECTION\_\-TIMEOUT} = 10000
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_server_state_a81e2910f7c99cfc1ed515932dadc7df9}{\_\-CheckClientID} (size\_\-t clientID, size\_\-t line, const char $\ast$file) const 
+\item 
+size\_\-t \hyperlink{classcl_server_state_a6ff5552b881351ef18fc33df532c2ad6}{FindClientByAddressUDP} (size\_\-t threadID, const \hyperlink{classcl_single_addr}{clSingleAddr} \&addr)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_socket_listening}{clSocketListening} $\ast$ \hyperlink{classcl_server_state_a5420d87b6c3e42c7ab033d00273ffe51}{socketListening}
+\item 
+\hyperlink{classcl_counter}{clCounter} \hyperlink{classcl_server_state_a375603ab73421b96cfe100570d86300d}{recvFailCounterUDP}
+\item 
+\hyperlink{classcl_store_vector}{clStoreVector}$<$ \hyperlink{classcl_s_client}{clSClient} $>$ \hyperlink{classcl_server_state_a4d04e7fec349fb69ac9d7d4278c7e915}{client}
+\item 
+size\_\-t \hyperlink{classcl_server_state_a78bea97e597f0122863a4ee259a24785}{maxClients}
+\item 
+\hyperlink{classcl_store_queue}{clStoreQueue}$<$ size\_\-t $>$ \hyperlink{classcl_server_state_a1928a46878962bc4d2c804bf21074319}{disconnected}
+\item 
+\hyperlink{classcl_status}{clStatus}$<$ size\_\-t $>$ \hyperlink{classcl_server_state_ad8a53992b7a622816eeb6b70fd4fec25}{timeout}
+\item 
+\hyperlink{classcl_packet}{clPacket} \hyperlink{classcl_server_state_a65f672655a8b980a21e84d939ad81841}{serverInfo}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Server instance, designed to communicate with clients. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This instance uses TCP and UDP to communicate with clients. Most commonly it will be used to communicate with another entity running a \hyperlink{classcl_client_state}{clClientState} instance. However, this instance can also communicate with non DarkNet entities such as web clients. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_server_state_abf0e50dd728a1aa409d61294a618a4f6}{
+\index{clServerState@{clServerState}!clServerState@{clServerState}}
+\index{clServerState@{clServerState}!clServerState@{clServerState}}
+\subsubsection[{clServerState}]{\setlength{\rightskip}{0pt plus 5cm}clServerState::clServerState (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ p\_\-maxClients, }
+\item[{{\bf clSocketListening} $\ast$}]{ p\_\-socketListening, }
+\item[{{\bf clSocketUDP} $\ast$}]{ p\_\-socketUDP, }
+\item[{bool}]{ p\_\-handshakeEnabled, }
+\item[{size\_\-t}]{ p\_\-sendTimeout = {\ttfamily INFINITE}, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ p\_\-recvFuncTCP = {\ttfamily NULL}, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ p\_\-recvFuncUDP = {\ttfamily NULL}, }
+\item[{size\_\-t}]{ p\_\-connectionTimeout = {\ttfamily {\bf DEFAULT\_\-CONNECTION\_\-TIMEOUT}}, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_abf0e50dd728a1aa409d61294a618a4f6}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-maxClients}]maximum number of clients that can be connected to server at any one time \item[{\em p\_\-socketListening}]socket to use to listen for new TCP connections \item[{\em p\_\-socketUDP}]socket to use to send and receive UDP data, NULL if UDP is disabled \item[{\em p\_\-handshakeEnabled}]true if the TCP handshaking process is enabled, false if not \item[{\em p\_\-sendTimeout}]length of time in milliseconds to wait for a send operation to complete before disconnecting client (optional, default INFINITE) \item[{\em p\_\-recvFuncTCP}]method to be executed when new TCP packets are received (optional, default NULL) \item[{\em p\_\-recvFuncUDP}]method to be executed when new UDP packets are received (optional, default NULL) \item[{\em p\_\-connectionTimeout}]time in milliseconds that a connection attempt will be waited on before giving up (optional, default DEFAULT\_\-CONNECTION\_\-TIMEOUT) \item[{\em p\_\-instanceID}]unique identifier for instance (optional, default 0) \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if p\_\-socketListening-\/$>$GetSocket()-\/$>$GetMode()-\/$>$GetMaxPacketSize() $<$ \hyperlink{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{GetRecvSizeMinTCP()} \end{DoxyExceptions}
+\hypertarget{classcl_server_state_a9e3ba068464bfab6b9000ed412476801}{
+\index{clServerState@{clServerState}!clServerState@{clServerState}}
+\index{clServerState@{clServerState}!clServerState@{clServerState}}
+\subsubsection[{clServerState}]{\setlength{\rightskip}{0pt plus 5cm}clServerState::clServerState (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ p\_\-maxClients, }
+\item[{const {\bf clInstanceProfile} \&}]{ p\_\-profile, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a9e3ba068464bfab6b9000ed412476801}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-maxClients}]maximum number of clients that can be connected to server at any one time \item[{\em p\_\-profile}]instance profile containing parameters \item[{\em p\_\-instanceID}]unique identifier for instance (optional, default 0) \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if p\_\-socketListening-\/$>$GetSocket()-\/$>$GetMode()-\/$>$GetMaxPacketSize() $<$ \hyperlink{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{GetRecvSizeMinTCP()} \end{DoxyExceptions}
+\hypertarget{classcl_server_state_aecbd792cf629712b55a673406c2111e9}{
+\index{clServerState@{clServerState}!$\sim$clServerState@{$\sim$clServerState}}
+\index{$\sim$clServerState@{$\sim$clServerState}!clServerState@{clServerState}}
+\subsubsection[{$\sim$clServerState}]{\setlength{\rightskip}{0pt plus 5cm}clServerState::$\sim$clServerState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_aecbd792cf629712b55a673406c2111e9}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_server_state_a81e2910f7c99cfc1ed515932dadc7df9}{
+\index{clServerState@{clServerState}!\_\-CheckClientID@{\_\-CheckClientID}}
+\index{\_\-CheckClientID@{\_\-CheckClientID}!clServerState@{clServerState}}
+\subsubsection[{\_\-CheckClientID}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::\_\-CheckClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a81e2910f7c99cfc1ed515932dadc7df9}
+Checks that client ID is within range 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]client ID to check \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if clientID $>$ maxClients \end{DoxyExceptions}
+\hypertarget{classcl_server_state_aa20c329aee577aefe77e3a8b9c517686}{
+\index{clServerState@{clServerState}!AddDisconnect@{AddDisconnect}}
+\index{AddDisconnect@{AddDisconnect}!clServerState@{clServerState}}
+\subsubsection[{AddDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::AddDisconnect (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ client}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_aa20c329aee577aefe77e3a8b9c517686}
+Add a client to the disconnect list, indicating that it has recently been disconnected 
+\begin{DoxyParams}{Parameters}
+\item[{\em client}]client ID \end{DoxyParams}
+\hypertarget{classcl_server_state_a74388f1a87e39ae71a67a796ed61da11}{
+\index{clServerState@{clServerState}!ClientConnected@{ClientConnected}}
+\index{ClientConnected@{ClientConnected}!clServerState@{clServerState}}
+\subsubsection[{ClientConnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::ConnectionStatus} clServerState::ClientConnected (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_a74388f1a87e39ae71a67a796ed61da11}
+Used to query the status of a clients connection. This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client who's connection status should be checked \item[{\em threadID}]ID of thread using object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da91a3fd8751354e5c4f32181268627d9f}{clNetworkingUtility::CONNECTED}: fully connected 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da7ea7f5aa34e94ec65b905c2a37610583}{clNetworkingUtility::NOT\_\-CONNECTED}: not connected at all 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}{clNetworkingUtility::NO\_\-RECV}: connected but new data cannot be received because {\ttfamily Shutdown} has been used by recipient (only possible if graceful disconnect is enabled) 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}{clNetworkingUtility::NO\_\-SEND}: connected but data cannot be sent because {\ttfamily Shutdown} has been used (only possible if graceful disconnect is enabled) 
+
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{clNetworkingUtility::NO\_\-SEND\_\-RECV}: connected but data cannot be sent or received because {\ttfamily Shutdown} has been used on both sides, only data that has already been received and is in the packet queue can be received (only possible if graceful disconnect is enabled) 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a8d559d88c2635a34110063c408b4440e}{
+\index{clServerState@{clServerState}!ClientJoined@{ClientJoined}}
+\index{ClientJoined@{ClientJoined}!clServerState@{clServerState}}
+\subsubsection[{ClientJoined}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::ClientJoined (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a8d559d88c2635a34110063c408b4440e}
+Manages server side handshaking process with joining clients, clients cannot connect unless this method is called whilst they are attempting to connect. This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no new clients joined during the method call 
+
+$>$0 if a new client joined, this number is the ID of the client 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a8d2ff8fdba2c01906239b7f513140fd7}{
+\index{clServerState@{clServerState}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!clServerState@{clServerState}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clCompletionKey} \&}]{ completionKey, }
+\item[{DWORD}]{ bytes, }
+\item[{const WSAOVERLAPPED $\ast$}]{ overlapped, }
+\item[{BOOL}]{ success}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a8d2ff8fdba2c01906239b7f513140fd7}
+When send and receive operations are completed on this instance, this method is called. When data is received from an unlisted UDP address, i.e. an address that is not stored under any connected client ID, this method performs part of the \hyperlink{handshake_page}{handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em completionKey}]reference to completion key which provides information about the completed operation \item[{\em bytes}]number of bytes of data transferred in operation \item[{\em overlapped}]pointer to overlapped operation associated with event \item[{\em success}]TRUE if no error occurred \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_core_afb72728b46b08c2928845cd67acc238d}{clInstanceCore}.
+
+\hypertarget{classcl_server_state_ab595d445807ac565db31e922b22d58f8}{
+\index{clServerState@{clServerState}!DisconnectClient@{DisconnectClient}}
+\index{DisconnectClient@{DisconnectClient}!clServerState@{clServerState}}
+\subsubsection[{DisconnectClient}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::DisconnectClient (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_ab595d445807ac565db31e922b22d58f8}
+Disconnects client of ID {\itshape clientID\/}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to disconnect \end{DoxyParams}
+\hypertarget{classcl_server_state_a692ed17b33921c31f87941b2c95bf99a}{
+\index{clServerState@{clServerState}!DoRecvTCP@{DoRecvTCP}}
+\index{DoRecvTCP@{DoRecvTCP}!clServerState@{clServerState}}
+\subsubsection[{DoRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::DoRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a692ed17b33921c31f87941b2c95bf99a}
+Calls socketTCP-\/$>$Recv and deals with errors in a server specific way \par
+ Use this INSTEAD OF socketTCP-\/$>$Recv, never use socketTCP-\/$>$Recv directly
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \item[{\em clientID}]ID of client that receive operation should apply to \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a680fdd73e7ea21c59da3029f30ab9409}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a4cb4d04f8f9d0292b406a633fdf4aaf1}{
+\index{clServerState@{clServerState}!DoRecvUDP@{DoRecvUDP}}
+\index{DoRecvUDP@{DoRecvUDP}!clServerState@{clServerState}}
+\subsubsection[{DoRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::DoRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a4cb4d04f8f9d0292b406a633fdf4aaf1}
+Calls socketUDP-\/$>$Recv and deals with errors in a server specific way \par
+ Use this INSTEAD OF socketUDP-\/$>$Recv, never use socketUDP-\/$>$Recv directly
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \end{DoxyParams}
+\hypertarget{classcl_server_state_ad484dd6b0de0014bafe361ba4b8aa19a}{
+\index{clServerState@{clServerState}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!clServerState@{clServerState}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_ad484dd6b0de0014bafe361ba4b8aa19a}
+Deals with error \par
+ Client {\itshape clientID\/} is disconnected 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using method \item[{\em clientID}]ID of client to disconnected, if 0 then no action is taken \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_core_ad5359146ac131598d7f6b86e10577738}{clInstanceCore}.
+
+\hypertarget{classcl_server_state_a6ff5552b881351ef18fc33df532c2ad6}{
+\index{clServerState@{clServerState}!FindClientByAddressUDP@{FindClientByAddressUDP}}
+\index{FindClientByAddressUDP@{FindClientByAddressUDP}!clServerState@{clServerState}}
+\subsubsection[{FindClientByAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::FindClientByAddressUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clSingleAddr} \&}]{ addr}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a6ff5552b881351ef18fc33df532c2ad6}
+Searches all connected clients and determines if {\itshape addr\/} is a remote UDP address for one of them, if it is then the client is connected via UDP. This method is used as part of the \hyperlink{handshake_page}{handshaking process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \item[{\em addr}]address to search for \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no client was found 
+
+$>$0 if client was found, this is the client ID of the client 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_ac139ec3acb06e1b28744339cbb9710d6}{
+\index{clServerState@{clServerState}!FlushRecvTCP@{FlushRecvTCP}}
+\index{FlushRecvTCP@{FlushRecvTCP}!clServerState@{clServerState}}
+\subsubsection[{FlushRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::FlushRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_ac139ec3acb06e1b28744339cbb9710d6}
+Removes all fully received TCP packets from the packet queue \par
+ Has no impact on the partial packet store 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_af99126459308bfabf259aa9a2170a36b}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a3e804dd8e1d0fb5ce0307f461d5a1e5e}{
+\index{clServerState@{clServerState}!FlushRecvUDP@{FlushRecvUDP}}
+\index{FlushRecvUDP@{FlushRecvUDP}!clServerState@{clServerState}}
+\subsubsection[{FlushRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::FlushRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a3e804dd8e1d0fb5ce0307f461d5a1e5e}
+Removes all fully received UDP packets from the packet queue \par
+ Has no impact on the partial packet store 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyNote}{Note}
+reimplemented to enforce multithreaded control rules 
+\end{DoxyNote}
+\hypertarget{classcl_server_state_a40e9658d157664d28b4ff6764653ee52}{
+\index{clServerState@{clServerState}!GetAutoResizeTCP@{GetAutoResizeTCP}}
+\index{GetAutoResizeTCP@{GetAutoResizeTCP}!clServerState@{clServerState}}
+\subsubsection[{GetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clServerState::GetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a40e9658d157664d28b4ff6764653ee52}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a2680e4844a26f13f593634982fb77343}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a417e525b8f5cd73c2051bf32040334cc}{
+\index{clServerState@{clServerState}!GetClientLocalAddressTCP@{GetClientLocalAddressTCP}}
+\index{GetClientLocalAddressTCP@{GetClientLocalAddressTCP}!clServerState@{clServerState}}
+\subsubsection[{GetClientLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clServerState::GetClientLocalAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_a417e525b8f5cd73c2051bf32040334cc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP local address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_server_state_ac464bdb2b462528f5e08d8d044e052d5}{
+\index{clServerState@{clServerState}!GetConnectAddressTCP@{GetConnectAddressTCP}}
+\index{GetConnectAddressTCP@{GetConnectAddressTCP}!clServerState@{clServerState}}
+\subsubsection[{GetConnectAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clServerState::GetConnectAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_ac464bdb2b462528f5e08d8d044e052d5}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_ad702ce7451f0c80a59861b13c9a4d5d8}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_ab76e0a98a18b26f5c9c90a2c30127228}{
+\index{clServerState@{clServerState}!GetConnectAddressUDP@{GetConnectAddressUDP}}
+\index{GetConnectAddressUDP@{GetConnectAddressUDP}!clServerState@{clServerState}}
+\subsubsection[{GetConnectAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clServerState::GetConnectAddressUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_ab76e0a98a18b26f5c9c90a2c30127228}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UDP remote address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_server_state_a1823d201b34aa75de541a7c14bd1d774}{
+\index{clServerState@{clServerState}!GetDisconnect@{GetDisconnect}}
+\index{GetDisconnect@{GetDisconnect}!clServerState@{clServerState}}
+\subsubsection[{GetDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetDisconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a1823d201b34aa75de541a7c14bd1d774}
+Retrieve a client from the disconnect list, this client has been recently disconnected \begin{DoxyReturn}{Returns}
+client ID 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_ad0e980f5aa1e93270092d67412aa2684}{
+\index{clServerState@{clServerState}!GetEnabledUDP@{GetEnabledUDP}}
+\index{GetEnabledUDP@{GetEnabledUDP}!clServerState@{clServerState}}
+\subsubsection[{GetEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clServerState::GetEnabledUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_ad0e980f5aa1e93270092d67412aa2684}
+\begin{DoxyReturn}{Returns}
+true if UDP is enabled, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a3458bc8c0e335c67243fe5f4225bc5e5}{
+\index{clServerState@{clServerState}!GetGracefulDisconnectEnabled@{GetGracefulDisconnectEnabled}}
+\index{GetGracefulDisconnectEnabled@{GetGracefulDisconnectEnabled}!clServerState@{clServerState}}
+\subsubsection[{GetGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool clServerState::GetGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a3458bc8c0e335c67243fe5f4225bc5e5}
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. \begin{DoxyReturn}{Returns}
+if true graceful disconnection is possible, where data is allowed to finish sending and receiving before the connection is closed 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_aad5a5af8e7fa2b973dc7b3ae6ba82dd4}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a43b1ac7de146c88e64bfeacb277a2b8f}{
+\index{clServerState@{clServerState}!GetLocalAddressTCP@{GetLocalAddressTCP}}
+\index{GetLocalAddressTCP@{GetLocalAddressTCP}!clServerState@{clServerState}}
+\subsubsection[{GetLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clServerState::GetLocalAddressTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a43b1ac7de146c88e64bfeacb277a2b8f}
+\begin{DoxyReturn}{Returns}
+TCP local address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a16f0d87a9b4f577ae81b4f9fc3a3b182}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a78cca781121c231c27b705ac04aa90c3}{
+\index{clServerState@{clServerState}!GetMaxClients@{GetMaxClients}}
+\index{GetMaxClients@{GetMaxClients}!clServerState@{clServerState}}
+\subsubsection[{GetMaxClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetMaxClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_a78cca781121c231c27b705ac04aa90c3}
+\begin{DoxyReturn}{Returns}
+the maximum number of clients that can be connected to the server at any one time ({\ttfamily maxClients}) \par
+ Client IDs range from 1 inclusive to this value inclusive, client ID 0 is not used 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_ae65f7e9ed108d2ceee3e803be4663e21}{
+\index{clServerState@{clServerState}!GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}}
+\index{GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}!clServerState@{clServerState}}
+\subsubsection[{GetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_ae65f7e9ed108d2ceee3e803be4663e21}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a50e7cc70cb2e6e8a717c8f8fb6b4f21a}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_aa2bbcc834edc34008fa234a62e70e72c}{
+\index{clServerState@{clServerState}!GetModeUDP@{GetModeUDP}}
+\index{GetModeUDP@{GetModeUDP}!clServerState@{clServerState}}
+\subsubsection[{GetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clServerState::GetModeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_aa2bbcc834edc34008fa234a62e70e72c}
+\begin{DoxyReturn}{Returns}
+the UDP protocol mode in use, describing how data is manipulated during sending and receiving 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a6293150ae0d2deee1e853e8de2fc6549}{
+\index{clServerState@{clServerState}!GetPacketAmountTCP@{GetPacketAmountTCP}}
+\index{GetPacketAmountTCP@{GetPacketAmountTCP}!clServerState@{clServerState}}
+\subsubsection[{GetPacketAmountTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetPacketAmountTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a6293150ae0d2deee1e853e8de2fc6549}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of fully received TCP packets in the packet store 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a193776679f0af0fdb98ac91c6db6f3d1}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_ac5219f6dfbf0a4fc46c2f0b10f4777a4}{
+\index{clServerState@{clServerState}!GetPacketAmountUDP@{GetPacketAmountUDP}}
+\index{GetPacketAmountUDP@{GetPacketAmountUDP}!clServerState@{clServerState}}
+\subsubsection[{GetPacketAmountUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetPacketAmountUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_ac5219f6dfbf0a4fc46c2f0b10f4777a4}
+\begin{DoxyReturn}{Returns}
+the number of packets in the packet store 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \item[{\em operationID}]operation ID of operation to use, may be ignored \end{DoxyParams}
+\begin{DoxyNote}{Note}
+reimplemented to enforce multithreaded control rules 
+\end{DoxyNote}
+\hypertarget{classcl_server_state_a434b7015edbb25a83593e60f7ee6f0f7}{
+\index{clServerState@{clServerState}!GetPacketFromStoreTCP@{GetPacketFromStoreTCP}}
+\index{GetPacketFromStoreTCP@{GetPacketFromStoreTCP}!clServerState@{clServerState}}
+\subsubsection[{GetPacketFromStoreTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetPacketFromStoreTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a434b7015edbb25a83593e60f7ee6f0f7}
+Retrieves a complete packet from the TCP packet store and copies it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \item[\mbox{\tt[out]} {\em destination}]destination to copy into \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_afd639273cee92d3c612c40c761ec6d5b}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_acd70ba0bd1cf45ddc0f30cda86a1fbc5}{
+\index{clServerState@{clServerState}!GetPacketFromStoreUDP@{GetPacketFromStoreUDP}}
+\index{GetPacketFromStoreUDP@{GetPacketFromStoreUDP}!clServerState@{clServerState}}
+\subsubsection[{GetPacketFromStoreUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetPacketFromStoreUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_acd70ba0bd1cf45ddc0f30cda86a1fbc5}
+Retrieves a complete packet from the TCP packet store and copies it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \item[{\em operationID}]ID of operation to use \item[\mbox{\tt[out]} {\em destination}]destination to copy into \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+reimplemented to enforce multithreaded control rules 
+\end{DoxyNote}
+\hypertarget{classcl_server_state_a657be97242d234350f5d5193bf1323fd}{
+\index{clServerState@{clServerState}!GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}}
+\index{GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}!clServerState@{clServerState}}
+\subsubsection[{GetPartialPacketCurrentSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetPartialPacketCurrentSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a657be97242d234350f5d5193bf1323fd}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current size of the TCP partial packet being received \par
+ i.e. the number of bytes of the packet that have been received 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_aafa9f7579aaf64c135d0a386da496e07}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_aaedff3aeda921ce765c0d92a116d34b3}{
+\index{clServerState@{clServerState}!GetProtocolModeTCP@{GetProtocolModeTCP}}
+\index{GetProtocolModeTCP@{GetProtocolModeTCP}!clServerState@{clServerState}}
+\subsubsection[{GetProtocolModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clServerState::GetProtocolModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_aaedff3aeda921ce765c0d92a116d34b3}
+\begin{DoxyReturn}{Returns}
+protocol mode in use by instance 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a80ec758cf218a01fa6ad5ca77289b11a}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a25076fc19a70980db2d575a0e0d4fb8c}{
+\index{clServerState@{clServerState}!GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}}
+\index{GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}!clServerState@{clServerState}}
+\subsubsection[{GetRecvBufferLengthTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetRecvBufferLengthTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a25076fc19a70980db2d575a0e0d4fb8c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF used by the TCP socket. \par
+ This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_ac813fb12b20efbae4b5ea266309bfa85}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{
+\index{clServerState@{clServerState}!GetRecvSizeMinTCP@{GetRecvSizeMinTCP}}
+\index{GetRecvSizeMinTCP@{GetRecvSizeMinTCP}!clServerState@{clServerState}}
+\subsubsection[{GetRecvSizeMinTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetRecvSizeMinTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}
+\begin{DoxyReturn}{Returns}
+the minimum size that the TCP receive buffer can be set to 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a14fbd5458779f3f5a569e8aa57362ee7}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_af58617f6176dafbd31bf7518f28caffe}{
+\index{clServerState@{clServerState}!GetRecvSizeMinUDP@{GetRecvSizeMinUDP}}
+\index{GetRecvSizeMinUDP@{GetRecvSizeMinUDP}!clServerState@{clServerState}}
+\subsubsection[{GetRecvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetRecvSizeMinUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_af58617f6176dafbd31bf7518f28caffe}
+\begin{DoxyReturn}{Returns}
+the minimum size that the UDP receive buffer can be set to 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a31a4202c942e75d35bc5cfd325e383fd}{
+\index{clServerState@{clServerState}!GetServerInfo@{GetServerInfo}}
+\index{GetServerInfo@{GetServerInfo}!clServerState@{clServerState}}
+\subsubsection[{GetServerInfo}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clPacket} \& clServerState::GetServerInfo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_a31a4202c942e75d35bc5cfd325e383fd}
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. \begin{DoxyReturn}{Returns}
+packet containing information about the server 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a8aa76c5f0ae3202e74f3c85bb62a1710}{
+\index{clServerState@{clServerState}!GetServerTimeout@{GetServerTimeout}}
+\index{GetServerTimeout@{GetServerTimeout}!clServerState@{clServerState}}
+\subsubsection[{GetServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clServerState::GetServerTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_server_state_a8aa76c5f0ae3202e74f3c85bb62a1710}
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. \begin{DoxyReturn}{Returns}
+number of milliseconds that connection attempt should be allowed to complete before entity is forcefully disconnected 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a8752bfaf6e69d575f483fb09ad2d1ade}{
+\index{clServerState@{clServerState}!init@{init}}
+\index{init@{init}!clServerState@{clServerState}}
+\subsubsection[{init}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::init (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ p\_\-maxClients, }
+\item[{bool}]{ p\_\-handshakeEnabled, }
+\item[{size\_\-t}]{ p\_\-connectionTimeout, }
+\item[{{\bf clSocketListening} $\ast$}]{ p\_\-socketListening}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a8752bfaf6e69d575f483fb09ad2d1ade}
+Initializes object, used by constructors 
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-maxClients}]maximum number of clients that can be connected to server at any one time \item[{\em p\_\-handshakeEnabled}]true if the TCP handshaking process is enabled, false if not \item[{\em p\_\-connectionTimeout}]time in milliseconds that a connection attempt will be waited on before giving up (optional, default DEFAULT\_\-CONNECTION\_\-TIMEOUT) \item[{\em p\_\-socketListening}]socket to use to listen for new TCP connections \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+socketUDP must be initialized before using this method (is done in super class constructor) 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if p\_\-socketListening-\/$>$GetSocket()-\/$>$GetMode()-\/$>$GetMaxPacketSize() $<$ \hyperlink{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{GetRecvSizeMinTCP()} \end{DoxyExceptions}
+
+
+Server info packet contains: 1: Maximum number of clients 2: Number of operations (UDP only) 3: UDP Mode (UDP only)
+
+\hypertarget{classcl_server_state_ab3abf9a84501271ce55c2b1eda4d5fa3}{
+\index{clServerState@{clServerState}!SendAllTCP@{SendAllTCP}}
+\index{SendAllTCP@{SendAllTCP}!clServerState@{clServerState}}
+\subsubsection[{SendAllTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SendAllTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ excludeClient}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_ab3abf9a84501271ce55c2b1eda4d5fa3}
+Sends {\itshape packet\/} via TCP to specified client 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent \item[{\em clientExclude}]clientID of client not to send to \end{DoxyParams}
+\hypertarget{classcl_server_state_a53e069f3cc1bc74202704ffb75e398f1}{
+\index{clServerState@{clServerState}!SendAllUDP@{SendAllUDP}}
+\index{SendAllUDP@{SendAllUDP}!clServerState@{clServerState}}
+\subsubsection[{SendAllUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SendAllUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ excludeClient}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a53e069f3cc1bc74202704ffb75e398f1}
+Sends {\itshape packet\/} via UDP to all connected clients 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent \item[{\em clientExclude}]clientID of client not to send to \end{DoxyParams}
+\hypertarget{classcl_server_state_aa26a11694b770b75c58e3a5931fd387e}{
+\index{clServerState@{clServerState}!SendTCP@{SendTCP}}
+\index{SendTCP@{SendTCP}!clServerState@{clServerState}}
+\subsubsection[{SendTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clServerState::SendTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_aa26a11694b770b75c58e3a5931fd387e}
+Sends {\itshape packet\/} via TCP to specified client 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to send to \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a155def07aa6e36251e3d629111a70bc4}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_ac2f8e109ed5f86a2feaebc04d2379b45}{
+\index{clServerState@{clServerState}!SendToUDP@{SendToUDP}}
+\index{SendToUDP@{SendToUDP}!clServerState@{clServerState}}
+\subsubsection[{SendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clServerState::SendToUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clSingleAddr} \&}]{ address, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_ac2f8e109ed5f86a2feaebc04d2379b45}
+Sends {\itshape packet\/} via UDP to specified address 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em address}]remote address to send to \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a4c582a5907e427eb0091079bd4ada3b0}{
+\index{clServerState@{clServerState}!SendUDP@{SendUDP}}
+\index{SendUDP@{SendUDP}!clServerState@{clServerState}}
+\subsubsection[{SendUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clServerState::SendUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a4c582a5907e427eb0091079bd4ada3b0}
+Sends a packet using this socket 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to send to \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{classcl_server_state_a0c6c0c0c2db0181c66945c649ff016d4}{
+\index{clServerState@{clServerState}!SetAutoResize@{SetAutoResize}}
+\index{SetAutoResize@{SetAutoResize}!clServerState@{clServerState}}
+\subsubsection[{SetAutoResize}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SetAutoResize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{bool}]{ paraAutoResize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_a0c6c0c0c2db0181c66945c649ff016d4}
+Change the auto resize option for all clients \par
+ 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using method \item[{\em paraAutoResize}]if true then if a packet larger than the maximum is received, the maximum will be increased silently \par
+ if false then an exception will be thrown \end{DoxyParams}
+\hypertarget{classcl_server_state_aa324f4af4421895f4c06fed536826d40}{
+\index{clServerState@{clServerState}!SetAutoResizeTCP@{SetAutoResizeTCP}}
+\index{SetAutoResizeTCP@{SetAutoResizeTCP}!clServerState@{clServerState}}
+\subsubsection[{SetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{bool}]{ newAutoResizeTCP}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_aa324f4af4421895f4c06fed536826d40}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \item[{\em newAutoResizeTCP}]When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_aa2f17e01ca732a1692d5c1abab70f343}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_ae2bc69bbd2bff4071cb148da272bfe95}{
+\index{clServerState@{clServerState}!SetContainer@{SetContainer}}
+\index{SetContainer@{SetContainer}!clServerState@{clServerState}}
+\subsubsection[{SetContainer}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SetContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ container}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_ae2bc69bbd2bff4071cb148da272bfe95}
+Sets the \hyperlink{classcl_instance_container}{clInstanceContainer} object containing this instance, \hyperlink{classcl_instance_container}{clInstanceContainer} should pass pointer to itself 
+\begin{DoxyParams}{Parameters}
+\item[{\em container}]instance container that owns this instance \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_core_ad2eda53d7f3ba76c2fef2d08e868b81c}{clInstanceCore}.
+
+\hypertarget{classcl_server_state_a69575a84cd634b4105187cb1644a9fe9}{
+\index{clServerState@{clServerState}!SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}}
+\index{SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}!clServerState@{clServerState}}
+\subsubsection[{SetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ newMaxSize}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_a69575a84cd634b4105187cb1644a9fe9}
+Manually changes the maximum packet size that can be received 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \item[{\em newMaxSize}]The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if newMaxSize $<$ \hyperlink{classcl_server_state_a5c90cd631cdc4b2cd323e553433d4d16}{GetRecvSizeMinTCP()} \end{DoxyExceptions}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_a614c842749f0dadca9da9aa825323c2e}{clInstanceTCP}.
+
+\hypertarget{classcl_server_state_afc302a2ceb465e93a8e1396c1c69978d}{
+\index{clServerState@{clServerState}!SetServerTimeout@{SetServerTimeout}}
+\index{SetServerTimeout@{SetServerTimeout}!clServerState@{clServerState}}
+\subsubsection[{SetServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::SetServerTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ milliseconds}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_server_state_afc302a2ceb465e93a8e1396c1c69978d}
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em milliseconds}]number of milliseconds that connection attempt should be allowed to complete before entity is forcefully disconnected \end{DoxyParams}
+\hypertarget{classcl_server_state_ab6bb7ca048e12e276cfa85798bbca305}{
+\index{clServerState@{clServerState}!ShutdownTCP@{ShutdownTCP}}
+\index{ShutdownTCP@{ShutdownTCP}!clServerState@{clServerState}}
+\subsubsection[{ShutdownTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clServerState::ShutdownTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_server_state_ab6bb7ca048e12e276cfa85798bbca305}
+Stops sending on TCP socket so that all further send operations will fail \par
+ All data sent up till now will be received by recipient. \par
+ This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. If not used by completion port then should be set to \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} \item[{\em clientID}]ID of client to use \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_t_c_p_acb97c70b1a0cdba98fd4ac0a658ed6ec}{clInstanceTCP}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_server_state_a4d04e7fec349fb69ac9d7d4278c7e915}{
+\index{clServerState@{clServerState}!client@{client}}
+\index{client@{client}!clServerState@{clServerState}}
+\subsubsection[{client}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStoreVector}$<${\bf clSClient}$>$ {\bf clServerState::client}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a4d04e7fec349fb69ac9d7d4278c7e915}
+Client data \par
+ A vector of \hyperlink{classcl_s_client}{clSClient} objects \hypertarget{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}{
+\index{clServerState@{clServerState}!DEFAULT\_\-CONNECTION\_\-TIMEOUT@{DEFAULT\_\-CONNECTION\_\-TIMEOUT}}
+\index{DEFAULT\_\-CONNECTION\_\-TIMEOUT@{DEFAULT\_\-CONNECTION\_\-TIMEOUT}!clServerState@{clServerState}}
+\subsubsection[{DEFAULT\_\-CONNECTION\_\-TIMEOUT}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clServerState::DEFAULT\_\-CONNECTION\_\-TIMEOUT} = 10000\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}
+Default time in milliseconds that a connection attempt will be waited on before giving up \hypertarget{classcl_server_state_a1928a46878962bc4d2c804bf21074319}{
+\index{clServerState@{clServerState}!disconnected@{disconnected}}
+\index{disconnected@{disconnected}!clServerState@{clServerState}}
+\subsubsection[{disconnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStoreQueue}$<$size\_\-t$>$ {\bf clServerState::disconnected}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a1928a46878962bc4d2c804bf21074319}
+List of recently disconnected clients to be used by {\ttfamily mnClientLeft} \hypertarget{classcl_server_state_a78bea97e597f0122863a4ee259a24785}{
+\index{clServerState@{clServerState}!maxClients@{maxClients}}
+\index{maxClients@{maxClients}!clServerState@{clServerState}}
+\subsubsection[{maxClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clServerState::maxClients}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a78bea97e597f0122863a4ee259a24785}
+Maximum number of clients that can be connected to server at any one time \hypertarget{classcl_server_state_a375603ab73421b96cfe100570d86300d}{
+\index{clServerState@{clServerState}!recvFailCounterUDP@{recvFailCounterUDP}}
+\index{recvFailCounterUDP@{recvFailCounterUDP}!clServerState@{clServerState}}
+\subsubsection[{recvFailCounterUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCounter} {\bf clServerState::recvFailCounterUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a375603ab73421b96cfe100570d86300d}
+Counter that keeps track of UDP receive failures, WSARecv can sometimes fail for reasons that should not result in catastrophic failure of the instance e.g. a WSASendTo operation to a remote address failed. For this reason we retry receive operations a number of times, when to give up is managed by this object. \hypertarget{classcl_server_state_a6f718c1f7be5673a45d04df644f7ce5b}{
+\index{clServerState@{clServerState}!recvSizeMinTCP@{recvSizeMinTCP}}
+\index{recvSizeMinTCP@{recvSizeMinTCP}!clServerState@{clServerState}}
+\subsubsection[{recvSizeMinTCP}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clServerState::recvSizeMinTCP} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_server_state_a6f718c1f7be5673a45d04df644f7ce5b}
+Minimum TCP buffer size necessary to maintain normal operations \hypertarget{classcl_server_state_ae6d8460b8b124c1ece70b94440cea634}{
+\index{clServerState@{clServerState}!recvSizeMinUDP@{recvSizeMinUDP}}
+\index{recvSizeMinUDP@{recvSizeMinUDP}!clServerState@{clServerState}}
+\subsubsection[{recvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clServerState::recvSizeMinUDP} = 20\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_server_state_ae6d8460b8b124c1ece70b94440cea634}
+Minimum UDP buffer size necessary to maintain normal operations \hypertarget{classcl_server_state_a65f672655a8b980a21e84d939ad81841}{
+\index{clServerState@{clServerState}!serverInfo@{serverInfo}}
+\index{serverInfo@{serverInfo}!clServerState@{clServerState}}
+\subsubsection[{serverInfo}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} {\bf clServerState::serverInfo}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a65f672655a8b980a21e84d939ad81841}
+Packet contains data that is sent to clients upon connection, The data describes key characteristics of the server \hypertarget{classcl_server_state_a5420d87b6c3e42c7ab033d00273ffe51}{
+\index{clServerState@{clServerState}!socketListening@{socketListening}}
+\index{socketListening@{socketListening}!clServerState@{clServerState}}
+\subsubsection[{socketListening}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketListening}$\ast$ {\bf clServerState::socketListening}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_a5420d87b6c3e42c7ab033d00273ffe51}
+Socket used to accept TCP connections from clients \hypertarget{classcl_server_state_ad8a53992b7a622816eeb6b70fd4fec25}{
+\index{clServerState@{clServerState}!timeout@{timeout}}
+\index{timeout@{timeout}!clServerState@{clServerState}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStatus}$<$size\_\-t$>$ {\bf clServerState::timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_server_state_ad8a53992b7a622816eeb6b70fd4fec25}
+Time in milliseconds that a connection attempt will be waited on before giving up 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clServerState.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clServerState.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,743 @@
+\hypertarget{class_net_instance_client}{
+\section{NetInstanceClient Class Reference}
+\label{class_net_instance_client}\index{NetInstanceClient@{NetInstanceClient}}
+}
+
+
+Client instance, designed to communicate with servers.  
+
+
+
+
+{\ttfamily \#include $<$NetInstanceClient.h$>$}
+
+Inheritance diagram for NetInstanceClient:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_net_instance_client}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{class_net_instance_client_a1cdd2b3d780fd8ef0ab9cbebedc0b6a5}{GetRecvSizeMinTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the minimum TCP receive buffer size. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_client_a30b1dcba17c247fabb928e5dbca54356}{GetRecvSizeMinUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the minimum UDP receive buffer size. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_client_a647f159bf7881c64ee82dde6498e1a32}{GetConnectTimeout} () const 
+\begin{DoxyCompactList}\small\item\em Length of time in milliseconds that handshaking process should be allowed before aborting the process. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_client_a7f78d5c9c831e9ffce2e4859179e0245}{Connect} (const \hyperlink{class_net_address}{NetAddress} $\ast$addressTCP, const \hyperlink{class_net_address}{NetAddress} $\ast$addressUDP, size\_\-t connectionTimeout, bool block)
+\begin{DoxyCompactList}\small\item\em Begins connecting to server. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_client_a9881a9387f7e46f690e7ae65a9a951c7}{ThreadHandshakeRoutine} ()
+\begin{DoxyCompactList}\small\item\em Negotiates a connection with the server. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_client_a9f96ef6d39ce2b6a23e3a1f7fa13599f}{PollConnect} ()
+\begin{DoxyCompactList}\small\item\em Determines the status of handshaking process. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_client_aa85847af595e3e562ba00b4ec2f2f3e0}{StopConnect} ()
+\begin{DoxyCompactList}\small\item\em Cancels the handshaking process. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_client_a06bd377c8014d5d0b684db8f80fb5a06}{IsConnecting} () const 
+\begin{DoxyCompactList}\small\item\em Determines if the client is in the process of connecting to a server. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_client_aaf717e0f3dbe49a86b8473ad093c7176}{ClientConnected} ()
+\begin{DoxyCompactList}\small\item\em Determines the status of the connection with the server. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_client_ad8d5d608125edbbd11283b5b31031ea5}{GetConnectionState} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the state that the connection is in. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_client_a55e57774e40393af927fa2a517a2a2a8}{ErrorOccurred} (size\_\-t \hyperlink{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{clientID}=0)
+\begin{DoxyCompactList}\small\item\em Deals with errors. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_client_a92a62257550ff1d2d4db8b47ed55e8b7}{DoRecv} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, size\_\-t \hyperlink{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{clientID}=0)
+\begin{DoxyCompactList}\small\item\em Starts a receive operation and deals with errors appropriately. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_client_a81244ebf13908fd198a79de50afc6a2a}{CompletionError} (\hyperlink{class_net_socket}{NetSocket} $\ast$completionSocket, size\_\-t \hyperlink{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{clientID}=0)
+\begin{DoxyCompactList}\small\item\em Called by the completion port when an error occurred during an operation. \item\end{DoxyCompactList}\item 
+int \hyperlink{class_net_instance_client_a44604d72abe620f617bf26c7fe497e70}{DoRawSendUDP} (const \hyperlink{class_packet}{Packet} \&packet, bool block)
+\begin{DoxyCompactList}\small\item\em Starts a raw send operation via UDP and deals with errors in a client specific way. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_client_a66e97eb71dc131728b526d911a3b8548}{NetInstanceClient} (\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$\hyperlink{class_net_instance_implemented_t_c_p_adb7cac7d6ca26729e2eb83ae7f6ad984}{socketTCP}, \hyperlink{class_net_socket_u_d_p}{NetSocketUDP} $\ast$\hyperlink{class_net_instance_u_d_p_af86e8343ddf2daf0ce3f9ea701bc7cf3}{socketUDP}, bool \hyperlink{class_net_instance_t_c_p_af13f96901d3006beeda0c161f32cbfde}{handshakeEnabled}, unsigned int \hyperlink{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}{sendTimeout}=INFINITE, const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$\hyperlink{class_net_instance_client_abfd45e00771b132f08c2aea9bf582a3e}{decryptKey}=NULL, size\_\-t \hyperlink{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{instanceID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_client_a0e7b8b830889578da1f5fd3d89dc08bb}{NetInstanceClient} (const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, size\_\-t \hyperlink{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{instanceID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor, using profile instead of individual parameters. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_client_aa5b7843b4ca224e1f20a489050a40e19}{$\sim$NetInstanceClient} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_instance_client_abf711774516cb172ff615894c9d7a8e1}{SendUDP} (const \hyperlink{class_packet}{Packet} \&packet, bool block, size\_\-t \hyperlink{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{clientID}=0)
+\begin{DoxyCompactList}\small\item\em Sends a packet via UDP to the server. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_instance_client_a890f6f61e7a48a642fdaa232a86f08f1}{SendToUDP} (const \hyperlink{class_net_address}{NetAddress} \&address, const \hyperlink{class_packet}{Packet} \&packet, bool block)
+\begin{DoxyCompactList}\small\item\em Sends a packet via UDP to a remote address. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_client_abc531c75e610e232efe67d5fcbc1dae4}{GetMaxClients} ()
+\begin{DoxyCompactList}\small\item\em Retrieves maximum number of clients that can be connected to server at any one time. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_client_a4eb551374eb94ebd3e77e58291ed9549}{GetClientID} ()
+\begin{DoxyCompactList}\small\item\em Retrieves client ID allocated by server. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_client_a71c2b11a56a18ae3b1c3a76390776ee9}{DealCompletion} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, DWORD bytes, size\_\-t \hyperlink{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{clientID}=0)
+\begin{DoxyCompactList}\small\item\em When send and receive operations are completed on this instance, this method is called. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_client_a6d9671a1416d1de06d8013ec02d78692}{CloseSockets} ()
+\begin{DoxyCompactList}\small\item\em Closes any sockets in use by the instance. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_instance_client_a90bfd05103f12264ee2293ccd71081f4}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_client_a667185822294a7c9f93ddd496e638a24}{
+static const size\_\-t \hyperlink{class_net_instance_client_a667185822294a7c9f93ddd496e638a24}{recvSizeMinUDP} = 0}
+\label{class_net_instance_client_a667185822294a7c9f93ddd496e638a24}
+
+\begin{DoxyCompactList}\small\item\em Minimum UDP buffer size necessary to maintain normal operations. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_af35177f5736c4cc487097de91dae6df4}{
+static const size\_\-t \hyperlink{class_net_instance_client_af35177f5736c4cc487097de91dae6df4}{recvSizeMinTCP} = 33}
+\label{class_net_instance_client_af35177f5736c4cc487097de91dae6df4}
+
+\begin{DoxyCompactList}\small\item\em Minimum TCP buffer size necessary to maintain normal operations. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_instance_client_a5d26a06879c6111dc12aedd7454de74c}{Initialize} (const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$\hyperlink{class_net_instance_client_abfd45e00771b132f08c2aea9bf582a3e}{decryptKey})
+\begin{DoxyCompactList}\small\item\em Initializes object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_client_ae59a0afcae755a2d07eefe7b4c37c689}{HelperHandshakeStatus} (const \hyperlink{class_timer}{Timer} \&timeout)
+\begin{DoxyCompactList}\small\item\em Used by handshaking thread to determine whether the process should be aborted. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_client_abfd45e00771b132f08c2aea9bf582a3e}{
+const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$ \hyperlink{class_net_instance_client_abfd45e00771b132f08c2aea9bf582a3e}{decryptKey}}
+\label{class_net_instance_client_abfd45e00771b132f08c2aea9bf582a3e}
+
+\begin{DoxyCompactList}\small\item\em Temporary store to communicate with handshaking thread, which may need to know this when creating modeUDP object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_af10315644a2c7ffd820d8a6b2ad0f504}{
+size\_\-t \hyperlink{class_net_instance_client_af10315644a2c7ffd820d8a6b2ad0f504}{recvSizeUDP}}
+\label{class_net_instance_client_af10315644a2c7ffd820d8a6b2ad0f504}
+
+\begin{DoxyCompactList}\small\item\em Temporary store to communicate with handshaking thread, which may need to know this when creating modeUDP object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_a3830bd923adb2bcd574a9e06edf304ce}{
+size\_\-t \hyperlink{class_net_instance_client_a3830bd923adb2bcd574a9e06edf304ce}{timeoutMilliseconds}}
+\label{class_net_instance_client_a3830bd923adb2bcd574a9e06edf304ce}
+
+\begin{DoxyCompactList}\small\item\em Maximum length of time that client would wait before giving up on connection process. Exists to pass information to the handshaking thread. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_ab03cb69d1c904f442b29e1f4665c3be7}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} $>$ \hyperlink{class_net_instance_client_ab03cb69d1c904f442b29e1f4665c3be7}{connectionStatus}}
+\label{class_net_instance_client_ab03cb69d1c904f442b29e1f4665c3be7}
+
+\begin{DoxyCompactList}\small\item\em Stores the state of the connection process. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}{clientID}}
+\label{class_net_instance_client_abc188a88da7ab851bc3ac4d9287fe342}
+
+\begin{DoxyCompactList}\small\item\em ID of client (as allocated by server), filled during the handshaking process. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_ad07bedf8749aa191a16bfd72434bd80d}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_net_instance_client_ad07bedf8749aa191a16bfd72434bd80d}{maxClients}}
+\label{class_net_instance_client_ad07bedf8749aa191a16bfd72434bd80d}
+
+\begin{DoxyCompactList}\small\item\em Maximum number of clients that can be connected to server (that we are connected to) at any one time, filled during the handshaking process. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_ade1e8bb0bc0cdfefa23aa56c63dc72dd}{
+\hyperlink{class_thread_single}{ThreadSingle} $\ast$ \hyperlink{class_net_instance_client_ade1e8bb0bc0cdfefa23aa56c63dc72dd}{handshakeThread}}
+\label{class_net_instance_client_ade1e8bb0bc0cdfefa23aa56c63dc72dd}
+
+\begin{DoxyCompactList}\small\item\em Thread to perform handshaking process with server. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_a9c9b110b29ed61db3c5e92e5040fcc6f}{
+\hyperlink{class_error_report}{ErrorReport} \hyperlink{class_net_instance_client_a9c9b110b29ed61db3c5e92e5040fcc6f}{handshakeError}}
+\label{class_net_instance_client_a9c9b110b29ed61db3c5e92e5040fcc6f}
+
+\begin{DoxyCompactList}\small\item\em Stores error that occurred in handshake thread so that it can be thrown from PollConnect. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_client_a4b5f778d25fb1a772eae7662788ff21f}{
+bool \hyperlink{class_net_instance_client_a4b5f778d25fb1a772eae7662788ff21f}{handshakeErrorOccurred}}
+\label{class_net_instance_client_a4b5f778d25fb1a772eae7662788ff21f}
+
+\begin{DoxyCompactList}\small\item\em True if an error occurred in handshake thread. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Client instance, designed to communicate with servers. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This instance uses TCP and UDP to communicate with servers. Most commonly it will be used to communicate with another entity running a \hyperlink{class_net_instance_server}{NetInstanceServer} instance. However, this instance can also communicate with other entities such as web servers. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_client_a66e97eb71dc131728b526d911a3b8548}{
+\index{NetInstanceClient@{NetInstanceClient}!NetInstanceClient@{NetInstanceClient}}
+\index{NetInstanceClient@{NetInstanceClient}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{NetInstanceClient}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceClient::NetInstanceClient (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocketTCP} $\ast$}]{ p\_\-socketTCP, }
+\item[{{\bf NetSocketUDP} $\ast$}]{ p\_\-socketUDP, }
+\item[{bool}]{ p\_\-handshakeEnabled, }
+\item[{unsigned int}]{ p\_\-sendTimeout = {\ttfamily INFINITE}, }
+\item[{const {\bf EncryptKey} $\ast$}]{ p\_\-decryptKey = {\ttfamily NULL}, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a66e97eb71dc131728b526d911a3b8548}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em p\_\-socketTCP}]Socket to use to send and receive TCP data. This pointer and its data is now owned by this object and should not be used elsewhere. \item[\mbox{\tt[in]} {\em p\_\-socketUDP}]Socket to use to send and receive UDP data, NULL if UDP is disabled. This pointer and its data is now owned by this object and should not be used elsewhere. \item[{\em p\_\-handshakeEnabled}]True if the TCP handshaking process is enabled, false if not. For more information see \hyperlink{handshake_page}{server/client handshaking process}. \item[{\em p\_\-sendTimeout}]Length of time in milliseconds to wait for a send operation to complete before disconnecting client (optional, default INFINITE). \item[{\em p\_\-decryptKey}]Pointer to a \hyperlink{class_encrypt_key}{EncryptKey} object to be used to decrypt UDP data (optional, default NULL). \item[{\em p\_\-instanceID}]Unique identifier for instance (optional, default 0). \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If p\_\-socketTCP-\/$>$GetRecvBufferLength() $<$ \hyperlink{class_net_instance_client_a1cdd2b3d780fd8ef0ab9cbebedc0b6a5}{GetRecvSizeMinTCP()}. \end{DoxyExceptions}
+\hypertarget{class_net_instance_client_a0e7b8b830889578da1f5fd3d89dc08bb}{
+\index{NetInstanceClient@{NetInstanceClient}!NetInstanceClient@{NetInstanceClient}}
+\index{NetInstanceClient@{NetInstanceClient}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{NetInstanceClient}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceClient::NetInstanceClient (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetInstanceProfile} \&}]{ p\_\-profile, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a0e7b8b830889578da1f5fd3d89dc08bb}
+
+
+Constructor, using profile instead of individual parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-profile}]Instance profile containing parameters. \item[{\em p\_\-instanceID}]Unique identifier for instance (optional, default 0). \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If p\_\-profile.GetRecvSizeTCP() $<$ \hyperlink{class_net_instance_client_a1cdd2b3d780fd8ef0ab9cbebedc0b6a5}{GetRecvSizeMinTCP()}. \end{DoxyExceptions}
+\hypertarget{class_net_instance_client_aa5b7843b4ca224e1f20a489050a40e19}{
+\index{NetInstanceClient@{NetInstanceClient}!$\sim$NetInstanceClient@{$\sim$NetInstanceClient}}
+\index{$\sim$NetInstanceClient@{$\sim$NetInstanceClient}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{$\sim$NetInstanceClient}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceClient::$\sim$NetInstanceClient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_aa5b7843b4ca224e1f20a489050a40e19}
+
+
+Destructor. 
+
+CloseSockets must be used in the destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_client_aaf717e0f3dbe49a86b8473ad093c7176}{
+\index{NetInstanceClient@{NetInstanceClient}!ClientConnected@{ClientConnected}}
+\index{ClientConnected@{ClientConnected}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{ClientConnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceClient::ClientConnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_aaf717e0f3dbe49a86b8473ad093c7176}
+
+
+Determines the status of the connection with the server. 
+
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED}: Fully connected. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6daef8b7210b8ae3961e19fcde743ee08af}{NetUtility::NOT\_\-CONNECTED}: Not connected at all. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}{NetUtility::NO\_\-RECV}: Connected but new data cannot be received because {\ttfamily Shutdown} has been used by recipient (only possible if graceful disconnect is enabled). 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}{NetUtility::NO\_\-SEND}: Connected but data cannot be sent because {\ttfamily Shutdown} has been used (only possible if graceful disconnect is enabled). 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}{NetUtility::NO\_\-SEND\_\-RECV}: Connected but data cannot be sent or received because {\ttfamily Shutdown} has been used on both sides, only data that has already been received and is in the packet queue can be received (only possible if graceful disconnect is enabled). 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a6d9671a1416d1de06d8013ec02d78692}{
+\index{NetInstanceClient@{NetInstanceClient}!CloseSockets@{CloseSockets}}
+\index{CloseSockets@{CloseSockets}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{CloseSockets}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::CloseSockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a6d9671a1416d1de06d8013ec02d78692}
+
+
+Closes any sockets in use by the instance. 
+
+Must be called in the destructor so that instance is not cleaned up until completion port is done using it. 
+
+Reimplemented from \hyperlink{class_net_instance_u_d_p_a34eddd0dac655a1f3ec2950f6c15a456}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_client_a81244ebf13908fd198a79de50afc6a2a}{
+\index{NetInstanceClient@{NetInstanceClient}!CompletionError@{CompletionError}}
+\index{CompletionError@{CompletionError}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{CompletionError}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::CompletionError (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ completionSocket, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a81244ebf13908fd198a79de50afc6a2a}
+
+
+Called by the completion port when an error occurred during an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em completionSocket}]The socket responsible for the error. \item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a6f1377ef6caee467d27288cf53619b37}{NetInstance}.
+
+\hypertarget{class_net_instance_client_a7f78d5c9c831e9ffce2e4859179e0245}{
+\index{NetInstanceClient@{NetInstanceClient}!Connect@{Connect}}
+\index{Connect@{Connect}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceClient::Connect (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} $\ast$}]{ addressTCP, }
+\item[{const {\bf NetAddress} $\ast$}]{ addressUDP, }
+\item[{size\_\-t}]{ connectionTimeout, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a7f78d5c9c831e9ffce2e4859179e0245}
+
+
+Begins connecting to server. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em addressTCP}]TCP IP and port of server that we should attempt to connect to. \item[{\em addressUDP}]UDP IP and port of server that we should attempt to connect to. \item[{\em connectionTimeout}]Length of time in milliseconds that connection attempt should last before it should abort (applies to non blocking too). \item[{\em block}]If true the connection attempt is done synchronously and the method will not return until the connection attempt completes or fails. If false the connection attempt is done asynchronously and the method will return straight away, PollConnect and StopConnect should then be used to manage the connection attempt.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} if the handshaking process completed successfully and the client is now fully connected. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{NetUtility::TIMED\_\-OUT} if the handshaking process timed out. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{NetUtility::REFUSED} if the server is full and so the connection attempt failed. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a71c2b11a56a18ae3b1c3a76390776ee9}{
+\index{NetInstanceClient@{NetInstanceClient}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{DWORD}]{ bytes, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a71c2b11a56a18ae3b1c3a76390776ee9}
+
+
+When send and receive operations are completed on this instance, this method is called. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Socket that operation was started by. \item[{\em bytes}]Number of bytes of data transferred in operation. \item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a77a9c992d7ab0b023de51470a3392c49}{NetInstance}.
+
+\hypertarget{class_net_instance_client_a44604d72abe620f617bf26c7fe497e70}{
+\index{NetInstanceClient@{NetInstanceClient}!DoRawSendUDP@{DoRawSendUDP}}
+\index{DoRawSendUDP@{DoRawSendUDP}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{DoRawSendUDP}]{\setlength{\rightskip}{0pt plus 5cm}int NetInstanceClient::DoRawSendUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a44604d72abe620f617bf26c7fe497e70}
+
+
+Starts a raw send operation via UDP and deals with errors in a client specific way. 
+
+The packet will be sent as is with no modification, regardless of UDP mode.\par
+\par
+
+
+Calls \hyperlink{class_net_socket_u_d_p_ad05b84f0d746d2f8cdd33b36109f541b}{NetSocketUDP::RawSend}. Use this INSTEAD OF socketUDP-\/$>$RawSend, never use socketUDP-\/$>$RawSend directly.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a92a62257550ff1d2d4db8b47ed55e8b7}{
+\index{NetInstanceClient@{NetInstanceClient}!DoRecv@{DoRecv}}
+\index{DoRecv@{DoRecv}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{DoRecv}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::DoRecv (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a92a62257550ff1d2d4db8b47ed55e8b7}
+
+
+Starts a receive operation and deals with errors appropriately. 
+
+Calls NetSocket$\ast$$\ast$$\ast$Recv. Use this INSTEAD OF socket$\ast$$\ast$$\ast$-\/$>$Recv, never use socket$\ast$$\ast$$\ast$-\/$>$Recv directly.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Pointer to socket that receive operation should be started on. \item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a3c3e7a1dfd8e6c54c25f2a61aa86f183}{NetInstance}.
+
+\hypertarget{class_net_instance_client_a55e57774e40393af927fa2a517a2a2a8}{
+\index{NetInstanceClient@{NetInstanceClient}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a55e57774e40393af927fa2a517a2a2a8}
+
+
+Deals with errors. 
+
+Signals instance to be shutdown, ClientConnected will do this when it is next called. The instance is not shutdown directly because it is important that instance shutdown is done by the main process and not by a worker thread (a worker thread may call this method).
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_ab3369f37337a9de2cbefe92f0bf1d087}{NetInstance}.
+
+\hypertarget{class_net_instance_client_a4eb551374eb94ebd3e77e58291ed9549}{
+\index{NetInstanceClient@{NetInstanceClient}!GetClientID@{GetClientID}}
+\index{GetClientID@{GetClientID}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{GetClientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceClient::GetClientID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a4eb551374eb94ebd3e77e58291ed9549}
+
+
+Retrieves client ID allocated by server. 
+
+\begin{DoxyReturn}{Returns}
+ID of client (as allocated by server), filled during the handshaking process.  
+
+0 if the client is not fully connected to the server. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_ad8d5d608125edbbd11283b5b31031ea5}{
+\index{NetInstanceClient@{NetInstanceClient}!GetConnectionState@{GetConnectionState}}
+\index{GetConnectionState@{GetConnectionState}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{GetConnectionState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceClient::GetConnectionState (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_ad8d5d608125edbbd11283b5b31031ea5}
+
+
+Retrieves the state that the connection is in. 
+
+Unlike \hyperlink{class_net_instance_client_aaf717e0f3dbe49a86b8473ad093c7176}{NetInstanceClient::ClientConnected}, the raw state of the connection is returned and no further action is taken.
+
+\begin{DoxyReturn}{Returns}
+the connection state. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a647f159bf7881c64ee82dde6498e1a32}{
+\index{NetInstanceClient@{NetInstanceClient}!GetConnectTimeout@{GetConnectTimeout}}
+\index{GetConnectTimeout@{GetConnectTimeout}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{GetConnectTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceClient::GetConnectTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_client_a647f159bf7881c64ee82dde6498e1a32}
+
+
+Length of time in milliseconds that handshaking process should be allowed before aborting the process. 
+
+\begin{DoxyReturn}{Returns}
+length of time in milliseconds that handshaking process should be allowed before aborting the process. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_abc531c75e610e232efe67d5fcbc1dae4}{
+\index{NetInstanceClient@{NetInstanceClient}!GetMaxClients@{GetMaxClients}}
+\index{GetMaxClients@{GetMaxClients}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{GetMaxClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceClient::GetMaxClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_abc531c75e610e232efe67d5fcbc1dae4}
+
+
+Retrieves maximum number of clients that can be connected to server at any one time. 
+
+\begin{DoxyReturn}{Returns}
+Maximum number of clients that can be connected to server (that we are connected to) at any one time, filled during the handshaking process.  
+
+0 if the client is not fully connected to the server. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a1cdd2b3d780fd8ef0ab9cbebedc0b6a5}{
+\index{NetInstanceClient@{NetInstanceClient}!GetRecvSizeMinTCP@{GetRecvSizeMinTCP}}
+\index{GetRecvSizeMinTCP@{GetRecvSizeMinTCP}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{GetRecvSizeMinTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceClient::GetRecvSizeMinTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_client_a1cdd2b3d780fd8ef0ab9cbebedc0b6a5}
+
+
+Retrieves the minimum TCP receive buffer size. 
+
+\begin{DoxyReturn}{Returns}
+the minimum TCP receive buffer size. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a30b1dcba17c247fabb928e5dbca54356}{
+\index{NetInstanceClient@{NetInstanceClient}!GetRecvSizeMinUDP@{GetRecvSizeMinUDP}}
+\index{GetRecvSizeMinUDP@{GetRecvSizeMinUDP}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{GetRecvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceClient::GetRecvSizeMinUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a30b1dcba17c247fabb928e5dbca54356}
+
+
+Retrieves the minimum UDP receive buffer size. 
+
+\begin{DoxyReturn}{Returns}
+the minimum UDP receive buffer size. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_u_d_p_a66b09a826a620f60707158d5cb11febc}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_client_ae59a0afcae755a2d07eefe7b4c37c689}{
+\index{NetInstanceClient@{NetInstanceClient}!HelperHandshakeStatus@{HelperHandshakeStatus}}
+\index{HelperHandshakeStatus@{HelperHandshakeStatus}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{HelperHandshakeStatus}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceClient::HelperHandshakeStatus (
+\begin{DoxyParamCaption}
+\item[{const {\bf Timer} \&}]{ timeout}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_client_ae59a0afcae755a2d07eefe7b4c37c689}
+
+
+Used by handshaking thread to determine whether the process should be aborted. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]Object used to determine when the connection process has timed out.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+NetUtility::TIME\_\-OUT if the handshaking process timed out, or if the process was terminated upon request. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred in the completion port. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9d19ff7a0b7766eb4176922a19ff44af}{NetUtility::CONNECTING} if the process is still in progress with no critical problems. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a5d26a06879c6111dc12aedd7454de74c}{
+\index{NetInstanceClient@{NetInstanceClient}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::Initialize (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} $\ast$}]{ p\_\-decryptKey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_client_a5d26a06879c6111dc12aedd7454de74c}
+
+
+Initializes object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-decryptKey}]Pointer (casted to long long int) to a \hyperlink{class_encrypt_key}{EncryptKey} object to be used to decrypt UDP data. \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+SocketUDP Must be initialized before using this method. 
+\end{DoxyWarning}
+\hypertarget{class_net_instance_client_a06bd377c8014d5d0b684db8f80fb5a06}{
+\index{NetInstanceClient@{NetInstanceClient}!IsConnecting@{IsConnecting}}
+\index{IsConnecting@{IsConnecting}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{IsConnecting}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceClient::IsConnecting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_client_a06bd377c8014d5d0b684db8f80fb5a06}
+
+
+Determines if the client is in the process of connecting to a server. 
+
+\begin{DoxyReturn}{Returns}
+true if connecting, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a9f96ef6d39ce2b6a23e3a1f7fa13599f}{
+\index{NetInstanceClient@{NetInstanceClient}!PollConnect@{PollConnect}}
+\index{PollConnect@{PollConnect}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{PollConnect}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceClient::PollConnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a9f96ef6d39ce2b6a23e3a1f7fa13599f}
+
+
+Determines the status of handshaking process. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da86caa623f8ffc60da40df3c2ab17532c}{NetUtility::STILL\_\-CONNECTING} if the handshaking process is in progress still. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} if the handshaking process completed successfully and the client is now fully connected. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{NetUtility::TIMED\_\-OUT} if the handshaking process timed out. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabc894c2de7a4404e353f3bcc1193e90b}{NetUtility::REFUSED} if the server is full and so the connection attempt failed. 
+\end{DoxyReturn}
+
+
+Start receiving UDP packets. This is done here instead of during handshaking because once thread exits operation is aborted.
+
+Connect temporarily disabled the user receive function so that the handshaking process can use the packet queue system. This reverses that process now that we are done with the packet queue.
+
+If handshake is enabled then we have already started receiving. TCP packets and so don't need to call DoRecvTCP.
+
+If handshake is enabled then the completion port will have passed all TCP packets to the packet queue system rather than any specified user function so that the handshaking thread can receive TCP data. This means that any packets left in the queue that were received while handshaking should now be passed to the user function if one exists.
+
+Starts a TCP receive operation. Must be done here because on thread exit receive operation would be canceled, since no packet is received on it first.
+
+\hypertarget{class_net_instance_client_a890f6f61e7a48a642fdaa232a86f08f1}{
+\index{NetInstanceClient@{NetInstanceClient}!SendToUDP@{SendToUDP}}
+\index{SendToUDP@{SendToUDP}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{SendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetInstanceClient::SendToUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ address, }
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_a890f6f61e7a48a642fdaa232a86f08f1}
+
+
+Sends a packet via UDP to a remote address. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em address}]Remote address to send to. \item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} If the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} If the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} If the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} If the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_u_d_p_aab521333fd0aabf0b8343fe132494975}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_client_abf711774516cb172ff615894c9d7a8e1}{
+\index{NetInstanceClient@{NetInstanceClient}!SendUDP@{SendUDP}}
+\index{SendUDP@{SendUDP}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{SendUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetInstanceClient::SendUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_client_abf711774516cb172ff615894c9d7a8e1}
+
+
+Sends a packet via UDP to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em clientID}]Ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_u_d_p_afa565c78a2549b3b21ea4b1dedd33793}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_client_aa85847af595e3e562ba00b4ec2f2f3e0}{
+\index{NetInstanceClient@{NetInstanceClient}!StopConnect@{StopConnect}}
+\index{StopConnect@{StopConnect}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{StopConnect}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceClient::StopConnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_aa85847af595e3e562ba00b4ec2f2f3e0}
+
+
+Cancels the handshaking process. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. The handshaking must be in progress otherwise this command will fail.
+
+\begin{DoxyWarning}{Warning}
+PollConnect should not be used after this command, it will fail . 
+\end{DoxyWarning}
+\hypertarget{class_net_instance_client_a90bfd05103f12264ee2293ccd71081f4}{
+\index{NetInstanceClient@{NetInstanceClient}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceClient::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_instance_client_a90bfd05103f12264ee2293ccd71081f4}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_client_a9881a9387f7e46f690e7ae65a9a951c7}{
+\index{NetInstanceClient@{NetInstanceClient}!ThreadHandshakeRoutine@{ThreadHandshakeRoutine}}
+\index{ThreadHandshakeRoutine@{ThreadHandshakeRoutine}!NetInstanceClient@{NetInstanceClient}}
+\subsubsection[{ThreadHandshakeRoutine}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceClient::ThreadHandshakeRoutine (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_client_a9881a9387f7e46f690e7ae65a9a951c7}
+
+
+Negotiates a connection with the server. 
+
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+\begin{DoxyWarning}{Warning}
+Receive operations are canceled when the thread who initiated them exits this means that initiating a receive operation that is not guaranteed to have completed before this thread exits is wrong. Note that if the operation completes the completion port will then initiate a new one which is not bound to this thread.
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED} if the handshaking process completed successfully and the client is now fully connected. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da319e02f6059b4b08edd70c16fa5206fd}{NetUtility::TIMED\_\-OUT} if the handshaking process timed out or was manually aborted by manipulating {\itshape thread\/}. 
+
+\hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da7c6b34544a99c4c264366f2fed4f0973}{NetUtility::CONNECTION\_\-ERROR} if an error occurred. 
+\end{DoxyReturn}
+
+
+If TCP handshake is not enabled then we don't need to wait for a TCP packet from the server and the connection process is now complete.
+
+Start receiving via TCP. When thread exits further receive operations will be canceled. It is okay to do this here because thread will receive data before exiting.
+
+Send UDP packet to confirm our connection. Done in this way to get traverse Network Address Translation enabled routers. Message sending is repeated due to possibility of UDP packet loss.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceClient.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceClient.cpp\end{DoxyCompactItemize}

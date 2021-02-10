@@ -1,0 +1,17 @@
+Graceful disconnection allows clients to finish sending and receiving data before disconnecting. \hypertarget{graceful_disconnect_page_howItWorks}{}\section{How it works}\label{graceful_disconnect_page_howItWorks}
+Below exact method/command names have been avoided because there are a number of ways of performing each operation depending on which part of the module you are interacting with. It should be clear however which method or command you should use for each operation. \par
+\par
+
+
+The below example shows a client disconnecting from a server, if the server wants to drop a client the process remains the same but with the roles reversed. \par
+\par
+
+
+Initially both the client and server are fully connected and the connection status is \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da9c07ac24fb9bdd4157ace978968721fd}{NetUtility::CONNECTED}.\par
+ 
+
+If a client wants to disconnect, it should first initiate the graceful disconnection process by shutting the connection down using a Shutdown method/command. After this any attempt to initiate TCP send operations will fail. However, the client can still receive data as normal from the server. The TCP connection status will now return. \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6da1bcc92a56bd754f0e02e33787f7f9e38}{NetUtility::NO\_\-SEND} on the client side and \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dad749d5c33d1f4fda670efe634f651885}{NetUtility::NO\_\-RECV} on the server side. \par
+ 
+
+Once the server has finished sending any remaining data it should shut the connection down using a Shutdown method/command. After this any further attempt to send to the client will fail. The TCP connection status will now return \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6dabfdb16770f1140f86d621739ffe89560}{NetUtility::NO\_\-SEND\_\-RECV} on both the client and server side. Now any data left in the TCP packet queue on the client and server side can be extracted. Once the queue is empty the connection can be completely closed and the cleanup process begun. \par
+  

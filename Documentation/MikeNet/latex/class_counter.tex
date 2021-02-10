@@ -1,0 +1,258 @@
+\hypertarget{class_counter}{
+\section{Counter Class Reference}
+\label{class_counter}\index{Counter@{Counter}}
+}
+
+
+Counter object, used to detect a large frequency of an event occurring simultaneously.  
+
+
+
+
+{\ttfamily \#include $<$Counter.h$>$}
+
+Inheritance diagram for Counter:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_counter}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_counter_ad884049fe4db7764357c3df4b1e9aca2}{Counter} (clock\_\-t \hyperlink{class_counter_aaf8311a4c0e6608e29b4b73815ca4e59}{timeout}, size\_\-t \hyperlink{class_counter_a3fcc72a60f11ec2d1cdbfee9c9972a69}{counterLimit})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_counter_a5216d6aa34d76561bd3512dee61f6a14}{Increment} ()
+\begin{DoxyCompactList}\small\item\em Increments counter by 1. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_counter_aa3c4b09402cb480da357f587d3f73193}{GetTimer} ()
+\begin{DoxyCompactList}\small\item\em Returned stored timer value. \item\end{DoxyCompactList}\item 
+clock\_\-t \hyperlink{class_counter_a61f92d52a8adf8e5a99daed34ee114de}{GetTimeout} ()
+\begin{DoxyCompactList}\small\item\em Retrieves timeout value, if the counter has not been incremented for this number of milliseconds then it is reset. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_counter_ac7013b92446259e2cb1beaa259669265}{SetTimeout} (clock\_\-t newTimeout)
+\begin{DoxyCompactList}\small\item\em Change timeout value, if the counter has not been incremented for this number of milliseconds then it is reset. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_counter_ad303afe4ec257af4c65d15a595246591}{GetCounter} ()
+\begin{DoxyCompactList}\small\item\em Retrieves counter value. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_counter_a41a326252ce67d0f6c253b10ce2cab13}{GetCounterLimit} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the maximum that \hyperlink{class_counter_a38772b10f98e364586216fe90ebdb194}{Counter::counter} will be allowed to reach. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_counter_ac1d85691c6a779969610baea5f38fdca}{SetCounterLimit} (size\_\-t newCounterLimit)
+\begin{DoxyCompactList}\small\item\em Retrieves the maximum that \hyperlink{class_counter_a38772b10f98e364586216fe90ebdb194}{Counter::counter} will be allowed to reach. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_counter_aed38c57480625c16c668fdb4e3021ef4}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_counter_afb1e707a0aebc387eb4dd248385d5af0}{
+static const size\_\-t \hyperlink{class_counter_afb1e707a0aebc387eb4dd248385d5af0}{DEFAULT\_\-LIMIT} = 1000}
+\label{class_counter_afb1e707a0aebc387eb4dd248385d5af0}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_counter_a3fcc72a60f11ec2d1cdbfee9c9972a69}{Counter::counterLimit}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_counter_ac1904c97828edeb3cec6a88d29570ea7}{
+static const size\_\-t \hyperlink{class_counter_ac1904c97828edeb3cec6a88d29570ea7}{DEFAULT\_\-TIMEOUT} = 500}
+\label{class_counter_ac1904c97828edeb3cec6a88d29570ea7}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_counter_aaf8311a4c0e6608e29b4b73815ca4e59}{Counter::timeout}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_counter_a006032d39fada9ad683ccc849d2f60d3}{
+void \hyperlink{class_counter_a006032d39fada9ad683ccc849d2f60d3}{Reset} ()}
+\label{class_counter_a006032d39fada9ad683ccc849d2f60d3}
+
+\begin{DoxyCompactList}\small\item\em Reset object, timer is updated and counter set to 0. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_counter_a4cd5ab600cf2240e70150303a1dcc043}{
+clock\_\-t \hyperlink{class_counter_a4cd5ab600cf2240e70150303a1dcc043}{timer}}
+\label{class_counter_a4cd5ab600cf2240e70150303a1dcc043}
+
+\begin{DoxyCompactList}\small\item\em Stores clock() value of last unreset increment. \item\end{DoxyCompactList}\item 
+\hypertarget{class_counter_aaf8311a4c0e6608e29b4b73815ca4e59}{
+clock\_\-t \hyperlink{class_counter_aaf8311a4c0e6608e29b4b73815ca4e59}{timeout}}
+\label{class_counter_aaf8311a4c0e6608e29b4b73815ca4e59}
+
+\begin{DoxyCompactList}\small\item\em After no increment for this number of milliseconds object is reset. \item\end{DoxyCompactList}\item 
+\hypertarget{class_counter_a38772b10f98e364586216fe90ebdb194}{
+size\_\-t \hyperlink{class_counter_a38772b10f98e364586216fe90ebdb194}{counter}}
+\label{class_counter_a38772b10f98e364586216fe90ebdb194}
+
+\begin{DoxyCompactList}\small\item\em Counter incremented by Increment method. \item\end{DoxyCompactList}\item 
+\hypertarget{class_counter_a3fcc72a60f11ec2d1cdbfee9c9972a69}{
+size\_\-t \hyperlink{class_counter_a3fcc72a60f11ec2d1cdbfee9c9972a69}{counterLimit}}
+\label{class_counter_a3fcc72a60f11ec2d1cdbfee9c9972a69}
+
+\begin{DoxyCompactList}\small\item\em Maximum that counter can be, when counter reaches this limit it is reset. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Counter object, used to detect a large frequency of an event occurring simultaneously. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+If no increment has happened for \hyperlink{class_counter_a61f92d52a8adf8e5a99daed34ee114de}{GetTimeout()} number of milliseconds, the counter will be reset to 0. If the counter reaches \hyperlink{class_counter_a41a326252ce67d0f6c253b10ce2cab13}{GetCounterLimit()} it is reset to 0 and \hyperlink{class_counter_a5216d6aa34d76561bd3512dee61f6a14}{Increment()} returns true.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_counter_ad884049fe4db7764357c3df4b1e9aca2}{
+\index{Counter@{Counter}!Counter@{Counter}}
+\index{Counter@{Counter}!Counter@{Counter}}
+\subsubsection[{Counter}]{\setlength{\rightskip}{0pt plus 5cm}Counter::Counter (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ timeout, }
+\item[{size\_\-t}]{ counterLimit}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_ad884049fe4db7764357c3df4b1e9aca2}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]If the counter has not been incremented for this number of milliseconds then the object will be reset, NULL if not used. \item[{\em counterLimit}]When counterLimit is reached Increment will return true and the object will be reset, NULL if not used. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_counter_ad303afe4ec257af4c65d15a595246591}{
+\index{Counter@{Counter}!GetCounter@{GetCounter}}
+\index{GetCounter@{GetCounter}!Counter@{Counter}}
+\subsubsection[{GetCounter}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Counter::GetCounter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_ad303afe4ec257af4c65d15a595246591}
+
+
+Retrieves counter value. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_counter_a38772b10f98e364586216fe90ebdb194}{Counter::counter}. 
+\end{DoxyReturn}
+\hypertarget{class_counter_a41a326252ce67d0f6c253b10ce2cab13}{
+\index{Counter@{Counter}!GetCounterLimit@{GetCounterLimit}}
+\index{GetCounterLimit@{GetCounterLimit}!Counter@{Counter}}
+\subsubsection[{GetCounterLimit}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t Counter::GetCounterLimit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_a41a326252ce67d0f6c253b10ce2cab13}
+
+
+Retrieves the maximum that \hyperlink{class_counter_a38772b10f98e364586216fe90ebdb194}{Counter::counter} will be allowed to reach. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_counter_a3fcc72a60f11ec2d1cdbfee9c9972a69}{Counter::counterLimit}. 
+\end{DoxyReturn}
+\hypertarget{class_counter_a61f92d52a8adf8e5a99daed34ee114de}{
+\index{Counter@{Counter}!GetTimeout@{GetTimeout}}
+\index{GetTimeout@{GetTimeout}!Counter@{Counter}}
+\subsubsection[{GetTimeout}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t Counter::GetTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_a61f92d52a8adf8e5a99daed34ee114de}
+
+
+Retrieves timeout value, if the counter has not been incremented for this number of milliseconds then it is reset. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_counter_aaf8311a4c0e6608e29b4b73815ca4e59}{Counter::timeout()}. 
+\end{DoxyReturn}
+\hypertarget{class_counter_aa3c4b09402cb480da357f587d3f73193}{
+\index{Counter@{Counter}!GetTimer@{GetTimer}}
+\index{GetTimer@{GetTimer}!Counter@{Counter}}
+\subsubsection[{GetTimer}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t Counter::GetTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_aa3c4b09402cb480da357f587d3f73193}
+
+
+Returned stored timer value. 
+
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_counter_a4cd5ab600cf2240e70150303a1dcc043}{Counter::timer}. 
+\end{DoxyReturn}
+\hypertarget{class_counter_a5216d6aa34d76561bd3512dee61f6a14}{
+\index{Counter@{Counter}!Increment@{Increment}}
+\index{Increment@{Increment}!Counter@{Counter}}
+\subsubsection[{Increment}]{\setlength{\rightskip}{0pt plus 5cm}bool Counter::Increment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_a5216d6aa34d76561bd3512dee61f6a14}
+
+
+Increments counter by 1. 
+
+\begin{DoxyReturn}{Returns}
+true if counter limit has been reached, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_counter_ac1d85691c6a779969610baea5f38fdca}{
+\index{Counter@{Counter}!SetCounterLimit@{SetCounterLimit}}
+\index{SetCounterLimit@{SetCounterLimit}!Counter@{Counter}}
+\subsubsection[{SetCounterLimit}]{\setlength{\rightskip}{0pt plus 5cm}void Counter::SetCounterLimit (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newCounterLimit}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_ac1d85691c6a779969610baea5f38fdca}
+
+
+Retrieves the maximum that \hyperlink{class_counter_a38772b10f98e364586216fe90ebdb194}{Counter::counter} will be allowed to reach. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newCounterLimit}]New counter limit. \end{DoxyParams}
+\hypertarget{class_counter_ac7013b92446259e2cb1beaa259669265}{
+\index{Counter@{Counter}!SetTimeout@{SetTimeout}}
+\index{SetTimeout@{SetTimeout}!Counter@{Counter}}
+\subsubsection[{SetTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void Counter::SetTimeout (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ newTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_counter_ac7013b92446259e2cb1beaa259669265}
+
+
+Change timeout value, if the counter has not been incremented for this number of milliseconds then it is reset. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newTimeout}]New timeout value. \end{DoxyParams}
+\hypertarget{class_counter_aed38c57480625c16c668fdb4e3021ef4}{
+\index{Counter@{Counter}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!Counter@{Counter}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool Counter::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_counter_aed38c57480625c16c668fdb4e3021ef4}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Counter.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/Counter.cpp\end{DoxyCompactItemize}

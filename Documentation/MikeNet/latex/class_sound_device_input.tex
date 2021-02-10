@@ -1,0 +1,267 @@
+\hypertarget{class_sound_device_input}{
+\section{SoundDeviceInput Class Reference}
+\label{class_sound_device_input}\index{SoundDeviceInput@{SoundDeviceInput}}
+}
+
+
+Stores information about an input device.  
+
+
+
+
+{\ttfamily \#include $<$SoundDeviceInput.h$>$}
+
+Inheritance diagram for SoundDeviceInput:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sound_device_input}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sound_device_input_a8596aae39978b111db4942a5ff441e0f}{SoundDeviceInput} (unsigned int deviceID)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_device_input_ab2b031837b9f84ab2004091ed6e0c0b1}{
+virtual \hyperlink{class_sound_device_input_ab2b031837b9f84ab2004091ed6e0c0b1}{$\sim$SoundDeviceInput} (void)}
+\label{class_sound_device_input_ab2b031837b9f84ab2004091ed6e0c0b1}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_device_input_aab0db70bbed1a8c2853069353cdd262c}{GetManufacturerID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the manufacturer ID of the device. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_device_input_a13cdfcc788f41cbb03164788d30a9f51}{GetProductID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the product ID of the device. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_sound_device_input_a6ee7005f81d8320201d5ea3dda6207b6}{GetName} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the device. \item\end{DoxyCompactList}\item 
+unsigned char \hyperlink{class_sound_device_input_a4326e170cc6fa4e91bb07011e75346c2}{GetDriverMajorVersion} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the major version of the device's driver e.g. if the version is 4.5 then 4 will be returned. \item\end{DoxyCompactList}\item 
+unsigned char \hyperlink{class_sound_device_input_ae0f28a79d3cd558f83ed4efe6d042f2f}{GetDriverMinorVersion} () const 
+\begin{DoxyCompactList}\small\item\em Gets the minor version of the device's driver e.g. if the version if 4.5 then 5 will be returned. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_device_input_a0893f534c2dfe7f39ed7355863e7789a}{GetNumChannelsSupported} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of channels supported by the device. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static unsigned int \hyperlink{class_sound_device_input_a7dfe263a3f83af8f7b75c7247bf58974}{GetNumDevices} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of input devices available. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_sound_device_input_afc87d7fa5285552c904cff4bea4e9892}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+DWORD \hyperlink{class_sound_device_input_a14d0fb3bd7428b7d2baaf20311f9ee82}{GetFormatSupport} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves information about what formats are supported by the device. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_device_input_a77a87d0357d50ce97d94e9eb4c28bcbb}{
+WAVEINCAPS \hyperlink{class_sound_device_input_a77a87d0357d50ce97d94e9eb4c28bcbb}{info}}
+\label{class_sound_device_input_a77a87d0357d50ce97d94e9eb4c28bcbb}
+
+\begin{DoxyCompactList}\small\item\em Stores information about the input device. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores information about an input device. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sound_device_input_a8596aae39978b111db4942a5ff441e0f}{
+\index{SoundDeviceInput@{SoundDeviceInput}!SoundDeviceInput@{SoundDeviceInput}}
+\index{SoundDeviceInput@{SoundDeviceInput}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{SoundDeviceInput}]{\setlength{\rightskip}{0pt plus 5cm}SoundDeviceInput::SoundDeviceInput (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ deviceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_device_input_a8596aae39978b111db4942a5ff441e0f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em deviceID}]Identifier for the device. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_device_input_a4326e170cc6fa4e91bb07011e75346c2}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetDriverMajorVersion@{GetDriverMajorVersion}}
+\index{GetDriverMajorVersion@{GetDriverMajorVersion}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetDriverMajorVersion}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char SoundDeviceInput::GetDriverMajorVersion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_device_input_a4326e170cc6fa4e91bb07011e75346c2}
+
+
+Retrieves the major version of the device's driver e.g. if the version is 4.5 then 4 will be returned. 
+
+\begin{DoxyReturn}{Returns}
+the driver major version. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_ae0f28a79d3cd558f83ed4efe6d042f2f}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetDriverMinorVersion@{GetDriverMinorVersion}}
+\index{GetDriverMinorVersion@{GetDriverMinorVersion}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetDriverMinorVersion}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char SoundDeviceInput::GetDriverMinorVersion (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_device_input_ae0f28a79d3cd558f83ed4efe6d042f2f}
+
+
+Gets the minor version of the device's driver e.g. if the version if 4.5 then 5 will be returned. 
+
+\begin{DoxyReturn}{Returns}
+the driver minor version. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_a14d0fb3bd7428b7d2baaf20311f9ee82}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetFormatSupport@{GetFormatSupport}}
+\index{GetFormatSupport@{GetFormatSupport}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetFormatSupport}]{\setlength{\rightskip}{0pt plus 5cm}DWORD SoundDeviceInput::GetFormatSupport (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private, virtual\mbox{]}}}}
+\label{class_sound_device_input_a14d0fb3bd7428b7d2baaf20311f9ee82}
+
+
+Retrieves information about what formats are supported by the device. 
+
+\begin{DoxyReturn}{Returns}
+information about what formats are supported by the device (stored in the bits of a DWORD). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_aab0db70bbed1a8c2853069353cdd262c}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetManufacturerID@{GetManufacturerID}}
+\index{GetManufacturerID@{GetManufacturerID}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetManufacturerID}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundDeviceInput::GetManufacturerID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_device_input_aab0db70bbed1a8c2853069353cdd262c}
+
+
+Retrieves the manufacturer ID of the device. 
+
+\begin{DoxyReturn}{Returns}
+the manufacturer identifier. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_a6ee7005f81d8320201d5ea3dda6207b6}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetName@{GetName}}
+\index{GetName@{GetName}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetName}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ SoundDeviceInput::GetName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_device_input_a6ee7005f81d8320201d5ea3dda6207b6}
+
+
+Retrieves the name of the device. 
+
+\begin{DoxyReturn}{Returns}
+the name of the device. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_a0893f534c2dfe7f39ed7355863e7789a}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetNumChannelsSupported@{GetNumChannelsSupported}}
+\index{GetNumChannelsSupported@{GetNumChannelsSupported}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetNumChannelsSupported}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundDeviceInput::GetNumChannelsSupported (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_device_input_a0893f534c2dfe7f39ed7355863e7789a}
+
+
+Retrieves the number of channels supported by the device. 
+
+\begin{DoxyReturn}{Returns}
+the number of channels supported. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_a7dfe263a3f83af8f7b75c7247bf58974}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetNumDevices@{GetNumDevices}}
+\index{GetNumDevices@{GetNumDevices}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetNumDevices}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int SoundDeviceInput::GetNumDevices (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_device_input_a7dfe263a3f83af8f7b75c7247bf58974}
+
+
+Retrieves the number of input devices available. 
+
+\begin{DoxyReturn}{Returns}
+the number of input devices available. 
+\end{DoxyReturn}
+\hypertarget{class_sound_device_input_a13cdfcc788f41cbb03164788d30a9f51}{
+\index{SoundDeviceInput@{SoundDeviceInput}!GetProductID@{GetProductID}}
+\index{GetProductID@{GetProductID}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{GetProductID}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundDeviceInput::GetProductID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_device_input_a13cdfcc788f41cbb03164788d30a9f51}
+
+
+Retrieves the product ID of the device. 
+
+\begin{DoxyReturn}{Returns}
+the product identifier. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_sound_device}{SoundDevice}.
+
+\hypertarget{class_sound_device_input_afc87d7fa5285552c904cff4bea4e9892}{
+\index{SoundDeviceInput@{SoundDeviceInput}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!SoundDeviceInput@{SoundDeviceInput}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool SoundDeviceInput::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_device_input_afc87d7fa5285552c904cff4bea4e9892}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundDeviceInput.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundDeviceInput.cpp\end{DoxyCompactItemize}

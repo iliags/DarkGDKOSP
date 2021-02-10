@@ -1,0 +1,497 @@
+﻿<s3ge version="1.0">
+
+  <!-- AIEdit Sub Menu-->
+
+  <gizmo name="AIEditFile" parent="AIEdit" description="AI File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" behavior="menubox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+    <gizmo name="AIEditFileNew" parent="AIEditFile" ref="previous" description="Create AI File">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="AIEditFileOpen" parent="AIEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Logic Format(*.s3ge) | Import">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle" icon_label="icon_open" icon_x="4" icon_xalign="left" icon_yalign="center"/>
+    </gizmo>
+
+    <gizmo name="AIEditFileSave" parent="AIEditFile" ref="previous" description="Save|SaveAs Logic Format(*.s3ge)">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle"  icon_label="icon_nil"/>
+    </gizmo>
+
+    <gizmo name="AIEditFileClose" parent="AIEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="AIEditEdit" parent="AIEdit" ref="AIEditFile" description="AI Edit">
+    <orientate ref="AIEditFile" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="AIEditEditUndo" parent="AIEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Undo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="AIEditEditRedo" parent="AIEditEdit" ref="previous" description="Redo">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="AIEditEditCut" parent="AIEditEdit" ref="previous" description="Cut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="AIEditEditCopy" parent="AIEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="AIEditEditPaste" parent="AIEditEdit" ref="previous" description="Paste">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="AIEditEditDelete" parent="AIEditEdit" ref="previous" description="Delete|Clear">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="AIEditObject" parent="AIEdit" ref="AIEditEdit" description="AI Objects">
+    <orientate ref="AIEditEdit" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="AIEditObjectBrain" parent="AIEditObject" ref="previous" description="The Brain">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Brain" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+      <gizmo name="AIEditObjectBrainBehavior" parent="AIEditObjectBrain" ref="previous" description="Brain Mechanical Operation Behavior">
+        <orientate ref="previous" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Behavior" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="AIEditObjectBrainTransition" parent="AIEditObjectBrain" ref="previous" description="Brain State Transition Behavior">
+          <orientate ref="previous" width="96" height="24" yalign="bottom">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" label="Transition" x="24" xalign="left" yalign="middle"/>
+       </gizmo>
+
+      <gizmo name="AIEditObjectBrainKR" parent="AIEditObjectBrain" ref="previous" description="Brain Knowledge Tree (Registry)">
+        <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Knowledge" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+    <gizmo name="AIEditObjectSolvers" parent="AIEditObject" ref="previous" description="Navigational Mesh">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Solvers" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+    
+      <gizmo name="AIEditObjectNavmesh" parent="AIEditObjectSolvers" ref="previous" description="Navigational Mesh">
+        <orientate ref="previous" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="NavMesh" x="24" xalign="left" yalign="middle" icon_label="icon_menu" icon_x="4" icon_xalign="left" icon_yalign="center"/>
+      </gizmo>
+
+        <gizmo name="AIEditObjectNavmeshGeometry" parent="AIEditObjectNavmesh" ref="previous" description="Auto Navigation Geometry (Base Mesh)">
+          <orientate ref="previous" width="96" height="24" xalign="right">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" label="Geometry" x="24" xalign="left" yalign="middle"/>
+        </gizmo>
+
+          <gizmo name="AIEditObjectNavmeshGeometrySingle" parent="AIEditObjectNavmeshGeometry" ref="previous" description="Single Geometry">
+            <orientate ref="previous" width="96" height="24" xalign="right">
+              <physics noresponse="true"/>
+            </orientate>
+            <event state="IDLE" label="Single" x="24" xalign="left" yalign="middle"/>
+          </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshGeometrySingleFile" parent="AIEditObjectNavmeshGeometrySingle" description="*.Obj File Import">
+              <orientate ref="AIEditObjectNavmeshGeometrySingle" width="256" height="24" xalign="right">
+                <physics noresponse="true"/>
+              </orientate>
+              <variable name="toggle" value="0"/>
+              <variable name="linecount" value="1"/>
+              <variable name="1" value="Content/3D/dungeon.obj"/>
+              <event state="IDLE" behavior="textbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" x="24" xalign="left" yalign="middle"/>
+              <event state="ENTER"/>
+              <event state="HOVER" theme="notepadder" style="textboxtypeset" scheme="pointingFX"/>
+              <event state="DOWN" theme="notepadder" style="textboxtypeset"/>
+              <event state="HOLD" theme="notepadder" style="textboxtypeset"/>
+              <event state="DRAG" theme="notepadder" style="textboxtypeset"/>
+              <event state="UP"/>
+              <event state="EXIT"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshGeometrySingleFileImport" parent="AIEditObjectNavmeshGeometrySingle" description="Import!!!">
+              <orientate ref="AIEditObjectNavmeshGeometrySingleFile" width="48" height="24" xalign="right">
+                <physics noresponse="true"/>
+              </orientate>
+              <variable name="toggle" value="0"/>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Import" x="24" xalign="left" yalign="middle"/>
+              <event state="ENTER"/>
+              <event state="HOVER" scheme="pointingFX"/>
+              <event state="DOWN"/>
+              <event state="HOLD"/>
+              <event state="DRAG"/>
+              <event state="UP">
+                <script language="darklua" type="1">
+                  <![CDATA[
+                           aiNavGeometryLoad(uiGizmoPropertyGet(uiGizmoGet('AIEditObjectNavmeshGeometrySingleFile'),'Caption'))
+				            ]]>
+                </script>
+              </event>
+              <event state="EXIT"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshGeometryBuildProperty" parent="AIEditObjectNavmeshGeometrySingle" ref="AIEditObjectNavmeshGeometry" description="Navigation Geometry Construction Properties">
+              <orientate ref="AIEditObjectNavmeshGeometrySingleFile" width="112" height="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" label="Construction" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+              <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyRasterization" parent="AIEditObjectNavmeshGeometryBuildProperty" ref="previous" description="Rasterization">
+                <orientate ref="previous" width="96" height="24" xalign="right">
+                  <physics noresponse="true"/>
+                </orientate>
+                <event state="IDLE" label="Rasterization" x="24" xalign="left" yalign="middle"/>
+              </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyRasterizationCellHeight" parent="AIEditObjectNavmeshGeometryBuildPropertyRasterization" ref="previous" description="Rasterization CellHeight">
+                  <orientate ref="previous" width="96" height="24" xalign="right">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="CellHeight" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyRasterizationCellSize" parent="AIEditObjectNavmeshGeometryBuildPropertyRasterization" ref="previous" description="Rasterization CellSize">
+                  <orientate ref="previous" width="96" height="24" yalign="bottom">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="CellSize" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+              <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyRegion" parent="AIEditObjectNavmeshGeometryBuildProperty" ref="previous" description="Region">
+                <orientate ref="previous" width="96" height="24" yalign="bottom">
+                  <physics noresponse="true"/>
+                </orientate>
+                <event state="IDLE" label="Region" x="24" xalign="left" yalign="middle"/>
+              </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyRegionMinSize" parent="AIEditObjectNavmeshGeometryBuildPropertyRegion" ref="previous" description="Region MinSize">
+                  <orientate ref="previous" width="96" height="24" xalign="right">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="MinSize" x="24" xalign="left" yalign="middle"/>
+                 </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyRegionMergedSize" parent="AIEditObjectNavmeshGeometryBuildPropertyRegion" ref="previous" description="Region MergedSize">
+                  <orientate ref="previous" width="96" height="24" yalign="bottom">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="MergedSize" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+              <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyPolygonization" parent="AIEditObjectNavmeshGeometryBuildProperty" ref="previous" description="Polygonization">
+                <orientate ref="AIEditObjectNavmeshGeometryBuildPropertyRegion" width="96" height="24" yalign="bottom">
+                  <physics noresponse="true"/>
+                </orientate>
+                <event state="IDLE" label="Polygonization" x="24" xalign="left" yalign="middle"/>
+              </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyPolygonizationMaxEdgeLength" parent="AIEditObjectNavmeshGeometryBuildPropertyPolygonization" ref="previous" description="Polygonization MaxEdgeLength">
+                  <orientate ref="previous" width="96" height="24" xalign="right">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="MaxEdgeLength" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyPolygonizationMaxEdgeError" parent="AIEditObjectNavmeshGeometryBuildPropertyPolygonization" ref="previous" description="Polygonization MaxEdgeError">
+                  <orientate ref="previous" width="96" height="24" yalign="bottom">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="MaxEdgeError" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyPolygonizationVertPerPoly" parent="AIEditObjectNavmeshGeometryBuildPropertyPolygonization" ref="previous" description="Polygonization VertPerPoly">
+                  <orientate ref="AIEditObjectNavmeshGeometryBuildPropertyPolygonizationMaxEdgeError" width="96" height="24" yalign="bottom">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="VertPerPoly" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+              <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyDetail" parent="AIEditObjectNavmeshGeometryBuildProperty" ref="previous" description="Detail">
+                <orientate ref="AIEditObjectNavmeshGeometryBuildPropertyPolygonization" width="96" height="24" yalign="bottom">
+                  <physics noresponse="true"/>
+                </orientate>
+                <event state="IDLE" label="Detail" x="24" xalign="left" yalign="middle"/>
+              </gizmo>
+
+              <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyDetailSampleDistance" parent="AIEditObjectNavmeshGeometryBuildPropertyDetail" ref="previous" description="Detail SampleDistance">
+                <orientate ref="AIEditObjectNavmeshGeometryBuildPropertyDetail" width="96" height="24" xalign="right">
+                  <physics noresponse="true"/>
+                </orientate>
+                <event state="IDLE" label="SampleDistance" x="24" xalign="left" yalign="middle"/>
+              </gizmo>
+
+                <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyDetailMaxSampleError" parent="AIEditObjectNavmeshGeometryBuildPropertyDetail" ref="previous" description="Detail MaxSampleError">
+                  <orientate ref="AIEditObjectNavmeshGeometryBuildPropertyDetailSampleDistance" width="96" height="24" yalign="bottom">
+                    <physics noresponse="true"/>
+                  </orientate>
+                  <event state="IDLE" label="MaxSampleError" x="24" xalign="left" yalign="middle"/>
+                </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshGeometryBuildPropertyBuild" parent="AIEditObjectNavmeshGeometryBuildProperty" ref="previous" description="Build Navigation Mesh">
+              <orientate ref="AIEditObjectNavmeshGeometryBuildProperty" width="112" height="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" label="Build" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+          <gizmo name="AIEditObjectNavmeshGeometryTiled" parent="AIEditObjectNavmeshGeometry" ref="previous" description="Tiled Geometry">
+            <orientate ref="AIEditObjectNavmeshGeometrySingle" width="96" height="24" yalign="bottom">
+              <physics noresponse="true"/>
+            </orientate>
+            <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Tiled" x="24" xalign="left" yalign="middle"/>
+          </gizmo>
+
+        <gizmo name="AIEditObjectNavmeshAgent" parent="AIEditObjectNavmesh" ref="previous" description="Auto Navigation Agent">
+          <orientate ref="AIEditObjectNavmeshGeometry" width="96" height="24" yalign="bottom">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" label="Agent" x="24" xalign="left" yalign="middle"/>
+        </gizmo>
+
+          <gizmo name="AIEditObjectNavmeshAgentBuildProperty" parent="AIEditObjectNavmeshAgent" ref="previous" description="Navigation Agent Construction Property Tool">
+            <orientate ref="AIEditObjectNavmeshAgent" width="96" height="24" xalign="right">
+              <physics noresponse="true"/>
+            </orientate>
+            <event state="IDLE" label="Construction" x="24" xalign="left" yalign="middle"/>
+          </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshAgentBuildPropertyRadius" parent="AIEditObjectNavmeshAgentBuildProperty" ref="previous" description="Agent Build Radius">
+              <orientate ref="AIEditObjectNavmeshAgentBuildProperty" width="96" height="24" xalign="right">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Radius" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshAgentBuildPropertyHeight" parent="AIEditObjectNavmeshAgentBuildProperty" ref="previous" description="Agent Height">
+              <orientate ref="AIEditObjectNavmeshAgentBuildPropertyRadius" width="96" height="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Height" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshAgentBuildPropertyMaxSpeed" parent="AIEditObjectNavmeshAgentBuildProperty" ref="previous" description="Agent MaxSpeed">
+              <orientate ref="AIEditObjectNavmeshAgentBuildPropertyHeight" width="96" MaxSpeed="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="MaxSpeed" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshAgentBuildPropertyMaxAcceleration" parent="AIEditObjectNavmeshAgentBuildProperty" ref="previous" description="Agent MaxAcceleration">
+              <orientate ref="AIEditObjectNavmeshAgentBuildPropertyMaxSpeed" width="96" MaxAcceleration="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="MaxAcceleration" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshAgentBuildPropertyQueryRange" parent="AIEditObjectNavmeshAgentBuildProperty" ref="previous" description="Agent QueryRange">
+              <orientate ref="AIEditObjectNavmeshAgentBuildPropertyMaxAcceleration" width="96" QueryRange="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="QueryRange" x="24" xalign="left" yalign="middle"/>
+            </gizmo>
+
+            <gizmo name="AIEditObjectNavmeshAgentBuildPropertyOptimizationRange" parent="AIEditObjectNavmeshAgentBuildProperty" ref="previous" description="Agent OptimizationRange">
+              <orientate ref="AIEditObjectNavmeshAgentBuildPropertyQueryRange" width="96" OptimizationRange="24" yalign="bottom">
+                <physics noresponse="true"/>
+              </orientate>
+              <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="OptimizationRange" x="24" xalign="left" yalign="middle"/>
+            </gizmo>  
+
+          <gizmo name="AIEditObjectNavmeshAgentCreate" parent="AIEditObjectNavmeshAgent" ref="previous" description="Create Agent">
+            <orientate ref="AIEditObjectNavmeshAgentBuildProperty" width="96" height="24" yalign="bottom">
+              <physics noresponse="true"/>
+            </orientate>
+            <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Create" x="24" xalign="left" yalign="middle"/>
+          </gizmo>
+
+        <gizmo name="AIEditObjectNavmeshAgentClear" parent="AIEditObjectNavmeshAgent" ref="previous" description="Clear All Agents">
+          <orientate ref="AIEditObjectNavmeshAgentCreate" width="96" height="24" yalign="bottom">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Clear" x="24" xalign="left" yalign="middle"/>
+        </gizmo>
+
+      <gizmo name="AIEditObjectNavmeshAgentTarget" parent="AIEditObjectNavmesh" ref="previous" description="Navigation Agent Target">
+        <orientate ref="AIEditObjectNavmeshAgent" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Target" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+        <gizmo name="AIEditObjectNavmeshAgentTargetCreate" parent="AIEditObjectNavmeshAgentTarget" description="Create Agent Target">
+          <variable name="toggle" value="0"/>
+          <orientate ref="AIEditObjectNavmeshAgentTarget" width="96" height="24" xalign="right">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Create" x="24" xalign="left" yalign="middle"/>
+          <event state="ENTER"/>
+          <event state="HOVER" scheme="pointingFX"/>
+          <event state="DOWN"/>
+          <event state="HOLD"/>
+          <event state="DRAG"/>
+          <event state="UP"/>
+          <event state="EXIT"/>	
+        </gizmo>
+
+        <gizmo name="AIEditObjectNavmeshAgentTargetClear" parent="AIEditObjectNavmeshAgentTarget" description="Clear All AgentTargets">
+          <variable name="toggle" value="0"/>
+          <orientate ref="AIEditObjectNavmeshAgentTargetCreate" width="96" height="24" yalign="bottom">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Clear" x="24" xalign="left" yalign="middle"/>
+          <event state="ENTER"/>
+          <event state="HOVER" scheme="pointingFX"/>
+          <event state="DOWN"/>
+          <event state="HOLD"/>
+          <event state="DRAG"/>
+          <event state="UP"/>
+          <event state="EXIT"/>
+        </gizmo>
+    
+        <gizmo name="AIEditObjectNavmeshPath" parent="AIEditObjectNavmesh" ref="parent" description="Navigation Path">
+          <orientate ref="AIEditObjectNavmeshAgentTarget" width="96" height="24" yalign="bottom">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" label="Path" x="24" xalign="left" yalign="middle"/>
+        </gizmo>
+
+        <gizmo name="AIEditObjectNavmeshPathOffmesh" parent="AIEditObjectNavmeshPath" ref="previous" description="Off-mesh Connector">
+          <orientate ref="AIEditObjectNavmeshPath" width="96" height="24" xalign="right">
+            <physics noresponse="true"/>
+          </orientate>
+          <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Offmesh" x="24" xalign="left" yalign="middle"/>
+        </gizmo>
+
+      <gizmo name="AIEditObjectNavmeshVolumns" parent="AIEditObjectNavmesh" ref="previous" description="Navigation Convex Volumns">
+        <orientate ref="AIEditObjectNavmeshPath" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Volumns" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="AIEditObjectNavmeshVolumnGrass" parent="AIEditObjectNavmeshVolumns" description="Grass Convex Volumn">
+        <variable name="toggle" value="0"/>
+        <orientate ref="AIEditObjectNavmeshVolumns" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Grass" x="24" xalign="left" yalign="middle"/>
+        <event state="ENTER"/>
+        <event state="HOVER" scheme="pointingFX"/>
+        <event state="DOWN"/>
+        <event state="HOLD"/>
+        <event state="DRAG"/>
+        <event state="UP"/>
+        <event state="EXIT"/>
+      </gizmo>
+
+      <gizmo name="AIEditObjectNavmeshVolumnRoad" parent="AIEditObjectNavmeshVolumns" description="Road Convex Volumn">
+        <variable name="toggle" value="0"/>
+        <orientate ref="AIEditObjectNavmeshVolumnGrass" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" behavior="pushbox" transition="ghostly" theme="citrusbox" style="standard" scheme="pointingFX" label="Road" x="24" xalign="left" yalign="middle"/>
+        <event state="ENTER"/>
+        <event state="HOVER" scheme="pointingFX"/>
+        <event state="DOWN"/>
+        <event state="HOLD"/>
+        <event state="DRAG"/>
+        <event state="UP"/>
+        <event state="EXIT"/>
+      </gizmo>
+
+  <gizmo name="AIEditTools" parent="AIEdit" ref="AIEditObject" description="AI Tools">
+    <orientate ref="AIEditObject" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="AIEditView" parent="AIEdit" ref="AIEditTools" description="AI Tools">
+    <orientate ref="AIEditTools" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="AIEditHelp" parent="AIEdit" ref="AIEditView" description="AI Help">
+    <orientate ref="AIEditView" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="AIEditBlank" parent="AIEdit" description="Blank">
+    <variable name="toggle" value="0"/>
+    <orientate ref="AIEditHelp" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="citrusbox"/>
+  </gizmo>
+  
+</s3ge>

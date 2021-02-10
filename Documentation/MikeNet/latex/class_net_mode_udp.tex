@@ -1,0 +1,218 @@
+\hypertarget{class_net_mode_udp}{
+\section{NetModeUdp Class Reference}
+\label{class_net_mode_udp}\index{NetModeUdp@{NetModeUdp}}
+}
+
+
+UDP protocol class, provides a base for extensions to the protocol by UDP mode classes.  
+
+
+
+
+{\ttfamily \#include $<$NetModeUdp.h$>$}
+
+Inheritance diagram for NetModeUdp:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_net_mode_udp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual void \hyperlink{class_net_mode_udp_af5895c1120cdc8d0d04bd3e1bb34bdd7}{Reset} (size\_\-t clientID)=0
+\begin{DoxyCompactList}\small\item\em Resets data of specified client. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_a98f0f341f78e761db934c839606a39df}{
+virtual void \hyperlink{class_net_mode_udp_a98f0f341f78e761db934c839606a39df}{Reset} ()=0}
+\label{class_net_mode_udp_a98f0f341f78e761db934c839606a39df}
+
+\begin{DoxyCompactList}\small\item\em Reset data of all clients. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_mode_udp_a36a62c7bf9df7c7d7f2a3ad5cfb79b42}{GetNumOperations} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the number of operations that this object can manage. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_mode_udp_a2ec3aa4ddf8d531d1754f8be2a1d87ba}{GetNumClients} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the number of clients that this object can manage. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$ \hyperlink{class_net_mode_udp_ae0160135a69173309701952b9bdf7488}{Clone} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves a deep copy of this object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_udp_ac23ff26a8db43639290822e40101a93e}{
+virtual \hyperlink{class_net_mode_udp_ac23ff26a8db43639290822e40101a93e}{$\sim$NetModeUdp} ()}
+\label{class_net_mode_udp_ac23ff26a8db43639290822e40101a93e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_net_mode_udp}{NetModeUdp} $\ast$ \hyperlink{class_net_mode_udp_a1478e9a9a976cf276686c0136a1ba9da}{GenerateModeUDP} (\hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} protocolMode, size\_\-t numClients, size\_\-t numOperations, size\_\-t recvSize, const \hyperlink{class_encrypt_key}{EncryptKey} $\ast$decryptKey)
+\begin{DoxyCompactList}\small\item\em Generates \hyperlink{class_net_mode_udp}{NetModeUdp} object based on {\itshape protocolMode\/}. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_mode_udp_ab1fcbb4b7f8837cba08bfbdbcfe500e2}{\_\-HelperTestClass} (\hyperlink{class_net_mode_udp}{NetModeUdp} \&obj, \hyperlink{class_packet}{Packet} \&packet, const char $\ast$str, size\_\-t dealWithDataClientID, size\_\-t expectedClientID, size\_\-t operationID)
+\begin{DoxyCompactList}\small\item\em Helps to test \hyperlink{class_net_mode_udp}{NetModeUdp} objects. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_net_mode_udp_a2d4e3b8aede50899cb756392c48a8bcd}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP protocol class, provides a base for extensions to the protocol by UDP mode classes. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class lays out the functionality required by UDP mode classes. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_mode_udp_ab1fcbb4b7f8837cba08bfbdbcfe500e2}{
+\index{NetModeUdp@{NetModeUdp}!\_\-HelperTestClass@{\_\-HelperTestClass}}
+\index{\_\-HelperTestClass@{\_\-HelperTestClass}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{\_\-HelperTestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeUdp::\_\-HelperTestClass (
+\begin{DoxyParamCaption}
+\item[{{\bf NetModeUdp} \&}]{ obj, }
+\item[{{\bf Packet} \&}]{ packet, }
+\item[{const char $\ast$}]{ str, }
+\item[{size\_\-t}]{ dealWithDataClientID, }
+\item[{size\_\-t}]{ expectedClientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_ab1fcbb4b7f8837cba08bfbdbcfe500e2}
+
+
+Helps to test \hyperlink{class_net_mode_udp}{NetModeUdp} objects. 
+
+Client ID used with DealWithData is 10, and operation ID is 5.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em obj}]The object. \item[\mbox{\tt[in,out]} {\em packet}]The packet. \item[{\em str}]The string stored in {\itshape packet\/}. \item[{\em dealWithDataClientID}]Client ID to use with \hyperlink{class_net_mode_a075020ac61bedee59eb7b0dcb6754847}{DealWithData()}. \item[{\em expectedClientID}]Expected result of destination.GetClientFrom(). \item[{\em operationID}]Operation ID to use with \hyperlink{class_net_mode_a075020ac61bedee59eb7b0dcb6754847}{DealWithData()}.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if the test was failed and a problem was found while testing, true if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_udp_ae0160135a69173309701952b9bdf7488}{
+\index{NetModeUdp@{NetModeUdp}!Clone@{Clone}}
+\index{Clone@{Clone}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NetModeUdp}$\ast$ NetModeUdp::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_mode_udp_ae0160135a69173309701952b9bdf7488}
+
+
+Retrieves a deep copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_net_mode_udp_catch_all_a6ab3fa975dd909cc49ce378436343d8b}{NetModeUdpCatchAll}, \hyperlink{class_net_mode_udp_catch_all_no_aec441e93f9eb158bf09fd0013aca12a5}{NetModeUdpCatchAllNo}, and \hyperlink{class_net_mode_udp_per_client_a41f1ee8314171e36a91e17d9e24420ae}{NetModeUdpPerClient}.
+
+\hypertarget{class_net_mode_udp_a1478e9a9a976cf276686c0136a1ba9da}{
+\index{NetModeUdp@{NetModeUdp}!GenerateModeUDP@{GenerateModeUDP}}
+\index{GenerateModeUDP@{GenerateModeUDP}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{GenerateModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeUdp} $\ast$ NetModeUdp::GenerateModeUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetMode::ProtocolMode}}]{ protocolMode, }
+\item[{size\_\-t}]{ numClients, }
+\item[{size\_\-t}]{ numOperations, }
+\item[{size\_\-t}]{ recvSize, }
+\item[{const {\bf EncryptKey} $\ast$}]{ decryptKey}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_a1478e9a9a976cf276686c0136a1ba9da}
+
+
+Generates \hyperlink{class_net_mode_udp}{NetModeUdp} object based on {\itshape protocolMode\/}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocolMode}]Type of \hyperlink{class_net_mode_udp}{NetModeUdp} object to generate. \item[{\em numClients}]Number of clients that object should support (may be ignored). \item[{\em numOperations}]Number of operations that object should support (may be ignored). \item[{\em recvSize}]Maximum size of packets that object should be able to deal with (may be ignored). \item[{\em decryptKey}]Decryption key that object should use to decrypt received data (may be ignored). \end{DoxyParams}
+\hypertarget{class_net_mode_udp_a2ec3aa4ddf8d531d1754f8be2a1d87ba}{
+\index{NetModeUdp@{NetModeUdp}!GetNumClients@{GetNumClients}}
+\index{GetNumClients@{GetNumClients}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{GetNumClients}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t NetModeUdp::GetNumClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_mode_udp_a2ec3aa4ddf8d531d1754f8be2a1d87ba}
+
+
+Retrieves the number of clients that this object can manage. 
+
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_net_mode_udp_catch_all_a5726dba2839ba6dccb9a384bf91ae0dc}{NetModeUdpCatchAll}, and \hyperlink{class_net_mode_udp_per_client_a7c53b77684eb18b997182f7c8c861b8f}{NetModeUdpPerClient}.
+
+\hypertarget{class_net_mode_udp_a36a62c7bf9df7c7d7f2a3ad5cfb79b42}{
+\index{NetModeUdp@{NetModeUdp}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t NetModeUdp::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_mode_udp_a36a62c7bf9df7c7d7f2a3ad5cfb79b42}
+
+
+Retrieves the number of operations that this object can manage. 
+
+Operation IDs range from 0 inclusive to number of operations exclusive. e.g. With 5 operations, available IDs are: 0, 1, 2, 3, 4.
+
+\begin{DoxyReturn}{Returns}
+the number of operations that this object can manage. 
+
+if operations are not valid for this object then 1 should be returned. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_net_mode_udp_catch_all_a44f2ced63d3d36ba590edb7cb60c0532}{NetModeUdpCatchAll}, and \hyperlink{class_net_mode_udp_per_client_a4756d963af49213282ebfe90c63cd1ba}{NetModeUdpPerClient}.
+
+\hypertarget{class_net_mode_udp_af5895c1120cdc8d0d04bd3e1bb34bdd7}{
+\index{NetModeUdp@{NetModeUdp}!Reset@{Reset}}
+\index{Reset@{Reset}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}virtual void NetModeUdp::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_mode_udp_af5895c1120cdc8d0d04bd3e1bb34bdd7}
+
+
+Resets data of specified client. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_net_mode_udp_catch_all_a00d7aca63598b6e3c270fd157627885f}{NetModeUdpCatchAll}, \hyperlink{class_net_mode_udp_catch_all_no_abb09001562a985298f208ffd4f45825e}{NetModeUdpCatchAllNo}, and \hyperlink{class_net_mode_udp_per_client_aa036644d4e71e779032f6cef6959f826}{NetModeUdpPerClient}.
+
+\hypertarget{class_net_mode_udp_a2d4e3b8aede50899cb756392c48a8bcd}{
+\index{NetModeUdp@{NetModeUdp}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetModeUdp@{NetModeUdp}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeUdp::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_udp_a2d4e3b8aede50899cb756392c48a8bcd}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_af062e2de6fe5afa57061632715a5c0ad}{NetMode}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_udp_catch_all_abf7feda18651d7fc4638da1a75841ad9}{NetModeUdpCatchAll}, \hyperlink{class_net_mode_udp_catch_all_no_a479484b12ab0700640a8caaefb13f33f}{NetModeUdpCatchAllNo}, and \hyperlink{class_net_mode_udp_per_client_a490edbb5bd9886e5a308e8d7333c7b54}{NetModeUdpPerClient}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdp.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeUdp.cpp\end{DoxyCompactItemize}

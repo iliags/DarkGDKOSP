@@ -1,0 +1,468 @@
+\hypertarget{classcl_multithread}{
+\section{clMultithread Class Reference}
+\label{classcl_multithread}\index{clMultithread@{clMultithread}}
+}
+
+
+Advanced concurrency control object.  
+
+
+
+
+{\ttfamily \#include $<$clMultithread.h$>$}
+
+Inheritance diagram for clMultithread:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_multithread}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_multithread_a0368e3aaa02c48b2b847c2df57bfedf9}{clMultithread} ()
+\item 
+\hyperlink{classcl_multithread_a78f91b5da95e35c22f116665c07f1463}{clMultithread} (size\_\-t paraThreads)
+\item 
+void \hyperlink{classcl_multithread_a802145078ef91eb1c59adb652989a1fd}{Construct} (size\_\-t numThreads)
+\item 
+\hyperlink{classcl_multithread_a9cf60865be0046480e60a54aacfaedac}{clMultithread} (const \hyperlink{classcl_multithread}{clMultithread} \&copyMe)
+\item 
+\hyperlink{classcl_multithread}{clMultithread} \& \hyperlink{classcl_multithread_a70557b608934eae0d25b72cd5a73c8b7}{operator=} (const \hyperlink{classcl_multithread}{clMultithread} \&copyMe)
+\item 
+\hyperlink{classcl_multithread_a9812bf3facacdb02b5492214742ff18b}{$\sim$clMultithread} ()
+\item 
+size\_\-t \hyperlink{classcl_multithread_a789162b14cd4bd6d441836c5c9979267}{GetNumThreads} () const 
+\item 
+void \hyperlink{classcl_multithread_a6f730369b70f5556f80d4d15be37338f}{EnterRead} (size\_\-t threadId) const 
+\item 
+void \hyperlink{classcl_multithread_a5fbf02705063fe557cda02f908d9861d}{LeaveRead} (size\_\-t threadId) const 
+\item 
+void \hyperlink{classcl_multithread_a4885f5f32b369f3ebc6dc2d2aa07a513}{EnterWrite} (size\_\-t threadId)
+\item 
+void \hyperlink{classcl_multithread_ab78d6bfc68a8a5bddc7d10cf30781185}{LeaveWrite} (size\_\-t threadId)
+\item 
+void \hyperlink{classcl_multithread_abdf5c107039fcf657847f011810a3fb1}{Enter} () const 
+\item 
+void \hyperlink{classcl_multithread_aaab46d6187878165f8da6e67999d4218}{Leave} () const 
+\item 
+{\footnotesize template$<$typename safeReadValueType $>$ }\\safeReadValueType \hyperlink{classcl_multithread_a1cffdc6c8c6e3789467320e2e5131123}{\_\-safeReadValue} (size\_\-t threadID, const safeReadValueType \&readMe) const 
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_a81b392fa3e2ace78a2d92bf8866bd313}{\_\-safeWriteValueNK} (size\_\-t threadID, safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_ad8eed00851dda75dfca3d70e15b96c23}{\_\-safeWriteValueNK} (size\_\-t threadID, safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_a512d22f834afefc1e484869a8455b615}{\_\-safeWriteValueKEY} (size\_\-t threadID, safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_a58722a95970b094a46d287de5ad1fd88}{\_\-safeWriteValueKEY} (size\_\-t threadID, safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_multithread_a9a42b3b20a9313bbd34c17a7b0c5a45b}{\_\-defaultVars} ()
+\item 
+void \hyperlink{classcl_multithread_ae7e872650bb474870bc34c2fd5985fc5}{\_\-copy} (const \hyperlink{classcl_multithread}{clMultithread} \&copyMe)
+\item 
+void \hyperlink{classcl_multithread_a58d38a15d35ac9c6a89dde71441a488f}{\_\-checkThreadID} (size\_\-t threadId) const 
+\item 
+void \hyperlink{classcl_multithread_a30e44b3ffaf8568123eac74f07ca26aa}{Cleanup} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_multithread_aef449ad37520c06f51bd359a1ac8d693}{
+size\_\-t {\bfseries threads}}
+\label{classcl_multithread_aef449ad37520c06f51bd359a1ac8d693}
+
+\item 
+\hypertarget{classcl_multithread_a559f7f4fbe0a9fe0aa7b5cc8388bdb15}{
+\hyperlink{classcl_critical_section}{clCriticalSection} $\ast$ {\bfseries access}}
+\label{classcl_multithread_a559f7f4fbe0a9fe0aa7b5cc8388bdb15}
+
+\item 
+\hypertarget{classcl_multithread_a54fe801c5a6c2283f2beacd686697603}{
+size\_\-t $\ast$ {\bfseries accessRead}}
+\label{classcl_multithread_a54fe801c5a6c2283f2beacd686697603}
+
+\item 
+\hypertarget{classcl_multithread_a041ef3eeb08808daf52022ef35fd782d}{
+size\_\-t $\ast$ {\bfseries accessWrite}}
+\label{classcl_multithread_a041ef3eeb08808daf52022ef35fd782d}
+
+\item 
+\hypertarget{classcl_multithread_adcd166af132ca0191af30813431867ea}{
+bool {\bfseries constructed}}
+\label{classcl_multithread_adcd166af132ca0191af30813431867ea}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Advanced concurrency control object. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+\hyperlink{classcl_multithread}{clMultithread} is an advanced concurrency control object \par
+ It relies on the following key multithreading principals:
+\begin{DoxyItemize}
+\item Data can be read by multiple threads at the same time
+\item Data cannot be written and read from at the same time
+\item Data cannot be written to $>$ once at the same time
+\end{DoxyItemize}
+
+Threads should EnterRead when reading protected data, and LeaveRead when done reading the protected data. Threads should EnterWrite when writing to a protected location, and LeaveWrite when done writing. When in write control (EnterWrite) the thread can also read from the protected location.\par
+\par
+
+
+All threads using this object should have a thread ID ranging from inclusive 0 to exclusive maximum number of threads. \par
+ The main process should have a thread ID = to the maximum number of threads. Note that two threads with the same ID is acceptable. Only one will ever have Read or Write control at any one time. \par
+\par
+
+
+Use \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()} to get the main process ID and \hyperlink{classcl_networking_utility_a19cbaaea7a9595185cb9c01bb1b438b5}{clNetworkingUtility::GetNumThreadedParticipants()} to determine the number of threaded participants in the networking module. \par
+\par
+
+
+You must ensure the following when using \hyperlink{classcl_multithread}{clMultithread} objects:
+\begin{DoxyItemize}
+\item When a thread uses this object it must pass its own thread ID to the methods; this ID must be valid (as stated above)
+\item A thread must release control at some point
+\item A thread should only take control while it is using the protected objects
+\end{DoxyItemize}
+
+Note that a thread can EnterRead or EnterWrite multiple times.
+
+The following is enforced by \hyperlink{classcl_multithread}{clMultithread} so that you don't need to worry about it:
+\begin{DoxyItemize}
+\item A thread must not attempt to release write control if it does not have it (unless the threadID is shared)
+\item A thread must not attempt to release read control if it does not have it (unless the threadID is shared)
+\item When in read control a thread must not take write control before releasing read control
+\end{DoxyItemize}
+
+\hyperlink{classcl_multithread}{clMultithread} will throw exceptions in the following situations:
+\begin{DoxyItemize}
+\item An invalid thread ID is specified 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_multithread_a0368e3aaa02c48b2b847c2df57bfedf9}{
+\index{clMultithread@{clMultithread}!clMultithread@{clMultithread}}
+\index{clMultithread@{clMultithread}!clMultithread@{clMultithread}}
+\subsubsection[{clMultithread}]{\setlength{\rightskip}{0pt plus 5cm}clMultithread::clMultithread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a0368e3aaa02c48b2b847c2df57bfedf9}
+Constructor \par
+ Sets variables to default \par
+ Does not set up object ready for use
+
+\begin{DoxyWarning}{Warning}
+{\ttfamily Construct} MUST later be called 
+\end{DoxyWarning}
+\hypertarget{classcl_multithread_a78f91b5da95e35c22f116665c07f1463}{
+\index{clMultithread@{clMultithread}!clMultithread@{clMultithread}}
+\index{clMultithread@{clMultithread}!clMultithread@{clMultithread}}
+\subsubsection[{clMultithread}]{\setlength{\rightskip}{0pt plus 5cm}clMultithread::clMultithread (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a78f91b5da95e35c22f116665c07f1463}
+Constructor \par
+ Sets variables to default and sets up object ready for use
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \end{DoxyParams}
+\hypertarget{classcl_multithread_a9cf60865be0046480e60a54aacfaedac}{
+\index{clMultithread@{clMultithread}!clMultithread@{clMultithread}}
+\index{clMultithread@{clMultithread}!clMultithread@{clMultithread}}
+\subsubsection[{clMultithread}]{\setlength{\rightskip}{0pt plus 5cm}clMultithread::clMultithread (
+\begin{DoxyParamCaption}
+\item[{const {\bf clMultithread} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a9cf60865be0046480e60a54aacfaedac}
+Copy constructor \par
+ Copies {\ttfamily \hyperlink{classcl_multithread}{clMultithread}} object into this recently created object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\hypertarget{classcl_multithread_a9812bf3facacdb02b5492214742ff18b}{
+\index{clMultithread@{clMultithread}!$\sim$clMultithread@{$\sim$clMultithread}}
+\index{$\sim$clMultithread@{$\sim$clMultithread}!clMultithread@{clMultithread}}
+\subsubsection[{$\sim$clMultithread}]{\setlength{\rightskip}{0pt plus 5cm}clMultithread::$\sim$clMultithread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a9812bf3facacdb02b5492214742ff18b}
+Destructor \par
+ Cleans up object 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_multithread_a58d38a15d35ac9c6a89dde71441a488f}{
+\index{clMultithread@{clMultithread}!\_\-checkThreadID@{\_\-checkThreadID}}
+\index{\_\-checkThreadID@{\_\-checkThreadID}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-checkThreadID}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::\_\-checkThreadID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_multithread_a58d38a15d35ac9c6a89dde71441a488f}
+Checks that {\itshape threadId\/} is in bounds \par
+ Throws an exception if it is not
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread to check \end{DoxyParams}
+\hypertarget{classcl_multithread_ae7e872650bb474870bc34c2fd5985fc5}{
+\index{clMultithread@{clMultithread}!\_\-copy@{\_\-copy}}
+\index{\_\-copy@{\_\-copy}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-copy}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::\_\-copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clMultithread} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_multithread_ae7e872650bb474870bc34c2fd5985fc5}
+Copies \hyperlink{classcl_multithread}{clMultithread} object into this object \par
+ Used by copy constructor and assignment operator
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_multithread_a9a42b3b20a9313bbd34c17a7b0c5a45b}{
+\index{clMultithread@{clMultithread}!\_\-defaultVars@{\_\-defaultVars}}
+\index{\_\-defaultVars@{\_\-defaultVars}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-defaultVars}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::\_\-defaultVars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_multithread_a9a42b3b20a9313bbd34c17a7b0c5a45b}
+Resets all variables to default \par
+ No deallocation occurs \hypertarget{classcl_multithread_a1cffdc6c8c6e3789467320e2e5131123}{
+\index{clMultithread@{clMultithread}!\_\-safeReadValue@{\_\-safeReadValue}}
+\index{\_\-safeReadValue@{\_\-safeReadValue}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-safeReadValue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeReadValueType $>$ safeReadValueType clMultithread::\_\-safeReadValue (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const safeReadValueType \&}]{ readMe}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_a1cffdc6c8c6e3789467320e2e5131123}
+Safely reads a value using critical sections 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em readMe}]reference to value to read \end{DoxyParams}
+\hypertarget{classcl_multithread_a512d22f834afefc1e484869a8455b615}{
+\index{clMultithread@{clMultithread}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithread::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_a512d22f834afefc1e484869a8455b615}
+Safely writes a value using critical sections to a key variable \par
+ Key means that it does require write access when changing 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[\mbox{\tt[out]} {\em updateMe}]reference to object to write to \item[{\em newValue}]pointer to value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_a58722a95970b094a46d287de5ad1fd88}{
+\index{clMultithread@{clMultithread}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithread::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_a58722a95970b094a46d287de5ad1fd88}
+Safely writes a value using critical sections to a key variable \par
+ Key means that it does require write access when changing 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[\mbox{\tt[out]} {\em updateMe}]reference to object to write to \item[{\em newValue}]value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_ad8eed00851dda75dfca3d70e15b96c23}{
+\index{clMultithread@{clMultithread}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithread::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_ad8eed00851dda75dfca3d70e15b96c23}
+Safely writes a value using critical sections to a non key variable \par
+ Non key means that it does not require write access when changing (see class description for reasoning) 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[\mbox{\tt[out]} {\em updateMe}]reference to object to write to \item[{\em newValue}]value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_a81b392fa3e2ace78a2d92bf8866bd313}{
+\index{clMultithread@{clMultithread}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!clMultithread@{clMultithread}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithread::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_a81b392fa3e2ace78a2d92bf8866bd313}
+Safely writes a value using critical sections to a non key variable \par
+ Non key means that it does not require write access when changing (see class description for reasoning) 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em updateMe}]reference to object to write to \item[{\em newValue}]pointer to value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_a30e44b3ffaf8568123eac74f07ca26aa}{
+\index{clMultithread@{clMultithread}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!clMultithread@{clMultithread}}
+\subsubsection[{Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_multithread_a30e44b3ffaf8568123eac74f07ca26aa}
+Cleans up object and resets variables to default \par
+ Object can be reused if {\ttfamily Construct} is used again
+
+\begin{DoxyWarning}{Warning}
+object must not be used afterwards 
+\end{DoxyWarning}
+\hypertarget{classcl_multithread_a802145078ef91eb1c59adb652989a1fd}{
+\index{clMultithread@{clMultithread}!Construct@{Construct}}
+\index{Construct@{Construct}!clMultithread@{clMultithread}}
+\subsubsection[{Construct}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::Construct (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a802145078ef91eb1c59adb652989a1fd}
+Sets up object ready for use
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]number of threads that will be using object \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{clStatus$<$ T $>$}, \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{clStatus$<$ vector$<$ clSharedSend $\ast$ $>$ $>$}, \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{clStatus$<$ int $>$}, \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{clStatus$<$ size\_\-t $>$}, \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{clStatus$<$ bool $>$}, and \hyperlink{classcl_status_ad58efb879ae3de808186d7dd9fd483c8}{clStatus$<$ clNetworkingUtility::ConnectionStatus $>$}.
+
+\hypertarget{classcl_multithread_abdf5c107039fcf657847f011810a3fb1}{
+\index{clMultithread@{clMultithread}!Enter@{Enter}}
+\index{Enter@{Enter}!clMultithread@{clMultithread}}
+\subsubsection[{Enter}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::Enter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_abdf5c107039fcf657847f011810a3fb1}
+Take full control of object where only one thread can use object \hypertarget{classcl_multithread_a6f730369b70f5556f80d4d15be37338f}{
+\index{clMultithread@{clMultithread}!EnterRead@{EnterRead}}
+\index{EnterRead@{EnterRead}!clMultithread@{clMultithread}}
+\subsubsection[{EnterRead}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::EnterRead (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_a6f730369b70f5556f80d4d15be37338f}
+Take read control of object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using object \end{DoxyParams}
+\hypertarget{classcl_multithread_a4885f5f32b369f3ebc6dc2d2aa07a513}{
+\index{clMultithread@{clMultithread}!EnterWrite@{EnterWrite}}
+\index{EnterWrite@{EnterWrite}!clMultithread@{clMultithread}}
+\subsubsection[{EnterWrite}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::EnterWrite (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a4885f5f32b369f3ebc6dc2d2aa07a513}
+Safely take write control of object if possible \par
+ i.e. read control will be released before taking write control
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using object \end{DoxyParams}
+\hypertarget{classcl_multithread_a789162b14cd4bd6d441836c5c9979267}{
+\index{clMultithread@{clMultithread}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!clMultithread@{clMultithread}}
+\subsubsection[{GetNumThreads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clMultithread::GetNumThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_a789162b14cd4bd6d441836c5c9979267}
+\begin{DoxyReturn}{Returns}
+the number of threads setup to use this object. This is the value stored by {\ttfamily threads} 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Thread ID's for this object range from inclusive 0 to exclusive {\ttfamily threads} 
+\end{DoxyNote}
+\hypertarget{classcl_multithread_aaab46d6187878165f8da6e67999d4218}{
+\index{clMultithread@{clMultithread}!Leave@{Leave}}
+\index{Leave@{Leave}!clMultithread@{clMultithread}}
+\subsubsection[{Leave}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::Leave (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_aaab46d6187878165f8da6e67999d4218}
+Release full control of object if possible; where only one thread can use object \par
+ i.e. will do nothing if thread does not have full control \hypertarget{classcl_multithread_a5fbf02705063fe557cda02f908d9861d}{
+\index{clMultithread@{clMultithread}!LeaveRead@{LeaveRead}}
+\index{LeaveRead@{LeaveRead}!clMultithread@{clMultithread}}
+\subsubsection[{LeaveRead}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::LeaveRead (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_a5fbf02705063fe557cda02f908d9861d}
+Release read control of object if possible \par
+ i.e. will do nothing if thread does not have read control
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using object \end{DoxyParams}
+\hypertarget{classcl_multithread_ab78d6bfc68a8a5bddc7d10cf30781185}{
+\index{clMultithread@{clMultithread}!LeaveWrite@{LeaveWrite}}
+\index{LeaveWrite@{LeaveWrite}!clMultithread@{clMultithread}}
+\subsubsection[{LeaveWrite}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithread::LeaveWrite (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadId}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_ab78d6bfc68a8a5bddc7d10cf30781185}
+Release write control of object if possible \par
+ i.e. will do nothing if thread does not have write control
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadId}]ID of thread using object \end{DoxyParams}
+\hypertarget{classcl_multithread_a70557b608934eae0d25b72cd5a73c8b7}{
+\index{clMultithread@{clMultithread}!operator=@{operator=}}
+\index{operator=@{operator=}!clMultithread@{clMultithread}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clMultithread} \& clMultithread::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clMultithread} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_a70557b608934eae0d25b72cd5a73c8b7}
+Assignment (=) operator \par
+ Copies \hyperlink{classcl_multithread}{clMultithread} object into this object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clMultithread.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clMultithread.cpp\end{DoxyCompactItemize}

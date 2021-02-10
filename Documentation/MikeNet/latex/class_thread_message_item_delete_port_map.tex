@@ -1,0 +1,143 @@
+\hypertarget{class_thread_message_item_delete_port_map}{
+\section{ThreadMessageItemDeletePortMap Class Reference}
+\label{class_thread_message_item_delete_port_map}\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+}
+
+
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItemDeletePortMap.h$>$}
+
+Inheritance diagram for ThreadMessageItemDeletePortMap:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thread_message_item_delete_port_map}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item_delete_port_map_af026903a3f9cf33723c94f4de1db074a}{ThreadMessageItemDeletePortMap} (\hyperlink{class_upnp_nat_action}{UpnpNatAction} $\ast$natControls, size\_\-t \hyperlink{class_thread_message_item_delete_port_map_a917b90069309efb7a8344c34348fa9c5}{portMapID})
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_thread_message_item_delete_port_map_a7322596746d7e29c78759b7dcd07aa7f}{ThreadMessageItemDeletePortMap} (\hyperlink{class_upnp_nat_action}{UpnpNatAction} $\ast$natControls, const char $\ast$\hyperlink{class_thread_message_item_delete_port_map_a6a5d707645152f8b18458766cb43789a}{protocol}, long \hyperlink{class_thread_message_item_delete_port_map_a6eebc86d208f2ad0553258e3fa510590}{externalPort})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_delete_port_map_aec05b002cb198c0eeb13a5dae0d95392}{
+\hyperlink{class_thread_message_item_delete_port_map_aec05b002cb198c0eeb13a5dae0d95392}{$\sim$ThreadMessageItemDeletePortMap} (void)}
+\label{class_thread_message_item_delete_port_map_aec05b002cb198c0eeb13a5dae0d95392}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_message_item_delete_port_map_ad1de6d42bb481e4e9c8f22e9cb3aedbc}{TakeAction} ()
+\begin{DoxyCompactList}\small\item\em Deletes a port map. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_delete_port_map_a4ef89d926cd97f90b8e251c22d5819dc}{
+\hyperlink{class_upnp_nat_action}{UpnpNatAction} $\ast$ \hyperlink{class_thread_message_item_delete_port_map_a4ef89d926cd97f90b8e251c22d5819dc}{takeActionOnMe}}
+\label{class_thread_message_item_delete_port_map_a4ef89d926cd97f90b8e251c22d5819dc}
+
+\begin{DoxyCompactList}\small\item\em Controls to use when taking action. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_delete_port_map_a917b90069309efb7a8344c34348fa9c5}{
+size\_\-t \hyperlink{class_thread_message_item_delete_port_map_a917b90069309efb7a8344c34348fa9c5}{portMapID}}
+\label{class_thread_message_item_delete_port_map_a917b90069309efb7a8344c34348fa9c5}
+
+\begin{DoxyCompactList}\small\item\em ID of port map to delete. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_thread_message_item_delete_port_map_a6a5d707645152f8b18458766cb43789a}{protocol}
+\begin{DoxyCompactList}\small\item\em Protocol of port map to delete. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_delete_port_map_a6eebc86d208f2ad0553258e3fa510590}{
+long \hyperlink{class_thread_message_item_delete_port_map_a6eebc86d208f2ad0553258e3fa510590}{externalPort}}
+\label{class_thread_message_item_delete_port_map_a6eebc86d208f2ad0553258e3fa510590}
+
+\begin{DoxyCompactList}\small\item\em External port of port map to delete. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_delete_port_map_aea5ff5044e726a8bc808f61e33d4d97b}{
+bool \hyperlink{class_thread_message_item_delete_port_map_aea5ff5044e726a8bc808f61e33d4d97b}{byIdOnly}}
+\label{class_thread_message_item_delete_port_map_aea5ff5044e726a8bc808f61e33d4d97b}
+
+\begin{DoxyCompactList}\small\item\em If true then only \hyperlink{class_thread_message_item_delete_port_map_a917b90069309efb7a8344c34348fa9c5}{ThreadMessageItemDeletePortMap::portMapID} (not \hyperlink{class_thread_message_item_delete_port_map_a6a5d707645152f8b18458766cb43789a}{ThreadMessageItemDeletePortMap::protocol} or \hyperlink{class_thread_message_item_delete_port_map_a6eebc86d208f2ad0553258e3fa510590}{ThreadMessageItemDeletePortMap::externalPort})will be used when finding the port map to delete. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_message_item_delete_port_map_af026903a3f9cf33723c94f4de1db074a}{
+\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}!ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}!ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+\subsubsection[{ThreadMessageItemDeletePortMap}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItemDeletePortMap::ThreadMessageItemDeletePortMap (
+\begin{DoxyParamCaption}
+\item[{{\bf UpnpNatAction} $\ast$}]{ natControls, }
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_delete_port_map_af026903a3f9cf33723c94f4de1db074a}
+
+
+Default constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em natControls}]Object to take action on. \item[{\em portMapID}]Identifier for the port map. \end{DoxyParams}
+\hypertarget{class_thread_message_item_delete_port_map_a7322596746d7e29c78759b7dcd07aa7f}{
+\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}!ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}!ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+\subsubsection[{ThreadMessageItemDeletePortMap}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItemDeletePortMap::ThreadMessageItemDeletePortMap (
+\begin{DoxyParamCaption}
+\item[{{\bf UpnpNatAction} $\ast$}]{ takeActionOnMe, }
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_delete_port_map_a7322596746d7e29c78759b7dcd07aa7f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em takeActionOnMe}]Object to take action on. \item[{\em protocol}]The protocol. \item[{\em externalPort}]The external port. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_message_item_delete_port_map_ad1de6d42bb481e4e9c8f22e9cb3aedbc}{
+\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}!TakeAction@{TakeAction}}
+\index{TakeAction@{TakeAction}!ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+\subsubsection[{TakeAction}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadMessageItemDeletePortMap::TakeAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_message_item_delete_port_map_ad1de6d42bb481e4e9c8f22e9cb3aedbc}
+
+
+Deletes a port map. 
+
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{ThreadMessageItem}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_message_item_delete_port_map_a6a5d707645152f8b18458766cb43789a}{
+\index{ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}!protocol@{protocol}}
+\index{protocol@{protocol}!ThreadMessageItemDeletePortMap@{ThreadMessageItemDeletePortMap}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf ThreadMessageItemDeletePortMap::protocol}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_delete_port_map_a6a5d707645152f8b18458766cb43789a}
+
+
+Protocol of port map to delete. 
+
+Stored as a packet because it is important that the string remains valid until the thread has finished using it. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemDeletePortMap.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemDeletePortMap.cpp\end{DoxyCompactItemize}

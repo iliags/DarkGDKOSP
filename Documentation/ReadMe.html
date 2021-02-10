@@ -1,0 +1,268 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE>DOSP README</TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.2  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGED" CONTENT="20110124;16530800">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<P><FONT SIZE=4 STYLE="font-size: 16pt"><B>DarkGDK Open Source
+Project</B></FONT></P>
+<P><B>Super 3D Game Engine </B>- A Powerful Game Engine capable of
+producing unique 3D Computer Games based on combined game mechanics
+from popular computer game genres/sub-genres: FPS, RPG, RTS, Puzzle,
+Arcade, and many others; viewable from a variety of camera
+perspectives. The Engine should include scalable Multiplayer support
+for Single Player up to Massive Multiplayer Games. MOTIVATION:
+Provide a Free, Open Source, High Performance, Modular Game Engine
+that will allow DGDK Game Developers to dive immediately into the
+Game Content Creation (Media &amp; Logic) and experiment with various
+game mechanics without the need to alter source code. if(a feature is
+not readily available, a Plug-in architecture makes addition new
+features and modifications a snap!</P>
+<HR>
+<P><FONT SIZE=4><B>The Credits</B></FONT></P>
+<OL>
+	<LI><P STYLE="margin-bottom: 0in"><B>Media</B> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in">S3GP 2D Loco Logo - Cuddle
+		Bunniezzz 12 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">S3GP 3D Loco Logo - Haliop 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">S3GP Splash Logo - RedEye 
+		</P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0in"><B>Source</B> 
+	</P>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="http://www.thegamecreators.com/?m=view_product&amp;id=2128">DarkGDK
+		- TheGameCreators.com</A> 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">Fulcrum Physics- Matty Halewood 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">MAUI - TechLord 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="http://www.darknetworking.net/">DarkNet/MikeNet2.0</A>
+		- Mike Pryor 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">DarkNet Extension - TechLord 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">Diag - TechLord 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">DarkLUA - TechLord 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">X360 - Faker1089 
+		</P>
+		<LI><P STYLE="margin-bottom: 0in">Wii Wrapper - chunkschunks 
+		</P>
+	</UL>
+</OL>
+<OL>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in">oawgdk Audio - chunkschunks 
+		</P>
+	</UL>
+</OL>
+<OL>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in"><A HREF="http://www.box2d.org/">Box2D</A>
+		Erin Catto, [DarkBox2D] TechLord 
+		</P>
+	</UL>
+</OL>
+<OL>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in">Illudium Particle System &ndash;
+		(<A HREF="http://www.particlesystems.org/">PAPI</A> by David K.
+		McAllister) , TechLord, Matty Halewood 
+		</P>
+	</UL>
+</OL>
+<OL>
+	<UL>
+		<LI><P STYLE="margin-bottom: 0in">Trixie - TechLord, haliop 
+		</P>
+	</UL>
+	<LI><P STYLE="margin-bottom: 0in"><B>Script</B> 
+	</P>
+	<LI><P><B>Applications</B> 
+	</P>
+</OL>
+<HR>
+<P><FONT SIZE=4><B>Getting Started: The DOSP Restructure</B></FONT></P>
+<P>DarkGDK Open Source Project Restructure is an effort to 1)
+Reorganize the project in a more intuitive fashion; 2) Stablize Open
+Source distribution via SVN for all contributors; 3) Minimize Version
+conflicts. For self-containment, the restructure will result in
+separate copies of DGDK and other 3rd Party Libraries from the
+standard DGDK default directories. This structure is based on the
+Directory Structure <A HREF="http://forum.thegamecreators.com/xt/xt_apollo_pic.php?i=2001923">recommendations</A>
+from the Core Team Members.</P>
+<OL>
+	<LI><P>DOSP &ndash; Root Directory</P>
+	<OL>
+		<LI><P>Documentation &ndash; 3<SUP>rd</SUP> Party Libraries,
+		Plugins, and Tool Documentation.</P>
+		<LI><P>Include &ndash; 3<SUP>rd</SUP> Party C++ Header and Source
+		Files.</P>
+		<LI><P>Lib &ndash; 3<SUP>rd</SUP> Party Static Library Files.</P>
+		<LI><P>Dll &ndash; 3<SUP>rd</SUP> Party Dynamic Link Libraries.</P>
+		<LI><P>Projects &ndash; DOSP Projects. 
+		</P>
+		<LI><P>Tools &ndash; Utility Executables.</P>
+		<LI><P>Content &ndash; S3GP Application/Game Media, Data, and Logic
+		Files. This sub directory is located in the directory that contains
+		the S3GP.exe (which is currently generated and located in
+		<FONT FACE="Courier New, monospace">Projects\S3GP\S3GP\Debug\</FONT>)
+		. This directory contains the cached Content Files for Application
+		/ Game. Note: S3GP Host Server will provide a centralized
+		respository for all Content Files downloaded S3GP upon requirement.</P>
+	</OL>
+</OL>
+<P>In this stage of development, the project is compiled in debug
+mode and should generate object and executable files in
+<FONT FACE="Courier New, monospace">Projects\S3GP\S3GP\Debug\</FONT></P>
+<P>The Debug/Release Directory represents the Root Directory for
+S3GP.exe and associated files.</P>
+<P>The Content Directory (currently located in the Debug Folder)
+represents an Application/Game's cached content {media, auxillary
+data, markup &amp; script} files for use by S3GP.</P>
+<P>VC++ IDE requires you specify the path and directorie of *lib
+files in order to properly locate the Lib Directories for DOSP. From
+within VC++ add the following entry: 
+</P>
+<P><FONT FACE="Courier New, monospace">Tools &rarr; Options... &rarr;
+Project and Solutions &rarr; VC++ Directories &rarr; Show directories
+for: Library files &rarr; </FONT><I>[Absolute Path of
+DOSP]\DOSP\Lib\vs9 </I>
+</P>
+<P><FONT FACE="Times New Roman, serif">TechLord</FONT></P>
+<HR>
+<P><FONT SIZE=4><B>To Do List:</B></FONT></P>
+<OL>
+	<LI><P><B>Programming:</B> Bind DarkNet 2.0 to DarkLUA</P>
+	<LI><P><B>Programming: </B>Download Event management Implementation</P>
+	<LI><P><B>Programming</B> TBEMS Add Trophy System (Online Scoring)</P>
+	<LI><P><B>Documentation: </B><A HREF="http://www.stack.nl/~dimitri/doxygen/docblocks.html">Doxygen
+	Encoding using JavaDoc Style</A>, <A HREF="http://www.stack.nl/~dimitri/doxygen/commands.html">Special
+	Commands (ie: @brief)</A> 
+	</P>
+	<PRE>/**
+ *  A test class. A more elaborate class description.
+ */
+
+class Test
+{
+  public:
+
+    /** 
+     * An enum.
+     * More detailed enum description.
+     */
+
+    enum TEnum { 
+          TVal1, /**&lt; enum value TVal1. */  
+          TVal2, /**&lt; enum value TVal2. */  
+          TVal3  /**&lt; enum value TVal3. */  
+         } 
+       *enumPtr, /**&lt; enum pointer. Details. */
+       enumVar;  /**&lt; enum variable. Details. */
+       
+      /**
+       * A constructor.
+       * A more elaborate description of the constructor.
+       */
+      Test();
+
+      /**
+       * A destructor.
+       * A more elaborate description of the destructor.
+       */
+     ~Test();
+    
+      /**
+       * a normal member taking two arguments and returning an integer value.
+       * @param a an integer argument.
+       * @param s a constant character pointer.
+       * @see Test()
+       * @see ~Test()
+       * @see testMeToo()
+       * @see publicVar()
+       * @return The test results
+       */
+       int testMe(int a,const char *s);
+       
+      /**
+       * A pure virtual member.
+       * @see testMe()
+       * @param c1 the first argument.
+       * @param c2 the second argument.
+       */
+       virtual void testMeToo(char c1,char c2) = 0;
+   
+      /** 
+       * a public variable.
+       * Details.
+       */
+       int publicVar;
+       
+      /**
+       * a function variable.
+       * Details.
+       */
+       int (*handler)(int a,int b);
+};</PRE><P>
+	Click <A HREF="http://www.stack.nl/~dimitri/doxygen/examples/jdstyle/html/class_test.html">here</A>
+	for the corresponding HTML documentation that is generated by
+	doxygen. 
+	</P>
+</OL>
+<HR>
+<P><FONT SIZE=4><B>Known Bugs:</B></FONT></P>
+<OL>
+	<LI><P><B>Problem: </B>SOMESTDLIB<BR><BR><B>Details:</B> <FONT FACE="Courier New, monospace">Something
+	isn't supported by SOMESTDLIB use /NoDefaultLib when compiling under
+	'Debug'</FONT><BR><BR><B>Fix: </B>Go to
+	Project-&gt;Properties-&gt;Configuration properties-&gt;C/C++-&gt;Code
+	generation-&gt;Runtime library Change the runtime library from
+	Multi-threaded Debug (MTd) to Multi-threaded(MT). 
+	</P>
+	<LI><P><B>Problem: </B>Compiling Box2D<BR><BR><B>Details:</B>
+	<FONT FACE="Courier New, monospace">Linking...
+	libcpmtd.lib(stdthrow.obj) : error LNK2019: unresolved external
+	symbol __CrtDbgReportW referenced in function &quot;void __cdecl
+	std::_Debug_message(wchar_t const *,wchar_t const *,unsigned int)&quot;
+	(?_Debug_message@std@@YAXPB_W0I@Z) Debug\S3GP.exe : fatal error
+	LNK1120: 1 unresolved externals</FONT><BR><BR><B>Fix</B>: Compile
+	Lib in Release mode Reference: <A HREF="http://forum.thegamecreators.com/?m=forum_view&amp;t=142057&amp;b=22">TGC
+	Forum Thread</A> 
+	</P>
+	<LI><P><B>Problem: </B>IIrrXMLReader<BR><BR><B>Details:</B> <FONT FACE="Courier New, monospace">LNK2019:
+	unresolved external symbol with stuff about
+	irr::io::IIrrXMLReader</FONT><BR><BR><B>Fix: </B>*Optional but
+	recommended is to make a new filter called xmlplugin or something
+	like that* Right click on either 'Source Files' or the filter you
+	made for the xmlplugin as mentioned previously :) Add-&gt;Existing
+	Item-&gt;Browse to the 'include' folder (up 3 levels from S3GP
+	project)-&gt;Browse to the 'xmlplugin' folder-&gt;Select all of the
+	files and then click 'add' 
+	</P>
+	<LI><P><B>Problem: </B>Audio Plugin<BR><BR><B>Details:</B> <FONT FACE="Courier New, monospace">&quot;This
+	application has failed to start because irrKlang.dll was not found.
+	RE-installing the application may fix this problem.&quot; </FONT><BR><BR><B>Fix:
+	</B>Copy the irrKlang.dll and ikpMP3.dll from DarkGDK\Media\dlls
+	into the folder that S3GP.exe is in. 
+	</P>
+</OL>
+</BODY>
+</HTML>

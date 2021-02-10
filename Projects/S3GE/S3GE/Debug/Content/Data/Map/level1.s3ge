@@ -1,0 +1,9 @@
+<s3ge version="1.0" type="map"> 
+  <interactive type="wizmo" name="Turf" description="Terrain Test" value="Sample Terrain" audio="true" visible="1" active="1">
+    <orientate x="-1200" z="-1200" width="100" height="100" depth="100">
+      <physics type="dbomesh" dynamic="1" density="10" />
+    </orientate>
+    <object name="Turf" src="2D/map.bmp" type="terrain"/>
+    <event state="IDLE" object="Turf" theme="earthbox" scheme="pointingFX" caption="Turf"/>
+  </interactive>  
+</s3ge>

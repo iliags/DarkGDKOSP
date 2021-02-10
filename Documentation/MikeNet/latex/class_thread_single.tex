@@ -1,0 +1,606 @@
+\hypertarget{class_thread_single}{
+\section{ThreadSingle Class Reference}
+\label{class_thread_single}\index{ThreadSingle@{ThreadSingle}}
+}
+
+
+A single thread, the thread's life time is the life time of this object.  
+
+
+
+
+{\ttfamily \#include $<$ThreadSingle.h$>$}
+
+Inheritance diagram for ThreadSingle:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_thread_single}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_single_a05dabadec4ddc67da1a7996100d87ad2}{ThreadSingle} (LPTHREAD\_\-START\_\-ROUTINE function, void $\ast$\hyperlink{class_thread_single_ad0aa14d604bca6bb1ba5ec5721cd859c}{parameter}, bool \hyperlink{class_thread_single_a710b7388ce616e858f776efab32fbe61}{suspended}, size\_\-t \hyperlink{class_thread_single_a43cc2e11c57294cfcf6f61ef9754f70b}{manualThreadID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_thread_single_aac16bed03e62d0979d0fcbd9f081d9ee}{$\sim$ThreadSingle} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_single_a1322c3db9a09abccc1dc38f16ee24c64}{GetParameter} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a parameter intended for the thread which was set during construction. \item\end{DoxyCompactList}\item 
+DWORD \hyperlink{class_thread_single_aa8b68a8122e71d6fb906e8d03b159b35}{GetThreadID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves thread ID set by windows for thread. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_thread_single_a43ec2b66ea0f36e97701dea573fa966e}{GetManualThreadID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a thread ID that is set manually. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}{TerminateForce} (DWORD exitCode)
+\begin{DoxyCompactList}\small\item\em Forces the thread to exit. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{TerminateFriendly} (bool block)
+\begin{DoxyCompactList}\small\item\em Requests that the thread exits. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_a681da954e3187f48bd3fe78db32e9b7a}{TerminateNormal} (clock\_\-t timeout)
+\begin{DoxyCompactList}\small\item\em Terminates the thread normally, first by attempting to use \hyperlink{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{TerminateFriendly()}, and then if that fails using \hyperlink{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}{TerminateForce()}. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_a39fe6b29f7b9aec6a48b8ac917cfeacb}{IsRunning} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the thread is running. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_thread_single_a8f5ea100a4e85739b2350e1318e8a6f3}{GetTerminateRequest} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the thread should exit. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_a849f0d14914a6d7cac02d3cb7fa5b035}{
+void \hyperlink{class_thread_single_a849f0d14914a6d7cac02d3cb7fa5b035}{RequestTerminate} ()}
+\label{class_thread_single_a849f0d14914a6d7cac02d3cb7fa5b035}
+
+\begin{DoxyCompactList}\small\item\em Sets the terminate request. \item\end{DoxyCompactList}\item 
+DWORD \hyperlink{class_thread_single_a08b4ac536ac97fef18a07d6593bb5cbf}{GetExitCode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the exit code of the thread. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_af6dea116ccb56256a743fbaad5223f1d}{IsSuspended} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the thread is suspended. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}{Resume} ()
+\begin{DoxyCompactList}\small\item\em Resumes execution of the thread after being suspended. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_afac6eb8f03eba7b9b4773e57b817eb1f}{Suspend} ()
+\begin{DoxyCompactList}\small\item\em Suspends execution of the thread. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_a06243d993bb3951de1c90b531fe51f28}{
+void \hyperlink{class_thread_single_a06243d993bb3951de1c90b531fe51f28}{WaitForThreadToExit} ()}
+\label{class_thread_single_a06243d993bb3951de1c90b531fe51f28}
+
+\begin{DoxyCompactList}\small\item\em Does not return until the thread has exited. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_thread_single_ac26635ca1c9ec706788a90adbd877620}{SetError} (\hyperlink{class_error_report}{ErrorReport} $\ast$report)
+\begin{DoxyCompactList}\small\item\em Used by the thread to store an error that has occurred. \item\end{DoxyCompactList}\item 
+\hyperlink{class_error_report}{ErrorReport} $\ast$ \hyperlink{class_thread_single_ac2d65b11d96d80d449a500d1c323a9a1}{GetError} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a stored error report. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_a89668c23ad9da603c109876ab9dab59f}{IsErrorStored} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether an error report is stored. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_a5628818cd67dfa6cfdcdffa8bb52a099}{
+void \hyperlink{class_thread_single_a5628818cd67dfa6cfdcdffa8bb52a099}{ClearError} ()}
+\label{class_thread_single_a5628818cd67dfa6cfdcdffa8bb52a099}
+
+\begin{DoxyCompactList}\small\item\em Erases any currently stored error report. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_single_a082eeec139aba754fd2ebf51adb9869a}{
+static void \hyperlink{class_thread_single_a082eeec139aba754fd2ebf51adb9869a}{AllocateThreadLocalStorage} ()}
+\label{class_thread_single_a082eeec139aba754fd2ebf51adb9869a}
+
+\begin{DoxyCompactList}\small\item\em Allocates thread local storage. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_aa841ecdd50e402ee1ef6ff6b92e1ac90}{
+static void \hyperlink{class_thread_single_aa841ecdd50e402ee1ef6ff6b92e1ac90}{DeallocateThreadLocalStorage} ()}
+\label{class_thread_single_aa841ecdd50e402ee1ef6ff6b92e1ac90}
+
+\begin{DoxyCompactList}\small\item\em Deallocates thread local storage. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_thread_single_aa9aff537d89b1baf37f212c8d5625092}{IsThreadLocalStorageAllocated} ()
+\begin{DoxyCompactList}\small\item\em Determine if thread local storage has been allocated. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_thread_single}{ThreadSingle} $\ast$ \hyperlink{class_thread_single_aa453d445ef270a5e86e858f02dba1845}{GetCallingThread} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the thread that is calling this method. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_thread_single_a2eb55a419326e7c7d8236cf3299d2030}{ThreadSetCallingThread} (\hyperlink{class_thread_single}{ThreadSingle} $\ast$object)
+\begin{DoxyCompactList}\small\item\em Calling thread updates its thread local storage with a pointer to its \hyperlink{class_thread_single}{ThreadSingle} object. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_thread_single_a8a775cd9c2ced572c907859858240e03}{GetNumLogicalCores} ()
+\begin{DoxyCompactList}\small\item\em Gets the number logical cores on the system. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_thread_single_ad62d9d1a31db4a8a77848a8c6dab4815}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static DWORD \hyperlink{class_thread_single_abcc5041a5e19e0cc168bc2dc05624232}{GetThreadLocalStorageIndex} ()
+\begin{DoxyCompactList}\small\item\em Gets the index used to identify thread local storage. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_thread_single_afac20b84be21ce171288a8322165a5d4}{ThreadSetLocalStorageValue} (void $\ast$value)
+\begin{DoxyCompactList}\small\item\em Sets the value to be stored in thread local storage by the calling thread. \item\end{DoxyCompactList}\item 
+static void $\ast$ \hyperlink{class_thread_single_aaf1ad7a2ce1e68aac5d0fe1821970423}{ThreadGetLocalStorageValue} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the value stored in thread local storage by the calling thread. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_single_a20c437b8adfc738a957ce1822e193df7}{
+HANDLE \hyperlink{class_thread_single_a20c437b8adfc738a957ce1822e193df7}{handle}}
+\label{class_thread_single_a20c437b8adfc738a957ce1822e193df7}
+
+\begin{DoxyCompactList}\small\item\em Handle to thread, used to reference thread when taking action on it. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_a1b9939199a945bfebe7a28570ee13870}{
+DWORD \hyperlink{class_thread_single_a1b9939199a945bfebe7a28570ee13870}{threadID}}
+\label{class_thread_single_a1b9939199a945bfebe7a28570ee13870}
+
+\begin{DoxyCompactList}\small\item\em After thread is created, this is loaded with an ID unique to that thread. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_ad0aa14d604bca6bb1ba5ec5721cd859c}{
+void $\ast$ \hyperlink{class_thread_single_ad0aa14d604bca6bb1ba5ec5721cd859c}{parameter}}
+\label{class_thread_single_ad0aa14d604bca6bb1ba5ec5721cd859c}
+
+\begin{DoxyCompactList}\small\item\em Pointer to this object is passed to thread, so thread can access this parameter, which is set in the constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_ae8d457b71b1212477ac7b1215133f91d}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ \hyperlink{class_thread_single_ae8d457b71b1212477ac7b1215133f91d}{running}}
+\label{class_thread_single_ae8d457b71b1212477ac7b1215133f91d}
+
+\begin{DoxyCompactList}\small\item\em Set to false when the thread should exit. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_thread_single_a710b7388ce616e858f776efab32fbe61}{suspended}
+\begin{DoxyCompactList}\small\item\em True if the thread is suspended. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_a43cc2e11c57294cfcf6f61ef9754f70b}{
+size\_\-t \hyperlink{class_thread_single_a43cc2e11c57294cfcf6f61ef9754f70b}{manualThreadID}}
+\label{class_thread_single_a43cc2e11c57294cfcf6f61ef9754f70b}
+
+\begin{DoxyCompactList}\small\item\em Thread ID manually set. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_ad1453b840d770d717080d07f8b082286}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ \hyperlink{class_error_report}{ErrorReport} $\ast$ $>$ \hyperlink{class_thread_single_ad1453b840d770d717080d07f8b082286}{threadError}}
+\label{class_thread_single_ad1453b840d770d717080d07f8b082286}
+
+\begin{DoxyCompactList}\small\item\em Non NULL if an error occurred in the thread. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_thread_single_a090d0d230358aa18cff5ace35ac2f4b3}{threadLocalStorageAllocated}
+\begin{DoxyCompactList}\small\item\em The number of threads using thread local storage, if 0 then thread local storage is not allocated. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_single_a63c674237870d9591d612044788d826c}{
+static DWORD \hyperlink{class_thread_single_a63c674237870d9591d612044788d826c}{threadLocalStorageIndex}}
+\label{class_thread_single_a63c674237870d9591d612044788d826c}
+
+\begin{DoxyCompactList}\small\item\em Index of thread local storage, used to identify storage space. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A single thread, the thread's life time is the life time of this object. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 8/25/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_single_a05dabadec4ddc67da1a7996100d87ad2}{
+\index{ThreadSingle@{ThreadSingle}!ThreadSingle@{ThreadSingle}}
+\index{ThreadSingle@{ThreadSingle}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{ThreadSingle}]{\setlength{\rightskip}{0pt plus 5cm}ThreadSingle::ThreadSingle (
+\begin{DoxyParamCaption}
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function, }
+\item[{void $\ast$}]{ parameter, }
+\item[{bool}]{ suspended, }
+\item[{size\_\-t}]{ manualThreadID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_a05dabadec4ddc67da1a7996100d87ad2}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em function}]Entry point for thread. A pointer to this object will be passed as a parameter. \item[{\em parameter}]Parameter to be passed to thread. \item[{\em suspended}]If true the thread will not begin execution until \hyperlink{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}{Resume()} is used. \item[{\em manualThreadID}]Custom thread ID that can be retrieved by thread (optional, default = 0). \end{DoxyParams}
+\hypertarget{class_thread_single_aac16bed03e62d0979d0fcbd9f081d9ee}{
+\index{ThreadSingle@{ThreadSingle}!$\sim$ThreadSingle@{$\sim$ThreadSingle}}
+\index{$\sim$ThreadSingle@{$\sim$ThreadSingle}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{$\sim$ThreadSingle}]{\setlength{\rightskip}{0pt plus 5cm}ThreadSingle::$\sim$ThreadSingle (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_aac16bed03e62d0979d0fcbd9f081d9ee}
+
+
+Destructor. 
+
+Uses TerminateFriendly(true) and resumes the thread if necassary. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_single_aa453d445ef270a5e86e858f02dba1845}{
+\index{ThreadSingle@{ThreadSingle}!GetCallingThread@{GetCallingThread}}
+\index{GetCallingThread@{GetCallingThread}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetCallingThread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ThreadSingle} $\ast$ ThreadSingle::GetCallingThread (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_aa453d445ef270a5e86e858f02dba1845}
+
+
+Retrieves the thread that is calling this method. 
+
+\begin{DoxyReturn}{Returns}
+a pointer to a \hyperlink{class_thread_single}{ThreadSingle} object that manages the calling thread. If the main process is the calling thread then NULL will be returned. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_ac2d65b11d96d80d449a500d1c323a9a1}{
+\index{ThreadSingle@{ThreadSingle}!GetError@{GetError}}
+\index{GetError@{GetError}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetError}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ErrorReport} $\ast$ ThreadSingle::GetError (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_ac2d65b11d96d80d449a500d1c323a9a1}
+
+
+Retrieves a stored error report. 
+
+\begin{DoxyReturn}{Returns}
+NULL if no report is stored. 
+
+an error report describing the error. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a08b4ac536ac97fef18a07d6593bb5cbf}{
+\index{ThreadSingle@{ThreadSingle}!GetExitCode@{GetExitCode}}
+\index{GetExitCode@{GetExitCode}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetExitCode}]{\setlength{\rightskip}{0pt plus 5cm}DWORD ThreadSingle::GetExitCode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_a08b4ac536ac97fef18a07d6593bb5cbf}
+
+
+Retrieves the exit code of the thread. 
+
+\begin{DoxyReturn}{Returns}
+when a thread exits it returns a value, this method retrieves that value. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a43ec2b66ea0f36e97701dea573fa966e}{
+\index{ThreadSingle@{ThreadSingle}!GetManualThreadID@{GetManualThreadID}}
+\index{GetManualThreadID@{GetManualThreadID}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetManualThreadID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ThreadSingle::GetManualThreadID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_a43ec2b66ea0f36e97701dea573fa966e}
+
+
+Retrieves a thread ID that is set manually. 
+
+\begin{DoxyReturn}{Returns}
+thread ID. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a8a775cd9c2ced572c907859858240e03}{
+\index{ThreadSingle@{ThreadSingle}!GetNumLogicalCores@{GetNumLogicalCores}}
+\index{GetNumLogicalCores@{GetNumLogicalCores}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetNumLogicalCores}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ThreadSingle::GetNumLogicalCores (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_a8a775cd9c2ced572c907859858240e03}
+
+
+Gets the number logical cores on the system. 
+
+\begin{DoxyReturn}{Returns}
+the number of logical cores. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a1322c3db9a09abccc1dc38f16ee24c64}{
+\index{ThreadSingle@{ThreadSingle}!GetParameter@{GetParameter}}
+\index{GetParameter@{GetParameter}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetParameter}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadSingle::GetParameter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_a1322c3db9a09abccc1dc38f16ee24c64}
+
+
+Retrieves a parameter intended for the thread which was set during construction. 
+
+\begin{DoxyReturn}{Returns}
+parameter. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a8f5ea100a4e85739b2350e1318e8a6f3}{
+\index{ThreadSingle@{ThreadSingle}!GetTerminateRequest@{GetTerminateRequest}}
+\index{GetTerminateRequest@{GetTerminateRequest}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetTerminateRequest}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingle::GetTerminateRequest (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_a8f5ea100a4e85739b2350e1318e8a6f3}
+
+
+Determines whether the thread should exit. 
+
+The thread should check this regularly and exit when this method returns true.
+
+\begin{DoxyReturn}{Returns}
+true if the thread should exit, false if not. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_thread_single_message_a44b112ebedfba5e48ca8384a2db24061}{ThreadSingleMessage}.
+
+\hypertarget{class_thread_single_aa8b68a8122e71d6fb906e8d03b159b35}{
+\index{ThreadSingle@{ThreadSingle}!GetThreadID@{GetThreadID}}
+\index{GetThreadID@{GetThreadID}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetThreadID}]{\setlength{\rightskip}{0pt plus 5cm}DWORD ThreadSingle::GetThreadID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_aa8b68a8122e71d6fb906e8d03b159b35}
+
+
+Retrieves thread ID set by windows for thread. 
+
+\begin{DoxyReturn}{Returns}
+thread ID. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_abcc5041a5e19e0cc168bc2dc05624232}{
+\index{ThreadSingle@{ThreadSingle}!GetThreadLocalStorageIndex@{GetThreadLocalStorageIndex}}
+\index{GetThreadLocalStorageIndex@{GetThreadLocalStorageIndex}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{GetThreadLocalStorageIndex}]{\setlength{\rightskip}{0pt plus 5cm}DWORD ThreadSingle::GetThreadLocalStorageIndex (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_thread_single_abcc5041a5e19e0cc168bc2dc05624232}
+
+
+Gets the index used to identify thread local storage. 
+
+\begin{DoxyReturn}{Returns}
+the thread local storage index. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a89668c23ad9da603c109876ab9dab59f}{
+\index{ThreadSingle@{ThreadSingle}!IsErrorStored@{IsErrorStored}}
+\index{IsErrorStored@{IsErrorStored}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{IsErrorStored}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingle::IsErrorStored (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_a89668c23ad9da603c109876ab9dab59f}
+
+
+Determines whether an error report is stored. 
+
+\begin{DoxyReturn}{Returns}
+true if a report is stored, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a39fe6b29f7b9aec6a48b8ac917cfeacb}{
+\index{ThreadSingle@{ThreadSingle}!IsRunning@{IsRunning}}
+\index{IsRunning@{IsRunning}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{IsRunning}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingle::IsRunning (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_a39fe6b29f7b9aec6a48b8ac917cfeacb}
+
+
+Determines whether the thread is running. 
+
+\begin{DoxyReturn}{Returns}
+true if the thread is running, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_af6dea116ccb56256a743fbaad5223f1d}{
+\index{ThreadSingle@{ThreadSingle}!IsSuspended@{IsSuspended}}
+\index{IsSuspended@{IsSuspended}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{IsSuspended}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingle::IsSuspended (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_thread_single_af6dea116ccb56256a743fbaad5223f1d}
+
+
+Determines whether the thread is suspended. 
+
+\begin{DoxyReturn}{Returns}
+true if the thread is suspended. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_aa9aff537d89b1baf37f212c8d5625092}{
+\index{ThreadSingle@{ThreadSingle}!IsThreadLocalStorageAllocated@{IsThreadLocalStorageAllocated}}
+\index{IsThreadLocalStorageAllocated@{IsThreadLocalStorageAllocated}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{IsThreadLocalStorageAllocated}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingle::IsThreadLocalStorageAllocated (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_aa9aff537d89b1baf37f212c8d5625092}
+
+
+Determine if thread local storage has been allocated. 
+
+\begin{DoxyReturn}{Returns}
+true if thread local storage allocated, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}{
+\index{ThreadSingle@{ThreadSingle}!Resume@{Resume}}
+\index{Resume@{Resume}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{Resume}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::Resume (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}
+
+
+Resumes execution of the thread after being suspended. 
+
+Execution can be suspended using \hyperlink{class_thread_single_afac6eb8f03eba7b9b4773e57b817eb1f}{Suspend()} and the thread may initially be suspended when constructed. \hypertarget{class_thread_single_ac26635ca1c9ec706788a90adbd877620}{
+\index{ThreadSingle@{ThreadSingle}!SetError@{SetError}}
+\index{SetError@{SetError}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{SetError}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::SetError (
+\begin{DoxyParamCaption}
+\item[{{\bf ErrorReport} $\ast$}]{ report}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_ac26635ca1c9ec706788a90adbd877620}
+
+
+Used by the thread to store an error that has occurred. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em report}]Error report describing error. Must be dynamically allocated and is now owned by this object. \end{DoxyParams}
+\hypertarget{class_thread_single_afac6eb8f03eba7b9b4773e57b817eb1f}{
+\index{ThreadSingle@{ThreadSingle}!Suspend@{Suspend}}
+\index{Suspend@{Suspend}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{Suspend}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::Suspend (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_afac6eb8f03eba7b9b4773e57b817eb1f}
+
+
+Suspends execution of the thread. 
+
+Execution can be resumed using \hyperlink{class_thread_single_a5eabc758672cb08b0109d9115b4d2b30}{Resume()}.
+
+\begin{DoxyWarning}{Warning}
+This method should be avoided as it can cause deadlock in other threads since this thread may have control of a critical section or mutex. 
+\end{DoxyWarning}
+\hypertarget{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}{
+\index{ThreadSingle@{ThreadSingle}!TerminateForce@{TerminateForce}}
+\index{TerminateForce@{TerminateForce}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{TerminateForce}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::TerminateForce (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ exitCode}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}
+
+
+Forces the thread to exit. 
+
+Use of this should be avoided where possible, favouring \hyperlink{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{TerminateFriendly()} instead. This is because the freeing of resources make not properly occur.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em exitCode}]Exit code retrieved using \hyperlink{class_thread_single_a08b4ac536ac97fef18a07d6593bb5cbf}{GetExitCode()} that thread should have. \end{DoxyParams}
+\hypertarget{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{
+\index{ThreadSingle@{ThreadSingle}!TerminateFriendly@{TerminateFriendly}}
+\index{TerminateFriendly@{TerminateFriendly}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{TerminateFriendly}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::TerminateFriendly (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}
+
+
+Requests that the thread exits. 
+
+The thread is not guaranteed to exit as it may not be checking \hyperlink{class_thread_single_a8f5ea100a4e85739b2350e1318e8a6f3}{GetTerminateRequest()}. If it is performing an operation it may also not exit straight away. Use TerminateForce to guarantee quick thread exit.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]If true this method will not return until the thread has exited. \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{class_thread_single_message_a070c58a93f28c1a2514506c55e1810fb}{ThreadSingleMessage}, and \hyperlink{class_thread_single_message_keep_last_a408f2a12f684c32cb640c3b17f74f933}{ThreadSingleMessageKeepLast}.
+
+\hypertarget{class_thread_single_a681da954e3187f48bd3fe78db32e9b7a}{
+\index{ThreadSingle@{ThreadSingle}!TerminateNormal@{TerminateNormal}}
+\index{TerminateNormal@{TerminateNormal}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{TerminateNormal}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::TerminateNormal (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ timeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_single_a681da954e3187f48bd3fe78db32e9b7a}
+
+
+Terminates the thread normally, first by attempting to use \hyperlink{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{TerminateFriendly()}, and then if that fails using \hyperlink{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}{TerminateForce()}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]Length of time in milliseconds to wait after using \hyperlink{class_thread_single_a7b87608393cc1d6df1a6d331aecddcf3}{TerminateFriendly()} for the thread to terminate, before using \hyperlink{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}{TerminateForce()}. If \hyperlink{class_thread_single_a1efa47d61a11d4a582d6cfc18de2cd3c}{TerminateForce()} is used exit code will be 0. \end{DoxyParams}
+\hypertarget{class_thread_single_ad62d9d1a31db4a8a77848a8c6dab4815}{
+\index{ThreadSingle@{ThreadSingle}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ThreadSingle::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_ad62d9d1a31db4a8a77848a8c6dab4815}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_thread_single_message_a1bd833e3ffcd36b3cfe26648a7e74625}{ThreadSingleMessage}, and \hyperlink{class_thread_single_message_keep_last_adbab8972129d51d509f20d5d575a393b}{ThreadSingleMessageKeepLast}.
+
+\hypertarget{class_thread_single_aaf1ad7a2ce1e68aac5d0fe1821970423}{
+\index{ThreadSingle@{ThreadSingle}!ThreadGetLocalStorageValue@{ThreadGetLocalStorageValue}}
+\index{ThreadGetLocalStorageValue@{ThreadGetLocalStorageValue}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{ThreadGetLocalStorageValue}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadSingle::ThreadGetLocalStorageValue (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_thread_single_aaf1ad7a2ce1e68aac5d0fe1821970423}
+
+
+Retrieves the value stored in thread local storage by the calling thread. 
+
+\begin{DoxyReturn}{Returns}
+the stored value for the calling thread. 
+\end{DoxyReturn}
+\hypertarget{class_thread_single_a2eb55a419326e7c7d8236cf3299d2030}{
+\index{ThreadSingle@{ThreadSingle}!ThreadSetCallingThread@{ThreadSetCallingThread}}
+\index{ThreadSetCallingThread@{ThreadSetCallingThread}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{ThreadSetCallingThread}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::ThreadSetCallingThread (
+\begin{DoxyParamCaption}
+\item[{{\bf ThreadSingle} $\ast$}]{ object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_thread_single_a2eb55a419326e7c7d8236cf3299d2030}
+
+
+Calling thread updates its thread local storage with a pointer to its \hyperlink{class_thread_single}{ThreadSingle} object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em object}]\hyperlink{class_thread_single}{ThreadSingle} object that manages the calling thread. \end{DoxyParams}
+\hypertarget{class_thread_single_afac20b84be21ce171288a8322165a5d4}{
+\index{ThreadSingle@{ThreadSingle}!ThreadSetLocalStorageValue@{ThreadSetLocalStorageValue}}
+\index{ThreadSetLocalStorageValue@{ThreadSetLocalStorageValue}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{ThreadSetLocalStorageValue}]{\setlength{\rightskip}{0pt plus 5cm}void ThreadSingle::ThreadSetLocalStorageValue (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{ value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_thread_single_afac20b84be21ce171288a8322165a5d4}
+
+
+Sets the value to be stored in thread local storage by the calling thread. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em value}]Value to be stored in thread local storage for calling thread. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_single_a710b7388ce616e858f776efab32fbe61}{
+\index{ThreadSingle@{ThreadSingle}!suspended@{suspended}}
+\index{suspended@{suspended}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{suspended}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf ThreadSingle::suspended}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_single_a710b7388ce616e858f776efab32fbe61}
+
+
+True if the thread is suspended. 
+
+A thread can be created suspended by the constructor. \hypertarget{class_thread_single_a090d0d230358aa18cff5ace35ac2f4b3}{
+\index{ThreadSingle@{ThreadSingle}!threadLocalStorageAllocated@{threadLocalStorageAllocated}}
+\index{threadLocalStorageAllocated@{threadLocalStorageAllocated}!ThreadSingle@{ThreadSingle}}
+\subsubsection[{threadLocalStorageAllocated}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<$ size\_\-t $>$ {\bf ThreadSingle::threadLocalStorageAllocated}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_thread_single_a090d0d230358aa18cff5ace35ac2f4b3}
+
+
+The number of threads using thread local storage, if 0 then thread local storage is not allocated. 
+
+Increases by 1 with every AllocateThreadLocalStorage, decreases by 1 with every DeallocateThreadLocalStorage. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingle.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadSingle.cpp\end{DoxyCompactItemize}

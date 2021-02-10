@@ -1,0 +1,297 @@
+\hypertarget{class_net_instance_group}{
+\section{NetInstanceGroup Class Reference}
+\label{class_net_instance_group}\index{NetInstanceGroup@{NetInstanceGroup}}
+}
+
+
+Manages a group of instances.  
+
+
+
+
+{\ttfamily \#include $<$NetInstanceGroup.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_instance_group_a11f1d2a2e2090736efaea4eb0baaed62}{NetInstanceGroup} (size\_\-t numInstances)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_group_ae9f64a65e9d9c889f513ee37aab283bc}{Finish} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Cleans up specified instance. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_group_a6618aa432b7973aff44819c719ecb63d}{FinishAll} ()
+\begin{DoxyCompactList}\small\item\em Cleans up all instances in group. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_group_af6a5f08ff3e912743d9528c9ae4f0c9e}{GetInstanceActive} (size\_\-t instanceID) const 
+\begin{DoxyCompactList}\small\item\em Determines whether an instance is active. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_group_a2bfa67bb8ad4e6bfa55eab5ad427b0a1}{AddInstance} (\hyperlink{class_net_instance}{NetInstance} $\ast$\hyperlink{class_net_instance_group_ac5074081fe0e0838a90288cdeebe8eaf}{instance})
+\begin{DoxyCompactList}\small\item\em Adds an instance to the group, increasing the group size by 1. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_group_ae1c55ab978d800606054738d35df0e77}{AddInstance} (size\_\-t instanceID, \hyperlink{class_net_instance}{NetInstance} $\ast$\hyperlink{class_net_instance_group_ac5074081fe0e0838a90288cdeebe8eaf}{instance})
+\begin{DoxyCompactList}\small\item\em Add an instance to the group at the specified ID. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_container}{NetInstanceContainer} \& \hyperlink{class_net_instance_group_a049bd9d986e404931a22216173dec79b}{GetInstance} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable reference to the specified instance container. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_instance_container}{NetInstanceContainer} \& \hyperlink{class_net_instance_group_ae123266a38b869d50eae8c2d7608bf34}{GetInstance} (size\_\-t instanceID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves a constant reference to the specified instance container. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_container}{NetInstanceContainer} \& \hyperlink{class_net_instance_group_a3a35db5047dfc303aa66e7793bb16fd2}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves a mutable reference to the specified instance container. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_instance_container}{NetInstanceContainer} \& \hyperlink{class_net_instance_group_ad586325d2a8ad308b40f30606c68ca60}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t instanceID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves a constant reference to the specified instance container. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_instance_group_a5523c936d196006c5497e3b30027121a}{GetNumInstances} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of instances stored in this group. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_instance_group_a857f9eca7d94cbb1e6b5c856113f5246}{ValidateInstanceID} (size\_\-t instanceID, size\_\-t line, const char $\ast$file) const 
+\begin{DoxyCompactList}\small\item\em Validates instance ID and throws an exception if the ID is out of range. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_group_ac5074081fe0e0838a90288cdeebe8eaf}{
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_net_instance_container}{NetInstanceContainer} $>$ \hyperlink{class_net_instance_group_ac5074081fe0e0838a90288cdeebe8eaf}{instance}}
+\label{class_net_instance_group_ac5074081fe0e0838a90288cdeebe8eaf}
+
+\begin{DoxyCompactList}\small\item\em Thread safe vector of instance containers, these are the members of this instance group. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a group of instances. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/5/2010.
+\end{DoxyRemark}
+This instance is used for managing a collection of instances. These instances can be identified by ID (unique only within this instance group).\par
+\par
+
+
+This class is thread safe; however, instances can only be 'finished' by the main process. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_group_a11f1d2a2e2090736efaea4eb0baaed62}{
+\index{NetInstanceGroup@{NetInstanceGroup}!NetInstanceGroup@{NetInstanceGroup}}
+\index{NetInstanceGroup@{NetInstanceGroup}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{NetInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceGroup::NetInstanceGroup (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInstances}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_a11f1d2a2e2090736efaea4eb0baaed62}
+
+
+Constructor. 
+
+Creates {\itshape numInstances\/} number of empty instance containers, containing no instances. These are then filled with instance objects later on.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numInstances}]Number of instances to store. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_group_a2bfa67bb8ad4e6bfa55eab5ad427b0a1}{
+\index{NetInstanceGroup@{NetInstanceGroup}!AddInstance@{AddInstance}}
+\index{AddInstance@{AddInstance}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{AddInstance}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceGroup::AddInstance (
+\begin{DoxyParamCaption}
+\item[{{\bf NetInstance} $\ast$}]{ newInstance}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_a2bfa67bb8ad4e6bfa55eab5ad427b0a1}
+
+
+Adds an instance to the group, increasing the group size by 1. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em newInstance}]Instance to add. This pointer and its data is now owned by this object and should not be used elsewhere. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new instance ID. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_group_ae1c55ab978d800606054738d35df0e77}{
+\index{NetInstanceGroup@{NetInstanceGroup}!AddInstance@{AddInstance}}
+\index{AddInstance@{AddInstance}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{AddInstance}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceGroup::AddInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf NetInstance} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_ae1c55ab978d800606054738d35df0e77}
+
+
+Add an instance to the group at the specified ID. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Instance ID that {\itshape instance\/} should occupy. \item[\mbox{\tt[in]} {\em instance}]Pointer to instance that should fill {\itshape instanceID\/}, this pointer and its data is now owned by this object and should not be used elsewhere.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If instance is already active at specified instance ID. \end{DoxyExceptions}
+\hypertarget{class_net_instance_group_ae9f64a65e9d9c889f513ee37aab283bc}{
+\index{NetInstanceGroup@{NetInstanceGroup}!Finish@{Finish}}
+\index{Finish@{Finish}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{Finish}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceGroup::Finish (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_ae9f64a65e9d9c889f513ee37aab283bc}
+
+
+Cleans up specified instance. 
+
+Instance container remains in vector, but has the instance it contains unloaded.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to cleanup. \end{DoxyParams}
+\hypertarget{class_net_instance_group_a6618aa432b7973aff44819c719ecb63d}{
+\index{NetInstanceGroup@{NetInstanceGroup}!FinishAll@{FinishAll}}
+\index{FinishAll@{FinishAll}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{FinishAll}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceGroup::FinishAll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_a6618aa432b7973aff44819c719ecb63d}
+
+
+Cleans up all instances in group. 
+
+Instance container remains in vector, but has the instance it contains unloaded.\par
+\par
+
+
+No impact unless calling thread is main process. \hypertarget{class_net_instance_group_ae123266a38b869d50eae8c2d7608bf34}{
+\index{NetInstanceGroup@{NetInstanceGroup}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetInstanceContainer} \& NetInstanceGroup::GetInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_group_ae123266a38b869d50eae8c2d7608bf34}
+
+
+Retrieves a constant reference to the specified instance container. 
+
+\begin{DoxyReturn}{Returns}
+constant reference to specified instance container. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance container to retrieve. \end{DoxyParams}
+\hypertarget{class_net_instance_group_a049bd9d986e404931a22216173dec79b}{
+\index{NetInstanceGroup@{NetInstanceGroup}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceContainer} \& NetInstanceGroup::GetInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_a049bd9d986e404931a22216173dec79b}
+
+
+Retrieves a mutable reference to the specified instance container. 
+
+\begin{DoxyReturn}{Returns}
+mutable reference to specified instance container. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance container to retrieve. \end{DoxyParams}
+\hypertarget{class_net_instance_group_af6a5f08ff3e912743d9528c9ae4f0c9e}{
+\index{NetInstanceGroup@{NetInstanceGroup}!GetInstanceActive@{GetInstanceActive}}
+\index{GetInstanceActive@{GetInstanceActive}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{GetInstanceActive}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceGroup::GetInstanceActive (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_group_af6a5f08ff3e912743d9528c9ae4f0c9e}
+
+
+Determines whether an instance is active. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to check. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if instance is active, false if instance is inactive. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_group_a5523c936d196006c5497e3b30027121a}{
+\index{NetInstanceGroup@{NetInstanceGroup}!GetNumInstances@{GetNumInstances}}
+\index{GetNumInstances@{GetNumInstances}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{GetNumInstances}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceGroup::GetNumInstances (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_group_a5523c936d196006c5497e3b30027121a}
+
+
+Retrieves the number of instances stored in this group. 
+
+\begin{DoxyReturn}{Returns}
+the number of instances in instance group, these instances can be inactive or active, this method does not differentiate. 
+\end{DoxyReturn}
+\hypertarget{class_net_instance_group_ad586325d2a8ad308b40f30606c68ca60}{
+\index{NetInstanceGroup@{NetInstanceGroup}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetInstanceContainer} \& NetInstanceGroup::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_instance_group_ad586325d2a8ad308b40f30606c68ca60}
+
+
+Retrieves a constant reference to the specified instance container. 
+
+\begin{DoxyReturn}{Returns}
+constant reference to specified instance container. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance container to retrieve. \end{DoxyParams}
+\hypertarget{class_net_instance_group_a3a35db5047dfc303aa66e7793bb16fd2}{
+\index{NetInstanceGroup@{NetInstanceGroup}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetInstanceContainer} \& NetInstanceGroup::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_group_a3a35db5047dfc303aa66e7793bb16fd2}
+
+
+Retrieves a mutable reference to the specified instance container. 
+
+\begin{DoxyReturn}{Returns}
+mutable reference to specified instance container. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance container to retrieve. \end{DoxyParams}
+\hypertarget{class_net_instance_group_a857f9eca7d94cbb1e6b5c856113f5246}{
+\index{NetInstanceGroup@{NetInstanceGroup}!ValidateInstanceID@{ValidateInstanceID}}
+\index{ValidateInstanceID@{ValidateInstanceID}!NetInstanceGroup@{NetInstanceGroup}}
+\subsubsection[{ValidateInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceGroup::ValidateInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_group_a857f9eca7d94cbb1e6b5c856113f5246}
+
+
+Validates instance ID and throws an exception if the ID is out of range. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Instance number to check. \item[{\em line}]Line number of method call. \item[\mbox{\tt[in]} {\em file}]File of method call.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If {\itshape instanceID\/} is invalid, must be between 0 (inclusive) and the number of instances (exclusive). \end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceGroup.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceGroup.cpp\end{DoxyCompactItemize}

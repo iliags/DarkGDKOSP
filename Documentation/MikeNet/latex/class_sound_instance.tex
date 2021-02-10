@@ -1,0 +1,104 @@
+\hypertarget{class_sound_instance}{
+\section{SoundInstance Class Reference}
+\label{class_sound_instance}\index{SoundInstance@{SoundInstance}}
+}
+
+
+Base class for any type of sound instance.  
+
+
+
+
+{\ttfamily \#include $<$SoundInstance.h$>$}
+
+Inheritance diagram for SoundInstance:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sound_instance}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sound_instance_a23e2f78d7fd85e3eb0709afce053430b}{SoundInstance} (void)
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_a98b7aadeceba0d94ba93d47c6780c4da}{
+virtual \hyperlink{class_sound_instance_a98b7aadeceba0d94ba93d47c6780c4da}{$\sim$SoundInstance} (void)}
+\label{class_sound_instance_a98b7aadeceba0d94ba93d47c6780c4da}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}{DealWithData} (WAVEHDR $\ast$buffer)=0
+\begin{DoxyCompactList}\small\item\em Called indirectly by callback thread to deal with a completed buffer after process has finished. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_abadeef00fe1a08671f76b38142a420d5}{PostBuffer} (WAVEHDR $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Posts a completed sound buffer to the thread so that it can be dealt with. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for any type of sound instance. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/25/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sound_instance_a23e2f78d7fd85e3eb0709afce053430b}{
+\index{SoundInstance@{SoundInstance}!SoundInstance@{SoundInstance}}
+\index{SoundInstance@{SoundInstance}!SoundInstance@{SoundInstance}}
+\subsubsection[{SoundInstance}]{\setlength{\rightskip}{0pt plus 5cm}SoundInstance::SoundInstance (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_a23e2f78d7fd85e3eb0709afce053430b}
+
+
+Default constructor. 
+
+Sets up one single callback thread. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}{
+\index{SoundInstance@{SoundInstance}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!SoundInstance@{SoundInstance}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}virtual void SoundInstance::DealWithData (
+\begin{DoxyParamCaption}
+\item[{WAVEHDR $\ast$}]{ buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}
+
+
+Called indirectly by callback thread to deal with a completed buffer after process has finished. 
+
+The callback thread must not directly call this method, but instead posts a message to a thread initiated by this API. This restriction is mentioned in the waveform documentation on MSDN.\par
+\par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em buffer}]Pointer to the completed buffer. \end{DoxyParams}
+
+
+Implemented in \hyperlink{class_sound_instance_input_a4d96b12701ad12fbe19e259c23d69ef8}{SoundInstanceInput}, and \hyperlink{class_sound_instance_output_aab5f43bc2f2532543b8e0698c441d530}{SoundInstanceOutput}.
+
+\hypertarget{class_sound_instance_abadeef00fe1a08671f76b38142a420d5}{
+\index{SoundInstance@{SoundInstance}!PostBuffer@{PostBuffer}}
+\index{PostBuffer@{PostBuffer}!SoundInstance@{SoundInstance}}
+\subsubsection[{PostBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstance::PostBuffer (
+\begin{DoxyParamCaption}
+\item[{WAVEHDR $\ast$}]{ buffer}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_abadeef00fe1a08671f76b38142a420d5}
+
+
+Posts a completed sound buffer to the thread so that it can be dealt with. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em buffer}]The buffer to post. \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundInstance.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundInstance.cpp\end{DoxyCompactItemize}

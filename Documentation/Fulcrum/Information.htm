@@ -1,0 +1,137 @@
+<html>
+
+
+   <head>
+      <title> Information  </title>
+      <link rel="stylesheet" type="text/css" href="Assets//Style Sheets//style1.css"/>
+   </head>      
+
+
+    
+
+
+
+
+   <body id = wrap>
+      <center>                
+  
+         <h1> INFORMATION </h1>  
+
+      </center>
+                  
+
+     <br>
+     <br>
+     <h2>
+     What is Fulcrum Physics?
+     </h2>
+     Fulcrum Physics is a set of easy to use commands that you can use alongside the DarkGDK commands
+     to give your objects physical properties and make them behave in a realistic way. Fulcrum Physics
+     uses PhysX behind the scenes, this is a professional physics engine that is used in many 
+     AAA games.
+
+     <h2>
+     How does it work?
+     </h2> 
+     It works by creating a physics simulation that runs behind the scenes, it works out where your objects
+     should be at any one time and then updates your objects for you to give them realistic characteristics
+     when it comes to collision and physics. This means that you need to tell the physics about your objects
+     and how you want them to act and react once the simulation starts. We refer to the objects in the physics
+     simulation as actors, you can see the actors in action by using the visual debugger that is included
+     with Fulcrum Physics. Below are some examples of the common solutions for setting up different types of game objects.
+
+     <h3>
+     Terrain and level geometry
+     </h3>  
+     Certain objects in your game/application are going to be static, this means that they are not going 
+     to move. Terrain and level geometry(buildings etc) are good examples of static objects, the command
+     to setup this kind of object in the physics scene is FulcrumPhy::makeTriangleMesh(), once this command
+     is called your objects will be represented by static actors in the simulation. They may not move but you will want other
+     objects/actors to react to them in some way.
+
+
+     <h3>
+     Characters     
+     </h3>   
+     Most games need characters of some sort, the most common way to represent a character is using a character
+     controller, FulcrumPhy::makeControllerBox(). This will allow you to move your character around by moving the
+     controller in the physics scene. Character controllers will automatically take care of all your characters
+     collisions, you can also set the maximum height your character can step up and the angle it can climb up slopes.
+     A character controller is a special case of a dynamic kinematic actor, dynamic means that it can move and
+     kinematic means that it is not moved by applying forces, you move it yourself giving you direct control over
+     the object.
+     
+     <h3>
+     Boxes and balls
+     </h3>
+     If you have anything that resembles a box or a ball, you can use FulcrumPhy::makeBox() and 
+     FulcrumPhy::makeSphere() to set them up in your physics scene. You can set them up to be dynamic, meaning
+     they will react to forces such as gravity or you can set them up as static actors which means they will
+     not move but other objects will react to them. There are two types of dynamic actors, the default is 
+     non-kinematic, if you set them to kinematic then they will not react to any forces but you can still move
+     them around manually.
+
+
+     <h3>
+     Barrels, cylinders, eggs
+     </h3>
+     Obviously more complex shapes like these can easily be setup as static actors the same as terrain and
+     level geometry above, but you may want these objects to be dynamic, you would then use 
+     FulcrumPhy::makeConvexMesh(). The objects should be a convex shape like barrels, cylinders or eggs but 
+     you can usually use this command on objects that are not convex as the physics simulation will create
+     a convex shape that resembles the object, although using compound actors may be a better solution in 
+     these cases, see below. 
+
+     <h3>
+     Chairs, tables, tanks
+     </h3>
+     Again, complex shapes like these can easily be setup as static actors the same as terrain and
+     level geometry above, but you may want these objects to be dynamic, you would then use 
+     FulcrumPhy::makeCompoundActor(), this command allows you to add one or more primitive and convex 
+     shapes together into one actor. Note: if you want to actually drive a tank then you are probably
+     best setting it up as a vehicle, see below.
+
+     <h3>
+     Cars, motorbikes, planes, tanks etc
+     </h3>
+     You can setup vehicles by adding one or more shapes together for the vehicle hull just like compound 
+     actors above, one difference is that you add wheels and use FulcrumPhy::buildVehilcle() when you are
+     done.     
+
+
+     <br>
+     <br>
+     <br>
+     This should be enough to get you started, there is lots more to learn though, you will find alot of 
+     information in the documentation and examples, good luck.
+
+
+     <br>
+     <br>
+     <br>
+     <A HREF="Welcome.htm">  Welcome  </A> 
+
+
+
+   
+
+
+
+
+
+
+
+  </body>
+
+
+
+
+   
+
+
+
+
+
+
+
+</html>

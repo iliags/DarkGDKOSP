@@ -1,0 +1,11 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSocketUDP::NetSocketUDP",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetSocketUDP::_Copy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_u_d_p.html#ad9fad544d56c83a377aee13db007876f"];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetModeUdp::Clone",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_udp.html#ae0160135a69173309701952b9bdf7488"];
+}

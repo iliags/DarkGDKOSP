@@ -1,0 +1,187 @@
+\hypertarget{classcl_output_device}{
+\section{clOutputDevice Class Reference}
+\label{classcl_output_device}\index{clOutputDevice@{clOutputDevice}}
+}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_output_device_ae3b3a5196eeffceecec775db3d89c8ba}{
+void {\bfseries \_\-UnloadBuffer} (LPWAVEHDR wavehdr)}
+\label{classcl_output_device_ae3b3a5196eeffceecec775db3d89c8ba}
+
+\item 
+\hypertarget{classcl_output_device_a2b80312182f7873c31037a1f35c0f60e}{
+void {\bfseries \_\-LoadBuffer} (LPWAVEHDR wavehdr)}
+\label{classcl_output_device_a2b80312182f7873c31037a1f35c0f60e}
+
+\item 
+\hypertarget{classcl_output_device_a41d337dcccfc9d1aaf4c5a306e695e36}{
+void {\bfseries StartOutput} (size\_\-t OutputDeviceID)}
+\label{classcl_output_device_a41d337dcccfc9d1aaf4c5a306e695e36}
+
+\item 
+\hypertarget{classcl_output_device_a63d890362fd04db965c8498844eccbb1}{
+void {\bfseries FinishOutput} ()}
+\label{classcl_output_device_a63d890362fd04db965c8498844eccbb1}
+
+\item 
+\hypertarget{classcl_output_device_aeb881cd1f2018fd70054b9c3265cd87f}{
+void {\bfseries AddPacket} (\hyperlink{class_packet}{Packet} $\ast$\hyperlink{class_packet}{Packet})}
+\label{classcl_output_device_aeb881cd1f2018fd70054b9c3265cd87f}
+
+\item 
+\hypertarget{classcl_output_device_a2a9f998cb2d8a28e0fd7bdecef9e05fe}{
+int {\bfseries GetPacket} (\hyperlink{class_packet}{Packet} $\ast$Destination)}
+\label{classcl_output_device_a2a9f998cb2d8a28e0fd7bdecef9e05fe}
+
+\item 
+\hypertarget{classcl_output_device_af906e70499e9a3fe7c5db43887c21355}{
+void {\bfseries SetSmoothValues} (size\_\-t MillisecondsOfStoredDataCap, size\_\-t TimeSinceLastAddedCap)}
+\label{classcl_output_device_af906e70499e9a3fe7c5db43887c21355}
+
+\item 
+\hypertarget{classcl_output_device_a4bd42b6b5b5b10e512a0ee0c42801384}{
+void {\bfseries SetHardwarePlaybackRate} (double Rate)}
+\label{classcl_output_device_a4bd42b6b5b5b10e512a0ee0c42801384}
+
+\item 
+\hypertarget{classcl_output_device_ad320529453aa4071908a6d6ba2ad2652}{
+void {\bfseries SetHardwarePitch} (double Pitch)}
+\label{classcl_output_device_ad320529453aa4071908a6d6ba2ad2652}
+
+\item 
+\hypertarget{classcl_output_device_a900bb0071030ae99c990b50f369abdde}{
+void {\bfseries SetHardwareVolume} (unsigned short Left, unsigned short Right)}
+\label{classcl_output_device_a900bb0071030ae99c990b50f369abdde}
+
+\item 
+\hypertarget{classcl_output_device_a63bd375c4960d087d6c3d2c4739dfbd5}{
+void {\bfseries SetSoundFormat} (unsigned short Channels, size\_\-t SamplesPerSec, unsigned short BitsPerSample)}
+\label{classcl_output_device_a63bd375c4960d087d6c3d2c4739dfbd5}
+
+\item 
+\hypertarget{classcl_output_device_aacd5ab363f542c3777ec2890c311b405}{
+void {\bfseries SetHighQuality} ()}
+\label{classcl_output_device_aacd5ab363f542c3777ec2890c311b405}
+
+\item 
+\hypertarget{classcl_output_device_a4be1b993a52294fa7f97b00e42f500a5}{
+void {\bfseries SetMediumQuality} ()}
+\label{classcl_output_device_a4be1b993a52294fa7f97b00e42f500a5}
+
+\item 
+\hypertarget{classcl_output_device_a789938bbc411754bd6443fce95bbc97c}{
+void {\bfseries SetLowQuality} ()}
+\label{classcl_output_device_a789938bbc411754bd6443fce95bbc97c}
+
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_output_device_a906a28d7d033192dee0aed05f5e7140b}{
+HWAVEOUT {\bfseries Device}}
+\label{classcl_output_device_a906a28d7d033192dee0aed05f5e7140b}
+
+\item 
+\hypertarget{classcl_output_device_a7eb42c9f7cf5769a5ce1dae4a5ed42c1}{
+\hyperlink{class_store_queue}{StoreQueue}$<$ \hyperlink{class_packet}{Packet} $>$ {\bfseries DataStore}}
+\label{classcl_output_device_a7eb42c9f7cf5769a5ce1dae4a5ed42c1}
+
+\item 
+\hypertarget{classcl_output_device_afa3bd7fd5e3bbb26619f5caf8e84d383}{
+clock\_\-t {\bfseries LastAdded}}
+\label{classcl_output_device_afa3bd7fd5e3bbb26619f5caf8e84d383}
+
+\item 
+\hypertarget{classcl_output_device_a12228d6ac3f6c6fbeaaeb77faea30886}{
+size\_\-t {\bfseries TotalBytes}}
+\label{classcl_output_device_a12228d6ac3f6c6fbeaaeb77faea30886}
+
+\item 
+\hypertarget{classcl_output_device_a098de644f25d7017db0720cf85c045f3}{
+size\_\-t {\bfseries TimeSinceLastAddedCap}}
+\label{classcl_output_device_a098de644f25d7017db0720cf85c045f3}
+
+\item 
+\hypertarget{classcl_output_device_a1b0651fbc848c59aaa9fb86e3cd53f30}{
+size\_\-t {\bfseries StoredBytesCap}}
+\label{classcl_output_device_a1b0651fbc848c59aaa9fb86e3cd53f30}
+
+\item 
+\hypertarget{classcl_output_device_a8fad7ae74d61adcf88d84f09945267f6}{
+size\_\-t {\bfseries MillisecondsOfStoredDataCap}}
+\label{classcl_output_device_a8fad7ae74d61adcf88d84f09945267f6}
+
+\item 
+\hypertarget{classcl_output_device_aee70348888a14b5e555b0f3d5e4460f7}{
+\hyperlink{class_sound_format}{SoundFormat} {\bfseries Format}}
+\label{classcl_output_device_aee70348888a14b5e555b0f3d5e4460f7}
+
+\item 
+\hypertarget{classcl_output_device_a0ba2d424e5ebe790fd604c5ee9b31a55}{
+double {\bfseries HardwarePlaybackRate}}
+\label{classcl_output_device_a0ba2d424e5ebe790fd604c5ee9b31a55}
+
+\item 
+\hypertarget{classcl_output_device_af51b846d3b4a11da3eefa8ccc4606132}{
+double {\bfseries HardwarePitch}}
+\label{classcl_output_device_af51b846d3b4a11da3eefa8ccc4606132}
+
+\item 
+\hypertarget{classcl_output_device_a12e78eba45422f2435aa0882eee979ac}{
+unsigned short {\bfseries HardwareVolumeLeft}}
+\label{classcl_output_device_a12e78eba45422f2435aa0882eee979ac}
+
+\item 
+\hypertarget{classcl_output_device_a1ff9989367b80682c33c815e548b206a}{
+unsigned short {\bfseries HardwareVolumeRight}}
+\label{classcl_output_device_a1ff9989367b80682c33c815e548b206a}
+
+\item 
+\hypertarget{classcl_output_device_a13d39a4d2d8782de9e849e0da0c48f0a}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ {\bfseries Setup}}
+\label{classcl_output_device_a13d39a4d2d8782de9e849e0da0c48f0a}
+
+\item 
+\hypertarget{classcl_output_device_a7fccddb644e682c7e206118fedff60e5}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ int $>$ {\bfseries iOutputNo}}
+\label{classcl_output_device_a7fccddb644e682c7e206118fedff60e5}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_output_device_a6f4d941032e422926213833b01bfe08b}{
+static const size\_\-t {\bfseries DefTimeSinceLastAddedCap} = 300}
+\label{classcl_output_device_a6f4d941032e422926213833b01bfe08b}
+
+\item 
+\hypertarget{classcl_output_device_a5b0659aed4b5deb8cbe1139c2587465d}{
+static const size\_\-t {\bfseries DefMillisecondsOfStoredDataCap} = 500}
+\label{classcl_output_device_a5b0659aed4b5deb8cbe1139c2587465d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_output_device_a7007951e03bd7e976cbf6bfd713eb447}{
+void {\bfseries DefaultVariables} ()}
+\label{classcl_output_device_a7007951e03bd7e976cbf6bfd713eb447}
+
+\item 
+\hypertarget{classcl_output_device_ae8e84978b2fa4a1cb37834a55f3fafa0}{
+void {\bfseries \_\-UpdateVars} (size\_\-t iMillisecondsOfStoredDataCap, size\_\-t iTimeSinceLastAddedCap)}
+\label{classcl_output_device_ae8e84978b2fa4a1cb37834a55f3fafa0}
+
+\item 
+\hypertarget{classcl_output_device_a6b22817451f9d324310d79cea877d4df}{
+void {\bfseries \_\-SplitDouble} (double dbl, size\_\-t \&integer, size\_\-t \&fraction)}
+\label{classcl_output_device_a6b22817451f9d324310d79cea877d4df}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clOutputDevice.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/clOutputDevice.cpp\end{DoxyCompactItemize}

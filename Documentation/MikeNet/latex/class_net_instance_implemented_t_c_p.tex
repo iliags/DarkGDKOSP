@@ -1,0 +1,621 @@
+\hypertarget{class_net_instance_implemented_t_c_p}{
+\section{NetInstanceImplementedTCP Class Reference}
+\label{class_net_instance_implemented_t_c_p}\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+}
+
+
+Implements \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} with a standard setup for using a TCP socket (\hyperlink{class_net_socket_t_c_p}{NetSocketTCP}).  
+
+
+
+
+{\ttfamily \#include $<$NetInstanceImplementedTCP.h$>$}
+
+Inheritance diagram for NetInstanceImplementedTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{class_net_instance_implemented_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_instance_implemented_t_c_p_a08d96bacc608747199f8ded78a8f4aa4}{NetInstanceImplementedTCP} (\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$\hyperlink{class_net_instance_implemented_t_c_p_adb7cac7d6ca26729e2eb83ae7f6ad984}{socketTCP}, bool \hyperlink{class_net_instance_t_c_p_af13f96901d3006beeda0c161f32cbfde}{handshakeEnabled})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_implemented_t_c_p_a1f4f6e406c5e6502b23ce0d648e575e2}{
+virtual \hyperlink{class_net_instance_implemented_t_c_p_a1f4f6e406c5e6502b23ce0d648e575e2}{$\sim$NetInstanceImplementedTCP} ()}
+\label{class_net_instance_implemented_t_c_p_a1f4f6e406c5e6502b23ce0d648e575e2}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_net_instance_implemented_t_c_p_ae675735ecca9c5dc9a8502cc97cee13d}{IsGracefulDisconnectEnabled} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_instance_implemented_t_c_p_a51786db50076d9ef1499f95ef82627ff}{GetMaxPacketSizeTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the size of the largest packet that can be received without resizing the receive buffer. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_instance_implemented_t_c_p_a33b22ccf2a20a7fc5c40514e277a4522}{GetRecvBufferLengthTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the maximum amount of data that can be received in one TCP socket receive operation. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_instance_implemented_t_c_p_aba953b84f3380ab787bfbe6283eb9ec5}{GetPartialPacketCurrentSizeTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the amount of the current partial packet that has been received in bytes. \item\end{DoxyCompactList}\item 
+virtual double \hyperlink{class_net_instance_implemented_t_c_p_a2ca4fa7ddd6ea7e6f3b5c1515d2e34ad}{GetPartialPacketPercentageTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the amount of the current partial packet that has been received as a percentage. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_implemented_t_c_p_aa4d55c285a282ee0da229ddc28fbd814}{SetMaxPacketSizeTCP} (size\_\-t newMaxSize=0, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Manually changes the maximum packet size that can be received. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_net_instance_implemented_t_c_p_ab72f32de68da213238539eed8c399bd5}{GetAutoResizeTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Determines whether the auto resize TCP option is enabled. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_implemented_t_c_p_a39295cf5003406e66e8235d88bb2e282}{SetAutoResizeTCP} (bool newAutoResizeTCP=0, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Enables or disables the auto resize TCP option. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964}{NetMode::ProtocolMode} \hyperlink{class_net_instance_implemented_t_c_p_a2f21e2227f935bdc92aa09d1fdb4ad18}{GetProtocolModeTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP protocol mode in use. \item\end{DoxyCompactList}\item 
+virtual bool \hyperlink{class_net_instance_implemented_t_c_p_aa8ed75c6b08d2973ad5ab56fb33b6265}{GetNagleEnabledTCP} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the nagle algorithm is enabled. \item\end{DoxyCompactList}\item 
+virtual const \hyperlink{class_packet}{Packet} \& \hyperlink{class_net_instance_implemented_t_c_p_a533d763914c21bba7e70d36116e432a1}{GetPostfixTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP postfix in use. \item\end{DoxyCompactList}\item 
+virtual const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_instance_implemented_t_c_p_afa6ba30d5b40f92a555bc870fd3ce118}{GetLocalAddressTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the local TCP address of the instance. \item\end{DoxyCompactList}\item 
+virtual const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_instance_implemented_t_c_p_aa4b2a445f693614d4a6515886cda5148}{GetConnectAddressTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP address that the instance is connected to. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_implemented_t_c_p_aa8ca0a407982129948841ccf1825533b}{FlushRecvTCP} (size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Empties the received TCP packet queue. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_instance_implemented_t_c_p_a4ac64bdf989a0b15a949b9568465b0f2}{GetPacketAmountTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of packets in the received TCP packet queue. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_implemented_t_c_p_a35cc59e1f2ad733f7f5138e4233688ba}{ShutdownTCP} (size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Starts the graceful disconnection process. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_instance_implemented_t_c_p_a6f2ba030a5543dac75864ba1e35d9398}{GetPacketFromStoreTCP} (\hyperlink{class_packet}{Packet} $\ast$destination=0, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Retrieves a complete packet from the TCP packet store. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_instance_implemented_t_c_p_ab94301400c9a2fef68292b0b75d2d626}{SendTCP} (const \hyperlink{class_packet}{Packet} \&packet, bool block=0, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Sends a packet via TCP to the server. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_utility_a7eae52138f8bd597ffc67ebf07e86b6d}{NetUtility::ConnectionStatus} \hyperlink{class_net_instance_implemented_t_c_p_a2ec2ee88690b8c630839e19548679aaf}{GetConnectionStateTCP} (size\_\-t clientID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the state that the TCP connection is in. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} \hyperlink{class_net_instance_implemented_t_c_p_a4910059fe6604122fb51d868d1df34ef}{GetUserFunctionTCP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the TCP function that is executed when complete TCP packets are received. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_instance_implemented_t_c_p_aa0f2ff9557ef143a128e6be859203d69}{IsUserFunctionLoadedTCP} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether a TCP function has been loaded. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_instance_implemented_t_c_p_a1683ef8e0863d16dff8135f97f1e6e18}{
+virtual void \hyperlink{class_net_instance_implemented_t_c_p_a1683ef8e0863d16dff8135f97f1e6e18}{CloseSockets} ()}
+\label{class_net_instance_implemented_t_c_p_a1683ef8e0863d16dff8135f97f1e6e18}
+
+\begin{DoxyCompactList}\small\item\em Closes any sockets in use by the instance. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_implemented_t_c_p_adb7cac7d6ca26729e2eb83ae7f6ad984}{
+\hyperlink{class_net_socket_t_c_p}{NetSocketTCP} $\ast$ \hyperlink{class_net_instance_implemented_t_c_p_adb7cac7d6ca26729e2eb83ae7f6ad984}{socketTCP}}
+\label{class_net_instance_implemented_t_c_p_adb7cac7d6ca26729e2eb83ae7f6ad984}
+
+\begin{DoxyCompactList}\small\item\em Socket used to communicate via TCP. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implements \hyperlink{class_net_instance_t_c_p}{NetInstanceTCP} with a standard setup for using a TCP socket (\hyperlink{class_net_socket_t_c_p}{NetSocketTCP}). \begin{DoxyRemark}{Remarks}
+Michael Pryor, 8/19/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_implemented_t_c_p_a08d96bacc608747199f8ded78a8f4aa4}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{NetInstanceImplementedTCP}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceImplementedTCP::NetInstanceImplementedTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocketTCP} $\ast$}]{ socket, }
+\item[{bool}]{ handshakeEnabled}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_implemented_t_c_p_a08d96bacc608747199f8ded78a8f4aa4}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em socket}]Socket to use to send and receive TCP data. This pointer and its data is now owned by this object and should not be used elsewhere. \item[{\em handshakeEnabled}]True if the \hyperlink{handshake_page}{TCP handshake process} is enabled, false if not. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_implemented_t_c_p_aa8ca0a407982129948841ccf1825533b}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!FlushRecvTCP@{FlushRecvTCP}}
+\index{FlushRecvTCP@{FlushRecvTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{FlushRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceImplementedTCP::FlushRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_aa8ca0a407982129948841ccf1825533b}
+
+
+Empties the received TCP packet queue. 
+
+When TCP packets are received and a receive function has not been set (in the constructor), packets are put into a queue and received using GetPacketFromStoreTCP. If the queue gets too big newer packets may not be received for some time and so it can be useful to empty the queue. This command discards everything in the queue.\par
+\par
+
+
+Has no impact on the partial packet store. \par
+\par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a545e0d5c995e0b8ac43c72c786800e0b}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_ab72f32de68da213238539eed8c399bd5}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetAutoResizeTCP@{GetAutoResizeTCP}}
+\index{GetAutoResizeTCP@{GetAutoResizeTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceImplementedTCP::GetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_ab72f32de68da213238539eed8c399bd5}
+
+
+Determines whether the auto resize TCP option is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+when true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a59cf03453fd680e8a2a0dc4395f1f70a}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_aa4b2a445f693614d4a6515886cda5148}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetConnectAddressTCP@{GetConnectAddressTCP}}
+\index{GetConnectAddressTCP@{GetConnectAddressTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetConnectAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetInstanceImplementedTCP::GetConnectAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_aa4b2a445f693614d4a6515886cda5148}
+
+
+Retrieves the TCP address that the instance is connected to. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote address information of the specified client. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Is okay to return reference because \hyperlink{class_net_address}{NetAddress} is thread safe. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_ac856c99e8ebf03cd3822885521274ed7}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a2ec2ee88690b8c630839e19548679aaf}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetConnectionStateTCP@{GetConnectionStateTCP}}
+\index{GetConnectionStateTCP@{GetConnectionStateTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetConnectionStateTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::ConnectionStatus} NetInstanceImplementedTCP::GetConnectionStateTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a2ec2ee88690b8c630839e19548679aaf}
+
+
+Retrieves the state that the TCP connection is in. 
+
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP connection state.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+GetConnectionState() and this method are unlinked. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a635bb48421cde040f391c553c437d634}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_afa6ba30d5b40f92a555bc870fd3ce118}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetLocalAddressTCP@{GetLocalAddressTCP}}
+\index{GetLocalAddressTCP@{GetLocalAddressTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetInstanceImplementedTCP::GetLocalAddressTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_afa6ba30d5b40f92a555bc870fd3ce118}
+
+
+Retrieves the local TCP address of the instance. 
+
+\begin{DoxyReturn}{Returns}
+TCP local address information. This reference should remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Is okay to return reference because \hyperlink{class_net_address}{NetAddress} is thread safe. 
+\end{DoxyNote}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a01155c373c9794f98a69ac05d9a2491c}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a51786db50076d9ef1499f95ef82627ff}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}}
+\index{GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceImplementedTCP::GetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a51786db50076d9ef1499f95ef82627ff}
+
+
+Retrieves the size of the largest packet that can be received without resizing the receive buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_acd2529df4ee98a7b2ca144a60feb1bb2}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_aa8ed75c6b08d2973ad5ab56fb33b6265}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetNagleEnabledTCP@{GetNagleEnabledTCP}}
+\index{GetNagleEnabledTCP@{GetNagleEnabledTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetNagleEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceImplementedTCP::GetNagleEnabledTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_aa8ed75c6b08d2973ad5ab56fb33b6265}
+
+
+Determines whether the nagle algorithm is enabled. 
+
+\begin{DoxyReturn}{Returns}
+true if the nagle algorithm is enabled for the instance. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a797c6d8f382ae72386afd0c52b45aa48}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a4ac64bdf989a0b15a949b9568465b0f2}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetPacketAmountTCP@{GetPacketAmountTCP}}
+\index{GetPacketAmountTCP@{GetPacketAmountTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetPacketAmountTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceImplementedTCP::GetPacketAmountTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a4ac64bdf989a0b15a949b9568465b0f2}
+
+
+Retrieves the number of packets in the received TCP packet queue. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of fully received UDP packets in the packet store. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_ac5b7728d5152d157d6b87e60081db168}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a6f2ba030a5543dac75864ba1e35d9398}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetPacketFromStoreTCP@{GetPacketFromStoreTCP}}
+\index{GetPacketFromStoreTCP@{GetPacketFromStoreTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetPacketFromStoreTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceImplementedTCP::GetPacketFromStoreTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ destination = {\ttfamily 0}, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a6f2ba030a5543dac75864ba1e35d9398}
+
+
+Retrieves a complete packet from the TCP packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy retrieved packet into. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call. 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a602f43e93a742836c558e5f086ce52c7}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_aba953b84f3380ab787bfbe6283eb9ec5}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}}
+\index{GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetPartialPacketCurrentSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceImplementedTCP::GetPartialPacketCurrentSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_aba953b84f3380ab787bfbe6283eb9ec5}
+
+
+Retrieves the amount of the current partial packet that has been received in bytes. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the current size of the TCP partial packet being received. i.e. The number of bytes of the packet that have been received. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_ab32a5b7813c41e2f7149ef8c8adede38}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a2ca4fa7ddd6ea7e6f3b5c1515d2e34ad}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetPartialPacketPercentageTCP@{GetPartialPacketPercentageTCP}}
+\index{GetPartialPacketPercentageTCP@{GetPartialPacketPercentageTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetPartialPacketPercentageTCP}]{\setlength{\rightskip}{0pt plus 5cm}double NetInstanceImplementedTCP::GetPartialPacketPercentageTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a2ca4fa7ddd6ea7e6f3b5c1515d2e34ad}
+
+
+Retrieves the amount of the current partial packet that has been received as a percentage. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the percentage of the partial packet that has been received i.e. Between 0 and 100 where 50 indicates that half the packet has been received and we are now waiting for the second half to be received. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a2d4a7129fbe74b7f2e562d5e8a1f84cf}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a533d763914c21bba7e70d36116e432a1}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetPostfixTCP@{GetPostfixTCP}}
+\index{GetPostfixTCP@{GetPostfixTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetPostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Packet} \& NetInstanceImplementedTCP::GetPostfixTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a533d763914c21bba7e70d36116e432a1}
+
+
+Retrieves the TCP postfix in use. 
+
+If TCP mode is not \hyperlink{class_net_mode_a43cfa55ee6a4db66a8d7d6c27f766964abe08876125a416186e74c901f6d29ce4}{NetMode::TCP\_\-POSTFIX} this command will fail. \begin{DoxyReturn}{Returns}
+the postfix in use by the TCP instance. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a5509277d168a5be5d6ebc643afe34d3e}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a2f21e2227f935bdc92aa09d1fdb4ad18}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetProtocolModeTCP@{GetProtocolModeTCP}}
+\index{GetProtocolModeTCP@{GetProtocolModeTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetProtocolModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetMode::ProtocolMode} NetInstanceImplementedTCP::GetProtocolModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a2f21e2227f935bdc92aa09d1fdb4ad18}
+
+
+Retrieves the TCP protocol mode in use. 
+
+\begin{DoxyReturn}{Returns}
+protocol mode in use by instance. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_ad6252dc4923ef58376b2c36a5cb9cbe0}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a33b22ccf2a20a7fc5c40514e277a4522}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}}
+\index{GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetRecvBufferLengthTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceImplementedTCP::GetRecvBufferLengthTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a33b22ccf2a20a7fc5c40514e277a4522}
+
+
+Retrieves the maximum amount of data that can be received in one TCP socket receive operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF used by the TCP socket. \par
+ This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a8702bf908ad147d94b4351077c9ae599}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a4910059fe6604122fb51d868d1df34ef}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!GetUserFunctionTCP@{GetUserFunctionTCP}}
+\index{GetUserFunctionTCP@{GetUserFunctionTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{GetUserFunctionTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocket::RecvFunc} NetInstanceImplementedTCP::GetUserFunctionTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a4910059fe6604122fb51d868d1df34ef}
+
+
+Retrieves the TCP function that is executed when complete TCP packets are received. 
+
+\begin{DoxyReturn}{Returns}
+the method set by the user that should be executed when data is received. 
+
+NULL if there is no method. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a8dfdf67081405105b691c15cc867725d}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_ae675735ecca9c5dc9a8502cc97cee13d}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!IsGracefulDisconnectEnabled@{IsGracefulDisconnectEnabled}}
+\index{IsGracefulDisconnectEnabled@{IsGracefulDisconnectEnabled}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{IsGracefulDisconnectEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceImplementedTCP::IsGracefulDisconnectEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_ae675735ecca9c5dc9a8502cc97cee13d}
+
+
+Determines whether \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled. 
+
+\begin{DoxyReturn}{Returns}
+true if \hyperlink{graceful_disconnect_page}{graceful disconnection} is possible, where data is allowed to finish sending and receiving before the connection is closed. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_aae7db49f79eaf1fd5359c084e893f946}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_aa0f2ff9557ef143a128e6be859203d69}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!IsUserFunctionLoadedTCP@{IsUserFunctionLoadedTCP}}
+\index{IsUserFunctionLoadedTCP@{IsUserFunctionLoadedTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{IsUserFunctionLoadedTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceImplementedTCP::IsUserFunctionLoadedTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_aa0f2ff9557ef143a128e6be859203d69}
+
+
+Determines whether a TCP function has been loaded. 
+
+If no TCP function has been loaded received packets are put into a queue and retrieved using GetPacketFromStoreTCP.
+
+\begin{DoxyReturn}{Returns}
+true if a method to be executed when data is received has been set. 
+
+false if no method has been set. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_ad1e427866c1a3703a224131c2d46fa9d}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_ab94301400c9a2fef68292b0b75d2d626}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!SendTCP@{SendTCP}}
+\index{SendTCP@{SendTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{SendTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetInstanceImplementedTCP::SendTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block = {\ttfamily 0}, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_ab94301400c9a2fef68292b0b75d2d626}
+
+
+Sends a packet via TCP to the server. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]\hyperlink{class_packet}{Packet} to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} if the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_a1dd6a5b47974fc6863edde6443f75a32}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a39295cf5003406e66e8235d88bb2e282}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!SetAutoResizeTCP@{SetAutoResizeTCP}}
+\index{SetAutoResizeTCP@{SetAutoResizeTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{SetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceImplementedTCP::SetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newAutoResizeTCP = {\ttfamily 0}, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a39295cf5003406e66e8235d88bb2e282}
+
+
+Enables or disables the auto resize TCP option. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newAutoResizeTCP}]When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, an exception will be thrown. \item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_ab9cc381e6561444004d82ea394ccf2fe}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_aa4d55c285a282ee0da229ddc28fbd814}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}}
+\index{SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{SetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceImplementedTCP::SetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newMaxSize = {\ttfamily 0}, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_aa4d55c285a282ee0da229ddc28fbd814}
+
+
+Manually changes the maximum packet size that can be received. 
+
+Note that data loss will not occur, the buffer will be decreased in size as much as possible without causing data loss in the case that {\itshape newMaxSize\/} $<$ current.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newMaxSize}]The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown. \item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0).\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If newMaxSize $<$ \hyperlink{class_net_instance_t_c_p_a75e1024a7352c83b7691bd3268e24136}{GetRecvSizeMinTCP()}. \end{DoxyExceptions}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_afe39589a67763fc6becc79f39659c3a4}{NetInstanceTCP}.
+
+\hypertarget{class_net_instance_implemented_t_c_p_a35cc59e1f2ad733f7f5138e4233688ba}{
+\index{NetInstanceImplementedTCP@{NetInstanceImplementedTCP}!ShutdownTCP@{ShutdownTCP}}
+\index{ShutdownTCP@{ShutdownTCP}!NetInstanceImplementedTCP@{NetInstanceImplementedTCP}}
+\subsubsection[{ShutdownTCP}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceImplementedTCP::ShutdownTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_implemented_t_c_p_a35cc59e1f2ad733f7f5138e4233688ba}
+
+
+Starts the graceful disconnection process. 
+
+Stops sending on TCP socket so that all further send operations will fail. All data sent up until now will be received by recipient.\par
+\par
+
+
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use. Ignored in this implementation but derived class may use ID when overriding (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_t_c_p_abb23de43a14d5809a79871a05244d17b}{NetInstanceTCP}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceImplementedTCP.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceImplementedTCP.cpp\end{DoxyCompactItemize}

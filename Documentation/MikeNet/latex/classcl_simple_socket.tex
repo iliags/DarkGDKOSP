@@ -1,0 +1,447 @@
+\hypertarget{classcl_simple_socket}{
+\section{clSimpleSocket Class Reference}
+\label{classcl_simple_socket}\index{clSimpleSocket@{clSimpleSocket}}
+}
+
+
+simple socket with basic functionality  
+
+
+
+
+{\ttfamily \#include $<$clSimpleSocket.h$>$}
+
+Inheritance diagram for clSimpleSocket:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_simple_socket}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}{Protocol} \{ {\bfseries UDP}, 
+{\bfseries TCP}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_simple_socket_a383b01774d258fc6683dcf2a7839178c}{clSimpleSocket} ()
+\item 
+virtual \hyperlink{classcl_simple_socket_a14d5eac79430765b246872ef7eaa4877}{$\sim$clSimpleSocket} ()
+\item 
+\hyperlink{classcl_simple_socket_a60492de2aff7cf5a12206508be995151}{clSimpleSocket} (const \hyperlink{classcl_simple_socket}{clSimpleSocket} \&)
+\item 
+\hyperlink{classcl_simple_socket}{clSimpleSocket} \& \hyperlink{classcl_simple_socket_ad417a697e347483ec324ae5724d0c718}{operator=} (const \hyperlink{classcl_simple_socket}{clSimpleSocket} \&)
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_simple_socket_a0fcc08cbc2db5c6e6a9f8118133504a1}{GetLocalAddress} () const 
+\item 
+bool \hyperlink{classcl_simple_socket_a469aff1fe89408403eff0ba14d1c6280}{GetSocketSetup} () const 
+\item 
+void \hyperlink{classcl_simple_socket_a755206da4d4b36d15353949c9a248398}{Close} ()
+\item 
+void \hyperlink{classcl_simple_socket_ab6848c5add8c92fd54ac2e297f2fbe1a}{SetupSocket} (\hyperlink{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}{Protocol} protocol)
+\item 
+virtual void \hyperlink{classcl_simple_socket_a3d1e886eb5fe1ed25f35ff4c5cad546e}{LoadSOCKET} (SOCKET operationalSocket, const \hyperlink{classcl_single_addr}{clSingleAddr} \&\hyperlink{classcl_simple_socket_ae777e37939afd56e6bde9c3513ad7b75}{addressConnected})
+\item 
+void \hyperlink{classcl_simple_socket_a3972dd47ba94afc25966943f9979f405}{SetSocketReusable} ()
+\item 
+void \hyperlink{classcl_simple_socket_ad73dc4363a41d18199ef8203d86667bc}{BindSocket} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&connectAddr)
+\item 
+void \hyperlink{classcl_simple_socket_ac5260767d6b1abce845199e7698092a2}{SetSocketHardShutdown} ()
+\item 
+void \hyperlink{classcl_simple_socket_a74328f22dfbad56fff2c85f074e691b3}{SetSocketListening} ()
+\item 
+void \hyperlink{classcl_simple_socket_a89ee7fa04674f62171a56656d88a4506}{SetSocketBroadcasting} ()
+\item 
+void \hyperlink{classcl_simple_socket_ae0df60ffe1092810579c2a6b22db05a0}{DisableSocketNagle} ()
+\item 
+void \hyperlink{classcl_simple_socket_ac5835cca7d7c9cfac0db637a46ca7f5a}{Connect} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&connectAddr)
+\item 
+bool \hyperlink{classcl_simple_socket_a084017b2735b6e702832fd0318058289}{GetFullyOperational} () const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_simple_socket_aed24f0104189cb13e014f36692995038}{GetAddressConnected} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_simple_socket_a1f422add7ea457cd021356ae406ecd0c}{SetFullyOperational} (bool operational)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+SOCKET \hyperlink{classcl_simple_socket_a109af953439a5f88d198f3764e0077b2}{winsockSocket}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_simple_socket_ad535ecb38b4ceb63a98d2ed3106ac792}{\_\-DefaultVars} ()
+\item 
+void \hyperlink{classcl_simple_socket_a911c27d4a649018243b7354a6f1467e8}{\_\-Copy} (const \hyperlink{classcl_simple_socket}{clSimpleSocket} \&copyMe)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classcl_simple_socket_a780c2c352ef115d7194c401566126a20}{bound}
+\item 
+bool \hyperlink{classcl_simple_socket_afa5ce1a66de16e6184770e528fd0a03f}{fullyOperational}
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \hyperlink{classcl_simple_socket_ae777e37939afd56e6bde9c3513ad7b75}{addressConnected}
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \hyperlink{classcl_simple_socket_aab91a0e6aae916c873175e7ff04bbc50}{addressLocal}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+simple socket with basic functionality \begin{DoxyRemark}{Remarks}
+Michael Pryor, 3/28/2010.
+\end{DoxyRemark}
+The socket wraps around a winsock SOCKET object and is initially unusable. \par
+ First the socket needs to be setup, this is done either by WSAAccept when a new TCP connection is made, or more commonly by the SetupSocket method. Once setup socket options can be changed and then finally, the socket is bound to a local address using BindSocket and the socket is ready to be used.\par
+\par
+
+
+This class is not thread safe. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}{
+\index{clSimpleSocket@{clSimpleSocket}!Protocol@{Protocol}}
+\index{Protocol@{Protocol}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{Protocol}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clSimpleSocket::Protocol}}}
+\label{classcl_simple_socket_affcd3d22c1abba5d20a0ae93472c576d}
+Protocol types that socket can represent 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_simple_socket_a383b01774d258fc6683dcf2a7839178c}{
+\index{clSimpleSocket@{clSimpleSocket}!clSimpleSocket@{clSimpleSocket}}
+\index{clSimpleSocket@{clSimpleSocket}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{clSimpleSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSimpleSocket::clSimpleSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_a383b01774d258fc6683dcf2a7839178c}
+Constructor \hypertarget{classcl_simple_socket_a14d5eac79430765b246872ef7eaa4877}{
+\index{clSimpleSocket@{clSimpleSocket}!$\sim$clSimpleSocket@{$\sim$clSimpleSocket}}
+\index{$\sim$clSimpleSocket@{$\sim$clSimpleSocket}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{$\sim$clSimpleSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSimpleSocket::$\sim$clSimpleSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_simple_socket_a14d5eac79430765b246872ef7eaa4877}
+Destructor Closes socket \hypertarget{classcl_simple_socket_a60492de2aff7cf5a12206508be995151}{
+\index{clSimpleSocket@{clSimpleSocket}!clSimpleSocket@{clSimpleSocket}}
+\index{clSimpleSocket@{clSimpleSocket}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{clSimpleSocket}]{\setlength{\rightskip}{0pt plus 5cm}clSimpleSocket::clSimpleSocket (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSimpleSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_a60492de2aff7cf5a12206508be995151}
+Copy constructor (deep) \begin{DoxyNote}{Note}
+deep copy of winsockSocket cannot be made 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_simple_socket_a911c27d4a649018243b7354a6f1467e8}{
+\index{clSimpleSocket@{clSimpleSocket}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSimpleSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_simple_socket_a911c27d4a649018243b7354a6f1467e8}
+Copies {\itshape copyMe\/} into this object (deep) \begin{DoxyNote}{Note}
+deep copy of winsockSocket cannot be made 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_simple_socket_ad535ecb38b4ceb63a98d2ed3106ac792}{
+\index{clSimpleSocket@{clSimpleSocket}!\_\-DefaultVars@{\_\-DefaultVars}}
+\index{\_\-DefaultVars@{\_\-DefaultVars}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{\_\-DefaultVars}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::\_\-DefaultVars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_simple_socket_ad535ecb38b4ceb63a98d2ed3106ac792}
+Sets all variables to default 
+
+Reimplemented in \hyperlink{classcl_socket_a63910e1657650a9ff3e8c8cb6045e689}{clSocket}.
+
+\hypertarget{classcl_simple_socket_ad73dc4363a41d18199ef8203d86667bc}{
+\index{clSimpleSocket@{clSimpleSocket}!BindSocket@{BindSocket}}
+\index{BindSocket@{BindSocket}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{BindSocket}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::BindSocket (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ localAddr}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_ad73dc4363a41d18199ef8203d86667bc}
+Binds {\ttfamily winsockSocket} to {\itshape localAddr\/} and sets it to non blocking mode
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em localAddr}]local address to bind to. If IP or port value is 0 then winsock will choose one automatically. \end{DoxyParams}
+\hypertarget{classcl_simple_socket_a755206da4d4b36d15353949c9a248398}{
+\index{clSimpleSocket@{clSimpleSocket}!Close@{Close}}
+\index{Close@{Close}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_a755206da4d4b36d15353949c9a248398}
+Begin closing winsock socket \par
+ Cancel notifications are sent out to all pending operations but the socket itself is not closed until all operations have finished which may or may not have occurred by the time this method returns \begin{DoxyWarning}{Warning}
+do not assume that the socket is fully closed and that all operations have completed once this method returns 
+\end{DoxyWarning}
+
+
+Reimplemented in \hyperlink{classcl_socket_a5ff0b79fb0cb1c43019e726ea085ec36}{clSocket}, \hyperlink{classcl_socket_t_c_p_a8f1031669c4093bf2aacb788f97c1adf}{clSocketTCP}, and \hyperlink{classcl_socket_u_d_p_aa4f23e02e1c4803535e94fcfa97698ea}{clSocketUDP}.
+
+\hypertarget{classcl_simple_socket_ac5835cca7d7c9cfac0db637a46ca7f5a}{
+\index{clSimpleSocket@{clSimpleSocket}!Connect@{Connect}}
+\index{Connect@{Connect}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::Connect (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ connectAddr}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_ac5835cca7d7c9cfac0db637a46ca7f5a}
+Connects {\ttfamily winsockSocket} to {\itshape connectAddr\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em connectAddr}]address to connect to \end{DoxyParams}
+\hypertarget{classcl_simple_socket_ae0df60ffe1092810579c2a6b22db05a0}{
+\index{clSimpleSocket@{clSimpleSocket}!DisableSocketNagle@{DisableSocketNagle}}
+\index{DisableSocketNagle@{DisableSocketNagle}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{DisableSocketNagle}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::DisableSocketNagle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_ae0df60ffe1092810579c2a6b22db05a0}
+Disables the nagle algorithm on {\ttfamily winsockSocket} \begin{DoxyWarning}{Warning}
+only applicable to TCP sockets 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if the socket has been bound \end{DoxyExceptions}
+\hypertarget{classcl_simple_socket_aed24f0104189cb13e014f36692995038}{
+\index{clSimpleSocket@{clSimpleSocket}!GetAddressConnected@{GetAddressConnected}}
+\index{GetAddressConnected@{GetAddressConnected}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{GetAddressConnected}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clSimpleSocket::GetAddressConnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_simple_socket_aed24f0104189cb13e014f36692995038}
+\begin{DoxyReturn}{Returns}
+constant reference to address that socket is connected to 
+\end{DoxyReturn}
+\hypertarget{classcl_simple_socket_a084017b2735b6e702832fd0318058289}{
+\index{clSimpleSocket@{clSimpleSocket}!GetFullyOperational@{GetFullyOperational}}
+\index{GetFullyOperational@{GetFullyOperational}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{GetFullyOperational}]{\setlength{\rightskip}{0pt plus 5cm}bool clSimpleSocket::GetFullyOperational (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_simple_socket_a084017b2735b6e702832fd0318058289}
+\begin{DoxyReturn}{Returns}
+true if the socket is fully operational 
+\end{DoxyReturn}
+\hypertarget{classcl_simple_socket_a0fcc08cbc2db5c6e6a9f8118133504a1}{
+\index{clSimpleSocket@{clSimpleSocket}!GetLocalAddress@{GetLocalAddress}}
+\index{GetLocalAddress@{GetLocalAddress}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{GetLocalAddress}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clSimpleSocket::GetLocalAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_simple_socket_a0fcc08cbc2db5c6e6a9f8118133504a1}
+\begin{DoxyReturn}{Returns}
+local address information of the socket. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\hypertarget{classcl_simple_socket_a469aff1fe89408403eff0ba14d1c6280}{
+\index{clSimpleSocket@{clSimpleSocket}!GetSocketSetup@{GetSocketSetup}}
+\index{GetSocketSetup@{GetSocketSetup}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{GetSocketSetup}]{\setlength{\rightskip}{0pt plus 5cm}bool clSimpleSocket::GetSocketSetup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_simple_socket_a469aff1fe89408403eff0ba14d1c6280}
+\begin{DoxyReturn}{Returns}
+true if the socket is setup, false if it is not 
+\end{DoxyReturn}
+\hypertarget{classcl_simple_socket_a3d1e886eb5fe1ed25f35ff4c5cad546e}{
+\index{clSimpleSocket@{clSimpleSocket}!LoadSOCKET@{LoadSOCKET}}
+\index{LoadSOCKET@{LoadSOCKET}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{LoadSOCKET}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::LoadSOCKET (
+\begin{DoxyParamCaption}
+\item[{SOCKET}]{ operationalSocket, }
+\item[{const {\bf clSingleAddr} \&}]{ addressConnected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_simple_socket_a3d1e886eb5fe1ed25f35ff4c5cad546e}
+Loads a winsock socket object that is already fully operational 
+\begin{DoxyParams}{Parameters}
+\item[{\em operationalSocket}]operational winsock socket \end{DoxyParams}
+
+
+Reimplemented in \hyperlink{classcl_socket_t_c_p_a276fcb218bb483a56f10e740b6c5b2e1}{clSocketTCP}.
+
+\hypertarget{classcl_simple_socket_ad417a697e347483ec324ae5724d0c718}{
+\index{clSimpleSocket@{clSimpleSocket}!operator=@{operator=}}
+\index{operator=@{operator=}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSimpleSocket} \& clSimpleSocket::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSimpleSocket} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_ad417a697e347483ec324ae5724d0c718}
+Assignment operator (deep) \begin{DoxyNote}{Note}
+deep copy of winsockSocket cannot be made 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_simple_socket_a1f422add7ea457cd021356ae406ecd0c}{
+\index{clSimpleSocket@{clSimpleSocket}!SetFullyOperational@{SetFullyOperational}}
+\index{SetFullyOperational@{SetFullyOperational}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{SetFullyOperational}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::SetFullyOperational (
+\begin{DoxyParamCaption}
+\item[{bool}]{ operational}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_simple_socket_a1f422add7ea457cd021356ae406ecd0c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em changes}]{\ttfamily fullyOperational} variable, which impacts on the return value of GetFullyOperational \end{DoxyParams}
+\hypertarget{classcl_simple_socket_a89ee7fa04674f62171a56656d88a4506}{
+\index{clSimpleSocket@{clSimpleSocket}!SetSocketBroadcasting@{SetSocketBroadcasting}}
+\index{SetSocketBroadcasting@{SetSocketBroadcasting}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{SetSocketBroadcasting}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::SetSocketBroadcasting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_a89ee7fa04674f62171a56656d88a4506}
+Sets {\ttfamily winsockSocket} to broadcasting mode \begin{DoxyWarning}{Warning}
+only works on UDP sockets 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if the socket has been bound \end{DoxyExceptions}
+\hypertarget{classcl_simple_socket_ac5260767d6b1abce845199e7698092a2}{
+\index{clSimpleSocket@{clSimpleSocket}!SetSocketHardShutdown@{SetSocketHardShutdown}}
+\index{SetSocketHardShutdown@{SetSocketHardShutdown}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{SetSocketHardShutdown}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::SetSocketHardShutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_ac5260767d6b1abce845199e7698092a2}
+Sets TCP socket to hard close mode which means that when closing all clients are disconnected immediately \begin{DoxyWarning}{Warning}
+only works on TCP sockets 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if the socket has been bound \end{DoxyExceptions}
+\hypertarget{classcl_simple_socket_a74328f22dfbad56fff2c85f074e691b3}{
+\index{clSimpleSocket@{clSimpleSocket}!SetSocketListening@{SetSocketListening}}
+\index{SetSocketListening@{SetSocketListening}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{SetSocketListening}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::SetSocketListening (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_a74328f22dfbad56fff2c85f074e691b3}
+Sets {\ttfamily winsockSocket} to listening mode \begin{DoxyWarning}{Warning}
+only works on TCP sockets 
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if the socket has been bound \end{DoxyExceptions}
+\hypertarget{classcl_simple_socket_a3972dd47ba94afc25966943f9979f405}{
+\index{clSimpleSocket@{clSimpleSocket}!SetSocketReusable@{SetSocketReusable}}
+\index{SetSocketReusable@{SetSocketReusable}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{SetSocketReusable}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::SetSocketReusable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_a3972dd47ba94afc25966943f9979f405}
+Sets {\ttfamily winsockSocket} to reusable using {\ttfamily setsockopt} \begin{DoxyNote}{Note}
+TCP client sockets can be reusable with no change in usage, when reusable other TCP clients will able to use the same port but not interfere 
+
+UDP sockets and TCP server sockets if reusable will mean that other sockets can receive the same data and may cause interference 
+\end{DoxyNote}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if the socket has been bound \end{DoxyExceptions}
+\hypertarget{classcl_simple_socket_ab6848c5add8c92fd54ac2e297f2fbe1a}{
+\index{clSimpleSocket@{clSimpleSocket}!SetupSocket@{SetupSocket}}
+\index{SetupSocket@{SetupSocket}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{SetupSocket}]{\setlength{\rightskip}{0pt plus 5cm}void clSimpleSocket::SetupSocket (
+\begin{DoxyParamCaption}
+\item[{{\bf clSimpleSocket::Protocol}}]{ protocol}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_simple_socket_ab6848c5add8c92fd54ac2e297f2fbe1a}
+Setups {\ttfamily winsockSocket} using {\ttfamily WSASocket} 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape protocol\/} is invalid\end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]protocol used by socket can be either:
+\begin{DoxyItemize}
+\item clSimpleSocket::UDP: creates a UDP socket
+\item clSimpleSocket::TCP: creates a TCP socket 
+\end{DoxyItemize}\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_simple_socket_ae777e37939afd56e6bde9c3513ad7b75}{
+\index{clSimpleSocket@{clSimpleSocket}!addressConnected@{addressConnected}}
+\index{addressConnected@{addressConnected}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{addressConnected}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} {\bf clSimpleSocket::addressConnected}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_simple_socket_ae777e37939afd56e6bde9c3513ad7b75}
+stores address that socket is connected to \hypertarget{classcl_simple_socket_aab91a0e6aae916c873175e7ff04bbc50}{
+\index{clSimpleSocket@{clSimpleSocket}!addressLocal@{addressLocal}}
+\index{addressLocal@{addressLocal}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{addressLocal}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} {\bf clSimpleSocket::addressLocal}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{classcl_simple_socket_aab91a0e6aae916c873175e7ff04bbc50}
+stores local address information that we are bound to \hypertarget{classcl_simple_socket_a780c2c352ef115d7194c401566126a20}{
+\index{clSimpleSocket@{clSimpleSocket}!bound@{bound}}
+\index{bound@{bound}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{bound}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clSimpleSocket::bound}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_simple_socket_a780c2c352ef115d7194c401566126a20}
+true when the socket is bound to a local address (i.e. when BindSocket has been used) \hypertarget{classcl_simple_socket_afa5ce1a66de16e6184770e528fd0a03f}{
+\index{clSimpleSocket@{clSimpleSocket}!fullyOperational@{fullyOperational}}
+\index{fullyOperational@{fullyOperational}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{fullyOperational}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clSimpleSocket::fullyOperational}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_simple_socket_afa5ce1a66de16e6184770e528fd0a03f}
+if true socket is fully operational \hypertarget{classcl_simple_socket_a109af953439a5f88d198f3764e0077b2}{
+\index{clSimpleSocket@{clSimpleSocket}!winsockSocket@{winsockSocket}}
+\index{winsockSocket@{winsockSocket}!clSimpleSocket@{clSimpleSocket}}
+\subsubsection[{winsockSocket}]{\setlength{\rightskip}{0pt plus 5cm}SOCKET {\bf clSimpleSocket::winsockSocket}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_simple_socket_a109af953439a5f88d198f3764e0077b2}
+Winsock socket used to transfer data 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSimpleSocket.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSimpleSocket.cpp\end{DoxyCompactItemize}

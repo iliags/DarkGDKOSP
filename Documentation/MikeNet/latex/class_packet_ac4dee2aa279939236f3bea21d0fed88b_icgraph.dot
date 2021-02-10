@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Packet::_AddWSABUF",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Packet::addEqualWSABUF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a10eb8d42f70b985f311d4180bce14331"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetModeTcpPrefixSize::DealWithData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp_prefix_size.html#abd5057023c26ead45d476cf801fbb6ce"];
+  Node2 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetModeTcpPostfix::DealWithData",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp_postfix.html#abdbf83ca6a2d99bd37f20fbd731c03f7"];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Packet::addWSABUF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a908f6daabb43beabbae997008b257cf3"];
+}

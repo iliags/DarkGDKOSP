@@ -1,0 +1,293 @@
+\hypertarget{class_concurrency_event}{
+\section{ConcurrencyEvent Class Reference}
+\label{class_concurrency_event}\index{ConcurrencyEvent@{ConcurrencyEvent}}
+}
+
+
+Manages a signal (known as an event) which can be true or false.  
+
+
+
+
+{\ttfamily \#include $<$ConcurrencyEvent.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_concurrency_event_ae829784be604aae0a3152004073f1937}{Initialize} (bool initialState, bool manualReset)
+\begin{DoxyCompactList}\small\item\em Initializes object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_event_a647918654f36bb8c9655b94f7cba7280}{ConcurrencyEvent} (bool initialState, bool manualReset=true)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_event_a47ecd3603f3d564b5fd82423d308627f}{ConcurrencyEvent} (const \hyperlink{class_concurrency_event}{ConcurrencyEvent} \&obj)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \& \hyperlink{class_concurrency_event_aa29ab3ed807b8d437269e6fa06095028}{operator=} (const \hyperlink{class_concurrency_event}{ConcurrencyEvent} \&obj)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrency_event_a7732f4316daa70d13e8a633b53157078}{operator==} (const \hyperlink{class_concurrency_event}{ConcurrencyEvent} \&obj) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrency_event_a07e7c9f76a4cc5b19922a4a2543905fc}{operator!=} (const \hyperlink{class_concurrency_event}{ConcurrencyEvent} \&obj) const 
+\begin{DoxyCompactList}\small\item\em Inequality operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_event_a5be5c32806214a1fe2d4f5665e88e54e}{
+virtual \hyperlink{class_concurrency_event_a5be5c32806214a1fe2d4f5665e88e54e}{$\sim$ConcurrencyEvent} (void)}
+\label{class_concurrency_event_a5be5c32806214a1fe2d4f5665e88e54e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrency_event_a4773bf3431af555e964d21635d3e5e38}{IsManualReset} () const 
+\begin{DoxyCompactList}\small\item\em Determine if manual reset is enabled for the event object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrency_event_aadb3a5e0b14aff16cc6a2a953d66537f}{Get} () const 
+\begin{DoxyCompactList}\small\item\em Queries an event object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_event_ac1720b04023269e3fb78750ee1ca21e3}{Set} (bool value)
+\begin{DoxyCompactList}\small\item\em Changes the value of an event object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_event_a00bce9f08579da7166a16477fdba31a8}{
+void \hyperlink{class_concurrency_event_a00bce9f08579da7166a16477fdba31a8}{WaitUntilSignaled} () const }
+\label{class_concurrency_event_a00bce9f08579da7166a16477fdba31a8}
+
+\begin{DoxyCompactList}\small\item\em Waits until the event object is signaled i.e. \hyperlink{class_concurrency_event_aadb3a5e0b14aff16cc6a2a953d66537f}{ConcurrencyEvent::Get()} returns true. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_concurrency_event_a1080a3f2fe5f81ce3dcd0ee9d25c7e86}{WaitUntilSignaled} (DWORD timeout) const 
+\begin{DoxyCompactList}\small\item\em Waits until the event object is signaled i.e. \hyperlink{class_concurrency_event_aadb3a5e0b14aff16cc6a2a953d66537f}{ConcurrencyEvent::Get()} returns true. \item\end{DoxyCompactList}\item 
+HANDLE \hyperlink{class_concurrency_event_a039e132dd01655976f07f281fd71a5c7}{GetEventHandle} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves a handle to the event object that this object wraps around. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_concurrency_event_a37012ea841cbd181c60861240ca21091}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_concurrency_event_a2e3100a49fccb1312d1d879d658781df}{
+HANDLE {\bfseries eventObject}}
+\label{class_concurrency_event_a2e3100a49fccb1312d1d879d658781df}
+
+\item 
+\hypertarget{class_concurrency_event_a0b5377757018d5404e850df2435d4173}{
+bool {\bfseries manualReset}}
+\label{class_concurrency_event_a0b5377757018d5404e850df2435d4173}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a signal (known as an event) which can be true or false. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_concurrency_event_a647918654f36bb8c9655b94f7cba7280}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!ConcurrencyEvent@{ConcurrencyEvent}}
+\index{ConcurrencyEvent@{ConcurrencyEvent}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{ConcurrencyEvent}]{\setlength{\rightskip}{0pt plus 5cm}ConcurrencyEvent::ConcurrencyEvent (
+\begin{DoxyParamCaption}
+\item[{bool}]{ initialState, }
+\item[{bool}]{ manualReset = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_event_a647918654f36bb8c9655b94f7cba7280}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em initialState}]True if the event object should start signaled, false if it should start unsignaled. \item[{\em manualReset}]See \hyperlink{class_concurrency_event_ae829784be604aae0a3152004073f1937}{ConcurrencyEvent::Initialize} for more information. \end{DoxyParams}
+\hypertarget{class_concurrency_event_a47ecd3603f3d564b5fd82423d308627f}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!ConcurrencyEvent@{ConcurrencyEvent}}
+\index{ConcurrencyEvent@{ConcurrencyEvent}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{ConcurrencyEvent}]{\setlength{\rightskip}{0pt plus 5cm}ConcurrencyEvent::ConcurrencyEvent (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrencyEvent} \&}]{ obj}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_event_a47ecd3603f3d564b5fd82423d308627f}
+
+
+Deep copy constructor. 
+
+Only copies the state of the signal, rather than the event object itself.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_concurrency_event_aadb3a5e0b14aff16cc6a2a953d66537f}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!Get@{Get}}
+\index{Get@{Get}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyEvent::Get (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_event_aadb3a5e0b14aff16cc6a2a953d66537f}
+
+
+Queries an event object. 
+
+\begin{DoxyReturn}{Returns}
+true if {\itshape eventObject\/} is signaled, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_a039e132dd01655976f07f281fd71a5c7}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!GetEventHandle@{GetEventHandle}}
+\index{GetEventHandle@{GetEventHandle}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{GetEventHandle}]{\setlength{\rightskip}{0pt plus 5cm}HANDLE ConcurrencyEvent::GetEventHandle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_event_a039e132dd01655976f07f281fd71a5c7}
+
+
+Retrieves a handle to the event object that this object wraps around. 
+
+\begin{DoxyReturn}{Returns}
+event handle. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_ae829784be604aae0a3152004073f1937}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!Initialize@{Initialize}}
+\index{Initialize@{Initialize}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{Initialize}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyEvent::Initialize (
+\begin{DoxyParamCaption}
+\item[{bool}]{ initialState, }
+\item[{bool}]{ manualReset}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_event_ae829784be604aae0a3152004073f1937}
+
+
+Initializes object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em initialState}]True if the event object should start signaled, false if it should start unsignaled. \item[{\em manualReset}]When the state of a manual-\/reset event object is signaled, it remains signaled until it is explicitly reset to nonsignaled by the \hyperlink{class_concurrency_event_ac1720b04023269e3fb78750ee1ca21e3}{ConcurrencyEvent::Set} function.\end{DoxyParams}
+When the state of an auto-\/reset (non manual-\/reset) event object is signaled, it remains signaled until a single waiting thread is released (e.g. \hyperlink{class_concurrency_event_a00bce9f08579da7166a16477fdba31a8}{ConcurrencyEvent::WaitUntilSignaled} returns); the system then automatically resets the state to nonsignaled. If no threads are waiting, the event object's state remains signaled. \hypertarget{class_concurrency_event_a4773bf3431af555e964d21635d3e5e38}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!IsManualReset@{IsManualReset}}
+\index{IsManualReset@{IsManualReset}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{IsManualReset}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyEvent::IsManualReset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_event_a4773bf3431af555e964d21635d3e5e38}
+
+
+Determine if manual reset is enabled for the event object. 
+
+\begin{DoxyReturn}{Returns}
+true if manual reset is enabled, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_a07e7c9f76a4cc5b19922a4a2543905fc}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyEvent::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrencyEvent} \&}]{ compare}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_event_a07e7c9f76a4cc5b19922a4a2543905fc}
+
+
+Inequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if {\itshape compare's\/} signal is the same as this object's signal. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_aa29ab3ed807b8d437269e6fa06095028}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!operator=@{operator=}}
+\index{operator=@{operator=}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrencyEvent} \& ConcurrencyEvent::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrencyEvent} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_event_aa29ab3ed807b8d437269e6fa06095028}
+
+
+Deep assignment operator. 
+
+Only copies the state of the signal, rather than the event object itself.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_a7732f4316daa70d13e8a633b53157078}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!operator==@{operator==}}
+\index{operator==@{operator==}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyEvent::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf ConcurrencyEvent} \&}]{ compare}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_event_a7732f4316daa70d13e8a633b53157078}
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape compare's\/} signal is the same as this object's signal. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_ac1720b04023269e3fb78750ee1ca21e3}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!Set@{Set}}
+\index{Set@{Set}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyEvent::Set (
+\begin{DoxyParamCaption}
+\item[{bool}]{ value}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_event_ac1720b04023269e3fb78750ee1ca21e3}
+
+
+Changes the value of an event object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em value}]True if the event object should be signaled, false if it should be unsignaled. \end{DoxyParams}
+\hypertarget{class_concurrency_event_a37012ea841cbd181c60861240ca21091}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyEvent::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_concurrency_event_a37012ea841cbd181c60861240ca21091}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_event_a1080a3f2fe5f81ce3dcd0ee9d25c7e86}{
+\index{ConcurrencyEvent@{ConcurrencyEvent}!WaitUntilSignaled@{WaitUntilSignaled}}
+\index{WaitUntilSignaled@{WaitUntilSignaled}!ConcurrencyEvent@{ConcurrencyEvent}}
+\subsubsection[{WaitUntilSignaled}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyEvent::WaitUntilSignaled (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ timeout}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_event_a1080a3f2fe5f81ce3dcd0ee9d25c7e86}
+
+
+Waits until the event object is signaled i.e. \hyperlink{class_concurrency_event_aadb3a5e0b14aff16cc6a2a953d66537f}{ConcurrencyEvent::Get()} returns true. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]Length of time to wait in milliseconds before aborting and returning true.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the operation timed out and the event is probably not signaled. 
+
+false if the event is now signaled. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrencyEvent.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrencyEvent.cpp\end{DoxyCompactItemize}

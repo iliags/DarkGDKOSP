@@ -1,0 +1,1 @@
+This is not installed by the installer, and is intended for use by languages that can call DLL methods.

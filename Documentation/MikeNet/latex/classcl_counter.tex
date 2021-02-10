@@ -1,0 +1,209 @@
+\hypertarget{classcl_counter}{
+\section{clCounter Class Reference}
+\label{classcl_counter}\index{clCounter@{clCounter}}
+}
+
+
+Counter object, used to detect a large frequency of an event occurring simultaneously.  
+
+
+
+
+{\ttfamily \#include $<$clCounter.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_counter_a8f00e2ad134e2fc5e8227cb553ae1220}{clCounter} (clock\_\-t \hyperlink{classcl_counter_a68b6f9e1cef533810d5cfff1cdffa35a}{timeout}, size\_\-t \hyperlink{classcl_counter_aa16f1572cf9580b6c699943d678a30fc}{counterLimit})
+\item 
+bool \hyperlink{classcl_counter_aeb2420e725a16524177bfba91238461d}{Increment} ()
+\item 
+clock\_\-t \hyperlink{classcl_counter_a66a64ae6f3919d0e468eefc16541fefc}{GetTimer} ()
+\item 
+clock\_\-t \hyperlink{classcl_counter_a7f36a3f9fed50ecbe3f5689f13fa09c4}{GetTimeout} ()
+\item 
+void \hyperlink{classcl_counter_a77cc2d7cf42feab883eefb13d1eff6b7}{SetTimeout} (clock\_\-t newTimeout)
+\item 
+size\_\-t \hyperlink{classcl_counter_a8c7507d97558bd95ba1fd0ce564f2188}{GetCounter} ()
+\item 
+size\_\-t \hyperlink{classcl_counter_a506ebc846490f4b229b53e920b27a869}{GetCounterLimit} ()
+\item 
+void \hyperlink{classcl_counter_ac4955763f5f51f0ec171f8a7f609e35d}{SetCounterLimit} (size\_\-t limit)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_counter_aad42294afe6fbbbe83d87d241dae5169}{
+static const size\_\-t {\bfseries DEFAULT\_\-LIMIT} = 1000}
+\label{classcl_counter_aad42294afe6fbbbe83d87d241dae5169}
+
+\item 
+\hypertarget{classcl_counter_a1fe8c8cc84e07f048569bedd2131cf5c}{
+static const size\_\-t {\bfseries DEFAULT\_\-TIMEOUT} = 500}
+\label{classcl_counter_a1fe8c8cc84e07f048569bedd2131cf5c}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_counter_aad21a0325c03b06b83ff7cb522f2fff6}{Reset} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+clock\_\-t \hyperlink{classcl_counter_ab4657d871c04c73f93cfb223401ee6f4}{timer}
+\item 
+clock\_\-t \hyperlink{classcl_counter_a68b6f9e1cef533810d5cfff1cdffa35a}{timeout}
+\item 
+size\_\-t \hyperlink{classcl_counter_af04adc8de643f218ad5e4b5ecefa676f}{counter}
+\item 
+size\_\-t \hyperlink{classcl_counter_aa16f1572cf9580b6c699943d678a30fc}{counterLimit}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Counter object, used to detect a large frequency of an event occurring simultaneously. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+If no increment has happened for \hyperlink{classcl_counter_a7f36a3f9fed50ecbe3f5689f13fa09c4}{GetTimeout()} number of milliseconds, the counter will be reset to 0. \par
+ If no counter reaches \hyperlink{classcl_counter_a506ebc846490f4b229b53e920b27a869}{GetCounterLimit()} the counter will be reset to 0 and \hyperlink{classcl_counter_aeb2420e725a16524177bfba91238461d}{Increment()} will return true. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_counter_a8f00e2ad134e2fc5e8227cb553ae1220}{
+\index{clCounter@{clCounter}!clCounter@{clCounter}}
+\index{clCounter@{clCounter}!clCounter@{clCounter}}
+\subsubsection[{clCounter}]{\setlength{\rightskip}{0pt plus 5cm}clCounter::clCounter (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ timeout, }
+\item[{size\_\-t}]{ counterLimit}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_a8f00e2ad134e2fc5e8227cb553ae1220}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em timeout}]if the counter has not been incremented for this number of milliseconds then the object will be reset, NULL if not used \item[{\em counterLimit}]when counterLimit is reached Increment will return true and the object will be reset, NULL if not used \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_counter_a8c7507d97558bd95ba1fd0ce564f2188}{
+\index{clCounter@{clCounter}!GetCounter@{GetCounter}}
+\index{GetCounter@{GetCounter}!clCounter@{clCounter}}
+\subsubsection[{GetCounter}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCounter::GetCounter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_a8c7507d97558bd95ba1fd0ce564f2188}
+\begin{DoxyReturn}{Returns}
+counter 
+\end{DoxyReturn}
+\hypertarget{classcl_counter_a506ebc846490f4b229b53e920b27a869}{
+\index{clCounter@{clCounter}!GetCounterLimit@{GetCounterLimit}}
+\index{GetCounterLimit@{GetCounterLimit}!clCounter@{clCounter}}
+\subsubsection[{GetCounterLimit}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCounter::GetCounterLimit (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_a506ebc846490f4b229b53e920b27a869}
+\begin{DoxyReturn}{Returns}
+when counterLimit is reached Increment will return true and the object will be reset 
+\end{DoxyReturn}
+\hypertarget{classcl_counter_a7f36a3f9fed50ecbe3f5689f13fa09c4}{
+\index{clCounter@{clCounter}!GetTimeout@{GetTimeout}}
+\index{GetTimeout@{GetTimeout}!clCounter@{clCounter}}
+\subsubsection[{GetTimeout}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t clCounter::GetTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_a7f36a3f9fed50ecbe3f5689f13fa09c4}
+\begin{DoxyReturn}{Returns}
+if the counter has not been incremented for this number of milliseconds then the object will be reset 
+\end{DoxyReturn}
+\hypertarget{classcl_counter_a66a64ae6f3919d0e468eefc16541fefc}{
+\index{clCounter@{clCounter}!GetTimer@{GetTimer}}
+\index{GetTimer@{GetTimer}!clCounter@{clCounter}}
+\subsubsection[{GetTimer}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t clCounter::GetTimer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_a66a64ae6f3919d0e468eefc16541fefc}
+\begin{DoxyReturn}{Returns}
+timer 
+\end{DoxyReturn}
+\hypertarget{classcl_counter_aeb2420e725a16524177bfba91238461d}{
+\index{clCounter@{clCounter}!Increment@{Increment}}
+\index{Increment@{Increment}!clCounter@{clCounter}}
+\subsubsection[{Increment}]{\setlength{\rightskip}{0pt plus 5cm}bool clCounter::Increment (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_aeb2420e725a16524177bfba91238461d}
+Increments counter by 1 \begin{DoxyReturn}{Returns}
+true if counter limit has been reached, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_counter_aad21a0325c03b06b83ff7cb522f2fff6}{
+\index{clCounter@{clCounter}!Reset@{Reset}}
+\index{Reset@{Reset}!clCounter@{clCounter}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void clCounter::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_counter_aad21a0325c03b06b83ff7cb522f2fff6}
+Reset object, timer is updated and counter set to 0 \hypertarget{classcl_counter_ac4955763f5f51f0ec171f8a7f609e35d}{
+\index{clCounter@{clCounter}!SetCounterLimit@{SetCounterLimit}}
+\index{SetCounterLimit@{SetCounterLimit}!clCounter@{clCounter}}
+\subsubsection[{SetCounterLimit}]{\setlength{\rightskip}{0pt plus 5cm}void clCounter::SetCounterLimit (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_ac4955763f5f51f0ec171f8a7f609e35d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newTimeout}]update value: when counterLimit is reached Increment will return true and the object will be reset \end{DoxyParams}
+\hypertarget{classcl_counter_a77cc2d7cf42feab883eefb13d1eff6b7}{
+\index{clCounter@{clCounter}!SetTimeout@{SetTimeout}}
+\index{SetTimeout@{SetTimeout}!clCounter@{clCounter}}
+\subsubsection[{SetTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void clCounter::SetTimeout (
+\begin{DoxyParamCaption}
+\item[{clock\_\-t}]{ newTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_counter_a77cc2d7cf42feab883eefb13d1eff6b7}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newTimeout}]update value: if the counter has not been incremented for this number of milliseconds then the object will be reset \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_counter_af04adc8de643f218ad5e4b5ecefa676f}{
+\index{clCounter@{clCounter}!counter@{counter}}
+\index{counter@{counter}!clCounter@{clCounter}}
+\subsubsection[{counter}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clCounter::counter}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_counter_af04adc8de643f218ad5e4b5ecefa676f}
+counter incremented by Increment method \hypertarget{classcl_counter_aa16f1572cf9580b6c699943d678a30fc}{
+\index{clCounter@{clCounter}!counterLimit@{counterLimit}}
+\index{counterLimit@{counterLimit}!clCounter@{clCounter}}
+\subsubsection[{counterLimit}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clCounter::counterLimit}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_counter_aa16f1572cf9580b6c699943d678a30fc}
+maximum that counter can be, when counter reaches this limit it is reset \hypertarget{classcl_counter_a68b6f9e1cef533810d5cfff1cdffa35a}{
+\index{clCounter@{clCounter}!timeout@{timeout}}
+\index{timeout@{timeout}!clCounter@{clCounter}}
+\subsubsection[{timeout}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t {\bf clCounter::timeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_counter_a68b6f9e1cef533810d5cfff1cdffa35a}
+after no increment for this number of milliseconds object is reset \hypertarget{classcl_counter_ab4657d871c04c73f93cfb223401ee6f4}{
+\index{clCounter@{clCounter}!timer@{timer}}
+\index{timer@{timer}!clCounter@{clCounter}}
+\subsubsection[{timer}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t {\bf clCounter::timer}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_counter_ab4657d871c04c73f93cfb223401ee6f4}
+store clock() value of last unreset increment 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clCounter.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clCounter.cpp\end{DoxyCompactItemize}

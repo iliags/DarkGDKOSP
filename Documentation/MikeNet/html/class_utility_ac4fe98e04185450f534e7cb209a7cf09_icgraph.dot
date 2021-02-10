@@ -1,0 +1,21 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="Utility::GetEvent",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetSocketTCP::_Copy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#ae32e5696eace99d26ebcd56276bca6b3"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetSocketTCP::NetSocketTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#ab8958e92980c0f82dc75c2dc59e05577"];
+  Node2 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetSocketTCP::operator=",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#a5307a3b22575686da141a3929e5eb3be"];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetSocketTCP::GetRecvPossible",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#a1ef0046a481208dec95ec38f7bb18b87"];
+  Node5 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="NetSocketTCP::GetConnectionStatus",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#a68dc0183e216cdd1796466d411f0b681"];
+  Node6 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node7 [label="NetInstanceClient::ClientConnected",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#a2ed875ffc7d1e5e843a39155d317dd2f"];
+  Node6 -> Node8 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node8 [label="NetServerClient::GetConnectionStateTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#a27029d633c46a37bffea72a463d375e4"];
+}

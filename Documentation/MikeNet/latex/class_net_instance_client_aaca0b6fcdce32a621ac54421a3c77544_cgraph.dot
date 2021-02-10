@@ -1,0 +1,13 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetInstanceClient::GetAutoResizeTCP",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetModeTcp::GetAutoResize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp.html#abb7a8c9d33dcee5ecc7e069ddc81b6a2"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="ConcurrentObject::Get1",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_concurrent_object.html#a443b1a7eec5d662194846767c4b8b9cf"];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetSocketTCP::GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#ad528efe4a16f0a110f488820d7abbc89"];
+}

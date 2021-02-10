@@ -1,0 +1,24 @@
+Automated Enviorment Mapping 0.1 - Super3dGameEngine - Core PlugIn -
+
+Selecting Colors 1 - 10, full version will include 255 X 3 color selection.
+Paint on Terrain with Left Mouse Button.
+Switch Between Low Res / AEM High Res  Right Mouse Button.
+Reset Terrain Coloring with 'R' - Low Res.
+Increase Brush Size 'Q' | Decrease Brush Size 'A'.
+Zoom In 'W' | Zoom Out 'S'.
+Show/Hide Help Menu 'H'.
+Press the Space Key To Excute AEM Stamp Algorithem.
+Press the Control Key to Switch between Top View and First Person View.
+Select a Color , Aim with your mouse on a Colored Surface , Press 'X' to Recolor.
+Press the 'F' Key to fill the entire terrain with a single color.
+Move with Arrow Keys.
+Increse Stamp Dentisy 'E' | Decrease Stamp Dentisy 'D'.
+Not Included in this demo: NormalMapping/ MipMapping/ Layers / Shaders/Foliage and Enviorment Models.
+Also Note that only Channel/Color 1 and 4 will Calculate Stamps.
+
+Created by Nadav "Haliop" Rosenberg.
+special thanks to 
+Van B
+TechLord
+
+and many other forum members who helped out.

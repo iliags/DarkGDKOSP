@@ -1,0 +1,202 @@
+\hypertarget{classcl_store}{
+\section{clStore$<$ T $>$ Class Template Reference}
+\label{classcl_store}\index{clStore@{clStore}}
+}
+
+
+Base class for any object that safely controls access to a number of objects.  
+
+
+
+
+{\ttfamily \#include $<$clStore.h$>$}
+
+Inheritance diagram for clStore$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_store}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_store_aec49a01154d426a6dc8f56b745190ef0}{clStore} ()
+\item 
+virtual \hyperlink{classcl_store_a7f73ac79b7295302d66097ff655b4647}{$\sim$clStore} ()
+\item 
+\hyperlink{classcl_store_ad90a411c1d9b7ec0a9f3ccfb18e6e5ba}{clStore} (const \hyperlink{classcl_store}{clStore} \&copyMe)
+\item 
+\hyperlink{classcl_store}{clStore} \& \hyperlink{classcl_store_a2287bd3dc920637c390f581cb044865e}{operator=} (const \hyperlink{classcl_store}{clStore} \&copyMe)
+\item 
+virtual void \hyperlink{classcl_store_a62772dea2e8b0ed2d913baacf8ee3bb4}{Clear} ()=0
+\item 
+virtual size\_\-t \hyperlink{classcl_store_a6d95a4fd9236e1b005efdfcb27391006}{Get} (T $\ast$destination)=0
+\item 
+virtual void \hyperlink{classcl_store_a1bd48dc5a9dc8729cdd18b61eef17daa}{Add} (T $\ast$packet)=0
+\item 
+virtual size\_\-t \hyperlink{classcl_store_a8ea87e866f8e8c6a3b2bcdc0423ae469}{Size} () const =0
+\item 
+virtual T $\ast$ \hyperlink{classcl_store_a31a2f4628a2ed892ac193bec64df1ca0}{Front} () const =0
+\item 
+virtual T $\ast$ \hyperlink{classcl_store_a3a4c1bed69cc705414cf42eeb9e3601f}{Back} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_store_a4c365c86ada785f274033f2aeba94f30}{
+\hyperlink{classcl_multithread_simple}{clMultithreadSimple} {\bfseries mtControl}}
+\label{classcl_store_a4c365c86ada785f274033f2aeba94f30}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class clStore$<$ T $>$}
+
+Base class for any object that safely controls access to a number of objects. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Base class for objects that manage access to T objects \par
+ Only the store itself is thread safe, not the use of the objects in the store. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_store_aec49a01154d426a6dc8f56b745190ef0}{
+\index{clStore@{clStore}!clStore@{clStore}}
+\index{clStore@{clStore}!clStore@{clStore}}
+\subsubsection[{clStore}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStore}$<$ T $>$::{\bf clStore} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_store_aec49a01154d426a6dc8f56b745190ef0}
+Constructor \hypertarget{classcl_store_a7f73ac79b7295302d66097ff655b4647}{
+\index{clStore@{clStore}!$\sim$clStore@{$\sim$clStore}}
+\index{$\sim$clStore@{$\sim$clStore}!clStore@{clStore}}
+\subsubsection[{$\sim$clStore}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual {\bf clStore}$<$ T $>$::$\sim${\bf clStore} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{classcl_store_a7f73ac79b7295302d66097ff655b4647}
+Destructor \hypertarget{classcl_store_ad90a411c1d9b7ec0a9f3ccfb18e6e5ba}{
+\index{clStore@{clStore}!clStore@{clStore}}
+\index{clStore@{clStore}!clStore@{clStore}}
+\subsubsection[{clStore}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStore}$<$ T $>$::{\bf clStore} (
+\begin{DoxyParamCaption}
+\item[{const {\bf clStore}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_store_ad90a411c1d9b7ec0a9f3ccfb18e6e5ba}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_store_a1bd48dc5a9dc8729cdd18b61eef17daa}{
+\index{clStore@{clStore}!Add@{Add}}
+\index{Add@{Add}!clStore@{clStore}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual void {\bf clStore}$<$ T $>$::Add (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ packet}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_store_a1bd48dc5a9dc8729cdd18b61eef17daa}
+Add packet to back of collection 
+
+Implemented in \hyperlink{classcl_store_queue_a7851576e24ca060b529604e92fee2020}{clStoreQueue$<$ T $>$}, \hyperlink{classcl_store_vector_a188db95bf01f9fec77d9a47b792496b7}{clStoreVector$<$ T $>$}, \hyperlink{classcl_store_queue_a7851576e24ca060b529604e92fee2020}{clStoreQueue$<$ size\_\-t $>$}, \hyperlink{classcl_store_queue_a7851576e24ca060b529604e92fee2020}{clStoreQueue$<$ clPacket $>$}, \hyperlink{classcl_store_vector_a188db95bf01f9fec77d9a47b792496b7}{clStoreVector$<$ clInstanceContainer $>$}, \hyperlink{classcl_store_vector_a188db95bf01f9fec77d9a47b792496b7}{clStoreVector$<$ clStoreQueue$<$ clPacket $>$ $>$}, \hyperlink{classcl_store_vector_a188db95bf01f9fec77d9a47b792496b7}{clStoreVector$<$ clSClient $>$}, \hyperlink{classcl_store_vector_a188db95bf01f9fec77d9a47b792496b7}{clStoreVector$<$ clSingleAddr $>$}, and \hyperlink{classcl_store_vector_a188db95bf01f9fec77d9a47b792496b7}{clStoreVector$<$ clStoreVector$<$ clPacket $>$ $>$}.
+
+\hypertarget{classcl_store_a3a4c1bed69cc705414cf42eeb9e3601f}{
+\index{clStore@{clStore}!Back@{Back}}
+\index{Back@{Back}!clStore@{clStore}}
+\subsubsection[{Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual T$\ast$ {\bf clStore}$<$ T $>$::Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_store_a3a4c1bed69cc705414cf42eeb9e3601f}
+\begin{DoxyReturn}{Returns}
+element at back 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_store_queue_ae6897623e153bcb50f46fd12fa734cad}{clStoreQueue$<$ T $>$}, \hyperlink{classcl_store_vector_a57a073ce41e75bd94c839dec7583d494}{clStoreVector$<$ T $>$}, \hyperlink{classcl_store_queue_ae6897623e153bcb50f46fd12fa734cad}{clStoreQueue$<$ size\_\-t $>$}, \hyperlink{classcl_store_queue_ae6897623e153bcb50f46fd12fa734cad}{clStoreQueue$<$ clPacket $>$}, \hyperlink{classcl_store_vector_a57a073ce41e75bd94c839dec7583d494}{clStoreVector$<$ clInstanceContainer $>$}, \hyperlink{classcl_store_vector_a57a073ce41e75bd94c839dec7583d494}{clStoreVector$<$ clStoreQueue$<$ clPacket $>$ $>$}, \hyperlink{classcl_store_vector_a57a073ce41e75bd94c839dec7583d494}{clStoreVector$<$ clSClient $>$}, \hyperlink{classcl_store_vector_a57a073ce41e75bd94c839dec7583d494}{clStoreVector$<$ clSingleAddr $>$}, and \hyperlink{classcl_store_vector_a57a073ce41e75bd94c839dec7583d494}{clStoreVector$<$ clStoreVector$<$ clPacket $>$ $>$}.
+
+\hypertarget{classcl_store_a62772dea2e8b0ed2d913baacf8ee3bb4}{
+\index{clStore@{clStore}!Clear@{Clear}}
+\index{Clear@{Clear}!clStore@{clStore}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual void {\bf clStore}$<$ T $>$::Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_store_a62772dea2e8b0ed2d913baacf8ee3bb4}
+Empty collection 
+
+Implemented in \hyperlink{classcl_store_queue_a194546aad6707beb89aecd424f21faed}{clStoreQueue$<$ T $>$}, \hyperlink{classcl_store_vector_a595378c675306da1b01ff56ca3d18641}{clStoreVector$<$ T $>$}, \hyperlink{classcl_store_queue_a194546aad6707beb89aecd424f21faed}{clStoreQueue$<$ size\_\-t $>$}, \hyperlink{classcl_store_queue_a194546aad6707beb89aecd424f21faed}{clStoreQueue$<$ clPacket $>$}, \hyperlink{classcl_store_vector_a595378c675306da1b01ff56ca3d18641}{clStoreVector$<$ clInstanceContainer $>$}, \hyperlink{classcl_store_vector_a595378c675306da1b01ff56ca3d18641}{clStoreVector$<$ clStoreQueue$<$ clPacket $>$ $>$}, \hyperlink{classcl_store_vector_a595378c675306da1b01ff56ca3d18641}{clStoreVector$<$ clSClient $>$}, \hyperlink{classcl_store_vector_a595378c675306da1b01ff56ca3d18641}{clStoreVector$<$ clSingleAddr $>$}, and \hyperlink{classcl_store_vector_a595378c675306da1b01ff56ca3d18641}{clStoreVector$<$ clStoreVector$<$ clPacket $>$ $>$}.
+
+\hypertarget{classcl_store_a31a2f4628a2ed892ac193bec64df1ca0}{
+\index{clStore@{clStore}!Front@{Front}}
+\index{Front@{Front}!clStore@{clStore}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual T$\ast$ {\bf clStore}$<$ T $>$::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_store_a31a2f4628a2ed892ac193bec64df1ca0}
+\begin{DoxyReturn}{Returns}
+element at front 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_store_queue_a0e2ecd0a5aa2e3b5b9e4292520ae1352}{clStoreQueue$<$ T $>$}, \hyperlink{classcl_store_vector_afa3b431e252579cc5b63c4f96c245395}{clStoreVector$<$ T $>$}, \hyperlink{classcl_store_queue_a0e2ecd0a5aa2e3b5b9e4292520ae1352}{clStoreQueue$<$ size\_\-t $>$}, \hyperlink{classcl_store_queue_a0e2ecd0a5aa2e3b5b9e4292520ae1352}{clStoreQueue$<$ clPacket $>$}, \hyperlink{classcl_store_vector_afa3b431e252579cc5b63c4f96c245395}{clStoreVector$<$ clInstanceContainer $>$}, \hyperlink{classcl_store_vector_afa3b431e252579cc5b63c4f96c245395}{clStoreVector$<$ clStoreQueue$<$ clPacket $>$ $>$}, \hyperlink{classcl_store_vector_afa3b431e252579cc5b63c4f96c245395}{clStoreVector$<$ clSClient $>$}, \hyperlink{classcl_store_vector_afa3b431e252579cc5b63c4f96c245395}{clStoreVector$<$ clSingleAddr $>$}, and \hyperlink{classcl_store_vector_afa3b431e252579cc5b63c4f96c245395}{clStoreVector$<$ clStoreVector$<$ clPacket $>$ $>$}.
+
+\hypertarget{classcl_store_a6d95a4fd9236e1b005efdfcb27391006}{
+\index{clStore@{clStore}!Get@{Get}}
+\index{Get@{Get}!clStore@{clStore}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual size\_\-t {\bf clStore}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_store_a6d95a4fd9236e1b005efdfcb27391006}
+Get packet from front of collection and remove it from collection 
+
+Implemented in \hyperlink{classcl_store_queue_ac15b3716f7733992f81709b7ddfe6b71}{clStoreQueue$<$ T $>$}, \hyperlink{classcl_store_vector_ac57b7e98ceab1667a860d618c4cb393c}{clStoreVector$<$ T $>$}, \hyperlink{classcl_store_queue_ac15b3716f7733992f81709b7ddfe6b71}{clStoreQueue$<$ size\_\-t $>$}, \hyperlink{classcl_store_queue_ac15b3716f7733992f81709b7ddfe6b71}{clStoreQueue$<$ clPacket $>$}, \hyperlink{classcl_store_vector_ac57b7e98ceab1667a860d618c4cb393c}{clStoreVector$<$ clInstanceContainer $>$}, \hyperlink{classcl_store_vector_ac57b7e98ceab1667a860d618c4cb393c}{clStoreVector$<$ clStoreQueue$<$ clPacket $>$ $>$}, \hyperlink{classcl_store_vector_ac57b7e98ceab1667a860d618c4cb393c}{clStoreVector$<$ clSClient $>$}, \hyperlink{classcl_store_vector_ac57b7e98ceab1667a860d618c4cb393c}{clStoreVector$<$ clSingleAddr $>$}, and \hyperlink{classcl_store_vector_ac57b7e98ceab1667a860d618c4cb393c}{clStoreVector$<$ clStoreVector$<$ clPacket $>$ $>$}.
+
+\hypertarget{classcl_store_a2287bd3dc920637c390f581cb044865e}{
+\index{clStore@{clStore}!operator=@{operator=}}
+\index{operator=@{operator=}!clStore@{clStore}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf clStore}\& {\bf clStore}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clStore}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_store_a2287bd3dc920637c390f581cb044865e}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_store_a8ea87e866f8e8c6a3b2bcdc0423ae469}{
+\index{clStore@{clStore}!Size@{Size}}
+\index{Size@{Size}!clStore@{clStore}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ virtual size\_\-t {\bf clStore}$<$ T $>$::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_store_a8ea87e866f8e8c6a3b2bcdc0423ae469}
+\begin{DoxyReturn}{Returns}
+size of collection 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_store_queue_a22c0e035f508f164ce52768b9799f1c8}{clStoreQueue$<$ T $>$}, \hyperlink{classcl_store_vector_a509567b8c36947d03a05affc5f04d1c4}{clStoreVector$<$ T $>$}, \hyperlink{classcl_store_queue_a22c0e035f508f164ce52768b9799f1c8}{clStoreQueue$<$ size\_\-t $>$}, \hyperlink{classcl_store_queue_a22c0e035f508f164ce52768b9799f1c8}{clStoreQueue$<$ clPacket $>$}, \hyperlink{classcl_store_vector_a509567b8c36947d03a05affc5f04d1c4}{clStoreVector$<$ clInstanceContainer $>$}, \hyperlink{classcl_store_vector_a509567b8c36947d03a05affc5f04d1c4}{clStoreVector$<$ clStoreQueue$<$ clPacket $>$ $>$}, \hyperlink{classcl_store_vector_a509567b8c36947d03a05affc5f04d1c4}{clStoreVector$<$ clSClient $>$}, \hyperlink{classcl_store_vector_a509567b8c36947d03a05affc5f04d1c4}{clStoreVector$<$ clSingleAddr $>$}, and \hyperlink{classcl_store_vector_a509567b8c36947d03a05affc5f04d1c4}{clStoreVector$<$ clStoreVector$<$ clPacket $>$ $>$}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clStore.h\end{DoxyCompactItemize}

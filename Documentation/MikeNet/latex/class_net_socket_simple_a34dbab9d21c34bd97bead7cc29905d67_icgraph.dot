@@ -1,0 +1,13 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSocketSimple::_DefaultVars",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetSocketSimple::Close",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_simple.html#a2ec9f15bf28b6ae73783d03c6aedffec"];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetSocketSimple::~NetSocketSimple",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_simple.html#a83d123c03cf3727aaf9f99bfe79328bc"];
+  Node1 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetSocketSimple::NetSocketSimple",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_simple.html#a80a430ef1223cbe49d20182673c93efc"];
+}

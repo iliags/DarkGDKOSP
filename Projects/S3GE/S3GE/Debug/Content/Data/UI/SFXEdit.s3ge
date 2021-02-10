@@ -1,0 +1,182 @@
+<s3ge version="1.0">
+
+ <!-- SFXEdit Sub Menu-->
+
+  <gizmo name="SFXEditFile" parent="SFXEdit" description="Audio Files">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  behavior="menubox" transition="ghostly" theme="waterbox" style="standard" scheme="pointingFX" caption="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+    <gizmo name="SFXEditFileNew" parent="SFXEditFile" ref="previous" description="New Audio File">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="SFXEditFileOpen" parent="SFXEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Audio Format(*.s3ge) | Import">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="SFXEditFileSave" parent="SFXEditFile" ref="previous" description="Save|SaveAs Audio Format(*.s3ge)">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"  label="Save" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="SFXEditFileClose" parent="SFXEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"  label="Close" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+ <gizmo name="SFXEditEdit" parent="SFXEdit" ref="SFXEditFile" description="Audio Edit Oprions">
+    <variable name="toggle" value="0"/>
+    <orientate ref="SFXEditFile" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="SFXEditEditUndo" parent="SFXEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"  label="Undo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditEditRedo" parent="SFXEditEdit" ref="previous" description="Redo">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditEditCut" parent="SFXEditEdit" ref="previous" description="Cut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditEditCopy" parent="SFXEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditEditPaste" parent="SFXEditEdit" ref="previous" description="Paste">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditEditDelete" parent="SFXEditEdit" ref="previous" description="Delete|Clear">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditObject" parent="SFXEdit" ref="SFXEditEdit" description="Audio Objects">
+    <orientate ref="SFXEditEdit" width="64" height="24" xalign="right">
+    <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="SFXEditObjectMood" parent="SFXEditObject" ref="previous" description="Mood">
+    <orientate ref="previous" width="96" height="24" yalign="bottom">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Mood" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="SFXEditObjectMoodInstance" parent="SFXEditObjectMood" ref="previous" description="Mood Instance">
+      <orientate ref="previous" width="96" height="24" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Instance" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+  
+    <gizmo name="SFXEditObjectMoodBehavior" parent="SFXEditObjectMood" ref="previous" description="Mood Mechanical Operation Behavior">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Behavior" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="SFXEditObjectMoodTransition" parent="SFXEditObjectMood" ref="previous" description="Mood State Transition Behavior">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Transition" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="SFXEditObjectMoodScheme" parent="SFXEditObjectMood" ref="previous" description="Mood Audio Scheme">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Scheme" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="SFXEditObjectMusic" parent="SFXEditObject" ref="previous" description="Mood-triggered Music">
+   <orientate ref="previous" width="96" height="24" yalign="bottom">
+    <physics noresponse="true"/>
+   </orientate>
+   <event state="IDLE" label="Music" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="SFXEditObjectSoundFX" parent="SFXEditObject" ref="previous" description="SoundFX">
+   <orientate ref="previous" width="96" height="24" yalign="bottom">
+    <physics noresponse="true"/>
+   </orientate>
+   <event state="IDLE" label="SoundFX" x="24" xalign="left" yalign="middle"/>
+  </gizmo> 
+
+ <gizmo name="SFXEditTools" parent="SFXEdit" ref="SFXEditObject" description="Audio Tools">
+  <orientate ref="SFXEditObject" width="64" height="24" xalign="right">
+   <physics noresponse="true"/>
+  </orientate>
+  <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+ </gizmo>
+
+ <gizmo name="SFXEditView" parent="SFXEdit" ref="SFXEditTools" description="Audio View Options">
+  <orientate ref="SFXEditTools" width="64" height="24" xalign="right">
+   <physics noresponse="true"/>
+  </orientate>
+  <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+ </gizmo>
+
+ <gizmo name="SFXEditHelp" parent="SFXEdit" ref="SFXEditView" description="Audio Help">
+  <orientate ref="SFXEditView" width="64" height="24" xalign="right">
+   <physics noresponse="true"/>
+  </orientate>
+  <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+ </gizmo>
+
+ <gizmo name="SFXEditBlank" parent="SFXEdit" description="Blank">
+    <orientate ref="SFXEditHelp" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="waterbox"/>
+  </gizmo>
+ 
+</s3ge>

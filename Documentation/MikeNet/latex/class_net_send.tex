@@ -1,0 +1,209 @@
+\hypertarget{class_net_send}{
+\section{NetSend Class Reference}
+\label{class_net_send}\index{NetSend@{NetSend}}
+}
+
+
+Base class for sendable objects which can be used in conjunction with winsock WSASend.  
+
+
+
+
+{\ttfamily \#include $<$NetSend.h$>$}
+
+Inheritance diagram for NetSend:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_send}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_send_a158dd7a7b20bbb958f0dcdb0b53fb2bb}{NetSend} (bool \hyperlink{class_net_send_afd9338a4ab3648178d0b5c816a0852d1}{block})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_send_a8f2f011d6d5f7682cdffb8d176a4fcd8}{
+virtual \hyperlink{class_net_send_a8f2f011d6d5f7682cdffb8d176a4fcd8}{$\sim$NetSend} ()}
+\label{class_net_send_a8f2f011d6d5f7682cdffb8d176a4fcd8}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_send_a64a1095619b446c688ed7b2c65e9e99b}{\_\-WaitForCompletion} (unsigned int sendTimeout)
+\begin{DoxyCompactList}\small\item\em Waits for completion of send operation, method does not return until send operation is complete. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_send_af3db76be93c6b83c8855d9f09983aca3}{IsBlocking} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the send operation is synchronous or asynchronous. \item\end{DoxyCompactList}\item 
+virtual WSABUF $\ast$ \hyperlink{class_net_send_a40c113ecb3007d5d397b2c69887bc4fa}{GetBuffer} ()=0
+\begin{DoxyCompactList}\small\item\em Retrieves an array of WSABUF structures containing data to send. \item\end{DoxyCompactList}\item 
+virtual size\_\-t \hyperlink{class_net_send_af105bc7adc95d2fa981f580e16fc4c2e}{GetBufferAmount} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves the number of elements in the array returned by \hyperlink{class_net_send_a40c113ecb3007d5d397b2c69887bc4fa}{GetBuffer()}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_send_ab93dd370f3117ed82eec3993ba0be71d}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_send_a69aba035e433fc5a6e11a2c72a0f9353}{
+\hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_net_send_a69aba035e433fc5a6e11a2c72a0f9353}{overlappedEvent}}
+\label{class_net_send_a69aba035e433fc5a6e11a2c72a0f9353}
+
+\begin{DoxyCompactList}\small\item\em Event object that is signaled when the send operation completes, and non signaled in its duration. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_send_a25e94dd8149e7ec167740bc17ad1f024}{
+WSAOVERLAPPED \hyperlink{class_net_send_a25e94dd8149e7ec167740bc17ad1f024}{overlapped}}
+\label{class_net_send_a25e94dd8149e7ec167740bc17ad1f024}
+
+\begin{DoxyCompactList}\small\item\em Overlapped object passed to WSASend. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_send_aa978f215dfea485bece791518c6280ed}{
+DWORD \hyperlink{class_net_send_aa978f215dfea485bece791518c6280ed}{bytes}}
+\label{class_net_send_aa978f215dfea485bece791518c6280ed}
+
+\begin{DoxyCompactList}\small\item\em Filled with number of bytes that were transferred upon completion of send operation. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_send_afd9338a4ab3648178d0b5c816a0852d1}{
+bool \hyperlink{class_net_send_afd9338a4ab3648178d0b5c816a0852d1}{block}}
+\label{class_net_send_afd9338a4ab3648178d0b5c816a0852d1}
+
+\begin{DoxyCompactList}\small\item\em True if send operation should be synchronous, false if send operation should be asynchronous. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for sendable objects which can be used in conjunction with winsock WSASend. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class reduces the complexity of interacting with winsock's send mechanisms.\par
+\par
+
+
+This class inherits \hyperlink{class_critical_section}{CriticalSection} because: After this object is added to the send cleanup list, we must have control of this object until it has finished using its own data, because otherwise it may be cleaned up before it is done using them. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_send_a158dd7a7b20bbb958f0dcdb0b53fb2bb}{
+\index{NetSend@{NetSend}!NetSend@{NetSend}}
+\index{NetSend@{NetSend}!NetSend@{NetSend}}
+\subsubsection[{NetSend}]{\setlength{\rightskip}{0pt plus 5cm}NetSend::NetSend (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_send_a158dd7a7b20bbb958f0dcdb0b53fb2bb}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]True if the send operation should be synchronous, false if it should be asynchronous. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_send_a64a1095619b446c688ed7b2c65e9e99b}{
+\index{NetSend@{NetSend}!\_\-WaitForCompletion@{\_\-WaitForCompletion}}
+\index{\_\-WaitForCompletion@{\_\-WaitForCompletion}!NetSend@{NetSend}}
+\subsubsection[{\_\-WaitForCompletion}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetSend::\_\-WaitForCompletion (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{ sendTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_send_a64a1095619b446c688ed7b2c65e9e99b}
+
+
+Waits for completion of send operation, method does not return until send operation is complete. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em sendTimeout}]The length of time to wait until giving up.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and the initiating entity should be killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+\hypertarget{class_net_send_a40c113ecb3007d5d397b2c69887bc4fa}{
+\index{NetSend@{NetSend}!GetBuffer@{GetBuffer}}
+\index{GetBuffer@{GetBuffer}!NetSend@{NetSend}}
+\subsubsection[{GetBuffer}]{\setlength{\rightskip}{0pt plus 5cm}virtual WSABUF$\ast$ NetSend::GetBuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_send_a40c113ecb3007d5d397b2c69887bc4fa}
+
+
+Retrieves an array of WSABUF structures containing data to send. 
+
+\begin{DoxyReturn}{Returns}
+an array of WSABUF containing data to be sent. The sent packet or data stream will consist of a combination of all elements of the array, starting from element 0. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_net_send_a012f6748344143574dcb583ad44608d5}{TestNetSend}, \hyperlink{class_net_send_postfix_a0421a520c5a00497cdc2baf4bd1c019d}{NetSendPostfix}, \hyperlink{class_net_send_prefix_a643683e8ce7bf977c076ad6eb493df99}{NetSendPrefix}, and \hyperlink{class_net_send_raw_ae37be26f84c154728e929f60e6a0b4af}{NetSendRaw}.
+
+\hypertarget{class_net_send_af105bc7adc95d2fa981f580e16fc4c2e}{
+\index{NetSend@{NetSend}!GetBufferAmount@{GetBufferAmount}}
+\index{GetBufferAmount@{GetBufferAmount}!NetSend@{NetSend}}
+\subsubsection[{GetBufferAmount}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t NetSend::GetBufferAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_send_af105bc7adc95d2fa981f580e16fc4c2e}
+
+
+Retrieves the number of elements in the array returned by \hyperlink{class_net_send_a40c113ecb3007d5d397b2c69887bc4fa}{GetBuffer()}. 
+
+\begin{DoxyReturn}{Returns}
+number of elements. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_net_send_a6da2fa870dc3003d17440c5acd994158}{TestNetSend}, \hyperlink{class_net_send_postfix_a4bc21c00e63893fb3c643cb6ee1a9f11}{NetSendPostfix}, \hyperlink{class_net_send_prefix_ad6743175990adfcc2fd655f5d17d49e3}{NetSendPrefix}, and \hyperlink{class_net_send_raw_ac4a6e408066cf7d1fd42e730996d0f10}{NetSendRaw}.
+
+\hypertarget{class_net_send_af3db76be93c6b83c8855d9f09983aca3}{
+\index{NetSend@{NetSend}!IsBlocking@{IsBlocking}}
+\index{IsBlocking@{IsBlocking}!NetSend@{NetSend}}
+\subsubsection[{IsBlocking}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSend::IsBlocking (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_send_af3db76be93c6b83c8855d9f09983aca3}
+
+
+Determines whether the send operation is synchronous or asynchronous. 
+
+\begin{DoxyReturn}{Returns}
+true if the send operation is synchronous. 
+
+false if the send operation is asynchronous. 
+\end{DoxyReturn}
+\hypertarget{class_net_send_ab93dd370f3117ed82eec3993ba0be71d}{
+\index{NetSend@{NetSend}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSend@{NetSend}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSend::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_send_ab93dd370f3117ed82eec3993ba0be71d}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+
+
+Reimplemented in \hyperlink{class_net_send_postfix_ab2b63c00d16b830341d94a82a07c60f9}{NetSendPostfix}, \hyperlink{class_net_send_prefix_affd38aa5e686b11b8dc172500068cbd0}{NetSendPrefix}, and \hyperlink{class_net_send_raw_a642a07ea5d7f20e9f67e3cf16018742e}{NetSendRaw}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSend.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSend.cpp\end{DoxyCompactItemize}

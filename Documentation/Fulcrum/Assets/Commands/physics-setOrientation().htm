@@ -1,0 +1,68 @@
+<HTML>
+
+
+    <HEAD>
+        <title> FulcrumPhy::setOrientation() </title>
+		<link rel="stylesheet" type="text/css" href="style1.css"/>
+    </HEAD>
+
+   
+    <BODY id = "wrap">
+     
+        <span class="returns">
+	       void
+        </span> 
+	   
+	    FulcrumPhy::setOrientation
+	  
+	    <span class="parameters">
+	      ( int id, float X, float Y, float Z )
+        </span> 
+	 
+	    <br>
+		<br>
+		
+    Use this to rotate your dynamic(non-kinematic) or static actors manually.<br>
+    For dynamic actors, use this command sparingly as dynamic(non-kinematic) actors
+    must be rotated by applying forces, this is useful for re-setting a scene etc.<br>
+    For static actors, also use this command sparingly or not at all if possible,
+    if you do use it you will also need to rotate your rendered geometry to match.
+    Character controllers need to be informed if the static geometry changes due
+    to the way they process collision data.
+        <br>
+        <br>
+          
+        <span class="parameters">
+	        Parameters:
+	    </span>
+	  
+     
+        <br>
+         int id - Actors id.  
+                
+        <br>
+         float X - New rotation about the x-axis.
+        <br>
+         float Y - New roatation about the y-axis.
+        <br>
+         float Z - New rotation about the z-axis.
+        <br>
+        <br>
+        <span class="returns">
+	        Returns:
+	    </span>
+          
+        <br>
+      
+        <br>
+        <br>
+	    <br>
+		
+  
+           
+		   
+    </BODY>
+
+   
+</HTML>
+   

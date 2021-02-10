@@ -1,0 +1,599 @@
+\hypertarget{class_error_report}{
+\section{ErrorReport Class Reference}
+\label{class_error_report}\index{ErrorReport@{ErrorReport}}
+}
+
+
+Stores an error report.  
+
+
+
+
+{\ttfamily \#include $<$ErrorReport.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683}{ErrorMode} \{ \hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683a8ab8b12d7e1c3dcc392f15390ca1bb92}{EM\_\-SAVE} =  1, 
+\hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683ac068e8e545daa37db2310c4123d457b7}{EM\_\-MESSAGE\_\-BOX} =  2, 
+\hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683a0f7be56a26a11b9c4f1fe287f952375f}{EM\_\-EXCEPTION} =  3
+ \}
+\begin{DoxyCompactList}\small\item\em Error mode describes how errors should be dealt with. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_error_report_ae2719f9922f0ead483bc9f30b05a7dc2}{
+void \hyperlink{class_error_report_ae2719f9922f0ead483bc9f30b05a7dc2}{DefaultVariables} ()}
+\label{class_error_report_ae2719f9922f0ead483bc9f30b05a7dc2}
+
+\begin{DoxyCompactList}\small\item\em Set all variables to default. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_a1ce036050ec4617283eff875995ca27a}{
+\hyperlink{class_error_report_a1ce036050ec4617283eff875995ca27a}{ErrorReport} ()}
+\label{class_error_report_a1ce036050ec4617283eff875995ca27a}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_error_report_a4e4d58c068809db565be9a61c7afcfa7}{ErrorReport} (const \hyperlink{class_error_report}{ErrorReport} \&CopyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_error_report}{ErrorReport} \& \hyperlink{class_error_report_a8b41ce9252c9a193c14f5576c26e12d2}{operator=} (const \hyperlink{class_error_report}{ErrorReport} \&CopyMe)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_a6ec853c4b91e7cf38aa67e269131f06d}{
+\hyperlink{class_error_report_a6ec853c4b91e7cf38aa67e269131f06d}{$\sim$ErrorReport} ()}
+\label{class_error_report_a6ec853c4b91e7cf38aa67e269131f06d}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_error_report_a90cf97320116d4dd63034ca0cc61099e}{GetOperation} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the operation that was being performed when the error occurred. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_error_report_ac135268d3c04564e26cae9416a6427f7}{GetCommand} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the command that caused the error. \item\end{DoxyCompactList}\item 
+\_\-\_\-int64 \hyperlink{class_error_report_a031d36c93f1b12db39ccf4b3f7a5e0f4}{GetErrorCode} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the error code associated with the error. \item\end{DoxyCompactList}\item 
+unsigned \_\-\_\-int64 \hyperlink{class_error_report_aac1796dac68e6715b1fb93b8b517173f}{GetLineNumber} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the line number at which the error occurred. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_error_report_ae295f4b1776386215e475d95cf1b9032}{GetFileName} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the name of the file that the error occurred in. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_error_report_a31c4488e3b999c35794aeecda8df8485}{LoadReport} (const char $\ast$\hyperlink{class_error_report_a24ae8a14692b673266f93fa869e4f543}{operation}, \_\-\_\-int64 \hyperlink{class_error_report_a627028539c72742cec0c460eb1240fb5}{errorCode}, unsigned \_\-\_\-int64 \hyperlink{class_error_report_a41b39a5f3d34f1c959970766d5157abc}{lineNumber}, const char $\ast$\hyperlink{class_error_report_aa5f68a3df09866ceac9b933f04444f50}{fileName}, const char $\ast$\hyperlink{class_error_report_a3924c0754aef927067733907ba12409e}{command}=NULL)
+\begin{DoxyCompactList}\small\item\em Loads error information. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_error_report_aea45480d94e0df46effe801e68c7ac2c}{SetCommand} (const char $\ast$\hyperlink{class_error_report_a3924c0754aef927067733907ba12409e}{command})
+\begin{DoxyCompactList}\small\item\em Sets the command that caused the error. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_error_report_aa36db420236ce44c4bbf52a0c37d1e21}{GetFullMessage} () const 
+\begin{DoxyCompactList}\small\item\em Generates an error message based on stored information. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_a0cd96bd46b77f20d1fbc4e8ae37d5bee}{
+void \hyperlink{class_error_report_a0cd96bd46b77f20d1fbc4e8ae37d5bee}{DoMessageBox} () const }
+\label{class_error_report_a0cd96bd46b77f20d1fbc4e8ae37d5bee}
+
+\begin{DoxyCompactList}\small\item\em Displays an error message describing the error. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_ad70ccb3274419ede588d3d93ca6ff0e4}{
+void \hyperlink{class_error_report_ad70ccb3274419ede588d3d93ca6ff0e4}{DoSave} () const }
+\label{class_error_report_ad70ccb3274419ede588d3d93ca6ff0e4}
+
+\begin{DoxyCompactList}\small\item\em Saves the error message globally. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_error_report_a78c48f3b3fee98c5f74b6b7310f6b2ee}{DoRethrow} () const 
+\begin{DoxyCompactList}\small\item\em Throws this object as an exception. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_error_report_a98ced37160867d523806273b1b6f8b01}{DoErrorModeEvent} () const 
+\begin{DoxyCompactList}\small\item\em Take actions specified by global error mode. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_error_report_a60d5623dd21ced2f3a41055aab6cae06}{IsErrorSaved} ()
+\begin{DoxyCompactList}\small\item\em Determines if an error is saved globally. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_error_report_ad3c1fc3c06e6748657150eb9d7ec6c62}{SetErrorSaved} (bool option)
+\begin{DoxyCompactList}\small\item\em Specifies whether a new error is currently saved globally. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_error_report}{ErrorReport} \hyperlink{class_error_report_ae60447056cab3846d9d38d3674001567}{GetSavedError} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a saved error. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_error_report_a48086a3096dc372308c4fb1a4733e52d}{ToggleErrorMode} (\hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683}{ErrorMode} \hyperlink{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{errorMode})
+\begin{DoxyCompactList}\small\item\em Toggles error mode. \item\end{DoxyCompactList}\item 
+static void \hyperlink{class_error_report_a3521dfd94b7c249672b965fc4e50910b}{SetErrorMode} (\hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683}{ErrorMode} \hyperlink{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{errorMode}, bool enabled)
+\begin{DoxyCompactList}\small\item\em Enables or disables an error mode. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_error_report_a70c89212f2f6a532f580d80ba89a5c14}{IsErrorModeEnabled} (\hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683}{ErrorMode} \hyperlink{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{errorMode})
+\begin{DoxyCompactList}\small\item\em Determines whether an error mode is enabled. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_error_report_ab70777b4cf64240281ddd4217664f683}{ErrorReport::ErrorMode} \hyperlink{class_error_report_aa8fe57ae384da92494bd56ed5e5f66cb}{ConvertToErrorMode} (int mode)
+\begin{DoxyCompactList}\small\item\em Converts integer into enum for ErrorMode. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_error_report_a3372fc11b2256530f284d22a7312c0ac}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{class_error_report_a5dccc8c1af25c623309118b349056ce3}{DEFAULT\_\-ERROR\_\-MODE} = 6
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{ErrorReport::errorMode}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_error_report_ad3b681a6002d769581ce29f651b63c5e}{Copy} (const \hyperlink{class_error_report}{ErrorReport} \&CopyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_error_report_a24ae8a14692b673266f93fa869e4f543}{
+const char $\ast$ \hyperlink{class_error_report_a24ae8a14692b673266f93fa869e4f543}{operation}}
+\label{class_error_report_a24ae8a14692b673266f93fa869e4f543}
+
+\begin{DoxyCompactList}\small\item\em Operation that caused an error e.g. dynamically allocating memory. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_a3924c0754aef927067733907ba12409e}{
+const char $\ast$ \hyperlink{class_error_report_a3924c0754aef927067733907ba12409e}{command}}
+\label{class_error_report_a3924c0754aef927067733907ba12409e}
+
+\begin{DoxyCompactList}\small\item\em Command that was responsible for causing error. \item\end{DoxyCompactList}\item 
+\_\-\_\-int64 \hyperlink{class_error_report_a627028539c72742cec0c460eb1240fb5}{errorCode}
+\begin{DoxyCompactList}\small\item\em Error code associated with error. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_a41b39a5f3d34f1c959970766d5157abc}{
+unsigned \_\-\_\-int64 \hyperlink{class_error_report_a41b39a5f3d34f1c959970766d5157abc}{lineNumber}}
+\label{class_error_report_a41b39a5f3d34f1c959970766d5157abc}
+
+\begin{DoxyCompactList}\small\item\em Line number at which error occurred. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_aa5f68a3df09866ceac9b933f04444f50}{
+const char $\ast$ \hyperlink{class_error_report_aa5f68a3df09866ceac9b933f04444f50}{fileName}}
+\label{class_error_report_aa5f68a3df09866ceac9b933f04444f50}
+
+\begin{DoxyCompactList}\small\item\em Name of file in which error occurred. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_error_report_abcaa441412d9327a7d7c117e8da8f974}{
+static \hyperlink{class_concurrency_event}{ConcurrencyEvent} \hyperlink{class_error_report_abcaa441412d9327a7d7c117e8da8f974}{saveErrorLoaded}}
+\label{class_error_report_abcaa441412d9327a7d7c117e8da8f974}
+
+\begin{DoxyCompactList}\small\item\em Signaled when \hyperlink{class_error_report_ac8c302c03f7ed5736f8856fdc6449f36}{ErrorReport::saveError} is loaded with an error. \item\end{DoxyCompactList}\item 
+\hypertarget{class_error_report_ac8c302c03f7ed5736f8856fdc6449f36}{
+static \hyperlink{class_error_report}{ErrorReport} \hyperlink{class_error_report_ac8c302c03f7ed5736f8856fdc6449f36}{saveError}}
+\label{class_error_report_ac8c302c03f7ed5736f8856fdc6449f36}
+
+\begin{DoxyCompactList}\small\item\em Stores an error that can be accessed globally. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_critical_section}{CriticalSection} \hyperlink{class_error_report_a9a41fe576d2378b84b31d99cff4adf67}{ctSaveError}
+\begin{DoxyCompactList}\small\item\em Controls access to \hyperlink{class_error_report_ac8c302c03f7ed5736f8856fdc6449f36}{ErrorReport::saveError}. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{errorMode}
+\begin{DoxyCompactList}\small\item\em Stores the error mode('s) that the API is in. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores an error report. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_error_report_ab70777b4cf64240281ddd4217664f683}{
+\index{ErrorReport@{ErrorReport}!ErrorMode@{ErrorMode}}
+\index{ErrorMode@{ErrorMode}!ErrorReport@{ErrorReport}}
+\subsubsection[{ErrorMode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf ErrorReport::ErrorMode}}}
+\label{class_error_report_ab70777b4cf64240281ddd4217664f683}
+
+
+Error mode describes how errors should be dealt with. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{EM\_\-SAVE@{EM\_\-SAVE}!ErrorReport@{ErrorReport}}\index{ErrorReport@{ErrorReport}!EM\_\-SAVE@{EM\_\-SAVE}}\item[{\em 
+\hypertarget{class_error_report_ab70777b4cf64240281ddd4217664f683a8ab8b12d7e1c3dcc392f15390ca1bb92}{
+EM\_\-SAVE}
+\label{class_error_report_ab70777b4cf64240281ddd4217664f683a8ab8b12d7e1c3dcc392f15390ca1bb92}
+}]Errors should be saved globally to be retrieved later using. \hyperlink{class_error_report_ae60447056cab3846d9d38d3674001567}{ErrorReport::GetSavedError} and \hyperlink{class_error_report_a60d5623dd21ced2f3a41055aab6cae06}{ErrorReport::IsErrorSaved}.\par
+ Value = 1. \index{EM\_\-MESSAGE\_\-BOX@{EM\_\-MESSAGE\_\-BOX}!ErrorReport@{ErrorReport}}\index{ErrorReport@{ErrorReport}!EM\_\-MESSAGE\_\-BOX@{EM\_\-MESSAGE\_\-BOX}}\item[{\em 
+\hypertarget{class_error_report_ab70777b4cf64240281ddd4217664f683ac068e8e545daa37db2310c4123d457b7}{
+EM\_\-MESSAGE\_\-BOX}
+\label{class_error_report_ab70777b4cf64240281ddd4217664f683ac068e8e545daa37db2310c4123d457b7}
+}]Errors should be displayed in a message box.\par
+ Value = 2. \index{EM\_\-EXCEPTION@{EM\_\-EXCEPTION}!ErrorReport@{ErrorReport}}\index{ErrorReport@{ErrorReport}!EM\_\-EXCEPTION@{EM\_\-EXCEPTION}}\item[{\em 
+\hypertarget{class_error_report_ab70777b4cf64240281ddd4217664f683a0f7be56a26a11b9c4f1fe287f952375f}{
+EM\_\-EXCEPTION}
+\label{class_error_report_ab70777b4cf64240281ddd4217664f683a0f7be56a26a11b9c4f1fe287f952375f}
+}]Errors should be thrown as an exception. \par
+ Value = 3. \end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_error_report_a4e4d58c068809db565be9a61c7afcfa7}{
+\index{ErrorReport@{ErrorReport}!ErrorReport@{ErrorReport}}
+\index{ErrorReport@{ErrorReport}!ErrorReport@{ErrorReport}}
+\subsubsection[{ErrorReport}]{\setlength{\rightskip}{0pt plus 5cm}ErrorReport::ErrorReport (
+\begin{DoxyParamCaption}
+\item[{const {\bf ErrorReport} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_error_report_a4e4d58c068809db565be9a61c7afcfa7}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_error_report_aa8fe57ae384da92494bd56ed5e5f66cb}{
+\index{ErrorReport@{ErrorReport}!ConvertToErrorMode@{ConvertToErrorMode}}
+\index{ConvertToErrorMode@{ConvertToErrorMode}!ErrorReport@{ErrorReport}}
+\subsubsection[{ConvertToErrorMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ErrorReport::ErrorMode} ErrorReport::ConvertToErrorMode (
+\begin{DoxyParamCaption}
+\item[{int}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_aa8fe57ae384da92494bd56ed5e5f66cb}
+
+
+Converts integer into enum for ErrorMode. 
+
+This is useful for compatibility with languages other than C++.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]Integer to convert.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+enum equivalent of {\itshape mode\/}. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_ad3b681a6002d769581ce29f651b63c5e}{
+\index{ErrorReport@{ErrorReport}!Copy@{Copy}}
+\index{Copy@{Copy}!ErrorReport@{ErrorReport}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf ErrorReport} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_error_report_ad3b681a6002d769581ce29f651b63c5e}
+
+
+Copy constructor / assignment operator helper method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_error_report_a98ced37160867d523806273b1b6f8b01}{
+\index{ErrorReport@{ErrorReport}!DoErrorModeEvent@{DoErrorModeEvent}}
+\index{DoErrorModeEvent@{DoErrorModeEvent}!ErrorReport@{ErrorReport}}
+\subsubsection[{DoErrorModeEvent}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::DoErrorModeEvent (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_a98ced37160867d523806273b1b6f8b01}
+
+
+Take actions specified by global error mode. 
+
+e.g. if EM\_\-MESSAGE\_\-BOX is enabled \hyperlink{class_error_report_a0cd96bd46b77f20d1fbc4e8ae37d5bee}{DoMessageBox()} will be called.\par
+\par
+
+
+Multiple error modes will be taken into account, so more than one action can occur in one call to this method. \hypertarget{class_error_report_a78c48f3b3fee98c5f74b6b7310f6b2ee}{
+\index{ErrorReport@{ErrorReport}!DoRethrow@{DoRethrow}}
+\index{DoRethrow@{DoRethrow}!ErrorReport@{ErrorReport}}
+\subsubsection[{DoRethrow}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::DoRethrow (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_a78c48f3b3fee98c5f74b6b7310f6b2ee}
+
+
+Throws this object as an exception. 
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]Always. \end{DoxyExceptions}
+\hypertarget{class_error_report_ac135268d3c04564e26cae9416a6427f7}{
+\index{ErrorReport@{ErrorReport}!GetCommand@{GetCommand}}
+\index{GetCommand@{GetCommand}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetCommand}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ ErrorReport::GetCommand (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_ac135268d3c04564e26cae9416a6427f7}
+
+
+Retrieves the command that caused the error. 
+
+\begin{DoxyReturn}{Returns}
+the command that caused the error. 
+
+NULL if none is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_a031d36c93f1b12db39ccf4b3f7a5e0f4}{
+\index{ErrorReport@{ErrorReport}!GetErrorCode@{GetErrorCode}}
+\index{GetErrorCode@{GetErrorCode}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetErrorCode}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-int64 ErrorReport::GetErrorCode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_a031d36c93f1b12db39ccf4b3f7a5e0f4}
+
+
+Retrieves the error code associated with the error. 
+
+\begin{DoxyReturn}{Returns}
+the error code. 
+
+0 if none is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_ae295f4b1776386215e475d95cf1b9032}{
+\index{ErrorReport@{ErrorReport}!GetFileName@{GetFileName}}
+\index{GetFileName@{GetFileName}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetFileName}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ ErrorReport::GetFileName (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_ae295f4b1776386215e475d95cf1b9032}
+
+
+Retrieves the name of the file that the error occurred in. 
+
+\begin{DoxyReturn}{Returns}
+the name of the file that the error occurred in. 
+
+NULL if none is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_aa36db420236ce44c4bbf52a0c37d1e21}{
+\index{ErrorReport@{ErrorReport}!GetFullMessage@{GetFullMessage}}
+\index{GetFullMessage@{GetFullMessage}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetFullMessage}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ ErrorReport::GetFullMessage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_aa36db420236ce44c4bbf52a0c37d1e21}
+
+
+Generates an error message based on stored information. 
+
+\begin{DoxyReturn}{Returns}
+an error message. When done with this string you should deallocate it using delete\mbox{[}\mbox{]}. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_aac1796dac68e6715b1fb93b8b517173f}{
+\index{ErrorReport@{ErrorReport}!GetLineNumber@{GetLineNumber}}
+\index{GetLineNumber@{GetLineNumber}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetLineNumber}]{\setlength{\rightskip}{0pt plus 5cm}unsigned \_\-\_\-int64 ErrorReport::GetLineNumber (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_aac1796dac68e6715b1fb93b8b517173f}
+
+
+Retrieves the line number at which the error occurred. 
+
+\begin{DoxyReturn}{Returns}
+the line number at which the error occurred. 
+
+0 if none is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_a90cf97320116d4dd63034ca0cc61099e}{
+\index{ErrorReport@{ErrorReport}!GetOperation@{GetOperation}}
+\index{GetOperation@{GetOperation}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetOperation}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ ErrorReport::GetOperation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_error_report_a90cf97320116d4dd63034ca0cc61099e}
+
+
+Retrieves the operation that was being performed when the error occurred. 
+
+\begin{DoxyReturn}{Returns}
+the operation that was being performed when the error occurred. 
+
+NULL if none is loaded. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_ae60447056cab3846d9d38d3674001567}{
+\index{ErrorReport@{ErrorReport}!GetSavedError@{GetSavedError}}
+\index{GetSavedError@{GetSavedError}!ErrorReport@{ErrorReport}}
+\subsubsection[{GetSavedError}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ErrorReport} ErrorReport::GetSavedError (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_ae60447056cab3846d9d38d3674001567}
+
+
+Retrieves a saved error. 
+
+\begin{DoxyReturn}{Returns}
+the saved error. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_a70c89212f2f6a532f580d80ba89a5c14}{
+\index{ErrorReport@{ErrorReport}!IsErrorModeEnabled@{IsErrorModeEnabled}}
+\index{IsErrorModeEnabled@{IsErrorModeEnabled}!ErrorReport@{ErrorReport}}
+\subsubsection[{IsErrorModeEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool ErrorReport::IsErrorModeEnabled (
+\begin{DoxyParamCaption}
+\item[{{\bf ErrorMode}}]{ errorMode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_a70c89212f2f6a532f580d80ba89a5c14}
+
+
+Determines whether an error mode is enabled. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em errorMode}]The error mode to check.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the error mode is enabled, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_a60d5623dd21ced2f3a41055aab6cae06}{
+\index{ErrorReport@{ErrorReport}!IsErrorSaved@{IsErrorSaved}}
+\index{IsErrorSaved@{IsErrorSaved}!ErrorReport@{ErrorReport}}
+\subsubsection[{IsErrorSaved}]{\setlength{\rightskip}{0pt plus 5cm}bool ErrorReport::IsErrorSaved (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_a60d5623dd21ced2f3a41055aab6cae06}
+
+
+Determines if an error is saved globally. 
+
+\begin{DoxyReturn}{Returns}
+true if an error is saved, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_a31c4488e3b999c35794aeecda8df8485}{
+\index{ErrorReport@{ErrorReport}!LoadReport@{LoadReport}}
+\index{LoadReport@{LoadReport}!ErrorReport@{ErrorReport}}
+\subsubsection[{LoadReport}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::LoadReport (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ operation, }
+\item[{\_\-\_\-int64}]{ errorCode, }
+\item[{unsigned \_\-\_\-int64}]{ lineNumber, }
+\item[{const char $\ast$}]{ fileName, }
+\item[{const char $\ast$}]{ command = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{class_error_report_a31c4488e3b999c35794aeecda8df8485}
+
+
+Loads error information. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operation}]The operation that was taking place at the time of the error. \item[{\em errorCode}]The error code associated with the error. \item[{\em lineNumber}]The line number at which the error occurred. \item[{\em fileName}]The name of the file in which the error occurred. \item[{\em command}]The command that caused the error (optional, default = NULL). \end{DoxyParams}
+\hypertarget{class_error_report_a8b41ce9252c9a193c14f5576c26e12d2}{
+\index{ErrorReport@{ErrorReport}!operator=@{operator=}}
+\index{operator=@{operator=}!ErrorReport@{ErrorReport}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ErrorReport} \& ErrorReport::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf ErrorReport} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_error_report_a8b41ce9252c9a193c14f5576c26e12d2}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_aea45480d94e0df46effe801e68c7ac2c}{
+\index{ErrorReport@{ErrorReport}!SetCommand@{SetCommand}}
+\index{SetCommand@{SetCommand}!ErrorReport@{ErrorReport}}
+\subsubsection[{SetCommand}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::SetCommand (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ command}
+\end{DoxyParamCaption}
+)}}
+\label{class_error_report_aea45480d94e0df46effe801e68c7ac2c}
+
+
+Sets the command that caused the error. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em command}]The command that caused the error. \end{DoxyParams}
+\hypertarget{class_error_report_a3521dfd94b7c249672b965fc4e50910b}{
+\index{ErrorReport@{ErrorReport}!SetErrorMode@{SetErrorMode}}
+\index{SetErrorMode@{SetErrorMode}!ErrorReport@{ErrorReport}}
+\subsubsection[{SetErrorMode}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::SetErrorMode (
+\begin{DoxyParamCaption}
+\item[{{\bf ErrorMode}}]{ errorMode, }
+\item[{bool}]{ enabled}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_a3521dfd94b7c249672b965fc4e50910b}
+
+
+Enables or disables an error mode. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em errorMode}]The error mode to modify. \item[{\em enabled}]True to enable, false to disable. \end{DoxyParams}
+\hypertarget{class_error_report_ad3c1fc3c06e6748657150eb9d7ec6c62}{
+\index{ErrorReport@{ErrorReport}!SetErrorSaved@{SetErrorSaved}}
+\index{SetErrorSaved@{SetErrorSaved}!ErrorReport@{ErrorReport}}
+\subsubsection[{SetErrorSaved}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::SetErrorSaved (
+\begin{DoxyParamCaption}
+\item[{bool}]{ option}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_ad3c1fc3c06e6748657150eb9d7ec6c62}
+
+
+Specifies whether a new error is currently saved globally. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em option}]Option. \end{DoxyParams}
+\hypertarget{class_error_report_a3372fc11b2256530f284d22a7312c0ac}{
+\index{ErrorReport@{ErrorReport}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ErrorReport@{ErrorReport}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ErrorReport::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_a3372fc11b2256530f284d22a7312c0ac}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_error_report_a48086a3096dc372308c4fb1a4733e52d}{
+\index{ErrorReport@{ErrorReport}!ToggleErrorMode@{ToggleErrorMode}}
+\index{ToggleErrorMode@{ToggleErrorMode}!ErrorReport@{ErrorReport}}
+\subsubsection[{ToggleErrorMode}]{\setlength{\rightskip}{0pt plus 5cm}void ErrorReport::ToggleErrorMode (
+\begin{DoxyParamCaption}
+\item[{{\bf ErrorMode}}]{ errorMode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_a48086a3096dc372308c4fb1a4733e52d}
+
+
+Toggles error mode. 
+
+If the error mode was enabled, it will be disabled and visa versa.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em errorMode}]The error mode to toggle. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_error_report_a9a41fe576d2378b84b31d99cff4adf67}{
+\index{ErrorReport@{ErrorReport}!ctSaveError@{ctSaveError}}
+\index{ctSaveError@{ctSaveError}!ErrorReport@{ErrorReport}}
+\subsubsection[{ctSaveError}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CriticalSection} {\bf ErrorReport::ctSaveError}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_error_report_a9a41fe576d2378b84b31d99cff4adf67}
+
+
+Controls access to \hyperlink{class_error_report_ac8c302c03f7ed5736f8856fdc6449f36}{ErrorReport::saveError}. 
+
+Could not use \hyperlink{class_concurrent_object}{ConcurrentObject} here. \hypertarget{class_error_report_a5dccc8c1af25c623309118b349056ce3}{
+\index{ErrorReport@{ErrorReport}!DEFAULT\_\-ERROR\_\-MODE@{DEFAULT\_\-ERROR\_\-MODE}}
+\index{DEFAULT\_\-ERROR\_\-MODE@{DEFAULT\_\-ERROR\_\-MODE}!ErrorReport@{ErrorReport}}
+\subsubsection[{DEFAULT\_\-ERROR\_\-MODE}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf ErrorReport::DEFAULT\_\-ERROR\_\-MODE} = 6\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_error_report_a5dccc8c1af25c623309118b349056ce3}
+
+
+Default value for \hyperlink{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{ErrorReport::errorMode}. 
+
+By default EM\_\-MESSAGE\_\-BOX is enabled and all other modes are disabled. \hypertarget{class_error_report_a627028539c72742cec0c460eb1240fb5}{
+\index{ErrorReport@{ErrorReport}!errorCode@{errorCode}}
+\index{errorCode@{errorCode}!ErrorReport@{ErrorReport}}
+\subsubsection[{errorCode}]{\setlength{\rightskip}{0pt plus 5cm}\_\-\_\-int64 {\bf ErrorReport::errorCode}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_error_report_a627028539c72742cec0c460eb1240fb5}
+
+
+Error code associated with error. 
+
+Large data type to ensure compatibility with all possible return types of API. \hypertarget{class_error_report_ab43384b89b5e0b6addcde53268d3c578}{
+\index{ErrorReport@{ErrorReport}!errorMode@{errorMode}}
+\index{errorMode@{errorMode}!ErrorReport@{ErrorReport}}
+\subsubsection[{errorMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<$ size\_\-t $>$ {\bf ErrorReport::errorMode}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_error_report_ab43384b89b5e0b6addcde53268d3c578}
+
+
+Stores the error mode('s) that the API is in. 
+
+Error mode only applies to mn namespace. Throughout the rest of the API exceptions are thrown always. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ErrorReport.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ErrorReport.cpp\end{DoxyCompactItemize}

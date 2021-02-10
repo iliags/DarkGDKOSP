@@ -1,0 +1,402 @@
+\hypertarget{class_concurrency_control}{
+\section{ConcurrencyControl Class Reference}
+\label{class_concurrency_control}\index{ConcurrencyControl@{ConcurrencyControl}}
+}
+
+
+Advanced concurrency control object.  
+
+
+
+
+{\ttfamily \#include $<$ConcurrencyControl.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_concurrency_control_a24e5689f704351208afc2cb7b4efbcec}{Construct} (size\_\-t numThreads)
+\begin{DoxyCompactList}\small\item\em Sets up object ready for use. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_aafb06df9571b135c04f5ee6e60e734d8}{
+\hyperlink{class_concurrency_control_aafb06df9571b135c04f5ee6e60e734d8}{ConcurrencyControl} ()}
+\label{class_concurrency_control_aafb06df9571b135c04f5ee6e60e734d8}
+
+\begin{DoxyCompactList}\small\item\em Constructor, sets variables to default and prepares object ready for use by one thread. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrency_control_a3ef5edee9c033b9725556fd153312e22}{ConcurrencyControl} (size\_\-t paraThreads)
+\begin{DoxyCompactList}\small\item\em Constructor, sets variables to default and prepares object ready for use by multiple threads. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_a516fa47be5e1e196786ec77ec1909159}{
+\hyperlink{class_concurrency_control_a516fa47be5e1e196786ec77ec1909159}{$\sim$ConcurrencyControl} ()}
+\label{class_concurrency_control_a516fa47be5e1e196786ec77ec1909159}
+
+\begin{DoxyCompactList}\small\item\em Destructor, cleans up object. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_concurrency_control_a3a0351a48b92570778544957dd181f17}{GetNumThreads} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of threads setup to use this object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_aa2d6142d40a726d64148965aa9bd13fe}{
+void \hyperlink{class_concurrency_control_aa2d6142d40a726d64148965aa9bd13fe}{EnterRead} () const }
+\label{class_concurrency_control_aa2d6142d40a726d64148965aa9bd13fe}
+
+\begin{DoxyCompactList}\small\item\em Take read control of object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_a98d2523a22ecac7c03e5b10e431d613d}{
+void \hyperlink{class_concurrency_control_a98d2523a22ecac7c03e5b10e431d613d}{LeaveRead} () const }
+\label{class_concurrency_control_a98d2523a22ecac7c03e5b10e431d613d}
+
+\begin{DoxyCompactList}\small\item\em Release read control of object. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_aadc7743380ba3da2385fd052de30f144}{EnterWrite} ()
+\begin{DoxyCompactList}\small\item\em Safely take write control of object. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_a1b495ca39efffd3194c771b8c83931cd}{
+void \hyperlink{class_concurrency_control_a1b495ca39efffd3194c771b8c83931cd}{LeaveWrite} ()}
+\label{class_concurrency_control_a1b495ca39efffd3194c771b8c83931cd}
+
+\begin{DoxyCompactList}\small\item\em Release write control of object. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeReadValueType $>$ }\\safeReadValueType \hyperlink{class_concurrency_control_aee7ec3509126d17541eb80dab78385c3}{\_\-safeReadValue} (const safeReadValueType \&readMe) const 
+\begin{DoxyCompactList}\small\item\em Safely reads a value using critical sections. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_a33065392a618a5b52ac4bb40fb12baf5}{\_\-safeWriteValueNK} (safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a non key variable. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_af11f93d42d36e6760925bb17d522e3e9}{\_\-safeWriteValueNK} (safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a non key variable. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_a3d636cd5098ec1171887d9124629a362}{\_\-safeWriteValueKEY} (safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a key variable. \item\end{DoxyCompactList}\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{class_concurrency_control_a0b1fd7acbdae6efd4d4b8f0a7b076eba}{\_\-safeWriteValueKEY} (safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\begin{DoxyCompactList}\small\item\em Safely writes a value using critical sections to a key variable. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_concurrency_control_ab3a9f4eb59ff8f5dfaecfec57d0f1d14}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_concurrency_control_a96de68ed0ed80870d50df60e68496af6}{
+void \hyperlink{class_concurrency_control_a96de68ed0ed80870d50df60e68496af6}{DefaultVariables} ()}
+\label{class_concurrency_control_a96de68ed0ed80870d50df60e68496af6}
+
+\begin{DoxyCompactList}\small\item\em Resets all variables to default. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_a7d7dc3ba467d27bfa118d1929b5a5d90}{ValidateThreadID} (size\_\-t threadID) const 
+\begin{DoxyCompactList}\small\item\em Checks that thread ID is in bounds, and throws an exception if it is not. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_concurrency_control_afd31026e93f3ea692eb93d638e1c643b}{GetThreadID} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the calling thread's manual thread ID. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_concurrency_control_a03501e21a7e927dba93ed19895b407de}{Cleanup} ()
+\begin{DoxyCompactList}\small\item\em Cleans up object and resets variables to default. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{class_concurrency_control_a0a94abcc70c42d61b057bddeb32a6e52}{threads}
+\begin{DoxyCompactList}\small\item\em Number of threads that can use object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_critical_section}{CriticalSection} $\ast$ \hyperlink{class_concurrency_control_a83a545f7c4a64d11dab7fd1931155182}{access}
+\begin{DoxyCompactList}\small\item\em Critical section object, used to control access to object. \item\end{DoxyCompactList}\item 
+size\_\-t $\ast$ \hyperlink{class_concurrency_control_af07ace0cc51f0411ac09198e106a1123}{accessRead}
+\begin{DoxyCompactList}\small\item\em Keeps a count of how many levels of read control each thread has. \item\end{DoxyCompactList}\item 
+size\_\-t $\ast$ \hyperlink{class_concurrency_control_ab0de7910c0fb51c3843f65e8cd40ae7c}{accessWrite}
+\begin{DoxyCompactList}\small\item\em Keeps a count of how many levels of write control each thread has. \item\end{DoxyCompactList}\item 
+\hypertarget{class_concurrency_control_a727f8073f764bbc193ec8bb962873bb2}{
+bool \hyperlink{class_concurrency_control_a727f8073f764bbc193ec8bb962873bb2}{constructed}}
+\label{class_concurrency_control_a727f8073f764bbc193ec8bb962873bb2}
+
+\begin{DoxyCompactList}\small\item\em True if \hyperlink{class_concurrency_control_a24e5689f704351208afc2cb7b4efbcec}{ConcurrencyControl::Construct} has been used. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Advanced concurrency control object. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+\hyperlink{class_concurrency_control}{ConcurrencyControl} is an advanced concurrency control object. \par
+ It relies on the following key multithreading principals:
+\begin{DoxyItemize}
+\item Data can be read by multiple threads at the same time.
+\item Data cannot be written and read from at the same time.
+\item Data cannot be written to $>$ once at the same time.
+\end{DoxyItemize}
+
+Threads should EnterRead when reading protected data, and LeaveRead when done reading the protected data. Threads should EnterWrite when writing to a protected location, and LeaveWrite when done writing. When in write control (EnterWrite) the thread can also read from the protected location.\par
+\par
+
+
+All threads using this object should have a manual thread ID set in their associated \hyperlink{class_thread_single}{ThreadSingle} object ranging from inclusive 0 to exclusive maximum number of threads. The main process is given a virtual thread ID = to the maximum number of threads. Two threads MUST NOT have the same ID, deadlock may occur otherwise.\par
+\par
+
+
+Calling threads must have first used \hyperlink{class_thread_single_a2eb55a419326e7c7d8236cf3299d2030}{ThreadSingle::ThreadSetCallingThread()}. The main process must call AllocateThreadLocalStorage and use \hyperlink{class_thread_single_a2eb55a419326e7c7d8236cf3299d2030}{ThreadSingle::ThreadSetCallingThread} with a parameter of NULL. This is done automatically by \hyperlink{class_net_utility_aa6103c1b3d6f5b366c0903ba7b22a625}{NetUtility::SetupCompletionPort}.
+
+You must ensure the following when using \hyperlink{class_concurrency_control}{ConcurrencyControl} objects:
+\begin{DoxyItemize}
+\item A thread must release control at some point.
+\item A thread should only take control while it is using the protected objects.
+\end{DoxyItemize}
+
+Note that a thread can EnterRead or EnterWrite multiple times but must call LeaveRead and LeaveWrite for each individual EnterRead or/and EnterWrite. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_concurrency_control_a3ef5edee9c033b9725556fd153312e22}{
+\index{ConcurrencyControl@{ConcurrencyControl}!ConcurrencyControl@{ConcurrencyControl}}
+\index{ConcurrencyControl@{ConcurrencyControl}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{ConcurrencyControl}]{\setlength{\rightskip}{0pt plus 5cm}ConcurrencyControl::ConcurrencyControl (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_control_a3ef5edee9c033b9725556fd153312e22}
+
+
+Constructor, sets variables to default and prepares object ready for use by multiple threads. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]Number of threads that will be using object. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_concurrency_control_aee7ec3509126d17541eb80dab78385c3}{
+\index{ConcurrencyControl@{ConcurrencyControl}!\_\-safeReadValue@{\_\-safeReadValue}}
+\index{\_\-safeReadValue@{\_\-safeReadValue}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{\_\-safeReadValue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeReadValueType $>$ safeReadValueType ConcurrencyControl::\_\-safeReadValue (
+\begin{DoxyParamCaption}
+\item[{const safeReadValueType \&}]{ readMe}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_aee7ec3509126d17541eb80dab78385c3}
+
+
+Safely reads a value using critical sections. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em readMe}]Reference to value to read. \end{DoxyParams}
+\hypertarget{class_concurrency_control_a3d636cd5098ec1171887d9124629a362}{
+\index{ConcurrencyControl@{ConcurrencyControl}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControl::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_a3d636cd5098ec1171887d9124629a362}
+
+
+Safely writes a value using critical sections to a key variable. 
+
+Key means that it does require write access when changing. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]Reference to object to write to. \item[{\em newValue}]Pointer to value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_concurrency_control_a0b1fd7acbdae6efd4d4b8f0a7b076eba}{
+\index{ConcurrencyControl@{ConcurrencyControl}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControl::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_a0b1fd7acbdae6efd4d4b8f0a7b076eba}
+
+
+Safely writes a value using critical sections to a key variable. 
+
+Key means that it does require write access when changing. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]Reference to object to write to. \item[{\em newValue}]Value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_concurrency_control_af11f93d42d36e6760925bb17d522e3e9}{
+\index{ConcurrencyControl@{ConcurrencyControl}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControl::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_af11f93d42d36e6760925bb17d522e3e9}
+
+
+Safely writes a value using critical sections to a non key variable. 
+
+Non key means that it does not require write access when changing (see class description for reasoning). 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]Reference to object to write to. \item[{\em newValue}]Value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_concurrency_control_a33065392a618a5b52ac4bb40fb12baf5}{
+\index{ConcurrencyControl@{ConcurrencyControl}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void ConcurrencyControl::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_concurrency_control_a33065392a618a5b52ac4bb40fb12baf5}
+
+
+Safely writes a value using critical sections to a non key variable. 
+
+Non key means that it does not require write access when changing (see class description for reasoning). 
+\begin{DoxyParams}{Parameters}
+\item[{\em updateMe}]Reference to object to write to. \item[{\em newValue}]Pointer to value to copy into {\itshape updateMe\/}. \end{DoxyParams}
+\hypertarget{class_concurrency_control_a03501e21a7e927dba93ed19895b407de}{
+\index{ConcurrencyControl@{ConcurrencyControl}!Cleanup@{Cleanup}}
+\index{Cleanup@{Cleanup}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{Cleanup}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControl::Cleanup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_a03501e21a7e927dba93ed19895b407de}
+
+
+Cleans up object and resets variables to default. 
+
+Object can be reused if {\ttfamily Construct} is used again. \hypertarget{class_concurrency_control_a24e5689f704351208afc2cb7b4efbcec}{
+\index{ConcurrencyControl@{ConcurrencyControl}!Construct@{Construct}}
+\index{Construct@{Construct}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{Construct}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControl::Construct (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ paraThreads}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_control_a24e5689f704351208afc2cb7b4efbcec}
+
+
+Sets up object ready for use. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraThreads}]Number of threads that will be using object. \end{DoxyParams}
+\hypertarget{class_concurrency_control_aadc7743380ba3da2385fd052de30f144}{
+\index{ConcurrencyControl@{ConcurrencyControl}!EnterWrite@{EnterWrite}}
+\index{EnterWrite@{EnterWrite}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{EnterWrite}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControl::EnterWrite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_concurrency_control_aadc7743380ba3da2385fd052de30f144}
+
+
+Safely take write control of object. 
+
+Read control will be released before taking write control, and then retaken (to the same depth) after taking write control. This is done in order to prevent deadlock. \hypertarget{class_concurrency_control_a3a0351a48b92570778544957dd181f17}{
+\index{ConcurrencyControl@{ConcurrencyControl}!GetNumThreads@{GetNumThreads}}
+\index{GetNumThreads@{GetNumThreads}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{GetNumThreads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ConcurrencyControl::GetNumThreads (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_concurrency_control_a3a0351a48b92570778544957dd181f17}
+
+
+Retrieves the number of threads setup to use this object. 
+
+\begin{DoxyReturn}{Returns}
+the number of threads setup to use this object.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+Thread ID's for this object range from inclusive 0 to exclusive number of threads. 
+\end{DoxyNote}
+\hypertarget{class_concurrency_control_afd31026e93f3ea692eb93d638e1c643b}{
+\index{ConcurrencyControl@{ConcurrencyControl}!GetThreadID@{GetThreadID}}
+\index{GetThreadID@{GetThreadID}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{GetThreadID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t ConcurrencyControl::GetThreadID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_afd31026e93f3ea692eb93d638e1c643b}
+
+
+Retrieves the calling thread's manual thread ID. 
+
+\begin{DoxyReturn}{Returns}
+the calling thread's manual thread ID. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_control_ab3a9f4eb59ff8f5dfaecfec57d0f1d14}{
+\index{ConcurrencyControl@{ConcurrencyControl}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool ConcurrencyControl::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_concurrency_control_ab3a9f4eb59ff8f5dfaecfec57d0f1d14}
+
+
+Tests class. 
+
+It is difficult to test for race condition but this is done by changing a pointer; if a thread does not wait for the pointer to be changed back, to point to something meaningful, the debugger will detect writing to a bad memory location. The debugger does not seem to detect two threads modifying the same variable at the same time. \par
+\par
+
+
+When running this test you should check for:
+\begin{DoxyItemize}
+\item Debugger alerts.
+\item Deadlock.
+\end{DoxyItemize}
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_concurrency_control_a7d7dc3ba467d27bfa118d1929b5a5d90}{
+\index{ConcurrencyControl@{ConcurrencyControl}!ValidateThreadID@{ValidateThreadID}}
+\index{ValidateThreadID@{ValidateThreadID}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{ValidateThreadID}]{\setlength{\rightskip}{0pt plus 5cm}void ConcurrencyControl::ValidateThreadID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_a7d7dc3ba467d27bfa118d1929b5a5d90}
+
+
+Checks that thread ID is in bounds, and throws an exception if it is not. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread to check. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_concurrency_control_a83a545f7c4a64d11dab7fd1931155182}{
+\index{ConcurrencyControl@{ConcurrencyControl}!access@{access}}
+\index{access@{access}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{access}]{\setlength{\rightskip}{0pt plus 5cm}{\bf CriticalSection}$\ast$ {\bf ConcurrencyControl::access}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_a83a545f7c4a64d11dab7fd1931155182}
+
+
+Critical section object, used to control access to object. 
+
+Each thread will have one private critical section. \hypertarget{class_concurrency_control_af07ace0cc51f0411ac09198e106a1123}{
+\index{ConcurrencyControl@{ConcurrencyControl}!accessRead@{accessRead}}
+\index{accessRead@{accessRead}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{accessRead}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t$\ast$ {\bf ConcurrencyControl::accessRead}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_af07ace0cc51f0411ac09198e106a1123}
+
+
+Keeps a count of how many levels of read control each thread has. 
+
+e.g. If a thread uses \hyperlink{class_concurrency_control_aa2d6142d40a726d64148965aa9bd13fe}{EnterRead()} 4 times and then \hyperlink{class_concurrency_control_a98d2523a22ecac7c03e5b10e431d613d}{LeaveRead()} twice, at this point it now has 2 levels of read control which is noted by this object.\par
+\par
+
+
+Each thread will have its own private read count. \hypertarget{class_concurrency_control_ab0de7910c0fb51c3843f65e8cd40ae7c}{
+\index{ConcurrencyControl@{ConcurrencyControl}!accessWrite@{accessWrite}}
+\index{accessWrite@{accessWrite}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{accessWrite}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t$\ast$ {\bf ConcurrencyControl::accessWrite}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_ab0de7910c0fb51c3843f65e8cd40ae7c}
+
+
+Keeps a count of how many levels of write control each thread has. 
+
+e.g. If a thread uses \hyperlink{class_concurrency_control_aadc7743380ba3da2385fd052de30f144}{EnterWrite()} 4 times and then \hyperlink{class_concurrency_control_a1b495ca39efffd3194c771b8c83931cd}{LeaveWrite()} twice, at this point it now has 2 levels of write control which is noted by this object.\par
+\par
+
+
+Each thread will have its own private write count. \hypertarget{class_concurrency_control_a0a94abcc70c42d61b057bddeb32a6e52}{
+\index{ConcurrencyControl@{ConcurrencyControl}!threads@{threads}}
+\index{threads@{threads}!ConcurrencyControl@{ConcurrencyControl}}
+\subsubsection[{threads}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf ConcurrencyControl::threads}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_concurrency_control_a0a94abcc70c42d61b057bddeb32a6e52}
+
+
+Number of threads that can use object. 
+
+Thread IDs range from 0 (inclusive) to maximum number of threads (non inclusive). 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrencyControl.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ConcurrencyControl.cpp\end{DoxyCompactItemize}

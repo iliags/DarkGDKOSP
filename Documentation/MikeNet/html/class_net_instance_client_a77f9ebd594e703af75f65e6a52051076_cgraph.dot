@@ -1,0 +1,17 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetInstanceClient::GetMaxPacketSizeTCP",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetModeTcp::GetMaxPacketSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_mode_tcp.html#a51f8430ad742bc21f4fbceb4101a6414"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="Packet::GetMemorySize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a2488b5121b48f108f5acf5f85c234d8a"];
+  Node3 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="CriticalSection::Enter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html#a509be5342b2f07ae06e1af5d9e08b871"];
+  Node3 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="CriticalSection::Leave",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html#a6fa0931385f066492f31fc98e3fca657"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node6 [label="NetSocketTCP::GetMode",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html#ad528efe4a16f0a110f488820d7abbc89"];
+}

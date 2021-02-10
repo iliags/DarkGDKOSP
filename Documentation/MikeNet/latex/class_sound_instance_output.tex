@@ -1,0 +1,572 @@
+\hypertarget{class_sound_instance_output}{
+\section{SoundInstanceOutput Class Reference}
+\label{class_sound_instance_output}\index{SoundInstanceOutput@{SoundInstanceOutput}}
+}
+
+
+Output instance which accesses an output device and sends output to it.  
+
+
+
+
+{\ttfamily \#include $<$SoundInstanceOutput.h$>$}
+
+Inheritance diagram for SoundInstanceOutput:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_sound_instance_output}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sound_instance_output_a85e36931e8ce76829bdc92a2232a9d60}{SoundInstanceOutput} (size\_\-t msStoredDataCap, size\_\-t timeGapCap, const \hyperlink{class_sound_format}{SoundFormat} \&\hyperlink{class_sound_instance_output_a6f868bc7e7610066ccb2ff8616a2ab4a}{format}, unsigned int deviceID)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_a4aa0679614c6830427fbc351aa652f4e}{
+\hyperlink{class_sound_instance_output_a4aa0679614c6830427fbc351aa652f4e}{$\sim$SoundInstanceOutput} ()}
+\label{class_sound_instance_output_a4aa0679614c6830427fbc351aa652f4e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_aaa831c4469fe0211ca1950763f837ce4}{QueuePacket} (\hyperlink{class_packet}{Packet} $\ast$packet)
+\begin{DoxyCompactList}\small\item\em Adds a packet to the output queue. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_output_a850fb81ed7d2c491a23bacdd097875d8}{DequeuePacket} ()
+\begin{DoxyCompactList}\small\item\em Retrieves a packet from the output queue. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_af6616e6b3eeb69450a4f4933503aead4}{
+void \hyperlink{class_sound_instance_output_af6616e6b3eeb69450a4f4933503aead4}{DecideWhetherToOutput} ()}
+\label{class_sound_instance_output_af6616e6b3eeb69450a4f4933503aead4}
+
+\begin{DoxyCompactList}\small\item\em Method may choose to output a packet, extracting it from the packet queue. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_adfbfdd24496614e867f59488ba30ff68}{SetSmoothValues} (size\_\-t msStoredDataCap, size\_\-t timeGapCap)
+\begin{DoxyCompactList}\small\item\em Changes values which may effect how smooth playback is. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_output_ae353aa0ab31d014a92837f1e73ac9431}{GetStoredDataCapMs} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the amount of data (in milliseconds) that needs to be stored for playback to commence. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_output_ac4b1b8ff9d46a64870217045b0e1e130}{GetTimeGapCap} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_sound_format}{SoundFormat} \& \hyperlink{class_sound_instance_output_a31aa9bf9f48cccc959a3a8d5816a8591}{GetFormat} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the sound format in use. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_a97f2472e5d45949d6982c5a122f7c1bc}{SetHardwarePlaybackRate} (double Rate)
+\begin{DoxyCompactList}\small\item\em Changes the playback rate of sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_a946a43ebff38b07df949cd8a54e8f603}{SetHardwarePitch} (double Pitch)
+\begin{DoxyCompactList}\small\item\em Changes the pitch of sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_a03ff3cd14c4fe05faa8836938afd6d41}{SetHardwareVolume} (unsigned short Left, unsigned short Right)
+\begin{DoxyCompactList}\small\item\em Changes the volume sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_instance_output_a8592b296bc22bcf29d1761e21cada3ac}{GetHardwareVolumeLeft} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the volume of the left channel. \item\end{DoxyCompactList}\item 
+WORD \hyperlink{class_sound_instance_output_a746a2958ede4a31f948c084065fbb584}{GetHardwareVolumeRight} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the volume of the right channel. \item\end{DoxyCompactList}\item 
+double \hyperlink{class_sound_instance_output_a1194a6299e5483aa8d0d03f9e130db37}{GetHardwarePitch} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the pitch change in action by accessing the device driver. \item\end{DoxyCompactList}\item 
+double \hyperlink{class_sound_instance_output_add8e3702351c8a3874ebe3ebb5cc4ba1}{GetHardwarePlaybackRate} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the playback rate of sound output by accessing the device driver. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_aab5f43bc2f2532543b8e0698c441d530}{DealWithData} (WAVEHDR $\ast$buffer)
+\begin{DoxyCompactList}\small\item\em Called indirectly by callback thread to deal with a completed buffer after output process has finished. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_sound_instance_output}{SoundInstanceOutput} $\ast$ \hyperlink{class_sound_instance_output_ac2bb9217f9e53a6a6cb44db494be9b20}{GetInstanceOutput} (size\_\-t instanceID)
+\begin{DoxyCompactList}\small\item\em Retrieves an output instance. \item\end{DoxyCompactList}\item 
+static size\_\-t \hyperlink{class_sound_instance_output_a131d7aa967c299fe1ec72803b846ff71}{GetNumInstanceOutput} ()
+\begin{DoxyCompactList}\small\item\em Retrieves the number of output instance initialized. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_a2f2417585c5877d49a3483db773b5d8d}{
+static void \hyperlink{class_sound_instance_output_a2f2417585c5877d49a3483db773b5d8d}{EnterInstanceOutputList} ()}
+\label{class_sound_instance_output_a2f2417585c5877d49a3483db773b5d8d}
+
+\begin{DoxyCompactList}\small\item\em Take control of \hyperlink{class_sound_instance_output_a6c22559d4c8c6f04ee92cf6763a8493f}{SoundInstanceOutput::instanceOutputList}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_a05e8c0dc8a6df890a35311d3bee471ee}{
+static void \hyperlink{class_sound_instance_output_a05e8c0dc8a6df890a35311d3bee471ee}{LeaveInstanceOutputList} ()}
+\label{class_sound_instance_output_a05e8c0dc8a6df890a35311d3bee471ee}
+
+\begin{DoxyCompactList}\small\item\em Release control of \hyperlink{class_sound_instance_output_a6c22559d4c8c6f04ee92cf6763a8493f}{SoundInstanceOutput::instanceOutputList}. \item\end{DoxyCompactList}\item 
+static bool \hyperlink{class_sound_instance_output_a52a29fc54172750e89d6d4e2f30075fb}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_instance_output_ae12e8c17801490274100001a1e94f636}{
+static const size\_\-t \hyperlink{class_sound_instance_output_ae12e8c17801490274100001a1e94f636}{DEFAULT\_\-TIME\_\-SINCE\_\-LAST\_\-ADDED\_\-CAP} = 200}
+\label{class_sound_instance_output_ae12e8c17801490274100001a1e94f636}
+
+\begin{DoxyCompactList}\small\item\em Default value for SoundInstanceOutput::outputDataLastAddedCap in milliseconds. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_a701428cfaa968358f75f9be38b86753c}{
+static const size\_\-t \hyperlink{class_sound_instance_output_a701428cfaa968358f75f9be38b86753c}{DEFAULT\_\-TIME\_\-STORED\_\-CAP} = 500}
+\label{class_sound_instance_output_a701428cfaa968358f75f9be38b86753c}
+
+\begin{DoxyCompactList}\small\item\em Default value for \hyperlink{class_sound_instance_output_a3b7132b8d865398f9b37ed6a715b3855}{SoundInstanceOutput::outputDataTotalTimeCap} in milliseconds. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_sound_instance_output_a0c44802de559d280a15ad66fc0fa4df6}{UnprepareBuffer} (LPWAVEHDR wavehdr)
+\begin{DoxyCompactList}\small\item\em Unprepares buffer. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_sound_instance_output_a5fb6653bf1a496ef1029d5db55bf197f}{QueueBuffer} (LPWAVEHDR wavehdr)
+\begin{DoxyCompactList}\small\item\em Queues a buffer ready to receive input data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_instance_output_a90f2a74c4dd6f63b21d5252325ed590d}{
+HWAVEOUT \hyperlink{class_sound_instance_output_a90f2a74c4dd6f63b21d5252325ed590d}{device}}
+\label{class_sound_instance_output_a90f2a74c4dd6f63b21d5252325ed590d}
+
+\begin{DoxyCompactList}\small\item\em Controls device. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{
+\hyperlink{class_store_queue}{StoreQueue}$<$ \hyperlink{class_packet}{Packet} $>$ \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{outputData}}
+\label{class_sound_instance_output_ad8422553602e12785eab486a27796da3}
+
+\begin{DoxyCompactList}\small\item\em Stores data that will be output. \item\end{DoxyCompactList}\item 
+\hyperlink{class_timer}{Timer} \hyperlink{class_sound_instance_output_a4bb8e2de55d954056ed896e0d029bab4}{outputDataLastAdded}
+\begin{DoxyCompactList}\small\item\em Monitors when data was last added to \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData}. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_output_ac3f6a1350dd4cb7960ec0dafbb0d7b45}{outputDataTotalBytes}
+\begin{DoxyCompactList}\small\item\em Total number of bytes in \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData} queue. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_output_acaa4c6f3eca8eddea6cfd289d07a0124}{outputDataTotalBytesCap}
+\begin{DoxyCompactList}\small\item\em If \hyperlink{class_sound_instance_output_ac3f6a1350dd4cb7960ec0dafbb0d7b45}{SoundInstanceOutput::outputDataTotalBytes} $>$= this then data will be played. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_sound_instance_output_a3b7132b8d865398f9b37ed6a715b3855}{outputDataTotalTimeCap}
+\begin{DoxyCompactList}\small\item\em Amount of data in milliseconds that must be stored before data is played. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_a6f868bc7e7610066ccb2ff8616a2ab4a}{
+\hyperlink{class_sound_format}{SoundFormat} \hyperlink{class_sound_instance_output_a6f868bc7e7610066ccb2ff8616a2ab4a}{format}}
+\label{class_sound_instance_output_a6f868bc7e7610066ccb2ff8616a2ab4a}
+
+\begin{DoxyCompactList}\small\item\em Sound format in use. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_instance_output_a553a1bf408082e6d98f1472f60c014bf}{
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ size\_\-t $>$ \hyperlink{class_sound_instance_output_a553a1bf408082e6d98f1472f60c014bf}{bufferInUseCount}}
+\label{class_sound_instance_output_a553a1bf408082e6d98f1472f60c014bf}
+
+\begin{DoxyCompactList}\small\item\em Number of buffers currently in use by waveform or the thread. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_sound_instance_output}{SoundInstanceOutput} $\ast$ $>$ \hyperlink{class_sound_instance_output_a6c22559d4c8c6f04ee92cf6763a8493f}{instanceOutputList}
+\begin{DoxyCompactList}\small\item\em Stores a pointer to all instances of \hyperlink{class_sound_instance_output}{SoundInstanceOutput}. \item\end{DoxyCompactList}\item 
+static \hyperlink{class_thread_single}{ThreadSingle} $\ast$ \hyperlink{class_sound_instance_output_af1ad50da6639146c3b0ef782bd4737ab}{instanceOutputThread} = NULL
+\begin{DoxyCompactList}\small\item\em Thread which manages output, deciding when buffers should be output. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Output instance which accesses an output device and sends output to it. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/21/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_sound_instance_output_a85e36931e8ce76829bdc92a2232a9d60}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!SoundInstanceOutput@{SoundInstanceOutput}}
+\index{SoundInstanceOutput@{SoundInstanceOutput}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{SoundInstanceOutput}]{\setlength{\rightskip}{0pt plus 5cm}SoundInstanceOutput::SoundInstanceOutput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ msStoredDataCap, }
+\item[{size\_\-t}]{ timeGapCap, }
+\item[{const {\bf SoundFormat} \&}]{ format, }
+\item[{unsigned int}]{ deviceID}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a85e36931e8ce76829bdc92a2232a9d60}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em msStoredDataCap}]The length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \item[{\em timeGapCap}]The amount of data that needs to be stored for playback to commence. \item[{\em format}]Sound format that device should use. \item[{\em deviceID}]ID of device that instance should use to post output data. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_instance_output_aab5f43bc2f2532543b8e0698c441d530}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::DealWithData (
+\begin{DoxyParamCaption}
+\item[{WAVEHDR $\ast$}]{ buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_sound_instance_output_aab5f43bc2f2532543b8e0698c441d530}
+
+
+Called indirectly by callback thread to deal with a completed buffer after output process has finished. 
+
+The callback thread must not directly call this method, but instead posts a message to a thread initiated by this API. This restriction is mentioned in the waveform documentation on MSDN.\par
+\par
+
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em buffer}]Pointer to the completed buffer. \end{DoxyParams}
+
+
+Implements \hyperlink{class_sound_instance_a0dfcabaf68f2aa2e90ca6a9cd5310b3c}{SoundInstance}.
+
+\hypertarget{class_sound_instance_output_a850fb81ed7d2c491a23bacdd097875d8}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!DequeuePacket@{DequeuePacket}}
+\index{DequeuePacket@{DequeuePacket}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{DequeuePacket}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceOutput::DequeuePacket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a850fb81ed7d2c491a23bacdd097875d8}
+
+
+Retrieves a packet from the output queue. 
+
+\begin{DoxyReturn}{Returns}
+the number of packets in the queue before this call. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a31aa9bf9f48cccc959a3a8d5816a8591}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetFormat@{GetFormat}}
+\index{GetFormat@{GetFormat}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetFormat}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf SoundFormat} \& SoundInstanceOutput::GetFormat (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_output_a31aa9bf9f48cccc959a3a8d5816a8591}
+
+
+Retrieves the sound format in use. 
+
+\begin{DoxyReturn}{Returns}
+the sound format in use. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a1194a6299e5483aa8d0d03f9e130db37}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetHardwarePitch@{GetHardwarePitch}}
+\index{GetHardwarePitch@{GetHardwarePitch}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetHardwarePitch}]{\setlength{\rightskip}{0pt plus 5cm}double SoundInstanceOutput::GetHardwarePitch (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a1194a6299e5483aa8d0d03f9e130db37}
+
+
+Retrieves the pitch change in action by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.
+
+\begin{DoxyReturn}{Returns}
+pitch change. This is as a percentage where 100 is no pitch change, 200 doubles the pitch, 50 halves the pitch. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_add8e3702351c8a3874ebe3ebb5cc4ba1}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetHardwarePlaybackRate@{GetHardwarePlaybackRate}}
+\index{GetHardwarePlaybackRate@{GetHardwarePlaybackRate}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetHardwarePlaybackRate}]{\setlength{\rightskip}{0pt plus 5cm}double SoundInstanceOutput::GetHardwarePlaybackRate (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_add8e3702351c8a3874ebe3ebb5cc4ba1}
+
+
+Retrieves the playback rate of sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.
+
+\begin{DoxyReturn}{Returns}
+playback rate. This is as a percentage where 100 is no rate change, 200 doubles the rate, 50 halves the rate. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a8592b296bc22bcf29d1761e21cada3ac}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetHardwareVolumeLeft@{GetHardwareVolumeLeft}}
+\index{GetHardwareVolumeLeft@{GetHardwareVolumeLeft}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetHardwareVolumeLeft}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundInstanceOutput::GetHardwareVolumeLeft (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a8592b296bc22bcf29d1761e21cada3ac}
+
+
+Retrieves the volume of the left channel. 
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.
+
+If the driver does not support independent left/right volume change, this will return the volume of both channels.
+
+\begin{DoxyReturn}{Returns}
+the volume of the left channel. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a746a2958ede4a31f948c084065fbb584}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetHardwareVolumeRight@{GetHardwareVolumeRight}}
+\index{GetHardwareVolumeRight@{GetHardwareVolumeRight}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetHardwareVolumeRight}]{\setlength{\rightskip}{0pt plus 5cm}WORD SoundInstanceOutput::GetHardwareVolumeRight (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a746a2958ede4a31f948c084065fbb584}
+
+
+Retrieves the volume of the right channel. 
+
+If only one channel exists then this will return the same as \hyperlink{class_sound_instance_output_a8592b296bc22bcf29d1761e21cada3ac}{SoundInstanceOutput::GetHardwareVolumeLeft()}.
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.
+
+\begin{DoxyReturn}{Returns}
+the volume of the right channel. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_ac2bb9217f9e53a6a6cb44db494be9b20}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetInstanceOutput@{GetInstanceOutput}}
+\index{GetInstanceOutput@{GetInstanceOutput}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetInstanceOutput}]{\setlength{\rightskip}{0pt plus 5cm}{\bf SoundInstanceOutput} $\ast$ SoundInstanceOutput::GetInstanceOutput (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_instance_output_ac2bb9217f9e53a6a6cb44db494be9b20}
+
+
+Retrieves an output instance. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]Identifier for the instance.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an output instance. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a131d7aa967c299fe1ec72803b846ff71}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetNumInstanceOutput@{GetNumInstanceOutput}}
+\index{GetNumInstanceOutput@{GetNumInstanceOutput}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetNumInstanceOutput}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceOutput::GetNumInstanceOutput (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_instance_output_a131d7aa967c299fe1ec72803b846ff71}
+
+
+Retrieves the number of output instance initialized. 
+
+\begin{DoxyReturn}{Returns}
+the number of output instances initialized. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_ae353aa0ab31d014a92837f1e73ac9431}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetStoredDataCapMs@{GetStoredDataCapMs}}
+\index{GetStoredDataCapMs@{GetStoredDataCapMs}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetStoredDataCapMs}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceOutput::GetStoredDataCapMs (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_output_ae353aa0ab31d014a92837f1e73ac9431}
+
+
+Retrieves the amount of data (in milliseconds) that needs to be stored for playback to commence. 
+
+\begin{DoxyReturn}{Returns}
+stored data cap (in milliseconds). 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_ac4b1b8ff9d46a64870217045b0e1e130}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!GetTimeGapCap@{GetTimeGapCap}}
+\index{GetTimeGapCap@{GetTimeGapCap}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{GetTimeGapCap}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t SoundInstanceOutput::GetTimeGapCap (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_instance_output_ac4b1b8ff9d46a64870217045b0e1e130}
+
+
+Retrieves the length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. 
+
+\begin{DoxyReturn}{Returns}
+length of time in milliseconds. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a5fb6653bf1a496ef1029d5db55bf197f}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!QueueBuffer@{QueueBuffer}}
+\index{QueueBuffer@{QueueBuffer}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{QueueBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::QueueBuffer (
+\begin{DoxyParamCaption}
+\item[{LPWAVEHDR}]{ buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_output_a5fb6653bf1a496ef1029d5db55bf197f}
+
+
+Queues a buffer ready to receive input data. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The buffer to queue. \end{DoxyParams}
+\hypertarget{class_sound_instance_output_aaa831c4469fe0211ca1950763f837ce4}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!QueuePacket@{QueuePacket}}
+\index{QueuePacket@{QueuePacket}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{QueuePacket}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::QueuePacket (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ packet}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_aaa831c4469fe0211ca1950763f837ce4}
+
+
+Adds a packet to the output queue. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em packet}]\hyperlink{class_packet}{Packet} to add. This packet is now owned by this object and should not be referenced elsewhere. \end{DoxyParams}
+\hypertarget{class_sound_instance_output_a946a43ebff38b07df949cd8a54e8f603}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!SetHardwarePitch@{SetHardwarePitch}}
+\index{SetHardwarePitch@{SetHardwarePitch}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{SetHardwarePitch}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::SetHardwarePitch (
+\begin{DoxyParamCaption}
+\item[{double}]{ pitch}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a946a43ebff38b07df949cd8a54e8f603}
+
+
+Changes the pitch of sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em pitch}]Pitch change. This is as a percentage where 100 is no pitch change, 200 doubles the pitch, 50 halves the pitch. \end{DoxyParams}
+\hypertarget{class_sound_instance_output_a97f2472e5d45949d6982c5a122f7c1bc}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!SetHardwarePlaybackRate@{SetHardwarePlaybackRate}}
+\index{SetHardwarePlaybackRate@{SetHardwarePlaybackRate}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{SetHardwarePlaybackRate}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::SetHardwarePlaybackRate (
+\begin{DoxyParamCaption}
+\item[{double}]{ rate}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a97f2472e5d45949d6982c5a122f7c1bc}
+
+
+Changes the playback rate of sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em rate}]New playback rate. This is as a percentage where 100 is no rate change, 200 doubles the rate, 50 halves the rate. \end{DoxyParams}
+\hypertarget{class_sound_instance_output_a03ff3cd14c4fe05faa8836938afd6d41}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!SetHardwareVolume@{SetHardwareVolume}}
+\index{SetHardwareVolume@{SetHardwareVolume}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{SetHardwareVolume}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::SetHardwareVolume (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{ left, }
+\item[{unsigned short}]{ right}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_a03ff3cd14c4fe05faa8836938afd6d41}
+
+
+Changes the volume sound output by accessing the device driver. 
+
+This operation may not be supported by the device driver. You can check this using the. \hyperlink{class_sound_device_output}{SoundDeviceOutput} class.\par
+\par
+
+
+If the driver does not support independent left/right volume change, only the left value will be taken into account and this will be the value used by both channels.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em left}]New volume for the left channel. \item[{\em right}]New volume for the right channel. \end{DoxyParams}
+\hypertarget{class_sound_instance_output_adfbfdd24496614e867f59488ba30ff68}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!SetSmoothValues@{SetSmoothValues}}
+\index{SetSmoothValues@{SetSmoothValues}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{SetSmoothValues}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::SetSmoothValues (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ msStoredDataCap, }
+\item[{size\_\-t}]{ timeGapCap}
+\end{DoxyParamCaption}
+)}}
+\label{class_sound_instance_output_adfbfdd24496614e867f59488ba30ff68}
+
+
+Changes values which may effect how smooth playback is. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em msStoredDataCap}]The amount of data (in milliseconds) that needs to be stored for playback to commence. \item[{\em timeGapCap}]The length of time for output not to be played without new output being added to the queue, before ending the wait and resuming playback regardless of the amount of data stored. \end{DoxyParams}
+\hypertarget{class_sound_instance_output_a52a29fc54172750e89d6d4e2f30075fb}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool SoundInstanceOutput::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_sound_instance_output_a52a29fc54172750e89d6d4e2f30075fb}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+\hypertarget{class_sound_instance_output_a0c44802de559d280a15ad66fc0fa4df6}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!UnprepareBuffer@{UnprepareBuffer}}
+\index{UnprepareBuffer@{UnprepareBuffer}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{UnprepareBuffer}]{\setlength{\rightskip}{0pt plus 5cm}void SoundInstanceOutput::UnprepareBuffer (
+\begin{DoxyParamCaption}
+\item[{LPWAVEHDR}]{ buffer}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_output_a0c44802de559d280a15ad66fc0fa4df6}
+
+
+Unprepares buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em buffer}]The buffer to use. \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_sound_instance_output_a6c22559d4c8c6f04ee92cf6763a8493f}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!instanceOutputList@{instanceOutputList}}
+\index{instanceOutputList@{instanceOutputList}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{instanceOutputList}]{\setlength{\rightskip}{0pt plus 5cm}{\bf StoreVector}$<$ {\bf SoundInstanceOutput} $\ast$ $>$ {\bf SoundInstanceOutput::instanceOutputList}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_sound_instance_output_a6c22559d4c8c6f04ee92cf6763a8493f}
+
+
+Stores a pointer to all instances of \hyperlink{class_sound_instance_output}{SoundInstanceOutput}. 
+
+This is necessary so that the sound output thread can deal with all instances in one thread. \hypertarget{class_sound_instance_output_af1ad50da6639146c3b0ef782bd4737ab}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!instanceOutputThread@{instanceOutputThread}}
+\index{instanceOutputThread@{instanceOutputThread}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{instanceOutputThread}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ThreadSingle} $\ast$ {\bf SoundInstanceOutput::instanceOutputThread} = NULL\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{class_sound_instance_output_af1ad50da6639146c3b0ef782bd4737ab}
+
+
+Thread which manages output, deciding when buffers should be output. 
+
+Access should be controlled using \hyperlink{class_sound_instance_output_a6c22559d4c8c6f04ee92cf6763a8493f}{SoundInstanceOutput::instanceOutputList}'s critical section. \hypertarget{class_sound_instance_output_a4bb8e2de55d954056ed896e0d029bab4}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!outputDataLastAdded@{outputDataLastAdded}}
+\index{outputDataLastAdded@{outputDataLastAdded}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{outputDataLastAdded}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Timer} {\bf SoundInstanceOutput::outputDataLastAdded}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_output_a4bb8e2de55d954056ed896e0d029bab4}
+
+
+Monitors when data was last added to \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData}. 
+
+Access is should be controlled using \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData}'s critical section. \hypertarget{class_sound_instance_output_ac3f6a1350dd4cb7960ec0dafbb0d7b45}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!outputDataTotalBytes@{outputDataTotalBytes}}
+\index{outputDataTotalBytes@{outputDataTotalBytes}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{outputDataTotalBytes}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf SoundInstanceOutput::outputDataTotalBytes}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_output_ac3f6a1350dd4cb7960ec0dafbb0d7b45}
+
+
+Total number of bytes in \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData} queue. 
+
+Access is should be controlled using \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData}'s critical section. \hypertarget{class_sound_instance_output_acaa4c6f3eca8eddea6cfd289d07a0124}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!outputDataTotalBytesCap@{outputDataTotalBytesCap}}
+\index{outputDataTotalBytesCap@{outputDataTotalBytesCap}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{outputDataTotalBytesCap}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf SoundInstanceOutput::outputDataTotalBytesCap}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_output_acaa4c6f3eca8eddea6cfd289d07a0124}
+
+
+If \hyperlink{class_sound_instance_output_ac3f6a1350dd4cb7960ec0dafbb0d7b45}{SoundInstanceOutput::outputDataTotalBytes} $>$= this then data will be played. 
+
+Access is should be controlled using \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData}'s critical section. \hypertarget{class_sound_instance_output_a3b7132b8d865398f9b37ed6a715b3855}{
+\index{SoundInstanceOutput@{SoundInstanceOutput}!outputDataTotalTimeCap@{outputDataTotalTimeCap}}
+\index{outputDataTotalTimeCap@{outputDataTotalTimeCap}!SoundInstanceOutput@{SoundInstanceOutput}}
+\subsubsection[{outputDataTotalTimeCap}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf SoundInstanceOutput::outputDataTotalTimeCap}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_sound_instance_output_a3b7132b8d865398f9b37ed6a715b3855}
+
+
+Amount of data in milliseconds that must be stored before data is played. 
+
+Access is should be controlled using \hyperlink{class_sound_instance_output_ad8422553602e12785eab486a27796da3}{SoundInstanceOutput::outputData}'s critical section. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundInstanceOutput.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundInstanceOutput.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSocketSimple::GetLocalAddress",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetServerClient::GetLocalAddressTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#a2ca3ba6e245c306577eb83c2b123cdb9"];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetInstanceServer::GetLocalAddressTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_server.html#ae1b6038671d198ce1f26da38661c397f"];
+  Node1 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetInstanceClient::GetLocalAddressTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#ae9bc5cc69481e6a93de22e18b193b454"];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetInstanceUDP::GetLocalAddressUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html#acbfdacd929c7b332ec2b7b621df20051"];
+}

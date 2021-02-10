@@ -1,0 +1,331 @@
+\hypertarget{class_encrypt_key}{
+\section{EncryptKey Class Reference}
+\label{class_encrypt_key}\index{EncryptKey@{EncryptKey}}
+}
+
+
+Encryption key which is used in conjunction with the \hyperlink{class_packet}{Packet} class to encrypt and decrypt packets.  
+
+
+
+
+{\ttfamily \#include $<$EncryptKey.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_encrypt_key_a859114bdd7164e280a4f5a0d97a003d2}{EncryptKey} (const \hyperlink{class_encrypt_key}{EncryptKey} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_encrypt_key}{EncryptKey} \& \hyperlink{class_encrypt_key_a2c3aade8edac7f2e0424c8ad2c2cc5fb}{operator=} (const \hyperlink{class_encrypt_key}{EncryptKey} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hyperlink{class_encrypt_key_a082954a979e370dc47e83618c16c248e}{EncryptKey} (\_\-\_\-int64 key1, \_\-\_\-int64 key2, \_\-\_\-int64 key3, \_\-\_\-int64 key4)
+\begin{DoxyCompactList}\small\item\em Constructor for 256 bit strength encryption. \item\end{DoxyCompactList}\item 
+\hyperlink{class_encrypt_key_a9e1f359a6e1e4893fc8d447115b481be}{EncryptKey} (\_\-\_\-int64 key1, \_\-\_\-int64 key2, \_\-\_\-int64 key3)
+\begin{DoxyCompactList}\small\item\em Constructor for 192 bit strength encryption. \item\end{DoxyCompactList}\item 
+\hyperlink{class_encrypt_key_abe5940dbf3981c08fffe29d210290ead}{EncryptKey} (\_\-\_\-int64 key1, \_\-\_\-int64 key2)
+\begin{DoxyCompactList}\small\item\em Constructor for 128 bit strength encryption. \item\end{DoxyCompactList}\item 
+\hypertarget{class_encrypt_key_a8da0651f59463415d9009d068bbd671a}{
+\hyperlink{class_encrypt_key_a8da0651f59463415d9009d068bbd671a}{$\sim$EncryptKey} ()}
+\label{class_encrypt_key_a8da0651f59463415d9009d068bbd671a}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+unsigned char \hyperlink{class_encrypt_key_adc72eab7b96343f9ce9d513eaf225056}{GetNumRounds} () const 
+\begin{DoxyCompactList}\small\item\em Gets the number of rounds of encryption or decryption that should take place. \item\end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{class_encrypt_key_a76212380b28d9a2e28d5b6ce200accf8}{GetRoundKeys} () const 
+\begin{DoxyCompactList}\small\item\em Returns pointer to round key. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_encrypt_key_af1733dd51e9839966c3cb6ca75f822ec}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_encrypt_key_a70d96a008864bba3178f3fe16aaa9cca}{
+static const size\_\-t \hyperlink{class_encrypt_key_a70d96a008864bba3178f3fe16aaa9cca}{WORD\_\-SIZE} = 4}
+\label{class_encrypt_key_a70d96a008864bba3178f3fe16aaa9cca}
+
+\begin{DoxyCompactList}\small\item\em Size of a word in bytes. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char $\ast$ \hyperlink{class_encrypt_key_aff2332925a10008a1c673cf60735ab41}{RotateWordLeft} (unsigned char $\ast$RotateMe)
+\begin{DoxyCompactList}\small\item\em Rotates a word one byte to the left. \item\end{DoxyCompactList}\item 
+unsigned char $\ast$ \hyperlink{class_encrypt_key_ae996e161d82a17d8d32129e4afda0f39}{SubWord} (unsigned char $\ast$SubMe)
+\begin{DoxyCompactList}\small\item\em Substitutes the bytes of a word with their equivalent in \hyperlink{class_net_utility_a4c0093017521d888c4510cc940ffa335}{NetUtility::EncryptionBox}. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_encrypt_key_a022b65113b943a67bdc909bf4bee9e6c}{SetBitStrength} (size\_\-t Type, \hyperlink{class_packet}{Packet} \&key)
+\begin{DoxyCompactList}\small\item\em Allocates memory based on bit strength of encryption (128,192 or 256 bit). \item\end{DoxyCompactList}\item 
+void \hyperlink{class_encrypt_key_a6a3608ebb86c921994d6158c32797fcd}{KeyExpansion} (const \hyperlink{class_packet}{Packet} \&key)
+\begin{DoxyCompactList}\small\item\em Expand key, creating 'round keys' which are later combined with the input based on the Advanced Encryption Standard specification. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_encrypt_key_a14200c0afeec7da371cabced0b32ce28}{Copy} (const \hyperlink{class_encrypt_key}{EncryptKey} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor / assignment operator helper method. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_encrypt_key_abd59d56b6d2688cb5e40fc6fee1ee47c}{
+unsigned char \hyperlink{class_encrypt_key_abd59d56b6d2688cb5e40fc6fee1ee47c}{numIntegers}}
+\label{class_encrypt_key_abd59d56b6d2688cb5e40fc6fee1ee47c}
+
+\begin{DoxyCompactList}\small\item\em Number of integers making up EncryptKey::key. \item\end{DoxyCompactList}\item 
+\hypertarget{class_encrypt_key_a27e4b1962229a87f912c20da73ffa892}{
+unsigned char \hyperlink{class_encrypt_key_a27e4b1962229a87f912c20da73ffa892}{numRounds}}
+\label{class_encrypt_key_a27e4b1962229a87f912c20da73ffa892}
+
+\begin{DoxyCompactList}\small\item\em Numbers of rounds of encryption. \item\end{DoxyCompactList}\item 
+\hypertarget{class_encrypt_key_a5ad5f44db28e7fd41897687aa8c3209b}{
+\hyperlink{class_packet}{Packet} \hyperlink{class_encrypt_key_a5ad5f44db28e7fd41897687aa8c3209b}{roundKey}}
+\label{class_encrypt_key_a5ad5f44db28e7fd41897687aa8c3209b}
+
+\begin{DoxyCompactList}\small\item\em Round key, generated from EncryptKey::key which is used when encrypting and decrypting. \item\end{DoxyCompactList}\item 
+\hypertarget{class_encrypt_key_a9af3de670f8f02277ee542007cc56348}{
+unsigned char $\ast$ \hyperlink{class_encrypt_key_a9af3de670f8f02277ee542007cc56348}{ucharRoundKey}}
+\label{class_encrypt_key_a9af3de670f8f02277ee542007cc56348}
+
+\begin{DoxyCompactList}\small\item\em Pointer to data of \hyperlink{class_encrypt_key_a5ad5f44db28e7fd41897687aa8c3209b}{EncryptKey::roundKey}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_encrypt_key_af1de3e227d5a44dde9d4c4e4609ecb44}{
+size\_\-t \hyperlink{class_encrypt_key_af1de3e227d5a44dde9d4c4e4609ecb44}{bitStrength}}
+\label{class_encrypt_key_af1de3e227d5a44dde9d4c4e4609ecb44}
+
+\begin{DoxyCompactList}\small\item\em Strength of encryption, either 256, 192 or 128. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encryption key which is used in conjunction with the \hyperlink{class_packet}{Packet} class to encrypt and decrypt packets. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_encrypt_key_a859114bdd7164e280a4f5a0d97a003d2}{
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\subsubsection[{EncryptKey}]{\setlength{\rightskip}{0pt plus 5cm}EncryptKey::EncryptKey (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_encrypt_key_a859114bdd7164e280a4f5a0d97a003d2}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_encrypt_key_a082954a979e370dc47e83618c16c248e}{
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\subsubsection[{EncryptKey}]{\setlength{\rightskip}{0pt plus 5cm}EncryptKey::EncryptKey (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ key1, }
+\item[{\_\-\_\-int64}]{ key2, }
+\item[{\_\-\_\-int64}]{ key3, }
+\item[{\_\-\_\-int64}]{ key4}
+\end{DoxyParamCaption}
+)}}
+\label{class_encrypt_key_a082954a979e370dc47e83618c16c248e}
+
+
+Constructor for 256 bit strength encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key1}]Key required upon decryption. \item[{\em key2}]Key required upon decryption. \item[{\em key3}]Key required upon decryption. \item[{\em key4}]Key required upon decryption. \end{DoxyParams}
+\hypertarget{class_encrypt_key_a9e1f359a6e1e4893fc8d447115b481be}{
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\subsubsection[{EncryptKey}]{\setlength{\rightskip}{0pt plus 5cm}EncryptKey::EncryptKey (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ key1, }
+\item[{\_\-\_\-int64}]{ key2, }
+\item[{\_\-\_\-int64}]{ key3}
+\end{DoxyParamCaption}
+)}}
+\label{class_encrypt_key_a9e1f359a6e1e4893fc8d447115b481be}
+
+
+Constructor for 192 bit strength encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key1}]Key required upon decryption. \item[{\em key2}]Key required upon decryption. \item[{\em key3}]Key required upon decryption. \end{DoxyParams}
+\hypertarget{class_encrypt_key_abe5940dbf3981c08fffe29d210290ead}{
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\index{EncryptKey@{EncryptKey}!EncryptKey@{EncryptKey}}
+\subsubsection[{EncryptKey}]{\setlength{\rightskip}{0pt plus 5cm}EncryptKey::EncryptKey (
+\begin{DoxyParamCaption}
+\item[{\_\-\_\-int64}]{ key1, }
+\item[{\_\-\_\-int64}]{ key2}
+\end{DoxyParamCaption}
+)}}
+\label{class_encrypt_key_abe5940dbf3981c08fffe29d210290ead}
+
+
+Constructor for 128 bit strength encryption. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key1}]Key required upon decryption. \item[{\em key2}]Key required upon decryption. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_encrypt_key_a14200c0afeec7da371cabced0b32ce28}{
+\index{EncryptKey@{EncryptKey}!Copy@{Copy}}
+\index{Copy@{Copy}!EncryptKey@{EncryptKey}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void EncryptKey::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_encrypt_key_a14200c0afeec7da371cabced0b32ce28}
+
+
+Deep copy constructor / assignment operator helper method. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_encrypt_key_adc72eab7b96343f9ce9d513eaf225056}{
+\index{EncryptKey@{EncryptKey}!GetNumRounds@{GetNumRounds}}
+\index{GetNumRounds@{GetNumRounds}!EncryptKey@{EncryptKey}}
+\subsubsection[{GetNumRounds}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char EncryptKey::GetNumRounds (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_encrypt_key_adc72eab7b96343f9ce9d513eaf225056}
+
+
+Gets the number of rounds of encryption or decryption that should take place. 
+
+\begin{DoxyReturn}{Returns}
+the number rounds. 
+\end{DoxyReturn}
+\hypertarget{class_encrypt_key_a76212380b28d9a2e28d5b6ce200accf8}{
+\index{EncryptKey@{EncryptKey}!GetRoundKeys@{GetRoundKeys}}
+\index{GetRoundKeys@{GetRoundKeys}!EncryptKey@{EncryptKey}}
+\subsubsection[{GetRoundKeys}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ EncryptKey::GetRoundKeys (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_encrypt_key_a76212380b28d9a2e28d5b6ce200accf8}
+
+
+Returns pointer to round key. 
+
+\begin{DoxyReturn}{Returns}
+pointer to round key. 
+\end{DoxyReturn}
+\hypertarget{class_encrypt_key_a6a3608ebb86c921994d6158c32797fcd}{
+\index{EncryptKey@{EncryptKey}!KeyExpansion@{KeyExpansion}}
+\index{KeyExpansion@{KeyExpansion}!EncryptKey@{EncryptKey}}
+\subsubsection[{KeyExpansion}]{\setlength{\rightskip}{0pt plus 5cm}void EncryptKey::KeyExpansion (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_encrypt_key_a6a3608ebb86c921994d6158c32797fcd}
+
+
+Expand key, creating 'round keys' which are later combined with the input based on the Advanced Encryption Standard specification. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Key to generate round keys from. \end{DoxyParams}
+\hypertarget{class_encrypt_key_a2c3aade8edac7f2e0424c8ad2c2cc5fb}{
+\index{EncryptKey@{EncryptKey}!operator=@{operator=}}
+\index{operator=@{operator=}!EncryptKey@{EncryptKey}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf EncryptKey} \& EncryptKey::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf EncryptKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_encrypt_key_a2c3aade8edac7f2e0424c8ad2c2cc5fb}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_encrypt_key_aff2332925a10008a1c673cf60735ab41}{
+\index{EncryptKey@{EncryptKey}!RotateWordLeft@{RotateWordLeft}}
+\index{RotateWordLeft@{RotateWordLeft}!EncryptKey@{EncryptKey}}
+\subsubsection[{RotateWordLeft}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ EncryptKey::RotateWordLeft (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_encrypt_key_aff2332925a10008a1c673cf60735ab41}
+
+
+Rotates a word one byte to the left. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em word}]Word to substitute, must point to \hyperlink{class_encrypt_key_a70d96a008864bba3178f3fe16aaa9cca}{EncryptKey::WORD\_\-SIZE} bytes of data.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape word\/}. 
+\end{DoxyReturn}
+\hypertarget{class_encrypt_key_a022b65113b943a67bdc909bf4bee9e6c}{
+\index{EncryptKey@{EncryptKey}!SetBitStrength@{SetBitStrength}}
+\index{SetBitStrength@{SetBitStrength}!EncryptKey@{EncryptKey}}
+\subsubsection[{SetBitStrength}]{\setlength{\rightskip}{0pt plus 5cm}void EncryptKey::SetBitStrength (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ type, }
+\item[{{\bf Packet} \&}]{ key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_encrypt_key_a022b65113b943a67bdc909bf4bee9e6c}
+
+
+Allocates memory based on bit strength of encryption (128,192 or 256 bit). 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]Bit strength. \item[\mbox{\tt[out]} {\em key}]Packets memory will be adjusted so that key data can be added without memory reallocation. \end{DoxyParams}
+\hypertarget{class_encrypt_key_ae996e161d82a17d8d32129e4afda0f39}{
+\index{EncryptKey@{EncryptKey}!SubWord@{SubWord}}
+\index{SubWord@{SubWord}!EncryptKey@{EncryptKey}}
+\subsubsection[{SubWord}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char $\ast$ EncryptKey::SubWord (
+\begin{DoxyParamCaption}
+\item[{unsigned char $\ast$}]{ word}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_encrypt_key_ae996e161d82a17d8d32129e4afda0f39}
+
+
+Substitutes the bytes of a word with their equivalent in \hyperlink{class_net_utility_a4c0093017521d888c4510cc940ffa335}{NetUtility::EncryptionBox}. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em word}]Word to substitute, must point to \hyperlink{class_encrypt_key_a70d96a008864bba3178f3fe16aaa9cca}{EncryptKey::WORD\_\-SIZE} bytes of data.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\itshape word\/}. 
+\end{DoxyReturn}
+\hypertarget{class_encrypt_key_af1733dd51e9839966c3cb6ca75f822ec}{
+\index{EncryptKey@{EncryptKey}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!EncryptKey@{EncryptKey}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool EncryptKey::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_encrypt_key_af1733dd51e9839966c3cb6ca75f822ec}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/EncryptKey.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/EncryptKey.cpp\end{DoxyCompactItemize}

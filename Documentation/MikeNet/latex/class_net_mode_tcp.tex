@@ -1,0 +1,445 @@
+\hypertarget{class_net_mode_tcp}{
+\section{NetModeTcp Class Reference}
+\label{class_net_mode_tcp}\index{NetModeTcp@{NetModeTcp}}
+}
+
+
+TCP protocol class, provides a base for extensions to the protocol by TCP mode classes.  
+
+
+
+
+{\ttfamily \#include $<$NetModeTcp.h$>$}
+
+Inheritance diagram for NetModeTcp:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_mode_tcp}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_mode_tcp_a77b6d0cebbfd21778087927dd02a14ee}{SetAutoResize} (bool \hyperlink{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}{autoResize})
+\begin{DoxyCompactList}\small\item\em Enables or disables the 'auto resize' option. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_mode_tcp_abb7a8c9d33dcee5ecc7e069ddc81b6a2}{GetAutoResize} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the 'auto resize' option is enabled. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp_a4415c7fc6d6e7055166ca4ec0cd8182f}{NetModeTcp} (size\_\-t partialPacketSize, bool \hyperlink{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}{autoResize})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_tcp_a7add8e97377b54708eb033fbd0abfde4}{
+virtual \hyperlink{class_net_mode_tcp_a7add8e97377b54708eb033fbd0abfde4}{$\sim$NetModeTcp} ()}
+\label{class_net_mode_tcp_a7add8e97377b54708eb033fbd0abfde4}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp_ad39bd323595bbc60759563b698ee854f}{NetModeTcp} (const \hyperlink{class_net_mode_tcp}{NetModeTcp} \&)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_mode_tcp}{NetModeTcp} \& \hyperlink{class_net_mode_tcp_ab8848d01d2e4d670f8535556f10cd01c}{operator=} (const \hyperlink{class_net_mode_tcp}{NetModeTcp} \&)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_tcp_a67100f9412a69ea4059e77c04edd2251}{GetPartialPacketCurrentSize} () const 
+\begin{DoxyCompactList}\small\item\em Determines the amount of the oldest partial packet that has been received in bytes. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_tcp_ac2aaad8fa89939a1204e5f0a5ef9522f}{GetPacketAmount} (size\_\-t clientID=0, size\_\-t operationID=0) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the number of fully received packets in the complete packet store. \item\end{DoxyCompactList}\item 
+virtual double \hyperlink{class_net_mode_tcp_a837a9e13611bf2158aa07df5b21d55d0}{GetPartialPacketPercentage} () const =0
+\begin{DoxyCompactList}\small\item\em Determines the amount of the oldest partial packet that has been received as a percentage. \item\end{DoxyCompactList}\item 
+virtual \hyperlink{class_net_mode_tcp}{NetModeTcp} $\ast$ \hyperlink{class_net_mode_tcp_a00d88706d67bfb42eeab24fe9dd0d563}{Clone} () const =0
+\begin{DoxyCompactList}\small\item\em Retrieves a deep copy of this object. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_tcp_a51f8430ad742bc21f4fbceb4101a6414}{GetMaxPacketSize} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the size of the largest packet that can be received without a change in memory size. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_tcp_a875a5427b917d225cdbe7798619c6a07}{ChangeMaxPacketSize} (size\_\-t newSize)
+\begin{DoxyCompactList}\small\item\em Changes the the size of the largest packet that can be received. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_mode_tcp_adee8f5163c002823728135079de631d8}{
+void \hyperlink{class_net_mode_tcp_adee8f5163c002823728135079de631d8}{ClearPacketStore} ()}
+\label{class_net_mode_tcp_adee8f5163c002823728135079de631d8}
+
+\begin{DoxyCompactList}\small\item\em Clears only the complete packet store, completely emptying it. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_tcp_a4085cc53d5c59a3185c9596293b86766}{ClearData} ()
+\begin{DoxyCompactList}\small\item\em Erases all stored TCP data. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_net_mode_tcp_aa9ac5206e18d0c824daffccccfbc9f61}{GetPacketFromStore} (\hyperlink{class_packet}{Packet} $\ast$destination, size\_\-t clientID=0, size\_\-t operationID=0)
+\begin{DoxyCompactList}\small\item\em Retrieves a complete packet from the packet store. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_mode_tcp_ae031c101bb0bc3c974879ab41e034ebd}{PacketDone} (\hyperlink{class_packet}{Packet} $\ast$completePacket, \hyperlink{class_net_socket_a52b5f4de8d0a47fd8620f542b21c076c}{NetSocket::RecvFunc} tcpRecvFunc)
+\begin{DoxyCompactList}\small\item\em Deals with a complete packet. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_mode_tcp_ad3f11796c2db6af88ff4fc3f4e820323}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_net_mode_tcp_a1f20ef5cfc101a9e3a55bbbcbadaf899}{partialPacket}
+\begin{DoxyCompactList}\small\item\em Stores partial packets that are not yet completely received. \item\end{DoxyCompactList}\item 
+\hyperlink{class_concurrent_object}{ConcurrentObject}$<$ bool $>$ \hyperlink{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}{autoResize}
+\begin{DoxyCompactList}\small\item\em If true, \hyperlink{class_net_mode_tcp_a1f20ef5cfc101a9e3a55bbbcbadaf899}{NetModeTcp::partialPacket} will automatically increase memory size as needed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_mode_tcp_a8f0ec4087b396e5363f6a233d2e12e37}{Copy} (const \hyperlink{class_net_mode_tcp}{NetModeTcp} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy / assignment operator helper. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_mode_tcp_a0571ffe9a67f99a1c69af04b906e05b6}{
+\hyperlink{class_store_queue}{StoreQueue}$<$ \hyperlink{class_packet}{Packet} $>$ \hyperlink{class_net_mode_tcp_a0571ffe9a67f99a1c69af04b906e05b6}{packetStore}}
+\label{class_net_mode_tcp_a0571ffe9a67f99a1c69af04b906e05b6}
+
+\begin{DoxyCompactList}\small\item\em Stores complete packets that have been received. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+TCP protocol class, provides a base for extensions to the protocol by TCP mode classes. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This object describes how received packets should be stored. First any data received is put into a partial buffer. Afterwards if any complete packets exist in the partial buffer, they are moved to a queue or passed to a user supplied function. Classes derived from this object decide how exactly this process is implemented. \par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_mode_tcp_a4415c7fc6d6e7055166ca4ec0cd8182f}{
+\index{NetModeTcp@{NetModeTcp}!NetModeTcp@{NetModeTcp}}
+\index{NetModeTcp@{NetModeTcp}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{NetModeTcp}]{\setlength{\rightskip}{0pt plus 5cm}NetModeTcp::NetModeTcp (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ partialPacketSize, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_a4415c7fc6d6e7055166ca4ec0cd8182f}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em partialPacketSize}]Maximum amount of partial data (data that does not make up a full packet) that can be stored (in bytes). Packets larger than this size cannot be received without memory reallocation. \item[{\em autoResize}]If true then if a packet larger than {\itshape partialPacketSize\/} is received then more memory will be automatically allocated so that it can be received. \par
+ If false then an error will be thrown if a packet larger than {\itshape partialPacketSize\/} is received. \end{DoxyParams}
+\hypertarget{class_net_mode_tcp_ad39bd323595bbc60759563b698ee854f}{
+\index{NetModeTcp@{NetModeTcp}!NetModeTcp@{NetModeTcp}}
+\index{NetModeTcp@{NetModeTcp}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{NetModeTcp}]{\setlength{\rightskip}{0pt plus 5cm}NetModeTcp::NetModeTcp (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeTcp} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_ad39bd323595bbc60759563b698ee854f}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_mode_tcp_a875a5427b917d225cdbe7798619c6a07}{
+\index{NetModeTcp@{NetModeTcp}!ChangeMaxPacketSize@{ChangeMaxPacketSize}}
+\index{ChangeMaxPacketSize@{ChangeMaxPacketSize}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{ChangeMaxPacketSize}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeTcp::ChangeMaxPacketSize (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSize}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_a875a5427b917d225cdbe7798619c6a07}
+
+
+Changes the the size of the largest packet that can be received. 
+
+Packets larger than this will require an increase in memory size or an exception will be thrown.
+
+\begin{DoxyNote}{Note}
+Attempting to decrease the size may not be effective. If data exists in the buffer this will not be discarded. The buffer will decrease as much as possible without discarding data.
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSize}]New size. \end{DoxyParams}
+\hypertarget{class_net_mode_tcp_a4085cc53d5c59a3185c9596293b86766}{
+\index{NetModeTcp@{NetModeTcp}!ClearData@{ClearData}}
+\index{ClearData@{ClearData}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{ClearData}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeTcp::ClearData (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_a4085cc53d5c59a3185c9596293b86766}
+
+
+Erases all stored TCP data. 
+
+The object will now be in the same state as if it were newly constructed. \hypertarget{class_net_mode_tcp_a00d88706d67bfb42eeab24fe9dd0d563}{
+\index{NetModeTcp@{NetModeTcp}!Clone@{Clone}}
+\index{Clone@{Clone}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf NetModeTcp}$\ast$ NetModeTcp::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_mode_tcp_a00d88706d67bfb42eeab24fe9dd0d563}
+
+
+Retrieves a deep copy of this object. 
+
+\begin{DoxyReturn}{Returns}
+a deep copy of this object. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_class_net_mode_tcp_a749f5c4ff447ea11f20576827e973e8c}{TestClassNetModeTcp}, \hyperlink{class_net_mode_tcp_postfix_a047ba1c68e01bb6bd6c8be083102626e}{NetModeTcpPostfix}, and \hyperlink{class_net_mode_tcp_prefix_size_a9ee4ff58d9f3d88f626fc0e65025b1e3}{NetModeTcpPrefixSize}.
+
+\hypertarget{class_net_mode_tcp_a8f0ec4087b396e5363f6a233d2e12e37}{
+\index{NetModeTcp@{NetModeTcp}!Copy@{Copy}}
+\index{Copy@{Copy}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeTcp::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeTcp} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_mode_tcp_a8f0ec4087b396e5363f6a233d2e12e37}
+
+
+Deep copy / assignment operator helper. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_mode_tcp_abb7a8c9d33dcee5ecc7e069ddc81b6a2}{
+\index{NetModeTcp@{NetModeTcp}!GetAutoResize@{GetAutoResize}}
+\index{GetAutoResize@{GetAutoResize}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{GetAutoResize}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeTcp::GetAutoResize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_mode_tcp_abb7a8c9d33dcee5ecc7e069ddc81b6a2}
+
+
+Determines whether the 'auto resize' option is enabled. 
+
+\begin{DoxyReturn}{Returns}
+when true, if a packet larger than the maximum TCP packet size is received then the max size will be increased silently.\par
+ 
+
+when false, if a packet larger than the maximum TCP packet size is received then an exception will be thrown. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_tcp_a51f8430ad742bc21f4fbceb4101a6414}{
+\index{NetModeTcp@{NetModeTcp}!GetMaxPacketSize@{GetMaxPacketSize}}
+\index{GetMaxPacketSize@{GetMaxPacketSize}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{GetMaxPacketSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeTcp::GetMaxPacketSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_mode_tcp_a51f8430ad742bc21f4fbceb4101a6414}
+
+
+Retrieves the size of the largest packet that can be received without a change in memory size. 
+
+\begin{DoxyReturn}{Returns}
+the size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_tcp_ac2aaad8fa89939a1204e5f0a5ef9522f}{
+\index{NetModeTcp@{NetModeTcp}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeTcp::GetPacketAmount (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}, }
+\item[{size\_\-t}]{ operationID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_ac2aaad8fa89939a1204e5f0a5ef9522f}
+
+
+Retrieves the number of fully received packets in the complete packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]Ignored (optional, default = 0). \item[{\em operationID}]Ignored (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of fully received packets in the packet store. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a5e5d20657ffc037022adc4b81fe2df6d}{NetMode}.
+
+\hypertarget{class_net_mode_tcp_aa9ac5206e18d0c824daffccccfbc9f61}{
+\index{NetModeTcp@{NetModeTcp}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeTcp::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ destination, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}, }
+\item[{size\_\-t}]{ operationID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_aa9ac5206e18d0c824daffccccfbc9f61}
+
+
+Retrieves a complete packet from the packet store. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Destination to copy into. \item[{\em clientID}]Ignored (optional, default = 0). \item[{\em operationID}]Ignored (optional, default = 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_mode_a7231dcd15fc1896f61d7ac80c3e9b4ba}{NetMode}.
+
+\hypertarget{class_net_mode_tcp_a67100f9412a69ea4059e77c04edd2251}{
+\index{NetModeTcp@{NetModeTcp}!GetPartialPacketCurrentSize@{GetPartialPacketCurrentSize}}
+\index{GetPartialPacketCurrentSize@{GetPartialPacketCurrentSize}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{GetPartialPacketCurrentSize}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetModeTcp::GetPartialPacketCurrentSize (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_mode_tcp_a67100f9412a69ea4059e77c04edd2251}
+
+
+Determines the amount of the oldest partial packet that has been received in bytes. 
+
+\begin{DoxyReturn}{Returns}
+the current size of the partial packet being received. i.e. The number of bytes of the packet that have been received. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_tcp_a837a9e13611bf2158aa07df5b21d55d0}{
+\index{NetModeTcp@{NetModeTcp}!GetPartialPacketPercentage@{GetPartialPacketPercentage}}
+\index{GetPartialPacketPercentage@{GetPartialPacketPercentage}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{GetPartialPacketPercentage}]{\setlength{\rightskip}{0pt plus 5cm}virtual double NetModeTcp::GetPartialPacketPercentage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{class_net_mode_tcp_a837a9e13611bf2158aa07df5b21d55d0}
+
+
+Determines the amount of the oldest partial packet that has been received as a percentage. 
+
+\begin{DoxyReturn}{Returns}
+the percentage of the partial packet that has been received i.e. Between 0 and 100 where 50 indicates that half the packet has been received and we are now waiting for the second half to be received. 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_test_class_net_mode_tcp_a21ce248a37883cc5503dc5d1383b3075}{TestClassNetModeTcp}, \hyperlink{class_net_mode_tcp_postfix_ade09c6d671fa6078accae5196e6c95fe}{NetModeTcpPostfix}, and \hyperlink{class_net_mode_tcp_prefix_size_a9cef3f55fdd4fd5db6f6a2570c9178a5}{NetModeTcpPrefixSize}.
+
+\hypertarget{class_net_mode_tcp_ab8848d01d2e4d670f8535556f10cd01c}{
+\index{NetModeTcp@{NetModeTcp}!operator=@{operator=}}
+\index{operator=@{operator=}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetModeTcp} \& NetModeTcp::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetModeTcp} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_ab8848d01d2e4d670f8535556f10cd01c}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_mode_tcp_ae031c101bb0bc3c974879ab41e034ebd}{
+\index{NetModeTcp@{NetModeTcp}!PacketDone@{PacketDone}}
+\index{PacketDone@{PacketDone}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{PacketDone}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeTcp::PacketDone (
+\begin{DoxyParamCaption}
+\item[{{\bf Packet} $\ast$}]{ completePacket, }
+\item[{{\bf NetSocket::RecvFunc}}]{ tcpRecvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_mode_tcp_ae031c101bb0bc3c974879ab41e034ebd}
+
+
+Deals with a complete packet. 
+
+The class deals with it in one of two ways:
+\begin{DoxyItemize}
+\item Passes it to a user function specified by {\itshape tcpRecvFunc\/} parameter.
+\item If no user function is defined then it is put into a queue to be retrieved using \hyperlink{class_net_mode_tcp_aa9ac5206e18d0c824daffccccfbc9f61}{GetPacketFromStore()}.
+\end{DoxyItemize}
+
+A special case exists for an instance in client state and handshaking. In this case the packet is always added to the packet queue. This is necessary because the handshaking thread needs to receive TCP data. The user of this method must ensure {\itshape tcpRecvFunc\/} is NULL in this case.
+
+\begin{DoxyWarning}{Warning}
+If the packet is passed to a user function this is done synchronously, so this method will not return until the user function returns.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em completePacket}]The complete packet that should be dealt with. The packet is now owned by this object and should not be referenced elsewhere. \item[\mbox{\tt[in]} {\em tcpRecvFunc}]Method will be executed and data not added to the queue if this is non NULL. \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_mode_a6dfa7ab2954246efda52867ef345a6bb}{NetMode}.
+
+\hypertarget{class_net_mode_tcp_a77b6d0cebbfd21778087927dd02a14ee}{
+\index{NetModeTcp@{NetModeTcp}!SetAutoResize@{SetAutoResize}}
+\index{SetAutoResize@{SetAutoResize}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{SetAutoResize}]{\setlength{\rightskip}{0pt plus 5cm}void NetModeTcp::SetAutoResize (
+\begin{DoxyParamCaption}
+\item[{bool}]{ paraAutoResize}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_mode_tcp_a77b6d0cebbfd21778087927dd02a14ee}
+
+
+Enables or disables the 'auto resize' option. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em paraAutoResize}]Value to set autoResize to. \par
+ When true, if a packet larger than the maximum TCP packet size is received then the max size will be increased silently.\par
+ When false, if a packet larger than the maximum TCP packet size is received then an exception will be thrown. \end{DoxyParams}
+\hypertarget{class_net_mode_tcp_ad3f11796c2db6af88ff4fc3f4e820323}{
+\index{NetModeTcp@{NetModeTcp}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetModeTcp::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_mode_tcp_ad3f11796c2db6af88ff4fc3f4e820323}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_net_mode_af062e2de6fe5afa57061632715a5c0ad}{NetMode}.
+
+
+
+Reimplemented in \hyperlink{class_net_mode_tcp_postfix_a53d84feec3968804317e581529f192c6}{NetModeTcpPostfix}, and \hyperlink{class_net_mode_tcp_prefix_size_a9fc90706e6690880307714fbc917108f}{NetModeTcpPrefixSize}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}{
+\index{NetModeTcp@{NetModeTcp}!autoResize@{autoResize}}
+\index{autoResize@{autoResize}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{autoResize}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ConcurrentObject}$<$bool$>$ {\bf NetModeTcp::autoResize}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_mode_tcp_ae1bb51196acb2d71e38ce60b0860a1fc}
+
+
+If true, \hyperlink{class_net_mode_tcp_a1f20ef5cfc101a9e3a55bbbcbadaf899}{NetModeTcp::partialPacket} will automatically increase memory size as needed. 
+
+Protected by critical section so that it can be changed during runtime. \hypertarget{class_net_mode_tcp_a1f20ef5cfc101a9e3a55bbbcbadaf899}{
+\index{NetModeTcp@{NetModeTcp}!partialPacket@{partialPacket}}
+\index{partialPacket@{partialPacket}!NetModeTcp@{NetModeTcp}}
+\subsubsection[{partialPacket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf NetModeTcp::partialPacket}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_mode_tcp_a1f20ef5cfc101a9e3a55bbbcbadaf899}
+
+
+Stores partial packets that are not yet completely received. 
+
+These are passed to \hyperlink{class_net_mode_tcp_a0571ffe9a67f99a1c69af04b906e05b6}{NetModeTcp::packetStore} when completed. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeTcp.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetModeTcp.cpp\end{DoxyCompactItemize}

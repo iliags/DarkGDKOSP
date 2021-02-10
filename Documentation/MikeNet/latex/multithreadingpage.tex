@@ -1,0 +1,35 @@
+This page explains how to use this API with multiple threads.\par
+\par
+\hypertarget{multithreadingpage_mtSockets}{}\section{Sockets}\label{multithreadingpage_mtSockets}
+This section describes how \hyperlink{classcl_socket_u_d_p}{clSocketUDP} and \hyperlink{classcl_socket_t_c_p}{clSocketTCP} can be used safely.\par
+\par
+
+
+You should set the socket up in one thread and not attempt to change socket options with multiple threads concurrently. Setting up includes any action taken before the socket is fully operational. After this you can initiate Send operations and manipulate the TCP or UDP mode using GetMode() concurrently. \par
+\par
+
+
+Closing the socket must be done by only one thread and attempts should not be made by two threads to close the same socket. Although two different sockets may each be closed by a different thread. \par
+\par
+
+
+All other commands (excluding those designed for internal use by the API itself e.g. Recv) can be used concurrently.\par
+\par
+\hypertarget{multithreadingpage_mtNetInstances}{}\section{Networking Instances}\label{multithreadingpage_mtNetInstances}
+This section describes how \hyperlink{classcl_server_state}{clServerState}, \hyperlink{classcl_client_state}{clClientState} and clBroadcast state can be used safely.\par
+\par
+
+
+\hyperlink{classcl_server_state}{clServerState}, \hyperlink{classcl_client_state}{clClientState} and \hyperlink{classcl_broadcast_state}{clBroadcastState} can be used concurrently. Where a thread ID is asked for use \hyperlink{classcl_networking_utility_acb6168b9acdc70baeb9bc0fe7c5196bb}{clNetworkingUtility::GetMainProcessThreadID()}. Any threads using this ID will become synchronized and wait on each other where necessary. I plan to allow for user threads to have their own thread IDs to boost performance. \par
+\par
+\hypertarget{multithreadingpage_mtProcedural}{}\section{Procedural Commands}\label{multithreadingpage_mtProcedural}
+All \hyperlink{group__proc_commands}{procedural commands} are thread safe.\par
+\par
+\hypertarget{multithreadingpage_mtClasses}{}\section{Concurrency Classes}\label{multithreadingpage_mtClasses}
+The following classes exist for concurrency purposes, and are used internally:
+\begin{DoxyItemize}
+\item \hyperlink{classcl_critical_section}{clCriticalSection}
+\item \hyperlink{classcl_multithread}{clMultithread}
+\item \hyperlink{classcl_multithread_simple}{clMultithreadSimple}
+\item \hyperlink{classcl_status}{clStatus} 
+\end{DoxyItemize}

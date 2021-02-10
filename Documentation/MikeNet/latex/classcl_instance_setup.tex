@@ -1,0 +1,309 @@
+\hypertarget{classcl_instance_setup}{
+\section{clInstanceSetup Class Reference}
+\label{classcl_instance_setup}\index{clInstanceSetup@{clInstanceSetup}}
+}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classcl_instance_setup_af5cb540183530a759bc262debfca9e34}{StartInitial} (int \hyperlink{classcl_instance_setup_a4163ffe3de7fb003f97e436491235b28}{numInstances})
+\item 
+static int \hyperlink{classcl_instance_setup_a82ee23ff6eb6dd9a070c7c1333383e7f}{FinishAll} ()
+\item 
+\hypertarget{classcl_instance_setup_a51e2667cc11f4157ba45721e56d0339e}{
+static int {\bfseries StartServer} (int \hyperlink{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}{instanceID})}
+\label{classcl_instance_setup_a51e2667cc11f4157ba45721e56d0339e}
+
+\item 
+\hypertarget{classcl_instance_setup_a23bee286e8454f8fdb7f9c6c83ad3239}{
+static int {\bfseries StartClient} (int \hyperlink{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}{instanceID})}
+\label{classcl_instance_setup_a23bee286e8454f8fdb7f9c6c83ad3239}
+
+\item 
+\hypertarget{classcl_instance_setup_a61c2e4aae020585d5223f54a0592c099}{
+static int {\bfseries StartBroadcast} (int \hyperlink{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}{instanceID})}
+\label{classcl_instance_setup_a61c2e4aae020585d5223f54a0592c099}
+
+\item 
+static bool \hyperlink{classcl_instance_setup_a2197f516509bb20a8ed0d7330cc892bb}{GetInstanceActive} ()
+\item 
+static int \hyperlink{classcl_instance_setup_af456c8408da960ec6ae3cec57da1f17b}{GetInstanceType} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_setup_a4176ba764e03839962dc65563d3b35bb}{clInstanceSetup} ()
+\item 
+\hypertarget{classcl_instance_setup_ad25d6f8d89dab8d655ae57a2133aa056}{
+int {\bfseries Finish} (size\_\-t \hyperlink{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}{instanceID})}
+\label{classcl_instance_setup_ad25d6f8d89dab8d655ae57a2133aa056}
+
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \hyperlink{classcl_instance_setup_ae958e001782f87e3d4a8588aa46d7423}{AssignInstanceID} ()
+\item 
+static int \hyperlink{classcl_instance_setup_ae5afd30ceb932796fd244c1aaf139433}{ResetAssignInstanceID} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}{instanceID}
+\item 
+int \hyperlink{classcl_instance_setup_a655807bb682504ab13a93e273263a445}{instanceType}
+\item 
+int \hyperlink{classcl_instance_setup_a3a536e872b3739d5eedcf68d8362733f}{maxClients}
+\item 
+int \hyperlink{classcl_instance_setup_aab4429f5f5e4dbb03e0ac7b57a367cbb}{maxOperations}
+\item 
+size\_\-t \hyperlink{classcl_instance_setup_afe672b3b90ea27d8a7761f1ffc4a4cd6}{wsaRecvSizeTCP}
+\item 
+size\_\-t \hyperlink{classcl_instance_setup_a89cd87a06080b11b12b79039a6e94c7b}{recvSizeTCP}
+\item 
+size\_\-t \hyperlink{classcl_instance_setup_af5e4d3fb91a77f2e31ca2171de9750b5}{recvSizeUDP}
+\item 
+unsigned char \hyperlink{classcl_instance_setup_a16da9e8e5cd44f8062f02101222102fc}{state}
+\item 
+unsigned char \hyperlink{classcl_instance_setup_aa367a51b021c0750ff667177d5a961ca}{modeUDP}
+\item 
+bool \hyperlink{classcl_instance_setup_ae27488feccbe024221bcb6f8c19f8eae}{enabledUDP}
+\item 
+long long int \hyperlink{classcl_instance_setup_a376b285bccbb1c1400bcceea53bd8dda}{decryptKeyUDP}
+\item 
+void($\ast$ \hyperlink{classcl_instance_setup_ad42bce75edecf44786bdc6bbbe46154b}{recvFuncTCP} )(int ThreadID, \hyperlink{classcl_packet}{clPacket} \&Packet)
+\item 
+void($\ast$ \hyperlink{classcl_instance_setup_aef8ff6fa818c71994b82807842c583c6}{recvFuncUDP} )(int ThreadID, \hyperlink{classcl_packet}{clPacket} \&Packet)
+\item 
+bool \hyperlink{classcl_instance_setup_a9ed34974bb534f753f000490f8089d6a}{handshakeEnabledTCP}
+\item 
+unsigned char \hyperlink{classcl_instance_setup_a7ad7f0ee077f5efdeb6140dfd30d8dbb}{modeTCP}
+\item 
+bool \hyperlink{classcl_instance_setup_a6c8317c2c68452633ce0b16f22f52ded}{autoResizeTCP}
+\item 
+size\_\-t \hyperlink{classcl_instance_setup_aba8346dc52f0073ef110675593b71af6}{sendTimeout}
+\item 
+bool \hyperlink{classcl_instance_setup_a9aace39dd40220ba6718fdae22e32970}{gracefulDisconnect}
+\item 
+bool \hyperlink{classcl_instance_setup_a0326fa43d0d08783d371c7aab79f6d75}{nagleDisabled}
+\item 
+\hyperlink{classcl_packet}{clPacket} \hyperlink{classcl_instance_setup_a165b8b2dbed85b5b1ba3866cd9f06273}{postFixTCP}
+\item 
+int \hyperlink{classcl_instance_setup_a4163ffe3de7fb003f97e436491235b28}{numInstances}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{classcl_instance_setup_abfe57f0506bbc15ac6ff7e045ccb9b6d}{assignInstanceID} = 0
+\item 
+static \hyperlink{classcl_instance}{clInstance} $\ast$$\ast$ \hyperlink{classcl_instance_setup_a4c192965c87e9d50508c05589815139f}{instances}
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_setup_a4176ba764e03839962dc65563d3b35bb}{
+\index{clInstanceSetup@{clInstanceSetup}!clInstanceSetup@{clInstanceSetup}}
+\index{clInstanceSetup@{clInstanceSetup}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{clInstanceSetup}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceSetup::clInstanceSetup ()\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a4176ba764e03839962dc65563d3b35bb}
+Constructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_setup_ae958e001782f87e3d4a8588aa46d7423}{
+\index{clInstanceSetup@{clInstanceSetup}!AssignInstanceID@{AssignInstanceID}}
+\index{AssignInstanceID@{AssignInstanceID}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{AssignInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}int clInstanceSetup::AssignInstanceID ()\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_instance_setup_ae958e001782f87e3d4a8588aa46d7423}
+Increases {\ttfamily assignInstanceID} by 1 \begin{DoxyReturn}{Returns}
+{\ttfamily assignInstanceID} before it was increased by 1 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_setup_a82ee23ff6eb6dd9a070c7c1333383e7f}{
+\index{clInstanceSetup@{clInstanceSetup}!FinishAll@{FinishAll}}
+\index{FinishAll@{FinishAll}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{FinishAll}]{\setlength{\rightskip}{0pt plus 5cm}int clInstanceSetup::FinishAll ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_instance_setup_a82ee23ff6eb6dd9a070c7c1333383e7f}
+Cleans up all instances and unloads the networking module \begin{DoxyReturn}{Returns}
+0 if no error, -\/1 if error 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_setup_a2197f516509bb20a8ed0d7330cc892bb}{
+\index{clInstanceSetup@{clInstanceSetup}!GetInstanceActive@{GetInstanceActive}}
+\index{GetInstanceActive@{GetInstanceActive}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{GetInstanceActive}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceSetup::GetInstanceActive ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_instance_setup_a2197f516509bb20a8ed0d7330cc892bb}
+\begin{DoxyReturn}{Returns}
+true if instance is active, false if instance is inactive 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_setup_af456c8408da960ec6ae3cec57da1f17b}{
+\index{clInstanceSetup@{clInstanceSetup}!GetInstanceType@{GetInstanceType}}
+\index{GetInstanceType@{GetInstanceType}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{GetInstanceType}]{\setlength{\rightskip}{0pt plus 5cm}int clInstanceSetup::GetInstanceType ()\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_instance_setup_af456c8408da960ec6ae3cec57da1f17b}
+\begin{DoxyReturn}{Returns}
+instance type, can be one of following: -\/STATE\_\-SERVER -\/STATE\_\-CLIENT -\/STATE\_\-BROADCAST -\/NULL: instance is inactive 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_setup_ae5afd30ceb932796fd244c1aaf139433}{
+\index{clInstanceSetup@{clInstanceSetup}!ResetAssignInstanceID@{ResetAssignInstanceID}}
+\index{ResetAssignInstanceID@{ResetAssignInstanceID}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{ResetAssignInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}int clInstanceSetup::ResetAssignInstanceID ()\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_instance_setup_ae5afd30ceb932796fd244c1aaf139433}
+Resets {\ttfamily assignInstanceID} to 0 \hypertarget{classcl_instance_setup_af5cb540183530a759bc262debfca9e34}{
+\index{clInstanceSetup@{clInstanceSetup}!StartInitial@{StartInitial}}
+\index{StartInitial@{StartInitial}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{StartInitial}]{\setlength{\rightskip}{0pt plus 5cm}int clInstanceSetup::StartInitial (int {\em numInstances})\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_instance_setup_af5cb540183530a759bc262debfca9e34}
+Starts networking module with {\itshape numInstances\/} inactive instances \par
+ Reloads networking module if it is already loaded 
+\begin{DoxyParams}{Parameters}
+\item[{\em numInstances}]number of inactive instances to create \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if no error, -\/1 if error 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_instance_setup_abfe57f0506bbc15ac6ff7e045ccb9b6d}{
+\index{clInstanceSetup@{clInstanceSetup}!assignInstanceID@{assignInstanceID}}
+\index{assignInstanceID@{assignInstanceID}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{assignInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}const int {\bf clInstanceSetup::assignInstanceID} = 0\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_instance_setup_abfe57f0506bbc15ac6ff7e045ccb9b6d}
+Increments every time instance is setup so that {\ttfamily instanceID} is set correctly \par
+ When the networking module is shutdown this variable must be set to 0 \hypertarget{classcl_instance_setup_a6c8317c2c68452633ce0b16f22f52ded}{
+\index{clInstanceSetup@{clInstanceSetup}!autoResizeTCP@{autoResizeTCP}}
+\index{autoResizeTCP@{autoResizeTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{autoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceSetup::autoResizeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a6c8317c2c68452633ce0b16f22f52ded}
+If true maximum size of incoming TCP packet will increase if necassary to store an incoming packet \hypertarget{classcl_instance_setup_a376b285bccbb1c1400bcceea53bd8dda}{
+\index{clInstanceSetup@{clInstanceSetup}!decryptKeyUDP@{decryptKeyUDP}}
+\index{decryptKeyUDP@{decryptKeyUDP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{decryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}long long int {\bf clInstanceSetup::decryptKeyUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a376b285bccbb1c1400bcceea53bd8dda}
+Pointer to \hyperlink{classcl_encrypt_key}{clEncryptKey} object used when decrypting UDP packets \par
+ 0 if no key exists \hypertarget{classcl_instance_setup_ae27488feccbe024221bcb6f8c19f8eae}{
+\index{clInstanceSetup@{clInstanceSetup}!enabledUDP@{enabledUDP}}
+\index{enabledUDP@{enabledUDP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{enabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceSetup::enabledUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_ae27488feccbe024221bcb6f8c19f8eae}
+Local TCP and UDP address of instance true if UDP is enabled \hypertarget{classcl_instance_setup_a9aace39dd40220ba6718fdae22e32970}{
+\index{clInstanceSetup@{clInstanceSetup}!gracefulDisconnect@{gracefulDisconnect}}
+\index{gracefulDisconnect@{gracefulDisconnect}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{gracefulDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceSetup::gracefulDisconnect}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a9aace39dd40220ba6718fdae22e32970}
+If true graceful disconnecting is possible \hypertarget{classcl_instance_setup_a9ed34974bb534f753f000490f8089d6a}{
+\index{clInstanceSetup@{clInstanceSetup}!handshakeEnabledTCP@{handshakeEnabledTCP}}
+\index{handshakeEnabledTCP@{handshakeEnabledTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{handshakeEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceSetup::handshakeEnabledTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a9ed34974bb534f753f000490f8089d6a}
+true if the TCP handshaking process is enabled \par
+ false if the TCP handshaking process is disabled, connection will occur with no additional data transfer \hypertarget{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}{
+\index{clInstanceSetup@{clInstanceSetup}!instanceID@{instanceID}}
+\index{instanceID@{instanceID}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{instanceID}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf clInstanceSetup::instanceID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_aca3c51adce99fa0900b023a4ab313a57}
+ID of instance that object corresponds to, it stores settings for that instance only \par
+ The instance ID directly maps to the element ID of the instance stored in the static array {\ttfamily instances} \hypertarget{classcl_instance_setup_a4c192965c87e9d50508c05589815139f}{
+\index{clInstanceSetup@{clInstanceSetup}!instances@{instances}}
+\index{instances@{instances}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{instances}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstance}$\ast$$\ast$ {\bf clInstanceSetup::instances}\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_instance_setup_a4c192965c87e9d50508c05589815139f}
+1D array of pointers to instances \hypertarget{classcl_instance_setup_a655807bb682504ab13a93e273263a445}{
+\index{clInstanceSetup@{clInstanceSetup}!instanceType@{instanceType}}
+\index{instanceType@{instanceType}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{instanceType}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf clInstanceSetup::instanceType}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a655807bb682504ab13a93e273263a445}
+Instance type, can be one of following: -\/STATE\_\-SERVER -\/STATE\_\-CLIENT -\/STATE\_\-BROADCAST -\/NULL: instance is inactive \hypertarget{classcl_instance_setup_a3a536e872b3739d5eedcf68d8362733f}{
+\index{clInstanceSetup@{clInstanceSetup}!maxClients@{maxClients}}
+\index{maxClients@{maxClients}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{maxClients}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf clInstanceSetup::maxClients}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a3a536e872b3739d5eedcf68d8362733f}
+Maximum number of clients that can be connected to server at any one time \hypertarget{classcl_instance_setup_aab4429f5f5e4dbb03e0ac7b57a367cbb}{
+\index{clInstanceSetup@{clInstanceSetup}!maxOperations@{maxOperations}}
+\index{maxOperations@{maxOperations}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{maxOperations}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf clInstanceSetup::maxOperations}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_aab4429f5f5e4dbb03e0ac7b57a367cbb}
+Maximum number of UDP operation that can be used \par
+ {\ttfamily maxOperations} must be:
+\begin{DoxyItemize}
+\item 1 in UDP mode 'per client', 'catch all' and 'catch all, no out of order'
+\item $>$0 in UDP mode 'per client, per operation' 
+\end{DoxyItemize}\hypertarget{classcl_instance_setup_a7ad7f0ee077f5efdeb6140dfd30d8dbb}{
+\index{clInstanceSetup@{clInstanceSetup}!modeTCP@{modeTCP}}
+\index{modeTCP@{modeTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{modeTCP}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf clInstanceSetup::modeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a7ad7f0ee077f5efdeb6140dfd30d8dbb}
+TCP mode in use, can be:
+\begin{DoxyItemize}
+\item {\ttfamily clSharedProtocol::TM\_\-SIZE} 
+\item {\ttfamily TM\_\-RM} 
+\end{DoxyItemize}\hypertarget{classcl_instance_setup_aa367a51b021c0750ff667177d5a961ca}{
+\index{clInstanceSetup@{clInstanceSetup}!modeUDP@{modeUDP}}
+\index{modeUDP@{modeUDP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{modeUDP}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf clInstanceSetup::modeUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_aa367a51b021c0750ff667177d5a961ca}
+UDP mode we are in, can be:
+\begin{DoxyItemize}
+\item {\ttfamily clSharedProtocol::UM\_\-PER\_\-CLIENT} 
+\item {\ttfamily clSharedProtocol::UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION} 
+\item {\ttfamily clSharedProtocol::UM\_\-CATCH\_\-ALL} 
+\item {\ttfamily clSharedProtocol::UM\_\-CATCH\_\-ALL\_\-NO} 
+\end{DoxyItemize}\hypertarget{classcl_instance_setup_a0326fa43d0d08783d371c7aab79f6d75}{
+\index{clInstanceSetup@{clInstanceSetup}!nagleDisabled@{nagleDisabled}}
+\index{nagleDisabled@{nagleDisabled}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{nagleDisabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceSetup::nagleDisabled}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a0326fa43d0d08783d371c7aab79f6d75}
+If true the nagle algorithm is disabled \hypertarget{classcl_instance_setup_a4163ffe3de7fb003f97e436491235b28}{
+\index{clInstanceSetup@{clInstanceSetup}!numInstances@{numInstances}}
+\index{numInstances@{numInstances}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{numInstances}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf clInstanceSetup::numInstances}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a4163ffe3de7fb003f97e436491235b28}
+Number of elements in {\ttfamily instances} \hypertarget{classcl_instance_setup_a165b8b2dbed85b5b1ba3866cd9f06273}{
+\index{clInstanceSetup@{clInstanceSetup}!postFixTCP@{postFixTCP}}
+\index{postFixTCP@{postFixTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{postFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} {\bf clInstanceSetup::postFixTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a165b8b2dbed85b5b1ba3866cd9f06273}
+The postfix to apply in TCP mode {\ttfamily TM\_\-RN} \hypertarget{classcl_instance_setup_ad42bce75edecf44786bdc6bbbe46154b}{
+\index{clInstanceSetup@{clInstanceSetup}!recvFuncTCP@{recvFuncTCP}}
+\index{recvFuncTCP@{recvFuncTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{recvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf clInstanceSetup::recvFuncTCP})(int ThreadID, {\bf clPacket} \&Packet)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_ad42bce75edecf44786bdc6bbbe46154b}
+Pointer to function to be executed when TCP packet is received \par
+ 0 if no function exists \hypertarget{classcl_instance_setup_aef8ff6fa818c71994b82807842c583c6}{
+\index{clInstanceSetup@{clInstanceSetup}!recvFuncUDP@{recvFuncUDP}}
+\index{recvFuncUDP@{recvFuncUDP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{recvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}void($\ast$ {\bf clInstanceSetup::recvFuncUDP})(int ThreadID, {\bf clPacket} \&Packet)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_aef8ff6fa818c71994b82807842c583c6}
+Pointer to function to be executed when UDP packet is received \par
+ 0 if no function exists \hypertarget{classcl_instance_setup_a89cd87a06080b11b12b79039a6e94c7b}{
+\index{clInstanceSetup@{clInstanceSetup}!recvSizeTCP@{recvSizeTCP}}
+\index{recvSizeTCP@{recvSizeTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{recvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceSetup::recvSizeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a89cd87a06080b11b12b79039a6e94c7b}
+Maximum size an incoming TCP packet can be \hypertarget{classcl_instance_setup_af5e4d3fb91a77f2e31ca2171de9750b5}{
+\index{clInstanceSetup@{clInstanceSetup}!recvSizeUDP@{recvSizeUDP}}
+\index{recvSizeUDP@{recvSizeUDP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{recvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceSetup::recvSizeUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_af5e4d3fb91a77f2e31ca2171de9750b5}
+Maximum size an incoming UDP packet can be \hypertarget{classcl_instance_setup_aba8346dc52f0073ef110675593b71af6}{
+\index{clInstanceSetup@{clInstanceSetup}!sendTimeout@{sendTimeout}}
+\index{sendTimeout@{sendTimeout}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{sendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceSetup::sendTimeout}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_aba8346dc52f0073ef110675593b71af6}
+Length of time that send operation will wait before cancelling and disconnecting \hypertarget{classcl_instance_setup_a16da9e8e5cd44f8062f02101222102fc}{
+\index{clInstanceSetup@{clInstanceSetup}!state@{state}}
+\index{state@{state}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{state}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char {\bf clInstanceSetup::state}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_a16da9e8e5cd44f8062f02101222102fc}
+Type of instance this object is, can be:
+\begin{DoxyItemize}
+\item {\ttfamily STATE\_\-CLIENT} 
+\item {\ttfamily STATE\_\-SERVER} 
+\item {\ttfamily STATE\_\-BROADCAST} 
+\end{DoxyItemize}\hypertarget{classcl_instance_setup_afe672b3b90ea27d8a7761f1ffc4a4cd6}{
+\index{clInstanceSetup@{clInstanceSetup}!wsaRecvSizeTCP@{wsaRecvSizeTCP}}
+\index{wsaRecvSizeTCP@{wsaRecvSizeTCP}!clInstanceSetup@{clInstanceSetup}}
+\subsubsection[{wsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceSetup::wsaRecvSizeTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_setup_afe672b3b90ea27d8a7761f1ffc4a4cd6}
+Maximum amount of TCP data that can be received in one {\ttfamily WSARecv} operation 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceSettings.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceSettings.cpp\end{DoxyCompactItemize}

@@ -1,0 +1,278 @@
+<s3ge version="1.0">
+
+  <!-- ImageEdit Sub Menu-->
+
+  <gizmo name="ImageEditFile" parent="ImageEdit" description="Image File">
+    <variable name="toggle" value="0"/>
+    <orientate ref="S3GEEdit" x="2" y="49" width="64" height="24">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE"  behavior="menubox" transition="ghostly" theme="magicbox" style="standard" scheme="pointingFX" label="File" xalign="center" yalign="middle"/>
+    <event state="ENTER"/>
+    <event state="HOVER" scheme="pointingFX"/>
+    <event state="DOWN"/>
+    <event state="HOLD"/>
+    <event state="DRAG"/>
+    <event state="UP"/>
+    <event state="EXIT"/>
+  </gizmo>
+
+    <gizmo name="ImageEditFileNew" parent="ImageEditFile" ref="previous" description="Create New Image">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="New" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditFileOpen" parent="ImageEditFile" ref="previous" description="Open|Open ReadOnly|Open Recent|Re-Open(Revert) Image Format(*.s3ge) | Import">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Open" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditFileSave" parent="ImageEditFile" ref="previous" description="Save|SaveAs Image Format(*.s3ge)">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Save" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditFileClose" parent="ImageEditFile" ref="previous" description="Close|CloseAll|CloseAllBut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Close" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="ImageEditEdit" parent="ImageEdit" ref="previous" description="Image Edit">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Edit" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="ImageEditEditUndo" parent="ImageEditEdit" ref="previous" description="Undo|Undo All|Undo History">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE"label="Undo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditEditRedo" parent="ImageEditEdit" ref="previous" description="Redo">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Redo" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditEditCut" parent="ImageEditEdit" ref="previous" description="Cut">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cut" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditEditCopy" parent="ImageEditEdit" ref="previous" description="Copy|CopyToClipboard|CopyToHistory">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Copy" x="24" xalign="left" yalign="middle"/>
+     </gizmo>
+
+    <gizmo name="ImageEditEditPaste" parent="ImageEditEdit" ref="previous" description="Paste">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paste" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditEditDelete" parent="ImageEditEdit" ref="previous" description="Delete|Clear">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Delete" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="ImageEditObject" parent="ImageEdit" ref="previous" description="Image Objects">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Objects" xalign="center" yalign="middle"/>
+  </gizmo>
+  
+    <!-- 
+      Objects: 
+        Layer
+          Standard
+          ChannelMap
+          UV
+        Brush  
+        Cluster
+        Paintbot
+        Paintcrew
+    -->
+
+    <gizmo name="ImageEditObjectLayer" parent="ImageEditObject" ref="previous" description="Layers">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Layer" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+      <gizmo name="ImageEditObjectLayerImage" parent="ImageEditObjectLayer" ref="previous" description="Image Layer">
+        <orientate ref="previous" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Image" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="ImageEditObjectLayerChannelmap" parent="ImageEditObjectLayer" ref="previous" description="ChannelMap Layer">
+          <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="ChannelMap" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+      <gizmo name="ImageEditObjectLayerUVmap" parent="ImageEditObjectLayer" ref="previous" description="UVMap Layer">
+         <orientate ref="previous" width="96" height="24" yalign="bottom">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="UVMap" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+    <gizmo name="ImageEditObjectMaterial" parent="ImageEditObject" ref="previous" description="Material">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Material" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditObjectShader" parent="ImageEditObject" ref="previous" description="Shader">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Shader" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditObjectFX" parent="ImageEditObject" ref="previous" description="FX">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="FX" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+      <gizmo name="ImageEditObjectEffect" parent="ImageEditObjectFX" ref="previous" description="FX Effect">
+        <orientate ref="previous" width="96" height="24" xalign="right">
+          <physics noresponse="true"/>
+        </orientate>
+        <event state="IDLE" label="Effect" x="24" xalign="left" yalign="middle"/>
+      </gizmo>
+
+    <gizmo name="ImageEditObjectCluster" parent="ImageEditObject" ref="previous" description="Cluster">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Cluster" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditObjectStamp" parent="ImageEditObjectCluster" ref="previous" description="Stamp">
+      <orientate ref="previous" width="96" height="24" xalign="right">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Stamp" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+   <gizmo name="ImageEditObjectPaintcrew" parent="ImageEditObject" ref="previous" description="Paintcrew">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Paintcrew" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="ImageEditObjectPaintbot" parent="ImageEditObjectPaintcrew" ref="previous" description="Paintbot">
+    <orientate ref="previous" width="96" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Paintbot" x="24" xalign="left" yalign="middle"/>
+  </gizmo>
+  
+  <gizmo name="ImageEditTools" parent="ImageEdit" ref="previous" description="Image Tools">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Tools" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="ImageEditToolsApplicator" parent="ImageEditTools" ref="previous" description="Applicator">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Applicator" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditToolsSelector" parent="ImageEditTools" ref="previous" description="New Selector">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Selector" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditToolsTransformer" parent="ImageEditTools" ref="previous" description="New Transformer">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Transformer" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+  <gizmo name="ImageEditView" parent="ImageEdit" ref="previous" description="View">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="View" xalign="center" yalign="middle"/>
+  </gizmo>
+
+    <gizmo name="ImageEditViewZoom" parent="ImageEditView" ref="previous" description="Zoom Canvas">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Zoom..." x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditViewArrange" parent="ImageEditView" ref="previous" description="Arrange Sub Canvases">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Arrange" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditViewDialogs" parent="ImageEditView" ref="previous" description="Show/Hide Dialogs">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Dialogs" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+
+    <gizmo name="ImageEditViewOptions" parent="ImageEditView" ref="previous" description="Viewing Options">
+      <orientate ref="previous" width="96" height="24" yalign="bottom">
+        <physics noresponse="true"/>
+      </orientate>
+      <event state="IDLE" label="Options" x="24" xalign="left" yalign="middle"/>
+    </gizmo>
+  
+  <gizmo name="ImageEditHelp" parent="ImageEdit" ref="previous" description="Image Help">
+    <orientate ref="previous" width="64" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" label="Help" xalign="center" yalign="middle"/>
+  </gizmo>
+
+  <gizmo name="ImageEditBlank" parent="ImageEdit" description="Blank">
+    <variable name="toggle" value="0"/>
+    <orientate ref="previous" width="darklua: xmlAttributeValue = dbScreenWidthGet() - (64 * 6) -1" height="24" xalign="right">
+      <physics noresponse="true"/>
+    </orientate>
+    <event state="IDLE" theme="magicbox"/>
+  </gizmo>
+  
+</s3ge>

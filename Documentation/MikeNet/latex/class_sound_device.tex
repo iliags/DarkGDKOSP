@@ -1,0 +1,108 @@
+\hypertarget{class_sound_device}{
+\section{SoundDevice Class Reference}
+\label{class_sound_device}\index{SoundDevice@{SoundDevice}}
+}
+
+
+Stores information about a sound input or output device.  
+
+
+
+
+{\ttfamily \#include $<$SoundDevice.h$>$}
+
+Inheritance diagram for SoundDevice:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_sound_device}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_device_a4c32e9e396afc2f33fd084ca0c23763b}{
+\hyperlink{class_sound_device_a4c32e9e396afc2f33fd084ca0c23763b}{SoundDevice} ()}
+\label{class_sound_device_a4c32e9e396afc2f33fd084ca0c23763b}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_device_aac25582f3f92e4d5ee732001f4e05c5f}{
+virtual \hyperlink{class_sound_device_aac25582f3f92e4d5ee732001f4e05c5f}{$\sim$SoundDevice} ()}
+\label{class_sound_device_aac25582f3f92e4d5ee732001f4e05c5f}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_device_a487075246eacfe985269a5615fb4353a}{
+virtual WORD {\bfseries GetManufacturerID} () const =0}
+\label{class_sound_device_a487075246eacfe985269a5615fb4353a}
+
+\item 
+\hypertarget{class_sound_device_ac4e1baf3e4c991e020d54246a249a17c}{
+virtual WORD {\bfseries GetProductID} () const =0}
+\label{class_sound_device_ac4e1baf3e4c991e020d54246a249a17c}
+
+\item 
+\hypertarget{class_sound_device_a92b81dc5ca97fe5f2ab08b02c7820061}{
+virtual const char $\ast$ {\bfseries GetName} () const =0}
+\label{class_sound_device_a92b81dc5ca97fe5f2ab08b02c7820061}
+
+\item 
+bool \hyperlink{class_sound_device_a1d542357cb3c320b0461415034d548f3}{IsFormatSupported} (DWORD samplesPerSecond, WORD bits, WORD channels) const 
+\begin{DoxyCompactList}\small\item\em Determine if a format with the specified settings is supported by the device. \item\end{DoxyCompactList}\item 
+\hypertarget{class_sound_device_afea665a8482e9424d6b3e239886d7495}{
+virtual unsigned char {\bfseries GetDriverMajorVersion} () const =0}
+\label{class_sound_device_afea665a8482e9424d6b3e239886d7495}
+
+\item 
+\hypertarget{class_sound_device_a346c72d2231260a22e3f566616689d18}{
+virtual unsigned char {\bfseries GetDriverMinorVersion} () const =0}
+\label{class_sound_device_a346c72d2231260a22e3f566616689d18}
+
+\item 
+\hypertarget{class_sound_device_aa28a52deb5fb03df795c3b84e00fb95d}{
+virtual WORD {\bfseries GetNumChannelsSupported} () const =0}
+\label{class_sound_device_aa28a52deb5fb03df795c3b84e00fb95d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_sound_device_aae8179a0e3da902ddcf527eeb5967ff3}{
+virtual DWORD {\bfseries GetFormatSupport} () const =0}
+\label{class_sound_device_aae8179a0e3da902ddcf527eeb5967ff3}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores information about a sound input or output device. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/20/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_sound_device_a1d542357cb3c320b0461415034d548f3}{
+\index{SoundDevice@{SoundDevice}!IsFormatSupported@{IsFormatSupported}}
+\index{IsFormatSupported@{IsFormatSupported}!SoundDevice@{SoundDevice}}
+\subsubsection[{IsFormatSupported}]{\setlength{\rightskip}{0pt plus 5cm}bool SoundDevice::IsFormatSupported (
+\begin{DoxyParamCaption}
+\item[{DWORD}]{ samplesPerSecond, }
+\item[{WORD}]{ bits, }
+\item[{WORD}]{ channels}
+\end{DoxyParamCaption}
+) const}}
+\label{class_sound_device_a1d542357cb3c320b0461415034d548f3}
+
+
+Determine if a format with the specified settings is supported by the device. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em samplesPerSecond}]Samples per second: 11025 (11.025 kHz), 22050 (22.05 kHz), 44100 (44.1 kHz), 48000 (48 kHz) or 96000 (96kHz). \item[{\em bits}]Bits (8 or 16). \item[{\em channels}]Number of channels channels (1 or 2).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if format supported, false if not. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundDevice.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/SoundDevice.cpp\end{DoxyCompactItemize}

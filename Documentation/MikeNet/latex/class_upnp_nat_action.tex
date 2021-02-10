@@ -1,0 +1,229 @@
+\hypertarget{class_upnp_nat_action}{
+\section{UpnpNatAction Class Reference}
+\label{class_upnp_nat_action}\index{UpnpNatAction@{UpnpNatAction}}
+}
+
+
+Manages UPnP NAT controls allowing port mappings to be added, read and removed.  
+
+
+
+
+{\ttfamily \#include $<$UpnpNatAction.h$>$}
+
+Inheritance diagram for UpnpNatAction:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_upnp_nat_action}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_action_a22f1b9e48aafe506980c0a49454555a9}{
+\hyperlink{class_upnp_nat_action_a22f1b9e48aafe506980c0a49454555a9}{UpnpNatAction} ()}
+\label{class_upnp_nat_action_a22f1b9e48aafe506980c0a49454555a9}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_action_aac267c7e99e25214e2c50c9fdb0475db}{
+\hyperlink{class_upnp_nat_action_aac267c7e99e25214e2c50c9fdb0475db}{$\sim$UpnpNatAction} ()}
+\label{class_upnp_nat_action_aac267c7e99e25214e2c50c9fdb0475db}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_action_a4f1cff158c738db157369ac9a5b735a0}{
+void \hyperlink{class_upnp_nat_action_a4f1cff158c738db157369ac9a5b735a0}{UpdateInfo} ()}
+\label{class_upnp_nat_action_a4f1cff158c738db157369ac9a5b735a0}
+
+\begin{DoxyCompactList}\small\item\em Updates information about port maps on router. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_action_a937cd75c9da1886790ae93313464eab4}{AddPortMap} (long externalPort, const char $\ast$protocol, long internalPort, const char $\ast$internalIP, bool enabled, const char $\ast$description)
+\begin{DoxyCompactList}\small\item\em Adds a port map to the port forwarding list. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_action_a9f2ad1ad9b1871f91628d09dea22d8bb}{DeletePortMap} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Deletes a port map. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_upnp_nat_action_a8f3d3e0e3a73d4a8dee0116dff20ac3b}{DeletePortMap} (const char $\ast$protocol, long externalPort)
+\begin{DoxyCompactList}\small\item\em Deletes a port map. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_action_a73a81195371ab22bcf55a86582ba9718}{
+size\_\-t \hyperlink{class_upnp_nat_action_a73a81195371ab22bcf55a86582ba9718}{GetPortMapAmount} () const }
+\label{class_upnp_nat_action_a73a81195371ab22bcf55a86582ba9718}
+
+\begin{DoxyCompactList}\small\item\em Retrieves the number of port map loaded. \item\end{DoxyCompactList}\item 
+\hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} \& \hyperlink{class_upnp_nat_action_a5a16c48c2b2e857f2a86e1d939dca7c3}{GetPortMap} (size\_\-t portMapID)
+\begin{DoxyCompactList}\small\item\em Retrieves the specified port map. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} \& \hyperlink{class_upnp_nat_action_a01c7da7ca77120a04bf9fef51d9b0706}{GetPortMap} (size\_\-t portMapID) const 
+\begin{DoxyCompactList}\small\item\em Retrieves the specified port map. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_upnp_nat_action_a99fa35fc9406550aaa66f2f301619a57}{FindPortMap} (const char $\ast$protocol, long externalPort, size\_\-t $\ast$position=NULL)
+\begin{DoxyCompactList}\small\item\em Searches for a port map with the specified protocol and external port. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_action_ac67da4868a4dd1d7d85270b9f684cae4}{
+void \hyperlink{class_upnp_nat_action_ac67da4868a4dd1d7d85270b9f684cae4}{CleanPortMaps} ()}
+\label{class_upnp_nat_action_ac67da4868a4dd1d7d85270b9f684cae4}
+
+\begin{DoxyCompactList}\small\item\em Cleans up currently loaded port map information. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_action_a4dcca32b5e821a54f372d0940a5d4136}{
+void \hyperlink{class_upnp_nat_action_a4dcca32b5e821a54f372d0940a5d4136}{ValidatePortMapCollection} ()}
+\label{class_upnp_nat_action_a4dcca32b5e821a54f372d0940a5d4136}
+
+\begin{DoxyCompactList}\small\item\em Ensures that \hyperlink{class_upnp_nat_action_ad39607309f300cd4f7c92c50bfffe978}{UpnpNatAction::portMapCollection} is not NULL and can be used. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_action_ace2edec11f378b957553d585976559ef}{
+IUPnPNAT $\ast$ \hyperlink{class_upnp_nat_action_ace2edec11f378b957553d585976559ef}{nat}}
+\label{class_upnp_nat_action_ace2edec11f378b957553d585976559ef}
+
+\begin{DoxyCompactList}\small\item\em Interacts with NAT settings on a router. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_action_ad39607309f300cd4f7c92c50bfffe978}{
+IStaticPortMappingCollection $\ast$ \hyperlink{class_upnp_nat_action_ad39607309f300cd4f7c92c50bfffe978}{portMapCollection}}
+\label{class_upnp_nat_action_ad39607309f300cd4f7c92c50bfffe978}
+
+\begin{DoxyCompactList}\small\item\em Interacts with individual port mappings on a router. \item\end{DoxyCompactList}\item 
+\hypertarget{class_upnp_nat_action_a362936deeb259b37083160bd013cb709}{
+\hyperlink{class_store_vector}{StoreVector}$<$ \hyperlink{class_upnp_nat_port_map_action}{UpnpNatPortMapAction} $>$ \hyperlink{class_upnp_nat_action_a362936deeb259b37083160bd013cb709}{portMaps}}
+\label{class_upnp_nat_action_a362936deeb259b37083160bd013cb709}
+
+\begin{DoxyCompactList}\small\item\em Stores information retrieved from \hyperlink{class_upnp_nat_action_ad39607309f300cd4f7c92c50bfffe978}{UpnpNatAction::portMapCollection}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages UPnP NAT controls allowing port mappings to be added, read and removed. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/16/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_upnp_nat_action_a937cd75c9da1886790ae93313464eab4}{
+\index{UpnpNatAction@{UpnpNatAction}!AddPortMap@{AddPortMap}}
+\index{AddPortMap@{AddPortMap}!UpnpNatAction@{UpnpNatAction}}
+\subsubsection[{AddPortMap}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatAction::AddPortMap (
+\begin{DoxyParamCaption}
+\item[{long}]{ externalPort, }
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ internalPort, }
+\item[{const char $\ast$}]{ internalIP, }
+\item[{bool}]{ enabled, }
+\item[{const char $\ast$}]{ description}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_action_a937cd75c9da1886790ae93313464eab4}
+
+
+Adds a port map to the port forwarding list. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em externalPort}]The external port. \item[{\em protocol}]The protocol. \item[{\em internalPort}]The internal port. \item[{\em internalIP}]The internal ip. \item[{\em enabled}]True if the entry should be enabled, false if not. \item[{\em description}]A description of the port map. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat}{UpnpNat}.
+
+\hypertarget{class_upnp_nat_action_a9f2ad1ad9b1871f91628d09dea22d8bb}{
+\index{UpnpNatAction@{UpnpNatAction}!DeletePortMap@{DeletePortMap}}
+\index{DeletePortMap@{DeletePortMap}!UpnpNatAction@{UpnpNatAction}}
+\subsubsection[{DeletePortMap}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatAction::DeletePortMap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_action_a9f2ad1ad9b1871f91628d09dea22d8bb}
+
+
+Deletes a port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]Identifier for the port map. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat}{UpnpNat}.
+
+\hypertarget{class_upnp_nat_action_a8f3d3e0e3a73d4a8dee0116dff20ac3b}{
+\index{UpnpNatAction@{UpnpNatAction}!DeletePortMap@{DeletePortMap}}
+\index{DeletePortMap@{DeletePortMap}!UpnpNatAction@{UpnpNatAction}}
+\subsubsection[{DeletePortMap}]{\setlength{\rightskip}{0pt plus 5cm}void UpnpNatAction::DeletePortMap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_action_a8f3d3e0e3a73d4a8dee0116dff20ac3b}
+
+
+Deletes a port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol of the port map to delete. \item[{\em externalPort}]The external port of the port map to delete. \end{DoxyParams}
+
+
+Implements \hyperlink{class_upnp_nat}{UpnpNat}.
+
+\hypertarget{class_upnp_nat_action_a99fa35fc9406550aaa66f2f301619a57}{
+\index{UpnpNatAction@{UpnpNatAction}!FindPortMap@{FindPortMap}}
+\index{FindPortMap@{FindPortMap}!UpnpNatAction@{UpnpNatAction}}
+\subsubsection[{FindPortMap}]{\setlength{\rightskip}{0pt plus 5cm}bool UpnpNatAction::FindPortMap (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ protocol, }
+\item[{long}]{ externalPort, }
+\item[{size\_\-t $\ast$}]{ position = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_upnp_nat_action_a99fa35fc9406550aaa66f2f301619a57}
+
+
+Searches for a port map with the specified protocol and external port. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]The protocol. \item[{\em externalPort}]The external port. \item[\mbox{\tt[out]} {\em position}]Location to store ID of port map. If NULL then ignored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a port mapping was found, false if not. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_upnp_nat}{UpnpNat}.
+
+\hypertarget{class_upnp_nat_action_a5a16c48c2b2e857f2a86e1d939dca7c3}{
+\index{UpnpNatAction@{UpnpNatAction}!GetPortMap@{GetPortMap}}
+\index{GetPortMap@{GetPortMap}!UpnpNatAction@{UpnpNatAction}}
+\subsubsection[{GetPortMap}]{\setlength{\rightskip}{0pt plus 5cm}{\bf UpnpNatPortMapAction} \& UpnpNatAction::GetPortMap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+)}}
+\label{class_upnp_nat_action_a5a16c48c2b2e857f2a86e1d939dca7c3}
+
+
+Retrieves the specified port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]Identifier for the port map.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the port map. 
+\end{DoxyReturn}
+\hypertarget{class_upnp_nat_action_a01c7da7ca77120a04bf9fef51d9b0706}{
+\index{UpnpNatAction@{UpnpNatAction}!GetPortMap@{GetPortMap}}
+\index{GetPortMap@{GetPortMap}!UpnpNatAction@{UpnpNatAction}}
+\subsubsection[{GetPortMap}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf UpnpNatPortMapAction} \& UpnpNatAction::GetPortMap (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ portMapID}
+\end{DoxyParamCaption}
+) const}}
+\label{class_upnp_nat_action_a01c7da7ca77120a04bf9fef51d9b0706}
+
+
+Retrieves the specified port map. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em portMapID}]Identifier for the port map.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the port map. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNatAction.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNatAction.cpp\end{DoxyCompactItemize}

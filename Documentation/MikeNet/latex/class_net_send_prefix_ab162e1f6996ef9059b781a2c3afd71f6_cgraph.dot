@@ -1,0 +1,36 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSendPrefix::NetSendPrefix",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="Packet::CopyIntoWSABUF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#acd150eca1bc37b444f37598c7181d808"];
+  Node2 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="CriticalSection::Enter",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html#a509be5342b2f07ae06e1af5d9e08b871"];
+  Node2 -> Node4 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="Packet::GetDataPtrCopy",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#ae86889cb0cd14f16837424268c07d72d"];
+  Node4 -> Node5 [color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="Utility::DynamicAllocCheck",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_utility.html#ae9b88a37dc2e95519c938e673dd3de2c"];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="Packet::GetDataPtr",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a5cd834326344e1de941a122ec1cc21ce"];
+  Node6 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node6 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="CriticalSection::Leave",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_critical_section.html#a6fa0931385f066492f31fc98e3fca657"];
+  Node4 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="Packet::GetUsedSize",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#a443cddd3bfce9890d8ba59ffa42dbe1b"];
+  Node8 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node8 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node2 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node9 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="Packet::PtrIntoWSABUF",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_packet.html#aa035f4665c27f8960ae6a585fb3a9ab6"];
+  Node9 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node6 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node7 [color="midnightblue",fontsize="10",style="solid"];
+}

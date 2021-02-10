@@ -1,0 +1,15 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSocketSimple",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_simple.html",tooltip="simple socket with basic functionality"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node2 [label="NetSocket",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket.html",tooltip="Socket class providing more advanced functionality common to all protocols."];
+  Node2 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node3 [label="NetSocketTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_t_c_p.html",tooltip="Socket used for TCP data transfer."];
+  Node2 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node4 [label="NetSocketUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_u_d_p.html",tooltip="Socket used for UDP data transfer."];
+  Node1 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid",fontname="FreeSans"];
+  Node5 [label="NetSocketListening",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_socket_listening.html",tooltip="Listening socket used to listen and accept new TCP connections."];
+}

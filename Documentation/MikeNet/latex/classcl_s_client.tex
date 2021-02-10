@@ -1,0 +1,641 @@
+\hypertarget{classcl_s_client}{
+\section{clSClient Class Reference}
+\label{classcl_s_client}\index{clSClient@{clSClient}}
+}
+
+
+object stores and manages individual clients  
+
+
+
+
+{\ttfamily \#include $<$clSClient.h$>$}
+
+Inheritance diagram for clSClient:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_s_client}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_s_client_a738a8350fb3fb861342d13b1b89fbccc}{clSClient} (size\_\-t \hyperlink{classcl_s_client_ac5af0964e2af13aab950694923308512}{clientID}, \hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$\hyperlink{classcl_s_client_a7cc5ca2a86b8b3a96884ed174dffb0f3}{socketTCP})
+\item 
+\hyperlink{classcl_s_client_a9af97875b5c08340d81678e9a821bddc}{$\sim$clSClient} ()
+\item 
+size\_\-t \hyperlink{classcl_s_client_ad20ec8875bb3fb9fb3536d05ffc1f397}{GetClientID} (size\_\-t threadID) const 
+\item 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{clNetworkingUtility::ConnectionStatus} \hyperlink{classcl_s_client_aa720bde21885b93a7428a10156aaebd4}{GetConnectionState} (size\_\-t threadID) const 
+\item 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{clNetworkingUtility::ConnectionStatus} \hyperlink{classcl_s_client_aa63c3f33269e76af35326ace504cc759}{GetConnectionStateTCP} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_aaead23b701d0c8c75346e7cdd26fd8bc}{SetConnectionState} (size\_\-t threadID, \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{clNetworkingUtility::ConnectionStatus} state)
+\item 
+clock\_\-t \hyperlink{classcl_s_client_af044934846909919990d3cc1e0cb9307}{GetClockStarted} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_a29a4d9e44330e35810c6cf27ee78f6dc}{SetClockStarted} (size\_\-t threadID)
+\item 
+void \hyperlink{classcl_s_client_a1717c472aa382b90260e10fe569f4663}{SetConnectCode} (size\_\-t threadID, size\_\-t element, int code)
+\item 
+int \hyperlink{classcl_s_client_ac88dd15044e25a0a27c8c05671070c2f}{GetConnectCode} (size\_\-t threadID, size\_\-t element) const 
+\item 
+bool \hyperlink{classcl_s_client_a1ab3b96d9b2ec36ae14dd294c374b455}{Authenticate} (size\_\-t threadID, vector$<$ int $>$ codes) const 
+\item 
+void \hyperlink{classcl_s_client_ab9c1ea6a2196562e99b191a97dab058b}{Disconnect} (size\_\-t threadID)
+\item 
+\hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$ \hyperlink{classcl_s_client_aa1c7fadc44fd30f44cc5d45af30b7b1e}{GetSocketTCP} (size\_\-t threadID)
+\item 
+const \hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$ \hyperlink{classcl_s_client_aad37f5b898ae869be612d90305186005}{GetSocketTCP} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_a8757aa526a1ea94a1bc64deb7971cede}{LoadTCP} (size\_\-t threadID, SOCKET socket, const \hyperlink{classcl_single_addr}{clSingleAddr} \&addr, bool enabledUDP)
+\item 
+void \hyperlink{classcl_s_client_ad4c7e64bbfd7bad34a52311d0d00609a}{LoadUDP} (size\_\-t threadID, const \hyperlink{classcl_single_addr}{clSingleAddr} \&addr)
+\item 
+int \hyperlink{classcl_s_client_af9978a7ddb66b6c041e2606a59e5c69d}{SendHandshakingPacket} (size\_\-t threadID, const \hyperlink{classcl_packet}{clPacket} \&serverInfo, size\_\-t \hyperlink{classcl_s_client_ac5af0964e2af13aab950694923308512}{clientID}, bool enabledUDP, unsigned int sendTimeout)
+\item 
+size\_\-t \hyperlink{classcl_s_client_ad23a31beb4ec135a3f39da184999c696}{GetRecvBufferLengthTCP} (size\_\-t threadID) const 
+\item 
+size\_\-t \hyperlink{classcl_s_client_ab1de13b5c187540bae0e4af91db2685d}{GetPartialPacketCurrentSizeTCP} (size\_\-t threadID) const 
+\item 
+size\_\-t \hyperlink{classcl_s_client_a5cccbe5583ed198f97826a1c5108bb4a}{GetMaxPacketSizeTCP} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_a88018b22e270d1e89feefe05c23af49e}{SetMaxPacketSizeTCP} (size\_\-t threadID, size\_\-t newMaxSize)
+\item 
+bool \hyperlink{classcl_s_client_a586f33ed29909d3e2c0b6454e725b1eb}{GetAutoResizeTCP} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_afc6bdb1157707ea2cf21970602b86c5c}{SetAutoResizeTCP} (size\_\-t threadID, bool newAutoResizeTCP)
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_s_client_a08ea258df61181a350a828aa1e3a9175}{GetLocalAddressTCP} (size\_\-t threadID) const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_s_client_a74cd5fc9af94414af26cb79a15a25d49}{GetConnectedAddressUDP} (size\_\-t threadID) const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_s_client_a7e1902d813deb1ef51d68532cd2c6d81}{GetConnectedAddressTCP} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_a04890f0214cab7c74873de330317422c}{FlushRecvTCP} (size\_\-t threadID)
+\item 
+size\_\-t \hyperlink{classcl_s_client_a7a08da8507499aa530a114d88b7e8cdf}{GetPacketAmountTCP} (size\_\-t threadID) const 
+\item 
+void \hyperlink{classcl_s_client_af2e8e590ab4ca21490b276cda540d263}{ShutdownTCP} (size\_\-t threadID)
+\item 
+size\_\-t \hyperlink{classcl_s_client_a355e4804063ce95611ffcb6b72dec67b}{GetPacketFromStoreTCP} (size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_s_client_af7a988045a68ed3e95e56fc1e8a9de0c}{SendTCP} (size\_\-t threadID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block, unsigned int timeout)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{classcl_s_client_ac5af0964e2af13aab950694923308512}{clientID}
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \hyperlink{classcl_s_client_a9caa557830e054fd916506b0b0b009ef}{remoteAddrUDP}
+\item 
+\hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6d}{clNetworkingUtility::ConnectionStatus} \hyperlink{classcl_s_client_a1c0884f02facf322bc8fb8a1b78a3e5f}{connectionState}
+\item 
+clock\_\-t \hyperlink{classcl_s_client_a94a58dbecbb367d53535efd533602100}{clockStarted}
+\item 
+int \hyperlink{classcl_s_client_a051064752aa82c8787204336927897c1}{connectCode} \mbox{[}\hyperlink{classcl_networking_utility_aa48d05605a3161f1b99b1dac14e05774}{clNetworkingUtility::authenticationStrength}\mbox{]}
+\item 
+\hyperlink{classcl_socket_t_c_p}{clSocketTCP} $\ast$ \hyperlink{classcl_s_client_a7cc5ca2a86b8b3a96884ed174dffb0f3}{socketTCP}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+object stores and manages individual clients Class is used by \hyperlink{classcl_server_state}{clServerState} and is never used independently \par
+ \hyperlink{classcl_multithread}{clMultithread} is used in the following way:
+\begin{DoxyItemize}
+\item EnterWrite ONLY when changing connectionState
+\item EnterRead when reading values
+\item EnterRead when changing any value except connectionState
+\end{DoxyItemize}
+
+This is to ensure that connectionState is not changed midway through a client related operation by another thread. It ensures that the \hyperlink{classcl_s_client}{clSClient} object is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_s_client_a738a8350fb3fb861342d13b1b89fbccc}{
+\index{clSClient@{clSClient}!clSClient@{clSClient}}
+\index{clSClient@{clSClient}!clSClient@{clSClient}}
+\subsubsection[{clSClient}]{\setlength{\rightskip}{0pt plus 5cm}clSClient::clSClient (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{{\bf clSocketTCP} $\ast$}]{ socketTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a738a8350fb3fb861342d13b1b89fbccc}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID assigned to client \item[{\em socketTCP}]Socket used to communicate with client via TCP \end{DoxyParams}
+\hypertarget{classcl_s_client_a9af97875b5c08340d81678e9a821bddc}{
+\index{clSClient@{clSClient}!$\sim$clSClient@{$\sim$clSClient}}
+\index{$\sim$clSClient@{$\sim$clSClient}!clSClient@{clSClient}}
+\subsubsection[{$\sim$clSClient}]{\setlength{\rightskip}{0pt plus 5cm}clSClient::$\sim$clSClient (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a9af97875b5c08340d81678e9a821bddc}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_s_client_a1ab3b96d9b2ec36ae14dd294c374b455}{
+\index{clSClient@{clSClient}!Authenticate@{Authenticate}}
+\index{Authenticate@{Authenticate}!clSClient@{clSClient}}
+\subsubsection[{Authenticate}]{\setlength{\rightskip}{0pt plus 5cm}bool clSClient::Authenticate (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{vector$<$ int $>$}]{ codes}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a1ab3b96d9b2ec36ae14dd294c374b455}
+Compares {\itshape codes\/} with stored connect codes (connectCode) which were sent via TCP to the client, if the codes differ in any way then it is possible that a rogue client is trying to imitate the client that is mid way through its connection process and so any data from this rogue client should be ignored. This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. \hypertarget{classcl_s_client_ab9c1ea6a2196562e99b191a97dab058b}{
+\index{clSClient@{clSClient}!Disconnect@{Disconnect}}
+\index{Disconnect@{Disconnect}!clSClient@{clSClient}}
+\subsubsection[{Disconnect}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::Disconnect (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_ab9c1ea6a2196562e99b191a97dab058b}
+Disconnect client from server forcefully and prepare this object so that it can store another client \hypertarget{classcl_s_client_a04890f0214cab7c74873de330317422c}{
+\index{clSClient@{clSClient}!FlushRecvTCP@{FlushRecvTCP}}
+\index{FlushRecvTCP@{FlushRecvTCP}!clSClient@{clSClient}}
+\subsubsection[{FlushRecvTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::FlushRecvTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a04890f0214cab7c74873de330317422c}
+Removes all fully received TCP packets from the packet queue \par
+ Has no impact on the partial packet store 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\hypertarget{classcl_s_client_a586f33ed29909d3e2c0b6454e725b1eb}{
+\index{clSClient@{clSClient}!GetAutoResizeTCP@{GetAutoResizeTCP}}
+\index{GetAutoResizeTCP@{GetAutoResizeTCP}!clSClient@{clSClient}}
+\subsubsection[{GetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clSClient::GetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a586f33ed29909d3e2c0b6454e725b1eb}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_ad20ec8875bb3fb9fb3536d05ffc1f397}{
+\index{clSClient@{clSClient}!GetClientID@{GetClientID}}
+\index{GetClientID@{GetClientID}!clSClient@{clSClient}}
+\subsubsection[{GetClientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSClient::GetClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_ad20ec8875bb3fb9fb3536d05ffc1f397}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+client ID of object 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_af044934846909919990d3cc1e0cb9307}{
+\index{clSClient@{clSClient}!GetClockStarted@{GetClockStarted}}
+\index{GetClockStarted@{GetClockStarted}!clSClient@{clSClient}}
+\subsubsection[{GetClockStarted}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t clSClient::GetClockStarted (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_af044934846909919990d3cc1e0cb9307}
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+clock value at which client began connecting 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_ac88dd15044e25a0a27c8c05671070c2f}{
+\index{clSClient@{clSClient}!GetConnectCode@{GetConnectCode}}
+\index{GetConnectCode@{GetConnectCode}!clSClient@{clSClient}}
+\subsubsection[{GetConnectCode}]{\setlength{\rightskip}{0pt plus 5cm}int clSClient::GetConnectCode (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ element}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_ac88dd15044e25a0a27c8c05671070c2f}
+This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object. \item[{\em element}]connection code to retrieve \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+connection code at element {\itshape element\/} 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_a7e1902d813deb1ef51d68532cd2c6d81}{
+\index{clSClient@{clSClient}!GetConnectedAddressTCP@{GetConnectedAddressTCP}}
+\index{GetConnectedAddressTCP@{GetConnectedAddressTCP}!clSClient@{clSClient}}
+\subsubsection[{GetConnectedAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clSClient::GetConnectedAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a7e1902d813deb1ef51d68532cd2c6d81}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP remote address information. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_s_client_a74cd5fc9af94414af26cb79a15a25d49}{
+\index{clSClient@{clSClient}!GetConnectedAddressUDP@{GetConnectedAddressUDP}}
+\index{GetConnectedAddressUDP@{GetConnectedAddressUDP}!clSClient@{clSClient}}
+\subsubsection[{GetConnectedAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clSClient::GetConnectedAddressUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a74cd5fc9af94414af26cb79a15a25d49}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+UDP remote address information. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_s_client_aa720bde21885b93a7428a10156aaebd4}{
+\index{clSClient@{clSClient}!GetConnectionState@{GetConnectionState}}
+\index{GetConnectionState@{GetConnectionState}!clSClient@{clSClient}}
+\subsubsection[{GetConnectionState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::ConnectionStatus} clSClient::GetConnectionState (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_aa720bde21885b93a7428a10156aaebd4}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+connection state of client 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_aa63c3f33269e76af35326ace504cc759}{
+\index{clSClient@{clSClient}!GetConnectionStateTCP@{GetConnectionStateTCP}}
+\index{GetConnectionStateTCP@{GetConnectionStateTCP}!clSClient@{clSClient}}
+\subsubsection[{GetConnectionStateTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::ConnectionStatus} clSClient::GetConnectionStateTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_aa63c3f33269e76af35326ace504cc759}
+This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+connection state of client purely looking at the TCP socket 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+GetConnectionState and this method are unlinked 
+\end{DoxyNote}
+\hypertarget{classcl_s_client_a08ea258df61181a350a828aa1e3a9175}{
+\index{clSClient@{clSClient}!GetLocalAddressTCP@{GetLocalAddressTCP}}
+\index{GetLocalAddressTCP@{GetLocalAddressTCP}!clSClient@{clSClient}}
+\subsubsection[{GetLocalAddressTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clSClient::GetLocalAddressTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a08ea258df61181a350a828aa1e3a9175}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+TCP local address information. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_s_client_a5cccbe5583ed198f97826a1c5108bb4a}{
+\index{clSClient@{clSClient}!GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}}
+\index{GetMaxPacketSizeTCP@{GetMaxPacketSizeTCP}!clSClient@{clSClient}}
+\subsubsection[{GetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSClient::GetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a5cccbe5583ed198f97826a1c5108bb4a}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_a7a08da8507499aa530a114d88b7e8cdf}{
+\index{clSClient@{clSClient}!GetPacketAmountTCP@{GetPacketAmountTCP}}
+\index{GetPacketAmountTCP@{GetPacketAmountTCP}!clSClient@{clSClient}}
+\subsubsection[{GetPacketAmountTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSClient::GetPacketAmountTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_a7a08da8507499aa530a114d88b7e8cdf}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of fully received TCP packets in the packet store 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_a355e4804063ce95611ffcb6b72dec67b}{
+\index{clSClient@{clSClient}!GetPacketFromStoreTCP@{GetPacketFromStoreTCP}}
+\index{GetPacketFromStoreTCP@{GetPacketFromStoreTCP}!clSClient@{clSClient}}
+\subsubsection[{GetPacketFromStoreTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSClient::GetPacketFromStoreTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a355e4804063ce95611ffcb6b72dec67b}
+Retrieves a complete packet from the TCP packet store and copies it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[\mbox{\tt[out]} {\em destination}]destination to copy into \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_ab1de13b5c187540bae0e4af91db2685d}{
+\index{clSClient@{clSClient}!GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}}
+\index{GetPartialPacketCurrentSizeTCP@{GetPartialPacketCurrentSizeTCP}!clSClient@{clSClient}}
+\subsubsection[{GetPartialPacketCurrentSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSClient::GetPartialPacketCurrentSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_ab1de13b5c187540bae0e4af91db2685d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The current size of the TCP partial packet being received \par
+ i.e. the number of bytes of the packet that have been received 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_ad23a31beb4ec135a3f39da184999c696}{
+\index{clSClient@{clSClient}!GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}}
+\index{GetRecvBufferLengthTCP@{GetRecvBufferLengthTCP}!clSClient@{clSClient}}
+\subsubsection[{GetRecvBufferLengthTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSClient::GetRecvBufferLengthTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_ad23a31beb4ec135a3f39da184999c696}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF used by the TCP socket. \par
+ This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_aa1c7fadc44fd30f44cc5d45af30b7b1e}{
+\index{clSClient@{clSClient}!GetSocketTCP@{GetSocketTCP}}
+\index{GetSocketTCP@{GetSocketTCP}!clSClient@{clSClient}}
+\subsubsection[{GetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketTCP} $\ast$ clSClient::GetSocketTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_aa1c7fadc44fd30f44cc5d45af30b7b1e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+returned pointer must be accessed with at least read control 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to TCP socket 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_aad37f5b898ae869be612d90305186005}{
+\index{clSClient@{clSClient}!GetSocketTCP@{GetSocketTCP}}
+\index{GetSocketTCP@{GetSocketTCP}!clSClient@{clSClient}}
+\subsubsection[{GetSocketTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSocketTCP} $\ast$ clSClient::GetSocketTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_s_client_aad37f5b898ae869be612d90305186005}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+returned pointer must be accessed with at least read control 
+\end{DoxyWarning}
+\begin{DoxyReturn}{Returns}
+pointer to TCP socket 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_a8757aa526a1ea94a1bc64deb7971cede}{
+\index{clSClient@{clSClient}!LoadTCP@{LoadTCP}}
+\index{LoadTCP@{LoadTCP}!clSClient@{clSClient}}
+\subsubsection[{LoadTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::LoadTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{SOCKET}]{ socket, }
+\item[{const {\bf clSingleAddr} \&}]{ addr, }
+\item[{bool}]{ enabledUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a8757aa526a1ea94a1bc64deb7971cede}
+Loads a new TCP socket and address of socket end point into this object \par
+ Also updates connection status
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em socket}]TCP winsock socket \item[{\em addr}]TCP address of client \item[{\em enabledUDP}]true if UDP is enabled for this client \end{DoxyParams}
+\hypertarget{classcl_s_client_ad4c7e64bbfd7bad34a52311d0d00609a}{
+\index{clSClient@{clSClient}!LoadUDP@{LoadUDP}}
+\index{LoadUDP@{LoadUDP}!clSClient@{clSClient}}
+\subsubsection[{LoadUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::LoadUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clSingleAddr} \&}]{ addr}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_ad4c7e64bbfd7bad34a52311d0d00609a}
+Loads client's UDP remote address \par
+ This is done in the final stages of the connection process by the completion port \par
+ Also updates connection status
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em addr}]remote address of client \end{DoxyParams}
+\hypertarget{classcl_s_client_af9978a7ddb66b6c041e2606a59e5c69d}{
+\index{clSClient@{clSClient}!SendHandshakingPacket@{SendHandshakingPacket}}
+\index{SendHandshakingPacket@{SendHandshakingPacket}!clSClient@{clSClient}}
+\subsubsection[{SendHandshakingPacket}]{\setlength{\rightskip}{0pt plus 5cm}int clSClient::SendHandshakingPacket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clPacket} \&}]{ serverInfo, }
+\item[{size\_\-t}]{ clientID, }
+\item[{bool}]{ enabledUDP, }
+\item[{unsigned int}]{ sendTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_af9978a7ddb66b6c041e2606a59e5c69d}
+Sends a packet using this socket which contains information about the server and authenticates the client (upon reply). This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em packet}]packet to send \item[{\em clientID}]clientID assigned by server to this client \item[{\em enabledUDP}]true if UDP is enabled for this client \item[{\em timeout}]length of time in milliseconds to wait before canceling send operation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if send operation completed successfully instantly 
+
+1 if send operation was started, but has not yet completed 
+
+-\/1 if send operation failed 
+
+-\/2 if send operation failed and entity should be killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_af7a988045a68ed3e95e56fc1e8a9de0c}{
+\index{clSClient@{clSClient}!SendTCP@{SendTCP}}
+\index{SendTCP@{SendTCP}!clSClient@{clSClient}}
+\subsubsection[{SendTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::SendStatus} clSClient::SendTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{unsigned int}]{ timeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_af7a988045a68ed3e95e56fc1e8a9de0c}
+Sends {\itshape packet\/} via TCP to specified client 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent \item[{\em timeout}]length of time in milliseconds to wait before canceling send operation\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+\hypertarget{classcl_s_client_afc6bdb1157707ea2cf21970602b86c5c}{
+\index{clSClient@{clSClient}!SetAutoResizeTCP@{SetAutoResizeTCP}}
+\index{SetAutoResizeTCP@{SetAutoResizeTCP}!clSClient@{clSClient}}
+\subsubsection[{SetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::SetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{bool}]{ newAutoResizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_afc6bdb1157707ea2cf21970602b86c5c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em newAutoResizeTCP}]When true, if a packet larger than the max TCP packet size is received then the max size will be increased silently. When false, in this case an exception will be thrown. \end{DoxyParams}
+\hypertarget{classcl_s_client_a29a4d9e44330e35810c6cf27ee78f6dc}{
+\index{clSClient@{clSClient}!SetClockStarted@{SetClockStarted}}
+\index{SetClockStarted@{SetClockStarted}!clSClient@{clSClient}}
+\subsubsection[{SetClockStarted}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::SetClockStarted (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a29a4d9e44330e35810c6cf27ee78f6dc}
+Sets {\ttfamily clockStarted} with return value of {\ttfamily clock()}. Should be used when handshaking process with client first starts. This method is part of the \hyperlink{handshake_page}{server/client handshaking process}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \end{DoxyParams}
+\hypertarget{classcl_s_client_a1717c472aa382b90260e10fe569f4663}{
+\index{clSClient@{clSClient}!SetConnectCode@{SetConnectCode}}
+\index{SetConnectCode@{SetConnectCode}!clSClient@{clSClient}}
+\subsubsection[{SetConnectCode}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::SetConnectCode (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ element, }
+\item[{int}]{ code}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a1717c472aa382b90260e10fe569f4663}
+Sets {\ttfamily connection} code used to authenticate client via UDP. This method is part of the \hyperlink{handshake_page}{server/client handshaking process}.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em element}]connection code to set \item[{\em code}]code to set it to \end{DoxyParams}
+\hypertarget{classcl_s_client_aaead23b701d0c8c75346e7cdd26fd8bc}{
+\index{clSClient@{clSClient}!SetConnectionState@{SetConnectionState}}
+\index{SetConnectionState@{SetConnectionState}!clSClient@{clSClient}}
+\subsubsection[{SetConnectionState}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::SetConnectionState (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clNetworkingUtility::ConnectionStatus}}]{ state}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_aaead23b701d0c8c75346e7cdd26fd8bc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em state}]new connection state \end{DoxyParams}
+\hypertarget{classcl_s_client_a88018b22e270d1e89feefe05c23af49e}{
+\index{clSClient@{clSClient}!SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}}
+\index{SetMaxPacketSizeTCP@{SetMaxPacketSizeTCP}!clSClient@{clSClient}}
+\subsubsection[{SetMaxPacketSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::SetMaxPacketSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ newMaxSize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_a88018b22e270d1e89feefe05c23af49e}
+Manually changes the maximum packet size that can be received 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object \item[{\em newMaxSize}]The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown \end{DoxyParams}
+\hypertarget{classcl_s_client_af2e8e590ab4ca21490b276cda540d263}{
+\index{clSClient@{clSClient}!ShutdownTCP@{ShutdownTCP}}
+\index{ShutdownTCP@{ShutdownTCP}!clSClient@{clSClient}}
+\subsubsection[{ShutdownTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clSClient::ShutdownTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_s_client_af2e8e590ab4ca21490b276cda540d263}
+Stops sending on TCP socket so that all further send operations will fail. \par
+ All data sent up till now will be received by recipient. \par
+ Recipient GetConnectionStateTCP will return \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6daf36e05d04ad267b00184a32d654c3989}{clNetworkingUtility::NO\_\-RECV}, or \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{clNetworkingUtility::NO\_\-SEND\_\-RECV}. \par
+ Our GetConnectionStateTCP will return \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6dab8241425bb2dc77be7422346559bbb30}{clNetworkingUtility::NO\_\-SEND} or \hyperlink{classcl_networking_utility_a15dd34683154e07d5843f8f5432fec6da049f6833fe3ed9d08cfe5047078b73e3}{clNetworkingUtility::NO\_\-SEND\_\-RECV}. \par
+ This method is part of the \hyperlink{graceful_disconnect_page}{graceful disconnect process}. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_s_client_ac5af0964e2af13aab950694923308512}{
+\index{clSClient@{clSClient}!clientID@{clientID}}
+\index{clientID@{clientID}!clSClient@{clSClient}}
+\subsubsection[{clientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clSClient::clientID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_s_client_ac5af0964e2af13aab950694923308512}
+ID of client \hypertarget{classcl_s_client_a94a58dbecbb367d53535efd533602100}{
+\index{clSClient@{clSClient}!clockStarted@{clockStarted}}
+\index{clockStarted@{clockStarted}!clSClient@{clSClient}}
+\subsubsection[{clockStarted}]{\setlength{\rightskip}{0pt plus 5cm}clock\_\-t {\bf clSClient::clockStarted}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_s_client_a94a58dbecbb367d53535efd533602100}
+{\ttfamily clock()} that handshaking process began, is used to timeout the client \hypertarget{classcl_s_client_a051064752aa82c8787204336927897c1}{
+\index{clSClient@{clSClient}!connectCode@{connectCode}}
+\index{connectCode@{connectCode}!clSClient@{clSClient}}
+\subsubsection[{connectCode}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf clSClient::connectCode}\mbox{[}{\bf clNetworkingUtility::authenticationStrength}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_s_client_a051064752aa82c8787204336927897c1}
+Stores the unique authentication code sent to client during handshaking process \hypertarget{classcl_s_client_a1c0884f02facf322bc8fb8a1b78a3e5f}{
+\index{clSClient@{clSClient}!connectionState@{connectionState}}
+\index{connectionState@{connectionState}!clSClient@{clSClient}}
+\subsubsection[{connectionState}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clNetworkingUtility::ConnectionStatus} {\bf clSClient::connectionState}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_s_client_a1c0884f02facf322bc8fb8a1b78a3e5f}
+Connection state of client \par
+ Take write control when changing this object \hypertarget{classcl_s_client_a9caa557830e054fd916506b0b0b009ef}{
+\index{clSClient@{clSClient}!remoteAddrUDP@{remoteAddrUDP}}
+\index{remoteAddrUDP@{remoteAddrUDP}!clSClient@{clSClient}}
+\subsubsection[{remoteAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} {\bf clSClient::remoteAddrUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_s_client_a9caa557830e054fd916506b0b0b009ef}
+UDP remote address client \hypertarget{classcl_s_client_a7cc5ca2a86b8b3a96884ed174dffb0f3}{
+\index{clSClient@{clSClient}!socketTCP@{socketTCP}}
+\index{socketTCP@{socketTCP}!clSClient@{clSClient}}
+\subsubsection[{socketTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketTCP}$\ast$ {\bf clSClient::socketTCP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_s_client_a7cc5ca2a86b8b3a96884ed174dffb0f3}
+Used to communicate via TCP with client 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSClient.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSClient.cpp\end{DoxyCompactItemize}

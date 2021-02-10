@@ -1,0 +1,351 @@
+\hypertarget{class_net_instance_broadcast}{
+\section{NetInstanceBroadcast Class Reference}
+\label{class_net_instance_broadcast}\index{NetInstanceBroadcast@{NetInstanceBroadcast}}
+}
+
+
+Broadcast instance designed to communicate with entities on a common local area network.  
+
+
+
+
+{\ttfamily \#include $<$NetInstanceBroadcast.h$>$}
+
+Inheritance diagram for NetInstanceBroadcast:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_instance_broadcast}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_net_instance_broadcast_ab9892403571fa6a4e548fcc5033d33b2}{NetInstanceBroadcast} (const \hyperlink{class_net_address}{NetAddress} $\ast$broadcastAddress, \hyperlink{class_net_socket_u_d_p}{NetSocketUDP} $\ast$\hyperlink{class_net_instance_u_d_p_af86e8343ddf2daf0ce3f9ea701bc7cf3}{socketUDP}, unsigned int \hyperlink{class_net_instance_a39ed2f4325ce50a7c374ab6253650608}{sendTimeout}=INFINITE, size\_\-t \hyperlink{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{instanceID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_broadcast_a82412a5ed8a554597fa1c6c54b34576a}{NetInstanceBroadcast} (const \hyperlink{class_net_address}{NetAddress} $\ast$broadcastAddress, const \hyperlink{class_net_instance_profile}{NetInstanceProfile} \&profile, size\_\-t \hyperlink{class_net_instance_a46bab6fc672f987ee3c52daabffe34f7}{instanceID}=0)
+\begin{DoxyCompactList}\small\item\em Constructor, using profile instead of individual parameters. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_instance_broadcast_ae4111edc690767c7eac76c6e17e67478}{$\sim$NetInstanceBroadcast} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_broadcast_a4dd405fd8ee38f91eb569516b8d3fc93}{ErrorOccurred} (size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Deals with errors. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_broadcast_a0b97764b7516ddce77fb302002842902}{DoRecv} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Starts a receive operation via UDP and deals with errors appropriately. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_broadcast_ab5a92372b16809e63d5842e20997468d}{CompletionError} (\hyperlink{class_net_socket}{NetSocket} $\ast$completionSocket, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Called by the completion port when an error occurred during an operation. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_instance_broadcast_ae4bb850a1b3d0743d14c8c4ff3414d4a}{SendUDP} (const \hyperlink{class_packet}{Packet} \&packet, bool block, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em Sends a broadcast packet. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736}{NetUtility::SendStatus} \hyperlink{class_net_instance_broadcast_a80e22350fe35b5660cf1402de0d9b556}{SendToUDP} (const \hyperlink{class_net_address}{NetAddress} \&address, const \hyperlink{class_packet}{Packet} \&packet, bool block)
+\begin{DoxyCompactList}\small\item\em Sends a broadcast packet on the specified subnet. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_instance_broadcast_a9f0b6f8c6ccf8a452a0e7942e7d037fe}{DealCompletion} (\hyperlink{class_net_socket}{NetSocket} $\ast$socket, DWORD bytes, size\_\-t clientID=0)
+\begin{DoxyCompactList}\small\item\em When send and receive operations are completed on this instance, this method is called. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_instance_broadcast_a57d4cf5253f4aba9d91003eb8fb0a598}{CloseSockets} ()
+\begin{DoxyCompactList}\small\item\em Closes any sockets in use by the instance. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_instance_broadcast_a8957a0bbf977ed41f6ad3d4d17850c52}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_instance_broadcast_a9cb62b45f97315f11df2ddb86a178b44}{
+static const size\_\-t \hyperlink{class_net_instance_broadcast_a9cb62b45f97315f11df2ddb86a178b44}{recvSizeMinUDP} = 0}
+\label{class_net_instance_broadcast_a9cb62b45f97315f11df2ddb86a178b44}
+
+\begin{DoxyCompactList}\small\item\em Minimum UDP buffer size necessary to maintain normal operations. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{class_net_instance_broadcast_a5266d14413003ee8fc66e963c6e81b27}{GetRecvSizeMinUDP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the smallest acceptable packet size that can be received. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_counter}{Counter} \hyperlink{class_net_instance_broadcast_a7c4db158cbee7df76d7f266e25a7623e}{recvFailCounterUDP}
+\begin{DoxyCompactList}\small\item\em Counter that keeps track of UDP receive failures. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Broadcast instance designed to communicate with entities on a common local area network. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This instance is capable of communicating with entities on a common local area network without first forming a direct connection. Messages sent to the router are broadcasted to all other entities connected to that router using this instance. This is useful for e.g. Detecting a server on a network, and then later making a direct connection to that server. Due to the simplicity of this instance, it is possible to use it with applications not based on this module. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_instance_broadcast_ab9892403571fa6a4e548fcc5033d33b2}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{NetInstanceBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceBroadcast::NetInstanceBroadcast (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} $\ast$}]{ p\_\-broadcastAddress, }
+\item[{{\bf NetSocketUDP} $\ast$}]{ p\_\-socketUDP, }
+\item[{unsigned int}]{ p\_\-sendTimeout = {\ttfamily INFINITE}, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_broadcast_ab9892403571fa6a4e548fcc5033d33b2}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-broadcastAddress}]Address to broadcast to, IP should be either local subnet or global broadcast address (255.255.255.255). If NULL then instance will not connect to an address. \item[\mbox{\tt[in]} {\em p\_\-socketUDP}]Socket to use to send and receive UDP data, should be constructed for broadcasting. This pointer and its data is now owned by this object and should not be used elsewhere. \item[{\em p\_\-sendTimeout}]Length of time in milliseconds to wait for a send operation to complete before disconnecting client (optional, default INFINITE). \item[{\em p\_\-instanceID}]ID of instance within instance group. \end{DoxyParams}
+\hypertarget{class_net_instance_broadcast_a82412a5ed8a554597fa1c6c54b34576a}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{NetInstanceBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceBroadcast::NetInstanceBroadcast (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} $\ast$}]{ p\_\-broadcastAddress, }
+\item[{const {\bf NetInstanceProfile} \&}]{ p\_\-profile, }
+\item[{size\_\-t}]{ p\_\-instanceID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_broadcast_a82412a5ed8a554597fa1c6c54b34576a}
+
+
+Constructor, using profile instead of individual parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em p\_\-broadcastAddress}]Address to broadcast to, IP should be either local subnet or global broadcast address (255.255.255.255). If NULL then instance will not connect to an address. \item[{\em p\_\-profile}]Instance profile containing parameters. \item[{\em p\_\-instanceID}]Unique identifier for instance (optional, default 0). \end{DoxyParams}
+\hypertarget{class_net_instance_broadcast_ae4111edc690767c7eac76c6e17e67478}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!$\sim$NetInstanceBroadcast@{$\sim$NetInstanceBroadcast}}
+\index{$\sim$NetInstanceBroadcast@{$\sim$NetInstanceBroadcast}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{$\sim$NetInstanceBroadcast}]{\setlength{\rightskip}{0pt plus 5cm}NetInstanceBroadcast::$\sim$NetInstanceBroadcast (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_instance_broadcast_ae4111edc690767c7eac76c6e17e67478}
+
+
+Destructor. 
+
+CloseSockets must be used in the destructor. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_instance_broadcast_a57d4cf5253f4aba9d91003eb8fb0a598}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!CloseSockets@{CloseSockets}}
+\index{CloseSockets@{CloseSockets}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{CloseSockets}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceBroadcast::CloseSockets (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_a57d4cf5253f4aba9d91003eb8fb0a598}
+
+
+Closes any sockets in use by the instance. 
+
+Must be called in the destructor so that instance is not cleaned up until completion port is done using it. 
+
+Reimplemented from \hyperlink{class_net_instance_u_d_p_a34eddd0dac655a1f3ec2950f6c15a456}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_broadcast_ab5a92372b16809e63d5842e20997468d}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!CompletionError@{CompletionError}}
+\index{CompletionError@{CompletionError}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{CompletionError}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceBroadcast::CompletionError (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ completionSocket, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_ab5a92372b16809e63d5842e20997468d}
+
+
+Called by the completion port when an error occurred during an operation. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in,out]} {\em completionSocket}]The socket responsible for the error. \item[{\em clientID}]The client ID responsible for the error (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a6f1377ef6caee467d27288cf53619b37}{NetInstance}.
+
+\hypertarget{class_net_instance_broadcast_a9f0b6f8c6ccf8a452a0e7942e7d037fe}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!DealCompletion@{DealCompletion}}
+\index{DealCompletion@{DealCompletion}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{DealCompletion}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceBroadcast::DealCompletion (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{DWORD}]{ bytes, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_a9f0b6f8c6ccf8a452a0e7942e7d037fe}
+
+
+When send and receive operations are completed on this instance, this method is called. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Socket that operation was started by. \item[{\em bytes}]Number of bytes of data transferred in operation. \item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a77a9c992d7ab0b023de51470a3392c49}{NetInstance}.
+
+\hypertarget{class_net_instance_broadcast_a0b97764b7516ddce77fb302002842902}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!DoRecv@{DoRecv}}
+\index{DoRecv@{DoRecv}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{DoRecv}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceBroadcast::DoRecv (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocket} $\ast$}]{ socket, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_a0b97764b7516ddce77fb302002842902}
+
+
+Starts a receive operation via UDP and deals with errors appropriately. 
+
+Calls \hyperlink{class_net_socket_u_d_p_a5b7438968a34510997e9db862e00139b}{NetSocketUDP::Recv}. Use this INSTEAD OF socketUDP-\/$>$Recv, never use socketUDP-\/$>$Recv directly.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em socket}]\mbox{[}in,out\mbox{]} Pointer to socket that receive operation should be started on. \item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+
+Implements \hyperlink{class_net_instance_a3c3e7a1dfd8e6c54c25f2a61aa86f183}{NetInstance}.
+
+\hypertarget{class_net_instance_broadcast_a4dd405fd8ee38f91eb569516b8d3fc93}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!ErrorOccurred@{ErrorOccurred}}
+\index{ErrorOccurred@{ErrorOccurred}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{ErrorOccurred}]{\setlength{\rightskip}{0pt plus 5cm}void NetInstanceBroadcast::ErrorOccurred (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_a4dd405fd8ee38f91eb569516b8d3fc93}
+
+
+Deals with errors. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]Ignored (optional, default = 0). \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]Always. \end{DoxyExceptions}
+
+
+Implements \hyperlink{class_net_instance_ab3369f37337a9de2cbefe92f0bf1d087}{NetInstance}.
+
+\hypertarget{class_net_instance_broadcast_a5266d14413003ee8fc66e963c6e81b27}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!GetRecvSizeMinUDP@{GetRecvSizeMinUDP}}
+\index{GetRecvSizeMinUDP@{GetRecvSizeMinUDP}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{GetRecvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t NetInstanceBroadcast::GetRecvSizeMinUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_a5266d14413003ee8fc66e963c6e81b27}
+
+
+Retrieves the smallest acceptable packet size that can be received. 
+
+\begin{DoxyReturn}{Returns}
+the smallest acceptable packet size that can be received. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_u_d_p_a66b09a826a620f60707158d5cb11febc}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_broadcast_a80e22350fe35b5660cf1402de0d9b556}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!SendToUDP@{SendToUDP}}
+\index{SendToUDP@{SendToUDP}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{SendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetInstanceBroadcast::SendToUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ address, }
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_a80e22350fe35b5660cf1402de0d9b556}
+
+
+Sends a broadcast packet on the specified subnet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em address}]Subnet to send to. \item[{\em packet}]Packet to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} If the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} If the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} If the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} If the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_u_d_p_aab521333fd0aabf0b8343fe132494975}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_broadcast_ae4bb850a1b3d0743d14c8c4ff3414d4a}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!SendUDP@{SendUDP}}
+\index{SendUDP@{SendUDP}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{SendUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetUtility::SendStatus} NetInstanceBroadcast::SendUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf Packet} \&}]{ packet, }
+\item[{bool}]{ block, }
+\item[{size\_\-t}]{ clientID = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_instance_broadcast_ae4bb850a1b3d0743d14c8c4ff3414d4a}
+
+
+Sends a broadcast packet. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]Packet to send. \item[{\em block}]If true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent. \item[{\em clientID}]Ignored (default 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736acec16f03b79a6de35d6ab9d5ceb58ff7}{NetUtility::SEND\_\-COMPLETED} If the send operation completed successfully instantly. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a802cb48d857d70f62624326eea294406}{NetUtility::SEND\_\-IN\_\-PROGRESS} If the send operation was started, but has not yet completed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736a27389038f252e2ad34e12b28c9f93a00}{NetUtility::SEND\_\-FAILED} If the send operation failed. 
+
+\hyperlink{class_net_utility_a8051eca61204ffd818281419bbf44736abc96a939bc1f0dfffc56f4568ce9dad4}{NetUtility::SEND\_\-FAILED\_\-KILL} If the send operation failed and an entity was killed as a result (e.g. Client disconnected). 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_net_instance_u_d_p_afa565c78a2549b3b21ea4b1dedd33793}{NetInstanceUDP}.
+
+\hypertarget{class_net_instance_broadcast_a8957a0bbf977ed41f6ad3d4d17850c52}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetInstanceBroadcast::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_instance_broadcast_a8957a0bbf977ed41f6ad3d4d17850c52}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_instance_broadcast_a7c4db158cbee7df76d7f266e25a7623e}{
+\index{NetInstanceBroadcast@{NetInstanceBroadcast}!recvFailCounterUDP@{recvFailCounterUDP}}
+\index{recvFailCounterUDP@{recvFailCounterUDP}!NetInstanceBroadcast@{NetInstanceBroadcast}}
+\subsubsection[{recvFailCounterUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Counter} {\bf NetInstanceBroadcast::recvFailCounterUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_instance_broadcast_a7c4db158cbee7df76d7f266e25a7623e}
+
+
+Counter that keeps track of UDP receive failures. 
+
+WSARecv can sometimes fail for reasons that should not result in catastrophic failure of the instance e.g. A WSASendTo operation to a remote address failed. For this reason we retry receive operations a number of times, when to give up is managed by this object. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceBroadcast.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetInstanceBroadcast.cpp\end{DoxyCompactItemize}

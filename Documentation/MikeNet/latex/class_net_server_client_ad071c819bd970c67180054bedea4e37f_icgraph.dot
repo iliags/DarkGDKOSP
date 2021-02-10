@@ -1,0 +1,13 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetServerClient::SetConnectionState",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetServerClient::Disconnect",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#ac20ed4d125f3ef186f74c1d18515a1b5"];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetServerClient::LoadTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#a5aaa25f40f4855a58754e916b6938618"];
+  Node1 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetServerClient::LoadUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#a158954049498675f094aec9912c13ef3"];
+}

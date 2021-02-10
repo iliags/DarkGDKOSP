@@ -1,0 +1,199 @@
+\hypertarget{classcl_int_prefix_t_c_p}{
+\section{clIntPrefixTCP Class Reference}
+\label{classcl_int_prefix_t_c_p}\index{clIntPrefixTCP@{clIntPrefixTCP}}
+}
+
+
+TCP mode where each packet has a prefix indicating the size of the remaining data.  
+
+
+
+
+{\ttfamily \#include $<$clIntPrefixTCP.h$>$}
+
+Inheritance diagram for clIntPrefixTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_int_prefix_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_int_prefix_t_c_p_afed2d255e78f2e77e4a7f08ace22e5a9}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFuncTCP)
+\item 
+\hyperlink{classcl_int_prefix_t_c_p_ad2650c1c67a8c122f896586278def211}{clIntPrefixTCP} (size\_\-t partialPacketSize, bool \hyperlink{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}{autoResize})
+\item 
+\hyperlink{classcl_shared_send}{clSharedSend} $\ast$ \hyperlink{classcl_int_prefix_t_c_p_ae6f1975b0ccd8939ccbede12bad64fd9}{GetSendObject} (const \hyperlink{classcl_packet}{clPacket} $\ast$packet, bool block)
+\item 
+\hyperlink{classcl_int_prefix_t_c_p_ae6d7db29f0205a5f9c29c17698319031}{clIntPrefixTCP} (const \hyperlink{classcl_int_prefix_t_c_p}{clIntPrefixTCP} \&)
+\item 
+\hyperlink{classcl_int_prefix_t_c_p}{clIntPrefixTCP} \& \hyperlink{classcl_int_prefix_t_c_p_aafc05cb89aee7a1b6fd4f44d9069e9ba}{operator=} (const \hyperlink{classcl_int_prefix_t_c_p}{clIntPrefixTCP} \&)
+\item 
+\hyperlink{classcl_int_prefix_t_c_p}{clIntPrefixTCP} $\ast$ \hyperlink{classcl_int_prefix_t_c_p_ae81f0dcab68dff359b1cdf5d03974350}{Clone} () const 
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_int_prefix_t_c_p_ae0abbe8a74edfe679b04df354aa023ec}{GetProtocolMode} () const 
+\item 
+double \hyperlink{classcl_int_prefix_t_c_p_a0579e1738807207877c316b7423e25d9}{GetPartialPacketPercentage} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+TCP mode where each packet has a prefix indicating the size of the remaining data. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Packets sent have a prefix added which indicates the size of the packet (excluding the prefix). Packets received must have this prefix. \par
+\par
+
+
+This TCP mode is the most flexible and useful and is recommended for most purposes. \par
+\par
+
+
+The prefix is 32 bits for the 32 bit version of this plugin and 64 bits for the 64 bit version. \par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_int_prefix_t_c_p_ad2650c1c67a8c122f896586278def211}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!clIntPrefixTCP@{clIntPrefixTCP}}
+\index{clIntPrefixTCP@{clIntPrefixTCP}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{clIntPrefixTCP}]{\setlength{\rightskip}{0pt plus 5cm}clIntPrefixTCP::clIntPrefixTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ partialPacketSize, }
+\item[{bool}]{ autoResize}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_int_prefix_t_c_p_ad2650c1c67a8c122f896586278def211}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em partialPacketSize}]maximum amount of partial data (data that does not make up a full packet) that can be stored (in bytes). \par
+ Packets larger than this size cannot be received without memory reallocation. \item[{\em autoResize}]if true then if a packet larger than {\itshape partialPacketSize\/} is received then more memory will be allocated so that it can be received. \par
+ If false then an error will be thrown if a packet larger than {\itshape partialPacketSize\/} is received. \end{DoxyParams}
+\hypertarget{classcl_int_prefix_t_c_p_ae6d7db29f0205a5f9c29c17698319031}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!clIntPrefixTCP@{clIntPrefixTCP}}
+\index{clIntPrefixTCP@{clIntPrefixTCP}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{clIntPrefixTCP}]{\setlength{\rightskip}{0pt plus 5cm}clIntPrefixTCP::clIntPrefixTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clIntPrefixTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_int_prefix_t_c_p_ae6d7db29f0205a5f9c29c17698319031}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_int_prefix_t_c_p_ae81f0dcab68dff359b1cdf5d03974350}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!Clone@{Clone}}
+\index{Clone@{Clone}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clIntPrefixTCP} $\ast$ clIntPrefixTCP::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_int_prefix_t_c_p_ae81f0dcab68dff359b1cdf5d03974350}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_t_c_p_a6fa0b7a67bec9b647a7318a093385c72}{clSharedTCP}.
+
+\hypertarget{classcl_int_prefix_t_c_p_afed2d255e78f2e77e4a7f08ace22e5a9}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void clIntPrefixTCP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ tcpRecvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_int_prefix_t_c_p_afed2d255e78f2e77e4a7f08ace22e5a9}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that data was received on \item[{\em completionBytes}]number of bytes of new data stored in {\itshape buffer\/} \item[{\em buffer}]where new data is stored \item[{\em clientID}]ID of client that data was received from, 0 in client state \item[{\em instanceID}]instance that data was received on \item[\mbox{\tt[in]} {\em tcpRecvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_protocol_a2b6f3bd561af01c5ef02b06ebe24c5a0}{clSharedProtocol}.
+
+\hypertarget{classcl_int_prefix_t_c_p_a0579e1738807207877c316b7423e25d9}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!GetPartialPacketPercentage@{GetPartialPacketPercentage}}
+\index{GetPartialPacketPercentage@{GetPartialPacketPercentage}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{GetPartialPacketPercentage}]{\setlength{\rightskip}{0pt plus 5cm}double clIntPrefixTCP::GetPartialPacketPercentage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_int_prefix_t_c_p_a0579e1738807207877c316b7423e25d9}
+\begin{DoxyReturn}{Returns}
+the percentage of the partial packet that has been received i.e. between 0 and 100 where 50 indicates that half the packet has been received and we are now waiting for the second half to be received 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_t_c_p_ad0781613810b204660f212d37b8c1ce2}{clSharedTCP}.
+
+\hypertarget{classcl_int_prefix_t_c_p_ae0abbe8a74edfe679b04df354aa023ec}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clIntPrefixTCP::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_int_prefix_t_c_p_ae0abbe8a74edfe679b04df354aa023ec}
+\begin{DoxyReturn}{Returns}
+TCP mode that this class represents 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}{clSharedProtocol}.
+
+\hypertarget{classcl_int_prefix_t_c_p_ae6f1975b0ccd8939ccbede12bad64fd9}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedSend} $\ast$ clIntPrefixTCP::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_int_prefix_t_c_p_ae6f1975b0ccd8939ccbede12bad64fd9}
+\begin{DoxyReturn}{Returns}
+a send object with a prefix of the size of the packet 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]true if sending should be synchronous, false if sending should be asynchronous \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}{clSharedProtocol}.
+
+\hypertarget{classcl_int_prefix_t_c_p_aafc05cb89aee7a1b6fd4f44d9069e9ba}{
+\index{clIntPrefixTCP@{clIntPrefixTCP}!operator=@{operator=}}
+\index{operator=@{operator=}!clIntPrefixTCP@{clIntPrefixTCP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clIntPrefixTCP} \& clIntPrefixTCP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clIntPrefixTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_int_prefix_t_c_p_aafc05cb89aee7a1b6fd4f44d9069e9ba}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clIntPrefixTCP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clIntPrefixTCP.cpp\end{DoxyCompactItemize}

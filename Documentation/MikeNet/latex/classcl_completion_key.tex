@@ -1,0 +1,320 @@
+\hypertarget{classcl_completion_key}{
+\section{clCompletionKey Class Reference}
+\label{classcl_completion_key}\index{clCompletionKey@{clCompletionKey}}
+}
+
+
+Completion key used by the completion port to identify instances, sockets and other objects.  
+
+
+
+
+{\ttfamily \#include $<$clCompletionKey.h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \{ {\bfseries SOCKET}, 
+{\bfseries SHUTDOWN}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_completion_key_a95903e6444e6435ac236c60131d6d917}{clCompletionKey} (const \hyperlink{classcl_completion_key}{clCompletionKey} \&copyMe)
+\item 
+\hyperlink{classcl_completion_key}{clCompletionKey} \& \hyperlink{classcl_completion_key_ad7139d10d631de3c7f0f50c4c5983fc1}{operator=} (const \hyperlink{classcl_completion_key}{clCompletionKey} \&copyMe)
+\item 
+\hyperlink{classcl_completion_key_a205196a46b952185a31482b26c527325}{clCompletionKey} (\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{type}, \hyperlink{classcl_socket}{clSocket} $\ast$\hyperlink{classcl_completion_key_a96e8a44f37704779a1715f72fd712da2}{socket}, \hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$\hyperlink{classcl_completion_key_aa35aa701d8a009f709509ba26ead3275}{instance}, size\_\-t \hyperlink{classcl_completion_key_a512eecc783be96d6afe9a75c05c1ff18}{clientID})
+\item 
+\hyperlink{classcl_completion_key_a041c3dce020210e4b559f1272e9ebf32}{clCompletionKey} (\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{type}, \hyperlink{classcl_socket}{clSocket} $\ast$\hyperlink{classcl_completion_key_a96e8a44f37704779a1715f72fd712da2}{socket}, \hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$\hyperlink{classcl_completion_key_aa35aa701d8a009f709509ba26ead3275}{instance})
+\item 
+\hyperlink{classcl_completion_key_aab59e78af43eb35a62728d95a1e4d244}{clCompletionKey} (\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{type}, \hyperlink{classcl_socket}{clSocket} $\ast$\hyperlink{classcl_completion_key_a96e8a44f37704779a1715f72fd712da2}{socket})
+\item 
+\hyperlink{classcl_completion_key_ac844abb5caf7c19a8a05e074f6438b64}{clCompletionKey} (\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{type}, void $\ast$\hyperlink{classcl_completion_key_ab1ef70c4d8194b9fd32f502dead2a371}{customObject})
+\item 
+\hyperlink{classcl_completion_key_a459751418055da6035f05b1824e91732}{clCompletionKey} (\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{type})
+\item 
+\hyperlink{classcl_socket}{clSocket} $\ast$ \hyperlink{classcl_completion_key_a41872a48e234fe0755cdae8fc2a571cc}{GetSocket} ()
+\item 
+\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$ \hyperlink{classcl_completion_key_a9bd1b328dd61186ad8ad1ea728fe2d7c}{GetInstance} ()
+\item 
+void $\ast$ \hyperlink{classcl_completion_key_ad771291eeb1120df5a67389b2da66117}{GetCustomObject} ()
+\item 
+\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_a8d898966ef4243ccf1d1c970df1123d6}{GetType} () const 
+\item 
+size\_\-t \hyperlink{classcl_completion_key_aebadd77b6ae5add56dacd7e6c0df0da8}{GetClientID} () const 
+\item 
+void \hyperlink{classcl_completion_key_acebbdd34c7aba9ebdabbf6cbc2428e6d}{SetInstance} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$\hyperlink{classcl_completion_key_aa35aa701d8a009f709509ba26ead3275}{instance})
+\item 
+void \hyperlink{classcl_completion_key_a0555ad4d508050020e90305ff4becdb5}{SetClientID} (size\_\-t \hyperlink{classcl_completion_key_a512eecc783be96d6afe9a75c05c1ff18}{clientID})
+\item 
+bool \hyperlink{classcl_completion_key_acec42cb269ecbd067be61bb91ae5d5df}{IsOwnedByInstance} () const 
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_completion_key_a3fab82ad0825292a6b28e2236fcfee8d}{
+static const \hyperlink{classcl_completion_key}{clCompletionKey} {\bfseries shutdownKey}}
+\label{classcl_completion_key_a3fab82ad0825292a6b28e2236fcfee8d}
+
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_socket}{clSocket} $\ast$ \hyperlink{classcl_completion_key_a96e8a44f37704779a1715f72fd712da2}{socket}
+\item 
+\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$ \hyperlink{classcl_completion_key_aa35aa701d8a009f709509ba26ead3275}{instance}
+\item 
+size\_\-t \hyperlink{classcl_completion_key_a512eecc783be96d6afe9a75c05c1ff18}{clientID}
+\item 
+void $\ast$ \hyperlink{classcl_completion_key_ab1ef70c4d8194b9fd32f502dead2a371}{customObject}
+\item 
+\hyperlink{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{KeyType} \hyperlink{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{type}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Completion key used by the completion port to identify instances, sockets and other objects. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+When queued events complete they are often passed to the completion port. If they are, they must be identified. To identify them the completion port is given a \hyperlink{classcl_completion_key}{clCompletionKey} object and from this it can retrieve the entity that initiated the event and pass it relevant information about the event now that it has completed. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}{
+\index{clCompletionKey@{clCompletionKey}!KeyType@{KeyType}}
+\index{KeyType@{KeyType}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{KeyType}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clCompletionKey::KeyType}}}
+\label{classcl_completion_key_a3a2147c7a8a50fc3333cee949105ab12}
+Types of completion key objects, indicating what their purpose is 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_completion_key_a95903e6444e6435ac236c60131d6d917}{
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clCompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}clCompletionKey::clCompletionKey (
+\begin{DoxyParamCaption}
+\item[{const {\bf clCompletionKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a95903e6444e6435ac236c60131d6d917}
+Copy constructor \par
+ Copies {\itshape copyMe\/} into this object 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_completion_key_a205196a46b952185a31482b26c527325}{
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clCompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}clCompletionKey::clCompletionKey (
+\begin{DoxyParamCaption}
+\item[{{\bf KeyType}}]{ type, }
+\item[{{\bf clSocket} $\ast$}]{ socket, }
+\item[{{\bf clInstanceContainer} $\ast$}]{ instance, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a205196a46b952185a31482b26c527325}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]purpose of completion key \item[\mbox{\tt[in]} {\em socket}]pointer to socket \item[\mbox{\tt[in]} {\em instance}]pointer to instance \end{DoxyParams}
+\hypertarget{classcl_completion_key_a041c3dce020210e4b559f1272e9ebf32}{
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clCompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}clCompletionKey::clCompletionKey (
+\begin{DoxyParamCaption}
+\item[{{\bf KeyType}}]{ type, }
+\item[{{\bf clSocket} $\ast$}]{ socket, }
+\item[{{\bf clInstanceContainer} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a041c3dce020210e4b559f1272e9ebf32}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]purpose of completion key \item[\mbox{\tt[in]} {\em socket}]pointer to socket \item[\mbox{\tt[in]} {\em instance}]pointer to instance \end{DoxyParams}
+\hypertarget{classcl_completion_key_aab59e78af43eb35a62728d95a1e4d244}{
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clCompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}clCompletionKey::clCompletionKey (
+\begin{DoxyParamCaption}
+\item[{{\bf KeyType}}]{ type, }
+\item[{{\bf clSocket} $\ast$}]{ socket}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_aab59e78af43eb35a62728d95a1e4d244}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]purpose of completion key \item[\mbox{\tt[in]} {\em socket}]pointer to socket \end{DoxyParams}
+\hypertarget{classcl_completion_key_ac844abb5caf7c19a8a05e074f6438b64}{
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clCompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}clCompletionKey::clCompletionKey (
+\begin{DoxyParamCaption}
+\item[{{\bf KeyType}}]{ type, }
+\item[{void $\ast$}]{ customObject}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_ac844abb5caf7c19a8a05e074f6438b64}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]purpose of completion key \item[\mbox{\tt[in]} {\em customObject}]pointer to object of any type \end{DoxyParams}
+\hypertarget{classcl_completion_key_a459751418055da6035f05b1824e91732}{
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\index{clCompletionKey@{clCompletionKey}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clCompletionKey}]{\setlength{\rightskip}{0pt plus 5cm}clCompletionKey::clCompletionKey (
+\begin{DoxyParamCaption}
+\item[{{\bf KeyType}}]{ type}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a459751418055da6035f05b1824e91732}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em type}]purpose of completion key \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_completion_key_aebadd77b6ae5add56dacd7e6c0df0da8}{
+\index{clCompletionKey@{clCompletionKey}!GetClientID@{GetClientID}}
+\index{GetClientID@{GetClientID}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{GetClientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCompletionKey::GetClientID (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_completion_key_aebadd77b6ae5add56dacd7e6c0df0da8}
+\begin{DoxyReturn}{Returns}
+client ID of client within instance that owns this object 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_ad771291eeb1120df5a67389b2da66117}{
+\index{clCompletionKey@{clCompletionKey}!GetCustomObject@{GetCustomObject}}
+\index{GetCustomObject@{GetCustomObject}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{GetCustomObject}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ clCompletionKey::GetCustomObject (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_ad771291eeb1120df5a67389b2da66117}
+\begin{DoxyReturn}{Returns}
+pointer to object of any type, if NULL then no object was loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_a9bd1b328dd61186ad8ad1ea728fe2d7c}{
+\index{clCompletionKey@{clCompletionKey}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceContainer} $\ast$ clCompletionKey::GetInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a9bd1b328dd61186ad8ad1ea728fe2d7c}
+\begin{DoxyReturn}{Returns}
+pointer to instance, if NULL then no object was loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_a41872a48e234fe0755cdae8fc2a571cc}{
+\index{clCompletionKey@{clCompletionKey}!GetSocket@{GetSocket}}
+\index{GetSocket@{GetSocket}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{GetSocket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocket} $\ast$ clCompletionKey::GetSocket (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a41872a48e234fe0755cdae8fc2a571cc}
+\begin{DoxyReturn}{Returns}
+pointer to socket, if NULL then no object was loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_a8d898966ef4243ccf1d1c970df1123d6}{
+\index{clCompletionKey@{clCompletionKey}!GetType@{GetType}}
+\index{GetType@{GetType}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{GetType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCompletionKey::KeyType} clCompletionKey::GetType (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_completion_key_a8d898966ef4243ccf1d1c970df1123d6}
+\begin{DoxyReturn}{Returns}
+purpose of completion key 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_acec42cb269ecbd067be61bb91ae5d5df}{
+\index{clCompletionKey@{clCompletionKey}!IsOwnedByInstance@{IsOwnedByInstance}}
+\index{IsOwnedByInstance@{IsOwnedByInstance}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{IsOwnedByInstance}]{\setlength{\rightskip}{0pt plus 5cm}bool clCompletionKey::IsOwnedByInstance (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_completion_key_acec42cb269ecbd067be61bb91ae5d5df}
+\begin{DoxyReturn}{Returns}
+true if the completion key contains a pointer to an instance 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_ad7139d10d631de3c7f0f50c4c5983fc1}{
+\index{clCompletionKey@{clCompletionKey}!operator=@{operator=}}
+\index{operator=@{operator=}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCompletionKey} \& clCompletionKey::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clCompletionKey} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_ad7139d10d631de3c7f0f50c4c5983fc1}
+Assignment operator \par
+ Copies {\itshape copyMe\/} into this object, only copies objects when the field is NULL 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_completion_key_a0555ad4d508050020e90305ff4becdb5}{
+\index{clCompletionKey@{clCompletionKey}!SetClientID@{SetClientID}}
+\index{SetClientID@{SetClientID}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{SetClientID}]{\setlength{\rightskip}{0pt plus 5cm}void clCompletionKey::SetClientID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_a0555ad4d508050020e90305ff4becdb5}
+Set client ID field, can only be done once 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]clientID \end{DoxyParams}
+\hypertarget{classcl_completion_key_acebbdd34c7aba9ebdabbf6cbc2428e6d}{
+\index{clCompletionKey@{clCompletionKey}!SetInstance@{SetInstance}}
+\index{SetInstance@{SetInstance}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{SetInstance}]{\setlength{\rightskip}{0pt plus 5cm}void clCompletionKey::SetInstance (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_completion_key_acebbdd34c7aba9ebdabbf6cbc2428e6d}
+Set instance field, can only be done once 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]instance object \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_completion_key_a512eecc783be96d6afe9a75c05c1ff18}{
+\index{clCompletionKey@{clCompletionKey}!clientID@{clientID}}
+\index{clientID@{clientID}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{clientID}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clCompletionKey::clientID}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_completion_key_a512eecc783be96d6afe9a75c05c1ff18}
+ID of client within instance \hypertarget{classcl_completion_key_ab1ef70c4d8194b9fd32f502dead2a371}{
+\index{clCompletionKey@{clCompletionKey}!customObject@{customObject}}
+\index{customObject@{customObject}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{customObject}]{\setlength{\rightskip}{0pt plus 5cm}void$\ast$ {\bf clCompletionKey::customObject}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_completion_key_ab1ef70c4d8194b9fd32f502dead2a371}
+Pointer to any object \hypertarget{classcl_completion_key_aa35aa701d8a009f709509ba26ead3275}{
+\index{clCompletionKey@{clCompletionKey}!instance@{instance}}
+\index{instance@{instance}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{instance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceContainer}$\ast$ {\bf clCompletionKey::instance}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_completion_key_aa35aa701d8a009f709509ba26ead3275}
+Pointer to instance \hypertarget{classcl_completion_key_a96e8a44f37704779a1715f72fd712da2}{
+\index{clCompletionKey@{clCompletionKey}!socket@{socket}}
+\index{socket@{socket}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{socket}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocket}$\ast$ {\bf clCompletionKey::socket}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_completion_key_a96e8a44f37704779a1715f72fd712da2}
+Pointer to socket \hypertarget{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}{
+\index{clCompletionKey@{clCompletionKey}!type@{type}}
+\index{type@{type}!clCompletionKey@{clCompletionKey}}
+\subsubsection[{type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf KeyType} {\bf clCompletionKey::type}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_completion_key_aa63f9e5342dac65b56fab6a424065aa9}
+Purpose of completion key 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clCompletionKey.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clCompletionKey.cpp\end{DoxyCompactItemize}

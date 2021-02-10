@@ -1,0 +1,212 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=windows-1252">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="OpenOffice.org 3.1  (Win32)">
+	<META NAME="CREATED" CONTENT="0;0">
+	<META NAME="CHANGEDBY" CONTENT="Frankie Taylor">
+	<META NAME="CHANGED" CONTENT="20091222;12304700">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin: 0.79in }
+		H1 { margin-bottom: 0.08in }
+		H1.western { font-family: "Arial", sans-serif; font-size: 16pt }
+		H1.cjk { font-family: "Lucida Sans Unicode"; font-size: 16pt }
+		H1.ctl { font-family: "Tahoma"; font-size: 16pt }
+		P { margin-bottom: 0.08in }
+		A:link { so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" DIR="LTR">
+<PRE><IMG SRC="dittoTPU_logo.jpg" NAME="graphics1" ALIGN=BOTTOM WIDTH=485 HEIGHT=124 BORDER=0>
+ </PRE><H1 CLASS="western">
+About</H1>
+<PRE STYLE="margin-bottom: 0.2in">d i t t o Text Processing Unit is a standalone application that generates text output based on datalists and template forms containing a Markup Language.</PRE><P ALIGN=CENTER>
+<IMG SRC="diag1.jpg" NAME="diag1" ALIGN=BOTTOM WIDTH=869 HEIGHT=197 BORDER=0></P>
+<PRE>The dittoTPU Markup Language (dittoML) is a hybrid markup language providing text formatting and programming capability using markup tags. DittoTPU provides a `Datalist` storage mechanism for storing information (Database Tables, etc) in which dittoTPU generates pages that display the data using templates. 
+
+module
+        list
+        forms
+                DittoTPU Script/ML
+        
+module stores project info
+
+output to separate pages or single page. </PRE>
+<HR>
+<H1 CLASS="western"><B>Markup Language</B></H1>
+<PRE>&lt;@ - Open ML Tag
+@&gt; - Close ML Tag
+
+        dittoML is encapsulated between a open followed by a close ML Tag.
+                Example:
+                        &lt;@ print(&quot;dittoML is fun&quot;@&gt;
+                        
+        If an Syntax Error is generated if two consecutive open ML or close ML Tags are encountered.
+
+                Example:
+                        &lt;@if a = 1 then &lt;@ /*SYNTAX ERROR*/
+                
+        All text before a Open ML Tag, after a Close ML Tag, or encapsulated between a Close Tag followed by Open Tag is considered for ouput.
+                Example:
+                        text &lt;@
+                        @&gt; text
+                        @&gt; text &lt;@
+                        
+        Some dittoML perform special manipulation on Encapslated text.
+                Example:
+                        &lt;@
+                                comment @&gt;ignore this text for output&lt;@ end
+                        @&gt;
+
+dittoML
+
+        Directives
+
+        &lt;@import 'moduledirectoryname'@&gt;
+        &lt;@export 'moduleexportpath\filename.extension'@&gt;
+        &lt;@include 'filename'@&gt;
+        &lt;@exclude 'formname from module directory'@&gt;
+        &lt;@format formattype@&gt;   
+        &lt;@use 'listsfilename'@&gt; loads lists; automatically generates lists objects?
+        &lt;@output expression@&gt;
+        &lt;@input variable = @&gt;text here&lt;@endinput@&gt; loads text into a dittoML variable simultaneously outputing text
+        
+        Flow Control
+
+        &lt;@end@&gt;
+
+        &lt;@labelname@&gt;   loop label
+        &lt;@goto labelname@&gt;      goto to label
+        &lt;@jump labelname@&gt;
+        &lt;@break@&gt;
+        &lt;@continue@&gt;
+        &lt;@exit@&gt;
+        &lt;@return constant|var@&gt;
+
+        &lt;@if expression@&gt;       if condition
+        &lt;@else expression@&gt;     else if condition
+        &lt;@else@&gt;                else condition
+
+        &lt;@select@&gt;
+
+                Example:
+                        &lt;@select a
+                                if 'hello':
+                                        @&gt; hi &lt;@
+                                end
+                                if 'bye':
+                                        @&gt; cya &lt;@
+                                end
+                        end
+                        @&gt;
+
+        &lt;@script:language@&gt;
+
+dittoML 
+
+        List Object Tags
+
+        List Objects are defined in a *.list files in one or more of the list import formats. The `use` directive loads lists into memory.
+        
+        &lt;@list = 'listname'@&gt; create a new list
+        &lt;@list.item.add('itemname')@&gt;
+        
+        &lt;@list = 'listname'@&gt;   loop itemlist; omit name = sub item list
+        &lt;@list.loop@&gt;   start loop
+        &lt;@list.next@&gt;   next item in loop
+        &lt;@list.name@&gt;   output list name
+        &lt;@list.count@&gt;  output item count
+        &lt;@list.item.name@&gt;      output item name within loop
+        &lt;@list.item.index@&gt;     output next item number within loop
+        &lt;@list.item.name[index]@&gt;       output item name by index number
+        &lt;@list.item.index['name']@&gt;     output item index by name
+        
+        Special List Object Tags
+
+        &lt;@list = directory@&gt; a special list of directories within the module. Provides the same members as a list object.
+        &lt;@list = form@&gt; a list of forms within the module. Provides the same members as a list object.
+
+        Formatting Tags
+
+        Formatting tags also use '/' terminator. 
+        
+        &lt;@upper@&gt;       Uppercase
+        &lt;@lower@&gt;       Lowercase
+        &lt;@caps@&gt;        Capitalize
+        &lt;@norm@&gt;        Normalize text
+        &lt;@comment@&gt;     ignore output for encapsulated text 
+        &lt;@cr@&gt;          carriage return
+
+        Terminators Tags
+        &lt;@end@&gt;
+        &lt;@remove.first@&gt;        remove encapsulated text on first item
+        &lt;@remove.last@&gt;         remove encapsulated text on last item</PRE>
+<HR>
+<H1 CLASS="western"><B>List Import Formats</B></H1>
+<PRE>&lt;@format CSV@&gt;
+
+&quot;fieldnames&quot;,&quot;fieldname&quot;,&quot;fielname&quot; 
+&quot;data&quot;,&quot;data&quot;,&quot;data&quot;,
+
+&lt;@format XML@&gt;
+
+&lt;table name=&quot;customer&quot; parent=&quot;geography&quot;&gt;&lt;field name=&quot;First_Name&quot;/&gt;&lt;attribute parent=&quot;field&quot;&gt;&lt;/table&gt;
+&lt;method name=&quot;funct&quot;&gt;&lt;input name=&quot;&quot;/&gt;
+
+&lt;@format CPPP@&gt; (C++psuedo)
+
+#define label constant|macro
+
+listname {
+
+        /*field*/
+        datatype fieldname; 
+        
+        /*variable, a field with a value assignement.*/
+        datatype fieldname = somevalue; 
+        
+        /*sublist, child sublist that automatically references the parent*/
+        sublistname {
+                datatype fieldname;
+        }               
+        
+        /*method, a sublist with a format similar to a c++ method prototype*/
+        output_datatype_fieldname methodname(input_datatype_fieldname,input_datatype_fieldname);
+        
+}
+
+&lt;@format SQL@&gt;
+
+CREATE TABLE customer
+(First_Name char(50),
+Last_Name char(50),
+Address char(50),
+City char(50),
+Country char(25),
+Birth_Date date)
+
+&lt;@format SQLP@&gt; SQL-psuedo
+
+CREATE TABLE name
+(fieldname datatype)</PRE>
+<HR>
+<H1 CLASS="western"><B>Design &amp; Process Flow</B></H1>
+<PRE>Loading
+</PRE>
+<OL>
+	<LI><PRE>Open *.module file</PRE>
+	<LI><PRE>Datalist Import</PRE>
+	<LI><PRE>Directory Scan - Scan and load forms file paths, FORMS directory mimics output directory and files; directory output info also stored</PRE>
+</OL>
+<PRE>
+Building</PRE>
+<OL>
+	<LI><PRE><SPAN STYLE="background: #e6e6e6">Form</SPAN> &rarr; Compiler &rarr; <SPAN STYLE="background: #00dcff">Compiled Form</SPAN> (cached) &rarr; Virtual Machine &rarr; Output</PRE>
+</OL>
+<PRE>
+by f.l.taylor 2009 &copy;</PRE>
+</BODY>
+</HTML>

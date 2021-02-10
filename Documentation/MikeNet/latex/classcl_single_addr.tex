@@ -1,0 +1,292 @@
+\hypertarget{classcl_single_addr}{
+\section{clSingleAddr Class Reference}
+\label{classcl_single_addr}\index{clSingleAddr@{clSingleAddr}}
+}
+
+
+Stores a single address with IP and port.  
+
+
+
+
+{\ttfamily \#include $<$clSingleAddr.h$>$}
+
+Inheritance diagram for clSingleAddr:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_single_addr}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_single_addr_a25fc96ad0476627e7b22a2a365bb3a11}{clSingleAddr} ()
+\item 
+\hyperlink{classcl_single_addr_a1c90930c18459af48353cc898dcb729e}{clSingleAddr} (const char $\ast$ip, unsigned short port)
+\item 
+\hyperlink{classcl_single_addr_a36970eb1b9cc4914dd843db90196d006}{clSingleAddr} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&copyMe)
+\item 
+\hyperlink{classcl_single_addr_a43525548c2d43e84022ea1827ac82a07}{clSingleAddr} (sockaddr\_\-in copyMe)
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_single_addr_a10927da2ddc85b5c2be6c90adfc9152b}{operator=} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&copyMe)
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_single_addr_a0f4348bd70156efdd584e00a0adc2e62}{operator=} (sockaddr\_\-in copyMe)
+\item 
+bool \hyperlink{classcl_single_addr_afe5dc8744dfa7e40c5a2883dd9174f0b}{operator==} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&testMe) const 
+\item 
+void \hyperlink{classcl_single_addr_a4b221008868bbbe41913e2df9d0be148}{Clear} ()
+\item 
+void \hyperlink{classcl_single_addr_a0b6f53364da19bf3a32e858eacf8224e}{SetSockAddr} (sockaddr\_\-in p)
+\item 
+void \hyperlink{classcl_single_addr_a6840625e03f2d6cef1f2879fbdc797ac}{Set} (const char $\ast$ip, unsigned short port=0)
+\item 
+sockaddr\_\-in \hyperlink{classcl_single_addr_ab330c7465bfaadaa20dc47cf229562c4}{GetSockAddr} () const 
+\item 
+bool \hyperlink{classcl_single_addr_af08c879a9ccf9e1911ce1eb987954274}{GetAddrLoaded} () const 
+\item 
+sockaddr\_\-in $\ast$ \hyperlink{classcl_single_addr_a826fb99a2fc5b2d792dc3c9bc4cd0d6c}{GetAddrPtr} ()
+\item 
+const sockaddr\_\-in $\ast$ \hyperlink{classcl_single_addr_ab96f6dd987c9bd363a8fc16c3c3faba2}{GetAddrPtr} () const 
+\item 
+const char $\ast$ \hyperlink{classcl_single_addr_a1238a7dec32e132dfd4b25842ea67d61}{GetIP} () const 
+\item 
+unsigned short \hyperlink{classcl_single_addr_a2cb9bf087e9374b61f0ed8c37df35a79}{GetPort} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_single_addr_ab065f8f7d6655040bc47303c8cb3babd}{\_\-DefaultVars} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+sockaddr\_\-in \hyperlink{classcl_single_addr_a335b724d7528d98f2e3a0677363adb4e}{addr}
+\item 
+bool \hyperlink{classcl_single_addr_a7362a831bef73c010bf729c2531e7b79}{addrLoaded}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores a single address with IP and port. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Interacts with sockaddr\_\-in winsock structure making use of IP and port easier.
+
+This class is thread safe 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_single_addr_a25fc96ad0476627e7b22a2a365bb3a11}{
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{clSingleAddr}]{\setlength{\rightskip}{0pt plus 5cm}clSingleAddr::clSingleAddr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a25fc96ad0476627e7b22a2a365bb3a11}
+Constructor \hypertarget{classcl_single_addr_a1c90930c18459af48353cc898dcb729e}{
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{clSingleAddr}]{\setlength{\rightskip}{0pt plus 5cm}clSingleAddr::clSingleAddr (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ ip, }
+\item[{unsigned short}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a1c90930c18459af48353cc898dcb729e}
+Constructor
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ip}]IP to load \item[{\em port}]port to load \end{DoxyParams}
+\hypertarget{classcl_single_addr_a36970eb1b9cc4914dd843db90196d006}{
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{clSingleAddr}]{\setlength{\rightskip}{0pt plus 5cm}clSingleAddr::clSingleAddr (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a36970eb1b9cc4914dd843db90196d006}
+Copy constructor \hypertarget{classcl_single_addr_a43525548c2d43e84022ea1827ac82a07}{
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\index{clSingleAddr@{clSingleAddr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{clSingleAddr}]{\setlength{\rightskip}{0pt plus 5cm}clSingleAddr::clSingleAddr (
+\begin{DoxyParamCaption}
+\item[{sockaddr\_\-in}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a43525548c2d43e84022ea1827ac82a07}
+Constructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_single_addr_ab065f8f7d6655040bc47303c8cb3babd}{
+\index{clSingleAddr@{clSingleAddr}!\_\-DefaultVars@{\_\-DefaultVars}}
+\index{\_\-DefaultVars@{\_\-DefaultVars}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{\_\-DefaultVars}]{\setlength{\rightskip}{0pt plus 5cm}void clSingleAddr::\_\-DefaultVars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_single_addr_ab065f8f7d6655040bc47303c8cb3babd}
+Sets all variables to default \par
+ Calls Clear method \hypertarget{classcl_single_addr_a4b221008868bbbe41913e2df9d0be148}{
+\index{clSingleAddr@{clSingleAddr}!Clear@{Clear}}
+\index{Clear@{Clear}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{Clear}]{\setlength{\rightskip}{0pt plus 5cm}void clSingleAddr::Clear (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a4b221008868bbbe41913e2df9d0be148}
+Clears address \hypertarget{classcl_single_addr_af08c879a9ccf9e1911ce1eb987954274}{
+\index{clSingleAddr@{clSingleAddr}!GetAddrLoaded@{GetAddrLoaded}}
+\index{GetAddrLoaded@{GetAddrLoaded}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{GetAddrLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool clSingleAddr::GetAddrLoaded (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_single_addr_af08c879a9ccf9e1911ce1eb987954274}
+\begin{DoxyReturn}{Returns}
+true if address is loaded, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_single_addr_a826fb99a2fc5b2d792dc3c9bc4cd0d6c}{
+\index{clSingleAddr@{clSingleAddr}!GetAddrPtr@{GetAddrPtr}}
+\index{GetAddrPtr@{GetAddrPtr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{GetAddrPtr}]{\setlength{\rightskip}{0pt plus 5cm}sockaddr\_\-in $\ast$ clSingleAddr::GetAddrPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a826fb99a2fc5b2d792dc3c9bc4cd0d6c}
+\begin{DoxyReturn}{Returns}
+pointer to address 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+access to this pointer should be controlled using object's read/write control 
+\end{DoxyWarning}
+\hypertarget{classcl_single_addr_ab96f6dd987c9bd363a8fc16c3c3faba2}{
+\index{clSingleAddr@{clSingleAddr}!GetAddrPtr@{GetAddrPtr}}
+\index{GetAddrPtr@{GetAddrPtr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{GetAddrPtr}]{\setlength{\rightskip}{0pt plus 5cm}const sockaddr\_\-in $\ast$ clSingleAddr::GetAddrPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_single_addr_ab96f6dd987c9bd363a8fc16c3c3faba2}
+\begin{DoxyReturn}{Returns}
+pointer to address 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+access to this pointer should be controlled using object's read/write control 
+\end{DoxyWarning}
+\hypertarget{classcl_single_addr_a1238a7dec32e132dfd4b25842ea67d61}{
+\index{clSingleAddr@{clSingleAddr}!GetIP@{GetIP}}
+\index{GetIP@{GetIP}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{GetIP}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ clSingleAddr::GetIP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_single_addr_a1238a7dec32e132dfd4b25842ea67d61}
+\begin{DoxyReturn}{Returns}
+IP address in C string form 
+\end{DoxyReturn}
+\hypertarget{classcl_single_addr_a2cb9bf087e9374b61f0ed8c37df35a79}{
+\index{clSingleAddr@{clSingleAddr}!GetPort@{GetPort}}
+\index{GetPort@{GetPort}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{GetPort}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short clSingleAddr::GetPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_single_addr_a2cb9bf087e9374b61f0ed8c37df35a79}
+\begin{DoxyReturn}{Returns}
+port in unsigned short form 
+\end{DoxyReturn}
+\hypertarget{classcl_single_addr_ab330c7465bfaadaa20dc47cf229562c4}{
+\index{clSingleAddr@{clSingleAddr}!GetSockAddr@{GetSockAddr}}
+\index{GetSockAddr@{GetSockAddr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{GetSockAddr}]{\setlength{\rightskip}{0pt plus 5cm}sockaddr\_\-in clSingleAddr::GetSockAddr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_single_addr_ab330c7465bfaadaa20dc47cf229562c4}
+\begin{DoxyReturn}{Returns}
+address 
+\end{DoxyReturn}
+\hypertarget{classcl_single_addr_a0f4348bd70156efdd584e00a0adc2e62}{
+\index{clSingleAddr@{clSingleAddr}!operator=@{operator=}}
+\index{operator=@{operator=}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} \& clSingleAddr::operator= (
+\begin{DoxyParamCaption}
+\item[{sockaddr\_\-in}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a0f4348bd70156efdd584e00a0adc2e62}
+Assignment operator \hypertarget{classcl_single_addr_a10927da2ddc85b5c2be6c90adfc9152b}{
+\index{clSingleAddr@{clSingleAddr}!operator=@{operator=}}
+\index{operator=@{operator=}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} \& clSingleAddr::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a10927da2ddc85b5c2be6c90adfc9152b}
+Assignment operator \hypertarget{classcl_single_addr_afe5dc8744dfa7e40c5a2883dd9174f0b}{
+\index{clSingleAddr@{clSingleAddr}!operator==@{operator==}}
+\index{operator==@{operator==}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool clSingleAddr::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ testMe}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_single_addr_afe5dc8744dfa7e40c5a2883dd9174f0b}
+Equality operator \hypertarget{classcl_single_addr_a6840625e03f2d6cef1f2879fbdc797ac}{
+\index{clSingleAddr@{clSingleAddr}!Set@{Set}}
+\index{Set@{Set}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{Set}]{\setlength{\rightskip}{0pt plus 5cm}void clSingleAddr::Set (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ ip, }
+\item[{unsigned short}]{ port = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a6840625e03f2d6cef1f2879fbdc797ac}
+Loads an IP and port into the object
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ip}]IP to load \item[{\em port}]port to load (optional, default 0) \end{DoxyParams}
+\hypertarget{classcl_single_addr_a0b6f53364da19bf3a32e858eacf8224e}{
+\index{clSingleAddr@{clSingleAddr}!SetSockAddr@{SetSockAddr}}
+\index{SetSockAddr@{SetSockAddr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{SetSockAddr}]{\setlength{\rightskip}{0pt plus 5cm}void clSingleAddr::SetSockAddr (
+\begin{DoxyParamCaption}
+\item[{sockaddr\_\-in}]{ p}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_single_addr_a0b6f53364da19bf3a32e858eacf8224e}
+Sets address 
+\begin{DoxyParams}{Parameters}
+\item[{\em p}]new address \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_single_addr_a335b724d7528d98f2e3a0677363adb4e}{
+\index{clSingleAddr@{clSingleAddr}!addr@{addr}}
+\index{addr@{addr}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{addr}]{\setlength{\rightskip}{0pt plus 5cm}sockaddr\_\-in {\bf clSingleAddr::addr}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_single_addr_a335b724d7528d98f2e3a0677363adb4e}
+Stores address information \hypertarget{classcl_single_addr_a7362a831bef73c010bf729c2531e7b79}{
+\index{clSingleAddr@{clSingleAddr}!addrLoaded@{addrLoaded}}
+\index{addrLoaded@{addrLoaded}!clSingleAddr@{clSingleAddr}}
+\subsubsection[{addrLoaded}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clSingleAddr::addrLoaded}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_single_addr_a7362a831bef73c010bf729c2531e7b79}
+true if an address is being stored, false if not 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSingleAddr.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSingleAddr.cpp\end{DoxyCompactItemize}

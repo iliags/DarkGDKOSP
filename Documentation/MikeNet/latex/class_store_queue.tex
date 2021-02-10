@@ -1,0 +1,245 @@
+\hypertarget{class_store_queue}{
+\section{StoreQueue$<$ T $>$ Class Template Reference}
+\label{class_store_queue}\index{StoreQueue@{StoreQueue}}
+}
+
+
+Manages a queue of objects efficiently and safely.  
+
+
+
+
+{\ttfamily \#include $<$StoreQueue.h$>$}
+
+Inheritance diagram for StoreQueue$<$ T $>$:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_store_queue}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_store_queue_a195dbfce72c03cf2fb1d43ad4c613574}{
+void \hyperlink{class_store_queue_a195dbfce72c03cf2fb1d43ad4c613574}{Clear} ()}
+\label{class_store_queue_a195dbfce72c03cf2fb1d43ad4c613574}
+
+\begin{DoxyCompactList}\small\item\em Empty the contents of the queue. \item\end{DoxyCompactList}\item 
+\hypertarget{class_store_queue_a339e1cbdda8aa75d7a92e313bffec4ba}{
+\hyperlink{class_store_queue_a339e1cbdda8aa75d7a92e313bffec4ba}{StoreQueue} ()}
+\label{class_store_queue_a339e1cbdda8aa75d7a92e313bffec4ba}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_queue_a7a98b8bdec40b04616061f8368191a6d}{StoreQueue} (const \hyperlink{class_store_queue}{StoreQueue} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_store_queue}{StoreQueue} \& \hyperlink{class_store_queue_adb3eac91f8e6105c6b4d710e5dea56c4}{operator=} (const \hyperlink{class_store_queue}{StoreQueue} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Deep assignment operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_store_queue_ab305c9a2f7c9477f4fa75cb2c8d3a723}{
+virtual \hyperlink{class_store_queue_ab305c9a2f7c9477f4fa75cb2c8d3a723}{$\sim$StoreQueue} ()}
+\label{class_store_queue_ab305c9a2f7c9477f4fa75cb2c8d3a723}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_store_queue_a21d6d227bf4303022384a9ef5ab54c61}{Get} (T $\ast$destination)
+\begin{DoxyCompactList}\small\item\em Get object from front of queue and remove it from queue. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_store_queue_a333cd8c9af7f748401c8ad97c1487556}{Add} (T $\ast$object)
+\begin{DoxyCompactList}\small\item\em Add object to back of queue. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_store_queue_a69b4ffee7bd2200c74eec51f5b9b5e6d}{Size} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the number of objects in the queue. \item\end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{class_store_queue_a94f37b5741e7c96a6072a2d42fa11292}{Front} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the object at the front of the queue (without removing it). \item\end{DoxyCompactList}\item 
+T $\ast$ \hyperlink{class_store_queue_ae1dd92855531862ecd695ae3d6b708d3}{Back} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve the object at the back of the queue (without removing it). \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_store_queue_a5d0a9920f0587c359767e449aa580916}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_store_queue_a10fa68badcad4f0ab60b4bb6a453cd45}{
+queue$<$ T $\ast$ $>$ \hyperlink{class_store_queue_a10fa68badcad4f0ab60b4bb6a453cd45}{data}}
+\label{class_store_queue_a10fa68badcad4f0ab60b4bb6a453cd45}
+
+\begin{DoxyCompactList}\small\item\em Queue, storing pointers to elements. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$class T$>$ class StoreQueue$<$ T $>$}
+
+Manages a queue of objects efficiently and safely. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+The queue manages the objects using pointers, making it very efficient.\par
+\par
+
+
+Only the queue itself is thread safe, not the use of the objects in the queue. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_store_queue_a7a98b8bdec40b04616061f8368191a6d}{
+\index{StoreQueue@{StoreQueue}!StoreQueue@{StoreQueue}}
+\index{StoreQueue@{StoreQueue}!StoreQueue@{StoreQueue}}
+\subsubsection[{StoreQueue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf StoreQueue}$<$ T $>$::{\bf StoreQueue} (
+\begin{DoxyParamCaption}
+\item[{const {\bf StoreQueue}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_queue_a7a98b8bdec40b04616061f8368191a6d}
+
+
+Deep copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_store_queue_a333cd8c9af7f748401c8ad97c1487556}{
+\index{StoreQueue@{StoreQueue}!Add@{Add}}
+\index{Add@{Add}!StoreQueue@{StoreQueue}}
+\subsubsection[{Add}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ void {\bf StoreQueue}$<$ T $>$::Add (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ object}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_queue_a333cd8c9af7f748401c8ad97c1487556}
+
+
+Add object to back of queue. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em object}]Object to add to collection. {\itshape obj\/} is now owned by this object and should not be referenced elsewhere. \end{DoxyParams}
+
+
+Implements \hyperlink{class_store_a18a77de2e4fce1e80413c2d122fa3906}{Store$<$ T $>$}.
+
+\hypertarget{class_store_queue_ae1dd92855531862ecd695ae3d6b708d3}{
+\index{StoreQueue@{StoreQueue}!Back@{Back}}
+\index{Back@{Back}!StoreQueue@{StoreQueue}}
+\subsubsection[{Back}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf StoreQueue}$<$ T $>$::Back (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_queue_ae1dd92855531862ecd695ae3d6b708d3}
+
+
+Retrieve the object at the back of the queue (without removing it). 
+
+\begin{DoxyReturn}{Returns}
+element at back. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_ae00374bb6e2216fc02e84016b8980f75}{Store$<$ T $>$}.
+
+\hypertarget{class_store_queue_a94f37b5741e7c96a6072a2d42fa11292}{
+\index{StoreQueue@{StoreQueue}!Front@{Front}}
+\index{Front@{Front}!StoreQueue@{StoreQueue}}
+\subsubsection[{Front}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ T$\ast$ {\bf StoreQueue}$<$ T $>$::Front (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_queue_a94f37b5741e7c96a6072a2d42fa11292}
+
+
+Retrieve the object at the front of the queue (without removing it). 
+
+\begin{DoxyReturn}{Returns}
+element at front. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_ac176e1bb63ac3b34a574cf3cc5d4d1a1}{Store$<$ T $>$}.
+
+\hypertarget{class_store_queue_a21d6d227bf4303022384a9ef5ab54c61}{
+\index{StoreQueue@{StoreQueue}!Get@{Get}}
+\index{Get@{Get}!StoreQueue@{StoreQueue}}
+\subsubsection[{Get}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ size\_\-t {\bf StoreQueue}$<$ T $>$::Get (
+\begin{DoxyParamCaption}
+\item[{T $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_queue_a21d6d227bf4303022384a9ef5ab54c61}
+
+
+Get object from front of queue and remove it from queue. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em destination}]Location to copy retrieved object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of objects in collection before this method was called. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_abbe385f839e6bd682d84a7a3b2374774}{Store$<$ T $>$}.
+
+\hypertarget{class_store_queue_adb3eac91f8e6105c6b4d710e5dea56c4}{
+\index{StoreQueue@{StoreQueue}!operator=@{operator=}}
+\index{operator=@{operator=}!StoreQueue@{StoreQueue}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ {\bf StoreQueue}\& {\bf StoreQueue}$<$ T $>$::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf StoreQueue}$<$ T $>$ \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{class_store_queue_adb3eac91f8e6105c6b4d710e5dea56c4}
+
+
+Deep assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_store_queue_a69b4ffee7bd2200c74eec51f5b9b5e6d}{
+\index{StoreQueue@{StoreQueue}!Size@{Size}}
+\index{Size@{Size}!StoreQueue@{StoreQueue}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ size\_\-t {\bf StoreQueue}$<$ T $>$::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
+\label{class_store_queue_a69b4ffee7bd2200c74eec51f5b9b5e6d}
+
+
+Retrieve the number of objects in the queue. 
+
+\begin{DoxyReturn}{Returns}
+number of objects in queue. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_store_a24ce67007b2c9c65eb0542415a8d0cac}{Store$<$ T $>$}.
+
+\hypertarget{class_store_queue_a5d0a9920f0587c359767e449aa580916}{
+\index{StoreQueue@{StoreQueue}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!StoreQueue@{StoreQueue}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class T$>$ static bool {\bf StoreQueue}$<$ T $>$::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, static\mbox{]}}}}
+\label{class_store_queue_a5d0a9920f0587c359767e449aa580916}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/StoreQueue.h\end{DoxyCompactItemize}

@@ -1,0 +1,218 @@
+\hypertarget{class_completion_port}{
+\section{CompletionPort Class Reference}
+\label{class_completion_port}\index{CompletionPort@{CompletionPort}}
+}
+
+
+Manages a completion port and the threads associated with it.  
+
+
+
+
+{\ttfamily \#include $<$CompletionPort.h$>$}
+
+Inheritance diagram for CompletionPort:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=5.000000cm]{class_completion_port}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_completion_port_a7c797d9c9a81b521d521331c205efe12}{CompletionPort} (size\_\-t numThreads, LPTHREAD\_\-START\_\-ROUTINE function)
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_completion_port_a8f931d166ae6ba7bf7344d92c5d83972}{
+virtual \hyperlink{class_completion_port_a8f931d166ae6ba7bf7344d92c5d83972}{$\sim$CompletionPort} (void)}
+\label{class_completion_port_a8f931d166ae6ba7bf7344d92c5d83972}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_completion_port_a7bc61cb11ea8a3ea8cc0a9672c13dd83}{PostCompletionStatus} (const \hyperlink{class_completion_key}{CompletionKey} \&key, DWORD numberOfBytesTransferred, OVERLAPPED $\ast$overlapped)
+\begin{DoxyCompactList}\small\item\em Posts a completion status. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_completion_port_adbc0ecf9dc6bd7446bb3cce1b1e1de29}{PostCompletionStatusToAll} (const \hyperlink{class_completion_key}{CompletionKey} \&key, DWORD numberOfBytesTransferred, OVERLAPPED $\ast$overlapped)
+\begin{DoxyCompactList}\small\item\em Posts a completion status to all threads. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_completion_port_a02bf5e9c71e6da01d30db9c693dfd2e4}{TerminateFriendly} (bool block)
+\begin{DoxyCompactList}\small\item\em Requests that all threads in this group exit, by posting a completion status. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_completion_port_a70cd70659f442faf73db0716c37c0b6a}{GetCompletionStatus} (\hyperlink{class_completion_key}{CompletionKey} $\ast$\&key, DWORD \&bytes, LPOVERLAPPED \&overlapped)
+\begin{DoxyCompactList}\small\item\em Dequeues a completion status. \item\end{DoxyCompactList}\item 
+size\_\-t \hyperlink{class_completion_port_abe0188f76091a2ec11c378af8d47066e}{Size} ()
+\begin{DoxyCompactList}\small\item\em Retrieve the number of threads associated with this completion port. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_completion_port_a446fdec82ca0a639a877d0172084f540}{Associate} (HANDLE object, const \hyperlink{class_completion_key}{CompletionKey} \&key)
+\begin{DoxyCompactList}\small\item\em Associates an object with the completion port, so that status indicators can be received by the completion port about that object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_completion_port_a4e6534add3fe77949094d7d273a5b9f6}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_completion_port_aedad7b4cda1f23fd07d270d1ddf2ad77}{
+HANDLE \hyperlink{class_completion_port_aedad7b4cda1f23fd07d270d1ddf2ad77}{completionPort}}
+\label{class_completion_port_aedad7b4cda1f23fd07d270d1ddf2ad77}
+
+\begin{DoxyCompactList}\small\item\em Completion port. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a completion port and the threads associated with it. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_completion_port_a7c797d9c9a81b521d521331c205efe12}{
+\index{CompletionPort@{CompletionPort}!CompletionPort@{CompletionPort}}
+\index{CompletionPort@{CompletionPort}!CompletionPort@{CompletionPort}}
+\subsubsection[{CompletionPort}]{\setlength{\rightskip}{0pt plus 5cm}CompletionPort::CompletionPort (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numThreads, }
+\item[{LPTHREAD\_\-START\_\-ROUTINE}]{ function}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_port_a7c797d9c9a81b521d521331c205efe12}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em numThreads}]Number of worker threads that will manage completion port. Threads must exit without dealing with further completion status' when \hyperlink{class_completion_key_ad0789e8ca951edd8ee5b1b2fb7cdd8b4ac1d7e0bee4bbd1cd27869c1ad970dad8}{CompletionKey::SHUTDOWN} notification is received. \item[{\em function}]Function to be called by worker threads. Function is passed a pointer to the \hyperlink{class_thread_single}{ThreadSingle} object that is managing it. \hyperlink{class_thread_single_a1322c3db9a09abccc1dc38f16ee24c64}{ThreadSingle::GetParameter()} will return a a pointer to the \hyperlink{class_completion_port}{CompletionPort} object that it is associated with. \hyperlink{class_thread_single_a43ec2b66ea0f36e97701dea573fa966e}{ThreadSingle::GetManualThreadID()} will return a unique thread ID that should be used by the thread when calling any method requiring a thread ID. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_completion_port_a446fdec82ca0a639a877d0172084f540}{
+\index{CompletionPort@{CompletionPort}!Associate@{Associate}}
+\index{Associate@{Associate}!CompletionPort@{CompletionPort}}
+\subsubsection[{Associate}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionPort::Associate (
+\begin{DoxyParamCaption}
+\item[{HANDLE}]{ object, }
+\item[{const {\bf CompletionKey} \&}]{ key}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_port_a446fdec82ca0a639a877d0172084f540}
+
+
+Associates an object with the completion port, so that status indicators can be received by the completion port about that object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em object}]Object to associate with completion port. \item[{\em key}]Key associated with object, to uniquely identify it. \end{DoxyParams}
+\hypertarget{class_completion_port_a70cd70659f442faf73db0716c37c0b6a}{
+\index{CompletionPort@{CompletionPort}!GetCompletionStatus@{GetCompletionStatus}}
+\index{GetCompletionStatus@{GetCompletionStatus}!CompletionPort@{CompletionPort}}
+\subsubsection[{GetCompletionStatus}]{\setlength{\rightskip}{0pt plus 5cm}bool CompletionPort::GetCompletionStatus (
+\begin{DoxyParamCaption}
+\item[{{\bf CompletionKey} $\ast$\&}]{ key, }
+\item[{DWORD \&}]{ bytes, }
+\item[{LPOVERLAPPED \&}]{ overlapped}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_port_a70cd70659f442faf73db0716c37c0b6a}
+
+
+Dequeues a completion status. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em key}]Destination that a pointer to the key of the completion status will be stored. \item[\mbox{\tt[out]} {\em bytes}]Destination that number of bytes transferred of completion status will be stored. \item[\mbox{\tt[out]} {\em overlapped}]Destination that a pointer to the overlapped structure of the completion status will be stored.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if a status was successfully dequeued, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_completion_port_a7bc61cb11ea8a3ea8cc0a9672c13dd83}{
+\index{CompletionPort@{CompletionPort}!PostCompletionStatus@{PostCompletionStatus}}
+\index{PostCompletionStatus@{PostCompletionStatus}!CompletionPort@{CompletionPort}}
+\subsubsection[{PostCompletionStatus}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionPort::PostCompletionStatus (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ key, }
+\item[{DWORD}]{ numberOfBytesTransferred, }
+\item[{OVERLAPPED $\ast$}]{ overlapped}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_port_a7bc61cb11ea8a3ea8cc0a9672c13dd83}
+
+
+Posts a completion status. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Key to use. \item[{\em numberOfBytesTransferred}]Number of bytes transferred. \item[\mbox{\tt[in]} {\em overlapped}]Overlapped structure. \end{DoxyParams}
+\hypertarget{class_completion_port_adbc0ecf9dc6bd7446bb3cce1b1e1de29}{
+\index{CompletionPort@{CompletionPort}!PostCompletionStatusToAll@{PostCompletionStatusToAll}}
+\index{PostCompletionStatusToAll@{PostCompletionStatusToAll}!CompletionPort@{CompletionPort}}
+\subsubsection[{PostCompletionStatusToAll}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionPort::PostCompletionStatusToAll (
+\begin{DoxyParamCaption}
+\item[{const {\bf CompletionKey} \&}]{ key, }
+\item[{DWORD}]{ numberOfBytesTransferred, }
+\item[{OVERLAPPED $\ast$}]{ overlapped}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_port_adbc0ecf9dc6bd7446bb3cce1b1e1de29}
+
+
+Posts a completion status to all threads. 
+
+It is not necessarily guaranteed that each thread will receive the status. If a thread quickly receives a status, acts and then attempts to retrieve another status it may be quick enough to receive two notifications, thus meaning a thread misses out.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em key}]Key to use. \item[{\em numberOfBytesTransferred}]Number of bytes transferred. \item[\mbox{\tt[in]} {\em overlapped}]Overlapped structure. \end{DoxyParams}
+\hypertarget{class_completion_port_abe0188f76091a2ec11c378af8d47066e}{
+\index{CompletionPort@{CompletionPort}!Size@{Size}}
+\index{Size@{Size}!CompletionPort@{CompletionPort}}
+\subsubsection[{Size}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t CompletionPort::Size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_completion_port_abe0188f76091a2ec11c378af8d47066e}
+
+
+Retrieve the number of threads associated with this completion port. 
+
+\begin{DoxyReturn}{Returns}
+number of threads associated with this completion port. 
+\end{DoxyReturn}
+\hypertarget{class_completion_port_a02bf5e9c71e6da01d30db9c693dfd2e4}{
+\index{CompletionPort@{CompletionPort}!TerminateFriendly@{TerminateFriendly}}
+\index{TerminateFriendly@{TerminateFriendly}!CompletionPort@{CompletionPort}}
+\subsubsection[{TerminateFriendly}]{\setlength{\rightskip}{0pt plus 5cm}void CompletionPort::TerminateFriendly (
+\begin{DoxyParamCaption}
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_completion_port_a02bf5e9c71e6da01d30db9c693dfd2e4}
+
+
+Requests that all threads in this group exit, by posting a completion status. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em block}]If true this method will not return until the thread has exited. \end{DoxyParams}
+
+
+Reimplemented from \hyperlink{class_thread_single_group_a8e2284f495d54bb5b924e60dd40c57bf}{ThreadSingleGroup}.
+
+\hypertarget{class_completion_port_a4e6534add3fe77949094d7d273a5b9f6}{
+\index{CompletionPort@{CompletionPort}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!CompletionPort@{CompletionPort}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool CompletionPort::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_completion_port_a4e6534add3fe77949094d7d273a5b9f6}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_thread_single_group_a26f35ba9c432a49de2ca2e446add6888}{ThreadSingleGroup}.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/CompletionPort.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/CompletionPort.cpp\end{DoxyCompactItemize}

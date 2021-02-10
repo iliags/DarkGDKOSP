@@ -1,0 +1,208 @@
+\hypertarget{classcl_postfix_t_c_p}{
+\section{clPostfixTCP Class Reference}
+\label{classcl_postfix_t_c_p}\index{clPostfixTCP@{clPostfixTCP}}
+}
+
+
+TCP mode where the end of a packet is indicated by a postfix.  
+
+
+
+
+{\ttfamily \#include $<$clPostfixTCP.h$>$}
+
+Inheritance diagram for clPostfixTCP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_postfix_t_c_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_postfix_t_c_p_ae72bc321b2048b0744463f04a10bbcbd}{clPostfixTCP} (size\_\-t partialPacketSize, bool \hyperlink{classcl_shared_t_c_p_aadfbe0c28871af737963ac9205a71a6c}{autoResize}, const \hyperlink{classcl_packet}{clPacket} $\ast$packetPostfix)
+\item 
+\hyperlink{classcl_postfix_t_c_p_aab07be864d63cdfcb354cf0f576d54b7}{clPostfixTCP} (const \hyperlink{classcl_postfix_t_c_p}{clPostfixTCP} \&copyMe)
+\item 
+\hyperlink{classcl_postfix_t_c_p}{clPostfixTCP} \& \hyperlink{classcl_postfix_t_c_p_abe75cd206cd55b4a1749c8331c9c823e}{operator=} (const \hyperlink{classcl_postfix_t_c_p}{clPostfixTCP} \&copyMe)
+\item 
+\hyperlink{classcl_postfix_t_c_p}{clPostfixTCP} $\ast$ \hyperlink{classcl_postfix_t_c_p_ac4d43cd023dd185e2bd3be28b50a6d79}{Clone} () const 
+\item 
+void \hyperlink{classcl_postfix_t_c_p_a05fecc4be9f61c1bd19ae6afeef05c79}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, void($\ast$tcpRecvFunc)(size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} \&packet))
+\item 
+\hyperlink{classcl_shared_send}{clSharedSend} $\ast$ \hyperlink{classcl_postfix_t_c_p_a58ffdd4db7b50d29247969df69d93679}{GetSendObject} (const \hyperlink{classcl_packet}{clPacket} $\ast$packet, bool block)
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_postfix_t_c_p_a109cb621bfff71084c7e07ae580c4c5c}{GetProtocolMode} () const 
+\item 
+double \hyperlink{classcl_postfix_t_c_p_a98bc079655197fb16bd0babd6c077cb3}{GetPartialPacketPercentage} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_postfix_t_c_p_a505a8a31942635616ccca3922e06454b}{postfix}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+TCP mode where the end of a packet is indicated by a postfix. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+The end of the packet is indicated by a postfix, which can be of any size and be any combination of bytes. \par
+ Packets sent have this postfix appended automatically and packets received are expected to have this postfix. \par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_postfix_t_c_p_ae72bc321b2048b0744463f04a10bbcbd}{
+\index{clPostfixTCP@{clPostfixTCP}!clPostfixTCP@{clPostfixTCP}}
+\index{clPostfixTCP@{clPostfixTCP}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{clPostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}clPostfixTCP::clPostfixTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ partialPacketSize, }
+\item[{bool}]{ autoResize, }
+\item[{const {\bf clPacket} $\ast$}]{ packetPostfix}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_postfix_t_c_p_ae72bc321b2048b0744463f04a10bbcbd}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em partialPacketSize}]maximum amount of partial data (data that does not make up a full packet) that can be stored (in bytes). \par
+ Packets larger than this size cannot be received without memory reallocation. \item[{\em autoResize}]if true then if a packet larger than {\itshape partialPacketSize\/} is received then more memory will be allocated so that it can be received. \par
+ If false then an error will be thrown if a packet larger than {\itshape partialPacketSize\/} is received. \item[{\em packetPostfix}]packet being sent will have this inserted at the end of the packet. Incoming packets are expected to have this postfix at the end. \end{DoxyParams}
+\hypertarget{classcl_postfix_t_c_p_aab07be864d63cdfcb354cf0f576d54b7}{
+\index{clPostfixTCP@{clPostfixTCP}!clPostfixTCP@{clPostfixTCP}}
+\index{clPostfixTCP@{clPostfixTCP}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{clPostfixTCP}]{\setlength{\rightskip}{0pt plus 5cm}clPostfixTCP::clPostfixTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPostfixTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_postfix_t_c_p_aab07be864d63cdfcb354cf0f576d54b7}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_postfix_t_c_p_ac4d43cd023dd185e2bd3be28b50a6d79}{
+\index{clPostfixTCP@{clPostfixTCP}!Clone@{Clone}}
+\index{Clone@{Clone}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPostfixTCP} $\ast$ clPostfixTCP::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_postfix_t_c_p_ac4d43cd023dd185e2bd3be28b50a6d79}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_t_c_p_a6fa0b7a67bec9b647a7318a093385c72}{clSharedTCP}.
+
+\hypertarget{classcl_postfix_t_c_p_a05fecc4be9f61c1bd19ae6afeef05c79}{
+\index{clPostfixTCP@{clPostfixTCP}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}void clPostfixTCP::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{void($\ast$)(size\_\-t threadID, {\bf clPacket} \&packet)}]{ tcpRecvFunc}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_postfix_t_c_p_a05fecc4be9f61c1bd19ae6afeef05c79}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that data was received on \item[{\em completionBytes}]number of bytes of new data stored in {\itshape buffer\/} \item[{\em buffer}]where new data is stored \item[{\em clientID}]ID of client that data was received from, 0 in client state \item[{\em instanceID}]instance that data was received on \item[{\em tcpRecvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+\hypertarget{classcl_postfix_t_c_p_a98bc079655197fb16bd0babd6c077cb3}{
+\index{clPostfixTCP@{clPostfixTCP}!GetPartialPacketPercentage@{GetPartialPacketPercentage}}
+\index{GetPartialPacketPercentage@{GetPartialPacketPercentage}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{GetPartialPacketPercentage}]{\setlength{\rightskip}{0pt plus 5cm}double clPostfixTCP::GetPartialPacketPercentage (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_postfix_t_c_p_a98bc079655197fb16bd0babd6c077cb3}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]always because task is impossible \end{DoxyExceptions}
+\begin{DoxyReturn}{Returns}
+N/A as will never return 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_t_c_p_ad0781613810b204660f212d37b8c1ce2}{clSharedTCP}.
+
+\hypertarget{classcl_postfix_t_c_p_a109cb621bfff71084c7e07ae580c4c5c}{
+\index{clPostfixTCP@{clPostfixTCP}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clPostfixTCP::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_postfix_t_c_p_a109cb621bfff71084c7e07ae580c4c5c}
+\begin{DoxyReturn}{Returns}
+TCP mode that this class represents 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}{clSharedProtocol}.
+
+\hypertarget{classcl_postfix_t_c_p_a58ffdd4db7b50d29247969df69d93679}{
+\index{clPostfixTCP@{clPostfixTCP}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedSend} $\ast$ clPostfixTCP::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_postfix_t_c_p_a58ffdd4db7b50d29247969df69d93679}
+\begin{DoxyReturn}{Returns}
+a send object with a postfix of {\itshape postfix\/} 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]true if sending should be synchronous, false if sending should be asynchronous \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}{clSharedProtocol}.
+
+\hypertarget{classcl_postfix_t_c_p_abe75cd206cd55b4a1749c8331c9c823e}{
+\index{clPostfixTCP@{clPostfixTCP}!operator=@{operator=}}
+\index{operator=@{operator=}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPostfixTCP} \& clPostfixTCP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPostfixTCP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_postfix_t_c_p_abe75cd206cd55b4a1749c8331c9c823e}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_postfix_t_c_p_a505a8a31942635616ccca3922e06454b}{
+\index{clPostfixTCP@{clPostfixTCP}!postfix@{postfix}}
+\index{postfix@{postfix}!clPostfixTCP@{clPostfixTCP}}
+\subsubsection[{postfix}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clPacket}$\ast$ {\bf clPostfixTCP::postfix}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_postfix_t_c_p_a505a8a31942635616ccca3922e06454b}
+Pointer to the postfix which indicates the end of a packet \begin{DoxyWarning}{Warning}
+do not clean this up, pointer may be the same for multiple objects 
+\end{DoxyWarning}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPostfixTCP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clPostfixTCP.cpp\end{DoxyCompactItemize}

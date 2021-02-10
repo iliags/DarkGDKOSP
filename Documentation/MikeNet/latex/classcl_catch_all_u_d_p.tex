@@ -1,0 +1,367 @@
+\hypertarget{classcl_catch_all_u_d_p}{
+\section{clCatchAllUDP Class Reference}
+\label{classcl_catch_all_u_d_p}\index{clCatchAllUDP@{clCatchAllUDP}}
+}
+
+
+UDP mode where all packets are received, even out of order ones.  
+
+
+
+
+{\ttfamily \#include $<$clCatchAllUDP.h$>$}
+
+Inheritance diagram for clCatchAllUDP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcl_catch_all_u_d_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_catch_all_u_d_p_acd8ff42a8470b118f01043b06e0dc1a9}{clCatchAllUDP} (size\_\-t numClients)
+\item 
+virtual \hyperlink{classcl_catch_all_u_d_p_a0e2b86012bfcbd94d61ac97ee9180091}{$\sim$clCatchAllUDP} ()
+\item 
+\hyperlink{classcl_catch_all_u_d_p_ad92bb2fcc980ef4f7d17de5071247ce3}{clCatchAllUDP} (const \hyperlink{classcl_catch_all_u_d_p}{clCatchAllUDP} \&)
+\item 
+\hyperlink{classcl_catch_all_u_d_p}{clCatchAllUDP} \& \hyperlink{classcl_catch_all_u_d_p_a9fcf6da85ee5f7a16523c723c497a4f8}{operator=} (const \hyperlink{classcl_catch_all_u_d_p}{clCatchAllUDP} \&)
+\item 
+virtual \hyperlink{classcl_catch_all_u_d_p}{clCatchAllUDP} $\ast$ \hyperlink{classcl_catch_all_u_d_p_a0e329ffd49f681f9e81938d20ac1ab06}{Clone} () const 
+\item 
+virtual void \hyperlink{classcl_catch_all_u_d_p_ad4530482136db2ffffff7fdac7f2e00f}{Reset} (size\_\-t clientID)
+\item 
+virtual void \hyperlink{classcl_catch_all_u_d_p_ab73dbee966b725003aa44dcf88eb89d5}{Reset} ()
+\item 
+\hypertarget{classcl_catch_all_u_d_p_a0010d41a81f6eed7625d9f88dc1d6d7d}{
+virtual void {\bfseries DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, void($\ast$udpRecvFunc)(size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} \&packet))}
+\label{classcl_catch_all_u_d_p_a0010d41a81f6eed7625d9f88dc1d6d7d}
+
+\item 
+size\_\-t \hyperlink{classcl_catch_all_u_d_p_a366bd96e44b0352b9d35b626c5b60bfc}{GetPacketAmount} (size\_\-t clientID, size\_\-t operationID) const 
+\item 
+size\_\-t \hyperlink{classcl_catch_all_u_d_p_a61371c284ba4ce5e83ba3679439cf765}{GetPacketFromStore} (size\_\-t clientID, size\_\-t operationID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+virtual \hyperlink{classcl_shared_send}{clSharedSend} $\ast$ \hyperlink{classcl_catch_all_u_d_p_a6651f3534e139451f9bbabe16e00671c}{GetSendObject} (const \hyperlink{classcl_packet}{clPacket} $\ast$packet, bool block)
+\item 
+virtual \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_catch_all_u_d_p_adacc5977909396017910dcb3ab44c395}{GetProtocolMode} () const 
+\item 
+size\_\-t \hyperlink{classcl_catch_all_u_d_p_aebbfac2716ad96b0344fe8ab776d771b}{GetNumOperations} () const 
+\item 
+size\_\-t \hyperlink{classcl_catch_all_u_d_p_ac4eb348fdfc5b85a58aab9c48023171c}{GetNumClients} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_catch_all_u_d_p_aab82a0c6997adb14f317f71da6db52b1}{QueuePacket} (size\_\-t threadID, \hyperlink{classcl_packet}{clPacket} $\ast$completePacket, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFuncUDP)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_store_vector}{clStoreVector}$<$ \hyperlink{classcl_store_queue}{clStoreQueue}$<$ \hyperlink{classcl_packet}{clPacket} $>$ $>$ \hyperlink{classcl_catch_all_u_d_p_a8c46150bb5f8219841e47561b6c96f30}{packetStore}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_catch_all_u_d_p_ac5e4e6633deffddd00a93b55e759fcc2}{\_\-Copy} (const \hyperlink{classcl_catch_all_u_d_p}{clCatchAllUDP} \&copyMe)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP mode where all packets are received, even out of order ones. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This UDP mode is known as 'catch all'. \par
+\par
+
+
+Unlike the other UDP modes, no attempt is made to discard out of order packets. \par
+ Packets are sent unmodified. \par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_catch_all_u_d_p_acd8ff42a8470b118f01043b06e0dc1a9}{
+\index{clCatchAllUDP@{clCatchAllUDP}!clCatchAllUDP@{clCatchAllUDP}}
+\index{clCatchAllUDP@{clCatchAllUDP}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{clCatchAllUDP}]{\setlength{\rightskip}{0pt plus 5cm}clCatchAllUDP::clCatchAllUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numClients}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_catch_all_u_d_p_acd8ff42a8470b118f01043b06e0dc1a9}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em numClients}]number of clients that object should store packets for \end{DoxyParams}
+\hypertarget{classcl_catch_all_u_d_p_a0e2b86012bfcbd94d61ac97ee9180091}{
+\index{clCatchAllUDP@{clCatchAllUDP}!$\sim$clCatchAllUDP@{$\sim$clCatchAllUDP}}
+\index{$\sim$clCatchAllUDP@{$\sim$clCatchAllUDP}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{$\sim$clCatchAllUDP}]{\setlength{\rightskip}{0pt plus 5cm}clCatchAllUDP::$\sim$clCatchAllUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_a0e2b86012bfcbd94d61ac97ee9180091}
+Destructor \par
+ Does nothing but is needed because we need a virtual destructor \hypertarget{classcl_catch_all_u_d_p_ad92bb2fcc980ef4f7d17de5071247ce3}{
+\index{clCatchAllUDP@{clCatchAllUDP}!clCatchAllUDP@{clCatchAllUDP}}
+\index{clCatchAllUDP@{clCatchAllUDP}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{clCatchAllUDP}]{\setlength{\rightskip}{0pt plus 5cm}clCatchAllUDP::clCatchAllUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clCatchAllUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_catch_all_u_d_p_ad92bb2fcc980ef4f7d17de5071247ce3}
+Copy constructor (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_catch_all_u_d_p_ac5e4e6633deffddd00a93b55e759fcc2}{
+\index{clCatchAllUDP@{clCatchAllUDP}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clCatchAllUDP::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clCatchAllUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_ac5e4e6633deffddd00a93b55e759fcc2}
+Copies {\itshape copyMe\/} into this object (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_catch_all_u_d_p_a0e329ffd49f681f9e81938d20ac1ab06}{
+\index{clCatchAllUDP@{clCatchAllUDP}!Clone@{Clone}}
+\index{Clone@{Clone}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{Clone}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCatchAllUDP} $\ast$ clCatchAllUDP::Clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_a0e329ffd49f681f9e81938d20ac1ab06}
+\begin{DoxyReturn}{Returns}
+a deep copy of this object 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a62267e9d085f8e6b72a91fadf4a55670}{clSharedUDP}.
+
+
+
+Reimplemented in \hyperlink{classcl_catch_all_no_u_d_p_a64c2a0db2dffeb144559bb2c134c4aa0}{clCatchAllNoUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_ac4eb348fdfc5b85a58aab9c48023171c}{
+\index{clCatchAllUDP@{clCatchAllUDP}!GetNumClients@{GetNumClients}}
+\index{GetNumClients@{GetNumClients}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{GetNumClients}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCatchAllUDP::GetNumClients (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_ac4eb348fdfc5b85a58aab9c48023171c}
+\begin{DoxyReturn}{Returns}
+the number of clients that this object can manage 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_afacd36fa8d2b7bb21bff349cf0c1b3c9}{clSharedUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_aebbfac2716ad96b0344fe8ab776d771b}{
+\index{clCatchAllUDP@{clCatchAllUDP}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCatchAllUDP::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_aebbfac2716ad96b0344fe8ab776d771b}
+\begin{DoxyReturn}{Returns}
+1 because operations are not valid for this class 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a4018cccdd8593a0df78f7dd6f59c40c1}{clSharedUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_a366bd96e44b0352b9d35b626c5b60bfc}{
+\index{clCatchAllUDP@{clCatchAllUDP}!GetPacketAmount@{GetPacketAmount}}
+\index{GetPacketAmount@{GetPacketAmount}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{GetPacketAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCatchAllUDP::GetPacketAmount (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_a366bd96e44b0352b9d35b626c5b60bfc}
+Returns the number of packets in the packet queue of the specified client 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \item[{\em operationID}]ignored \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape clientID\/} is invalid \end{DoxyExceptions}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_ac27f28fb266c9faaf44ee7e515ab0727}{clSharedUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_a61371c284ba4ce5e83ba3679439cf765}{
+\index{clCatchAllUDP@{clCatchAllUDP}!GetPacketFromStore@{GetPacketFromStore}}
+\index{GetPacketFromStore@{GetPacketFromStore}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{GetPacketFromStore}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clCatchAllUDP::GetPacketFromStore (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_a61371c284ba4ce5e83ba3679439cf765}
+Copies a packet from the packet queue into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client to use \item[{\em operationID}]ignored \item[\mbox{\tt[out]} {\em destination}]pointer to a \hyperlink{classcl_packet}{clPacket} object \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of packets in packet queue before this method was called 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape clientID\/} is invalid \end{DoxyExceptions}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a8b6e71b0ce806b23e378fe7206a0d8a5}{clSharedUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_adacc5977909396017910dcb3ab44c395}{
+\index{clCatchAllUDP@{clCatchAllUDP}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clCatchAllUDP::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_adacc5977909396017910dcb3ab44c395}
+\begin{DoxyReturn}{Returns}
+UDP mode that this class represents 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}{clSharedProtocol}.
+
+
+
+Reimplemented in \hyperlink{classcl_catch_all_no_u_d_p_a93dceb605e7c892975772958e91f44b4}{clCatchAllNoUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_a6651f3534e139451f9bbabe16e00671c}{
+\index{clCatchAllUDP@{clCatchAllUDP}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedSend} $\ast$ clCatchAllUDP::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_a6651f3534e139451f9bbabe16e00671c}
+\begin{DoxyReturn}{Returns}
+a send object with no prefix or postfix 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]true if sending should be synchronous, false if sending should be asynchronous \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}{clSharedProtocol}.
+
+
+
+Reimplemented in \hyperlink{classcl_catch_all_no_u_d_p_ab617cfaf8427e415c591518fe36b95af}{clCatchAllNoUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_a9fcf6da85ee5f7a16523c723c497a4f8}{
+\index{clCatchAllUDP@{clCatchAllUDP}!operator=@{operator=}}
+\index{operator=@{operator=}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCatchAllUDP} \& clCatchAllUDP::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clCatchAllUDP} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_catch_all_u_d_p_a9fcf6da85ee5f7a16523c723c497a4f8}
+Assignment operator (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object 
+\end{DoxyReturn}
+\hypertarget{classcl_catch_all_u_d_p_aab82a0c6997adb14f317f71da6db52b1}{
+\index{clCatchAllUDP@{clCatchAllUDP}!QueuePacket@{QueuePacket}}
+\index{QueuePacket@{QueuePacket}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{QueuePacket}]{\setlength{\rightskip}{0pt plus 5cm}void clCatchAllUDP::QueuePacket (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{{\bf clPacket} $\ast$}]{ completePacket, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ udpRecvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_aab82a0c6997adb14f317f71da6db52b1}
+Takes a complete packet and deals with it in one of two ways:
+\begin{DoxyItemize}
+\item Passes it to user function specified by {\itshape udpRecvFunc\/} parameter
+\item If no user function is defined then it is put into a queue to be retrieved using {\ttfamily mnRecv} commands
+\end{DoxyItemize}
+
+\begin{DoxyWarning}{Warning}
+if the packet is passed to a user function this is done synchronously, so the method will not return until the user function returns.
+\end{DoxyWarning}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \item[{\em completePacket}]the complete packet that should be dealt with \item[\mbox{\tt[in]} {\em udpRecvFunc}]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+\hypertarget{classcl_catch_all_u_d_p_ab73dbee966b725003aa44dcf88eb89d5}{
+\index{clCatchAllUDP@{clCatchAllUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void clCatchAllUDP::Reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_ab73dbee966b725003aa44dcf88eb89d5}
+Reset all client's packet store 
+
+Implements \hyperlink{classcl_shared_u_d_p_a086fea6811fed1dc76d54ba9cbf52763}{clSharedUDP}.
+
+
+
+Reimplemented in \hyperlink{classcl_catch_all_no_u_d_p_a5b4b52daa2fe9319eb25481951a70818}{clCatchAllNoUDP}.
+
+\hypertarget{classcl_catch_all_u_d_p_ad4530482136db2ffffff7fdac7f2e00f}{
+\index{clCatchAllUDP@{clCatchAllUDP}!Reset@{Reset}}
+\index{Reset@{Reset}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{Reset}]{\setlength{\rightskip}{0pt plus 5cm}void clCatchAllUDP::Reset (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_ad4530482136db2ffffff7fdac7f2e00f}
+Reset to as if object had just been constructed 
+\begin{DoxyParams}{Parameters}
+\item[{\em clientID}]ID of client whose packet store should be cleared \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape clientID\/} is invalid \end{DoxyExceptions}
+
+
+Implements \hyperlink{classcl_shared_u_d_p_a6985d2cd42ad37bc2477efb162bad157}{clSharedUDP}.
+
+
+
+Reimplemented in \hyperlink{classcl_catch_all_no_u_d_p_af80b84880abeb4cc701c4facd4391156}{clCatchAllNoUDP}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_catch_all_u_d_p_a8c46150bb5f8219841e47561b6c96f30}{
+\index{clCatchAllUDP@{clCatchAllUDP}!packetStore@{packetStore}}
+\index{packetStore@{packetStore}!clCatchAllUDP@{clCatchAllUDP}}
+\subsubsection[{packetStore}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clStoreVector}$<${\bf clStoreQueue}$<${\bf clPacket}$>$ $>$ {\bf clCatchAllUDP::packetStore}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_catch_all_u_d_p_a8c46150bb5f8219841e47561b6c96f30}
+Stores all recently received packets for every client 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clCatchAllUDP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clCatchAllUDP.cpp\end{DoxyCompactItemize}

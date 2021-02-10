@@ -1,0 +1,442 @@
+\hypertarget{classcl_instance_u_d_p}{
+\section{clInstanceUDP Class Reference}
+\label{classcl_instance_u_d_p}\index{clInstanceUDP@{clInstanceUDP}}
+}
+
+
+UDP instance class responsible for managing all UDP operations on at an instance level.  
+
+
+
+
+{\ttfamily \#include $<$clInstanceUDP.h$>$}
+
+Inheritance diagram for clInstanceUDP:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_instance_u_d_p}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classcl_instance_u_d_p_aabeda7b42ed30e4c143bc726fdbba290}{ValidateRecvSizeUDP} (size\_\-t size) const 
+\item 
+\hyperlink{classcl_instance_u_d_p_acada026824ef6cb703fa90055baced48}{clInstanceUDP} (\hyperlink{classcl_socket_u_d_p}{clSocketUDP} $\ast$\hyperlink{classcl_instance_u_d_p_adabf31cb357eb5dada6ad5c8e57c611e}{socketUDP}, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} recvFunc=NULL)
+\item 
+virtual \hyperlink{classcl_instance_u_d_p_a7b8d9067ea0d2835275f1365f2a52c8c}{$\sim$clInstanceUDP} ()
+\item 
+void \hyperlink{classcl_instance_u_d_p_a2b1ca50c2b076e37fecbff3269083c67}{SetContainer} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$container)
+\item 
+bool \hyperlink{classcl_instance_u_d_p_aab18f3fec8c8dd3c77cccb764a733a85}{GetEnabledUDP} () const 
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_u_d_p_a4bc570a7c6a32732c6aa22cae4b97200}{GetModeUDP} () const 
+\item 
+size\_\-t \hyperlink{classcl_instance_u_d_p_a8fa59e6d4095cc3b08c3a9686e84bf08}{GetNumOperationsUDP} () const 
+\item 
+virtual void \hyperlink{classcl_instance_u_d_p_ac481cdb9cb825fd303acf8a16da332a2}{DoRecvUDP} (size\_\-t threadID)=0
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} \hyperlink{classcl_instance_u_d_p_a6c572f9022c5e8f7009a5f88429559fe}{GetUserFunctionUDP} () const 
+\item 
+bool \hyperlink{classcl_instance_u_d_p_a2a652c327503bf9aa27ae528027051c5}{GetUserFunctionExistUDP} () const 
+\item 
+size\_\-t \hyperlink{classcl_instance_u_d_p_a1013b00e96bd8f21d21bc14e3c146f74}{GetRecvBufferLengthUDP} () const 
+\item 
+size\_\-t \hyperlink{classcl_instance_u_d_p_af66c8b259f6aae9603bac614f07bb368}{GetMaxPacketSizeUDP} () const 
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_u_d_p_a77861553e70dfd07996bc1434175fdd2}{GetProtocolModeUDP} () const 
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_u_d_p_a9f636c4f9c4305660ccdadfe6a48eb01}{GetPacketAmountUDP} (size\_\-t threadID, size\_\-t clientID, size\_\-t operationID) const 
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_instance_u_d_p_ace4b9cb6e070ae54a9504027e6ca3670}{GetLocalAddressUDP} () const 
+\item 
+virtual void \hyperlink{classcl_instance_u_d_p_a0d4766b34dde4fcca1f790e30742fcf5}{FlushRecvUDP} (size\_\-t threadID, size\_\-t clientID)
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_u_d_p_af519100fd9bb7c993396e249002eddb2}{GetPacketFromStoreUDP} (size\_\-t threadID, size\_\-t clientID, size\_\-t operationID, \hyperlink{classcl_packet}{clPacket} $\ast$destination)
+\item 
+virtual \hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_instance_u_d_p_af56fb711b4bf6d5152c68912a3f10f13}{SendUDP} (size\_\-t threadID, size\_\-t clientID, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)=0
+\item 
+virtual \hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803}{clNetworkingUtility::SendStatus} \hyperlink{classcl_instance_u_d_p_a2a429c537132c699c920b3deb2b96a43}{SendToUDP} (size\_\-t threadID, const \hyperlink{classcl_single_addr}{clSingleAddr} \&address, const \hyperlink{classcl_packet}{clPacket} \&packet, bool block)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_instance_u_d_p_a97b3a95fa31ad3a5ef3f331186a2e513}{\_\-CheckEnabledUDP} (size\_\-t line, const char $\ast$file) const 
+\item 
+virtual size\_\-t \hyperlink{classcl_instance_u_d_p_a180b09957ac5b22a7a298f2615f1d656}{GetRecvSizeMinUDP} () const =0
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_socket_u_d_p}{clSocketUDP} $\ast$ \hyperlink{classcl_instance_u_d_p_adabf31cb357eb5dada6ad5c8e57c611e}{socketUDP}
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{RecvFunc} \hyperlink{classcl_instance_u_d_p_a71fd288aaec92fa83f45060bc15d1f1e}{recvFuncUDP}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+UDP instance class responsible for managing all UDP operations on at an instance level. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class should be inherited by any instance class wishing to make use of User Datagram Protocol 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_u_d_p_acada026824ef6cb703fa90055baced48}{
+\index{clInstanceUDP@{clInstanceUDP}!clInstanceUDP@{clInstanceUDP}}
+\index{clInstanceUDP@{clInstanceUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{clInstanceUDP}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceUDP::clInstanceUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf clSocketUDP} $\ast$}]{ socketUDP, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ recvFunc = {\ttfamily NULL}}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_u_d_p_acada026824ef6cb703fa90055baced48}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em socketUDP}]socket to use to send and receive UDP data. This pointer and its data is now owned by this object and should not be used elsewhere. \item[\mbox{\tt[in]} {\em recvFunc}]function that any received data will be passed to. (optional, default NULL) \end{DoxyParams}
+\begin{DoxyNote}{Note}
+virtual inheritance means that \hyperlink{classcl_instance_core}{clInstanceCore} constructor will never be called by this constructor 
+\end{DoxyNote}
+\hypertarget{classcl_instance_u_d_p_a7b8d9067ea0d2835275f1365f2a52c8c}{
+\index{clInstanceUDP@{clInstanceUDP}!$\sim$clInstanceUDP@{$\sim$clInstanceUDP}}
+\index{$\sim$clInstanceUDP@{$\sim$clInstanceUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{$\sim$clInstanceUDP}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceUDP::$\sim$clInstanceUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_a7b8d9067ea0d2835275f1365f2a52c8c}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_u_d_p_a97b3a95fa31ad3a5ef3f331186a2e513}{
+\index{clInstanceUDP@{clInstanceUDP}!\_\-CheckEnabledUDP@{\_\-CheckEnabledUDP}}
+\index{\_\-CheckEnabledUDP@{\_\-CheckEnabledUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{\_\-CheckEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceUDP::\_\-CheckEnabledUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_instance_u_d_p_a97b3a95fa31ad3a5ef3f331186a2e513}
+Called by methods where UDP must be enabled 
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if UDP is disabled \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em line}]line number of method call \item[\mbox{\tt[in]} {\em file}]file of method call \end{DoxyParams}
+\hypertarget{classcl_instance_u_d_p_ac481cdb9cb825fd303acf8a16da332a2}{
+\index{clInstanceUDP@{clInstanceUDP}!DoRecvUDP@{DoRecvUDP}}
+\index{DoRecvUDP@{DoRecvUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{DoRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clInstanceUDP::DoRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_ac481cdb9cb825fd303acf8a16da332a2}
+Starts a receive operation via UDP and deals with errors appropriately
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this method \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_a4878d6ca8f78741539f7d7d8ce3c47b8}{clBroadcastState}, and \hyperlink{classcl_client_state_a0896fc48ea83b9d2c9db5c4fbb520cd0}{clClientState}.
+
+\hypertarget{classcl_instance_u_d_p_a0d4766b34dde4fcca1f790e30742fcf5}{
+\index{clInstanceUDP@{clInstanceUDP}!FlushRecvUDP@{FlushRecvUDP}}
+\index{FlushRecvUDP@{FlushRecvUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{FlushRecvUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceUDP::FlushRecvUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_a0d4766b34dde4fcca1f790e30742fcf5}
+Removes all fully received UDP packets from the packet queue \par
+ Has no impact on the partial packet store 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, ignored in this implementation but overriding implementations may use it \item[{\em clientID}]ID of client to use \end{DoxyParams}
+\hypertarget{classcl_instance_u_d_p_aab18f3fec8c8dd3c77cccb764a733a85}{
+\index{clInstanceUDP@{clInstanceUDP}!GetEnabledUDP@{GetEnabledUDP}}
+\index{GetEnabledUDP@{GetEnabledUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceUDP::GetEnabledUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_aab18f3fec8c8dd3c77cccb764a733a85}
+\begin{DoxyReturn}{Returns}
+true if UDP is enabled, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_ace4b9cb6e070ae54a9504027e6ca3670}{
+\index{clInstanceUDP@{clInstanceUDP}!GetLocalAddressUDP@{GetLocalAddressUDP}}
+\index{GetLocalAddressUDP@{GetLocalAddressUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetLocalAddressUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clInstanceUDP::GetLocalAddressUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_ace4b9cb6e070ae54a9504027e6ca3670}
+\begin{DoxyReturn}{Returns}
+UDP local address information. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_af66c8b259f6aae9603bac614f07bb368}{
+\index{clInstanceUDP@{clInstanceUDP}!GetMaxPacketSizeUDP@{GetMaxPacketSizeUDP}}
+\index{GetMaxPacketSizeUDP@{GetMaxPacketSizeUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetMaxPacketSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceUDP::GetMaxPacketSizeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_af66c8b259f6aae9603bac614f07bb368}
+\begin{DoxyNote}{Note}
+calls GetRecvBufferLengthUDP, included for consistency between TCP and UDP 
+\end{DoxyNote}
+\begin{DoxyReturn}{Returns}
+The size of the largest packet that can be received, packets larger than this will require an increase in memory size or an exception will be thrown 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_a4bc570a7c6a32732c6aa22cae4b97200}{
+\index{clInstanceUDP@{clInstanceUDP}!GetModeUDP@{GetModeUDP}}
+\index{GetModeUDP@{GetModeUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clInstanceUDP::GetModeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_a4bc570a7c6a32732c6aa22cae4b97200}
+\begin{DoxyReturn}{Returns}
+the UDP mode in use 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if UDP is disabled \end{DoxyExceptions}
+\hypertarget{classcl_instance_u_d_p_a8fa59e6d4095cc3b08c3a9686e84bf08}{
+\index{clInstanceUDP@{clInstanceUDP}!GetNumOperationsUDP@{GetNumOperationsUDP}}
+\index{GetNumOperationsUDP@{GetNumOperationsUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetNumOperationsUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceUDP::GetNumOperationsUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_a8fa59e6d4095cc3b08c3a9686e84bf08}
+\begin{DoxyReturn}{Returns}
+number of UDP operations supported 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if UDP is disabled \end{DoxyExceptions}
+\hypertarget{classcl_instance_u_d_p_a9f636c4f9c4305660ccdadfe6a48eb01}{
+\index{clInstanceUDP@{clInstanceUDP}!GetPacketAmountUDP@{GetPacketAmountUDP}}
+\index{GetPacketAmountUDP@{GetPacketAmountUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetPacketAmountUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceUDP::GetPacketAmountUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_a9f636c4f9c4305660ccdadfe6a48eb01}
+\begin{DoxyReturn}{Returns}
+the number of packets in the packet store 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, ignored in this implementation but overriding implementations may use it \item[{\em clientID}]ID of client to use, may be ignored \item[{\em operationID}]operation ID of operation to use, may be ignored \end{DoxyParams}
+\hypertarget{classcl_instance_u_d_p_af519100fd9bb7c993396e249002eddb2}{
+\index{clInstanceUDP@{clInstanceUDP}!GetPacketFromStoreUDP@{GetPacketFromStoreUDP}}
+\index{GetPacketFromStoreUDP@{GetPacketFromStoreUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetPacketFromStoreUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceUDP::GetPacketFromStoreUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ operationID, }
+\item[{{\bf clPacket} $\ast$}]{ destination}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_af519100fd9bb7c993396e249002eddb2}
+Retrieves a complete packet from the TCP packet store and copies it into {\itshape destination\/} 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, ignored in this implementation but overriding implementations may use it \item[{\em clientID}]ID of client to use \item[{\em operationID}]ID of operation to use \item[\mbox{\tt[out]} {\em destination}]destination to copy into \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of packets in packet store before this method call 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_a77861553e70dfd07996bc1434175fdd2}{
+\index{clInstanceUDP@{clInstanceUDP}!GetProtocolModeUDP@{GetProtocolModeUDP}}
+\index{GetProtocolModeUDP@{GetProtocolModeUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetProtocolModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clInstanceUDP::GetProtocolModeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_a77861553e70dfd07996bc1434175fdd2}
+\begin{DoxyReturn}{Returns}
+protocol mode in use by instance 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_a1013b00e96bd8f21d21bc14e3c146f74}{
+\index{clInstanceUDP@{clInstanceUDP}!GetRecvBufferLengthUDP@{GetRecvBufferLengthUDP}}
+\index{GetRecvBufferLengthUDP@{GetRecvBufferLengthUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetRecvBufferLengthUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceUDP::GetRecvBufferLengthUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_a1013b00e96bd8f21d21bc14e3c146f74}
+\begin{DoxyReturn}{Returns}
+the buffer size of the WSABUF used by the UDP socket. \par
+ This is the maximum amount of data that can be received with one WSARecv operation. 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_a180b09957ac5b22a7a298f2615f1d656}{
+\index{clInstanceUDP@{clInstanceUDP}!GetRecvSizeMinUDP@{GetRecvSizeMinUDP}}
+\index{GetRecvSizeMinUDP@{GetRecvSizeMinUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetRecvSizeMinUDP}]{\setlength{\rightskip}{0pt plus 5cm}virtual size\_\-t clInstanceUDP::GetRecvSizeMinUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}protected, pure virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_a180b09957ac5b22a7a298f2615f1d656}
+\begin{DoxyReturn}{Returns}
+The smallest acceptable packet size that can be received 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_a70bfa8a41680d5d12babc9d35bd21097}{clBroadcastState}, and \hyperlink{classcl_client_state_ae68242becb3d84695b2f7112633a1ecc}{clClientState}.
+
+\hypertarget{classcl_instance_u_d_p_a2a652c327503bf9aa27ae528027051c5}{
+\index{clInstanceUDP@{clInstanceUDP}!GetUserFunctionExistUDP@{GetUserFunctionExistUDP}}
+\index{GetUserFunctionExistUDP@{GetUserFunctionExistUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetUserFunctionExistUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceUDP::GetUserFunctionExistUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_a2a652c327503bf9aa27ae528027051c5}
+\begin{DoxyReturn}{Returns}
+true if a method to be executed when data is received has been set 
+
+false if no method has been set 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_a6c572f9022c5e8f7009a5f88429559fe}{
+\index{clInstanceUDP@{clInstanceUDP}!GetUserFunctionUDP@{GetUserFunctionUDP}}
+\index{GetUserFunctionUDP@{GetUserFunctionUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{GetUserFunctionUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::RecvFunc} clInstanceUDP::GetUserFunctionUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_a6c572f9022c5e8f7009a5f88429559fe}
+\begin{DoxyReturn}{Returns}
+the method set by the user that should be executed when data is received 
+
+NULL if there is no method 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_u_d_p_a2a429c537132c699c920b3deb2b96a43}{
+\index{clInstanceUDP@{clInstanceUDP}!SendToUDP@{SendToUDP}}
+\index{SendToUDP@{SendToUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{SendToUDP}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clNetworkingUtility::SendStatus} clInstanceUDP::SendToUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{const {\bf clSingleAddr} \&}]{ address, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_a2a429c537132c699c920b3deb2b96a43}
+Sends {\itshape packet\/} via UDP to specified address 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em address}]remote address to send to \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent to all clients, note that this does not indicate that the packet has been received by all clients, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_ad57cd2f1b520b292de409e5bf064d92b}{clBroadcastState}, and \hyperlink{classcl_client_state_aff27b2186960a4b8279e77ba8df634d0}{clClientState}.
+
+\hypertarget{classcl_instance_u_d_p_af56fb711b4bf6d5152c68912a3f10f13}{
+\index{clInstanceUDP@{clInstanceUDP}!SendUDP@{SendUDP}}
+\index{SendUDP@{SendUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{SendUDP}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clNetworkingUtility::SendStatus} clInstanceUDP::SendUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ clientID, }
+\item[{const {\bf clPacket} \&}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_af56fb711b4bf6d5152c68912a3f10f13}
+Sends a packet using this socket 
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread using this object, may be ignored \item[{\em clientID}]ID of client to send to, may be ignored \item[{\em packet}]packet to send \item[{\em block}]if true the method will not return until {\itshape packet\/} is completely sent, note that this does not indicate that the packet has been received by the recipient, instead it simply means the packet is in transit. \par
+ If false the method will return instantly even if the packet has not been sent\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803abaa42412f2920363cef741fd5b2e202a}{clNetworkingUtility::SEND\_\-COMPLETED} if the send operation completed successfully instantly 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a807b2f9dcc901c6012549316bccfe407}{clNetworkingUtility::SEND\_\-IN\_\-PROGRESS} if the send operation was started, but has not yet completed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803a583b1181229130ff739548c8f8de363c}{clNetworkingUtility::SEND\_\-FAILED} if the send operation failed 
+
+\hyperlink{classcl_networking_utility_a19389cda12603396e03caa9d82073803ab06ce588df19988e79b503398b720c79}{clNetworkingUtility::SEND\_\-FAILED\_\-KILL} if the send operation failed and an entity was killed as a result (e.g. client disconnected) 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_broadcast_state_ac86581b6b63cc9a587e663abeb2dcbfe}{clBroadcastState}, and \hyperlink{classcl_client_state_ab05b47be38699babada23180023604f9}{clClientState}.
+
+\hypertarget{classcl_instance_u_d_p_a2b1ca50c2b076e37fecbff3269083c67}{
+\index{clInstanceUDP@{clInstanceUDP}!SetContainer@{SetContainer}}
+\index{SetContainer@{SetContainer}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{SetContainer}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceUDP::SetContainer (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ container}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_instance_u_d_p_a2b1ca50c2b076e37fecbff3269083c67}
+Sets \hyperlink{classcl_instance_container}{clInstanceContainer} containing this instance, must be called by derived class if a container exists 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em \hyperlink{classcl_instance_container}{clInstanceContainer}}]instance container that contains this instance \end{DoxyParams}
+
+
+Implements \hyperlink{classcl_instance_core_ad2eda53d7f3ba76c2fef2d08e868b81c}{clInstanceCore}.
+
+
+
+Reimplemented in \hyperlink{classcl_broadcast_state_a0daeea87a7c2ffbcb062f254db68041a}{clBroadcastState}, and \hyperlink{classcl_client_state_afd1442e1b167bb89c198582804bdb7c9}{clClientState}.
+
+\hypertarget{classcl_instance_u_d_p_aabeda7b42ed30e4c143bc726fdbba290}{
+\index{clInstanceUDP@{clInstanceUDP}!ValidateRecvSizeUDP@{ValidateRecvSizeUDP}}
+\index{ValidateRecvSizeUDP@{ValidateRecvSizeUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{ValidateRecvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceUDP::ValidateRecvSizeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ size}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_u_d_p_aabeda7b42ed30e4c143bc726fdbba290}
+\begin{DoxyReturn}{Returns}
+true if {\itshape size\/} is larger enough (i.e. larger than or equal to GetRecvSizeMinUDP) 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_instance_u_d_p_a71fd288aaec92fa83f45060bc15d1f1e}{
+\index{clInstanceUDP@{clInstanceUDP}!recvFuncUDP@{recvFuncUDP}}
+\index{recvFuncUDP@{recvFuncUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{recvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf RecvFunc} {\bf clInstanceUDP::recvFuncUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_instance_u_d_p_a71fd288aaec92fa83f45060bc15d1f1e}
+Pointer to function to be executed when UDP packet is received \par
+ NULL if no function exists \hypertarget{classcl_instance_u_d_p_adabf31cb357eb5dada6ad5c8e57c611e}{
+\index{clInstanceUDP@{clInstanceUDP}!socketUDP@{socketUDP}}
+\index{socketUDP@{socketUDP}!clInstanceUDP@{clInstanceUDP}}
+\subsubsection[{socketUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSocketUDP}$\ast$ {\bf clInstanceUDP::socketUDP}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{classcl_instance_u_d_p_adabf31cb357eb5dada6ad5c8e57c611e}
+Socket used to communicate with clients via UDP 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceUDP.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceUDP.cpp\end{DoxyCompactItemize}

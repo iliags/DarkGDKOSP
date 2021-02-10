@@ -1,0 +1,22 @@
+digraph G
+{
+  edge [fontname="FreeSans",fontsize="10",labelfontname="FreeSans",labelfontsize="10"];
+  node [fontname="FreeSans",fontsize="10",shape=record];
+  rankdir=LR;
+  Node1 [label="NetSocket::GetRecvBufferLength",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
+  Node1 -> Node2 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node2 [label="NetServerClient::GetRecvBufferLengthTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_server_client.html#af87678a0d9fd87a92a1b441e5fbb3c09"];
+  Node1 -> Node3 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="NetInstanceClient::GetRecvBufferLengthTCP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#a7e2656f93696d40f6b814007008b9c8d"];
+  Node1 -> Node4 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="NetInstanceUDP::GetRecvBufferLengthUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html#a4467dd45f0ae82b2c4721a3b04dd3746"];
+  Node4 -> Node5 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="NetInstanceUDP::GetMaxPacketSizeUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html#a2b6f907521cb66fd707d069a62f7c36e"];
+  Node1 -> Node6 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="NetInstanceClient::init",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#afdb88e3e5ba8f7c0318e902cea460868"];
+  Node6 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="NetInstanceClient::NetInstanceClient",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_client.html#a25862a2bb2e0e4d4dd361ae40d934e0d"];
+  Node1 -> Node7 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node1 -> Node8 [dir=back,color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="NetInstanceUDP::NetInstanceUDP",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$class_net_instance_u_d_p.html#a20e4f5ecf8d3203c9c770a88e84594ec"];
+}

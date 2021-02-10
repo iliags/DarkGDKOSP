@@ -1,0 +1,69 @@
+<HTML>
+
+
+    <HEAD>
+        <title> FulcrumPhy::setPosition() </title>
+		<link rel="stylesheet" type="text/css" href="style1.css"/>
+    </HEAD>
+
+   
+    <BODY id = "wrap">
+     
+        <span class="returns">
+	       void
+        </span> 
+	   
+	    FulcrumPhy::setPosition
+	  
+	    <span class="parameters">
+	      ( int id, float posX, float posY, float posZ )
+        </span> 
+	 
+	    <br>
+		<br>
+		
+           Use this to re-position your dynamic(non-kinematic) or static actors manually.<br>
+           For dynamic actors, use this command sparingly as dynamic(non-kinematic) actors
+           should be moved by applying forces, this command is useful for re-setting a scene or 
+           teleporting etc.<br>
+           For static actors, also use this command sparingly or not at all if possible,
+           if you do use it then you will also have to re-position your rendered geometry to suit.
+           Character controllers need to be informed if the static geometry changes due
+           to the way they process collision data.
+        <br>
+        <br>
+          
+        <span class="parameters">
+	        Parameters:
+	    </span>
+	  
+     
+        <br>
+         int id - Object/Actor id.  
+                
+        <br>
+         float posX - New position along the x-axis.
+        <br>
+         float posY - New position along the y-axis.
+        <br>
+         float posZ - New position along the z-axis.
+        <br>
+        <br>
+        <span class="returns">
+	        Returns:
+	    </span>
+          
+        <br>
+      
+        <br>
+        <br>
+	    <br>
+		
+
+           
+		   
+    </BODY>
+
+   
+</HTML>
+   

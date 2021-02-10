@@ -1,0 +1,301 @@
+\hypertarget{classcl_shared_protocol}{
+\section{clSharedProtocol Class Reference}
+\label{classcl_shared_protocol}\index{clSharedProtocol@{clSharedProtocol}}
+}
+
+
+Protocol interface inherited by protocol objects such as \hyperlink{classcl_shared_u_d_p}{clSharedUDP} and \hyperlink{classcl_shared_t_c_p}{clSharedTCP}.  
+
+
+
+
+{\ttfamily \#include $<$clSharedProtocol.h$>$}
+
+Inheritance diagram for clSharedProtocol:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=4.000000cm]{classcl_shared_protocol}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \{ \par
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba9f62bd1b819b8a5d53e6f0b679495c61}{TM\_\-SIZE}, 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba399adc08f122d7c09a83610197d24666}{TM\_\-RN}, 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47babacdf5be8acea89eddc85f01f7b74018}{UM\_\-PER\_\-CLIENT}, 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba85523bd746d838b1620e0c4fc3da392e}{UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}, 
+\par
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5315dd28370f0e13b26603c1b0a17c21}{UM\_\-CATCH\_\-ALL}, 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5780629b78f91735d369000983ce955e}{UM\_\-CATCH\_\-ALL\_\-NO}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{classcl_shared_send}{clSharedSend} $\ast$ \hyperlink{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}{GetSendObject} (const \hyperlink{classcl_packet}{clPacket} $\ast$packet, bool block)=0
+\item 
+virtual \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}{GetProtocolMode} () const =0
+\item 
+virtual void \hyperlink{classcl_shared_protocol_a2b6f3bd561af01c5ef02b06ebe24c5a0}{DealWithData} (size\_\-t threadID, size\_\-t completionBytes, const WSABUF \&buffer, size\_\-t clientID, size\_\-t instanceID, \hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} recvFunc)=0
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_shared_protocol_aac70aa1c3585a28ad5a4b502a0ba1153}{ConvertToProtocolModeTCP} (int mode)
+\item 
+static \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_shared_protocol_a59665ab24750d32171d8cb7ccac25898}{ConvertToProtocolModeUDP} (int mode)
+\item 
+static \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} \hyperlink{classcl_shared_protocol_acabf37df7540794029e577e1c32f6e95}{ConvertToProtocolMode} (int mode)
+\item 
+static bool \hyperlink{classcl_shared_protocol_a0a087713788c58088aaac8331d70c74e}{ValidateProtocolModeTCP} (\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} mode)
+\item 
+static bool \hyperlink{classcl_shared_protocol_a42d981813f39d61c52842c7ac361cb5d}{ValidateProtocolModeUDP} (\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{ProtocolMode} mode)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Protocol interface inherited by protocol objects such as \hyperlink{classcl_shared_u_d_p}{clSharedUDP} and \hyperlink{classcl_shared_t_c_p}{clSharedTCP}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Makes up the skeleton of a protocol object, providing virtual methods that are common to all protocol objects 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{
+\index{clSharedProtocol@{clSharedProtocol}!ProtocolMode@{ProtocolMode}}
+\index{ProtocolMode@{ProtocolMode}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{ProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf clSharedProtocol::ProtocolMode}}}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}
+Used to identify what TCP or UDP mode is in use \begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{TM\_\-SIZE@{TM\_\-SIZE}!clSharedProtocol@{clSharedProtocol}}\index{clSharedProtocol@{clSharedProtocol}!TM\_\-SIZE@{TM\_\-SIZE}}\item[{\em 
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba9f62bd1b819b8a5d53e6f0b679495c61}{
+TM\_\-SIZE}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba9f62bd1b819b8a5d53e6f0b679495c61}
+}]A prefix of type size\_\-t is automatically added to the start of all packets being sent. Packets being received are expected to have this prefix and problems will occur if they don't. The prefix indicates the amount of additional data (not including the prefix) that is in the packet. The prefix is not included as part of received packets. e.g. If the prefix of size\_\-t is of value 10, then the actual packet's size is 10 + 8 which is 18. \par
+\par
+
+
+Packets received are put into a queue and none are discarded.\par
+\par
+ \index{TM\_\-RN@{TM\_\-RN}!clSharedProtocol@{clSharedProtocol}}\index{clSharedProtocol@{clSharedProtocol}!TM\_\-RN@{TM\_\-RN}}\item[{\em 
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba399adc08f122d7c09a83610197d24666}{
+TM\_\-RN}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba399adc08f122d7c09a83610197d24666}
+}]A postfix which can consist of any data is automatically appended to the end of all packets being sent. Packets being received are expected to have this postfix and problems will occur if they don't. The postfix indicates the end of the packet and is not included as part of received packets.\par
+\par
+
+
+Packets received are put into a queue and none are discarded.\par
+\par
+ \index{UM\_\-PER\_\-CLIENT@{UM\_\-PER\_\-CLIENT}!clSharedProtocol@{clSharedProtocol}}\index{clSharedProtocol@{clSharedProtocol}!UM\_\-PER\_\-CLIENT@{UM\_\-PER\_\-CLIENT}}\item[{\em 
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47babacdf5be8acea89eddc85f01f7b74018}{
+UM\_\-PER\_\-CLIENT}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47babacdf5be8acea89eddc85f01f7b74018}
+}]A prefix of clock() is automatically added to the start of all packets being sent. Packets being received are expected to have this prefix and problems will occur if they don't. The prefix is used to determine the age of the packet. clock() increments every millisecond and therefore the higher the prefix the newer the packet. A record is kept of the newest packet received and any packets with a prefix lower than that are discarded as they are deemed out of order. Received packets will not have this prefix. \par
+\par
+
+
+In addition to this, the server (and only the server) must manually add the following prefix to the start of each packet:
+\begin{DoxyItemize}
+\item size\_\-t: indicates the client that the packet is referring to. On the receiving end, the packet will then appear in that client's packet store without this prefix.\par
+\par
+
+\end{DoxyItemize}
+
+On the client and server side there is a packet store for each client which stores the newest packet received from that client (in the case of server state) or referring to that client (in the case of client state). Each store contains only one packet, reducing the overhead of a queue.\par
+\par
+
+
+This UDP mode is good where data can be organized into a per client basis and can be more efficient than UM\_\-CATCH\_\-ALL or UM\_\-CATCH\_\-ALL\_\-NO due to there being no queue. Note that some in order packets may be discarded since there is no queue.\par
+\par
+ \index{UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION@{UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}!clSharedProtocol@{clSharedProtocol}}\index{clSharedProtocol@{clSharedProtocol}!UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION@{UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}}\item[{\em 
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba85523bd746d838b1620e0c4fc3da392e}{
+UM\_\-PER\_\-CLIENT\_\-PER\_\-OPERATION}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba85523bd746d838b1620e0c4fc3da392e}
+}]A prefix of clock() is automatically added to the start of all packets being sent. Packets being received are expected to have this prefix and problems will occur if they don't. The prefix is used to determine the age of the packet. clock() increments every millisecond and therefore the higher the prefix the newer the packet. A record is kept of the newest packet received and any packets with a prefix lower than that are discarded as they are deemed out of order. Received packets will not have this prefix. \par
+\par
+
+
+In addition to this, the server (and only the server) must manually add the following prefix to the start of each packet in the below order:
+\begin{DoxyItemize}
+\item size\_\-t: client ID indicating the client that the packet is referring to. On the receiving end, the packet will then appear in that client's packet store without this part of the prefix.
+\item size\_\-t: operation ID indicating the operation that the packet applies to. On the receiving end, the packet will then appear in the packet store for that operation without this part of the prefix.\par
+\par
+
+\end{DoxyItemize}
+
+The client (and only the client) must manually add the following prefix to the start of each packet in the below order:
+\begin{DoxyItemize}
+\item size\_\-t: operation ID indicating the operation that the packet applies to. On the receiving end, the packet will then appear in the packet store for that operation without this prefix.\par
+\par
+
+\end{DoxyItemize}
+
+On the client and server side there is a packet store for each client and each operation which stores the newest packet received from that client for that operation (in the case of server state) or referring to that client for that operation (in the case of client state). Each store contains only one packet, reducing the overhead of a queue. The packet store can be thought of as a 2D array which looks like: packetStore\mbox{[}maxClients\mbox{]}\mbox{[}numOperations\mbox{]}.\par
+\par
+
+
+This UDP mode is good where data can be organized into a per client, per operation basis and can be more efficient than UM\_\-CATCH\_\-ALL or UM\_\-CATCH\_\-ALL\_\-NO due to there being no queue. Note that some in order packets may be discarded since there is no queue.\par
+\par
+ \index{UM\_\-CATCH\_\-ALL@{UM\_\-CATCH\_\-ALL}!clSharedProtocol@{clSharedProtocol}}\index{clSharedProtocol@{clSharedProtocol}!UM\_\-CATCH\_\-ALL@{UM\_\-CATCH\_\-ALL}}\item[{\em 
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5315dd28370f0e13b26603c1b0a17c21}{
+UM\_\-CATCH\_\-ALL}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5315dd28370f0e13b26603c1b0a17c21}
+}]The packet is sent unmodified and packets received are transfered straight to the application. This is unmodified UDP transfer and so out of order packets may be received. In addition this connection packets may be received in server state, as the client blasts UDP packets to the server which may arrive late, after the connection has completed. These packets always have a prefix of size\_\-t of value 0. You can use this to single them out and discard them. For more information see the \hyperlink{handshake_page}{server/client handshaking process}.\par
+\par
+ \index{UM\_\-CATCH\_\-ALL\_\-NO@{UM\_\-CATCH\_\-ALL\_\-NO}!clSharedProtocol@{clSharedProtocol}}\index{clSharedProtocol@{clSharedProtocol}!UM\_\-CATCH\_\-ALL\_\-NO@{UM\_\-CATCH\_\-ALL\_\-NO}}\item[{\em 
+\hypertarget{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5780629b78f91735d369000983ce955e}{
+UM\_\-CATCH\_\-ALL\_\-NO}
+\label{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5780629b78f91735d369000983ce955e}
+}]A prefix of size\_\-t is added to the start of all packets being sent. Packets being received are expected to have this prefix and problems will occur if they don't. The prefix is a counter which increments by 1 with every send operation. Therefore the higher the prefix the newer the packet. A record is kept of the newest packet received and any packets with a prefix lower than that are discarded as they are deemed out of order. Received packets will not have this prefix. \par
+\par
+
+
+Received packets are put into a queue and no in order packets are discarded.\par
+\par
+ \end{description}
+\end{Desc}
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_shared_protocol_acabf37df7540794029e577e1c32f6e95}{
+\index{clSharedProtocol@{clSharedProtocol}!ConvertToProtocolMode@{ConvertToProtocolMode}}
+\index{ConvertToProtocolMode@{ConvertToProtocolMode}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{ConvertToProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clSharedProtocol::ConvertToProtocolMode (
+\begin{DoxyParamCaption}
+\item[{int}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_shared_protocol_acabf37df7540794029e577e1c32f6e95}
+Converts integer into enum for ProtocolMode 
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]integer to convert\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+enum equivalent of {\itshape mode\/} 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_protocol_aac70aa1c3585a28ad5a4b502a0ba1153}{
+\index{clSharedProtocol@{clSharedProtocol}!ConvertToProtocolModeTCP@{ConvertToProtocolModeTCP}}
+\index{ConvertToProtocolModeTCP@{ConvertToProtocolModeTCP}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{ConvertToProtocolModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clSharedProtocol::ConvertToProtocolModeTCP (
+\begin{DoxyParamCaption}
+\item[{int}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_shared_protocol_aac70aa1c3585a28ad5a4b502a0ba1153}
+Converts integer into enum for ProtocolMode 
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]integer to convert\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+enum equivalent of {\itshape mode\/} 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_protocol_a59665ab24750d32171d8cb7ccac25898}{
+\index{clSharedProtocol@{clSharedProtocol}!ConvertToProtocolModeUDP@{ConvertToProtocolModeUDP}}
+\index{ConvertToProtocolModeUDP@{ConvertToProtocolModeUDP}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{ConvertToProtocolModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clSharedProtocol::ConvertToProtocolModeUDP (
+\begin{DoxyParamCaption}
+\item[{int}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_shared_protocol_a59665ab24750d32171d8cb7ccac25898}
+Converts integer into enum for ProtocolMode 
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]integer to convert\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+enum equivalent of {\itshape mode\/} 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_protocol_a2b6f3bd561af01c5ef02b06ebe24c5a0}{
+\index{clSharedProtocol@{clSharedProtocol}!DealWithData@{DealWithData}}
+\index{DealWithData@{DealWithData}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{DealWithData}]{\setlength{\rightskip}{0pt plus 5cm}virtual void clSharedProtocol::DealWithData (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ threadID, }
+\item[{size\_\-t}]{ completionBytes, }
+\item[{const WSABUF \&}]{ buffer, }
+\item[{size\_\-t}]{ clientID, }
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceCore::RecvFunc}}]{ recvFunc}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_protocol_a2b6f3bd561af01c5ef02b06ebe24c5a0}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em threadID}]ID of thread that packet was received on \item[{\em completionBytes}]size of packet stored in {\itshape buffer\/} \item[{\em buffer}]where newly received packet is stored \item[{\em clientID}]ID of client that packet was received from, 0 in client state \item[{\em instanceID}]instance that packet was received on \item[\mbox{\tt[in]} {\em }]method will be executed and data not added to the queue if this is non NULL \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_int_prefix_t_c_p_afed2d255e78f2e77e4a7f08ace22e5a9}{clIntPrefixTCP}, and \hyperlink{classcl_per_client_u_d_p_acf380c1466abb6941edb950801d09b20}{clPerClientUDP}.
+
+\hypertarget{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}{
+\index{clSharedProtocol@{clSharedProtocol}!GetProtocolMode@{GetProtocolMode}}
+\index{GetProtocolMode@{GetProtocolMode}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{GetProtocolMode}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf ProtocolMode} clSharedProtocol::GetProtocolMode (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_protocol_a473332c76ea2409937925e2390ac96a1}
+\begin{DoxyReturn}{Returns}
+the protocol mode in use, describing how data is manipulated during sending and receiving 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classcl_catch_all_no_u_d_p_a93dceb605e7c892975772958e91f44b4}{clCatchAllNoUDP}, \hyperlink{classcl_catch_all_u_d_p_adacc5977909396017910dcb3ab44c395}{clCatchAllUDP}, \hyperlink{classcl_int_prefix_t_c_p_ae0abbe8a74edfe679b04df354aa023ec}{clIntPrefixTCP}, \hyperlink{classcl_per_client_u_d_p_aa0f2be71b5dac611c2a6c6fd8b17c00a}{clPerClientUDP}, and \hyperlink{classcl_postfix_t_c_p_a109cb621bfff71084c7e07ae580c4c5c}{clPostfixTCP}.
+
+\hypertarget{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}{
+\index{clSharedProtocol@{clSharedProtocol}!GetSendObject@{GetSendObject}}
+\index{GetSendObject@{GetSendObject}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{GetSendObject}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf clSharedSend}$\ast$ clSharedProtocol::GetSendObject (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
+\label{classcl_shared_protocol_ae8ba1c07871850b15abc9d15ec475d8e}
+\begin{DoxyReturn}{Returns}
+a send object formatted for the specific protocol and mode 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]true if sending should be synchronous, false if sending should be asynchronous \end{DoxyParams}
+
+
+Implemented in \hyperlink{classcl_catch_all_no_u_d_p_ab617cfaf8427e415c591518fe36b95af}{clCatchAllNoUDP}, \hyperlink{classcl_catch_all_u_d_p_a6651f3534e139451f9bbabe16e00671c}{clCatchAllUDP}, \hyperlink{classcl_int_prefix_t_c_p_ae6f1975b0ccd8939ccbede12bad64fd9}{clIntPrefixTCP}, \hyperlink{classcl_per_client_u_d_p_a33f25535cfef99e9abe9b2556928f364}{clPerClientUDP}, and \hyperlink{classcl_postfix_t_c_p_a58ffdd4db7b50d29247969df69d93679}{clPostfixTCP}.
+
+\hypertarget{classcl_shared_protocol_a0a087713788c58088aaac8331d70c74e}{
+\index{clSharedProtocol@{clSharedProtocol}!ValidateProtocolModeTCP@{ValidateProtocolModeTCP}}
+\index{ValidateProtocolModeTCP@{ValidateProtocolModeTCP}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{ValidateProtocolModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clSharedProtocol::ValidateProtocolModeTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf ProtocolMode}}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_shared_protocol_a0a087713788c58088aaac8331d70c74e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]protocol mode to validate \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if protocol mode is a valid TCP mode, false if not 
+\end{DoxyReturn}
+\hypertarget{classcl_shared_protocol_a42d981813f39d61c52842c7ac361cb5d}{
+\index{clSharedProtocol@{clSharedProtocol}!ValidateProtocolModeUDP@{ValidateProtocolModeUDP}}
+\index{ValidateProtocolModeUDP@{ValidateProtocolModeUDP}!clSharedProtocol@{clSharedProtocol}}
+\subsubsection[{ValidateProtocolModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clSharedProtocol::ValidateProtocolModeUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf ProtocolMode}}]{ mode}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_shared_protocol_a42d981813f39d61c52842c7ac361cb5d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em mode}]protocol mode to validate \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if protocol mode is a valid UDP mode, false if not 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSharedProtocol.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSharedProtocol.cpp\end{DoxyCompactItemize}

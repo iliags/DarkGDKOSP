@@ -1,0 +1,64 @@
+<HTML>
+
+
+    <HEAD>
+        <title> FulcrumPhy::makeCompoundActor() </title>
+		<link rel="stylesheet" type="text/css" href="style1.css"/>
+    </HEAD>
+
+   
+    <BODY id = "wrap">
+     
+        <span class="returns">
+	       bool
+        </span> 
+	   
+	    FulcrumPhy::makeCompoundActor
+	  
+	    <span class="parameters">
+	      ( int id, bool dynamic, bool density)
+        </span> 
+	 
+	    <br>
+		<br>
+		
+         You first need to make some shapes using makeBoxShape(), makeSphereShape() or makeConvexShape().
+         These shapes go onto a list, when you call this function it uses these shapes 
+         to create an actor with multiple shapes, the list is then cleared.
+         The centre of the created actor will be (0, 0, 0), the real world position of
+         each shape becomes the local position of the shape inside the new actor.
+	  
+        <br>
+        <br>
+          
+        <span class="parameters">
+	        Parameters:
+	    </span>
+         <br>
+         int id - Actor ID.
+         <br>
+         bool dynamic - Set to TRUE to make actor dynamic, FALSE for static.
+<br>
+         float density - Density value of actor.
+<br>
+        <br>
+      
+        <span class="returns">
+	        Returns:
+	    </span>
+          
+        <br>
+        TRUE if succeeds, FALSE otherwise.
+              
+        <br>
+        <br>
+	    <br>
+		
+   
+           
+		   
+    </BODY>
+
+   
+</HTML>
+   

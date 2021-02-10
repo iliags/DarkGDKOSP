@@ -1,0 +1,236 @@
+\hypertarget{classcl_multithread_simple}{
+\section{clMultithreadSimple Class Reference}
+\label{classcl_multithread_simple}\index{clMultithreadSimple@{clMultithreadSimple}}
+}
+
+
+simple version of \hyperlink{classcl_multithread}{clMultithread} class which avoids the need for threadID parameters  
+
+
+
+
+{\ttfamily \#include $<$clMultithreadSimple.h$>$}
+
+Inheritance diagram for clMultithreadSimple:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_multithread_simple}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_multithread_simple_a5fd0c9c9c7c7b994da44c69b9b5fb31f}{clMultithreadSimple} ()
+\item 
+virtual \hyperlink{classcl_multithread_simple_a5fa92717c6c446acf20ef1b46aeb231e}{$\sim$clMultithreadSimple} ()
+\item 
+void \hyperlink{classcl_multithread_simple_af64d4f92e64bacc08025770c6a7894ad}{EnterRead} () const 
+\item 
+void \hyperlink{classcl_multithread_simple_a827167e20c5cdcdd904534fbf9af5666}{LeaveRead} () const 
+\item 
+void \hyperlink{classcl_multithread_simple_ac2b8707539b3a78e21973f1d649e035e}{EnterWrite} ()
+\item 
+void \hyperlink{classcl_multithread_simple_a436e7ee6ba51df8e75d23f6d283568a7}{LeaveWrite} ()
+\item 
+bool \hyperlink{classcl_multithread_simple_a9d726ff5cd6e27dfb02535a31fff94cd}{IsWriteAvailable} () const 
+\item 
+{\footnotesize template$<$typename safeReadValueType $>$ }\\safeReadValueType \hyperlink{classcl_multithread_simple_a897ecab9fe46ca411ecaf8ebf4d2ad64}{\_\-safeReadValue} (const safeReadValueType \&readMe) const 
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_simple_a21fca44e9a4ebf59eb202af3c59d80bd}{\_\-safeWriteValueNK} (safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_simple_a3c9a5f56b268b713b9bbcd2694834d90}{\_\-safeWriteValueNK} (safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_simple_aa66393344a309bd3230e76b3dc1c6b81}{\_\-safeWriteValueKEY} (safeWriteValueType \&updateMe, const safeWriteValueType $\ast$newValue)
+\item 
+{\footnotesize template$<$typename safeWriteValueType $>$ }\\void \hyperlink{classcl_multithread_simple_afbb87f082f9ac006a6aff65ce4a80940}{\_\-safeWriteValueKEY} (safeWriteValueType \&updateMe, safeWriteValueType newValue)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_critical_section}{clCriticalSection} \hyperlink{classcl_multithread_simple_ae9cb27fad96cbc3db55ac86165e1187b}{mtControl}
+\item 
+size\_\-t \hyperlink{classcl_multithread_simple_ad2ab35e527c9e1ac6e249aee7639d63c}{numReading}
+\item 
+size\_\-t \hyperlink{classcl_multithread_simple_aafa989579bab418fb86ff16ad4bc7db3}{numWriting}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+simple version of \hyperlink{classcl_multithread}{clMultithread} class which avoids the need for threadID parameters \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/16/2010.
+\end{DoxyRemark}
+This class is designed to maintain the high performance that \hyperlink{classcl_multithread}{clMultithread} maintains but avoid the need for threadIDs which can reduce flexibility. Usage is the same as the \hyperlink{classcl_multithread}{clMultithread} class except for:
+\begin{DoxyItemize}
+\item EnterRead may only be used once prior to a LeaveRead call per thread (not doing so causes deadlock)
+\item EnterWrite may only be used once prior to a LeaveWrite call per thread (not doing so causes deadlock)
+\item One thread cannot have read and write control (attempting to do so causes deadlock)
+\item Small reduction in performance 
+\end{DoxyItemize}
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_multithread_simple_a5fd0c9c9c7c7b994da44c69b9b5fb31f}{
+\index{clMultithreadSimple@{clMultithreadSimple}!clMultithreadSimple@{clMultithreadSimple}}
+\index{clMultithreadSimple@{clMultithreadSimple}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{clMultithreadSimple}]{\setlength{\rightskip}{0pt plus 5cm}clMultithreadSimple::clMultithreadSimple (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_simple_a5fd0c9c9c7c7b994da44c69b9b5fb31f}
+Constructor \hypertarget{classcl_multithread_simple_a5fa92717c6c446acf20ef1b46aeb231e}{
+\index{clMultithreadSimple@{clMultithreadSimple}!$\sim$clMultithreadSimple@{$\sim$clMultithreadSimple}}
+\index{$\sim$clMultithreadSimple@{$\sim$clMultithreadSimple}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{$\sim$clMultithreadSimple}]{\setlength{\rightskip}{0pt plus 5cm}clMultithreadSimple::$\sim$clMultithreadSimple (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_multithread_simple_a5fa92717c6c446acf20ef1b46aeb231e}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_multithread_simple_a897ecab9fe46ca411ecaf8ebf4d2ad64}{
+\index{clMultithreadSimple@{clMultithreadSimple}!\_\-safeReadValue@{\_\-safeReadValue}}
+\index{\_\-safeReadValue@{\_\-safeReadValue}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{\_\-safeReadValue}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeReadValueType $>$ safeReadValueType clMultithreadSimple::\_\-safeReadValue (
+\begin{DoxyParamCaption}
+\item[{const safeReadValueType \&}]{ readMe}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_simple_a897ecab9fe46ca411ecaf8ebf4d2ad64}
+Safely reads a value using critical sections 
+\begin{DoxyParams}{Parameters}
+\item[{\em readMe}]reference to value to read \end{DoxyParams}
+\hypertarget{classcl_multithread_simple_aa66393344a309bd3230e76b3dc1c6b81}{
+\index{clMultithreadSimple@{clMultithreadSimple}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithreadSimple::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_simple_aa66393344a309bd3230e76b3dc1c6b81}
+Safely writes a value using critical sections to a key variable \par
+ Key means that it does require write access when changing 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]reference to object to write to \item[{\em newValue}]pointer to value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_simple_afbb87f082f9ac006a6aff65ce4a80940}{
+\index{clMultithreadSimple@{clMultithreadSimple}!\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}}
+\index{\_\-safeWriteValueKEY@{\_\-safeWriteValueKEY}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{\_\-safeWriteValueKEY}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithreadSimple::\_\-safeWriteValueKEY (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_simple_afbb87f082f9ac006a6aff65ce4a80940}
+Safely writes a value using critical sections to a key variable \par
+ Key means that it does require write access when changing 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]reference to object to write to \item[{\em newValue}]value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_simple_a3c9a5f56b268b713b9bbcd2694834d90}{
+\index{clMultithreadSimple@{clMultithreadSimple}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithreadSimple::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{safeWriteValueType}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_simple_a3c9a5f56b268b713b9bbcd2694834d90}
+Safely writes a value using critical sections to a non key variable \par
+ Non key means that it does not require write access when changing (see class description for reasoning) 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[out]} {\em updateMe}]reference to object to write to \item[{\em newValue}]value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_simple_a21fca44e9a4ebf59eb202af3c59d80bd}{
+\index{clMultithreadSimple@{clMultithreadSimple}!\_\-safeWriteValueNK@{\_\-safeWriteValueNK}}
+\index{\_\-safeWriteValueNK@{\_\-safeWriteValueNK}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{\_\-safeWriteValueNK}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename safeWriteValueType $>$ void clMultithreadSimple::\_\-safeWriteValueNK (
+\begin{DoxyParamCaption}
+\item[{safeWriteValueType \&}]{ updateMe, }
+\item[{const safeWriteValueType $\ast$}]{ newValue}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}
+\label{classcl_multithread_simple_a21fca44e9a4ebf59eb202af3c59d80bd}
+Safely writes a value using critical sections to a non key variable \par
+ Non key means that it does not require write access when changing (see class description for reasoning) 
+\begin{DoxyParams}{Parameters}
+\item[{\em updateMe}]reference to object to write to \item[{\em newValue}]pointer to value to copy into {\itshape updateMe\/} \end{DoxyParams}
+\hypertarget{classcl_multithread_simple_af64d4f92e64bacc08025770c6a7894ad}{
+\index{clMultithreadSimple@{clMultithreadSimple}!EnterRead@{EnterRead}}
+\index{EnterRead@{EnterRead}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{EnterRead}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithreadSimple::EnterRead (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_simple_af64d4f92e64bacc08025770c6a7894ad}
+Take read control of object, write control will not be possible until LeaveRead is used \par
+ EnterRead can be used multiple times before LeaveRead but is is essential that the same number of LeaveRead's are used to prevent deadlock \par
+ In contrast to \hyperlink{classcl_status}{clStatus}, if the calling thread has read control, write control will not be possible! \hypertarget{classcl_multithread_simple_ac2b8707539b3a78e21973f1d649e035e}{
+\index{clMultithreadSimple@{clMultithreadSimple}!EnterWrite@{EnterWrite}}
+\index{EnterWrite@{EnterWrite}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{EnterWrite}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithreadSimple::EnterWrite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_simple_ac2b8707539b3a78e21973f1d649e035e}
+Take write control of object, write control cannot be taken unless no thread has read or write control (including the thread calling this method). The method will block until write control can be taken. \par
+ It is essential that a call to EnterWrite is counteracted by a call to LeaveWrite. \hypertarget{classcl_multithread_simple_a9d726ff5cd6e27dfb02535a31fff94cd}{
+\index{clMultithreadSimple@{clMultithreadSimple}!IsWriteAvailable@{IsWriteAvailable}}
+\index{IsWriteAvailable@{IsWriteAvailable}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{IsWriteAvailable}]{\setlength{\rightskip}{0pt plus 5cm}bool clMultithreadSimple::IsWriteAvailable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_simple_a9d726ff5cd6e27dfb02535a31fff94cd}
+\begin{DoxyReturn}{Returns}
+true if EnterWrite will not block, note that between this call and a subsequent EnterWrite call it is possible that another thread will take write control so you cannot rely on this behavior. 
+\end{DoxyReturn}
+\hypertarget{classcl_multithread_simple_a827167e20c5cdcdd904534fbf9af5666}{
+\index{clMultithreadSimple@{clMultithreadSimple}!LeaveRead@{LeaveRead}}
+\index{LeaveRead@{LeaveRead}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{LeaveRead}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithreadSimple::LeaveRead (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_multithread_simple_a827167e20c5cdcdd904534fbf9af5666}
+Release read control of object, write control will be possible when all EnterRead operations are reversed by the same number of LeaveRead operations. \par
+ In contrast to \hyperlink{classcl_status}{clStatus}, if the calling thread has read control, write control will not be possible! It is essential that this method is not used unless the thread already has read control. Note that there are no safe guards against this so be careful! \hypertarget{classcl_multithread_simple_a436e7ee6ba51df8e75d23f6d283568a7}{
+\index{clMultithreadSimple@{clMultithreadSimple}!LeaveWrite@{LeaveWrite}}
+\index{LeaveWrite@{LeaveWrite}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{LeaveWrite}]{\setlength{\rightskip}{0pt plus 5cm}void clMultithreadSimple::LeaveWrite (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_multithread_simple_a436e7ee6ba51df8e75d23f6d283568a7}
+Release write control of object, write control must not be released unless the calling thread already has it. Note that there are no safeguards against this so be careful! \par
+ It is essential that a call to EnterWrite is counteracted by a call to LeaveWrite. 
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_multithread_simple_ae9cb27fad96cbc3db55ac86165e1187b}{
+\index{clMultithreadSimple@{clMultithreadSimple}!mtControl@{mtControl}}
+\index{mtControl@{mtControl}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{mtControl}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clCriticalSection} {\bf clMultithreadSimple::mtControl}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_multithread_simple_ae9cb27fad96cbc3db55ac86165e1187b}
+Controls access to numReading and numWriting with a single critical section \hypertarget{classcl_multithread_simple_ad2ab35e527c9e1ac6e249aee7639d63c}{
+\index{clMultithreadSimple@{clMultithreadSimple}!numReading@{numReading}}
+\index{numReading@{numReading}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{numReading}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clMultithreadSimple::numReading}\hspace{0.3cm}{\ttfamily  \mbox{[}mutable, private\mbox{]}}}}
+\label{classcl_multithread_simple_ad2ab35e527c9e1ac6e249aee7639d63c}
+Increases when a thread has read control of this object \hypertarget{classcl_multithread_simple_aafa989579bab418fb86ff16ad4bc7db3}{
+\index{clMultithreadSimple@{clMultithreadSimple}!numWriting@{numWriting}}
+\index{numWriting@{numWriting}!clMultithreadSimple@{clMultithreadSimple}}
+\subsubsection[{numWriting}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clMultithreadSimple::numWriting}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_multithread_simple_aafa989579bab418fb86ff16ad4bc7db3}
+Increases when a thread has write control of this object, may only ever be 1 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clMultithreadSimple.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clMultithreadSimple.cpp\end{DoxyCompactItemize}

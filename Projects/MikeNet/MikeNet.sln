@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MikeNet", "MikeNet\MikeNet.vcproj", "{85336BE0-3A05-4694-9B25-90F09BB7D8D1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug C++|Win32 = Debug C++|Win32
+		Release C++ DLL|Win32 = Release C++ DLL|Win32
+		Release C++ MT|Win32 = Release C++ MT|Win32
+		Release C++ MTD|Win32 = Release C++ MTD|Win32
+		Release CLR 64bit|Win32 = Release CLR 64bit|Win32
+		Release CLR|Win32 = Release CLR|Win32
+		Release DBP|Win32 = Release DBP|Win32
+		Testing|Win32 = Testing|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Debug C++|Win32.ActiveCfg = Debug C++|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Debug C++|Win32.Build.0 = Debug C++|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release C++ DLL|Win32.ActiveCfg = Release C++ DLL|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release C++ DLL|Win32.Build.0 = Release C++ DLL|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release C++ MT|Win32.ActiveCfg = Release C++ MT|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release C++ MT|Win32.Build.0 = Release C++ MT|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release C++ MTD|Win32.ActiveCfg = Release C++ MTD|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release C++ MTD|Win32.Build.0 = Release C++ MTD|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release CLR 64bit|Win32.ActiveCfg = Release CLR 64bit|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release CLR 64bit|Win32.Build.0 = Release CLR 64bit|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release CLR|Win32.ActiveCfg = Release CLR|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release CLR|Win32.Build.0 = Release CLR|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release DBP|Win32.ActiveCfg = Release DBP|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Release DBP|Win32.Build.0 = Release DBP|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Testing|Win32.ActiveCfg = Testing|Win32
+		{85336BE0-3A05-4694-9B25-90F09BB7D8D1}.Testing|Win32.Build.0 = Testing|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

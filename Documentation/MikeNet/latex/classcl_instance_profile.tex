@@ -1,0 +1,905 @@
+\hypertarget{classcl_instance_profile}{
+\section{clInstanceProfile Class Reference}
+\label{classcl_instance_profile}\index{clInstanceProfile@{clInstanceProfile}}
+}
+
+
+Manages instance startup information.  
+
+
+
+
+{\ttfamily \#include $<$clInstanceProfile.h$>$}
+
+Inheritance diagram for clInstanceProfile:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classcl_instance_profile}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_instance_profile_a2ecfa88976bc706b93de3c8cd4e84304}{\_\-defaultVars} ()
+\item 
+void \hyperlink{classcl_instance_profile_a89402aa23ff4bebc52b24bf1b2a1f8bc}{\_\-Copy} (const \hyperlink{classcl_instance_profile}{clInstanceProfile} \&copyMe)
+\item 
+\hyperlink{classcl_instance_profile_ae3d0279975063e5888bc59ee4179e1d3}{clInstanceProfile} ()
+\item 
+\hyperlink{classcl_instance_profile_aa1bd09516ace6137f13e5d737ebc00e8}{clInstanceProfile} (const \hyperlink{classcl_instance_profile}{clInstanceProfile} \&copyMe)
+\item 
+\hyperlink{classcl_instance_profile}{clInstanceProfile} \& \hyperlink{classcl_instance_profile_a73cfd933accc2a8707f327fd20b7801e}{operator=} (const \hyperlink{classcl_instance_profile}{clInstanceProfile} \&copyMe)
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a27feb61200d554b90fabf4fc5ae8bd40}{GetWsaRecvSizeTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a00cc75f099d0da5fb4883e0920e16132}{SetWsaRecvSizeTCP} (size\_\-t newWsaRecvSizeTCP)
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a2cfd595788889760627327126a27369a}{GetRecvSizeTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_aa74e1e3fa50552031c661f51265f7ba0}{SetRecvSizeTCP} (size\_\-t newRecvSizeTCP)
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a5c9a2d7ede755c313c80c52bc813c639}{GetRecvSizeUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a3d7917bd7a5098571bc9d4f906a713e4}{SetRecvSizeUDP} (size\_\-t newRecvSizeUDP)
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_instance_profile_a6cd003b808312b99df2e3c3340930e06}{GetLocalAddrTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a0a633e7c2ce7c2ee63681995f9eae04d}{SetLocalAddrTCP} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&newLocalAddrTCP)
+\item 
+const \hyperlink{classcl_single_addr}{clSingleAddr} \& \hyperlink{classcl_instance_profile_a19b331334b83cdf101d6db90df9b1755}{GetLocalAddrUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a662a7044e253ff8722e69b305f2c979a}{SetLocalAddrUDP} (const \hyperlink{classcl_single_addr}{clSingleAddr} \&newLocalAddrUDP)
+\item 
+bool \hyperlink{classcl_instance_profile_a890c37125ac1c496aef5c4003a35160e}{GetEnabledUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a6e73ed3d57d2c3a2b2ce7f4dba312caf}{SetEnabledUDP} (bool newEnabledUDP)
+\item 
+INT\_\-PTR \hyperlink{classcl_instance_profile_a109e2f743649d74e390a5270d7e75798}{GetDecryptKeyUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a8e52937a15b094f7e60b4f34684a8e4c}{SetDecryptKeyUDP} (INT\_\-PTR newDecryptKeyUDP)
+\item 
+bool \hyperlink{classcl_instance_profile_ace2e8c7cd5379669362bceaf9b9e54e4}{IsDecryptKeyLoadedUDP} ()
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_profile_ae02ec718bc88686b473a720b13580ba2}{GetRecvFuncTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a9db3e441ba8279a392ad238391732c87}{SetRecvFuncTCP} (\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} newRecvFuncTCP)
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_profile_a4f6729b6fdcbd813c3843f8513d570ca}{GetRecvFuncUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a289d594c4f6973aa55fa4984aa5b6336}{SetRecvFuncUDP} (\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} newRecvFuncUDP)
+\item 
+bool \hyperlink{classcl_instance_profile_aaaa6313e6f2fbf439faa4f0d6765e5ca}{GetHandshakeEnabledTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a7dda3da4c81fedfecde7d8a579494f20}{SetHandshakeEnabledTCP} (bool newHandshakeEnabledTCP)
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_profile_a87e7c5e199c9930e089e2f1945e93d29}{GetModeTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_acd25bd3d9df9b90ace8e8b831d68bbb6}{SetModeTCP} (\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} newModeTCP)
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_profile_a85dd82fa5342cab74133fe11762e0189}{GetModeUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a1184d133c589b502cb3de1254cb7fc8d}{SetModeUDP} (\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} newModeUDP)
+\item 
+bool \hyperlink{classcl_instance_profile_a58908936be05fb3930d6f9a0932eb4e2}{GetAutoResizeTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a6c29661fd78f64b040b8be2d6ce150c3}{SetAutoResizeTCP} (bool newAutoResizeTCP)
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a2e71548556fffbb4c89a83e1d4a2f389}{GetSendTimeout} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a19f70381305386f41fb08057bfb6375f}{SetSendTimeout} (size\_\-t newSendTimeout)
+\item 
+bool \hyperlink{classcl_instance_profile_ace596874c27bd0d4b102513063e81534}{GetGracefulDisconnect} () const 
+\item 
+void \hyperlink{classcl_instance_profile_aba9027e93cb443766b0c2a213d92384c}{SetGracefulDisconnect} (bool newGracefulDisconnect)
+\item 
+bool \hyperlink{classcl_instance_profile_a77ac8f0cd873d6dae3dc4a19a167acc0}{GetNagleEnabled} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a015ef923a3490d87c1dbb1ae70776e61}{SetNagleEnabled} (bool newNagleEnabled)
+\item 
+\hyperlink{classcl_packet}{clPacket} \hyperlink{classcl_instance_profile_a9c1e12ff2d9d011b7a8a0b52cb8b4723}{GetPostFixTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a588ac2cc6a96ab808e1d91c150882de5}{SetPostFixTCP} (const \hyperlink{classcl_packet}{clPacket} \&newPostFixTCP)
+\item 
+bool \hyperlink{classcl_instance_profile_aa9a06bc209989cd8cf8dbc3cde527dea}{GetReusableUDP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a9094e22a8369d8eb60235a61e7607c5e}{SetReusableUDP} (bool option)
+\item 
+\hyperlink{classcl_shared_u_d_p}{clSharedUDP} $\ast$ \hyperlink{classcl_instance_profile_a7c26ff26f8f318459787904be1269fd5}{GenerateObjectModeUDP} (size\_\-t numClients, size\_\-t \hyperlink{classcl_instance_profile_ac223cf65d4308e8f5c58472503e2ccab}{numOperations}) const 
+\item 
+\hyperlink{classcl_shared_t_c_p}{clSharedTCP} $\ast$ \hyperlink{classcl_instance_profile_a06adb082a4e1d4345b0ab00b8c014fcc}{GenerateObjectModeTCP} () const 
+\item 
+void \hyperlink{classcl_instance_profile_a40b4b09a772577e924ba6499fc1160dc}{SetConnectionToServerTimeout} (size\_\-t newConnectionToServerTimeout)
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a184afd75707fd393d3268d90fde4a76b}{GetConnectionToServerTimeout} () const 
+\item 
+void \hyperlink{classcl_instance_profile_ae477950943e877597648de949f8364bd}{SetNumOperations} (size\_\-t newNumOperations)
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a868718f63006b2ee181ba58d2df3b082}{GetNumOperations} () const 
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_ae3682372f32240378daadac7a3a5ab50}{wsaRecvSizeTCP}
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a8fe7056f9e48febf975fbbc932df6395}{recvSizeTCP}
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a0e937475af0a5614f0475a819aa1b73e}{recvSizeUDP}
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \hyperlink{classcl_instance_profile_ad968a9a15fd6a31479c55a067fe09573}{localAddrTCP}
+\item 
+\hyperlink{classcl_single_addr}{clSingleAddr} \hyperlink{classcl_instance_profile_a76c869ac22c63b389ac5d49b9eb21862}{localAddrUDP}
+\item 
+bool \hyperlink{classcl_instance_profile_ad9d28cad949aec335b92f31d822d0bf6}{enabledUDP}
+\item 
+INT\_\-PTR \hyperlink{classcl_instance_profile_ace072043f8984052fd263bcfecc73e4e}{decryptKeyUDP}
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_profile_a5256ee272d945f53112a34b5c18136fa}{recvFuncTCP}
+\item 
+\hyperlink{classcl_instance_core_afa96c2a2c0b26b6a9256b87798bf9587}{clInstanceCore::RecvFunc} \hyperlink{classcl_instance_profile_a87180abaad2454e208eab1d4343ee926}{recvFuncUDP}
+\item 
+bool \hyperlink{classcl_instance_profile_ab315c60cef677fc2ffafab78eeca2d52}{handshakeEnabledTCP}
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_profile_aa33da57b3f604aa9f0df3e2f2e0642cf}{modeTCP}
+\item 
+bool \hyperlink{classcl_instance_profile_a2f0358eb3bcd10a5dfa0ccca55afbf4a}{autoResizeTCP}
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a3542eb64b33a9a54a15dcf9a141cd870}{sendTimeout}
+\item 
+bool \hyperlink{classcl_instance_profile_a05d0823b2bb852c4ba77c052ef27f250}{gracefulDisconnect}
+\item 
+bool \hyperlink{classcl_instance_profile_a5618aef6c4f569e498446b398c60dc12}{nagleEnabled}
+\item 
+\hyperlink{classcl_packet}{clPacket} \hyperlink{classcl_instance_profile_a128c796dc4336367dbe442f8347236da}{postFixTCP}
+\item 
+bool \hyperlink{classcl_instance_profile_a9f2be3ef8894a136d5af5df66150765f}{reusableUDP}
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_ac223cf65d4308e8f5c58472503e2ccab}{numOperations}
+\item 
+\hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47b}{clSharedProtocol::ProtocolMode} \hyperlink{classcl_instance_profile_a5ca5a16aac3d34666029cc91d9a87657}{modeUDP}
+\item 
+size\_\-t \hyperlink{classcl_instance_profile_a555a74500b6b0e6cc660e8f3e1180d8f}{connectionToServerTimeout}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{classcl_instance_profile_a97c453f7fe529bd5a77d609fea65a539}{defaultBufferSize} = 1024
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages instance startup information. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/5/2010.
+\end{DoxyRemark}
+Part of the instance system \par
+ This module exists because certain information is required by any instance being initialized and often this information will be the same for multiple instances. So instead of having a constructor with many parameters for each instance, we use this module which initially has default values for these parameters and can be changed as required.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_profile_ae3d0279975063e5888bc59ee4179e1d3}{
+\index{clInstanceProfile@{clInstanceProfile}!clInstanceProfile@{clInstanceProfile}}
+\index{clInstanceProfile@{clInstanceProfile}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{clInstanceProfile}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceProfile::clInstanceProfile (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_ae3d0279975063e5888bc59ee4179e1d3}
+Constructor \hypertarget{classcl_instance_profile_aa1bd09516ace6137f13e5d737ebc00e8}{
+\index{clInstanceProfile@{clInstanceProfile}!clInstanceProfile@{clInstanceProfile}}
+\index{clInstanceProfile@{clInstanceProfile}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{clInstanceProfile}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceProfile::clInstanceProfile (
+\begin{DoxyParamCaption}
+\item[{const {\bf clInstanceProfile} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_aa1bd09516ace6137f13e5d737ebc00e8}
+Copy constructor \par
+ Copies contents of {\itshape copyMe\/} into this object (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_profile_a89402aa23ff4bebc52b24bf1b2a1f8bc}{
+\index{clInstanceProfile@{clInstanceProfile}!\_\-Copy@{\_\-Copy}}
+\index{\_\-Copy@{\_\-Copy}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{\_\-Copy}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::\_\-Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf clInstanceProfile} \&}]{ a}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a89402aa23ff4bebc52b24bf1b2a1f8bc}
+Copies the contents of {\itshape a\/} into this object (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em a}]object to copy \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a2ecfa88976bc706b93de3c8cd4e84304}{
+\index{clInstanceProfile@{clInstanceProfile}!\_\-defaultVars@{\_\-defaultVars}}
+\index{\_\-defaultVars@{\_\-defaultVars}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{\_\-defaultVars}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::\_\-defaultVars (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a2ecfa88976bc706b93de3c8cd4e84304}
+Resets all variables to default \hypertarget{classcl_instance_profile_a06adb082a4e1d4345b0ab00b8c014fcc}{
+\index{clInstanceProfile@{clInstanceProfile}!GenerateObjectModeTCP@{GenerateObjectModeTCP}}
+\index{GenerateObjectModeTCP@{GenerateObjectModeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GenerateObjectModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedTCP} $\ast$ clInstanceProfile::GenerateObjectModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a06adb082a4e1d4345b0ab00b8c014fcc}
+Generates a \hyperlink{classcl_shared_t_c_p}{clSharedTCP} object based on local variables \begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a7c26ff26f8f318459787904be1269fd5}{
+\index{clInstanceProfile@{clInstanceProfile}!GenerateObjectModeUDP@{GenerateObjectModeUDP}}
+\index{GenerateObjectModeUDP@{GenerateObjectModeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GenerateObjectModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedUDP} $\ast$ clInstanceProfile::GenerateObjectModeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numClients, }
+\item[{size\_\-t}]{ numOperations}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a7c26ff26f8f318459787904be1269fd5}
+Generates a \hyperlink{classcl_shared_u_d_p}{clSharedUDP} object based on local variables 
+\begin{DoxyParams}{Parameters}
+\item[{\em numClients}]number of clients that data may be received for (optional, default 1) \item[{\em numOperations}]number of operations that data may be received for (optional, default 1). Ignored in \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5315dd28370f0e13b26603c1b0a17c21}{clSharedProtocol::UM\_\-CATCH\_\-ALL} and \hyperlink{classcl_shared_protocol_a4b0b9c82b8ae4eee78c6308c35afd47ba5780629b78f91735d369000983ce955e}{clSharedProtocol::UM\_\-CATCH\_\-ALL\_\-NO} UDP modes. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+object 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a58908936be05fb3930d6f9a0932eb4e2}{
+\index{clInstanceProfile@{clInstanceProfile}!GetAutoResizeTCP@{GetAutoResizeTCP}}
+\index{GetAutoResizeTCP@{GetAutoResizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::GetAutoResizeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a58908936be05fb3930d6f9a0932eb4e2}
+\begin{DoxyReturn}{Returns}
+true if maximum size of incoming TCP packet will increase if necessary to store an incoming packet 
+
+false if an error will occur if a TCP packet is received that is too large 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a184afd75707fd393d3268d90fde4a76b}{
+\index{clInstanceProfile@{clInstanceProfile}!GetConnectionToServerTimeout@{GetConnectionToServerTimeout}}
+\index{GetConnectionToServerTimeout@{GetConnectionToServerTimeout}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetConnectionToServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceProfile::GetConnectionToServerTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a184afd75707fd393d3268d90fde4a76b}
+\begin{DoxyReturn}{Returns}
+time in milliseconds that a connection attempt will be waited on before giving up (default = \hyperlink{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}{clServerState::DEFAULT\_\-CONNECTION\_\-TIMEOUT}) 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a109e2f743649d74e390a5270d7e75798}{
+\index{clInstanceProfile@{clInstanceProfile}!GetDecryptKeyUDP@{GetDecryptKeyUDP}}
+\index{GetDecryptKeyUDP@{GetDecryptKeyUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetDecryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}INT\_\-PTR clInstanceProfile::GetDecryptKeyUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a109e2f743649d74e390a5270d7e75798}
+\begin{DoxyReturn}{Returns}
+pointer to \hyperlink{classcl_encrypt_key}{clEncryptKey} object used when decrypting UDP packets 
+
+NULL if no key is loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a890c37125ac1c496aef5c4003a35160e}{
+\index{clInstanceProfile@{clInstanceProfile}!GetEnabledUDP@{GetEnabledUDP}}
+\index{GetEnabledUDP@{GetEnabledUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::GetEnabledUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a890c37125ac1c496aef5c4003a35160e}
+\begin{DoxyReturn}{Returns}
+true if UDP is enabled 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_ace596874c27bd0d4b102513063e81534}{
+\index{clInstanceProfile@{clInstanceProfile}!GetGracefulDisconnect@{GetGracefulDisconnect}}
+\index{GetGracefulDisconnect@{GetGracefulDisconnect}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetGracefulDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::GetGracefulDisconnect (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_ace596874c27bd0d4b102513063e81534}
+\begin{DoxyReturn}{Returns}
+true if graceful disconnecting is enabled 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_aaaa6313e6f2fbf439faa4f0d6765e5ca}{
+\index{clInstanceProfile@{clInstanceProfile}!GetHandshakeEnabledTCP@{GetHandshakeEnabledTCP}}
+\index{GetHandshakeEnabledTCP@{GetHandshakeEnabledTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetHandshakeEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::GetHandshakeEnabledTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_aaaa6313e6f2fbf439faa4f0d6765e5ca}
+\begin{DoxyReturn}{Returns}
+true if the TCP handshaking process is enabled 
+
+false if the TCP handshaking process is disabled, connection will occur with no additional data transfer 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a6cd003b808312b99df2e3c3340930e06}{
+\index{clInstanceProfile@{clInstanceProfile}!GetLocalAddrTCP@{GetLocalAddrTCP}}
+\index{GetLocalAddrTCP@{GetLocalAddrTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetLocalAddrTCP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clInstanceProfile::GetLocalAddrTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a6cd003b808312b99df2e3c3340930e06}
+\begin{DoxyReturn}{Returns}
+reference to local TCP address of instance 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_instance_profile_a19b331334b83cdf101d6db90df9b1755}{
+\index{clInstanceProfile@{clInstanceProfile}!GetLocalAddrUDP@{GetLocalAddrUDP}}
+\index{GetLocalAddrUDP@{GetLocalAddrUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetLocalAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clSingleAddr} \& clInstanceProfile::GetLocalAddrUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a19b331334b83cdf101d6db90df9b1755}
+\begin{DoxyReturn}{Returns}
+reference to local UDP address of instance 
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+is okay to return reference because \hyperlink{classcl_single_addr}{clSingleAddr} is thread safe 
+\end{DoxyNote}
+\hypertarget{classcl_instance_profile_a87e7c5e199c9930e089e2f1945e93d29}{
+\index{clInstanceProfile@{clInstanceProfile}!GetModeTCP@{GetModeTCP}}
+\index{GetModeTCP@{GetModeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clInstanceProfile::GetModeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a87e7c5e199c9930e089e2f1945e93d29}
+\begin{DoxyReturn}{Returns}
+TCP mode in use 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a85dd82fa5342cab74133fe11762e0189}{
+\index{clInstanceProfile@{clInstanceProfile}!GetModeUDP@{GetModeUDP}}
+\index{GetModeUDP@{GetModeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} clInstanceProfile::GetModeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a85dd82fa5342cab74133fe11762e0189}
+\begin{DoxyReturn}{Returns}
+UDP mode in use 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a77ac8f0cd873d6dae3dc4a19a167acc0}{
+\index{clInstanceProfile@{clInstanceProfile}!GetNagleEnabled@{GetNagleEnabled}}
+\index{GetNagleEnabled@{GetNagleEnabled}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetNagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::GetNagleEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a77ac8f0cd873d6dae3dc4a19a167acc0}
+\begin{DoxyReturn}{Returns}
+true if the nagle algorithm is enabled 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a868718f63006b2ee181ba58d2df3b082}{
+\index{clInstanceProfile@{clInstanceProfile}!GetNumOperations@{GetNumOperations}}
+\index{GetNumOperations@{GetNumOperations}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceProfile::GetNumOperations (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a868718f63006b2ee181ba58d2df3b082}
+\begin{DoxyReturn}{Returns}
+number of operations in clSharedProtocol::PER\_\-CLIENT\_\-PER\_\-OPERATION (default = 1) 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a9c1e12ff2d9d011b7a8a0b52cb8b4723}{
+\index{clInstanceProfile@{clInstanceProfile}!GetPostFixTCP@{GetPostFixTCP}}
+\index{GetPostFixTCP@{GetPostFixTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetPostFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} clInstanceProfile::GetPostFixTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a9c1e12ff2d9d011b7a8a0b52cb8b4723}
+\begin{DoxyReturn}{Returns}
+the postfix to apply in TCP mode TM\_\-RN 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_ae02ec718bc88686b473a720b13580ba2}{
+\index{clInstanceProfile@{clInstanceProfile}!GetRecvFuncTCP@{GetRecvFuncTCP}}
+\index{GetRecvFuncTCP@{GetRecvFuncTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetRecvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::RecvFunc} clInstanceProfile::GetRecvFuncTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_ae02ec718bc88686b473a720b13580ba2}
+\begin{DoxyReturn}{Returns}
+pointer to function to be executed when TCP packet is received 
+
+NULL if no function is loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a4f6729b6fdcbd813c3843f8513d570ca}{
+\index{clInstanceProfile@{clInstanceProfile}!GetRecvFuncUDP@{GetRecvFuncUDP}}
+\index{GetRecvFuncUDP@{GetRecvFuncUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetRecvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::RecvFunc} clInstanceProfile::GetRecvFuncUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a4f6729b6fdcbd813c3843f8513d570ca}
+\begin{DoxyReturn}{Returns}
+pointer to function to be executed when UDP packet is received 
+
+NULL if no function is loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a2cfd595788889760627327126a27369a}{
+\index{clInstanceProfile@{clInstanceProfile}!GetRecvSizeTCP@{GetRecvSizeTCP}}
+\index{GetRecvSizeTCP@{GetRecvSizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceProfile::GetRecvSizeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a2cfd595788889760627327126a27369a}
+\begin{DoxyReturn}{Returns}
+maximum size an incoming TCP packet can be 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a5c9a2d7ede755c313c80c52bc813c639}{
+\index{clInstanceProfile@{clInstanceProfile}!GetRecvSizeUDP@{GetRecvSizeUDP}}
+\index{GetRecvSizeUDP@{GetRecvSizeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetRecvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceProfile::GetRecvSizeUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a5c9a2d7ede755c313c80c52bc813c639}
+\begin{DoxyReturn}{Returns}
+maximum size an incoming UDP packet can be 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_aa9a06bc209989cd8cf8dbc3cde527dea}{
+\index{clInstanceProfile@{clInstanceProfile}!GetReusableUDP@{GetReusableUDP}}
+\index{GetReusableUDP@{GetReusableUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetReusableUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::GetReusableUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_aa9a06bc209989cd8cf8dbc3cde527dea}
+\begin{DoxyReturn}{Returns}
+true if broadcast instance should be reusable (default = true). When reusable other applications (including this one) may bind to the local port in use (default = false) 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a2e71548556fffbb4c89a83e1d4a2f389}{
+\index{clInstanceProfile@{clInstanceProfile}!GetSendTimeout@{GetSendTimeout}}
+\index{GetSendTimeout@{GetSendTimeout}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceProfile::GetSendTimeout (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a2e71548556fffbb4c89a83e1d4a2f389}
+\begin{DoxyReturn}{Returns}
+length of time that send operation will wait before canceling and disconnecting 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a27feb61200d554b90fabf4fc5ae8bd40}{
+\index{clInstanceProfile@{clInstanceProfile}!GetWsaRecvSizeTCP@{GetWsaRecvSizeTCP}}
+\index{GetWsaRecvSizeTCP@{GetWsaRecvSizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{GetWsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceProfile::GetWsaRecvSizeTCP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_profile_a27feb61200d554b90fabf4fc5ae8bd40}
+\begin{DoxyReturn}{Returns}
+maximum amount of data that can be received in one TCP receive operation 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_ace2e8c7cd5379669362bceaf9b9e54e4}{
+\index{clInstanceProfile@{clInstanceProfile}!IsDecryptKeyLoadedUDP@{IsDecryptKeyLoadedUDP}}
+\index{IsDecryptKeyLoadedUDP@{IsDecryptKeyLoadedUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{IsDecryptKeyLoadedUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceProfile::IsDecryptKeyLoadedUDP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_ace2e8c7cd5379669362bceaf9b9e54e4}
+\begin{DoxyReturn}{Returns}
+true if decrypt key UDP is loaded 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_profile_a73cfd933accc2a8707f327fd20b7801e}{
+\index{clInstanceProfile@{clInstanceProfile}!operator=@{operator=}}
+\index{operator=@{operator=}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceProfile} \& clInstanceProfile::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf clInstanceProfile} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a73cfd933accc2a8707f327fd20b7801e}
+Assignment operator \par
+ Copies contents of {\itshape copyMe\/} into this object (deep) 
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]object to copy \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a6c29661fd78f64b040b8be2d6ce150c3}{
+\index{clInstanceProfile@{clInstanceProfile}!SetAutoResizeTCP@{SetAutoResizeTCP}}
+\index{SetAutoResizeTCP@{SetAutoResizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetAutoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetAutoResizeTCP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newAutoResizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a6c29661fd78f64b040b8be2d6ce150c3}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newAutoResizeTCP}]true if maximum size of incoming TCP packet will increase if necessary to store an incoming packet \item[{\em newAutoResizeTCP}]false if an error will occur if a TCP packet is received that is too large \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a40b4b09a772577e924ba6499fc1160dc}{
+\index{clInstanceProfile@{clInstanceProfile}!SetConnectionToServerTimeout@{SetConnectionToServerTimeout}}
+\index{SetConnectionToServerTimeout@{SetConnectionToServerTimeout}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetConnectionToServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetConnectionToServerTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newConnectionToServerTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a40b4b09a772577e924ba6499fc1160dc}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newConnectionToServerTimeout}]time in milliseconds that a connection attempt will be waited on before giving up (default = \hyperlink{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}{clServerState::DEFAULT\_\-CONNECTION\_\-TIMEOUT}) \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a8e52937a15b094f7e60b4f34684a8e4c}{
+\index{clInstanceProfile@{clInstanceProfile}!SetDecryptKeyUDP@{SetDecryptKeyUDP}}
+\index{SetDecryptKeyUDP@{SetDecryptKeyUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetDecryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetDecryptKeyUDP (
+\begin{DoxyParamCaption}
+\item[{INT\_\-PTR}]{ newDecryptKeyUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a8e52937a15b094f7e60b4f34684a8e4c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newDecryptKeyUDP}]pointer to \hyperlink{classcl_encrypt_key}{clEncryptKey} object used when decrypting UDP packets \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a6e73ed3d57d2c3a2b2ce7f4dba312caf}{
+\index{clInstanceProfile@{clInstanceProfile}!SetEnabledUDP@{SetEnabledUDP}}
+\index{SetEnabledUDP@{SetEnabledUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetEnabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetEnabledUDP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newEnabledUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a6e73ed3d57d2c3a2b2ce7f4dba312caf}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newEnabledUDP}]true if UDP is enabled \end{DoxyParams}
+\hypertarget{classcl_instance_profile_aba9027e93cb443766b0c2a213d92384c}{
+\index{clInstanceProfile@{clInstanceProfile}!SetGracefulDisconnect@{SetGracefulDisconnect}}
+\index{SetGracefulDisconnect@{SetGracefulDisconnect}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetGracefulDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetGracefulDisconnect (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newGracefulDisconnect}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_aba9027e93cb443766b0c2a213d92384c}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newGracefulDisconnect}]true if graceful disconnecting should be enabled \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a7dda3da4c81fedfecde7d8a579494f20}{
+\index{clInstanceProfile@{clInstanceProfile}!SetHandshakeEnabledTCP@{SetHandshakeEnabledTCP}}
+\index{SetHandshakeEnabledTCP@{SetHandshakeEnabledTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetHandshakeEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetHandshakeEnabledTCP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newHandshakeEnabledTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a7dda3da4c81fedfecde7d8a579494f20}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newHandshakeEnabledTCP}]true if the TCP handshaking process should be enabled \item[{\em newHandshakeEnabledTCP}]false if the TCP handshaking process should be disabled, connection will occur with no additional data transfer \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a0a633e7c2ce7c2ee63681995f9eae04d}{
+\index{clInstanceProfile@{clInstanceProfile}!SetLocalAddrTCP@{SetLocalAddrTCP}}
+\index{SetLocalAddrTCP@{SetLocalAddrTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetLocalAddrTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetLocalAddrTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ newLocalAddrTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a0a633e7c2ce7c2ee63681995f9eae04d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newLocalAddrTCP}]local TCP address of instance \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a662a7044e253ff8722e69b305f2c979a}{
+\index{clInstanceProfile@{clInstanceProfile}!SetLocalAddrUDP@{SetLocalAddrUDP}}
+\index{SetLocalAddrUDP@{SetLocalAddrUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetLocalAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetLocalAddrUDP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clSingleAddr} \&}]{ newLocalAddrUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a662a7044e253ff8722e69b305f2c979a}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newLocalAddrUDP}]local UDP address of instance \end{DoxyParams}
+\hypertarget{classcl_instance_profile_acd25bd3d9df9b90ace8e8b831d68bbb6}{
+\index{clInstanceProfile@{clInstanceProfile}!SetModeTCP@{SetModeTCP}}
+\index{SetModeTCP@{SetModeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetModeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetModeTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf clSharedProtocol::ProtocolMode}}]{ newModeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_acd25bd3d9df9b90ace8e8b831d68bbb6}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newModeTCP}]new TCP mode in use \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape newModeUDP\/} is not a valid TCP mode \end{DoxyExceptions}
+\hypertarget{classcl_instance_profile_a1184d133c589b502cb3de1254cb7fc8d}{
+\index{clInstanceProfile@{clInstanceProfile}!SetModeUDP@{SetModeUDP}}
+\index{SetModeUDP@{SetModeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetModeUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetModeUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf clSharedProtocol::ProtocolMode}}]{ newModeUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a1184d133c589b502cb3de1254cb7fc8d}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newModeUDP}]new UDP mode in use \end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape newModeUDP\/} is not a valid UDP mode \end{DoxyExceptions}
+\hypertarget{classcl_instance_profile_a015ef923a3490d87c1dbb1ae70776e61}{
+\index{clInstanceProfile@{clInstanceProfile}!SetNagleEnabled@{SetNagleEnabled}}
+\index{SetNagleEnabled@{SetNagleEnabled}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetNagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetNagleEnabled (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newNagleEnabled}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a015ef923a3490d87c1dbb1ae70776e61}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newNagleDisabled}]true if the nagle algorithm should be enabled, false if it should be disabled \end{DoxyParams}
+\hypertarget{classcl_instance_profile_ae477950943e877597648de949f8364bd}{
+\index{clInstanceProfile@{clInstanceProfile}!SetNumOperations@{SetNumOperations}}
+\index{SetNumOperations@{SetNumOperations}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetNumOperations}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetNumOperations (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newNumOperations}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_ae477950943e877597648de949f8364bd}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newConnectionToServerTimeout}]number of operations in clSharedProtocol::PER\_\-CLIENT\_\-PER\_\-OPERATION (default = 1) \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a588ac2cc6a96ab808e1d91c150882de5}{
+\index{clInstanceProfile@{clInstanceProfile}!SetPostFixTCP@{SetPostFixTCP}}
+\index{SetPostFixTCP@{SetPostFixTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetPostFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetPostFixTCP (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} \&}]{ newPostFixTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a588ac2cc6a96ab808e1d91c150882de5}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newPostFixTCP}]the postfix to apply in TCP mode TM\_\-RN \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a9db3e441ba8279a392ad238391732c87}{
+\index{clInstanceProfile@{clInstanceProfile}!SetRecvFuncTCP@{SetRecvFuncTCP}}
+\index{SetRecvFuncTCP@{SetRecvFuncTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetRecvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetRecvFuncTCP (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceCore::RecvFunc}}]{ newRecvFuncTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a9db3e441ba8279a392ad238391732c87}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvFuncTCP}]pointer to function to be executed when TCP packet is received \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a289d594c4f6973aa55fa4984aa5b6336}{
+\index{clInstanceProfile@{clInstanceProfile}!SetRecvFuncUDP@{SetRecvFuncUDP}}
+\index{SetRecvFuncUDP@{SetRecvFuncUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetRecvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetRecvFuncUDP (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceCore::RecvFunc}}]{ newRecvFuncUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a289d594c4f6973aa55fa4984aa5b6336}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvFuncUDP}]pointer to function to be executed when UDP packet is received \end{DoxyParams}
+\hypertarget{classcl_instance_profile_aa74e1e3fa50552031c661f51265f7ba0}{
+\index{clInstanceProfile@{clInstanceProfile}!SetRecvSizeTCP@{SetRecvSizeTCP}}
+\index{SetRecvSizeTCP@{SetRecvSizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetRecvSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newRecvSizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_aa74e1e3fa50552031c661f51265f7ba0}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvSizeTCP}]maximum size an incoming TCP packet can be \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a3d7917bd7a5098571bc9d4f906a713e4}{
+\index{clInstanceProfile@{clInstanceProfile}!SetRecvSizeUDP@{SetRecvSizeUDP}}
+\index{SetRecvSizeUDP@{SetRecvSizeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetRecvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetRecvSizeUDP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newRecvSizeUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a3d7917bd7a5098571bc9d4f906a713e4}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newRecvSizeUDP}]maximum size an incoming UDP packet can be \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a9094e22a8369d8eb60235a61e7607c5e}{
+\index{clInstanceProfile@{clInstanceProfile}!SetReusableUDP@{SetReusableUDP}}
+\index{SetReusableUDP@{SetReusableUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetReusableUDP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetReusableUDP (
+\begin{DoxyParamCaption}
+\item[{bool}]{ newReusableUDP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a9094e22a8369d8eb60235a61e7607c5e}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newBroadcastReusableUDP}]true if UDP should be reusable (default = true). When reusable other applications (including this one) may bind to the local port in use (default = false) \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a19f70381305386f41fb08057bfb6375f}{
+\index{clInstanceProfile@{clInstanceProfile}!SetSendTimeout@{SetSendTimeout}}
+\index{SetSendTimeout@{SetSendTimeout}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetSendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetSendTimeout (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newSendTimeout}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a19f70381305386f41fb08057bfb6375f}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newSendTimeout}]length of time that send operation will wait before canceling and disconnecting \end{DoxyParams}
+\hypertarget{classcl_instance_profile_a00cc75f099d0da5fb4883e0920e16132}{
+\index{clInstanceProfile@{clInstanceProfile}!SetWsaRecvSizeTCP@{SetWsaRecvSizeTCP}}
+\index{SetWsaRecvSizeTCP@{SetWsaRecvSizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{SetWsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceProfile::SetWsaRecvSizeTCP (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ newWsaRecvSizeTCP}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_profile_a00cc75f099d0da5fb4883e0920e16132}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em newWsaRecvSizeTCP}]maximum amount of data that can be received in one TCP receive operation \end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_instance_profile_a2f0358eb3bcd10a5dfa0ccca55afbf4a}{
+\index{clInstanceProfile@{clInstanceProfile}!autoResizeTCP@{autoResizeTCP}}
+\index{autoResizeTCP@{autoResizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{autoResizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceProfile::autoResizeTCP}}}
+\label{classcl_instance_profile_a2f0358eb3bcd10a5dfa0ccca55afbf4a}
+If true maximum size of incoming TCP packet will increase if necessary to store an incoming packet If false an error will occur when a TCP packet that is too large is receive, this is default \hypertarget{classcl_instance_profile_a555a74500b6b0e6cc660e8f3e1180d8f}{
+\index{clInstanceProfile@{clInstanceProfile}!connectionToServerTimeout@{connectionToServerTimeout}}
+\index{connectionToServerTimeout@{connectionToServerTimeout}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{connectionToServerTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceProfile::connectionToServerTimeout}}}
+\label{classcl_instance_profile_a555a74500b6b0e6cc660e8f3e1180d8f}
+Time in milliseconds that a connection attempt will be waited on before giving up (default = \hyperlink{classcl_server_state_aa61be479aa559af84ebad2a136c2173b}{clServerState::DEFAULT\_\-CONNECTION\_\-TIMEOUT}) \hypertarget{classcl_instance_profile_ace072043f8984052fd263bcfecc73e4e}{
+\index{clInstanceProfile@{clInstanceProfile}!decryptKeyUDP@{decryptKeyUDP}}
+\index{decryptKeyUDP@{decryptKeyUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{decryptKeyUDP}]{\setlength{\rightskip}{0pt plus 5cm}INT\_\-PTR {\bf clInstanceProfile::decryptKeyUDP}}}
+\label{classcl_instance_profile_ace072043f8984052fd263bcfecc73e4e}
+Pointer to \hyperlink{classcl_encrypt_key}{clEncryptKey} object used when decrypting UDP packets \par
+ NULL if no key exists (which is default) \hypertarget{classcl_instance_profile_a97c453f7fe529bd5a77d609fea65a539}{
+\index{clInstanceProfile@{clInstanceProfile}!defaultBufferSize@{defaultBufferSize}}
+\index{defaultBufferSize@{defaultBufferSize}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{defaultBufferSize}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clInstanceProfile::defaultBufferSize} = 1024\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{classcl_instance_profile_a97c453f7fe529bd5a77d609fea65a539}
+Default number of bytes to allocate to WSABUF structures  $>$= minimum of any instance \hypertarget{classcl_instance_profile_ad9d28cad949aec335b92f31d822d0bf6}{
+\index{clInstanceProfile@{clInstanceProfile}!enabledUDP@{enabledUDP}}
+\index{enabledUDP@{enabledUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{enabledUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceProfile::enabledUDP}}}
+\label{classcl_instance_profile_ad9d28cad949aec335b92f31d822d0bf6}
+true if UDP is enabled, default is true \hypertarget{classcl_instance_profile_a05d0823b2bb852c4ba77c052ef27f250}{
+\index{clInstanceProfile@{clInstanceProfile}!gracefulDisconnect@{gracefulDisconnect}}
+\index{gracefulDisconnect@{gracefulDisconnect}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{gracefulDisconnect}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceProfile::gracefulDisconnect}}}
+\label{classcl_instance_profile_a05d0823b2bb852c4ba77c052ef27f250}
+If true graceful disconnecting is enabled (default) \hypertarget{classcl_instance_profile_ab315c60cef677fc2ffafab78eeca2d52}{
+\index{clInstanceProfile@{clInstanceProfile}!handshakeEnabledTCP@{handshakeEnabledTCP}}
+\index{handshakeEnabledTCP@{handshakeEnabledTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{handshakeEnabledTCP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceProfile::handshakeEnabledTCP}}}
+\label{classcl_instance_profile_ab315c60cef677fc2ffafab78eeca2d52}
+true if the TCP handshaking process is enabled (default) \par
+ false if the TCP handshaking process is disabled, connection will occur with no additional data transfer \hypertarget{classcl_instance_profile_ad968a9a15fd6a31479c55a067fe09573}{
+\index{clInstanceProfile@{clInstanceProfile}!localAddrTCP@{localAddrTCP}}
+\index{localAddrTCP@{localAddrTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{localAddrTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} {\bf clInstanceProfile::localAddrTCP}}}
+\label{classcl_instance_profile_ad968a9a15fd6a31479c55a067fe09573}
+Local TCP address of instance \par
+ Default initialized using \hyperlink{classcl_single_addr}{clSingleAddr} default constructor \hypertarget{classcl_instance_profile_a76c869ac22c63b389ac5d49b9eb21862}{
+\index{clInstanceProfile@{clInstanceProfile}!localAddrUDP@{localAddrUDP}}
+\index{localAddrUDP@{localAddrUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{localAddrUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSingleAddr} {\bf clInstanceProfile::localAddrUDP}}}
+\label{classcl_instance_profile_a76c869ac22c63b389ac5d49b9eb21862}
+Local UDP address of instance \par
+ Default initialized using \hyperlink{classcl_single_addr}{clSingleAddr} default constructor \hypertarget{classcl_instance_profile_aa33da57b3f604aa9f0df3e2f2e0642cf}{
+\index{clInstanceProfile@{clInstanceProfile}!modeTCP@{modeTCP}}
+\index{modeTCP@{modeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{modeTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} {\bf clInstanceProfile::modeTCP}}}
+\label{classcl_instance_profile_aa33da57b3f604aa9f0df3e2f2e0642cf}
+TCP mode in use, default: clSharedProtocol::ProtocolMode::TM\_\-SIZE \hypertarget{classcl_instance_profile_a5ca5a16aac3d34666029cc91d9a87657}{
+\index{clInstanceProfile@{clInstanceProfile}!modeUDP@{modeUDP}}
+\index{modeUDP@{modeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{modeUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clSharedProtocol::ProtocolMode} {\bf clInstanceProfile::modeUDP}}}
+\label{classcl_instance_profile_a5ca5a16aac3d34666029cc91d9a87657}
+UDP mode in use, default is clSharedProtocol::CATCH\_\-ALL\_\-NO \hypertarget{classcl_instance_profile_a5618aef6c4f569e498446b398c60dc12}{
+\index{clInstanceProfile@{clInstanceProfile}!nagleEnabled@{nagleEnabled}}
+\index{nagleEnabled@{nagleEnabled}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{nagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceProfile::nagleEnabled}}}
+\label{classcl_instance_profile_a5618aef6c4f569e498446b398c60dc12}
+If true the nagle algorithm is enabled (default) \hypertarget{classcl_instance_profile_ac223cf65d4308e8f5c58472503e2ccab}{
+\index{clInstanceProfile@{clInstanceProfile}!numOperations@{numOperations}}
+\index{numOperations@{numOperations}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{numOperations}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceProfile::numOperations}}}
+\label{classcl_instance_profile_ac223cf65d4308e8f5c58472503e2ccab}
+In clSharedProtocol::PER\_\-CLIENT\_\-PER\_\-OPERATION this variable is used, describing the number of operations (default = 1) \hypertarget{classcl_instance_profile_a128c796dc4336367dbe442f8347236da}{
+\index{clInstanceProfile@{clInstanceProfile}!postFixTCP@{postFixTCP}}
+\index{postFixTCP@{postFixTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{postFixTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clPacket} {\bf clInstanceProfile::postFixTCP}}}
+\label{classcl_instance_profile_a128c796dc4336367dbe442f8347236da}
+The postfix to apply in TCP mode TM\_\-RN. Default packet contents is is \par
+ \hypertarget{classcl_instance_profile_a5256ee272d945f53112a34b5c18136fa}{
+\index{clInstanceProfile@{clInstanceProfile}!recvFuncTCP@{recvFuncTCP}}
+\index{recvFuncTCP@{recvFuncTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{recvFuncTCP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::RecvFunc} {\bf clInstanceProfile::recvFuncTCP}}}
+\label{classcl_instance_profile_a5256ee272d945f53112a34b5c18136fa}
+Pointer to function to be executed when TCP packet is received \par
+ NULL if no function exists (which is default) \hypertarget{classcl_instance_profile_a87180abaad2454e208eab1d4343ee926}{
+\index{clInstanceProfile@{clInstanceProfile}!recvFuncUDP@{recvFuncUDP}}
+\index{recvFuncUDP@{recvFuncUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{recvFuncUDP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceCore::RecvFunc} {\bf clInstanceProfile::recvFuncUDP}}}
+\label{classcl_instance_profile_a87180abaad2454e208eab1d4343ee926}
+Pointer to function to be executed when UDP packet is received \par
+ NULL if no function exists (which is default) \hypertarget{classcl_instance_profile_a8fe7056f9e48febf975fbbc932df6395}{
+\index{clInstanceProfile@{clInstanceProfile}!recvSizeTCP@{recvSizeTCP}}
+\index{recvSizeTCP@{recvSizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{recvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceProfile::recvSizeTCP}}}
+\label{classcl_instance_profile_a8fe7056f9e48febf975fbbc932df6395}
+Maximum size an incoming TCP packet can be \par
+ Default is defaultBufferSize + wsaRecvSizeTCP \hypertarget{classcl_instance_profile_a0e937475af0a5614f0475a819aa1b73e}{
+\index{clInstanceProfile@{clInstanceProfile}!recvSizeUDP@{recvSizeUDP}}
+\index{recvSizeUDP@{recvSizeUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{recvSizeUDP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceProfile::recvSizeUDP}}}
+\label{classcl_instance_profile_a0e937475af0a5614f0475a819aa1b73e}
+Maximum size an incoming UDP packet can be \par
+ Default is defaultBufferSize \hypertarget{classcl_instance_profile_a9f2be3ef8894a136d5af5df66150765f}{
+\index{clInstanceProfile@{clInstanceProfile}!reusableUDP@{reusableUDP}}
+\index{reusableUDP@{reusableUDP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{reusableUDP}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf clInstanceProfile::reusableUDP}}}
+\label{classcl_instance_profile_a9f2be3ef8894a136d5af5df66150765f}
+True if UDP should be reusable. When reusable other applications (including this one) may bind to the local port in use (default = false) \hypertarget{classcl_instance_profile_a3542eb64b33a9a54a15dcf9a141cd870}{
+\index{clInstanceProfile@{clInstanceProfile}!sendTimeout@{sendTimeout}}
+\index{sendTimeout@{sendTimeout}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{sendTimeout}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceProfile::sendTimeout}}}
+\label{classcl_instance_profile_a3542eb64b33a9a54a15dcf9a141cd870}
+Length of time that send operation will wait before canceling and disconnecting, default INFINITE \hypertarget{classcl_instance_profile_ae3682372f32240378daadac7a3a5ab50}{
+\index{clInstanceProfile@{clInstanceProfile}!wsaRecvSizeTCP@{wsaRecvSizeTCP}}
+\index{wsaRecvSizeTCP@{wsaRecvSizeTCP}!clInstanceProfile@{clInstanceProfile}}
+\subsubsection[{wsaRecvSizeTCP}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t {\bf clInstanceProfile::wsaRecvSizeTCP}}}
+\label{classcl_instance_profile_ae3682372f32240378daadac7a3a5ab50}
+Maximum amount of data that can be received via TCP in one operation \par
+ Default is defaultBufferSize 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceProfile.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceProfile.cpp\end{DoxyCompactItemize}

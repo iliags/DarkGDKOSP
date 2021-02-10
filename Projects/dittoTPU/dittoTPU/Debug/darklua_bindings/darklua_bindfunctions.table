@@ -1,0 +1,3 @@
+<@use 'bindfunctions' format CPPP@>
+void dbRotateObject(int,float,float,float);
+<@enduse@>

@@ -1,0 +1,477 @@
+\hypertarget{class_net_address}{
+\section{NetAddress Class Reference}
+\label{class_net_address}\index{NetAddress@{NetAddress}}
+}
+
+
+Stores a single address with IP and port.  
+
+
+
+
+{\ttfamily \#include $<$NetAddress.h$>$}
+
+Inheritance diagram for NetAddress:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_net_address}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_address_ad1550c05b67de3a1a3113c2a760e5331}{
+\hyperlink{class_net_address_ad1550c05b67de3a1a3113c2a760e5331}{NetAddress} ()}
+\label{class_net_address_ad1550c05b67de3a1a3113c2a760e5331}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address_a6de5f2878e9e12e2861d706dcd9a0ee4}{NetAddress} (const char $\ast$ip, unsigned short port)
+\begin{DoxyCompactList}\small\item\em Custom constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address_a5ba35afc6d52b86db53511135ce54e85}{NetAddress} (const \hyperlink{class_net_address}{NetAddress} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address_ac65b94a94d09f8da940b215311695991}{NetAddress} (sockaddr\_\-in copyMe)
+\begin{DoxyCompactList}\small\item\em Custom constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_address_adadc6cb5bad9ef164963bbd8836d8208}{operator=} (const \hyperlink{class_net_address}{NetAddress} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Loads another \hyperlink{class_net_address}{NetAddress} object into this object. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_address_a70e4f3cdeb959cad309e60f83d467fe3}{operator==} (const \hyperlink{class_net_address}{NetAddress} \&testMe) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_address_a766b1d3613f0313361195496e7ddcc3d}{operator!=} (const \hyperlink{class_net_address}{NetAddress} \&testMe) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_address_aa40e06b0ef2fdf05016f62857121c3b8}{
+void \hyperlink{class_net_address_aa40e06b0ef2fdf05016f62857121c3b8}{Clear} ()}
+\label{class_net_address_aa40e06b0ef2fdf05016f62857121c3b8}
+
+\begin{DoxyCompactList}\small\item\em Clears address, setting everything to default. \item\end{DoxyCompactList}\item 
+sockaddr\_\-in \hyperlink{class_net_address_ab0a0c10c2768f6f5bd6532c5a736f1e2}{GetSockAddr} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves winsock address stored. \item\end{DoxyCompactList}\item 
+sockaddr\_\-in $\ast$ \hyperlink{class_net_address_a04fbd8740465d5d64ab8bec440b7f0a1}{GetAddrPtr} ()
+\begin{DoxyCompactList}\small\item\em Retrieves mutable pointer to internal address store. \item\end{DoxyCompactList}\item 
+const sockaddr\_\-in $\ast$ \hyperlink{class_net_address_a8642b2cf64aaaac8fa15d988e022cf24}{GetAddrPtr} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves constant pointer to internal address store. \item\end{DoxyCompactList}\item 
+ADDRESS\_\-FAMILY \hyperlink{class_net_address_a90f4288662c8528b85aa301d81629b85}{GetFamily} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves stored address family. \item\end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{class_net_address_a7b868c36c3e1406e17d515c019db9e41}{GetIP} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves stored IP address. \item\end{DoxyCompactList}\item 
+unsigned short \hyperlink{class_net_address_a566dbd2214680b2ddbf735527b9972a3}{GetPort} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves stored port. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_address_a2fdc2546f2cf304c9be1f335bbf83697}{SetFamily} (ADDRESS\_\-FAMILY family=AF\_\-INET)
+\begin{DoxyCompactList}\small\item\em Sets stored family of address. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_address_ab29bb77be2a0010aac0074092b600c1d}{SetPort} (unsigned short port)
+\begin{DoxyCompactList}\small\item\em Sets stored port. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_address_a182fe874139fc4c7204aeb32df77bafb}{SetIP} (const char $\ast$IP)
+\begin{DoxyCompactList}\small\item\em Sets stored IP. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_address_a9035af4c168773f2a0d06f865038af9f}{Load} (const \hyperlink{class_net_address}{NetAddress} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Loads another \hyperlink{class_net_address}{NetAddress} object into this object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_address_a0262be45996adff068852a0a30f9abab}{Load} (sockaddr\_\-in copyMe)
+\begin{DoxyCompactList}\small\item\em Loads a sockaddr\_\-in structure into this object. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_address_ab2f1c7b1b892b621886ce82d5d920ab4}{Load} (const char $\ast$ip, unsigned short port)
+\begin{DoxyCompactList}\small\item\em Loads an IP and port into the object. \item\end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{class_net_address_ad6975fe1ea49c0088f8d7c96dcf2e42d}{ToString} () const 
+\begin{DoxyCompactList}\small\item\em Retrieve a string representation of this object. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_address_a573167584833614dda3422f3e5b19767}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_address_a128c9ea028f73083786c6799b1fdd476}{
+static const \hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_address_a128c9ea028f73083786c6799b1fdd476}{EmptyAddress}}
+\label{class_net_address_a128c9ea028f73083786c6799b1fdd476}
+
+\begin{DoxyCompactList}\small\item\em Empty address set to default, used for comparisons. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_address_a06c8dce13706bbd9bfb55ca1069f33b7}{
+void \hyperlink{class_net_address_a06c8dce13706bbd9bfb55ca1069f33b7}{DefaultVariables} ()}
+\label{class_net_address_a06c8dce13706bbd9bfb55ca1069f33b7}
+
+\begin{DoxyCompactList}\small\item\em Sets all variables to default. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_address_abcb3f134a6d3dfe87d0c26dbfce499a8}{
+sockaddr\_\-in \hyperlink{class_net_address_abcb3f134a6d3dfe87d0c26dbfce499a8}{addr}}
+\label{class_net_address_abcb3f134a6d3dfe87d0c26dbfce499a8}
+
+\begin{DoxyCompactList}\small\item\em Stores address information. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Stores a single address with IP and port. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+Interacts with sockaddr\_\-in winsock structure making use of IP and port easier.\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_address_a6de5f2878e9e12e2861d706dcd9a0ee4}{
+\index{NetAddress@{NetAddress}!NetAddress@{NetAddress}}
+\index{NetAddress@{NetAddress}!NetAddress@{NetAddress}}
+\subsubsection[{NetAddress}]{\setlength{\rightskip}{0pt plus 5cm}NetAddress::NetAddress (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ ip, }
+\item[{unsigned short}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a6de5f2878e9e12e2861d706dcd9a0ee4}
+
+
+Custom constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ip}]IP to load. Must be NULL terminated. \item[{\em port}]Port to load. \end{DoxyParams}
+\hypertarget{class_net_address_a5ba35afc6d52b86db53511135ce54e85}{
+\index{NetAddress@{NetAddress}!NetAddress@{NetAddress}}
+\index{NetAddress@{NetAddress}!NetAddress@{NetAddress}}
+\subsubsection[{NetAddress}]{\setlength{\rightskip}{0pt plus 5cm}NetAddress::NetAddress (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a5ba35afc6d52b86db53511135ce54e85}
+
+
+Copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_address_ac65b94a94d09f8da940b215311695991}{
+\index{NetAddress@{NetAddress}!NetAddress@{NetAddress}}
+\index{NetAddress@{NetAddress}!NetAddress@{NetAddress}}
+\subsubsection[{NetAddress}]{\setlength{\rightskip}{0pt plus 5cm}NetAddress::NetAddress (
+\begin{DoxyParamCaption}
+\item[{sockaddr\_\-in}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_ac65b94a94d09f8da940b215311695991}
+
+
+Custom constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_address_a8642b2cf64aaaac8fa15d988e022cf24}{
+\index{NetAddress@{NetAddress}!GetAddrPtr@{GetAddrPtr}}
+\index{GetAddrPtr@{GetAddrPtr}!NetAddress@{NetAddress}}
+\subsubsection[{GetAddrPtr}]{\setlength{\rightskip}{0pt plus 5cm}const sockaddr\_\-in $\ast$ NetAddress::GetAddrPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_a8642b2cf64aaaac8fa15d988e022cf24}
+
+
+Retrieves constant pointer to internal address store. 
+
+\begin{DoxyReturn}{Returns}
+constant pointer to address. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Access to this pointer should be controlled using object's read/write control and is not thread safe unless manually controlled. 
+\end{DoxyWarning}
+\hypertarget{class_net_address_a04fbd8740465d5d64ab8bec440b7f0a1}{
+\index{NetAddress@{NetAddress}!GetAddrPtr@{GetAddrPtr}}
+\index{GetAddrPtr@{GetAddrPtr}!NetAddress@{NetAddress}}
+\subsubsection[{GetAddrPtr}]{\setlength{\rightskip}{0pt plus 5cm}sockaddr\_\-in $\ast$ NetAddress::GetAddrPtr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a04fbd8740465d5d64ab8bec440b7f0a1}
+
+
+Retrieves mutable pointer to internal address store. 
+
+\begin{DoxyReturn}{Returns}
+mutable pointer to address. 
+\end{DoxyReturn}
+\begin{DoxyWarning}{Warning}
+Access to this pointer should be controlled using object's read/write control and is not thread safe unless manually controlled. 
+\end{DoxyWarning}
+\hypertarget{class_net_address_a90f4288662c8528b85aa301d81629b85}{
+\index{NetAddress@{NetAddress}!GetFamily@{GetFamily}}
+\index{GetFamily@{GetFamily}!NetAddress@{NetAddress}}
+\subsubsection[{GetFamily}]{\setlength{\rightskip}{0pt plus 5cm}ADDRESS\_\-FAMILY NetAddress::GetFamily (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_a90f4288662c8528b85aa301d81629b85}
+
+
+Retrieves stored address family. 
+
+Default is AF\_\-INET.
+
+\begin{DoxyReturn}{Returns}
+address family. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a7b868c36c3e1406e17d515c019db9e41}{
+\index{NetAddress@{NetAddress}!GetIP@{GetIP}}
+\index{GetIP@{GetIP}!NetAddress@{NetAddress}}
+\subsubsection[{GetIP}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ NetAddress::GetIP (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_a7b868c36c3e1406e17d515c019db9e41}
+
+
+Retrieves stored IP address. 
+
+\begin{DoxyReturn}{Returns}
+IP address as a NULL terminated C string. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a566dbd2214680b2ddbf735527b9972a3}{
+\index{NetAddress@{NetAddress}!GetPort@{GetPort}}
+\index{GetPort@{GetPort}!NetAddress@{NetAddress}}
+\subsubsection[{GetPort}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short NetAddress::GetPort (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_a566dbd2214680b2ddbf735527b9972a3}
+
+
+Retrieves stored port. 
+
+\begin{DoxyReturn}{Returns}
+port in unsigned short form. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_ab0a0c10c2768f6f5bd6532c5a736f1e2}{
+\index{NetAddress@{NetAddress}!GetSockAddr@{GetSockAddr}}
+\index{GetSockAddr@{GetSockAddr}!NetAddress@{NetAddress}}
+\subsubsection[{GetSockAddr}]{\setlength{\rightskip}{0pt plus 5cm}sockaddr\_\-in NetAddress::GetSockAddr (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_ab0a0c10c2768f6f5bd6532c5a736f1e2}
+
+
+Retrieves winsock address stored. 
+
+\begin{DoxyReturn}{Returns}
+winsock address stored by this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a0262be45996adff068852a0a30f9abab}{
+\index{NetAddress@{NetAddress}!Load@{Load}}
+\index{Load@{Load}!NetAddress@{NetAddress}}
+\subsubsection[{Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetAddress} \& NetAddress::Load (
+\begin{DoxyParamCaption}
+\item[{sockaddr\_\-in}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a0262be45996adff068852a0a30f9abab}
+
+
+Loads a sockaddr\_\-in structure into this object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_ab2f1c7b1b892b621886ce82d5d920ab4}{
+\index{NetAddress@{NetAddress}!Load@{Load}}
+\index{Load@{Load}!NetAddress@{NetAddress}}
+\subsubsection[{Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetAddress} \& NetAddress::Load (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ ip, }
+\item[{unsigned short}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_ab2f1c7b1b892b621886ce82d5d920ab4}
+
+
+Loads an IP and port into the object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em ip}]IP to load, should be NULL terminated. \item[{\em port}]Port to load (optional, default 0).\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a9035af4c168773f2a0d06f865038af9f}{
+\index{NetAddress@{NetAddress}!Load@{Load}}
+\index{Load@{Load}!NetAddress@{NetAddress}}
+\subsubsection[{Load}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetAddress} \& NetAddress::Load (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a9035af4c168773f2a0d06f865038af9f}
+
+
+Loads another \hyperlink{class_net_address}{NetAddress} object into this object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a766b1d3613f0313361195496e7ddcc3d}{
+\index{NetAddress@{NetAddress}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!NetAddress@{NetAddress}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool NetAddress::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ testMe}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_a766b1d3613f0313361195496e7ddcc3d}
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em testMe}]Object to compare with this object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false If {\itshape testMe\/} and this object are identical. 
+
+true If {\itshape testMe\/} and this object are different in any way. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_adadc6cb5bad9ef164963bbd8836d8208}{
+\index{NetAddress@{NetAddress}!operator=@{operator=}}
+\index{operator=@{operator=}!NetAddress@{NetAddress}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetAddress} \& NetAddress::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_adadc6cb5bad9ef164963bbd8836d8208}
+
+
+Loads another \hyperlink{class_net_address}{NetAddress} object into this object. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a70e4f3cdeb959cad309e60f83d467fe3}{
+\index{NetAddress@{NetAddress}!operator==@{operator==}}
+\index{operator==@{operator==}!NetAddress@{NetAddress}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool NetAddress::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ testMe}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_a70e4f3cdeb959cad309e60f83d467fe3}
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em testMe}]Object to compare with this object. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true If {\itshape testMe\/} and this object are identical. 
+
+false If {\itshape testMe\/} and this object are different in any way. 
+\end{DoxyReturn}
+\hypertarget{class_net_address_a2fdc2546f2cf304c9be1f335bbf83697}{
+\index{NetAddress@{NetAddress}!SetFamily@{SetFamily}}
+\index{SetFamily@{SetFamily}!NetAddress@{NetAddress}}
+\subsubsection[{SetFamily}]{\setlength{\rightskip}{0pt plus 5cm}void NetAddress::SetFamily (
+\begin{DoxyParamCaption}
+\item[{ADDRESS\_\-FAMILY}]{ family = {\ttfamily AF\_\-INET}}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a2fdc2546f2cf304c9be1f335bbf83697}
+
+
+Sets stored family of address. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em family}]New family (optional, default = AF\_\-INET). \end{DoxyParams}
+\hypertarget{class_net_address_a182fe874139fc4c7204aeb32df77bafb}{
+\index{NetAddress@{NetAddress}!SetIP@{SetIP}}
+\index{SetIP@{SetIP}!NetAddress@{NetAddress}}
+\subsubsection[{SetIP}]{\setlength{\rightskip}{0pt plus 5cm}void NetAddress::SetIP (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{ IP}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_a182fe874139fc4c7204aeb32df77bafb}
+
+
+Sets stored IP. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em IP}]New IP. \end{DoxyParams}
+\hypertarget{class_net_address_ab29bb77be2a0010aac0074092b600c1d}{
+\index{NetAddress@{NetAddress}!SetPort@{SetPort}}
+\index{SetPort@{SetPort}!NetAddress@{NetAddress}}
+\subsubsection[{SetPort}]{\setlength{\rightskip}{0pt plus 5cm}void NetAddress::SetPort (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{ port}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_address_ab29bb77be2a0010aac0074092b600c1d}
+
+
+Sets stored port. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em port}]New port. \end{DoxyParams}
+\hypertarget{class_net_address_a573167584833614dda3422f3e5b19767}{
+\index{NetAddress@{NetAddress}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetAddress@{NetAddress}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetAddress::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_address_a573167584833614dda3422f3e5b19767}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_critical_section_a3af679f4de9f3e923dfc079f3604b354}{CriticalSection}.
+
+\hypertarget{class_net_address_ad6975fe1ea49c0088f8d7c96dcf2e42d}{
+\index{NetAddress@{NetAddress}!ToString@{ToString}}
+\index{ToString@{ToString}!NetAddress@{NetAddress}}
+\subsubsection[{ToString}]{\setlength{\rightskip}{0pt plus 5cm}char $\ast$ NetAddress::ToString (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_address_ad6975fe1ea49c0088f8d7c96dcf2e42d}
+
+
+Retrieve a string representation of this object. 
+
+\begin{DoxyReturn}{Returns}
+a string representation of this object in the form (excluding \char`\"{}) \char`\"{}IP = 192.168.1.1, port = 6000". 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetAddress.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetAddress.cpp\end{DoxyCompactItemize}

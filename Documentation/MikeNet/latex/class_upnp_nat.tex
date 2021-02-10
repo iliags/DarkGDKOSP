@@ -1,0 +1,63 @@
+\hypertarget{class_upnp_nat}{
+\section{UpnpNat Class Reference}
+\label{class_upnp_nat}\index{UpnpNat@{UpnpNat}}
+}
+
+
+Interface to coordinate communication between \hyperlink{class_upnp_nat_action}{UpnpNatAction} and \hyperlink{class_upnp_nat_communication}{UpnpNatCommunication}.  
+
+
+
+
+{\ttfamily \#include $<$UpnpNat.h$>$}
+
+Inheritance diagram for UpnpNat:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_upnp_nat}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_upnp_nat_a6b0ab324e2ac0c701bd00f79a44ed05e}{
+virtual void {\bfseries UpdateInfo} ()=0}
+\label{class_upnp_nat_a6b0ab324e2ac0c701bd00f79a44ed05e}
+
+\item 
+\hypertarget{class_upnp_nat_abad54b3d87df8d40fb9aa990aff93a1c}{
+virtual void {\bfseries AddPortMap} (long externalPort, const char $\ast$protocol, long internalPort, const char $\ast$internalIP, bool enabled, const char $\ast$description)=0}
+\label{class_upnp_nat_abad54b3d87df8d40fb9aa990aff93a1c}
+
+\item 
+\hypertarget{class_upnp_nat_af87bdaa605cba04c40265f7a6043ee1c}{
+virtual void {\bfseries DeletePortMap} (size\_\-t portMapID)=0}
+\label{class_upnp_nat_af87bdaa605cba04c40265f7a6043ee1c}
+
+\item 
+\hypertarget{class_upnp_nat_a5fc781a6c34caaaafa3430bdcf87564e}{
+virtual void {\bfseries DeletePortMap} (const char $\ast$protocol, long externalPort)=0}
+\label{class_upnp_nat_a5fc781a6c34caaaafa3430bdcf87564e}
+
+\item 
+\hypertarget{class_upnp_nat_af34429a4813ee0169fc1ef8ec859aa0a}{
+virtual size\_\-t {\bfseries GetPortMapAmount} () const =0}
+\label{class_upnp_nat_af34429a4813ee0169fc1ef8ec859aa0a}
+
+\item 
+\hypertarget{class_upnp_nat_a7987a780ea99752396fc7c42562b7f02}{
+virtual bool {\bfseries FindPortMap} (const char $\ast$protocol, long externalPort, size\_\-t $\ast$position=NULL)=0}
+\label{class_upnp_nat_a7987a780ea99752396fc7c42562b7f02}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Interface to coordinate communication between \hyperlink{class_upnp_nat_action}{UpnpNatAction} and \hyperlink{class_upnp_nat_communication}{UpnpNatCommunication}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/16/2010. 
+\end{DoxyRemark}
+
+
+The documentation for this class was generated from the following file:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/UpnpNat.h\end{DoxyCompactItemize}

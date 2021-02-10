@@ -1,0 +1,141 @@
+\hypertarget{classcl_send_no_fix}{
+\section{clSendNoFix Class Reference}
+\label{classcl_send_no_fix}\index{clSendNoFix@{clSendNoFix}}
+}
+
+
+Send class where packets sent have no postfix or prefix appended.  
+
+
+
+
+{\ttfamily \#include $<$clSendNoFix.h$>$}
+
+Inheritance diagram for clSendNoFix:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{classcl_send_no_fix}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_send_no_fix_ab5b03174a12c8320080d2d6c59fe6d12}{clSendNoFix} (const \hyperlink{classcl_packet}{clPacket} $\ast$\hyperlink{classcl_send_no_fix_a4e895114dfe8af11712e74afbc51b2c4}{packet}, bool \hyperlink{classcl_shared_send_aaaf411d2405cc3447a3bc11fe2ab2678}{block})
+\item 
+\hyperlink{classcl_send_no_fix_a9ca7a72e078a2010519a6a84bd9e9665}{$\sim$clSendNoFix} ()
+\item 
+WSABUF $\ast$ \hyperlink{classcl_send_no_fix_a5a54f2f0b035e4efdcd92fb303317c91}{GetSendBuffer} ()
+\item 
+size\_\-t \hyperlink{classcl_send_no_fix_adfbc420bd3ff9bd6fa61bf1eebdcffd4}{GetSendBufferAmount} () const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \hyperlink{classcl_packet}{clPacket} $\ast$ \hyperlink{classcl_send_no_fix_a4e895114dfe8af11712e74afbc51b2c4}{packet}
+\item 
+WSABUF \hyperlink{classcl_send_no_fix_a110a8eb3acce114667b80a03e9171139}{buffers} \mbox{[}\hyperlink{classcl_send_no_fix_a587bdc2cbd43afeca12c1f94501cc80a}{NUM\_\-BUFFERS}\mbox{]}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const size\_\-t \hyperlink{classcl_send_no_fix_a587bdc2cbd43afeca12c1f94501cc80a}{NUM\_\-BUFFERS} = 1
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Send class where packets sent have no postfix or prefix appended. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/28/2010.
+\end{DoxyRemark}
+This class is used for sending raw data with no modifications. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_send_no_fix_ab5b03174a12c8320080d2d6c59fe6d12}{
+\index{clSendNoFix@{clSendNoFix}!clSendNoFix@{clSendNoFix}}
+\index{clSendNoFix@{clSendNoFix}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{clSendNoFix}]{\setlength{\rightskip}{0pt plus 5cm}clSendNoFix::clSendNoFix (
+\begin{DoxyParamCaption}
+\item[{const {\bf clPacket} $\ast$}]{ packet, }
+\item[{bool}]{ block}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_send_no_fix_ab5b03174a12c8320080d2d6c59fe6d12}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em packet}]packet to send \item[{\em block}]if true packet will be sent synchronously, if false packet will be sent asynchronously \end{DoxyParams}
+
+
+If the send operation blocks until completion then the send operation does not need its own buffer because the send operation will be completed before further usage of the packet buffer takes place. The destructor MUST NOT deallocate the buffer memory since this will be done automatically by the destructors of the objects that the buffer points to (we are not doing any copying).
+
+If the send operation does not block until completion then it needs its own buffer, which is allocated from the heap and MUST be deallocated by the destructor. This is necassary because the packet buffer may be used by another thread during sending.
+
+\hypertarget{classcl_send_no_fix_a9ca7a72e078a2010519a6a84bd9e9665}{
+\index{clSendNoFix@{clSendNoFix}!$\sim$clSendNoFix@{$\sim$clSendNoFix}}
+\index{$\sim$clSendNoFix@{$\sim$clSendNoFix}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{$\sim$clSendNoFix}]{\setlength{\rightskip}{0pt plus 5cm}clSendNoFix::$\sim$clSendNoFix (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_send_no_fix_a9ca7a72e078a2010519a6a84bd9e9665}
+Destructor 
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_send_no_fix_a5a54f2f0b035e4efdcd92fb303317c91}{
+\index{clSendNoFix@{clSendNoFix}!GetSendBuffer@{GetSendBuffer}}
+\index{GetSendBuffer@{GetSendBuffer}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{GetSendBuffer}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF $\ast$ clSendNoFix::GetSendBuffer (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_send_no_fix_a5a54f2f0b035e4efdcd92fb303317c91}
+\begin{DoxyReturn}{Returns}
+An array of WSABUF containing data to be sent, by passing to WSASend. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_send_a14aee968543a692af33c5d170b2cc1fe}{clSharedSend}.
+
+\hypertarget{classcl_send_no_fix_adfbc420bd3ff9bd6fa61bf1eebdcffd4}{
+\index{clSendNoFix@{clSendNoFix}!GetSendBufferAmount@{GetSendBufferAmount}}
+\index{GetSendBufferAmount@{GetSendBufferAmount}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{GetSendBufferAmount}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clSendNoFix::GetSendBufferAmount (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{classcl_send_no_fix_adfbc420bd3ff9bd6fa61bf1eebdcffd4}
+\begin{DoxyReturn}{Returns}
+The number of elements in the array returned by GetSendBuffer 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{classcl_shared_send_afb9437432c75b81100927297961413a3}{clSharedSend}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classcl_send_no_fix_a110a8eb3acce114667b80a03e9171139}{
+\index{clSendNoFix@{clSendNoFix}!buffers@{buffers}}
+\index{buffers@{buffers}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{buffers}]{\setlength{\rightskip}{0pt plus 5cm}WSABUF {\bf clSendNoFix::buffers}\mbox{[}{\bf NUM\_\-BUFFERS}\mbox{]}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_no_fix_a110a8eb3acce114667b80a03e9171139}
+Array of buffers to be sent
+\begin{DoxyItemize}
+\item e0 is packet data 
+\end{DoxyItemize}\hypertarget{classcl_send_no_fix_a587bdc2cbd43afeca12c1f94501cc80a}{
+\index{clSendNoFix@{clSendNoFix}!NUM\_\-BUFFERS@{NUM\_\-BUFFERS}}
+\index{NUM\_\-BUFFERS@{NUM\_\-BUFFERS}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{NUM\_\-BUFFERS}]{\setlength{\rightskip}{0pt plus 5cm}const size\_\-t {\bf clSendNoFix::NUM\_\-BUFFERS} = 1\hspace{0.3cm}{\ttfamily  \mbox{[}static, private\mbox{]}}}}
+\label{classcl_send_no_fix_a587bdc2cbd43afeca12c1f94501cc80a}
+Number of elements in buffers array \hypertarget{classcl_send_no_fix_a4e895114dfe8af11712e74afbc51b2c4}{
+\index{clSendNoFix@{clSendNoFix}!packet@{packet}}
+\index{packet@{packet}!clSendNoFix@{clSendNoFix}}
+\subsubsection[{packet}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clPacket}$\ast$ {\bf clSendNoFix::packet}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_send_no_fix_a4e895114dfe8af11712e74afbc51b2c4}
+Pointer to packet containing data to be sent 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSendNoFix.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clSendNoFix.cpp\end{DoxyCompactItemize}

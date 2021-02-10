@@ -1,0 +1,150 @@
+\hypertarget{class_thread_message_item_add_port_map}{
+\section{ThreadMessageItemAddPortMap Class Reference}
+\label{class_thread_message_item_add_port_map}\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+}
+
+
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}.  
+
+
+
+
+{\ttfamily \#include $<$ThreadMessageItemAddPortMap.h$>$}
+
+Inheritance diagram for ThreadMessageItemAddPortMap:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_thread_message_item_add_port_map}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_thread_message_item_add_port_map_ab5648afbfc6193413a99c57e874b51f9}{ThreadMessageItemAddPortMap} (\hyperlink{class_upnp_nat_action}{UpnpNatAction} $\ast$\hyperlink{class_thread_message_item_add_port_map_ab99dd390021e1aa79acee63084aa7fe7}{takeActionOnMe}, long \hyperlink{class_thread_message_item_add_port_map_a9a93d83b98c987991cef541605c639f4}{externalPort}, const \hyperlink{class_packet}{Packet} \&\hyperlink{class_thread_message_item_add_port_map_a7dab0698e5517343896ba6960ec04c55}{protocol}, long \hyperlink{class_thread_message_item_add_port_map_ae0c9ba46d365ebcd81301d1df926045e}{internalPort}, const \hyperlink{class_packet}{Packet} \&\hyperlink{class_thread_message_item_add_port_map_adfd5ac5864623818534ae91fc80b7192}{internalIP}, bool \hyperlink{class_thread_message_item_add_port_map_a09fd1018af9c5324812bc962f59eb174}{enabled}, const \hyperlink{class_packet}{Packet} \&\hyperlink{class_thread_message_item_add_port_map_a3e1a5d84d0604a4ef2163dea31755ecb}{description})
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_add_port_map_ae474c9a0625f22e8a02b6a8008a8871e}{
+\hyperlink{class_thread_message_item_add_port_map_ae474c9a0625f22e8a02b6a8008a8871e}{$\sim$ThreadMessageItemAddPortMap} (void)}
+\label{class_thread_message_item_add_port_map_ae474c9a0625f22e8a02b6a8008a8871e}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_thread_message_item_add_port_map_aa1a2e06742183c7fdf839e43fe761a36}{TakeAction} ()
+\begin{DoxyCompactList}\small\item\em Adds the port map to the UPnP NAT list. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_thread_message_item_add_port_map_a9a93d83b98c987991cef541605c639f4}{
+long \hyperlink{class_thread_message_item_add_port_map_a9a93d83b98c987991cef541605c639f4}{externalPort}}
+\label{class_thread_message_item_add_port_map_a9a93d83b98c987991cef541605c639f4}
+
+\begin{DoxyCompactList}\small\item\em External port of new port map. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_thread_message_item_add_port_map_a7dab0698e5517343896ba6960ec04c55}{protocol}
+\begin{DoxyCompactList}\small\item\em Protocol of new port map. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_add_port_map_ae0c9ba46d365ebcd81301d1df926045e}{
+long \hyperlink{class_thread_message_item_add_port_map_ae0c9ba46d365ebcd81301d1df926045e}{internalPort}}
+\label{class_thread_message_item_add_port_map_ae0c9ba46d365ebcd81301d1df926045e}
+
+\begin{DoxyCompactList}\small\item\em Internal port of new port map. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_thread_message_item_add_port_map_adfd5ac5864623818534ae91fc80b7192}{internalIP}
+\begin{DoxyCompactList}\small\item\em Internal IP of new port map. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_add_port_map_a09fd1018af9c5324812bc962f59eb174}{
+bool \hyperlink{class_thread_message_item_add_port_map_a09fd1018af9c5324812bc962f59eb174}{enabled}}
+\label{class_thread_message_item_add_port_map_a09fd1018af9c5324812bc962f59eb174}
+
+\begin{DoxyCompactList}\small\item\em If true the port map should be created enabled. \item\end{DoxyCompactList}\item 
+\hyperlink{class_packet}{Packet} \hyperlink{class_thread_message_item_add_port_map_a3e1a5d84d0604a4ef2163dea31755ecb}{description}
+\begin{DoxyCompactList}\small\item\em Description of the port map. \item\end{DoxyCompactList}\item 
+\hypertarget{class_thread_message_item_add_port_map_ab99dd390021e1aa79acee63084aa7fe7}{
+\hyperlink{class_upnp_nat_action}{UpnpNatAction} $\ast$ \hyperlink{class_thread_message_item_add_port_map_ab99dd390021e1aa79acee63084aa7fe7}{takeActionOnMe}}
+\label{class_thread_message_item_add_port_map_ab99dd390021e1aa79acee63084aa7fe7}
+
+\begin{DoxyCompactList}\small\item\em Object to take action on. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Message for use with \hyperlink{class_thread_single_message}{ThreadSingleMessage}. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 9/17/2010. 
+\end{DoxyRemark}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_thread_message_item_add_port_map_ab5648afbfc6193413a99c57e874b51f9}{
+\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}!ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}!ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+\subsubsection[{ThreadMessageItemAddPortMap}]{\setlength{\rightskip}{0pt plus 5cm}ThreadMessageItemAddPortMap::ThreadMessageItemAddPortMap (
+\begin{DoxyParamCaption}
+\item[{{\bf UpnpNatAction} $\ast$}]{ takeActionOnMe, }
+\item[{long}]{ externalPort, }
+\item[{const {\bf Packet} \&}]{ protocol, }
+\item[{long}]{ internalPort, }
+\item[{const {\bf Packet} \&}]{ internalIP, }
+\item[{bool}]{ enabled, }
+\item[{const {\bf Packet} \&}]{ description}
+\end{DoxyParamCaption}
+)}}
+\label{class_thread_message_item_add_port_map_ab5648afbfc6193413a99c57e874b51f9}
+
+
+Constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em takeActionOnMe}]Object to take action on. \item[{\em externalPort}]The external port. \item[{\em protocol}]The protocol. \item[{\em internalPort}]The internal port. \item[{\em internalIP}]The internal ip. \item[{\em enabled}]True if the entry should be enabled, false if not. \item[{\em description}]A description of the port map. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_thread_message_item_add_port_map_aa1a2e06742183c7fdf839e43fe761a36}{
+\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}!TakeAction@{TakeAction}}
+\index{TakeAction@{TakeAction}!ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+\subsubsection[{TakeAction}]{\setlength{\rightskip}{0pt plus 5cm}void $\ast$ ThreadMessageItemAddPortMap::TakeAction (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_thread_message_item_add_port_map_aa1a2e06742183c7fdf839e43fe761a36}
+
+
+Adds the port map to the UPnP NAT list. 
+
+\begin{DoxyReturn}{Returns}
+NULL. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_thread_message_item_ae09a47834e313524b19700ebc92b0dfe}{ThreadMessageItem}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_thread_message_item_add_port_map_a3e1a5d84d0604a4ef2163dea31755ecb}{
+\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}!description@{description}}
+\index{description@{description}!ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+\subsubsection[{description}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf ThreadMessageItemAddPortMap::description}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_add_port_map_a3e1a5d84d0604a4ef2163dea31755ecb}
+
+
+Description of the port map. 
+
+Stored as a packet because it is important that the string remains valid until the thread has finished using it. \hypertarget{class_thread_message_item_add_port_map_adfd5ac5864623818534ae91fc80b7192}{
+\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}!internalIP@{internalIP}}
+\index{internalIP@{internalIP}!ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+\subsubsection[{internalIP}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf ThreadMessageItemAddPortMap::internalIP}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_add_port_map_adfd5ac5864623818534ae91fc80b7192}
+
+
+Internal IP of new port map. 
+
+Stored as a packet because it is important that the string remains valid until the thread has finished using it. \hypertarget{class_thread_message_item_add_port_map_a7dab0698e5517343896ba6960ec04c55}{
+\index{ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}!protocol@{protocol}}
+\index{protocol@{protocol}!ThreadMessageItemAddPortMap@{ThreadMessageItemAddPortMap}}
+\subsubsection[{protocol}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Packet} {\bf ThreadMessageItemAddPortMap::protocol}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_thread_message_item_add_port_map_a7dab0698e5517343896ba6960ec04c55}
+
+
+Protocol of new port map. 
+
+Stored as a packet because it is important that the string remains valid until the thread has finished using it. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemAddPortMap.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/ThreadMessageItemAddPortMap.cpp\end{DoxyCompactItemize}

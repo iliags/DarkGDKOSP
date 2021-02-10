@@ -1,0 +1,762 @@
+\hypertarget{class_net_socket_simple}{
+\section{NetSocketSimple Class Reference}
+\label{class_net_socket_simple}\index{NetSocketSimple@{NetSocketSimple}}
+}
+
+
+Simple socket with basic functionality.  
+
+
+
+
+{\ttfamily \#include $<$NetSocketSimple.h$>$}
+
+Inheritance diagram for NetSocketSimple:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_net_socket_simple}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{Protocol} \{ \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0a01b7e644d632a43bbec04dbd373a1b34}{UDP}, 
+\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}{TCP}
+ \}
+\begin{DoxyCompactList}\small\item\em Protocol types that socket can represent. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_simple_a80a430ef1223cbe49d20182673c93efc}{
+\hyperlink{class_net_socket_simple_a80a430ef1223cbe49d20182673c93efc}{NetSocketSimple} ()}
+\label{class_net_socket_simple_a80a430ef1223cbe49d20182673c93efc}
+
+\begin{DoxyCompactList}\small\item\em Constructor. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_simple_a83d123c03cf3727aaf9f99bfe79328bc}{
+virtual \hyperlink{class_net_socket_simple_a83d123c03cf3727aaf9f99bfe79328bc}{$\sim$NetSocketSimple} ()}
+\label{class_net_socket_simple_a83d123c03cf3727aaf9f99bfe79328bc}
+
+\begin{DoxyCompactList}\small\item\em Destructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_simple_abf0dab7f59120c46b99d5ebd1b120790}{NetSocketSimple} (const \hyperlink{class_net_socket_simple}{NetSocketSimple} \&)
+\begin{DoxyCompactList}\small\item\em Shallow copy constructor. \item\end{DoxyCompactList}\item 
+\hyperlink{class_net_socket_simple}{NetSocketSimple} \& \hyperlink{class_net_socket_simple_afa1b2f2cd2015701d15b4d0428cde8be}{operator=} (const \hyperlink{class_net_socket_simple}{NetSocketSimple} \&)
+\begin{DoxyCompactList}\small\item\em Shallow assignment operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a2b59ac8bb50a0481afe94ae628f8b2e7}{operator==} (const \hyperlink{class_net_socket_simple}{NetSocketSimple} \&compare) const 
+\begin{DoxyCompactList}\small\item\em Equality operator. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a96543f144f440b39c3c7bf3415bd5f39}{operator!=} (const \hyperlink{class_net_socket_simple}{NetSocketSimple} \&compare) const 
+\begin{DoxyCompactList}\small\item\em Inequality operator. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_socket_simple_abef9c4aaf143e251c4715c76f00d9b4f}{GetLocalAddress} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves local address information about the socket. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_ae2ffd26bbc701cbfa0262e59d8ce1e66}{IsSetup} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the socket has been setup. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_socket_simple_a2ec9f15bf28b6ae73783d03c6aedffec}{Close} ()
+\begin{DoxyCompactList}\small\item\em Begin closing winsock socket. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_a1a8992a2f6b1dfbd4a328aff5a898c5c}{Setup} (\hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{Protocol} protocol)
+\begin{DoxyCompactList}\small\item\em Sets up the socket. After being set up socket options can be changed. \item\end{DoxyCompactList}\item 
+virtual void \hyperlink{class_net_socket_simple_a891ba8e42ebdea12ee56888e5adf942d}{LoadSOCKET} (SOCKET operationalSocket, const \hyperlink{class_net_address}{NetAddress} \&\hyperlink{class_net_socket_simple_a76881498ffe79f92e87515260fe4d44a}{addressConnected})
+\begin{DoxyCompactList}\small\item\em Loads a winsock socket object that is already fully operational. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_ae6712327a658f118d91fa7057ef40b92}{SetReusable} ()
+\begin{DoxyCompactList}\small\item\em Enables the reusable option for the socket. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_a6d1da3b40e5df6b90571cf1592ca4fa2}{Bind} (const \hyperlink{class_net_address}{NetAddress} \&connectAddr)
+\begin{DoxyCompactList}\small\item\em Binds the socket to a local address. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_a3388c97f559fd29258a45d594d5fe401}{SetHardShutdown} ()
+\begin{DoxyCompactList}\small\item\em Enables the hard shutdown option. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_a50f8eb287f99eca4d35f6e4ac208ff7b}{SetListening} ()
+\begin{DoxyCompactList}\small\item\em Sets the socket to listening mode. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_aa35db48386c895d11792a9d67bfe5e50}{SetBroadcasting} ()
+\begin{DoxyCompactList}\small\item\em Enables broadcasting. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_af2aded91865a8a4c42f0973eb141a485}{DisableNagle} ()
+\begin{DoxyCompactList}\small\item\em Disables the Nagle algorithm. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{Connect} (const \hyperlink{class_net_address}{NetAddress} \&connectAddr)
+\begin{DoxyCompactList}\small\item\em Connects the socket to a remote address. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_abc58a547210d4863703cf7fbb32471fc}{IsFullyOperational} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the socket is fully operational. \item\end{DoxyCompactList}\item 
+const \hyperlink{class_net_address}{NetAddress} \& \hyperlink{class_net_socket_simple_aaf52eb5ab502e244ad15aba2b3ec3d49}{GetAddressConnected} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the address that the socket is connected to. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a473a943c476150a8f00680f65d556bdf}{IsReusable} () const 
+\begin{DoxyCompactList}\small\item\em Retrieves the reusable option for the socket. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_aeb463205e72dbde3d96cd1e461fec94e}{IsBound} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the socket has been bound. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_af90d97cee783650700cb75748ea988e4}{IsHardShutdownEnabled} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether hard shutdown is enabled. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_simple_a12614a447ec9d5421d10cc665d5cc494}{
+bool \hyperlink{class_net_socket_simple_a12614a447ec9d5421d10cc665d5cc494}{IsNagleEnabled} () const }
+\label{class_net_socket_simple_a12614a447ec9d5421d10cc665d5cc494}
+
+\begin{DoxyCompactList}\small\item\em Determines whether the Nagle algorithm is enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a1f70c51366efb20e63f628fdb1e5a2a2}{IsBroadcasting} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether broadcasting is enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a180e2c21304ca37bc1e1e92fb84f3fcc}{IsListening} () const 
+\begin{DoxyCompactList}\small\item\em Determines whether the socket is in listening mode. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{class_net_socket_simple_a69c2149f61ab6af018faf89e61ec6592}{TestClass} ()
+\begin{DoxyCompactList}\small\item\em Tests class. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_net_socket_simple_a2103700b007ee44bf91006dabc05aa90}{SetFullyOperational} (bool operational)
+\begin{DoxyCompactList}\small\item\em Manually changes the fully operational setting. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{reusable}
+\begin{DoxyCompactList}\small\item\em True if the socket is reusable. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a713a67b50645a31ace94f50aa1bbc289}{hardShutdown}
+\begin{DoxyCompactList}\small\item\em True if hard shutdown is enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{nagleEnabled}
+\begin{DoxyCompactList}\small\item\em True if the Nagle algorithm is enabled. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_simple_a3a39c86e3aa202ccb7df330a44c5b574}{
+\hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_socket_simple_a3a39c86e3aa202ccb7df330a44c5b574}{addressLocal}}
+\label{class_net_socket_simple_a3a39c86e3aa202ccb7df330a44c5b574}
+
+\begin{DoxyCompactList}\small\item\em Stores the local address that the socket is bound to. \item\end{DoxyCompactList}\item 
+SOCKET \hyperlink{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}{winsockSocket}
+\begin{DoxyCompactList}\small\item\em Winsock socket used to transfer data. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_simple_a849d10ef2a3b2253949b39164681830e}{
+void \hyperlink{class_net_socket_simple_a849d10ef2a3b2253949b39164681830e}{DefaultVariables} ()}
+\label{class_net_socket_simple_a849d10ef2a3b2253949b39164681830e}
+
+\begin{DoxyCompactList}\small\item\em Sets all variables to default. \item\end{DoxyCompactList}\item 
+void \hyperlink{class_net_socket_simple_aaca0cc79a47e33bb1a0c9eb431e8307a}{Copy} (const \hyperlink{class_net_socket_simple}{NetSocketSimple} \&copyMe)
+\begin{DoxyCompactList}\small\item\em Shallow copy / assignment operator helper. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_net_socket_simple_a09e51fe70dc3312db8027e60c2a811e4}{
+bool \hyperlink{class_net_socket_simple_a09e51fe70dc3312db8027e60c2a811e4}{bound}}
+\label{class_net_socket_simple_a09e51fe70dc3312db8027e60c2a811e4}
+
+\begin{DoxyCompactList}\small\item\em True when the socket is bound to a local address using \hyperlink{class_net_socket_simple_a6d1da3b40e5df6b90571cf1592ca4fa2}{Bind()}. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_simple_afe0c45b11920339fb414dac20e7522c0}{
+bool \hyperlink{class_net_socket_simple_afe0c45b11920339fb414dac20e7522c0}{fullyOperational}}
+\label{class_net_socket_simple_afe0c45b11920339fb414dac20e7522c0}
+
+\begin{DoxyCompactList}\small\item\em True when the socket is fully operational. This means that data can be sent and received on the socket as it is completely set up. \item\end{DoxyCompactList}\item 
+\hypertarget{class_net_socket_simple_a76881498ffe79f92e87515260fe4d44a}{
+\hyperlink{class_net_address}{NetAddress} \hyperlink{class_net_socket_simple_a76881498ffe79f92e87515260fe4d44a}{addressConnected}}
+\label{class_net_socket_simple_a76881498ffe79f92e87515260fe4d44a}
+
+\begin{DoxyCompactList}\small\item\em Stores address that socket is connected to. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_ae423ed3be7d1b07d67dbdf34306bbc72}{broadcasting}
+\begin{DoxyCompactList}\small\item\em True if the socket has broadcasting enabled. \item\end{DoxyCompactList}\item 
+bool \hyperlink{class_net_socket_simple_ace2f1bd34b944f94a82eb1600a9d9823}{listening}
+\begin{DoxyCompactList}\small\item\em True if socket is in listening mode. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Simple socket with basic functionality. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 3/28/2010.
+\end{DoxyRemark}
+The socket wraps around a winsock SOCKET object and is initially unusable.\par
+\par
+
+
+First the socket needs to be setup, this is done either by WSAAccept when a new TCP connection is made, or more commonly by the Setup method. Once setup, socket options can be changed and then finally, the socket is bound to a local address using Bind and the socket is ready to be used.\par
+\par
+
+
+This class is not thread safe. 
+
+\subsection{Member Enumeration Documentation}
+\hypertarget{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}{
+\index{NetSocketSimple@{NetSocketSimple}!Protocol@{Protocol}}
+\index{Protocol@{Protocol}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{Protocol}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf NetSocketSimple::Protocol}}}
+\label{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0}
+
+
+Protocol types that socket can represent. 
+
+\begin{Desc}
+\item[Enumerator: ]\par
+\begin{description}
+\index{UDP@{UDP}!NetSocketSimple@{NetSocketSimple}}\index{NetSocketSimple@{NetSocketSimple}!UDP@{UDP}}\item[{\em 
+\hypertarget{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0a01b7e644d632a43bbec04dbd373a1b34}{
+UDP}
+\label{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0a01b7e644d632a43bbec04dbd373a1b34}
+}]User Datagram Protocol:
+\begin{DoxyItemize}
+\item Raw data is received in packet form.
+\item Raw data can be received out of order.
+\item Usually quicker than TCP.
+\item Does not deal well with the transfer of large packets.
+\item Hard shutdown socket option cannot be used. 
+\end{DoxyItemize}\index{TCP@{TCP}!NetSocketSimple@{NetSocketSimple}}\index{NetSocketSimple@{NetSocketSimple}!TCP@{TCP}}\item[{\em 
+\hypertarget{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}{
+TCP}
+\label{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}
+}]Transmission Control Protocol:
+\begin{DoxyItemize}
+\item Raw data is received as a stream, packets sent are received in chunks.
+\item Raw data cannot be out of order.
+\item Usually slower than UDP.
+\item Has no problem with large amounts of data.
+\item Small overhead (in terms of total amount of data necessary to transfer) when sending small amounts of data intermittently. 
+\end{DoxyItemize}\end{description}
+\end{Desc}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_net_socket_simple_abf0dab7f59120c46b99d5ebd1b120790}{
+\index{NetSocketSimple@{NetSocketSimple}!NetSocketSimple@{NetSocketSimple}}
+\index{NetSocketSimple@{NetSocketSimple}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{NetSocketSimple}]{\setlength{\rightskip}{0pt plus 5cm}NetSocketSimple::NetSocketSimple (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketSimple} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_abf0dab7f59120c46b99d5ebd1b120790}
+
+
+Shallow copy constructor. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_net_socket_simple_a6d1da3b40e5df6b90571cf1592ca4fa2}{
+\index{NetSocketSimple@{NetSocketSimple}!Bind@{Bind}}
+\index{Bind@{Bind}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{Bind}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::Bind (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ localAddr}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_a6d1da3b40e5df6b90571cf1592ca4fa2}
+
+
+Binds the socket to a local address. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em localAddr}]Local address to bind to. If IP or port value is 0 then winsock will choose one automatically.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket has already been bound. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_a2ec9f15bf28b6ae73783d03c6aedffec}{
+\index{NetSocketSimple@{NetSocketSimple}!Close@{Close}}
+\index{Close@{Close}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{Close}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::Close (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_simple_a2ec9f15bf28b6ae73783d03c6aedffec}
+
+
+Begin closing winsock socket. 
+
+\begin{DoxyWarning}{Warning}
+Cancel notifications are sent out to all pending operations but the socket itself is not closed until all operations have finished which may or may not have occurred by the time this method returns. Do not assume that the socket is fully closed and that all operations have completed once this method returns.
+\end{DoxyWarning}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \end{DoxyExceptions}
+
+
+Reimplemented in \hyperlink{class_net_socket_a85c6cba30c3a8d780bb24d7af8d0a561}{NetSocket}, \hyperlink{class_net_socket_t_c_p_a407a844020c03e9dd24048f38a4d2c1f}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_a2363fe21c1fa15e7781766c952c72e95}{NetSocketUDP}.
+
+\hypertarget{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{
+\index{NetSocketSimple@{NetSocketSimple}!Connect@{Connect}}
+\index{Connect@{Connect}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{Connect}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::Connect (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetAddress} \&}]{ connectAddr}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}
+
+
+Connects the socket to a remote address. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em connectAddr}]Address to connect to.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_aaca0cc79a47e33bb1a0c9eb431e8307a}{
+\index{NetSocketSimple@{NetSocketSimple}!Copy@{Copy}}
+\index{Copy@{Copy}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{Copy}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::Copy (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketSimple} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_simple_aaca0cc79a47e33bb1a0c9eb431e8307a}
+
+
+Shallow copy / assignment operator helper. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\hypertarget{class_net_socket_simple_af2aded91865a8a4c42f0973eb141a485}{
+\index{NetSocketSimple@{NetSocketSimple}!DisableNagle@{DisableNagle}}
+\index{DisableNagle@{DisableNagle}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{DisableNagle}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::DisableNagle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_af2aded91865a8a4c42f0973eb141a485}
+
+
+Disables the Nagle algorithm. 
+
+See \hyperlink{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{NetSocketSimple::nagleEnabled} for more information.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket has been bound. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_aaf52eb5ab502e244ad15aba2b3ec3d49}{
+\index{NetSocketSimple@{NetSocketSimple}!GetAddressConnected@{GetAddressConnected}}
+\index{GetAddressConnected@{GetAddressConnected}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{GetAddressConnected}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetSocketSimple::GetAddressConnected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_aaf52eb5ab502e244ad15aba2b3ec3d49}
+
+
+Retrieves the address that the socket is connected to. 
+
+\begin{DoxyReturn}{Returns}
+reference to address that socket is connected to. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_abef9c4aaf143e251c4715c76f00d9b4f}{
+\index{NetSocketSimple@{NetSocketSimple}!GetLocalAddress@{GetLocalAddress}}
+\index{GetLocalAddress@{GetLocalAddress}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{GetLocalAddress}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf NetAddress} \& NetSocketSimple::GetLocalAddress (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_abef9c4aaf143e251c4715c76f00d9b4f}
+
+
+Retrieves local address information about the socket. 
+
+\begin{DoxyReturn}{Returns}
+local address information of the socket. This reference will remain valid and unmodified until the next call. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_aeb463205e72dbde3d96cd1e461fec94e}{
+\index{NetSocketSimple@{NetSocketSimple}!IsBound@{IsBound}}
+\index{IsBound@{IsBound}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsBound}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsBound (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_aeb463205e72dbde3d96cd1e461fec94e}
+
+
+Determines whether the socket has been bound. 
+
+The socket can be bound using \hyperlink{class_net_socket_simple_a6d1da3b40e5df6b90571cf1592ca4fa2}{Bind()}.
+
+\begin{DoxyReturn}{Returns}
+true if the socket has been bound. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_a1f70c51366efb20e63f628fdb1e5a2a2}{
+\index{NetSocketSimple@{NetSocketSimple}!IsBroadcasting@{IsBroadcasting}}
+\index{IsBroadcasting@{IsBroadcasting}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsBroadcasting}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsBroadcasting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_a1f70c51366efb20e63f628fdb1e5a2a2}
+
+
+Determines whether broadcasting is enabled. 
+
+See \hyperlink{class_net_socket_simple_ae423ed3be7d1b07d67dbdf34306bbc72}{NetSocketSimple::broadcasting} for more information.
+
+\begin{DoxyReturn}{Returns}
+true if broadcasting is enabled, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_abc58a547210d4863703cf7fbb32471fc}{
+\index{NetSocketSimple@{NetSocketSimple}!IsFullyOperational@{IsFullyOperational}}
+\index{IsFullyOperational@{IsFullyOperational}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsFullyOperational}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsFullyOperational (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_abc58a547210d4863703cf7fbb32471fc}
+
+
+Determines whether the socket is fully operational. 
+
+\begin{DoxyReturn}{Returns}
+true if the socket is fully operational. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_af90d97cee783650700cb75748ea988e4}{
+\index{NetSocketSimple@{NetSocketSimple}!IsHardShutdownEnabled@{IsHardShutdownEnabled}}
+\index{IsHardShutdownEnabled@{IsHardShutdownEnabled}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsHardShutdownEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsHardShutdownEnabled (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_af90d97cee783650700cb75748ea988e4}
+
+
+Determines whether hard shutdown is enabled. 
+
+See \hyperlink{class_net_socket_simple_a3388c97f559fd29258a45d594d5fe401}{SetHardShutdown()} for more information.
+
+\begin{DoxyReturn}{Returns}
+true if hard shutdown is enabled. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_a180e2c21304ca37bc1e1e92fb84f3fcc}{
+\index{NetSocketSimple@{NetSocketSimple}!IsListening@{IsListening}}
+\index{IsListening@{IsListening}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsListening}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsListening (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_a180e2c21304ca37bc1e1e92fb84f3fcc}
+
+
+Determines whether the socket is in listening mode. 
+
+See \hyperlink{class_net_socket_simple_ace2f1bd34b944f94a82eb1600a9d9823}{NetSocketSimple::listening} for more information.
+
+\begin{DoxyReturn}{Returns}
+true if socket is in listening mode, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_a473a943c476150a8f00680f65d556bdf}{
+\index{NetSocketSimple@{NetSocketSimple}!IsReusable@{IsReusable}}
+\index{IsReusable@{IsReusable}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsReusable}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsReusable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_a473a943c476150a8f00680f65d556bdf}
+
+
+Retrieves the reusable option for the socket. 
+
+See \hyperlink{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{NetSocketSimple::reusable} for more information.
+
+The socket can be set to reusable using \hyperlink{class_net_socket_simple_ae6712327a658f118d91fa7057ef40b92}{SetReusable()}.
+
+\begin{DoxyReturn}{Returns}
+true if the socket is reusable, false if not. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_ae2ffd26bbc701cbfa0262e59d8ce1e66}{
+\index{NetSocketSimple@{NetSocketSimple}!IsSetup@{IsSetup}}
+\index{IsSetup@{IsSetup}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{IsSetup}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::IsSetup (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_ae2ffd26bbc701cbfa0262e59d8ce1e66}
+
+
+Determines whether the socket has been setup. 
+
+The socket can be setup using \hyperlink{class_net_socket_simple_a1a8992a2f6b1dfbd4a328aff5a898c5c}{Setup()}.
+
+\begin{DoxyReturn}{Returns}
+true if the socket is setup, false if it is not. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_a891ba8e42ebdea12ee56888e5adf942d}{
+\index{NetSocketSimple@{NetSocketSimple}!LoadSOCKET@{LoadSOCKET}}
+\index{LoadSOCKET@{LoadSOCKET}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{LoadSOCKET}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::LoadSOCKET (
+\begin{DoxyParamCaption}
+\item[{SOCKET}]{ operationalSocket, }
+\item[{const {\bf NetAddress} \&}]{ addressConnected}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_net_socket_simple_a891ba8e42ebdea12ee56888e5adf942d}
+
+
+Loads a winsock socket object that is already fully operational. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operationalSocket}]Operational winsock socket. \item[{\em addressConnected}]Address that {\itshape operationalSocket\/} is connected to.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If this socket has already been setup. \end{DoxyExceptions}
+
+
+Reimplemented in \hyperlink{class_net_socket_t_c_p_a2c2fc5b7ff9f35930f566b6913b67aef}{NetSocketTCP}.
+
+\hypertarget{class_net_socket_simple_a96543f144f440b39c3c7bf3415bd5f39}{
+\index{NetSocketSimple@{NetSocketSimple}!operator!=@{operator!=}}
+\index{operator!=@{operator!=}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{operator!=}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::operator!= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketSimple} \&}]{ compare}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_a96543f144f440b39c3c7bf3415bd5f39}
+
+
+Inequality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+false if {\itshape compare\/} is identical to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_afa1b2f2cd2015701d15b4d0428cde8be}{
+\index{NetSocketSimple@{NetSocketSimple}!operator=@{operator=}}
+\index{operator=@{operator=}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{operator=}]{\setlength{\rightskip}{0pt plus 5cm}{\bf NetSocketSimple} \& NetSocketSimple::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketSimple} \&}]{ copyMe}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_afa1b2f2cd2015701d15b4d0428cde8be}
+
+
+Shallow assignment operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em copyMe}]Object to copy. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+reference to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_a2b59ac8bb50a0481afe94ae628f8b2e7}{
+\index{NetSocketSimple@{NetSocketSimple}!operator==@{operator==}}
+\index{operator==@{operator==}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{operator==}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf NetSocketSimple} \&}]{ compare}
+\end{DoxyParamCaption}
+) const}}
+\label{class_net_socket_simple_a2b59ac8bb50a0481afe94ae628f8b2e7}
+
+
+Equality operator. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em compare}]Object to compare with this object.\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if {\itshape compare\/} is identical to this object. 
+\end{DoxyReturn}
+\hypertarget{class_net_socket_simple_aa35db48386c895d11792a9d67bfe5e50}{
+\index{NetSocketSimple@{NetSocketSimple}!SetBroadcasting@{SetBroadcasting}}
+\index{SetBroadcasting@{SetBroadcasting}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{SetBroadcasting}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::SetBroadcasting (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_aa35db48386c895d11792a9d67bfe5e50}
+
+
+Enables broadcasting. 
+
+See \hyperlink{class_net_socket_simple_ae423ed3be7d1b07d67dbdf34306bbc72}{NetSocketSimple::broadcasting} for more information.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket has been bound. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_a2103700b007ee44bf91006dabc05aa90}{
+\index{NetSocketSimple@{NetSocketSimple}!SetFullyOperational@{SetFullyOperational}}
+\index{SetFullyOperational@{SetFullyOperational}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{SetFullyOperational}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::SetFullyOperational (
+\begin{DoxyParamCaption}
+\item[{bool}]{ operational}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_simple_a2103700b007ee44bf91006dabc05aa90}
+
+
+Manually changes the fully operational setting. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em operational}]Option. \end{DoxyParams}
+\hypertarget{class_net_socket_simple_a3388c97f559fd29258a45d594d5fe401}{
+\index{NetSocketSimple@{NetSocketSimple}!SetHardShutdown@{SetHardShutdown}}
+\index{SetHardShutdown@{SetHardShutdown}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{SetHardShutdown}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::SetHardShutdown (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_a3388c97f559fd29258a45d594d5fe401}
+
+
+Enables the hard shutdown option. 
+
+See \hyperlink{class_net_socket_simple_a713a67b50645a31ace94f50aa1bbc289}{NetSocketSimple::hardShutdown} for more information.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket has been bound. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_a50f8eb287f99eca4d35f6e4ac208ff7b}{
+\index{NetSocketSimple@{NetSocketSimple}!SetListening@{SetListening}}
+\index{SetListening@{SetListening}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{SetListening}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::SetListening (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_a50f8eb287f99eca4d35f6e4ac208ff7b}
+
+
+Sets the socket to listening mode. 
+
+See \hyperlink{class_net_socket_simple_ace2f1bd34b944f94a82eb1600a9d9823}{NetSocketSimple::listening} for more information.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket has been bound. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_ae6712327a658f118d91fa7057ef40b92}{
+\index{NetSocketSimple@{NetSocketSimple}!SetReusable@{SetReusable}}
+\index{SetReusable@{SetReusable}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{SetReusable}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::SetReusable (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_ae6712327a658f118d91fa7057ef40b92}
+
+
+Enables the reusable option for the socket. 
+
+See \hyperlink{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{NetSocketSimple::reusable} for more information.
+
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is not setup. \item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket has been bound. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_a1a8992a2f6b1dfbd4a328aff5a898c5c}{
+\index{NetSocketSimple@{NetSocketSimple}!Setup@{Setup}}
+\index{Setup@{Setup}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{Setup}]{\setlength{\rightskip}{0pt plus 5cm}void NetSocketSimple::Setup (
+\begin{DoxyParamCaption}
+\item[{{\bf NetSocketSimple::Protocol}}]{ protocol}
+\end{DoxyParamCaption}
+)}}
+\label{class_net_socket_simple_a1a8992a2f6b1dfbd4a328aff5a898c5c}
+
+
+Sets up the socket. After being set up socket options can be changed. 
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em protocol}]Protocol that socket should support.\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{class_error_report}{ErrorReport}}]If the socket is already setup. \end{DoxyExceptions}
+\hypertarget{class_net_socket_simple_a69c2149f61ab6af018faf89e61ec6592}{
+\index{NetSocketSimple@{NetSocketSimple}!TestClass@{TestClass}}
+\index{TestClass@{TestClass}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{TestClass}]{\setlength{\rightskip}{0pt plus 5cm}bool NetSocketSimple::TestClass (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}static\mbox{]}}}}
+\label{class_net_socket_simple_a69c2149f61ab6af018faf89e61ec6592}
+
+
+Tests class. 
+
+\begin{DoxyReturn}{Returns}
+true if no problems while testing were found, false if not. Note that not all tests automatically check for problems so some tests require manual verification. 
+\end{DoxyReturn}
+
+
+Reimplemented in \hyperlink{class_net_socket_ae2233dd5a751f07101b1347df5dfc308}{NetSocket}, \hyperlink{class_net_socket_listening_a397dd748e239d7638ead233d55c9b0dc}{NetSocketListening}, \hyperlink{class_net_socket_t_c_p_a844311ce7f1248d66b4e15d9e042e89a}{NetSocketTCP}, and \hyperlink{class_net_socket_u_d_p_a68728f4e9718f3f730a8f28c94a91968}{NetSocketUDP}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_net_socket_simple_ae423ed3be7d1b07d67dbdf34306bbc72}{
+\index{NetSocketSimple@{NetSocketSimple}!broadcasting@{broadcasting}}
+\index{broadcasting@{broadcasting}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{broadcasting}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetSocketSimple::broadcasting}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_simple_ae423ed3be7d1b07d67dbdf34306bbc72}
+
+
+True if the socket has broadcasting enabled. 
+
+Broadcasting allows UDP packets to be sent to all entities on a subnet or an entire network without first making a direct connection.\par
+\par
+
+
+Example use: You host a server on a network and want to announce your presence to potential clients. You can broadcast a packet with details of the address you are hosting on. Clients can then connect to you without initially knowing of your existence or your address. \hypertarget{class_net_socket_simple_a713a67b50645a31ace94f50aa1bbc289}{
+\index{NetSocketSimple@{NetSocketSimple}!hardShutdown@{hardShutdown}}
+\index{hardShutdown@{hardShutdown}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{hardShutdown}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetSocketSimple::hardShutdown}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_simple_a713a67b50645a31ace94f50aa1bbc289}
+
+
+True if hard shutdown is enabled. 
+
+If hard shutdown is enabled disconnection completes instantly without waiting for data transfer to complete. If hard shutdown is disabled, \hyperlink{graceful_disconnect_page}{graceful disconnection} is enabled and disconnection does not complete instantly, there may be noticeable delay. However, any data transfer is allowed to complete.
+
+This option can only be true if \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0a01b7e644d632a43bbec04dbd373a1b34}{NetSocketSimple::UDP} is in use. \hypertarget{class_net_socket_simple_ace2f1bd34b944f94a82eb1600a9d9823}{
+\index{NetSocketSimple@{NetSocketSimple}!listening@{listening}}
+\index{listening@{listening}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{listening}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetSocketSimple::listening}\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{class_net_socket_simple_ace2f1bd34b944f94a82eb1600a9d9823}
+
+
+True if socket is in listening mode. 
+
+Listening mode means that TCP connection requests can be made to the IP and port that the socket is bound to. This is a core part of any TCP server and allows for WSAAccept winsock command to be successfully used. \hyperlink{class_net_socket_listening}{NetSocketListening} enables listening mode. \hypertarget{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}{
+\index{NetSocketSimple@{NetSocketSimple}!nagleEnabled@{nagleEnabled}}
+\index{nagleEnabled@{nagleEnabled}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{nagleEnabled}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetSocketSimple::nagleEnabled}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_simple_a7edf43d1de9a08cd1919ba386955951a}
+
+
+True if the Nagle algorithm is enabled. 
+
+The nagle algorithm reduces the number of packets that need to be sent, preventing a large overhead when sending lots of small packets simultaneously. Each packet would needs its own header (which is approximately 24 bytes) and so the amount of data needed to be sent can grow exponentially. To address this problem, the Nagle algorithm does not send data instantly, it waits a small (usually unnoticeable) amount of time and combines any further data to the originally queued data. This leads to the sending of one larger packet, rather than several smaller packets, thus reducing the overhead of multiple headers. Clearly though data transfer will be slightly slower. When transfer time is critical the Nagle algorithm should usually be disabled.\par
+\par
+
+
+Obviously, since this is a TCP orientated option, it can only be true if \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}{NetSocketSimple::TCP} is in use. \hypertarget{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}{
+\index{NetSocketSimple@{NetSocketSimple}!reusable@{reusable}}
+\index{reusable@{reusable}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{reusable}]{\setlength{\rightskip}{0pt plus 5cm}bool {\bf NetSocketSimple::reusable}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_simple_a0921fd02f526c403ce5143d8fdec77fa}
+
+
+True if the socket is reusable. 
+
+This means that the IP and port that the socket is bound to can be bound to by other sockets of the same protocol at the same time, which would otherwise cause an error on the other socket. Note that it does not matter if the socket resides in another application. Data sent to this IP and port will then be received by both sockets regardless of which socket it was intended for (excluding the exception mentioned below).\par
+\par
+
+
+For \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}{NetSocketSimple::TCP} sockets using \hyperlink{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{Connect()}, reusable is slightly different. It means that sockets fulfilling the same criteria (i.e. \hyperlink{class_net_socket_simple_a31450636f6fb9ece239c50f616e0d7b0ad093d601c519b54e673755f915cd6467}{NetSocketSimple::TCP} and using \hyperlink{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{Connect()}) can bind to the same IP and port and operate as normal without interfering with each other. If not reusable the socket takes complete control of the IP and port and other sockets of the same protocol cannot bind to it, even when using \hyperlink{class_net_socket_simple_a8b3d61a80b904f12791144ba336cf37b}{Connect()}. There is no overhead in setting to reusable and therefore no reason why you shouldn't in this case. \hypertarget{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}{
+\index{NetSocketSimple@{NetSocketSimple}!winsockSocket@{winsockSocket}}
+\index{winsockSocket@{winsockSocket}!NetSocketSimple@{NetSocketSimple}}
+\subsubsection[{winsockSocket}]{\setlength{\rightskip}{0pt plus 5cm}SOCKET {\bf NetSocketSimple::winsockSocket}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_net_socket_simple_ace6b7feadf536e09181b23d45c92cc5f}
+
+
+Winsock socket used to transfer data. 
+
+Set to INVALID\_\-SOCKET when not setup. 
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketSimple.h\item 
+C:/Users/Michael Pryor/Documents/Programming 09/MikeNet/Project/MikeNet/NetSocketSimple.cpp\end{DoxyCompactItemize}

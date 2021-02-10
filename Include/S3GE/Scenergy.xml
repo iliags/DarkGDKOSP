@@ -1,0 +1,221 @@
+<scenergy version="1.0">
+
+	<!-- MECs Heirarchy
+		Entity Class (composite of assemblies)
+			Assembly (composite of parts)
+				Part
+					Block (Mesh Geometry)
+					Connector
+						Physics Joint
+						Animation Bone Joint
+						Pivot Attachment
+					*Accessory (Non Mesh Geometry)
+						
+	-->
+	
+	<mecs>
+	
+		<!-- Entity Class Examples -->
+		<class name="Character" type="BiPed">
+			<!--
+			Class Hierarchy defines parts and connectivity.
+			-->
+			<assembly name="Chest" type="core"/>
+			
+				<assembly name="Neck" type="limb">
+					<assembly name="Head" type="limb"/>
+				</assembly>
+				
+				<assembly name="UpperTorso" type="limb">
+					<assembly name="LowerTorso" type="limb">
+						<assembly name="UpperLeg" type="limb">
+							<assembly name="LowerLeg" type="limb">
+								<assembly name="Foot" type="limb"/>
+							</assembly>
+						</assembly>
+					</assembly>
+				</assembly>
+				
+				<assembly name="UpperArm" type="limb">
+					<assembly name="LowerArm" type="limb">
+						<assembly name="Hand" type="limb"/>
+					</assembly>
+				</assembly>
+				
+			</assembly>
+		</class>
+	
+		<class name="Firearm" type="Standard">
+			<assembly name="StockGrip" type="limb">
+				<assembly name="Chamber" type="core">
+					<assembly name="Firingmecshanism" type="limb"/>
+					<assembly name="Trigger" type="limb"/>
+					<assembly name="Barrel" type="limb">
+						<assembly name="Bayonet" type="limb"/>
+						<assembly name="Distorter" type="limb"/>
+					</assembly>
+					<assembly name="Scope" type="limb">
+					<assembly name="Loader" type="limb">
+						<assembly name="Magazine" type="limb"/>
+					</assembly>
+				</assembly>
+			</assembly>
+		</class>
+	
+		<class name="melee" type="standard">
+			<assembly name="handle">
+				<assembly name="guard">
+					<assembly name="midsection">
+						<assembly name="bluntblade">
+					</assembly>
+				</assembly>
+			</assembly>
+		</class>
+	
+		<!-- Entity Parts -->
+		<assembly>
+			<part/>
+			<part/>
+		</assembly>
+		
+		<part name="ironman" src="3DCharactersUpperchest.x" scale="sx,sy,sz">
+			<!-- acceptable skins -->
+			<skin src="IronManCore_C1_1"/>
+			<skin src="IronManCore_C1_2"/>
+			<!-- connectors -->
+			<!-- #1 --><connector name="neck" type="mount" gender="slot" coords="x,y,z,ax,ay,az"/>
+			<!-- #2 --><connector name="spine1" parent="neck" type="bone" name="UC1.1" map="Bip01_Spine_1"/>
+			<!-- #3 --><connector name="spine2" parent="spine1" type="bone" name="UC1.2" map="Bip01_Spine_2"/>
+		</part>
+	
+		<part name="broad" src="3DCharactersUppershoulder.x" scale="sx,sy,sz">
+			<connector type="mount" gender="peg" coords="x,y,z,ax,ay,az"/>
+			<connector type="bone" name="UL1.1" map="Bip01_L_UpperArm">
+				<connector type="bone" name="UL1.2" map="Bip01_L_ForeArm"/>
+			</connector>
+			<connector type="joint:6dof">
+				<script></script>
+			</connector>
+		</part>
+	
+		<part name="popeye" src="3DCharactersUpperforearm.x" scale="sx,sy,sz">
+			<connector type="mount" gender="slot" coords="x,y,z,ax,ay,az"/>
+			<connector type="bone" name="UL1.2" map="Bip01_L_ForeArm">
+				<connector type="bone" name="UL1.3" map="Bip01_L_Hand"/>
+			</connector>
+			<connector type="joint">
+		</part>
+	
+		<part name="thing" src="3DCharactersUpperhand.x" skin="Machine_U1.2" scale="sx,sy,sz">
+			<connector type="mount" gender="slot" coords="x,y,z,ax,ay,az"/>
+			<connector type="bone" name="UL1.3" map="Bip01_L_Hand"/>
+			<connector type="mount" gender="any">
+		</part>
+	
+		<!-- Entity Instance-->
+		<entity class="Character" type="BiPed" name="Sir_Peppy">
+	
+			<part name="Chest" align="center">
+				<block name="ironman"/>
+			</part>
+	
+			<part name="UpperArm" align="left">
+				<block name="Broad" connector="1" state="connected"/>
+			</part>
+	
+			<part name="LowerArm" align="left">
+				<block name="popeye" connector="1" state="connected"/>
+			</part>
+	
+			<part name="Hand" align="left">
+				<block name="thing" connector="1" state="connected"/>
+	
+				<accessory type="hitobject" ID="" connector="1" state="connected">
+					<connector type="mount" gender="peg" coords="x,y,z,ax,ay,az">
+						<option value="Hand" connect="true"/>
+					</connector>
+				</accessory>
+	
+			</part>
+	
+		</entity>
+		
+		<!-- Animation -->
+		
+			<!-- Skin Animation-->
+				<!-- Texture -->
+				<!-- Shader -->
+				
+			<!-- Part Animation -->
+				<!-- Physics Simulation -->
+					<!-- rigid body -->
+					<!-- soft body -->
+						
+				<!-- Function -->
+				<!-- Controller -->
+					<!-- Pathfinder -->
+					<!-- User Input -->
+						
+				<!-- Keyframed -->
+				<!-- Mesh Deformation -->
+	
+			<!-- Connector Animation -->
+					
+				<!-- Physics Simulation -->
+						<!-- joint>
+				<!-- Function -->
+				<!-- Controller -->
+					<!-- Pathfinder -->
+					<!-- User Input -->
+				
+				<!-- Keyframed -->
+		
+	</mecs>
+	
+	<chimp>
+		<texture>
+		<map>
+			<channel>
+			<shader>
+			<filter>
+	</chimp>
+	
+	<mood/>
+	
+	<actor>
+		<entity type="terrain|building|mecs|animesh|primitive|camera|light|sound" name="" src=""/>
+		<render system="lod|terrain|bsp|quad" shadowflag="false"/>
+		<ai pathfindflag="true" pathmethod="navmesh|node|A*"/>
+		<physics collisiontype="2d|3d" collision="true" collisionfilter="" /> <!-- simulation -->
+		<network replication="true" priority="1">
+		<property name="" type="" value=""/><!-- Give Take Registry -->
+	</actor>
+	
+	<particle name="">
+		<state>
+		<event state="SPAWN"/>
+		<behavior>
+		<transition>
+	</particle>
+	
+	<brain>
+		<state>
+		<behavior>
+		<transition>
+		<event>
+		
+		<trigger>
+		
+		<path>
+			<navmesh>
+			<solver>
+			<waypoint>
+			<route>
+			<pattern>
+			
+	<maui/><!-- maui -->
+		
+	<application/>
+	<applet/>
+	
+<scenergy/>

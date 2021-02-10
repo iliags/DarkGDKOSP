@@ -1,0 +1,229 @@
+\hypertarget{classcl_instance_group}{
+\section{clInstanceGroup Class Reference}
+\label{classcl_instance_group}\index{clInstanceGroup@{clInstanceGroup}}
+}
+
+
+Manages a group of instances.  
+
+
+
+
+{\ttfamily \#include $<$clInstanceGroup.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classcl_instance_group_a0625e0c938c7fc6eb422ce9551bb0ec0}{clInstanceGroup} (size\_\-t numInstances)
+\item 
+void \hyperlink{classcl_instance_group_af10a11ad3a6b5cbc8b9bea047d084a26}{Finish} (size\_\-t instanceID)
+\item 
+void \hyperlink{classcl_instance_group_acbba525b4e73209aade3391cfdddc341}{FinishAll} ()
+\item 
+bool \hyperlink{classcl_instance_group_a94ad998c4ffa0ce90a5268c3a0b2f27f}{GetInstanceActive} (size\_\-t instanceID) const 
+\item 
+size\_\-t \hyperlink{classcl_instance_group_ae81d532e520c320cecadc88f279443fe}{AddInstance} (\hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$instance)
+\item 
+void \hyperlink{classcl_instance_group_a718e4f32d58b4123f80dc12b186d1f45}{AddInstance} (size\_\-t instanceID, \hyperlink{classcl_instance_container}{clInstanceContainer} $\ast$instance)
+\item 
+\hyperlink{classcl_instance_container}{clInstanceContainer} \& \hyperlink{classcl_instance_group_ad30209cfb0f444dec07ee58315311f98}{GetInstance} (size\_\-t instanceID)
+\item 
+const \hyperlink{classcl_instance_container}{clInstanceContainer} \& \hyperlink{classcl_instance_group_a2450c29ea13ee6e5e74c0279815f4272}{GetInstance} (size\_\-t instanceID) const 
+\item 
+\hyperlink{classcl_instance_container}{clInstanceContainer} \& \hyperlink{classcl_instance_group_a141569d6b0c62a717288a26185bb7ae9}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t instanceID)
+\item 
+const \hyperlink{classcl_instance_container}{clInstanceContainer} \& \hyperlink{classcl_instance_group_ab963627e2039814e1ab8b2b61bf201c0}{operator\mbox{[}$\,$\mbox{]}} (size\_\-t instanceID) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classcl_instance_group_a4af6af753cd3cb70efa27a69f5a4501f}{\_\-CheckInstanceID} (size\_\-t instanceID, size\_\-t line, const char $\ast$file) const 
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classcl_instance_group_a911ae3c23d5f2808a4c8801884a134b5}{
+\hyperlink{classcl_store_vector}{clStoreVector}$<$ \hyperlink{classcl_instance_container}{clInstanceContainer} $>$ {\bfseries instance}}
+\label{classcl_instance_group_a911ae3c23d5f2808a4c8801884a134b5}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Manages a group of instances. \begin{DoxyRemark}{Remarks}
+Michael Pryor, 6/5/2010.
+\end{DoxyRemark}
+This instance is used for managing a collection of instances. These instances can be identified by ID (unique only within this instance group).\par
+\par
+
+
+This class is thread safe. 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classcl_instance_group_a0625e0c938c7fc6eb422ce9551bb0ec0}{
+\index{clInstanceGroup@{clInstanceGroup}!clInstanceGroup@{clInstanceGroup}}
+\index{clInstanceGroup@{clInstanceGroup}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{clInstanceGroup}]{\setlength{\rightskip}{0pt plus 5cm}clInstanceGroup::clInstanceGroup (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ numInstances}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_a0625e0c938c7fc6eb422ce9551bb0ec0}
+Constructor 
+\begin{DoxyParams}{Parameters}
+\item[{\em numInstances}]number of instances to store. Instances are uninitialized at first and the number of instances can be changed later. \end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classcl_instance_group_a4af6af753cd3cb70efa27a69f5a4501f}{
+\index{clInstanceGroup@{clInstanceGroup}!\_\-CheckInstanceID@{\_\-CheckInstanceID}}
+\index{\_\-CheckInstanceID@{\_\-CheckInstanceID}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{\_\-CheckInstanceID}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceGroup::\_\-CheckInstanceID (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{size\_\-t}]{ line, }
+\item[{const char $\ast$}]{ file}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily  \mbox{[}private\mbox{]}}}}
+\label{classcl_instance_group_a4af6af753cd3cb70efa27a69f5a4501f}
+
+\begin{DoxyExceptions}{Exceptions}
+\item[{\em \hyperlink{structcl_error}{clError}}]if {\itshape instanceID\/} is invalid, must be between 0 (inclusive) and the number of instances (exclusive) \end{DoxyExceptions}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]instance number to check \item[{\em line}]line number of method call \item[\mbox{\tt[in]} {\em file}]of method call \end{DoxyParams}
+\hypertarget{classcl_instance_group_ae81d532e520c320cecadc88f279443fe}{
+\index{clInstanceGroup@{clInstanceGroup}!AddInstance@{AddInstance}}
+\index{AddInstance@{AddInstance}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{AddInstance}]{\setlength{\rightskip}{0pt plus 5cm}size\_\-t clInstanceGroup::AddInstance (
+\begin{DoxyParamCaption}
+\item[{{\bf clInstanceContainer} $\ast$}]{ newInstance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_ae81d532e520c320cecadc88f279443fe}
+Adds an instance to the group, increasing the group size by 1 \par
+ This instance is now owned by the group and should not be used outside of the group
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{\tt[in]} {\em instance}]instance to add. This pointer and its data is now owned by this object and should not be used elsewhere. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+new instance ID 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_group_a718e4f32d58b4123f80dc12b186d1f45}{
+\index{clInstanceGroup@{clInstanceGroup}!AddInstance@{AddInstance}}
+\index{AddInstance@{AddInstance}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{AddInstance}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceGroup::AddInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID, }
+\item[{{\bf clInstanceContainer} $\ast$}]{ instance}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_a718e4f32d58b4123f80dc12b186d1f45}
+Add an instance to the group at the specified ID, overwriting any instance that has that ID within this group. If an instance already occupies that ID it will be shutdown silently.
+
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]instance ID that {\itshape instance\/} should occupy \item[\mbox{\tt[in]} {\em instance}]pointer to instance that should fill {\itshape instanceID\/}, this pointer and its data is now owned by this object and should not be used elsewhere. \end{DoxyParams}
+\hypertarget{classcl_instance_group_af10a11ad3a6b5cbc8b9bea047d084a26}{
+\index{clInstanceGroup@{clInstanceGroup}!Finish@{Finish}}
+\index{Finish@{Finish}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{Finish}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceGroup::Finish (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_af10a11ad3a6b5cbc8b9bea047d084a26}
+Cleans up specific instance 
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to cleanup \end{DoxyParams}
+\hypertarget{classcl_instance_group_acbba525b4e73209aade3391cfdddc341}{
+\index{clInstanceGroup@{clInstanceGroup}!FinishAll@{FinishAll}}
+\index{FinishAll@{FinishAll}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{FinishAll}]{\setlength{\rightskip}{0pt plus 5cm}void clInstanceGroup::FinishAll (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_acbba525b4e73209aade3391cfdddc341}
+Cleans up all instances in group \hypertarget{classcl_instance_group_a2450c29ea13ee6e5e74c0279815f4272}{
+\index{clInstanceGroup@{clInstanceGroup}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clInstanceContainer} \& clInstanceGroup::GetInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_group_a2450c29ea13ee6e5e74c0279815f4272}
+\begin{DoxyReturn}{Returns}
+constant reference to specified instance 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to retrieve \end{DoxyParams}
+\hypertarget{classcl_instance_group_ad30209cfb0f444dec07ee58315311f98}{
+\index{clInstanceGroup@{clInstanceGroup}!GetInstance@{GetInstance}}
+\index{GetInstance@{GetInstance}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{GetInstance}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceContainer} \& clInstanceGroup::GetInstance (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_ad30209cfb0f444dec07ee58315311f98}
+\begin{DoxyReturn}{Returns}
+reference to specified instance 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to retrieve \end{DoxyParams}
+\hypertarget{classcl_instance_group_a94ad998c4ffa0ce90a5268c3a0b2f27f}{
+\index{clInstanceGroup@{clInstanceGroup}!GetInstanceActive@{GetInstanceActive}}
+\index{GetInstanceActive@{GetInstanceActive}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{GetInstanceActive}]{\setlength{\rightskip}{0pt plus 5cm}bool clInstanceGroup::GetInstanceActive (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_group_a94ad998c4ffa0ce90a5268c3a0b2f27f}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to check \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if instance is active, false if instance is inactive 
+\end{DoxyReturn}
+\hypertarget{classcl_instance_group_ab963627e2039814e1ab8b2b61bf201c0}{
+\index{clInstanceGroup@{clInstanceGroup}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf clInstanceContainer} \& clInstanceGroup::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+) const}}
+\label{classcl_instance_group_ab963627e2039814e1ab8b2b61bf201c0}
+\begin{DoxyReturn}{Returns}
+constant reference to specified instance 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to retrieve \end{DoxyParams}
+\hypertarget{classcl_instance_group_a141569d6b0c62a717288a26185bb7ae9}{
+\index{clInstanceGroup@{clInstanceGroup}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!clInstanceGroup@{clInstanceGroup}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clInstanceContainer} \& clInstanceGroup::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{size\_\-t}]{ instanceID}
+\end{DoxyParamCaption}
+)}}
+\label{classcl_instance_group_a141569d6b0c62a717288a26185bb7ae9}
+\begin{DoxyReturn}{Returns}
+reference to specified instance 
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em instanceID}]ID of instance to retrieve \end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceGroup.h\item 
+C:/Users/Michael Pryor/Desktop/Deoxygen Files/Source Files/clInstanceGroup.cpp\end{DoxyCompactItemize}
